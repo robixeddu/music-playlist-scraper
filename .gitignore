@@ -1,6 +1,6 @@
 /node_modules
 /missing_tracks
-*.png
 new_tracks_for_tidal.txt
 tracks.json
 package-lock.json
+*.png
