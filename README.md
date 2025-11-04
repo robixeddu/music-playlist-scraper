@@ -9,26 +9,26 @@ A robust Node.js (TypeScript) project designed to automatically scrape and aggre
 * **TIDAL Export**: Generates a clean text file (`new_tracks_for_tidal.txt`) containing only the new songs, formatted for easy import via third-party services (Soundiiz, TuneMyMusic).
 
 ## 🛠️ Technology and Architecture
-```
-bash
-Component,Details
-Language,TypeScript
-Environment,Node.js (ES Modules - ESM)
-Core Libraries,"cheerio, node-fetch, dotenv"
-Architecture,"Modular code in /lib, centralized configuration (.env), compiled output in /dist."
+```bash
+| Component | Details |
+| :--- | :--- |
+| **Language** | TypeScript |
+| **Environment** | Node.js (ES Modules - ESM) |
+| **Core Libraries** | `cheerio`, `node-fetch`, `dotenv` |
+| **Architecture** | Modular code in `/lib`, centralized configuration (`.env`), compiled output in `/dist` |
 ```
 
 ## 📝 Code Structure (File/Folder)
-```
-bash
-File/Folder,Description
-/lib,"Core Source. Contains all TypeScript modules (.ts) with the project's logic (scraper, parser, aggregation, I/O)."
-init.ts,The main entry point and orchestrator file.
-/dist,Output folder for compiled JavaScript files. (Ignored by Git)
-tracks.json,"Historical Archive. Contains all tracks found to date, aggregated by episode."
-new_tracks_for_tidal.txt,Export File. Contains only the new tracks found in the latest run.
-.env,Configuration file for environment variables.
-tsconfig.json,TypeScript compiler configuration (set to use NodeNext resolution).
+```bash
+| File/Folder | Description |
+| :--- | :--- |
+| **`/lib`** | **Core Source.** Contains all TypeScript modules (`.ts`) with the project's logic (scraper, parser, aggregation, I/O). |
+| **`init.ts`** | The main entry point and orchestrator file. |
+| **`/dist`** | Output folder for compiled JavaScript files. **(Ignored by Git)** |
+| **`tracks.json`** | **Historical Archive.** Contains all tracks found to date, aggregated by episode. |
+| **`new_tracks_for_tidal.txt`** | **Export File.** Contains only the new tracks found in the latest run. |
+| **`.env`** | Configuration file for environment variables. |
+| **`tsconfig.json`** | TypeScript compiler configuration (set to use NodeNext resolution). |
 ```
 
 ## 🚀 Setup and Execution
