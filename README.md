@@ -1,9 +1,10 @@
 # 🎧 Music Playlist Scraper (Battiti)
-A robust Node.js (TypeScript) project designed to automatically scrape and aggregate the tracklist from the radio show **"Battiti"** on Rai Play Sound. The primary goal is to maintain a complete, deduplicated historical archive and generate clean files ready for external service integration (like TIDAL or Spotify).
+A Node.js (TypeScript) project designed to automatically scrape and aggregate the tracklist from the radio show **"Battiti"** on Rai Play Sound. The primary goal is to maintain a complete, deduplicated historical archive and generate clean files ready for external service integration (like TIDAL or Spotify).
 
 ## ✨ Key Features
 * **TypeScript Stability**: Developed entirely in TypeScript for static typing, enhanced reliability, and maintainable code structure.
-* **Robust Scraping**: Analyzes "Battiti" episodes to extract Artist, Title, and Album/Label details.Reliable Deduplication: Uses a normalized key (`artist___title`) to track previously saved songs, ensuring only truly new tracks are processed and preventing duplicates caused by inconsistent source formatting.
+* **Robust Scraping**: Analyzes "Battiti" episodes to extract Artist, Title, and Album/Label details.
+* **Reliable Deduplication**: Uses a normalized key (`artist___title`) to track previously saved songs, ensuring only truly new tracks are processed and preventing duplicates caused by inconsistent source formatting.
 * **Historical Archive**: Saves all found tracks in the structured `tracks.json` file, aggregated by episode.
 * **Incremental Update**: The system efficiently skips known episodes and identifies new tracks with each execution.
 * **TIDAL Export**: Generates a clean text file (`new_tracks_for_tidal.txt`) containing only the new songs, formatted for easy import via third-party services (Soundiiz, TuneMyMusic).
