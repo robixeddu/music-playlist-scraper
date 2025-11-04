@@ -1,5 +1,5 @@
 export const TRACKS_FILE = "./data/tracks.json";
-export const EXPORT_FILE = "./data/new_tracks_for_tidal.txt";
+export const EXPORT_FILE = "./data/new_tracks_for_playlist.txt";
 
 export const BASE_URL = process.env.SCRAPER_BASE_URL;
 export const PROGRAM_PATH = process.env.SCRAPER_PROGRAM_PATH;
