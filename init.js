@@ -14,6 +14,7 @@ const EPISODE_SELECTOR = "rps-cta-link[weblink]";
 const EPISODE_TITLE_SELECTOR = ".audio__header__title";
 const EPISODE_DATE_SELECTOR = ".audio__header p.text-gray-medium";
 const EPISODE_DESCRIPTION_SELECTOR = ".audio__header p";
+const SKIPPED_COUNT_LIMIT = 20;
 
 async function loadPreviousTracks() {
   try {
@@ -190,7 +191,6 @@ async function main() {
   let scrapedCount = 0;
   let skippedCount = 0;
 
-  // 🟢 1. SPEED OPTIMIZATION: Create a Set of known episode URLs for O(1) lookup
   const aggregatedHistory = aggregateTracksByEpisode(previousTracks);
   const knownEpisodeUrls = new Set(
     aggregatedHistory.map((ep) => ep.episodeUrl)
@@ -198,20 +198,19 @@ async function main() {
 
   let isNewEpisodeFound = false;
 
-  // 🟢 2. INCREMENTAL LOOP: Process links from newest to oldest
   for (const link of episodeLinks) {
     if (knownEpisodeUrls.has(link)) {
       skippedCount++;
 
       // INTERRUPT LOGIC: If we've found new episodes AND we now hit old ones, break.
-      if (isNewEpisodeFound || skippedCount > 10) {
+      if (isNewEpisodeFound || skippedCount > SKIPPED_COUNT_LIMIT) {
         console.log(
-          `\n⏭️ Found known episode (${link}). Stopping incremental analysis.`
+          `⏭️ Found known episode (${link}). Stopping incremental analysis.`
         );
         break;
       }
 
-      continue; // Skip processing this episode's details
+      continue;
     }
 
     // If the episode URL is unknown, it's new.
@@ -222,7 +221,6 @@ async function main() {
       scrapedCount++;
 
       for (const track of episodeTracks) {
-        // ANTI-DUPLICATE LOGIC: Check uniqueness based on Artist + Title only
         const exists = allTracks.some(
           (t) =>
             t.title.trim() === track.title.trim() &&
