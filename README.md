@@ -18,7 +18,6 @@ A robust Node.js (TypeScript) project designed to automatically scrape and aggre
 | **Architecture** | Modular code in `/lib`, centralized configuration (`.env`), compiled output in `/dist` |
 
 ## 📝 Code Structure (File/Folder)
-```bash
 | File/Folder | Description |
 | :--- | :--- |
 | **`/lib`** | **Core Source.** Contains all TypeScript modules (`.ts`) with the project's logic (scraper, parser, aggregation, I/O). |
@@ -28,7 +27,6 @@ A robust Node.js (TypeScript) project designed to automatically scrape and aggre
 | **`new_tracks_for_tidal.txt`** | **Export File.** Contains only the new tracks found in the latest run. |
 | **`.env`** | Configuration file for environment variables. |
 | **`tsconfig.json`** | TypeScript compiler configuration (set to use NodeNext resolution). |
-```
 
 ## 🚀 Setup and Execution
 ### 1. Prerequisites
