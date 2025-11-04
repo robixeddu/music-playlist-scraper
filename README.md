@@ -33,7 +33,7 @@ tsconfig.json,TypeScript compiler configuration (set to use NodeNext resolution)
 
 ## 🚀 Setup and Execution
 ### 1. Prerequisites
-* [Node.js](https://nodejs.org/) (Version 18+ is recommended for ESM support)
+* [Node.js](https://nodejs.org/) (Version 20+ is recommended for ESM support)
 
 ### 2. Install Dependencies
 After cloning the repository, install the necessary libraries and TypeScript development tools:
