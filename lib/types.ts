@@ -4,23 +4,14 @@ export interface BaseTrack {
   albumDetails?: string;
   key: string;
 }
-
-export interface Track extends BaseTrack {
-  episodeTitle?: string;
-  episodeUrl: string;
-  date: string;
-}
-
-export interface TrackForSaving extends BaseTrack {}
-
-export interface EpisodeAggregated {
+export interface BaseEpisode {
   episodeTitle: string;
   episodeUrl: string;
   date: string;
-  tracks: TrackForSaving[];
 }
 
-export interface RawEpisodeData {
-  id: string;
-  description: string;
+export interface Track extends BaseTrack, BaseEpisode {}
+
+export interface EpisodeAggregated extends BaseEpisode {
+  tracks: BaseTrack[];
 }

@@ -1,4 +1,4 @@
-import { BaseTrack, EpisodeAggregated, TrackForSaving, Track } from "./types.js"; 
+import { BaseTrack, EpisodeAggregated, Track } from "./types.js";
 
 const normalizeString = (str: string): string => {
     if (!str) return '';
@@ -12,7 +12,7 @@ const normalizeString = (str: string): string => {
 
 const parseTrackString = (trackStr: string): BaseTrack | null => {
     const [artistPart, ...rest] = trackStr.split(",");
-
+    
     let rawTitle = rest.join(",");
     let albumDetails = "";
 
@@ -44,19 +44,21 @@ const aggregateTracksByEpisode = (tracks: Track[]): EpisodeAggregated[] => {
 
         if (!episodesMap.has(key)) {
             episodesMap.set(key, {
-                episodeTitle: track.episodeTitle || "Unknown",
+                episodeTitle: track.episodeTitle,
                 episodeUrl: track.episodeUrl,
-                date: track.date || "Unknown",
-                tracks: [],
+                date: track.date,
+                tracks: [], 
             });
         }
 
-        episodesMap.get(key)!.tracks.push({
+        const episodeAggregated = episodesMap.get(key)!;
+
+        episodeAggregated.tracks.push({
             title: track.title,
             artist: track.artist,
             albumDetails: track.albumDetails || "",
             key: track.key
-        } as TrackForSaving);
+        } as BaseTrack); 
     });
 
     return Array.from(episodesMap.values());

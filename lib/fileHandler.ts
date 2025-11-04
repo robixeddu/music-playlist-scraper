@@ -3,7 +3,8 @@ import fsPromises from "fs/promises";
 import path from "path";
 import { logError, logCompletion } from "./logger.js";
 import { TRACKS_FILE, EXPORT_FILE } from "./config.js";
-import { Track, EpisodeAggregated, TrackForSaving } from "./types.js";
+import { Track, EpisodeAggregated, BaseTrack } from "./types.js"; 
+
 
 const ensureDataDirectory = async (): Promise<void> => {
     const dirPath = path.dirname(TRACKS_FILE); 
@@ -14,7 +15,7 @@ const ensureDataDirectory = async (): Promise<void> => {
             console.log(`Created directory: ${dirPath}`);
         } catch (e: any) {
             logError("creating data directory", e.message);
-            throw e;
+            throw e; 
         }
     }
 };
@@ -23,32 +24,33 @@ const loadPreviousTracks = async (): Promise<Track[]> => {
     try {
         if (!fs.existsSync(TRACKS_FILE)) return [];
         const data = await fsPromises.readFile(TRACKS_FILE, "utf-8");
-        const aggregatedData: any = JSON.parse(data);
+        const loadedData: any = JSON.parse(data);
 
         if (
-            Array.isArray(aggregatedData) &&
-            aggregatedData.length > 0 &&
-            aggregatedData[0].tracks
+            Array.isArray(loadedData) &&
+            loadedData.length > 0 &&
+            (loadedData[0] as EpisodeAggregated).tracks
         ) {
             const flatTracks: Track[] = [];
+            
+            (loadedData as EpisodeAggregated[]).forEach((episode) => {
+                const episodeContext = {
+                    episodeTitle: episode.episodeTitle,
+                    episodeUrl: episode.episodeUrl,
+                    date: episode.date,
+                };
 
-            (aggregatedData as EpisodeAggregated[]).forEach((episode) => {
-                episode.tracks.forEach((track: TrackForSaving) => {
+                episode.tracks.forEach((track: BaseTrack) => {
                     flatTracks.push({
-                        title: track.title,
-                        artist: track.artist,
-                        episodeTitle: episode.episodeTitle,
-                        episodeUrl: episode.episodeUrl,
-                        date: episode.date,
-                        albumDetails: track.albumDetails || "",
-                        key: track.key,
-                    });
+                        ...track,
+                        ...episodeContext,
+                    } as Track);
                 });
             });
             return flatTracks;
         }
 
-        return aggregatedData as Track[];
+        return loadedData as Track[];
 
     } catch (e: any) {
         logError("loading tracks.json", e.message);
@@ -79,7 +81,7 @@ const exportNewTracks = async (tracks: Track[]): Promise<void> => {
 
     const cleanedContent = tracks
         .map((t) => {
-            const clean = (str: string) =>
+            const clean = (str: string) => 
                 str
                     .replace(/ \(([^)]+)\)/g, "")
                     .replace(/ \[([^\]]+)\]/g, "")

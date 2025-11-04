@@ -1,35 +1,25 @@
-import { aggregateTracksByEpisode } from "./parser.js";
 import { Track } from "./types.js";
 
+const getKnownEpisodeUrls = (previousTracks: Track[]): Set<string> => {
+    return new Set(previousTracks.map((t) => t.episodeUrl));
+};
+
 const updateAllTracks = (
-    allTracks: Track[], 
-    episodeTracks: Track[], 
+    allTracks: Track[],
+    newEpisodeTracks: Track[],
     newTracks: Track[]
 ): Track[] => {
-    
-    let updatedAllTracks: Track[] = [...allTracks];
+    const knownKeys = new Set(allTracks.map((t) => t.key));
 
-    const knownKeys = new Set(allTracks.map(t => t.key));
-
-    for (const track of episodeTracks) {
-        if (!track || !track.key) continue; 
-        
+    newEpisodeTracks.forEach((track) => {
         if (!knownKeys.has(track.key)) {
-            updatedAllTracks.push(track);
+            allTracks.push(track);
             newTracks.push(track);
-            knownKeys.add(track.key);
+            knownKeys.add(track.key); 
         }
-    }
-    
-    return updatedAllTracks;
+    });
+
+    return allTracks;
 };
 
-const getKnownEpisodeUrls = (previousTracks: Track[]): Set<string> => {
-    const aggregatedHistory = aggregateTracksByEpisode(previousTracks);
-    return new Set(aggregatedHistory.map((ep) => ep.episodeUrl));
-};
-
-export {
-    updateAllTracks,
-    getKnownEpisodeUrls
-};
+export { updateAllTracks, getKnownEpisodeUrls };
