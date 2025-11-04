@@ -9,14 +9,13 @@ A robust Node.js (TypeScript) project designed to automatically scrape and aggre
 * **TIDAL Export**: Generates a clean text file (`new_tracks_for_tidal.txt`) containing only the new songs, formatted for easy import via third-party services (Soundiiz, TuneMyMusic).
 
 ## 🛠️ Technology and Architecture
-```bash
+
 | Component | Details |
 | :--- | :--- |
 | **Language** | TypeScript |
 | **Environment** | Node.js (ES Modules - ESM) |
 | **Core Libraries** | `cheerio`, `node-fetch`, `dotenv` |
 | **Architecture** | Modular code in `/lib`, centralized configuration (`.env`), compiled output in `/dist` |
-```
 
 ## 📝 Code Structure (File/Folder)
 ```bash
