@@ -11,6 +11,6 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
-  "include": ["**/*.ts", "lib/types.js"],
+  "include": ["**/*.ts", "lib/types.ts"],
   "exclude": ["node_modules", "dist"]
 }
