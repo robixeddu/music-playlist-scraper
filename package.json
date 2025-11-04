@@ -3,11 +3,20 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node -r dotenv/config init.js"
+    "build": "tsc",
+    "start": "node -r dotenv/config dist/init.js",
+    "prestart": "npm run build"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.4.5",
     "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^1.0.0",
+    "@types/node": "^24.10.0",
+    "@types/node-fetch": "^2.6.13",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
