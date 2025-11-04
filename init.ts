@@ -14,7 +14,6 @@ async function main(): Promise<void> {
     const previousTracks: Track[] = await loadPreviousTracks();
     const episodeLinks: string[] = await getEpisodeLinks(BATTITI_URL); 
 
-    // Tipizzazione delle variabili di stato
     let allTracks: Track[] = previousTracks; 
     let newTracks: Track[] = []; 
     let scrapedCount: number = 0;
@@ -23,7 +22,6 @@ async function main(): Promise<void> {
     const knownEpisodeUrls: Set<string> = getKnownEpisodeUrls(previousTracks); 
     let isNewEpisodeFound: boolean = false;
 
-    // 3. Processing Loop
     for (const link of episodeLinks) {
         if (knownEpisodeUrls.has(link)) {
             skippedCount++;
@@ -41,26 +39,22 @@ async function main(): Promise<void> {
             const episodeTracks: Track[] = await getTracksFromEpisode(link);
             scrapedCount++;
 
-            // Aggiorna gli array (newTracks viene modificato per riferimento)
             allTracks = updateAllTracks(allTracks, episodeTracks, newTracks); 
 
-        } catch (e: any) { // Tipizza l'errore
+        } catch (e: any) {
             logError(`episode processing ${link}`, e.message);
         }
     }
 
-    // 4. Final Logging
     logAnalysisSummary(scrapedCount, episodeLinks.length, skippedCount);
     logNewTracks(newTracks.length, allTracks.length);
 
-    // 5. Save Data
     const aggregatedResults: EpisodeAggregated[] = aggregateTracksByEpisode(allTracks);
     
-    await saveTracks(aggregatedResults); // Non serve più TRACKS_FILE
-    await exportNewTracks(newTracks); // Non serve più EXPORT_FILE
+    await saveTracks(aggregatedResults);
+    await exportNewTracks(newTracks);
 }
 
-// Esecuzione e gestione errori
 main().catch((err: any) =>
     logError("application startup", (err as Error).message || "Unknown error")
 );

@@ -1,5 +1,3 @@
-// lib/logger.ts
-
 const logNewTracks = (count: number, totalHistorical: number): void => {
     console.log(`🎧 Found **${count}** new tracks (total historical: ${totalHistorical})`);
 };

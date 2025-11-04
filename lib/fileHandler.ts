@@ -1,28 +1,20 @@
-// lib/fileHandler.ts
 import fs from "fs";
 import fsPromises from "fs/promises";
 import path from "path";
 import { logError, logCompletion } from "./logger.js";
-// Import all required constants from config
 import { TRACKS_FILE, EXPORT_FILE } from "./config.js";
-// Import types
 import { Track, EpisodeAggregated, TrackForSaving } from "./types.js";
 
-/**
- * Ensures the data directory exists before the script attempts to write files.
- * Uses the directory path derived from TRACKS_FILE in config.
- */
 const ensureDataDirectory = async (): Promise<void> => {
-    // Get the directory path (e.g., ../data)
     const dirPath = path.dirname(TRACKS_FILE); 
     
     if (!fs.existsSync(dirPath)) {
         try {
             await fsPromises.mkdir(dirPath, { recursive: true });
-            console.log(`Created directory: ${dirPath}`); // Log for first run
+            console.log(`Created directory: ${dirPath}`);
         } catch (e: any) {
             logError("creating data directory", e.message);
-            throw e; // Stop execution if we can't create the directory
+            throw e;
         }
     }
 };
@@ -64,10 +56,6 @@ const loadPreviousTracks = async (): Promise<Track[]> => {
     }
 };
 
-/**
- * Saves the complete aggregated list of episodes to tracks.json.
- * @param {EpisodeAggregated[]} aggregatedTracks - The array of episode objects.
- */
 const saveTracks = async (aggregatedTracks: EpisodeAggregated[]): Promise<void> => {
     try {
         await fsPromises.writeFile(
@@ -83,10 +71,6 @@ const saveTracks = async (aggregatedTracks: EpisodeAggregated[]): Promise<void> 
     }
 };
 
-/**
- * Exports only the new tracks found in this run to a clean text file.
- * @param {Track[]} tracks - The array of new tracks found.
- */
 const exportNewTracks = async (tracks: Track[]): Promise<void> => {
     if (tracks.length === 0) {
         logCompletion("No new tracks to export.");
@@ -95,7 +79,7 @@ const exportNewTracks = async (tracks: Track[]): Promise<void> => {
 
     const cleanedContent = tracks
         .map((t) => {
-            const clean = (str: string) => // Type the 'str' parameter
+            const clean = (str: string) =>
                 str
                     .replace(/ \(([^)]+)\)/g, "")
                     .replace(/ \[([^\]]+)\]/g, "")
