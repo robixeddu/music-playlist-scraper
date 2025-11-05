@@ -5,9 +5,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node -r dotenv/config dist/init.js",
-    "prestart": "npm run build",
-    "test": "jest", 
-    "test:watch": "jest --watch"
+    "prestart": "npm run build"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
@@ -16,11 +14,8 @@
   },
   "devDependencies": {
     "@types/cheerio": "^1.0.0",
-    "@types/jest": "^30.0.0",
     "@types/node": "^24.10.0",
     "@types/node-fetch": "^2.6.13",
-    "jest": "^30.2.0",
-    "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
