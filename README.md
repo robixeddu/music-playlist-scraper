@@ -73,7 +73,7 @@ npm start
 Since direct API uploads are unstable, the recommended method uses the exported text file:
 
 1. **Run the script** (`npm start`) to generate the latest (`new_tracks_for_tidal.txt file`).
-2. Go to a playlist transfer service (e.g., **Soundiiz** or **TuneMyMusic**).
+2. Go to a playlist transfer service (e.g., **TuneMyMusic** or **Soundiiz**).
 3. Use the **"Import from Text File / CSV"** option and upload the (`new_tracks_for_tidal.txt file`).
 4. Choose your **existing** TIDAL/Spotify playlist as the destination.
 5. The service will only add the new tracks, **automatically avoiding duplicates**.
