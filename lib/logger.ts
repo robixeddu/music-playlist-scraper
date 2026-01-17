@@ -27,6 +27,10 @@ const logError = (context: string, message: string): void => {
     console.error(`❌ Error during ${context}: ${message}`);
 };
 
+const logWarn = (context: string): void => {
+    console.warn(`❌ Warning during ${context}`);
+};
+
 export {
     logNewTracks,
     logEpisodesAggregated,
@@ -34,5 +38,6 @@ export {
     logAnalysisSummary,
     logStart,
     logInterruption,
-    logError
+    logError,
+    logWarn
 };

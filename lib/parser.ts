@@ -1,3 +1,4 @@
+import { logError, logWarn } from "./logger.js";
 import { BaseTrack, EpisodeAggregated, Track } from "./types.js";
 
 const normalizeString = (str: string): string => {
@@ -25,7 +26,7 @@ const parseTrackString = (trackStr: string): BaseTrack | null => {
 
     const firstComma = cleaned.indexOf(",");
     if (firstComma === -1) {
-      console.warn(`No comma found in: ${cleaned}`);
+      logWarn(`No comma found in: ${cleaned}`);
       return null;
     }
 
@@ -53,9 +54,16 @@ const parseTrackString = (trackStr: string): BaseTrack | null => {
     }
 
     title = title.replace(/[,\s]+$/, "").trim();
+    title = title.replace(/^[^\w\s]+\s*(?=\()/, "").trim();
+
+    const parenthesesMatch = title.match(/^\(([^)]+)\)$/);
+    if (parenthesesMatch) {
+      title = parenthesesMatch[1].trim();
+    }
+
 
     if (!artist || !title || artist.length < 2 || title.length < 2) {
-      console.warn(`Invalid artist/title: "${artist}" / "${title}"`);
+      logWarn(`Invalid artist/title: "${artist}" / "${title}"`);
       return null;
     }
 
@@ -67,8 +75,8 @@ const parseTrackString = (trackStr: string): BaseTrack | null => {
       albumDetails,
       key,
     };
-  } catch (error) {
-    console.error(`Parse error for: ${trackStr}`, error);
+  } catch (error: any) {
+    logError(`Parse error for: ${trackStr}`, error.message);
     return null;
   }
 };
