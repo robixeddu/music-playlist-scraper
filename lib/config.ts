@@ -1,3 +1,5 @@
+import { logWarn } from "./logger.js";
+
 export const TRACKS_FILE = "./data/tracks.json";
 export const EXPORT_FILE = "./data/new_tracks_for_playlist.txt";
 
@@ -14,5 +16,5 @@ export const SELECTORS = {
 };
 
 if (!BASE_URL || !PROGRAM_PATH) {
-    console.warn("⚠️ WARNING: SCRAPER_BASE_URL or SCRAPER_PROGRAM_PATH not found in environment variables. Check your .env file.");
+    logWarn("⚠️ WARNING: SCRAPER_BASE_URL or SCRAPER_PROGRAM_PATH not found in environment variables. Check your .env file.");
 }
