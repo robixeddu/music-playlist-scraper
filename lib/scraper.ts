@@ -54,7 +54,13 @@ const getTracksFromEpisode = async (episodeUrl: string): Promise<Track[]> => {
 
     //console.log(`📚 Found ${allTrackTexts.length} paragraph(s) with tracks`);
 
-    const combinedTrackText = allTrackTexts.join(" // ");
+    let combinedTrackText = allTrackTexts.join(" // ");
+
+    combinedTrackText = combinedTrackText.replace(
+      /(\b(?:Records?|sps|Label|Music|Recordings)\s+)([A-Z][A-Z\s&\/\+\-]{2,}?,)/g,
+      "$1// $2"
+    );
+
     const trackStrings = combinedTrackText
       .split("//")
       .map((t) => t.trim())
