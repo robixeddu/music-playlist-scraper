@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import * as cheerio from "cheerio";
 import { parseTrackString } from "./parser.js";
-import { logError } from "./logger.js";
+import { logError, logSuccessParsing } from "./logger.js";
 import { BASE_URL, SELECTORS } from "./config.js";
 import { Track, BaseTrack } from "./types.js";
 
@@ -83,8 +83,8 @@ const getTracksFromEpisode = async (episodeUrl: string): Promise<Track[]> => {
         return null;
       })
       .filter((t): t is Track => t !== null);
-
-    console.log(`✅ Successfully parsed ${tracks.length} tracks from episode`);
+    
+      logSuccessParsing(tracks.length, episodeTitle)
 
     return tracks;
   } catch (e: any) {
