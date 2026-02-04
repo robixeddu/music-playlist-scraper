@@ -1,5 +1,5 @@
 /node_modules
 /missing_tracks
-/data
+/data/new_tracks_for_playlist.txt
 /dist
 .env
