@@ -58,7 +58,6 @@ SCRAPER_PROGRAM_PATH="/programmi/battiti"
 # TIDAL
 TIDAL_CLIENT_ID="your_client_id"
 TIDAL_CLIENT_SECRET="your_client_secret"
-TIDAL_PLAYLIST_ID="your_playlist_id"
 TIDAL_COUNTRY_CODE="IT"
 ```
 
@@ -82,3 +81,10 @@ On first run, opens a browser authentication URL. After login, the token is save
 
 ## 📄 Missing Tracks
 Tracks not found via the TIDAL API (either absent from the catalogue or unsurfaced by search) are appended to the CSV in `missing_tracks/` for manual addition. The file follows the format used by playlist import tools like TuneMyMusic or Soundiiz.
+
+## ⚠️ Known TIDAL API Limitations
+
+- **Non-deterministic search results**: The search API returns at most 20 results per query and its ranking is inconsistent for niche or low-popularity artists. The same query may surface a track on one run and return completely unrelated results on the next. This is a TIDAL-side behavior outside our control.
+- **Artists not linked to tracks**: TIDAL's JSON:API response does not embed artist data inline on track objects — artists are returned as a separate pool in `included`. The sync picks the best-matching artist from the pool, which can result in a wrong attribution (e.g. "The Normal" instead of "NOT NORMAL") for lesser-known artists.
+- **Album-only tracks**: Tracks that exist only within an album and have low search visibility may not surface via any query variant, even if findable through TIDAL's web search UI.
+- **Rate limiting**: The API enforces rate limits. Delays of 800ms between search calls and 1000ms between playlist writes are in place to mitigate 429 errors.
