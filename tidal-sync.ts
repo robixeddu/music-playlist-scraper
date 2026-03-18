@@ -1,11 +1,13 @@
 import fsPromises from "fs/promises";
 import { getAccessToken } from "./lib/tidalAuth.js";
-import { searchTracks, addTrackToPlaylist, getPlaylistTrackIds, TidalTrack } from "./lib/tidalClient.js";
+import { searchTracks, addTrackToPlaylist, getPlaylistTrackIds, createPlaylist, TidalTrack } from "./lib/tidalClient.js";
 import { computeMatchScore, CONFIDENT_THRESHOLD, UNCERTAIN_THRESHOLD } from "./lib/similarity.js";
 import { logError, logCompletion } from "./lib/logger.js";
 import { EXPORT_FILE } from "./lib/config.js";
 
-const PLAYLIST_ID = process.env.TIDAL_PLAYLIST_ID!;
+const d = new Date();
+const today = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getDate()).padStart(2, "0")}`;
+const PLAYLIST_NAME = `battiti-${today}`;
 const SYNC_REPORT_FILE = "./data/tidal_sync_report.json";
 const MISSING_CSV_FILE = "./missing_tracks/My FromFile Playlist Missing_251112.csv";
 const SEARCH_DELAY_MS = 500;
@@ -50,10 +52,6 @@ async function main(): Promise<void> {
     logError("tidal-sync", "TIDAL_CLIENT_ID not set in .env");
     process.exit(1);
   }
-  if (!PLAYLIST_ID) {
-    logError("tidal-sync", "TIDAL_PLAYLIST_ID not set in .env");
-    process.exit(1);
-  }
 
   const tracks = await loadNewTracks();
   if (tracks.length === 0) {
@@ -64,8 +62,9 @@ async function main(): Promise<void> {
   console.log(`🎵 Syncing ${tracks.length} tracks to TIDAL...\n`);
 
   const token = await getAccessToken();
-  const existingIds = await getPlaylistTrackIds(PLAYLIST_ID, token);
-  console.log(`📋 Playlist already has ${existingIds.size} tracks.\n`);
+  const playlistId = await createPlaylist(PLAYLIST_NAME, token);
+  console.log(`📋 Created playlist "${PLAYLIST_NAME}" (${playlistId})\n`);
+  const existingIds = await getPlaylistTrackIds(playlistId, token);
 
   const results: SyncResult = { added: [], uncertain: [], notFound: [] };
 
@@ -111,7 +110,7 @@ async function main(): Promise<void> {
         continue;
       }
       await sleep(PLAYLIST_DELAY_MS);
-      const added = await addTrackToPlaylist(PLAYLIST_ID, best.candidate.id, token);
+      const added = await addTrackToPlaylist(playlistId, best.candidate.id, token);
       if (added) {
         existingIds.add(best.candidate.id);
         results.added.push({ track: query, tidalId: best.candidate.id, score: best.score });

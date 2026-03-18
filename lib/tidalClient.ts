@@ -72,6 +72,22 @@ export const searchTracks = async (
   }
 };
 
+export const createPlaylist = async (
+  name: string,
+  token: string
+): Promise<string> => {
+  const data = await tidalFetch(`/playlists?countryCode=${COUNTRY_CODE}`, token, {
+    method: "POST",
+    body: JSON.stringify({
+      data: {
+        type: "playlists",
+        attributes: { name, privacy: "PUBLIC" },
+      },
+    }),
+  });
+  return data.data.id;
+};
+
 export const getPlaylistTrackIds = async (
   playlistId: string,
   token: string
