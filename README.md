@@ -18,7 +18,8 @@ A Node.js (TypeScript) project designed to automatically scrape and aggregate th
 | :--- | :--- |
 | **Language** | TypeScript |
 | **Environment** | Node.js 20+ (ES Modules - ESM) |
-| **Core Libraries** | `cheerio`, `dotenv` |
+| **Core Libraries** | `cheerio` (HTML parsing), `dotenv` (env config) |
+| **HTTP** | Native `fetch` (Node.js 20+ built-in, no extra dependency) |
 | **TIDAL Auth** | OAuth 2.1 with PKCE (Authorization Code flow) |
 | **Architecture** | Modular code in `/lib`, centralized configuration (`.env`), compiled output in `/dist` |
 
