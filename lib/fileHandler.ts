@@ -1,4 +1,3 @@
-import fs from "fs";
 import fsPromises from "fs/promises";
 import path from "path";
 import {
@@ -9,25 +8,20 @@ import {
 } from "./logger.js";
 import { TRACKS_FILE, EXPORT_FILE } from "./config.js";
 import { Track, EpisodeAggregated, BaseTrack } from "./types.js";
-import { dir } from "console";
 
 const ensureDataDirectory = async (): Promise<void> => {
   const dirPath = path.dirname(TRACKS_FILE);
-
-  if (!fs.existsSync(dirPath)) {
-    try {
-      await fsPromises.mkdir(dirPath, { recursive: true });
-      logCreatedDirectory(dirPath);
-    } catch (e: any) {
-      logError("creating data directory", e.message);
-      throw e;
-    }
+  try {
+    const created = await fsPromises.mkdir(dirPath, { recursive: true });
+    if (created) logCreatedDirectory(dirPath);
+  } catch (e: any) {
+    logError("creating data directory", e.message);
+    throw e;
   }
 };
 
 const loadPreviousTracks = async (): Promise<Track[]> => {
   try {
-    if (!fs.existsSync(TRACKS_FILE)) return [];
     const data = await fsPromises.readFile(TRACKS_FILE, "utf-8");
     const loadedData: any = JSON.parse(data);
 
@@ -46,10 +40,7 @@ const loadPreviousTracks = async (): Promise<Track[]> => {
         };
 
         episode.tracks.forEach((track: BaseTrack) => {
-          flatTracks.push({
-            ...track,
-            ...episodeContext,
-          } as Track);
+          flatTracks.push({ ...track, ...episodeContext } as Track);
         });
       });
       return flatTracks;
@@ -57,6 +48,7 @@ const loadPreviousTracks = async (): Promise<Track[]> => {
 
     return loadedData as Track[];
   } catch (e: any) {
+    if (e.code === "ENOENT") return [];
     logError("loading tracks.json", e.message);
     return [];
   }
@@ -70,7 +62,6 @@ const saveTracks = async (
       TRACKS_FILE,
       JSON.stringify(aggregatedTracks, null, 2)
     );
-
     logSavedTracks(aggregatedTracks.length);
   } catch (e: any) {
     logError("saving tracks.json", e.message);
@@ -91,10 +82,7 @@ const exportNewTracks = async (tracks: Track[]): Promise<void> => {
           .replace(/ \[([^\]]+)\]/g, "")
           .trim();
 
-      const cleanedTitle = clean(t.title);
-      const cleanedArtist = clean(t.artist);
-
-      return `${cleanedArtist} - ${cleanedTitle}`;
+      return `${clean(t.artist)} - ${clean(t.title)}`;
     })
     .join("\n");
 

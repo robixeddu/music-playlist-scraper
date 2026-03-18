@@ -1,5 +1,5 @@
 import { logError, logWarn } from "./logger.js";
-import { BaseTrack, EpisodeAggregated, Track } from "./types.js";
+import { BaseTrack } from "./types.js";
 
 const normalizeString = (str: string): string => {
   if (!str) return "";
@@ -61,7 +61,6 @@ const parseTrackString = (trackStr: string): BaseTrack | null => {
       title = parenthesesMatch[1].trim();
     }
 
-
     if (!artist || !title || artist.length < 2 || title.length < 2) {
       logWarn(`Invalid artist/title: "${artist}" / "${title}"`);
       return null;
@@ -69,44 +68,11 @@ const parseTrackString = (trackStr: string): BaseTrack | null => {
 
     const key = `${normalizeString(artist)}___${normalizeString(title)}`;
 
-    return {
-      title,
-      artist,
-      albumDetails,
-      key,
-    };
+    return { title, artist, albumDetails, key };
   } catch (error: any) {
     logError(`Parse error for: ${trackStr}`, error.message);
     return null;
   }
 };
 
-const aggregateTracksByEpisode = (tracks: Track[]): EpisodeAggregated[] => {
-  const episodesMap = new Map<string, EpisodeAggregated>();
-
-  tracks.forEach((track) => {
-    const key = track.episodeUrl;
-
-    if (!episodesMap.has(key)) {
-      episodesMap.set(key, {
-        episodeTitle: track.episodeTitle,
-        episodeUrl: track.episodeUrl,
-        date: track.date,
-        tracks: [],
-      });
-    }
-
-    const episodeAggregated = episodesMap.get(key)!;
-
-    episodeAggregated.tracks.push({
-      title: track.title,
-      artist: track.artist,
-      albumDetails: track.albumDetails || "",
-      key: track.key,
-    } as BaseTrack);
-  });
-
-  return Array.from(episodesMap.values());
-};
-
-export { parseTrackString, aggregateTracksByEpisode };
+export { parseTrackString };

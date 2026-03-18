@@ -6,10 +6,6 @@ const logNewTracks = (count: number, totalHistorical: number): void => {
   );
 };
 
-const logEpisodesAggregated = (count: number): void => {
-  console.log(`💾 Found **${count}** episodes aggregated (tracks.json)`);
-};
-
 const logSavedTracks = (aggregatedTracksLength: number) => {
   console.log(
     `💾 Saved ${aggregatedTracksLength} episodes to ${TRACKS_FILE} (aggregated format)`
@@ -25,6 +21,7 @@ const logSuccessParsing = (tracksLength: number, episodeTitle: string) => {
     `✅ Successfully parsed ${tracksLength} tracks from episode ${episodeTitle}`
   );
 };
+
 const logCreatedDirectory = (dirPath: string) => {
   console.log(`Created directory: ${dirPath}`);
 };
@@ -55,12 +52,11 @@ const logError = (context: string, message: string): void => {
 };
 
 const logWarn = (context: string): void => {
-  console.warn(`❌ Warning ${context}`);
+  console.warn(`⚠️ Warning ${context}`);
 };
 
 export {
   logNewTracks,
-  logEpisodesAggregated,
   logSavedTracks,
   logCompletion,
   logSuccessParsing,
