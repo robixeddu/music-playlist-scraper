@@ -10,8 +10,9 @@ const today = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, "0")}/$
 const PLAYLIST_NAME = `battiti-${today}`;
 const SYNC_REPORT_FILE = "./data/tidal_sync_report.json";
 const MISSING_CSV_FILE = "./missing_tracks/My FromFile Playlist Missing_251112.csv";
-const SEARCH_DELAY_MS = 500;
+const SEARCH_DELAY_MS = 800;
 const PLAYLIST_DELAY_MS = 1000;
+const SETUP_DELAY_MS = 2000;
 
 interface SyncResult {
   added: { track: string; tidalId: string; score: number }[];
@@ -65,6 +66,7 @@ async function main(): Promise<void> {
   const playlistId = await createPlaylist(PLAYLIST_NAME, token);
   console.log(`📋 Created playlist "${PLAYLIST_NAME}" (${playlistId})\n`);
   const existingIds = await getPlaylistTrackIds(playlistId, token);
+  await sleep(SETUP_DELAY_MS);
 
   const results: SyncResult = { added: [], uncertain: [], notFound: [] };
 
