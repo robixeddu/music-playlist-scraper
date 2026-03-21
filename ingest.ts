@@ -6,7 +6,7 @@ import { logStart, logAnalysisSummary, logNewTracks, logInterruption, logError }
 import { BATTITI_URL, SKIPPED_COUNT_LIMIT } from "./lib/config.js";
 import { Track } from "./lib/types.js";
 
-async function main(): Promise<void> {
+async function ingest(): Promise<void> {
     await ensureDataDirectory();
 
     logStart(BATTITI_URL);
@@ -53,6 +53,6 @@ async function main(): Promise<void> {
     await exportNewTracks(newTracks);
 }
 
-main().catch((err: any) =>
+ingest().catch((err: any) =>
     logError("application startup", (err as Error).message || "Unknown error")
 );

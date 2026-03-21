@@ -57,4 +57,3 @@ export const computeMatchScore = (
 };
 
 export const CONFIDENT_THRESHOLD = 0.5;
-export const UNCERTAIN_THRESHOLD = 0.15;

@@ -37,12 +37,8 @@ const aggregateTracksByEpisode = (tracks: Track[]): EpisodeAggregated[] => {
       });
     }
 
-    episodesMap.get(key)!.tracks.push({
-      title: track.title,
-      artist: track.artist,
-      albumDetails: track.albumDetails || "",
-      key: track.key,
-    } as BaseTrack);
+    const { episodeTitle, episodeUrl, date, ...baseTrack } = track;
+    episodesMap.get(key)!.tracks.push(baseTrack as BaseTrack);
   });
 
   return Array.from(episodesMap.values());

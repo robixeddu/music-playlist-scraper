@@ -62,7 +62,7 @@ const saveTracks = async (
       TRACKS_FILE,
       JSON.stringify(aggregatedTracks, null, 2)
     );
-    logSavedTracks(aggregatedTracks.length);
+    logSavedTracks(aggregatedTracks.length, TRACKS_FILE);
   } catch (e: any) {
     logError("saving tracks.json", e.message);
   }

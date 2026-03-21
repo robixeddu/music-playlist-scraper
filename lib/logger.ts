@@ -1,14 +1,12 @@
-import { TRACKS_FILE } from "./config.js";
-
 const logNewTracks = (count: number, totalHistorical: number): void => {
   console.log(
     `🎧 Found **${count}** new tracks (total historical: ${totalHistorical})`
   );
 };
 
-const logSavedTracks = (aggregatedTracksLength: number) => {
+const logSavedTracks = (aggregatedTracksLength: number, filePath: string) => {
   console.log(
-    `💾 Saved ${aggregatedTracksLength} episodes to ${TRACKS_FILE} (aggregated format)`
+    `💾 Saved ${aggregatedTracksLength} episodes to ${filePath} (aggregated format)`
   );
 };
 

@@ -3,6 +3,8 @@ export interface BaseTrack {
   artist: string;
   albumDetails?: string;
   key: string;
+  genres?: string[];
+  tidalId?: string;
 }
 export interface BaseEpisode {
   episodeTitle: string;
