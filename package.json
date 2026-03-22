@@ -14,8 +14,10 @@
     "precatalog-enrich": "npm run build",
     "genre-playlist": "node dist/genre-playlist.js",
     "pregenre-playlist": "npm run build",
-    "dedup": "node dist/dedup-playlist.js",
-    "prededup": "npm run build"
+    "dedup-global-playlist": "node dist/dedup-global-playlist.js",
+    "prededup": "npm run build",
+    "dedup-genres": "node dist/dedup-genre-playlists.js",
+    "predeup-genres": "npm run build"
   },
   "dependencies": {
     "cheerio": "^1.2.0",

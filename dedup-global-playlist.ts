@@ -38,7 +38,7 @@ const fetchAllTrackIds = async (playlistId: string, token: string): Promise<stri
 const GLOBAL_PLAYLIST_FILE = "./data/global_playlist.json";
 const SAVE_EVERY = 100;
 
-const dedupPlaylist = async () => {
+const dedupGlobalPlaylist = async () => {
   const { id: oldId } = JSON.parse(await fsPromises.readFile(GLOBAL_PLAYLIST_FILE, "utf-8"));
 
   console.log(`🔍 Fetching all tracks from BATTITI (${oldId})...`);
@@ -97,4 +97,4 @@ const dedupPlaylist = async () => {
   }
 };
 
-dedupPlaylist().catch((e) => logError("dedup-playlist", e.message));
+dedupGlobalPlaylist().catch((e) => logError("dedup-playlist", e.message));
