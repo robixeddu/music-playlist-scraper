@@ -11,7 +11,7 @@ import {
   updateAllTracks,
   getKnownEpisodeUrls,
 } from "./lib/aggregation.js";
-import { BATTITI_URL, SKIPPED_COUNT_LIMIT } from "./lib/config.js";
+import { BATTITI_URL, SKIPPED_COUNT_LIMIT, MISSING_TRACKS_FILE } from "./lib/config.js";
 import { getArtistGenres } from "./lib/lastfm.js";
 import { normalizeGenre } from "./lib/genres.js";
 import { getAccessToken } from "./lib/tidalAuth.js";
@@ -120,6 +120,7 @@ const fullSync = async () => {
   let globalAdded = 0;
   const genreAdded: Record<string, number> = {};
   let notFound = 0;
+  const newMissing: string[] = [];
 
   for (let trackIdx = 0; trackIdx < newTracks.length; trackIdx++) {
     token = await getAccessToken();
@@ -144,6 +145,7 @@ const fullSync = async () => {
     if (!match) {
       console.log(`  ❌ Not found on TIDAL\n`);
       notFound++;
+      newMissing.push(`${track.artist} - ${track.title}`);
       continue;
     }
 
@@ -207,8 +209,12 @@ const fullSync = async () => {
     console.log();
   }
 
-  // ─── Step 4: Save tracks.json ──────────────────────────────────────────────
+  // ─── Step 4: Save tracks.json + missing tracks ────────────────────────────
   await saveTracks(aggregateTracksByEpisode(allTracks));
+  if (newMissing.length > 0) {
+    await fsPromises.appendFile(MISSING_TRACKS_FILE, newMissing.join("\n") + "\n");
+    console.log(`📄 ${newMissing.length} missing tracks appended to ${MISSING_TRACKS_FILE}`);
+  }
 
   // ─── Summary ───────────────────────────────────────────────────────────────
   console.log("─".repeat(50));
