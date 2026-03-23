@@ -60,36 +60,28 @@ export const searchTracks = async (
 
     const included: any[] = data?.included ?? [];
 
-    const includedArtists = included.filter((r: any) => r.type === "artists");
-
-    // Populate caller-provided map with id → name
-    if (artistById) {
-      for (const a of includedArtists) {
-        if (a.id && a.attributes?.name) artistById.set(a.id, a.attributes.name);
+    // Build id → name map for all included artists
+    const localArtistMap = new Map<string, string>();
+    for (const a of included.filter((r: any) => r.type === "artists")) {
+      if (a.id && a.attributes?.name) {
+        localArtistMap.set(a.id, a.attributes.name);
+        artistById?.set(a.id, a.attributes.name);
       }
     }
 
-    const artistNames = includedArtists
-      .map((a: any) => a.attributes?.name ?? "")
-      .filter(Boolean);
-
-    // Pick the included artist that best matches our expected artist.
-    // TIDAL does not link artists to tracks inline — we pick from the pool.
-    const bestArtist = artistNames.length > 0
-      ? artistNames.reduce((best: string, candidate: string) => {
-          const score = computeMatchScore(expectedArtist, "", candidate, "").artistScore;
-          const bestScore = computeMatchScore(expectedArtist, "", best, "").artistScore;
-          return score > bestScore ? candidate : best;
-        }, artistNames[0])
-      : expectedArtist;
-
     return included
       .filter((r: any) => r.type === "tracks")
-      .map((t: any) => ({
-        id: t.id,
-        title: t.attributes?.title ?? "",
-        artistName: bestArtist,
-      }))
+      .map((t: any) => {
+        // Use each track's own linked artists, not a pooled guess
+        const artistIds: string[] = t.relationships?.artists?.data?.map((a: any) => a.id) ?? [];
+        const artistName = artistIds.map((id) => localArtistMap.get(id)).find(Boolean)
+          ?? expectedArtist;
+        return {
+          id: t.id,
+          title: t.attributes?.title ?? "",
+          artistName,
+        };
+      })
       .filter((t) => t.title);
   } catch (e: any) {
     logError(`TIDAL search "${query}"`, e.message);
@@ -125,77 +117,80 @@ export const findTidalMatch = async (
       ...computeMatchScore(artist, title, c.artistName, c.title),
     }));
 
-  await sleep(SEARCH_DELAY_MS);
-  const primary = await searchTracks(`${artist} ${title}`, artist, token, artistById);
-  const primaryScored = scoreAll(primary);
-  let best = primaryScored.length > 0
-    ? primaryScored.reduce((a, b) => (a.score > b.score ? a : b))
-    : null;
-
-  if (!best || best.score < CONFIDENT_THRESHOLD) {
-    await sleep(SEARCH_DELAY_MS);
-    const fbTitle = await searchTracks(title, artist, token, artistById);
-    await sleep(SEARCH_DELAY_MS);
-    const fbArtist = await searchTracks(artist, artist, token, artistById);
-    await sleep(SEARCH_DELAY_MS);
-    const fbDot = await searchTracks(`${artist} ${title}.`, artist, token, artistById);
-    const fbClean = clean !== title
-      ? (await sleep(SEARCH_DELAY_MS), await searchTracks(`${artist} ${clean}`, artist, token, artistById))
-      : [];
-
-    const merged = [
-      ...new Map(
-        [...primary, ...fbTitle, ...fbArtist, ...fbDot, ...fbClean].map((c) => [c.id, c])
-      ).values(),
-    ];
-    if (merged.length > 0) {
-      best = scoreAll(merged).reduce((a, b) => (a.score > b.score ? a : b));
-    }
-  }
-
-  if (!best || best.score < CONFIDENT_THRESHOLD) return null;
-
-  // Verify the actual TIDAL artist to prevent cover-song mismatches
-  // (the pooled bestArtist can be erroneously assigned to unrelated tracks)
-  try {
-    await sleep(400);
-    const rel = await tidalFetch(
-      `/tracks/${best.candidate.id}/relationships/artists?countryCode=${COUNTRY_CODE}`,
-      token
-    );
-    const artistIds: string[] = (rel?.data ?? []).map((a: any) => a.id);
-
-    // Try map first; if not found, fetch from API
-    let actualArtist = artistIds.map((id) => artistById.get(id)).find(Boolean);
-    if (!actualArtist && artistIds.length > 0) {
+  // Verify a single candidate: fetches the real artist and re-scores.
+  // Returns a TidalMatch if verified, null if rejected, undefined if artist lookup failed.
+  const verify = async (
+    candidate: ReturnType<typeof scoreAll>[number]
+  ): Promise<TidalMatch | null | undefined> => {
+    try {
       await sleep(400);
-      const artistData = await tidalFetch(
-        `/artists/${artistIds[0]}?countryCode=${COUNTRY_CODE}`,
+      const rel = await tidalFetch(
+        `/tracks/${candidate.candidate.id}/relationships/artists?countryCode=${COUNTRY_CODE}`,
         token
       );
-      actualArtist = artistData?.data?.attributes?.name ?? undefined;
-    }
+      const artistIds: string[] = (rel?.data ?? []).map((a: any) => a.id);
 
-    if (actualArtist) {
-      const verified = computeMatchScore(artist, title, actualArtist, best.candidate.title);
-      if (verified.score < CONFIDENT_THRESHOLD) return null;
-      return {
-        id: best.candidate.id,
-        score: verified.score,
-        artistScore: verified.artistScore,
-        titleScore: verified.titleScore,
-      };
+      let actualArtist = artistIds.map((id) => artistById.get(id)).find(Boolean);
+      if (!actualArtist && artistIds.length > 0) {
+        await sleep(400);
+        const artistData = await tidalFetch(
+          `/artists/${artistIds[0]}?countryCode=${COUNTRY_CODE}`,
+          token
+        );
+        actualArtist = artistData?.data?.attributes?.name ?? undefined;
+      }
+
+      if (!actualArtist) return undefined; // lookup failed, skip
+      const verified = computeMatchScore(artist, title, actualArtist, candidate.candidate.title);
+      if (verified.score < CONFIDENT_THRESHOLD) return null; // wrong artist confirmed
+      return { id: candidate.candidate.id, ...verified };
+    } catch {
+      return undefined; // network error, skip
     }
-  } catch {
-    // Verification failed — fall through to return unverified best
+  };
+
+  await sleep(SEARCH_DELAY_MS);
+  const primary = await searchTracks(`${artist} ${title}`, artist, token, artistById);
+
+  // Build full candidate pool — run fallbacks immediately so reversed queries
+  // can surface tracks that primary search buries (e.g. niche catalog artists)
+  await sleep(SEARCH_DELAY_MS);
+  const fbTitle = await searchTracks(title, artist, token, artistById);
+  await sleep(SEARCH_DELAY_MS);
+  const fbArtist = await searchTracks(artist, artist, token, artistById);
+  await sleep(SEARCH_DELAY_MS);
+  const fbDot = await searchTracks(`${artist} ${title}.`, artist, token, artistById);
+  await sleep(SEARCH_DELAY_MS);
+  const fbReversed = await searchTracks(`${title} ${artist}`, artist, token, artistById);
+  const fbClean = clean !== title
+    ? (await sleep(SEARCH_DELAY_MS), await searchTracks(`${artist} ${clean}`, artist, token, artistById))
+    : [];
+
+  const merged = [
+    ...new Map(
+      [...primary, ...fbTitle, ...fbArtist, ...fbDot, ...fbReversed, ...fbClean].map((c) => [c.id, c])
+    ).values(),
+  ];
+
+  // Sort candidates by score descending, verify until one passes
+  const topCandidates = scoreAll(merged)
+    .filter((s) => s.score >= CONFIDENT_THRESHOLD)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 20);
+
+  let anyConfirmedWrong = false;
+  for (const candidate of topCandidates) {
+    const result = await verify(candidate);
+    if (result !== null && result !== undefined) return result; // verified ✓
+    if (result === null) anyConfirmedWrong = true;             // wrong artist, try next
+    // undefined = lookup failed, try next
   }
 
-  return {
-    id: best.candidate.id,
-    score: best.score,
-    artistScore: best.artistScore,
-    titleScore: best.titleScore,
-  };
+  // Return unverified best only if no candidate was explicitly rejected (API failures only)
+  if (anyConfirmedWrong) return null;
+  const best = topCandidates[0];
+  if (!best) return null;
+  return { id: best.candidate.id, score: best.score, artistScore: best.artistScore, titleScore: best.titleScore };
 };
 
 export const createPlaylist = async (
