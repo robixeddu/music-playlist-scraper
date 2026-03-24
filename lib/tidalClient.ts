@@ -178,19 +178,13 @@ export const findTidalMatch = async (
     .sort((a, b) => b.score - a.score)
     .slice(0, 20);
 
-  let anyConfirmedWrong = false;
   for (const candidate of topCandidates) {
     const result = await verify(candidate);
     if (result !== null && result !== undefined) return result; // verified ✓
-    if (result === null) anyConfirmedWrong = true;             // wrong artist, try next
-    // undefined = lookup failed, try next
+    // null = wrong artist confirmed, undefined = lookup failed — try next in both cases
   }
 
-  // Return unverified best only if no candidate was explicitly rejected (API failures only)
-  if (anyConfirmedWrong) return null;
-  const best = topCandidates[0];
-  if (!best) return null;
-  return { id: best.candidate.id, score: best.score, artistScore: best.artistScore, titleScore: best.titleScore };
+  return null;
 };
 
 export const createPlaylist = async (
