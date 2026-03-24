@@ -23,7 +23,7 @@ const BLACKLIST = new Set([
   // Numeric / junk tags
   "11", "the flourishing zoo", "try", "60s",
   // Overly specific / non-genre
-  "british invasion", "deconstructed club", "epic collage", "sound collage", "radio nova", "radio nova tunes", "radio nova 100", "radio nova 100 fm", "radio nova 100fm", "radio nova 100.0",
+  "british invasion", "deconstructed club", "epic collage", "sound collage", "radio nova", "radio nova tunes", "radio nova 100", "radio nova 100 fm", "radio nova 100fm", "radio nova 100.0", "one man band",
 ]);
 
 // Merge formatting variants and semantic duplicates into canonical forms
@@ -88,6 +88,7 @@ const ALIASES: Record<string, string> = {
   "ska punk": "ska",
   "ska-punk": "ska",
   "ska-jazz": "ska",
+  "ska jazz": "ska",
 
   // New wave (all variants → new wave)
   "dark wave": "new wave",
@@ -177,6 +178,7 @@ const ALIASES: Record<string, string> = {
   "chicago blues": "blues",
   "blues rock": "blues",
   "jump blues": "blues",
+  "desert blues": "blues",
   
   // Soul (all variants → soul)
   "soul": "soul",
