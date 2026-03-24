@@ -9,7 +9,10 @@ const BLACKLIST = new Set([
   "chinese", "china", "indian", "india", "turkish", "turkey",
   "mexican", "mexico", "colombian", "colombia", "brazilian", "brazil",
   "suomi", "scottish", "welsh", "belgian", "swiss", "lebanese",
-  "swedish", "senegalese", "nigerian", "kenyan", "ethiopian",
+  "swedish", "sweden", "senegalese", "nigerian", "kenyan", "ethiopian",
+  "morocco", "bosnian", "bosnia", "guatemala", "persian", "nigeria", "belgium",
+  "lebanon", "brasil", "palestine", "london", "african", "africa", "jamanican", "jamaica",
+  "chicago", "detroit", "new york", "new york city", "nyc", "brooklyn", "berlin",
   // Instruments
   "guitar", "trumpet", "saxophone", "sitar", "piano", "drums", "bass",
   "violin", "cello", "flute", "keyboards", "organ", "synthesizer", "synth",
@@ -20,10 +23,7 @@ const BLACKLIST = new Set([
   // Numeric / junk tags
   "11", "the flourishing zoo", "try", "60s",
   // Overly specific / non-genre
-  "british invasion", "deconstructed club", "epic collage", "sound collage",
-  // Geographic (extra)
-  "morocco", "bosnian", "bosnia", "guatemala", "persian", "nigeria", "belgium",
-  "lebanon", "brasil", "palestine", "london", "african", "africa",
+  "british invasion", "deconstructed club", "epic collage", "sound collage", "radio nova", "radio nova tunes", "radio nova 100", "radio nova 100 fm", "radio nova 100fm", "radio nova 100.0",
 ]);
 
 // Merge formatting variants and semantic duplicates into canonical forms
@@ -69,6 +69,7 @@ const ALIASES: Record<string, string> = {
   "belgian jazz": "jazz",
   "arabic jazz": "jazz",
   "chamber jazz": "jazz",
+  "aacm": "jazz",
 
   // Post-punk (all variants → post-punk)
   "post punk": "post-punk",
@@ -78,6 +79,15 @@ const ALIASES: Record<string, string> = {
   "crank-wave": "post-punk",
   "crank wave": "post-punk",
   "crankwave": "post-punk",
+
+  // Ska (all variants → ska)
+  "ska": "ska",
+  "2 tone": "ska",
+  "two tone": "ska",
+  "2-tone": "ska",
+  "ska punk": "ska",
+  "ska-punk": "ska",
+  "ska-jazz": "ska",
 
   // New wave (all variants → new wave)
   "dark wave": "new wave",
@@ -154,7 +164,9 @@ const ALIASES: Record<string, string> = {
   "reggae": "reggae",
   "dancehall": "reggae",
   "roots reggae": "reggae",
+  "rootes": "reggae",
   "rocksteady": "reggae",
+  "dub reggae": "reggae",
 
   // Blues (all variants → blues)
   "blues": "blues",
