@@ -63271,9 +63271,9 @@
         "albumDetails": ", da \"Regina Silva\" – Pointless Geometry",
         "key": "joanna_duda___noctuae",
         "genres": [
-          "electronic",
-          "polish",
-          "jazz"
+          "ambient",
+          "experimental",
+          "electroacoustic"
         ]
       },
       {
@@ -63281,26 +63281,45 @@
         "artist": "JELENA ĆIRIĆ / SNORRI HALLGRÍMSSON / CÉCILE LACHARME / OLIVER PATRICE WEDER",
         "albumDetails": ", da \"Tramuntana Tapes II\" – Moderna Records",
         "key": "jelena_ciric_snorri_hallgrimsson_cecile_lacharme_oliver_patrice_weder___sunlight",
-        "tidalId": "464509855"
+        "genres": [
+          "ambient",
+          "electroacoustic",
+          "experimental"
+        ]
       },
       {
         "title": "Pangea Suite #1",
         "artist": "LUKE STEWART / AYMERIC AVICE / CHAD TAYLOR",
         "albumDetails": ", da \"Deep In The Earth High In The Sky\" – Rogueart",
-        "key": "luke_stewart_aymeric_avice_chad_taylor___pangea_suite_1"
+        "key": "luke_stewart_aymeric_avice_chad_taylor___pangea_suite_1",
+        "genres": [
+          "free improvisation",
+          "experimental",
+          "jazz"
+        ]
       },
       {
         "title": "The Dala Effect",
         "artist": "SIMO CELL & ABDULLAH MINIAWY",
         "albumDetails": ", da \"Dying Is The Internet\" – Dekmantel",
         "key": "simo_cell_abdullah_miniawy___the_dala_effect",
+        "genres": [
+          "electronic",
+          "ambient",
+          "experimental"
+        ],
         "tidalId": "488665958"
       },
       {
         "title": "L'Aia, 9",
         "artist": "REWIRE FESTIVAL",
         "albumDetails": "-12 aprile 2026",
-        "key": "rewire_festival___l'aia_9"
+        "key": "rewire_festival___l'aia_9",
+        "genres": [
+          "electronic",
+          "experimental",
+          "ambient"
+        ]
       },
       {
         "title": "tour italiano, 7",
@@ -63308,9 +63327,9 @@
         "albumDetails": "-12 aprile 2026",
         "key": "bitchin_bajas___tour_italiano_7",
         "genres": [
-          "experimental",
-          "rock",
-          "psychedelic"
+          "instrumental",
+          "ambient",
+          "experimental"
         ]
       },
       {
@@ -63318,6 +63337,11 @@
         "artist": "CATERINA BARBIERI & BENDIK GISKE",
         "albumDetails": ", da \"At Source\" - Light-years",
         "key": "caterina_barbieri_bendik_giske___alignment_orbits",
+        "genres": [
+          "ambient",
+          "experimental",
+          "electroacoustic"
+        ],
         "tidalId": "462444576"
       },
       {
@@ -63326,9 +63350,9 @@
         "albumDetails": ", da \"Source of Denial\" - Crammed Discs",
         "key": "nihiloxica___postloya",
         "genres": [
+          "dub",
           "electronic",
-          "uganda",
-          "tribal"
+          "experimental"
         ],
         "tidalId": "318015393"
       },
@@ -63338,9 +63362,9 @@
         "albumDetails": ", da \"Inland See\" - Drag City",
         "key": "bitchin_bajas___reno",
         "genres": [
-          "experimental",
-          "rock",
-          "psychedelic"
+          "instrumental",
+          "ambient",
+          "experimental"
         ],
         "tidalId": "440929853"
       },
@@ -63350,7 +63374,9 @@
         "albumDetails": ", da \"What If We Align Our Breath\" – Kit Records",
         "key": "andreas_tschopp___sounding_the_voice_feat_koleka_putuma",
         "genres": [
-          "jazz"
+          "spoken word",
+          "experimental",
+          "electronic"
         ],
         "tidalId": "497628145"
       },
@@ -63360,7 +63386,9 @@
         "albumDetails": ", da \"What If We Align Our Breath\" – Kit Records",
         "key": "andreas_tschopp___iqhude_a_tale_of_horns_and_bones",
         "genres": [
-          "jazz"
+          "spoken word",
+          "experimental",
+          "electronic"
         ],
         "tidalId": "497628147"
       },
@@ -63370,8 +63398,8 @@
         "albumDetails": ", da \"Bubble Bath For Giants\" – CNF",
         "key": "carlos_nino_friends___dancingintheplanetarium",
         "genres": [
+          "electronic",
           "ambient",
-          "jazz",
           "experimental"
         ]
       },
@@ -63381,8 +63409,8 @@
         "albumDetails": ", da \"Bubble Bath For Giants\" – CNF",
         "key": "carlos_nino_friends___visions_by_the_fire_shells",
         "genres": [
+          "electronic",
           "ambient",
-          "jazz",
           "experimental"
         ]
       },
@@ -63392,9 +63420,9 @@
         "albumDetails": ", da \"The Smashing Machine\" – Warp Records",
         "key": "nala_sinephro___dawn",
         "genres": [
-          "jazz",
           "ambient",
-          "electronic"
+          "electronic",
+          "experimental"
         ],
         "tidalId": "459940864"
       },
@@ -63404,9 +63432,9 @@
         "albumDetails": ", da \"The Smashing Machine\" – Warp Records",
         "key": "nala_sinephro___the_smashing_machine",
         "genres": [
-          "jazz",
           "ambient",
-          "electronic"
+          "electronic",
+          "experimental"
         ],
         "tidalId": "459940866"
       },
@@ -63416,8 +63444,9 @@
         "albumDetails": ", da \"Extra Stars\" – International Anthem",
         "key": "gregory_uhlmann___days",
         "genres": [
-          "rock",
-          "jazz rock"
+          "ambient",
+          "electronic",
+          "minimal"
         ],
         "tidalId": "482361551"
       }

@@ -5,3 +5,4 @@
 /dist
 .env
 .tidal_token.json
+/logs

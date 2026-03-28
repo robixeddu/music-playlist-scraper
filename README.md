@@ -5,15 +5,18 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
 ## Features
 
 - Scrapes episodes from RAI Play Sound, extracts artist/title/album
-- Genre tagging via Last.fm API (cached per artist)
+- Genre tagging via **Claude Haiku** (`claude-haiku-4-5`) — one API call per artist, cached, returns 1–3 genres from an approved list
 - TIDAL matching with fuzzy scoring (Jaccard) + real artist verification to prevent cover-song mismatches
 - Distributes tracks across three levels of playlists (no duplicates):
   - `battiti-YYYY/MM/DD` — daily playlist for each run
   - `BATTITI` — global persistent playlist
   - `BATTITI-{genre}` — one playlist per canonical genre
+- **Auto-creates new genre playlists** as new genres accumulate — no manual setup needed, review them on TIDAL later
 - Token auto-refresh every 50 tracks (handles long runs without 401 errors)
 - Auto-recreates 404 playlists
 - Retry logic for 429 (rate limit) and 5xx errors
+- Fail-fast on corrupted `tracks.json` (SyntaxError → process exits with clear message)
+- Automated via system cron: every Tuesday and Friday at 09:03
 
 ## Technology
 
@@ -21,29 +24,32 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
 |---|---|
 | Language | TypeScript (ES Modules) |
 | Runtime | Node.js 20+ |
-| Libraries | `cheerio` (HTML parsing), `dotenv` |
+| Libraries | `cheerio` (HTML parsing), `dotenv`, `@anthropic-ai/sdk` |
 | HTTP | Native `fetch` |
 | TIDAL Auth | OAuth 2.1 PKCE |
+| Genre AI | Anthropic Claude Haiku |
 
 ## Project Structure
 
 ```
 ├── full-sync.ts              # Main entrypoint: scrape + tag + match + distribute
 ├── ingest.ts                 # Scrape only (no TIDAL)
-├── genre-enrich.ts           # Backfill genres via Last.fm on all tracks
+├── genre-enrich.ts           # Backfill genres via Claude on all tracks
 ├── catalog-enrich.ts         # Backfill TIDAL IDs for genre-tagged tracks
 ├── genre-playlist.ts         # Rebuild/update all genre playlists from tracks.json
 ├── dedup-global-playlist.ts  # Deduplicate global BATTITI playlist
 ├── dedup-genre-playlists.ts  # Deduplicate all genre playlists
+├── scripts/
+│   └── sync-and-notify.sh   # Cron wrapper: runs npm start, saves log to logs/
 ├── lib/
 │   ├── scraper.ts            # HTML fetch + episode parsing
 │   ├── parser.ts             # Track string parsing ("Artist, Title, da Album")
 │   ├── aggregation.ts        # Flat tracks ↔ EpisodeAggregated, dedup by key
-│   ├── fileHandler.ts        # Read/write tracks.json
+│   ├── fileHandler.ts        # Read/write tracks.json (fail-fast on JSON errors)
 │   ├── tidalAuth.ts          # OAuth 2.1 PKCE, token persistence + refresh
 │   ├── tidalClient.ts        # Search, match, playlist CRUD
 │   ├── similarity.ts         # Jaccard scoring for track matching
-│   ├── lastfm.ts             # Artist genre lookup
+│   ├── claudeGenres.ts       # Genre tagging via Claude Haiku
 │   ├── genres.ts             # BLACKLIST + ALIASES for genre normalization
 │   ├── types.ts              # Shared types
 │   ├── config.ts             # Env-based constants
@@ -63,7 +69,7 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
   - Platform: **WEB**
   - Redirect URI: `http://localhost:3000/callback`
   - Scope: `playlists.write`
-- Last.fm API key at [last.fm/api](https://www.last.fm/api)
+- Anthropic API key at [console.anthropic.com](https://console.anthropic.com)
 
 ### 2. Install
 
@@ -81,8 +87,16 @@ TIDAL_CLIENT_ID="your_client_id"
 TIDAL_CLIENT_SECRET="your_client_secret"
 TIDAL_COUNTRY_CODE="IT"
 
-LASTFM_API_KEY="your_lastfm_key"
+ANTHROPIC_API_KEY="your_anthropic_key"
 ```
+
+### 4. First run (TIDAL auth)
+
+```bash
+npm start
+```
+
+On first run, the terminal prints a TIDAL OAuth URL. Open it in the browser, authorize, and the token is saved to `.tidal_token.json` for subsequent runs.
 
 ## Usage
 
@@ -92,7 +106,7 @@ LASTFM_API_KEY="your_lastfm_key"
 npm start
 ```
 
-Scrapes new episodes, tags genres, finds TIDAL matches, and distributes to all playlists.
+Scrapes new episodes, tags genres via Claude, finds TIDAL matches, and distributes to all playlists. New genre playlists are created automatically the first time a genre appears.
 
 ### Scrape only (no TIDAL)
 
@@ -103,7 +117,7 @@ npm run scrape
 ### Backfill tools (for historical data)
 
 ```bash
-npm run genre-enrich       # Tag genres for all tracks in tracks.json
+npm run genre-enrich       # Tag genres for all tracks in tracks.json (via Claude)
 npm run catalog-enrich     # Find TIDAL IDs for genre-tagged tracks
 npm run genre-playlist     # Redistribute all tracks into genre playlists
 ```
@@ -117,16 +131,35 @@ npm run dedup-genres            # Dedup all genre playlists
 
 ## Genre System
 
-`lib/genres.ts` normalizes raw Last.fm tags into canonical genres:
+### Claude Haiku tagger (`lib/claudeGenres.ts`)
 
-- **BLACKLIST**: geographic tags (italian, french…), instruments (guitar, piano…), junk tags
-- **ALIASES**: semantic merges (e.g. `free jazz` → `jazz`, `screamo` → `post-hardcore` → `rock`, `darkwave` → `new wave`)
+Each artist is classified once per run (cached). Claude returns 1–3 genres from a fixed approved list (`APPROVED_GENRES` in `claudeGenres.ts`). This replaces crowd-sourced Last.fm tags, which were noisy and geographically biased.
 
-Genre playlists are only created when a genre has at least 10 tracks.
+### Normalization (`lib/genres.ts`)
+
+- **BLACKLIST**: geographic tags (country names, cities, nationalities, pan-regional terms), instruments, roles, junk tags. Rule: **any geographic name goes in the blacklist**.
+- **ALIASES**: semantic merges into canonical forms (e.g. `free jazz` → `jazz`, `darkwave` → `new wave`, `tribal` → `world`). Rule: **any variant of an existing genre goes in aliases**.
+
+### Auto-playlist creation
+
+- **During `npm start`**: a new `BATTITI-{genre}` playlist is created on TIDAL immediately when the first track of a new genre appears.
+- **During `npm run genre-playlist`**: playlists are created only for genres with ≥ 10 tracks (`MIN_TRACKS`).
+
+New playlists are logged to the console and persisted in `data/genre_playlists.json`. Review and clean them up manually on TIDAL if needed.
+
+## Automation
+
+The sync runs automatically via system cron (`crontab -e`):
+
+```
+3 9 * * 2,5   /path/to/scripts/sync-and-notify.sh
+```
+
+Logs are saved to `logs/battiti-sync-YYYY-MM-DD.log` (gitignored).
 
 ## Known TIDAL API Limitations
 
-- **No playlist listing**: TIDAL API v2 does not support listing or searching user-owned playlists by name. Playlist IDs must be persisted in `genre_playlists.json`.
+- **No playlist listing**: TIDAL API v2 does not support listing or searching user-owned playlists by name. Playlist IDs must be persisted in `genre_playlists.json`. If lost, recover with `git show <commit>:data/genre_playlists.json`.
+- **DELETE requires `meta.itemId`**: Removing a track from a playlist requires the `meta.itemId` UUID (not the track position) in the DELETE body. Fetch playlist items first to obtain it.
 - **Non-deterministic search**: Results vary between runs for niche artists. Multi-fallback search strategy mitigates this.
-- **Artists not linked to tracks inline**: Artist data is returned as a separate pool in `included` — the best-matching artist is selected from the pool, which can misattribute lesser-known artists.
 - **Rate limiting**: 429 errors are retried with exponential backoff (5s/10s/15s). Search calls are spaced 800ms apart.
