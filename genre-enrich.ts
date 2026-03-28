@@ -1,7 +1,7 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
 import { TRACKS_FILE } from "./lib/config.js";
-import { getArtistGenres } from "./lib/lastfm.js";
+import { getArtistGenres } from "./lib/claudeGenres.js";
 import { EpisodeAggregated, BaseTrack } from "./lib/types.js";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));

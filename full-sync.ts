@@ -12,7 +12,7 @@ import {
   getKnownEpisodeUrls,
 } from "./lib/aggregation.js";
 import { BATTITI_URL, SKIPPED_COUNT_LIMIT, MISSING_TRACKS_FILE } from "./lib/config.js";
-import { getArtistGenres } from "./lib/lastfm.js";
+import { getArtistGenres } from "./lib/claudeGenres.js";
 import { normalizeGenre } from "./lib/genres.js";
 import { getAccessToken } from "./lib/tidalAuth.js";
 import {
@@ -130,7 +130,7 @@ const fullSync = async () => {
     // Genre (cached per artist)
     const artistKey = track.artist.toLowerCase();
     if (!artistGenreCache.has(artistKey)) {
-      const genres = await getArtistGenres(track.artist);
+      const genres = await getArtistGenres(track.artist, track.title);
       artistGenreCache.set(artistKey, genres);
       await sleep(GENRE_DELAY_MS);
     }
