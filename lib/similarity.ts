@@ -49,7 +49,7 @@ export const computeMatchScore = (
   // When the title matches very well but the artist only partially matches
   // (e.g. "NOT NORMAL" vs "The Normal"), a weighted score avoids false negatives
   // while still requiring some artist signal.
-  const score = titleScore >= 0.8 && artistScore >= 0.2
+  const score = titleScore >= 0.8 && artistScore >= 0.4
     ? titleScore * 0.6 + artistScore * 0.4
     : Math.min(artistScore, titleScore);
 
