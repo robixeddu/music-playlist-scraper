@@ -8,7 +8,7 @@ const BLACKLIST = new Set([
   "norwegian", "norway", "finnish", "finland", "danish", "denmark",
   "dutch", "netherlands", "australian", "australia", "american", "usa",
   "korean", "korea", "chinese", "china", "indian", "india", "turkish", "turkey",
-  "mexican", "mexico", "colombian", "colombia", "brazilian", "brazil",
+  "mexican", "mexico", "colombian", "colombia", "brazilian", "brazil", "brasil",
   "suomi", "scottish", "welsh", "belgian", "belgium", "swiss", "switzerland",
   "lebanese", "lebanon", "swedish", "sweden", "senegalese", "senegal",
   "nigerian", "nigeria", "kenyan", "kenya", "ethiopian", "ethiopia",
