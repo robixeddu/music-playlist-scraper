@@ -47,10 +47,13 @@ export const getArtistGenres = async (
       messages: [{ role: "user", content }],
     });
 
-    const text =
+    const raw =
       response.content[0].type === "text"
         ? response.content[0].text.trim()
         : "[]";
+
+    // Strip markdown code block if present: ```json ... ``` or ``` ... ```
+    const text = raw.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "").trim();
 
     const genres: unknown = JSON.parse(text);
     if (!Array.isArray(genres)) return [];
