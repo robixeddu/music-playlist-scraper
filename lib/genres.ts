@@ -1,18 +1,52 @@
 const BLACKLIST = new Set([
-  // Geographic / national
+  // Rule: ANY geographic name (country, region, city, nationality adjective) is blacklisted.
+  // Countries / nationalities
   "italian", "italy", "swedish", "japanese", "japan", "french", "france",
   "british", "uk", "english", "irish", "ireland", "canadian", "canada",
-  "ghana", "mali", "arabic", "arab", "egyptian", "egypt", "german", "germany",
-  "spanish", "spain", "portuguese", "portugal", "norwegian", "norway",
-  "finnish", "finland", "danish", "denmark", "dutch", "netherlands",
-  "australian", "australia", "american", "usa", "korean", "korea",
-  "chinese", "china", "indian", "india", "turkish", "turkey",
+  "ghana", "ghanaian", "mali", "malian", "arabic", "arab", "egyptian", "egypt",
+  "german", "germany", "spanish", "spain", "portuguese", "portugal",
+  "norwegian", "norway", "finnish", "finland", "danish", "denmark",
+  "dutch", "netherlands", "australian", "australia", "american", "usa",
+  "korean", "korea", "chinese", "china", "indian", "india", "turkish", "turkey",
   "mexican", "mexico", "colombian", "colombia", "brazilian", "brazil",
-  "suomi", "scottish", "welsh", "belgian", "swiss", "lebanese",
-  "swedish", "sweden", "senegalese", "nigerian", "kenyan", "ethiopian",
-  "morocco", "bosnian", "bosnia", "guatemala", "persian", "nigeria", "belgium",
-  "lebanon", "brasil", "palestine", "london", "african", "africa", "jamanican", "jamaica",
-  "chicago", "detroit", "new york", "new york city", "nyc", "brooklyn", "berlin",
+  "suomi", "scottish", "welsh", "belgian", "belgium", "swiss", "switzerland",
+  "lebanese", "lebanon", "swedish", "sweden", "senegalese", "senegal",
+  "nigerian", "nigeria", "kenyan", "kenya", "ethiopian", "ethiopia",
+  "moroccan", "morocco", "bosnian", "bosnia", "guatemalan", "guatemala",
+  "persian", "iranian", "iran", "palestinian", "palestine",
+  "jamaican", "jamaica", "cuban", "cuba", "argentine", "argentina",
+  "ugandan", "uganda", "tanzanian", "tanzania", "congolese", "congo",
+  "zimbabwean", "zimbabwe", "south african", "south africa",
+  "algerian", "algeria", "tunisian", "tunisia", "libyan", "libya",
+  "sudanese", "sudan", "rwandan", "rwanda", "cameroonian", "cameroon",
+  "ivorian", "ivory coast", "beninese", "benin", "togolese", "togo",
+  "bangladeshi", "bangladesh", "pakistani", "pakistan", "sri lankan", "sri lanka",
+  "thai", "thailand", "vietnamese", "vietnam", "indonesian", "indonesia",
+  "philippine", "philippines", "malaysian", "malaysia", "singaporean", "singapore",
+  "greek", "greece", "romanian", "romania", "hungarian", "hungary",
+  "czech", "poland", "polish", "ukrainian", "ukraine", "russian", "russia",
+  "swedish", "austrian", "austria", "belgian", "croatian", "croatia",
+  "serbian", "serbia", "bulgarian", "bulgaria", "slovak", "slovakia",
+  "venezuelan", "venezuela", "peruvian", "peru", "chilean", "chile",
+  "ecuadorian", "ecuador", "bolivian", "bolivia", "uruguayan", "uruguay",
+  "paraguayan", "paraguay", "honduran", "honduras", "salvadoran", "el salvador",
+  "nicaraguan", "nicaragua", "costa rican", "costa rica", "panamanian", "panama",
+  "puerto rican", "puerto rico", "haitian", "haiti", "dominican", "dominican republic",
+  // Cities / regions
+  "london", "berlin", "paris", "new york", "new york city", "nyc", "brooklyn",
+  "chicago", "detroit", "los angeles", "la", "atlanta", "houston", "miami",
+  "toronto", "montreal", "amsterdam", "stockholm", "oslo", "copenhagen",
+  "helsinki", "vienna", "brussels", "zurich", "rome", "milan", "naples",
+  "madrid", "barcelona", "lisbon", "porto", "moscow", "tokyo", "seoul",
+  "beijing", "shanghai", "mumbai", "delhi", "lagos", "accra", "nairobi",
+  "johannesburg", "cape town", "kinshasa", "cairo", "casablanca", "tunis",
+  "buenos aires", "santiago", "lima", "bogota", "caracas", "havana",
+  // Pan-geographic
+  "latin", "latino", "latina", "latin america", "south america", "north america",
+  "west africa", "east africa", "central africa", "north africa", "sub-saharan africa",
+  "middle east", "southeast asia", "south asia", "east asia", "pacific",
+  "african", "africa", "european", "europe", "asian", "asia", "nordic",
+  "scandinavian", "caribbean", "mediterranean", "balkan",
   // Instruments
   "guitar", "trumpet", "saxophone", "sitar", "piano", "drums", "bass",
   "violin", "cello", "flute", "keyboards", "organ", "synthesizer", "synth",
@@ -23,7 +57,10 @@ const BLACKLIST = new Set([
   // Numeric / junk tags
   "11", "the flourishing zoo", "try", "60s",
   // Overly specific / non-genre
-  "british invasion", "deconstructed club", "epic collage", "sound collage", "radio nova", "radio nova tunes", "radio nova 100", "radio nova 100 fm", "radio nova 100fm", "radio nova 100.0", "one man band",
+  "british invasion", "deconstructed club", "epic collage", "sound collage", "radio nova",
+  "radio nova tunes", "radio nova 100", "radio nova 100 fm", "radio nova 100fm", "radio nova 100.0",
+  "one man band", "nyege nyege tapes", "nyege nyege", "nyege", "tapes", "nyege nyege tape",
+  "nyege nyege tapes 2019",
 ]);
 
 // Merge formatting variants and semantic duplicates into canonical forms
@@ -50,6 +87,10 @@ const ALIASES: Record<string, string> = {
   "art-pop": "pop",
   "art pop": "pop",
   "ambient pop": "pop",
+  "hypnagogic pop": "pop",
+  "hypnagogic-pop": "pop",
+  "chamber pop": "pop",
+  "chamber-pop": "pop",
 
   // Jazz (all variants → jazz)
   "free jazz": "jazz",
@@ -62,6 +103,9 @@ const ALIASES: Record<string, string> = {
   "smooth jazz": "jazz",
   "fusion": "jazz",
   "hard bop": "jazz",
+  "bebop": "jazz",
+  "cool jazz": "jazz",
+  "bop": "jazz",
   "avant jazz": "jazz",
   "spiritual jazz": "jazz",
   "vocal jazz": "jazz",
@@ -69,7 +113,13 @@ const ALIASES: Record<string, string> = {
   "belgian jazz": "jazz",
   "arabic jazz": "jazz",
   "chamber jazz": "jazz",
+  "jazz rock": "jazz",
+  "jazz-rock": "jazz",
+  "jazz funk": "jazz",
+  "jazz-funk": "jazz",
+  "jazz blues": "jazz",
   "aacm": "jazz",
+  "jazz piano": "jazz",
 
   // Post-punk (all variants → post-punk)
   "post punk": "post-punk",
@@ -108,6 +158,9 @@ const ALIASES: Record<string, string> = {
   "classic rock": "rock",
   "art rock": "rock",
   "garage rock": "rock",
+  "neo-psychedelia": "psychedelic",
+  "neo psychedelia": "psychedelic",
+  "psychedelia": "psychedelic",
   "psychedelic rock": "rock",
   "alternative rock": "rock",
   "alternative": "rock",
@@ -211,6 +264,11 @@ const ALIASES: Record<string, string> = {
   // World (all variants → world)
   "world": "world",
   "world music": "world",
+  "tribal": "world",
+  "folk world": "world",
+  "roots": "world",
+  "ethno": "world",
+  "ethnic": "world",
 
   // Electronic (all variants → electronic)
   "electronic": "electronic",
