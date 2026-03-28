@@ -49,6 +49,10 @@ const loadPreviousTracks = async (): Promise<Track[]> => {
     return loadedData as Track[];
   } catch (e: any) {
     if (e.code === "ENOENT") return [];
+    if (e instanceof SyntaxError) {
+      logError("loading tracks.json", `Invalid JSON — fix or restore the file before running. (${e.message})`);
+      process.exit(1);
+    }
     logError("loading tracks.json", e.message);
     return [];
   }
