@@ -239,6 +239,8 @@ const ALIASES: Record<string, string> = {
   "neo-soul": "soul",
   "northern soul": "soul",
   "motown": "soul",
+  "doo wop": "soul",
+  "doo-wop": "soul",
 
   // Ambient (all variants → ambient)
   "ambient": "ambient",
