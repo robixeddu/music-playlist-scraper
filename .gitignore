@@ -1,4 +1,6 @@
 /node_modules
+/web/node_modules
+/web/.next
 /missing_tracks
 /data/new_tracks_for_playlist.txt
 /data/tidal_sync_report.json
