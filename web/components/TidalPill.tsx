@@ -8,11 +8,7 @@ import { useT } from "./LangProvider";
 export default function TidalPill() {
   const tr = useT();
   const pathname = usePathname();
-  const [connected, setConnected] = useState(false);
-
-  useEffect(() => {
-    setConnected(getStoredToken() !== null);
-  }, []);
+  const [connected, setConnected] = useState(() => getStoredToken() !== null);
 
   // Listen for token changes (e.g. after callback redirect)
   useEffect(() => {

@@ -20,6 +20,47 @@ export async function fetchEpisodes(): Promise<EpisodeAggregated[]> {
 
 const MIN_GENRE_TRACKS = 10;
 
+// Family grouping for genre proximity sort.
+// Genres in the same family cluster together; within a family, alphabetical.
+// Unknown genres fall to the end ("zzz").
+const GENRE_FAMILY: Record<string, string> = {
+  // Classical
+  classica: "1-classical", classical: "1-classical",
+  // Jazz & blues
+  bebop: "2-jazz", blues: "2-jazz", "bossa nova": "2-jazz", jazz: "2-jazz",
+  "hard bop": "2-jazz", mpb: "2-jazz", samba: "2-jazz", soul: "2-jazz",
+  swing: "2-jazz",
+  // Electronic
+  ambient: "3-electronic", downtempo: "3-electronic", drone: "3-electronic",
+  dub: "3-electronic", electroacoustic: "3-electronic", electronic: "3-electronic",
+  house: "3-electronic", idm: "3-electronic", "lo-fi": "3-electronic",
+  "new age": "3-electronic", noise: "3-electronic", "post-industrial": "3-electronic",
+  techno: "3-electronic",
+  // Experimental
+  "avant-garde": "4-experimental", experimental: "4-experimental",
+  "free improvisation": "4-experimental", "free jazz": "4-experimental",
+  // Rock
+  "alternative rock": "5-rock", "art rock": "5-rock", "classic rock": "5-rock",
+  hardcore: "5-rock", indie: "5-rock", "new wave": "5-rock",
+  "post-punk": "5-rock", "post-rock": "5-rock", psychedelic: "5-rock",
+  punk: "5-rock", rock: "5-rock",
+  // Hip-hop & R&B
+  funk: "6-hiphop", "hip-hop": "6-hiphop", "hip hop": "6-hiphop",
+  "r&b": "6-hiphop",
+  // Pop
+  pop: "7-pop", "singer-songwriter": "7-pop",
+  // Folk
+  acoustic: "8-folk", country: "8-folk", folk: "8-folk", "freak folk": "8-folk",
+  // World
+  afrobeat: "9-world", calypso: "9-world", cumbia: "9-world",
+  flamenco: "9-world", latin: "9-world", reggae: "9-world", world: "9-world",
+};
+
+function genreSortKey(genre: string): string {
+  const family = GENRE_FAMILY[genre.toLowerCase()] ?? "zzz";
+  return `${family}|${genre.toLowerCase()}`;
+}
+
 export function getGenres(episodes: EpisodeAggregated[]): GenreRow[] {
   const counts: Record<string, number> = {};
   for (const ep of episodes) {
@@ -33,7 +74,7 @@ export function getGenres(episodes: EpisodeAggregated[]): GenreRow[] {
   return Object.entries(counts)
     .filter(([, count]) => count >= MIN_GENRE_TRACKS)
     .map(([genre, count]) => ({ genre, count }))
-    .sort((a, b) => b.count - a.count);
+    .sort((a, b) => genreSortKey(a.genre).localeCompare(genreSortKey(b.genre)));
 }
 
 export function getEpisodesSortedDesc(
