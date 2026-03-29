@@ -37,10 +37,10 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
 ├── genre-enrich.ts           # Backfill genres via Claude on all tracks
 ├── catalog-enrich.ts         # Backfill TIDAL IDs for genre-tagged tracks
 ├── genre-playlist.ts         # Rebuild/update all genre playlists from tracks.json
-├── dedup-global-playlist.ts  # Deduplicate global BATTITI playlist
+├── dedup-global-playlist.ts  # Deduplicate global playlist
 ├── dedup-genre-playlists.ts  # Deduplicate all genre playlists
 ├── scripts/
-│   └── sync-and-notify.sh   # Cron wrapper: runs npm start, saves log to logs/
+│   └── sync-and-notify.sh   # Cron wrapper: PROGRAM_ID=battiti npm start
 ├── lib/
 │   ├── scraper.ts            # HTML fetch + episode parsing
 │   ├── parser.ts             # Track string parsing ("Artist, Title, da Album")
@@ -52,12 +52,15 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
 │   ├── claudeGenres.ts       # Genre tagging via Claude Haiku
 │   ├── genres.ts             # BLACKLIST + ALIASES for genre normalization
 │   ├── types.ts              # Shared types
-│   ├── config.ts             # Env-based constants
+│   ├── config.ts             # Program-aware constants (reads PROGRAM_ID from env)
 │   └── logger.ts             # Console helpers
 └── data/
-    ├── tracks.json           # Full episode archive with genres and TIDAL IDs
-    ├── global_playlist.json  # Global BATTITI playlist ID
-    └── genre_playlists.json  # genre → TIDAL playlist ID map
+    ├── sources.json          # Manifest of all programs (id, name, playlistPrefix…)
+    └── battiti/
+        ├── tracks.json       # Full episode archive with genres and TIDAL IDs
+        ├── global_playlist.json  # Global BATTITI playlist ID
+        ├── genre_playlists.json  # genre → TIDAL playlist ID map
+        └── missing_tracks.txt   # Tracks not found on TIDAL
 ```
 
 ## Setup
@@ -80,6 +83,8 @@ npm install
 ### 3. Configure `.env`
 
 ```bash
+PROGRAM_ID=battiti
+
 SCRAPER_BASE_URL="https://www.raiplaysound.it"
 SCRAPER_PROGRAM_PATH="/programmi/battiti"
 
@@ -146,6 +151,29 @@ Each artist is classified once per run (cached). Claude returns 1–3 genres fro
 - **During `npm run genre-playlist`**: playlists are created only for genres with ≥ 10 tracks (`MIN_TRACKS`).
 
 New playlists are logged to the console and persisted in `data/genre_playlists.json`. Review and clean them up manually on TIDAL if needed.
+
+## Multi-program support
+
+The project is designed to support multiple radio show sources. Each program lives in its own directory under `data/` and is declared in `data/sources.json`.
+
+### Adding a new program
+
+1. Add an entry to `data/sources.json`:
+```json
+{
+  "id": "stereonotte",
+  "name": "Stereonotte",
+  "description": "...",
+  "url": "https://www.raiplaysound.it/programmi/stereonotte",
+  "playlistPrefix": "STEREONOTTE",
+  "color": "#457b9d",
+  "active": true
+}
+```
+2. Create `data/stereonotte/` directory
+3. Run with `PROGRAM_ID=stereonotte npm start`
+
+All scripts are program-aware via the `PROGRAM_ID` env variable. Playlist names, data paths, and prefixes are derived automatically.
 
 ## Automation
 
