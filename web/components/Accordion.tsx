@@ -19,7 +19,7 @@ export default function Accordion({
     <div className="border border-[var(--border)] rounded-lg overflow-hidden">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between px-5 py-4 text-left bg-[var(--surface)] hover:bg-[var(--surface-hover)] transition-colors"
+        className="w-full flex items-center justify-between px-5 py-4 text-left bg-[var(--surface)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
         aria-expanded={open}
       >
         <span className="font-semibold text-base">{title}</span>

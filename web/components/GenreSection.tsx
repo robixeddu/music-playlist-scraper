@@ -67,7 +67,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
             <div className="px-5 py-3 flex items-center justify-between gap-4">
               <button
                 onClick={() => setExpanded(isExpanded ? null : row.genre)}
-                className="flex items-center gap-3 min-w-0 text-left flex-1"
+                className="flex items-center gap-3 min-w-0 text-left flex-1 cursor-pointer"
                 aria-expanded={isExpanded}
               >
                 <svg
