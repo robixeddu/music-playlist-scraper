@@ -1,6 +1,7 @@
 "use client";
 
 import type { EpisodeAggregated } from "@/lib/types";
+import { useT } from "./LangProvider";
 import ImportButton from "./ImportButton";
 
 interface GlobalSectionProps {
@@ -12,6 +13,7 @@ export default function GlobalSection({
   playlistPrefix,
   episodes,
 }: GlobalSectionProps) {
+  const tr = useT();
   const allTidalIds = Array.from(
     new Set(
       episodes.flatMap((ep) =>
@@ -29,7 +31,7 @@ export default function GlobalSection({
           {playlistPrefix}
         </span>
         <span className="text-sm text-[var(--muted)]">
-          {allTidalIds.length} / {totalTracks} tracce su TIDAL
+          {tr.tracksOnTidal(allTidalIds.length, totalTracks)}
         </span>
       </div>
       <ImportButton

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { EpisodeAggregated } from "@/lib/types";
 import { episodeDateToSlug, episodeDateDisplay } from "@/lib/data";
+import { useT } from "./LangProvider";
 import ImportButton from "./ImportButton";
 import TrackList from "./TrackList";
 
@@ -12,12 +13,13 @@ interface EpisodeSectionProps {
 }
 
 export default function EpisodeSection({ episodes, sourceId }: EpisodeSectionProps) {
+  const tr = useT();
   const [expanded, setExpanded] = useState<string | null>(null);
 
   if (episodes.length === 0) {
     return (
       <div className="px-5 py-4 text-sm text-[var(--muted)]">
-        Nessun episodio disponibile.
+        {tr.noEpisodes}
       </div>
     );
   }
@@ -65,7 +67,7 @@ export default function EpisodeSection({ episodes, sourceId }: EpisodeSectionPro
                     </a>
                   </div>
                   <span className="text-xs text-[var(--muted)] mt-0.5">
-                    {tidalIds.length} / {ep.tracks.length} tracce su TIDAL
+                    {tr.tracksOnTidal(tidalIds.length, ep.tracks.length)}
                   </span>
                 </div>
               </button>

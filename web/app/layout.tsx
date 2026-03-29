@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -8,17 +9,20 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Battiti – Playlist Browser",
-  description: "Sfoglia le playlist di Battiti e importale su TIDAL",
+  title: "music playlist scraper",
+  description: "Browse and import curated music playlists to TIDAL",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const h = await headers();
+  const lang = h.get("x-lang") ?? "it";
+
   return (
-    <html lang="it" className={`${geistSans.variable} h-full antialiased`}>
+    <html lang={lang} className={`${geistSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
         {children}
       </body>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { ImportStatus } from "@/lib/types";
 import { importPlaylist, type PlaylistType } from "@/lib/tidal-import";
 import { redirectToTidal, getStoredToken } from "@/lib/tidal-auth";
+import { useT } from "./LangProvider";
 
 interface ImportButtonProps {
   type: PlaylistType;
@@ -18,6 +19,7 @@ export default function ImportButton({
   playlistName,
   tidalIds,
 }: ImportButtonProps) {
+  const tr = useT();
   const [status, setStatus] = useState<ImportStatus>({ state: "idle" });
 
   async function handleClick() {
@@ -25,12 +27,12 @@ export default function ImportButton({
 
     const token = getStoredToken();
     if (!token) {
-      await redirectToTidal("/");
+      await redirectToTidal(window.location.pathname);
       return;
     }
 
     if (tidalIds.length === 0) {
-      setStatus({ state: "error", message: "Nessuna traccia TIDAL disponibile" });
+      setStatus({ state: "error", message: tr.noTidalTracks });
       return;
     }
 
@@ -55,7 +57,7 @@ export default function ImportButton({
         disabled={tidalIds.length === 0}
         className="px-3 py-1.5 rounded text-sm font-medium bg-[var(--accent)] text-white hover:opacity-90 transition-opacity disabled:opacity-30 disabled:cursor-not-allowed whitespace-nowrap"
       >
-        Importa
+        {tr.import}
       </button>
     );
   }
@@ -86,7 +88,7 @@ export default function ImportButton({
             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
           />
         </svg>
-        Importazione...
+        {tr.importing}
       </button>
     );
   }
@@ -94,7 +96,7 @@ export default function ImportButton({
   if (status.state === "success") {
     return (
       <span className="px-3 py-1.5 rounded text-sm font-medium text-green-400 bg-green-400/10 whitespace-nowrap">
-        ✓ {status.added} aggiunti, {status.alreadyPresent} già presenti
+        {tr.importSuccess(status.added, status.alreadyPresent)}
       </span>
     );
   }
@@ -105,7 +107,7 @@ export default function ImportButton({
       title={status.message}
       className="px-3 py-1.5 rounded text-sm font-medium text-red-400 bg-red-400/10 whitespace-nowrap cursor-help"
     >
-      ✗ Errore
+      ✗ {tr.importError}
     </span>
   );
 }

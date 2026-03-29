@@ -1,9 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { getStoredToken, clearToken, redirectToTidal } from "@/lib/tidal-auth";
+import { useT } from "./LangProvider";
 
 export default function TidalPill() {
+  const tr = useT();
+  const pathname = usePathname();
   const [connected, setConnected] = useState(false);
 
   useEffect(() => {
@@ -20,7 +24,7 @@ export default function TidalPill() {
   }, []);
 
   function handleConnect() {
-    redirectToTidal("/").catch(console.error);
+    redirectToTidal(pathname).catch(console.error);
   }
 
   function handleDisconnect() {
@@ -32,11 +36,11 @@ export default function TidalPill() {
     return (
       <button
         onClick={handleDisconnect}
-        title="Clicca per disconnetterti"
+        title={tr.disconnectTitle}
         className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/20 transition-colors"
       >
         <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
-        Connesso
+        {tr.connected}
       </button>
     );
   }
@@ -46,7 +50,7 @@ export default function TidalPill() {
       onClick={handleConnect}
       className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium bg-[var(--surface)] text-[var(--foreground)] border border-[var(--border)] hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
     >
-      Connetti TIDAL
+      {tr.connectTidal}
     </button>
   );
 }

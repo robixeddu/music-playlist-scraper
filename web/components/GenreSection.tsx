@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { EpisodeAggregated, GenreRow } from "@/lib/types";
+import { useT } from "./LangProvider";
 import ImportButton from "./ImportButton";
 import TrackList from "./TrackList";
 
@@ -12,6 +13,7 @@ interface GenreSectionProps {
 }
 
 export default function GenreSection({ playlistPrefix, episodes, genres }: GenreSectionProps) {
+  const tr = useT();
   const [expanded, setExpanded] = useState<string | null>(null);
 
   function getTracksForGenre(genre: string) {
@@ -43,7 +45,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
   if (genres.length === 0) {
     return (
       <div className="px-5 py-4 text-sm text-[var(--muted)]">
-        Nessun genere con tracce TIDAL disponibili.
+        {tr.noGenres}
       </div>
     );
   }
@@ -75,7 +77,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
                 <span className="text-sm font-medium capitalize truncate">{row.genre}</span>
-                <span className="text-sm text-[var(--muted)] shrink-0">{row.count} tracce</span>
+                <span className="text-sm text-[var(--muted)] shrink-0">{row.count} {tr.tracks}</span>
               </button>
               <ImportButton type="genre" slug={slug} playlistName={playlistName} tidalIds={tidalIds} />
             </div>
