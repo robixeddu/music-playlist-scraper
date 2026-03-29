@@ -26,6 +26,16 @@ const jaccard = (a: string, b: string): number => {
   return intersection / new Set([...ta, ...tb]).size;
 };
 
+// Containment: fraction of tokens in the smaller set that appear in the larger.
+// Handles "Tera Tera" vs "Jacopo Battaglia & Adriano Viterbini's Tera Tera" → 1.0
+const containment = (a: string, b: string): number => {
+  const ta = new Set(a.split(" ").filter(Boolean));
+  const tb = new Set(b.split(" ").filter(Boolean));
+  if (ta.size === 0 || tb.size === 0) return 0;
+  const [smaller, larger] = ta.size <= tb.size ? [ta, tb] : [tb, ta];
+  return [...smaller].filter(t => larger.has(t)).length / smaller.size;
+};
+
 export interface MatchScore {
   score: number;
   artistScore: number;
@@ -54,7 +64,11 @@ export const computeMatchScore = (
   // For slash/feat. artists (e.g. "DR.DRE/SNOOP DOG"), score each part individually
   // and take the best match — avoids penalizing multi-artist entries
   const artistParts = splitArtistParts(ourArtist);
-  const artistScore = Math.max(jaccard(na, ta), ...artistParts.map((p) => jaccard(p, ta)));
+  const artistScore = Math.max(
+    jaccard(na, ta),
+    containment(na, ta),
+    ...artistParts.map((p) => Math.max(jaccard(p, ta), containment(p, ta)))
+  );
   const titleScore = Math.max(jaccard(nt, tt), compactJaccard(nt, tt));
 
   // When the title matches very well but the artist only partially matches

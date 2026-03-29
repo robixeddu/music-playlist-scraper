@@ -101,7 +101,8 @@ const cleanTitle = (title: string): string =>
   title
     .replace(/,\s*da\s+"[^"]*"/gi, "")       // RAI: ", da "Album name""
     .replace(/\s*[-–]\s*live\s*@.*/gi, "")   // "Title – live @ Venue 2025"
-    .replace(/\s*[\(\[].*?[\)\]]/g, "")
+    .replace(/\s*[\(\[].*?[\)\]]/g, "")       // "(singolo)", "[remix]", etc.
+    .replace(/\s*[-–]\s*$/, "")              // trailing " -" or " –"
     .trim();
 
 // Normalize artist for search: expand dots (DR.DRE → DR DRE), strip feat./ft. suffixes
@@ -130,10 +131,12 @@ export const findTidalMatch = async (
   const clean = cleanTitle(title);
   const artistById = new Map<string, string>();
 
+  // Score against clean title to avoid false negatives from "(singolo) -" etc.
+  const scoreTitle = clean || title;
   const scoreAll = (candidates: TidalTrack[]) =>
     candidates.map((c) => ({
       candidate: c,
-      ...computeMatchScore(artist, title, c.artistName, c.title),
+      ...computeMatchScore(artist, scoreTitle, c.artistName, c.title),
     }));
 
   // Verify a single candidate: fetches the real artist and re-scores.
@@ -160,7 +163,7 @@ export const findTidalMatch = async (
       }
 
       if (!actualArtist) return undefined; // lookup failed, skip
-      const verified = computeMatchScore(artist, title, actualArtist, candidate.candidate.title);
+      const verified = computeMatchScore(artist, scoreTitle, actualArtist, candidate.candidate.title);
       if (verified.score < CONFIDENT_THRESHOLD) return null; // wrong artist confirmed
       return { id: candidate.candidate.id, ...verified };
     } catch {
