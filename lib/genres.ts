@@ -284,6 +284,62 @@ const ALIASES: Record<string, string> = {
   "poetry": "spoken word",
 };
 
+// Canonical genre → display family (for proximity sorting in UI)
+export const GENRE_FAMILY: Record<string, string> = {
+  classica:           "1-classical",
+  // Jazz & relatives
+  jazz:               "2-jazz",
+  blues:              "2-jazz",
+  "bossa nova":       "2-jazz",
+  mpb:                "2-jazz",
+  samba:              "2-jazz",
+  soul:               "2-jazz",
+  // Electronic
+  ambient:            "3-electronic",
+  downtempo:          "3-electronic",
+  drone:              "3-electronic",
+  dub:                "3-electronic",
+  electroacoustic:    "3-electronic",
+  electronic:         "3-electronic",
+  house:              "3-electronic",
+  "lo-fi":            "3-electronic",
+  "new age":          "3-electronic",
+  noise:              "3-electronic",
+  "post-industrial":  "3-electronic",
+  techno:             "3-electronic",
+  // Experimental
+  "avant-garde":      "4-experimental",
+  experimental:       "4-experimental",
+  "free improvisation": "4-experimental",
+  // Rock & derivatives
+  "new wave":         "5-rock",
+  "post-hardcore":    "5-rock",
+  "post-punk":        "5-rock",
+  "post-rock":        "5-rock",
+  psychedelic:        "5-rock",
+  punk:               "5-rock",
+  rock:               "5-rock",
+  ska:                "5-rock",
+  // Hip-hop & R&B
+  funk:               "6-hiphop",
+  "hip-hop":          "6-hiphop",
+  "r&b":              "6-hiphop",
+  // Pop
+  pop:                "7-pop",
+  "singer-songwriter": "7-pop",
+  // Folk
+  acoustic:           "8-folk",
+  country:            "8-folk",
+  folk:               "8-folk",
+  // World
+  afrobeat:           "9-world",
+  calypso:            "9-world",
+  cumbia:             "9-world",
+  flamenco:           "9-world",
+  reggae:             "9-world",
+  world:              "9-world",
+};
+
 export const normalizeGenre = (tag: string): string | null => {
   const lower = tag.toLowerCase().trim();
   if (BLACKLIST.has(lower)) return null;
