@@ -1,7 +1,6 @@
 import { fetchSources, fetchEpisodes } from "@/lib/data";
 import { LANGS, DEFAULT_LANG, translations, type Lang } from "@/lib/i18n";
 import TidalPill from "@/components/TidalPill";
-import LangSwitcher from "@/components/LangSwitcher";
 import ProgramBlock from "@/components/ProgramBlock";
 
 export function generateStaticParams() {
@@ -31,10 +30,7 @@ export default async function HomePage({
           <span className="text-sm font-medium tracking-wide text-[var(--accent)]">
             music playlist scraper
           </span>
-          <div className="flex items-center gap-4">
-            <LangSwitcher />
-            <TidalPill />
-          </div>
+          <TidalPill />
         </div>
       </header>
 
