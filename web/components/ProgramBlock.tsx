@@ -25,12 +25,12 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
         <p className="text-sm text-[var(--muted)]">{source.description}</p>
       </div>
 
-      <Accordion title={tr.sectionGlobal} defaultOpen={true}>
+      <div className="border border-[var(--border)] rounded-lg overflow-hidden">
         <GlobalSection
           playlistPrefix={source.playlistPrefix}
           episodes={episodes}
         />
-      </Accordion>
+      </div>
 
       <Accordion title={tr.sectionGenre}>
         <GenreSection
