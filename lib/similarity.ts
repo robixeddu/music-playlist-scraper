@@ -3,9 +3,17 @@ const normalize = (str: string): string =>
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\./g, " ")             // DR.DRE → dr dre, M.I.A. → m i a
     .replace(/[^a-z0-9\s]/g, "")
     .replace(/\s+/g, " ")
     .trim();
+
+// Split multi-artist strings on /, &, feat., ft. — returns normalized parts
+const splitArtistParts = (artist: string): string[] =>
+  artist
+    .split(/\s*[\/&]\s*|\s+(?:feat\.?|ft\.?|and)\s+/i)
+    .map(normalize)
+    .filter(Boolean);
 
 const jaccard = (a: string, b: string): number => {
   const ta = new Set(a.split(" ").filter(Boolean));
@@ -43,13 +51,16 @@ export const computeMatchScore = (
   const ta = normalize(tidalArtist);
   const tt = normalize(tidalTitle);
 
-  const artistScore = jaccard(na, ta);
+  // For slash/feat. artists (e.g. "DR.DRE/SNOOP DOG"), score each part individually
+  // and take the best match — avoids penalizing multi-artist entries
+  const artistParts = splitArtistParts(ourArtist);
+  const artistScore = Math.max(jaccard(na, ta), ...artistParts.map((p) => jaccard(p, ta)));
   const titleScore = Math.max(jaccard(nt, tt), compactJaccard(nt, tt));
 
   // When the title matches very well but the artist only partially matches
-  // (e.g. "NOT NORMAL" vs "The Normal"), a weighted score avoids false negatives
-  // while still requiring some artist signal.
-  const score = titleScore >= 0.8 && artistScore >= 0.4
+  // (typos like ELLIOT/ELLIOTT, or multi-artist slash entries), use a weighted
+  // score — requires some artist signal but avoids strict false negatives.
+  const score = titleScore >= 0.8 && artistScore >= 0.3
     ? titleScore * 0.6 + artistScore * 0.4
     : Math.min(artistScore, titleScore);
 

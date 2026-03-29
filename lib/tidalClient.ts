@@ -96,12 +96,31 @@ export interface TidalMatch {
   titleScore: number;
 }
 
-// Strip (feat. ...), [remix], ", da "Album"" etc. for cleaner TIDAL search queries
+// Strip (feat. ...), [remix], ", da "Album"", "– live @ ..." etc. for cleaner queries
 const cleanTitle = (title: string): string =>
   title
-    .replace(/,\s*da\s+"[^"]*"/gi, "")  // RAI: ", da "Album name""
+    .replace(/,\s*da\s+"[^"]*"/gi, "")       // RAI: ", da "Album name""
+    .replace(/\s*[-–]\s*live\s*@.*/gi, "")   // "Title – live @ Venue 2025"
     .replace(/\s*[\(\[].*?[\)\]]/g, "")
     .trim();
+
+// Normalize artist for search: expand dots (DR.DRE → DR DRE), strip feat./ft. suffixes
+const normalizeArtistForSearch = (artist: string): string =>
+  artist
+    .replace(/\./g, " ")                          // DR.DRE → DR DRE, M.I.A. → M I A
+    .replace(/\s*(?:feat\.?|ft\.?)\s+.*/i, "")   // strip "feat. ..." suffix
+    .replace(/\s+/g, " ")
+    .trim();
+
+// Return unique artist variants to try: full, normalized, each slash/& part
+const artistSearchVariants = (artist: string): string[] => {
+  const norm = normalizeArtistForSearch(artist);
+  const parts = artist
+    .split(/\s*[\/&]\s*|\s+(?:feat\.?|ft\.?)\s+/i)
+    .map((s) => s.trim())
+    .filter(Boolean);
+  return [...new Set([artist, norm, ...parts])].filter(Boolean);
+};
 
 export const findTidalMatch = async (
   artist: string,
@@ -149,26 +168,39 @@ export const findTidalMatch = async (
     }
   };
 
+  const artistVariants = artistSearchVariants(artist);
+  const primaryArtist = artistVariants[0]; // original
+  const normArtist = artistVariants[1];    // dot-normalized
+
   await sleep(SEARCH_DELAY_MS);
-  const primary = await searchTracks(`${artist} ${title}`, artist, token, artistById);
+  const primary = await searchTracks(`${primaryArtist} ${title}`, artist, token, artistById);
 
   // Build full candidate pool — run fallbacks immediately so reversed queries
   // can surface tracks that primary search buries (e.g. niche catalog artists)
   await sleep(SEARCH_DELAY_MS);
   const fbTitle = await searchTracks(title, artist, token, artistById);
   await sleep(SEARCH_DELAY_MS);
-  const fbArtist = await searchTracks(artist, artist, token, artistById);
+  const fbArtist = await searchTracks(primaryArtist, artist, token, artistById);
   await sleep(SEARCH_DELAY_MS);
-  const fbDot = await searchTracks(`${artist} ${title}.`, artist, token, artistById);
+  const fbDot = await searchTracks(`${primaryArtist} ${title}.`, artist, token, artistById);
   await sleep(SEARCH_DELAY_MS);
-  const fbReversed = await searchTracks(`${title} ${artist}`, artist, token, artistById);
+  const fbReversed = await searchTracks(`${title} ${primaryArtist}`, artist, token, artistById);
   const fbClean = clean !== title
-    ? (await sleep(SEARCH_DELAY_MS), await searchTracks(`${artist} ${clean}`, artist, token, artistById))
+    ? (await sleep(SEARCH_DELAY_MS), await searchTracks(`${primaryArtist} ${clean}`, artist, token, artistById))
     : [];
+
+  // Extra: normalized artist (dots expanded) + each slash/& part
+  const extraSearches: TidalTrack[] = [];
+  for (const variant of artistVariants.slice(1)) { // skip [0] = original already done
+    if (variant === primaryArtist) continue;
+    await sleep(SEARCH_DELAY_MS);
+    const res = await searchTracks(`${variant} ${clean || title}`, artist, token, artistById);
+    extraSearches.push(...res);
+  }
 
   const merged = [
     ...new Map(
-      [...primary, ...fbTitle, ...fbArtist, ...fbDot, ...fbReversed, ...fbClean].map((c) => [c.id, c])
+      [...primary, ...fbTitle, ...fbArtist, ...fbDot, ...fbReversed, ...fbClean, ...extraSearches].map((c) => [c.id, c])
     ).values(),
   ];
 
