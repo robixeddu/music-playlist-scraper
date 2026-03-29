@@ -99,10 +99,12 @@ export interface TidalMatch {
 // Strip (feat. ...), [remix], ", da "Album"", "– live @ ..." etc. for cleaner queries
 const cleanTitle = (title: string): string =>
   title
-    .replace(/,\s*da\s+"[^"]*"/gi, "")       // RAI: ", da "Album name""
-    .replace(/\s*[-–]\s*live\s*@.*/gi, "")   // "Title – live @ Venue 2025"
-    .replace(/\s*[\(\[].*?[\)\]]/g, "")       // "(singolo)", "[remix]", etc.
-    .replace(/\s*[-–]\s*$/, "")              // trailing " -" or " –"
+    .replace(/,\s*da\s+"[^"]*"/gi, "")              // RAI: ", da "Album name""
+    .replace(/\s*[-–]\s*live\s*@.*/gi, "")          // "Title – live @ Venue 2025"
+    .replace(/\s*[\(\[].*?[\)\]]/g, "")             // "(singolo)", "[remix]", etc.
+    .replace(/\s*[-–]\s*(?:feat\.?|ft\.?)\s+.*/gi, "") // "Title - feat. Artist"
+    .replace(/\s+(?:feat\.?|ft\.?)\s+.*/gi, "")        // "Title feat. Artist"
+    .replace(/\s*[-–]\s*$/, "")                     // trailing " -" or " –"
     .trim();
 
 // Normalize artist for search: expand dots (DR.DRE → DR DRE), strip feat./ft. suffixes
