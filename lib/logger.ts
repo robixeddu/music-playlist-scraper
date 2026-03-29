@@ -4,9 +4,10 @@ const logNewTracks = (count: number, totalHistorical: number): void => {
   );
 };
 
-const logSavedTracks = (aggregatedTracksLength: number, filePath: string) => {
+const logSavedTracks = (aggregatedTracksLength: number, filePath: string, newEpisodes?: number) => {
+  const newPart = newEpisodes !== undefined ? `+${newEpisodes} new, ` : "";
   console.log(
-    `💾 Saved ${aggregatedTracksLength} episodes to ${filePath} (aggregated format)`
+    `💾 Saved to ${filePath} (${newPart}${aggregatedTracksLength} total episodes)`
   );
 };
 

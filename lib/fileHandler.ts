@@ -59,14 +59,15 @@ const loadPreviousTracks = async (): Promise<Track[]> => {
 };
 
 const saveTracks = async (
-  aggregatedTracks: EpisodeAggregated[]
+  aggregatedTracks: EpisodeAggregated[],
+  newEpisodes?: number
 ): Promise<void> => {
   try {
     await fsPromises.writeFile(
       TRACKS_FILE,
       JSON.stringify(aggregatedTracks, null, 2)
     );
-    logSavedTracks(aggregatedTracks.length, TRACKS_FILE);
+    logSavedTracks(aggregatedTracks.length, TRACKS_FILE, newEpisodes);
   } catch (e: any) {
     logError("saving tracks.json", e.message);
   }

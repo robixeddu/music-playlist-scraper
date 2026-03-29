@@ -208,7 +208,8 @@ const fullSync = async () => {
   }
 
   // ─── Step 4: Save tracks.json + missing tracks ────────────────────────────
-  await saveTracks(aggregateTracksByEpisode(allTracks));
+  const newEpisodeCount = new Set(newTracks.map(t => t.episodeUrl)).size;
+  await saveTracks(aggregateTracksByEpisode(allTracks), newEpisodeCount);
   if (newMissing.length > 0) {
     await fsPromises.appendFile(MISSING_TRACKS_FILE, newMissing.join("\n") + "\n");
     console.log(`📄 ${newMissing.length} missing tracks appended to ${MISSING_TRACKS_FILE}`);
