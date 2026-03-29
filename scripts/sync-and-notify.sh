@@ -19,4 +19,4 @@ mkdir -p "$PROJECT_DIR/logs"
 echo "=== Battiti sync — $DATE ===" > "$LOG_FILE"
 echo "" >> "$LOG_FILE"
 
-npm start 2>&1 | tee -a "$LOG_FILE"
+PROGRAM_ID=battiti npm start 2>&1 | tee -a "$LOG_FILE"

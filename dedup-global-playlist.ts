@@ -35,13 +35,14 @@ const fetchAllTrackIds = async (playlistId: string, token: string): Promise<stri
   return ids;
 };
 
-const GLOBAL_PLAYLIST_FILE = "./data/global_playlist.json";
+import { GLOBAL_PLAYLIST_FILE, PLAYLIST_PREFIX } from "./lib/config.js";
+
 const SAVE_EVERY = 100;
 
 const dedupGlobalPlaylist = async () => {
   const { id: oldId } = JSON.parse(await fsPromises.readFile(GLOBAL_PLAYLIST_FILE, "utf-8"));
 
-  console.log(`🔍 Fetching all tracks from BATTITI (${oldId})...`);
+  console.log(`🔍 Fetching all tracks from ${PLAYLIST_PREFIX} (${oldId})...`);
   const token = await getAccessToken();
   const allIds = await fetchAllTrackIds(oldId, token);
   console.log(`   Total items fetched: ${allIds.length}`);
@@ -55,9 +56,9 @@ const dedupGlobalPlaylist = async () => {
   }
 
   console.log(`⚠️  ${dupCount} duplicates found. Unique tracks: ${unique.length}`);
-  console.log(`📋 Creating new BATTITI playlist...`);
+  console.log(`📋 Creating new ${PLAYLIST_PREFIX} playlist...`);
 
-  const newId = await createPlaylist("BATTITI", token);
+  const newId = await createPlaylist(PLAYLIST_PREFIX, token);
   console.log(`   New playlist ID: ${newId}`);
   await fsPromises.writeFile(GLOBAL_PLAYLIST_FILE, JSON.stringify({ id: newId }, null, 2));
   console.log(`   Updated global_playlist.json`);

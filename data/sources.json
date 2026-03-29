@@ -1,0 +1,11 @@
+[
+  {
+    "id": "battiti",
+    "name": "Battiti",
+    "description": "Musica d'autore e ricerca sonora su RAI Play Sound",
+    "url": "https://www.raiplaysound.it/programmi/battiti",
+    "playlistPrefix": "BATTITI",
+    "color": "#e63946",
+    "active": true
+  }
+]

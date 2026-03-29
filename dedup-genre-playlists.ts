@@ -6,7 +6,8 @@ import { logError } from "./lib/logger.js";
 
 const BASE_URL = "https://openapi.tidal.com/v2";
 const COUNTRY_CODE = process.env.TIDAL_COUNTRY_CODE ?? "IT";
-const GENRE_PLAYLISTS_FILE = "./data/genre_playlists.json";
+import { GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX } from "./lib/config.js";
+
 const ADD_DELAY_MS = 600;
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -65,7 +66,7 @@ const main = async () => {
 
     const genre = genres[i];
     const oldId = genrePlaylists[genre];
-    process.stdout.write(`[${i + 1}/${genres.length}] BATTITI-${genre} `);
+    process.stdout.write(`[${i + 1}/${genres.length}] ${PLAYLIST_PREFIX}-${genre} `);
 
     let allIds: string[];
     try {
@@ -90,7 +91,7 @@ const main = async () => {
     console.log(`→ ${allIds.length} tracks, ${dups} dups — recreating...`);
     totalDups += dups;
 
-    const newId = await createPlaylist(`BATTITI-${genre}`, token);
+    const newId = await createPlaylist(`${PLAYLIST_PREFIX}-${genre}`, token);
     let added = 0;
     let failed = 0;
 

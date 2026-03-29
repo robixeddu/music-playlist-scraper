@@ -11,7 +11,7 @@ import {
   updateAllTracks,
   getKnownEpisodeUrls,
 } from "./lib/aggregation.js";
-import { BATTITI_URL, SKIPPED_COUNT_LIMIT, MISSING_TRACKS_FILE } from "./lib/config.js";
+import { BATTITI_URL, SKIPPED_COUNT_LIMIT, MISSING_TRACKS_FILE, GLOBAL_PLAYLIST_FILE, GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "./lib/config.js";
 import { getArtistGenres } from "./lib/claudeGenres.js";
 import { normalizeGenre } from "./lib/genres.js";
 import { getAccessToken } from "./lib/tidalAuth.js";
@@ -24,8 +24,6 @@ import {
 import { logError } from "./lib/logger.js";
 import { Track } from "./lib/types.js";
 
-const GLOBAL_PLAYLIST_FILE = "./data/global_playlist.json";
-const GENRE_PLAYLISTS_FILE = "./data/genre_playlists.json";
 const GENRE_DELAY_MS = 250;
 const ADD_DELAY_MS = 600;
 
@@ -41,15 +39,15 @@ const getOrCreateGlobalPlaylist = async (token: string): Promise<string> => {
     const data = JSON.parse(
       await fsPromises.readFile(GLOBAL_PLAYLIST_FILE, "utf-8")
     );
-    console.log(`📋 Global playlist "BATTITI" (${data.id})`);
+    console.log(`📋 Global playlist "${PLAYLIST_PREFIX}" (${data.id})`);
     return data.id;
   } catch {
-    const id = await createPlaylist("BATTITI", token);
+    const id = await createPlaylist(PLAYLIST_PREFIX, token);
     await fsPromises.writeFile(
       GLOBAL_PLAYLIST_FILE,
       JSON.stringify({ id }, null, 2)
     );
-    console.log(`📋 Created global playlist "BATTITI" (${id})`);
+    console.log(`📋 Created global playlist "${PLAYLIST_PREFIX}" (${id})`);
     return id;
   }
 };
@@ -102,8 +100,8 @@ const fullSync = async () => {
   // ─── Step 2: TIDAL auth + playlist setup ───────────────────────────────────
   let token = await getAccessToken();
 
-  const todayId = await createPlaylist(`battiti-${today}`, token);
-  console.log(`📋 Created today's playlist "battiti-${today}" (${todayId})\n`);
+  const todayId = await createPlaylist(`${PROGRAM_ID}-${today}`, token);
+  console.log(`📋 Created today's playlist "${PROGRAM_ID}-${today}" (${todayId})\n`);
 
   const globalId = await getOrCreateGlobalPlaylist(token);
   const globalExisting = await getPlaylistTrackIds(globalId, token);
@@ -175,13 +173,13 @@ const fullSync = async () => {
 
       // Create playlist if new genre
       if (!genrePlaylists[genre]) {
-        genrePlaylists[genre] = await createPlaylist(`BATTITI-${genre}`, token);
+        genrePlaylists[genre] = await createPlaylist(`${PLAYLIST_PREFIX}-${genre}`, token);
         await fsPromises.writeFile(
           GENRE_PLAYLISTS_FILE,
           JSON.stringify(genrePlaylists, null, 2)
         );
         genreExisting.set(genre, new Set());
-        console.log(`  📋 Created new genre playlist "BATTITI-${genre}"`);
+        console.log(`  📋 Created new genre playlist "${PLAYLIST_PREFIX}-${genre}"`);
       }
 
       // Load existing IDs if not cached yet (with 404 auto-recreate)
@@ -190,8 +188,8 @@ const fullSync = async () => {
           genreExisting.set(genre, await getPlaylistTrackIds(genrePlaylists[genre], token));
         } catch (e: any) {
           if (!e.message?.includes("404")) throw e;
-          console.log(`  ⚠️  BATTITI-${genre} 404, recreating...`);
-          genrePlaylists[genre] = await createPlaylist(`BATTITI-${genre}`, token);
+          console.log(`  ⚠️  ${PLAYLIST_PREFIX}-${genre} 404, recreating...`);
+          genrePlaylists[genre] = await createPlaylist(`${PLAYLIST_PREFIX}-${genre}`, token);
           await fsPromises.writeFile(GENRE_PLAYLISTS_FILE, JSON.stringify(genrePlaylists, null, 2));
           genreExisting.set(genre, new Set());
         }
@@ -218,10 +216,10 @@ const fullSync = async () => {
 
   // ─── Summary ───────────────────────────────────────────────────────────────
   console.log("─".repeat(50));
-  console.log(`📅 battiti-${today}:     ${todayAdded} tracks added`);
-  console.log(`🌍 BATTITI (global):    +${globalAdded} new tracks`);
+  console.log(`📅 ${PROGRAM_ID}-${today}:     ${todayAdded} tracks added`);
+  console.log(`🌍 ${PLAYLIST_PREFIX} (global):    +${globalAdded} new tracks`);
   for (const [genre, count] of Object.entries(genreAdded).sort((a, b) => b[1] - a[1])) {
-    console.log(`🎵 BATTITI-${genre}: +${count}`);
+    console.log(`🎵 ${PLAYLIST_PREFIX}-${genre}: +${count}`);
   }
   console.log(`❌ Not found on TIDAL:  ${notFound}`);
 };

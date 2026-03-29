@@ -2,13 +2,11 @@ import "dotenv/config";
 import fsPromises from "fs/promises";
 import { getAccessToken } from "./lib/tidalAuth.js";
 import { createPlaylist, getPlaylistTrackIds, addTrackToPlaylist } from "./lib/tidalClient.js";
-import { TRACKS_FILE } from "./lib/config.js";
+import { TRACKS_FILE, GLOBAL_PLAYLIST_FILE, GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "./lib/config.js";
 import { EpisodeAggregated } from "./lib/types.js";
 import { logError } from "./lib/logger.js";
 import { normalizeGenre } from "./lib/genres.js";
 
-const GENRE_PLAYLISTS_FILE = "./data/genre_playlists.json";
-const GLOBAL_PLAYLIST_FILE = "./data/global_playlist.json";
 const MIN_TRACKS = 10;
 const ADD_DELAY_MS = 600;
 
@@ -27,9 +25,9 @@ const getOrCreateGlobalPlaylist = async (token: string): Promise<string> => {
     const data = JSON.parse(await fsPromises.readFile(GLOBAL_PLAYLIST_FILE, "utf-8"));
     return data.id;
   } catch {
-    const id = await createPlaylist("BATTITI", token);
+    const id = await createPlaylist(PLAYLIST_PREFIX, token);
     await fsPromises.writeFile(GLOBAL_PLAYLIST_FILE, JSON.stringify({ id }, null, 2));
-    console.log(`📋 Created global playlist "BATTITI" (${id})\n`);
+    console.log(`📋 Created global playlist "${PLAYLIST_PREFIX}" (${id})\n`);
     return id;
   }
 };
@@ -60,7 +58,7 @@ const genrePlaylist = async () => {
     .filter(([, ids]) => ids.size >= MIN_TRACKS)
     .sort((a, b) => b[1].size - a[1].size);
 
-  console.log(`\n🌍 Global BATTITI: ${allTidalIds.size} tracks`);
+  console.log(`\n🌍 Global ${PLAYLIST_PREFIX}: ${allTidalIds.size} tracks`);
   console.log(`🎵 Genre playlists: ${eligibleGenres.length} genres\n`);
 
   let token = await getAccessToken();
@@ -69,7 +67,7 @@ const genrePlaylist = async () => {
   const globalId = await getOrCreateGlobalPlaylist(token);
   const globalExisting = await getPlaylistTrackIds(globalId, token);
   const globalToAdd = [...allTidalIds].filter((id) => !globalExisting.has(id));
-  console.log(`📋 BATTITI (global): ${globalToAdd.length} new tracks to add (${globalExisting.size} already present)`);
+  console.log(`📋 ${PLAYLIST_PREFIX} (global): ${globalToAdd.length} new tracks to add (${globalExisting.size} already present)`);
   let globalAdded = 0;
   for (let i = 0; i < globalToAdd.length; i++) {
     if (i % 50 === 0) token = await getAccessToken();
@@ -87,7 +85,7 @@ const genrePlaylist = async () => {
   const genrePlaylists = await loadGenrePlaylists();
 
   for (const [genre, trackIds] of eligibleGenres) {
-    const playlistName = `BATTITI-${genre}`;
+    const playlistName = `${PLAYLIST_PREFIX}-${genre}`;
 
     // Create playlist if it doesn't exist yet
     if (!genrePlaylists[genre]) {
