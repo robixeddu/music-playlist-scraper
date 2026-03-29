@@ -111,6 +111,7 @@ const cleanTitle = (title: string): string =>
 const normalizeArtistForSearch = (artist: string): string =>
   artist
     .replace(/\./g, " ")                          // DR.DRE → DR DRE, M.I.A. → M I A
+    .replace(/'/g, "")                            // BOCCO MA'IN → BOCCO MAIN
     .replace(/\s*(?:feat\.?|ft\.?)\s+.*/i, "")   // strip "feat. ..." suffix
     .replace(/\s+/g, " ")
     .trim();
