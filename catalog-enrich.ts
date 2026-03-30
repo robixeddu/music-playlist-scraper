@@ -22,6 +22,7 @@ const catalogEnrich = async () => {
       }
     }
   }
+  if (process.argv.includes("--reverse")) queue.reverse();
 
   if (queue.length === 0) {
     console.log("✅ All genre-tagged tracks already have a TIDAL ID.");

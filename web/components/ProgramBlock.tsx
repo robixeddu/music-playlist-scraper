@@ -45,7 +45,7 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
 
   return (
     <section className="space-y-3">
-      <div className="items-baseline gap-3 mb-10 px-5">
+      <div className="items-baseline gap-3 mb-8 px-5">
         <h2 className="text-xl font-semibold mb-3">{source.name}</h2>
         <p className="text-sm text-[var(--muted)]">{source.description}</p>
       </div>
