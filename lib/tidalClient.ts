@@ -96,12 +96,15 @@ export interface TidalMatch {
   titleScore: number;
 }
 
-// Strip (feat. ...), [remix], ", da "Album"", "– live @ ..." etc. for cleaner queries
+// Strip (feat. ...), [remix], ", da "Album"", "– Label" etc. for cleaner queries
 const cleanTitle = (title: string): string =>
   title
-    .replace(/,\s*da\s+"[^"]*"/gi, "")              // RAI: ", da "Album name""
+    .replace(/\s*,?\s*\bda\b\s+"[^"]*"/gi, "")      // RAI: da "Album name" (with or without comma)
+    .replace(/\s*,?\s*\bde\b\s+"[^"]*"/gi, "")      // French: de "Album" (with or without comma)
+    .replace(/,\s*"[^"]*"/g, "")                    // RAI: , "Album Name" (quoted album after comma)
     .replace(/\s*[-–]\s*live\s*@.*/gi, "")          // "Title – live @ Venue 2025"
-    .replace(/\s*[\(\[].*?[\)\]]/g, "")             // "(singolo)", "[remix]", etc.
+    .replace(/\s*–\s*.+$/, "")                      // em-dash: label/format annotation (– 12" Rough Trade, – Les Disques Bongo Joe…)
+    .replace(/\s*[\(\[].*?[\)\]]/g, "")             // "(singolo)", "[remix]", "(1971)", etc.
     .replace(/\s*[-–]\s*(?:feat\.?|ft\.?)\s+.*/gi, "") // "Title - feat. Artist"
     .replace(/\s+(?:feat\.?|ft\.?)\s+.*/gi, "")        // "Title feat. Artist"
     .replace(/\s*[-–]\s*$/, "")                     // trailing " -" or " –"
@@ -111,10 +114,15 @@ const cleanTitle = (title: string): string =>
 const normalizeArtistForSearch = (artist: string): string =>
   artist
     .replace(/\./g, " ")                          // DR.DRE → DR DRE, M.I.A. → M I A
-    .replace(/'/g, "")                            // BOCCO MA'IN → BOCCO MAIN
+    .replace(/[''']/g, " ")                        // D'ANDREA → D ANDREA, BOCCO MA'IN → BOCCO MA IN
+    .replace(/[!?*+#@]/g, "")                     // PRAED ORCHESTRA! → PRAED ORCHESTRA
     .replace(/\s*(?:feat\.?|ft\.?)\s+.*/i, "")   // strip "feat. ..." suffix
     .replace(/\s+/g, " ")
     .trim();
+
+// Normalize title for search: strip apostrophes that can confuse TIDAL search API
+const normalizeTitleForSearch = (title: string): string =>
+  title.replace(/[''']/g, " ").replace(/[!?*+#@]/g, "").replace(/\s+/g, " ").trim();
 
 // Return unique artist variants to try: full, normalized, each slash/& part
 const artistSearchVariants = (artist: string): string[] => {
@@ -129,7 +137,8 @@ const artistSearchVariants = (artist: string): string[] => {
 export const findTidalMatch = async (
   artist: string,
   title: string,
-  token: string
+  token: string,
+  album?: string
 ): Promise<TidalMatch | null> => {
   const clean = cleanTitle(title);
   const artistById = new Map<string, string>();
@@ -139,14 +148,19 @@ export const findTidalMatch = async (
   const scoreAll = (candidates: TidalTrack[]) =>
     candidates.map((c) => ({
       candidate: c,
-      ...computeMatchScore(artist, scoreTitle, c.artistName, c.title),
+      ...computeMatchScore(artist, scoreTitle, c.artistName, cleanTitle(c.title)),
     }));
 
   // Verify a single candidate: fetches the real artist and re-scores.
   // Returns a TidalMatch if verified, null if rejected, undefined if artist lookup failed.
+  // overrideArtist/overrideTitle: use alternative scoring when RAI has label-as-artist.
   const verify = async (
-    candidate: ReturnType<typeof scoreAll>[number]
+    candidate: { candidate: TidalTrack },
+    overrideArtist?: string,
+    overrideTitle?: string
   ): Promise<TidalMatch | null | undefined> => {
+    const verifyArtist = overrideArtist ?? artist;
+    const verifyTitle = overrideTitle ?? scoreTitle;
     try {
       await sleep(400);
       const rel = await tidalFetch(
@@ -155,18 +169,32 @@ export const findTidalMatch = async (
       );
       const artistIds: string[] = (rel?.data ?? []).map((a: any) => a.id);
 
-      let actualArtist = artistIds.map((id) => artistById.get(id)).find(Boolean);
-      if (!actualArtist && artistIds.length > 0) {
+      // Collect all known artists for this track from cache
+      const cachedArtists = artistIds
+        .map((id) => artistById.get(id))
+        .filter((n): n is string => !!n);
+
+      // Fetch first uncached artist if cache is empty
+      if (cachedArtists.length === 0 && artistIds.length > 0) {
         await sleep(400);
         const artistData = await tidalFetch(
           `/artists/${artistIds[0]}?countryCode=${COUNTRY_CODE}`,
           token
         );
-        actualArtist = artistData?.data?.attributes?.name ?? undefined;
+        const name = artistData?.data?.attributes?.name;
+        if (name) cachedArtists.push(name);
       }
 
+      // Pick the artist that best matches verifyArtist (handles feat. / multi-artist tracks)
+      const actualArtist = cachedArtists.length > 0
+        ? cachedArtists.reduce((best, a) =>
+            computeMatchScore(verifyArtist, "", a, "").artistScore >
+            computeMatchScore(verifyArtist, "", best, "").artistScore ? a : best
+          )
+        : undefined;
+
       if (!actualArtist) return undefined; // lookup failed, skip
-      const verified = computeMatchScore(artist, scoreTitle, actualArtist, candidate.candidate.title);
+      const verified = computeMatchScore(verifyArtist, verifyTitle, actualArtist, cleanTitle(candidate.candidate.title));
       if (verified.score < CONFIDENT_THRESHOLD) return null; // wrong artist confirmed
       return { id: candidate.candidate.id, ...verified };
     } catch {
@@ -195,6 +223,12 @@ export const findTidalMatch = async (
     ? (await sleep(SEARCH_DELAY_MS), await searchTracks(`${primaryArtist} ${clean}`, artist, token, artistById))
     : [];
 
+  // Extra: apostrophe-stripped title variant (helps TIDAL search for e.g. "Jes' Grew")
+  const cleanNorm = normalizeTitleForSearch(clean || title);
+  const fbNorm = cleanNorm !== (clean || title)
+    ? (await sleep(SEARCH_DELAY_MS), await searchTracks(`${primaryArtist} ${cleanNorm}`, artist, token, artistById))
+    : [];
+
   // Extra: normalized artist (dots expanded) + each slash/& part
   const extraSearches: TidalTrack[] = [];
   for (const variant of artistVariants.slice(1)) { // skip [0] = original already done
@@ -204,22 +238,64 @@ export const findTidalMatch = async (
     extraSearches.push(...res);
   }
 
+  // Album hint: some tracks are not indexed by title but appear when searching by album
+  if (album) {
+    await sleep(SEARCH_DELAY_MS);
+    const fbAlbum = await searchTracks(`${primaryArtist} ${album}`, artist, token, artistById);
+    extraSearches.push(...fbAlbum);
+  }
+
   const merged = [
     ...new Map(
-      [...primary, ...fbTitle, ...fbArtist, ...fbDot, ...fbReversed, ...fbClean, ...extraSearches].map((c) => [c.id, c])
+      [...primary, ...fbTitle, ...fbArtist, ...fbDot, ...fbReversed, ...fbClean, ...fbNorm, ...extraSearches].map((c) => [c.id, c])
     ).values(),
   ];
 
   // Sort candidates by score descending, verify until one passes
-  const topCandidates = scoreAll(merged)
-    .filter((s) => s.score >= CONFIDENT_THRESHOLD)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 20);
+  const scored = scoreAll(merged).sort((a, b) => b.score - a.score);
+  if (process.env.TIDAL_DEBUG) {
+    const top5 = scored.slice(0, 5);
+    if (top5.length === 0) {
+      console.log(`  [debug] no candidates returned by search`);
+    } else {
+      console.log(`  [debug] top candidates:`);
+      top5.forEach(s => console.log(`    score=${s.score.toFixed(2)} artist=${s.candidate.artistName} title=${s.candidate.title}`));
+    }
+  }
+  const topCandidates = scored.filter((s) => s.score >= CONFIDENT_THRESHOLD).slice(0, 20);
 
   for (const candidate of topCandidates) {
     const result = await verify(candidate);
     if (result !== null && result !== undefined) return result; // verified ✓
     // null = wrong artist confirmed, undefined = lookup failed — try next in both cases
+  }
+
+  // Fallback: RAI sometimes stores label/show as artist and "Real Artist - Real Title" in title.
+  // If title contains " - ", extract potential altArtist + altTitle and try a separate search.
+  const dashIdx = title.indexOf(" - ");
+  if (dashIdx > 0) {
+    const altArtist = title.slice(0, dashIdx).trim();
+    const altTitle = cleanTitle(title.slice(dashIdx + 3).trim());
+    const altArtistWords = altArtist.trim().split(/\s+/);
+    const altTitleWords = altTitle.trim().split(/\s+/);
+    const isLikelyLabel = /records?|music|productions?|autoproduzione|distribution|\b\d{4}\b/i.test(altTitle);
+
+    if (altArtistWords.length >= 2 && altTitleWords.length >= 2 && !isLikelyLabel) {
+      const altArtistNorm = normalizeArtistForSearch(altArtist);
+      await sleep(SEARCH_DELAY_MS);
+      const altRes = await searchTracks(`${altArtistNorm} ${altTitle}`, altArtist, token, artistById);
+
+      const altTopCandidates = altRes
+        .map((c) => ({ candidate: c, ...computeMatchScore(altArtist, altTitle, c.artistName, cleanTitle(c.title)) }))
+        .filter((s) => s.score >= CONFIDENT_THRESHOLD)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 10);
+
+      for (const candidate of altTopCandidates) {
+        const result = await verify(candidate, altArtist, altTitle);
+        if (result !== null && result !== undefined) return result;
+      }
+    }
   }
 
   return null;

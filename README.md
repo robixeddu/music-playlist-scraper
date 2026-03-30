@@ -185,9 +185,34 @@ The sync runs automatically via system cron (`crontab -e`):
 
 Logs are saved to `logs/battiti-sync-YYYY-MM-DD.log` (gitignored).
 
+## TIDAL Matching
+
+Matching runs a multi-fallback search strategy to maximize coverage:
+
+1. `artist title` (primary)
+2. `title` alone, `artist` alone, `title artist` (reversed)
+3. Clean title variants: strips `(feat. ...)`, `[remix]`, `da "Album"`, `de "Album"`, `, "Album"`, em-dash label annotations (`– 12" Rough Trade`, `– Les Disques Bongo Joe`), year suffixes `(1971)`
+4. Normalized artist variants: dots expanded (`M.I.A.` → `M I A`), slash/& parts tried individually
+5. **Label-as-artist fallback**: when the RAI artist field is a label/show (e.g. `HABIBI FUNK`) and the title contains the real artist (`City Lights Band - Kul Ghrub`), the embedded artist is extracted and tried separately with its own scoring
+
+Each candidate is verified against the real TIDAL artist (separate API call) before acceptance. `CONFIDENT_THRESHOLD = 0.5`.
+
 ## Known TIDAL API Limitations
 
 - **No playlist listing**: TIDAL API v2 does not support listing or searching user-owned playlists by name. Playlist IDs must be persisted in `genre_playlists.json`. If lost, recover with `git show <commit>:data/genre_playlists.json`.
 - **DELETE requires `meta.itemId`**: Removing a track from a playlist requires the `meta.itemId` UUID (not the track position) in the DELETE body. Fetch playlist items first to obtain it.
 - **Non-deterministic search**: Results vary between runs for niche artists. Multi-fallback search strategy mitigates this.
 - **Rate limiting**: 429 errors are retried with exponential backoff (5s/10s/15s). Search calls are spaced 800ms apart.
+
+## Web UI
+
+A read-only Next.js 16 app in `web/` that browses the catalog:
+
+- **Language auto-detection** from `Accept-Language` header — no `/it` or `/en` prefix in URLs
+- Browse episodes by date, filter by genre, see TIDAL coverage per episode
+- Import any section (global, genre, episode) directly into TIDAL via OAuth
+- Hosted statically; data fetched from GitHub raw URLs with 1-hour in-memory cache
+
+```bash
+cd web && npm install && npm run dev   # http://localhost:3000
+```

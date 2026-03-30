@@ -17,7 +17,9 @@
     "dedup-global-playlist": "node dist/dedup-global-playlist.js",
     "prededup-global-playlist": "npm run build",
     "dedup-genres": "node dist/dedup-genre-playlists.js",
-    "prededup-genres": "npm run build"
+    "prededup-genres": "npm run build",
+    "set-tidal-id": "node dist/set-tidal-id.js",
+    "preset-tidal-id": "npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

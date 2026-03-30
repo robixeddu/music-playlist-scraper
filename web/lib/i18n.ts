@@ -21,6 +21,8 @@ export interface Translations {
   connected: string;
   disconnectTitle: string;
   footerData: string;
+  importAll: string;
+  importAllProgress: (done: number, total: number) => string;
 }
 
 export const translations: Record<Lang, Translations> = {
@@ -42,6 +44,8 @@ export const translations: Record<Lang, Translations> = {
     connected: "Connesso",
     disconnectTitle: "Clicca per disconnetterti",
     footerData: "Dati da",
+    importAll: "Importa tutti",
+    importAllProgress: (d, t) => `${d}/${t}...`,
   },
   en: {
     noPrograms: "No active programs.",
@@ -61,5 +65,7 @@ export const translations: Record<Lang, Translations> = {
     connected: "Connected",
     disconnectTitle: "Click to disconnect",
     footerData: "Data from",
+    importAll: "Import all",
+    importAllProgress: (d, t) => `${d}/${t}...`,
   },
 };

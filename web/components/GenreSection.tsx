@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { EpisodeAggregated, GenreRow } from "@/lib/types";
 import { useT } from "./LangProvider";
 import ImportButton from "./ImportButton";
+import ImportAllButton from "./ImportAllButton";
 import TrackList from "./TrackList";
 
 interface GenreSectionProps {
@@ -50,8 +51,18 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
     );
   }
 
+  const allItems = genres.map((row) => ({
+    type: "genre" as const,
+    slug: row.genre.toLowerCase().replace(/\s+/g, "-"),
+    playlistName: `${playlistPrefix}-${row.genre}`,
+    tidalIds: getTidalIdsForGenre(row.genre),
+  }));
+
   return (
     <div>
+      <div className="px-5 py-2 flex justify-end border-b border-[var(--border)]">
+        <ImportAllButton items={allItems} />
+      </div>
       {genres.map((row, i) => {
         const tidalIds = getTidalIdsForGenre(row.genre);
         const playlistName = `${playlistPrefix}-${row.genre}`;
@@ -64,10 +75,10 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
             key={row.genre}
             className={i < genres.length - 1 ? "border-b border-[var(--border)]" : ""}
           >
-            <div className="px-5 py-3 flex items-center justify-between gap-4">
+            <div className="px-5 py-0 flex items-center justify-between gap-4">
               <button
                 onClick={() => setExpanded(isExpanded ? null : row.genre)}
-                className="flex items-center gap-3 min-w-0 text-left flex-1 cursor-pointer"
+                className="flex items-center py-5 gap-3 min-w-0 text-left flex-1 cursor-pointer"
                 aria-expanded={isExpanded}
               >
                 <svg

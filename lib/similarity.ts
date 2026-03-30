@@ -69,7 +69,7 @@ export const computeMatchScore = (
     containment(na, ta),
     ...artistParts.map((p) => Math.max(jaccard(p, ta), containment(p, ta)))
   );
-  const titleScore = Math.max(jaccard(nt, tt), compactJaccard(nt, tt));
+  const titleScore = Math.max(jaccard(nt, tt), compactJaccard(nt, tt), containment(nt, tt));
 
   // When the title matches very well but the artist only partially matches
   // (typos like ELLIOT/ELLIOTT, or multi-artist slash entries), use a weighted

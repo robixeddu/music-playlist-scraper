@@ -1,11 +1,14 @@
 import type { Source, EpisodeAggregated, GenreRow } from "./types";
-import { GENRE_FAMILY } from "../../lib/genres.js";
+import { GENRE_FAMILY } from "./genreFamily";
 
 const SOURCES_URL =
   "https://raw.githubusercontent.com/robixeddu/music-playlist-scraper/main/data/sources.json";
 
 const TRACKS_URL =
   "https://raw.githubusercontent.com/robixeddu/music-playlist-scraper/main/data/battiti/tracks.json";
+
+const TTL = 3600 * 1000;
+let tracksCache: { data: EpisodeAggregated[]; ts: number } | null = null;
 
 export async function fetchSources(): Promise<Source[]> {
   const res = await fetch(SOURCES_URL, { next: { revalidate: 3600 } });
@@ -14,9 +17,13 @@ export async function fetchSources(): Promise<Source[]> {
 }
 
 export async function fetchEpisodes(): Promise<EpisodeAggregated[]> {
-  const res = await fetch(TRACKS_URL, { next: { revalidate: 3600 } });
+  const now = Date.now();
+  if (tracksCache && now - tracksCache.ts < TTL) return tracksCache.data;
+  const res = await fetch(TRACKS_URL, { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to fetch tracks");
-  return res.json();
+  const data: EpisodeAggregated[] = await res.json();
+  tracksCache = { data, ts: now };
+  return data;
 }
 
 const MIN_GENRE_TRACKS = 10;

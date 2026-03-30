@@ -40,7 +40,9 @@ const catalogEnrich = async () => {
     process.stdout.write(`[${i + 1}/${queue.length}] ${track.artist} – ${track.title} → `);
 
     try {
-      const match = await findTidalMatch(track.artist, track.title, token);
+      const albumMatch = track.albumDetails?.match(/["""]([^"""]+)["""]/);
+      const album = albumMatch?.[1];
+      const match = await findTidalMatch(track.artist, track.title, token, album);
       if (match) {
         episodes[ep].tracks[idx].tidalId = match.id;
         console.log(`✅ ${match.id} (score: ${match.score.toFixed(2)})`);
