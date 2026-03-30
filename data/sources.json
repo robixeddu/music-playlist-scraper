@@ -2,7 +2,7 @@
   {
     "id": "battiti",
     "name": "Battiti",
-    "description": "Musica d'autore e ricerca sonora su RAI Play Sound",
+    "description": "Magazine musicale dedicato alle musiche avventurose della contemporaneità, dal jazz all'elettronica sperimentale, dalla black music al rock d'avanguardia, con particolare attenzione alle novità discografiche e alle scene sotterranee italiane e internazionali. Un'ora e mezza di musica che ogni notte, per tutta la settimana, si compone di ascolti differenti: nuove uscite, interviste, concerti e live report, speciali, monografie e interventi realizzati con materiali diversi e ospiti esterni, che trovano nell'alternanza delle proposte, delle voci e dei formati la specificità e il senso della ricerca radiofonica. Un programma a cura di Ghighi Di Paola e Antonia Tessitore con Chiara Colli, Simone Sottili e Nina Terruzzi.",
     "url": "https://www.raiplaysound.it/programmi/battiti",
     "playlistPrefix": "BATTITI",
     "color": "#e63946",
