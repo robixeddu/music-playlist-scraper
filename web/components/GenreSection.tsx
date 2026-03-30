@@ -4,7 +4,6 @@ import { useState } from "react";
 import type { EpisodeAggregated, GenreRow } from "@/lib/types";
 import { useT } from "./LangProvider";
 import ImportButton from "./ImportButton";
-import ImportAllButton from "./ImportAllButton";
 import TrackList from "./TrackList";
 
 interface GenreSectionProps {
@@ -51,18 +50,8 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
     );
   }
 
-  const allItems = genres.map((row) => ({
-    type: "genre" as const,
-    slug: row.genre.toLowerCase().replace(/\s+/g, "-"),
-    playlistName: `${playlistPrefix}-${row.genre}`,
-    tidalIds: getTidalIdsForGenre(row.genre),
-  }));
-
   return (
     <div>
-      <div className="px-5 py-2 flex justify-end border-b border-[var(--border)]">
-        <ImportAllButton items={allItems} />
-      </div>
       {genres.map((row, i) => {
         const tidalIds = getTidalIdsForGenre(row.genre);
         const playlistName = `${playlistPrefix}-${row.genre}`;

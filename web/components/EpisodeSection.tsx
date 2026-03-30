@@ -5,7 +5,6 @@ import type { EpisodeAggregated } from "@/lib/types";
 import { episodeDateToSlug, episodeDateDisplay } from "@/lib/data";
 import { useT } from "./LangProvider";
 import ImportButton from "./ImportButton";
-import ImportAllButton from "./ImportAllButton";
 import TrackList from "./TrackList";
 
 interface EpisodeSectionProps {
@@ -25,21 +24,8 @@ export default function EpisodeSection({ episodes, sourceId }: EpisodeSectionPro
     );
   }
 
-  const allItems = episodes.map((ep) => {
-    const slug = episodeDateToSlug(ep.date);
-    return {
-      type: "episode" as const,
-      slug,
-      playlistName: `${sourceId}-${slug}`,
-      tidalIds: ep.tracks.filter((t) => t.tidalId).map((t) => t.tidalId as string),
-    };
-  });
-
   return (
     <div>
-      <div className="px-5 py-2 flex justify-end border-b border-[var(--border)]">
-        <ImportAllButton items={allItems} />
-      </div>
       {episodes.map((ep, i) => {
         const tidalIds = ep.tracks.filter((t) => t.tidalId).map((t) => t.tidalId as string);
         const slug = episodeDateToSlug(ep.date);

@@ -6,35 +6,44 @@ interface AccordionProps {
   title: string;
   children: ReactNode;
   defaultOpen?: boolean;
+  action?: ReactNode;
 }
 
 export default function Accordion({
   title,
   children,
   defaultOpen = false,
+  action,
 }: AccordionProps) {
   const [open, setOpen] = useState(defaultOpen);
 
   return (
     <div className="border border-[var(--border)] rounded-lg overflow-hidden">
-      <button
-        onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between px-5 py-4 text-left bg-[var(--surface)] hover:bg-[var(--surface-hover)] transition-colors cursor-pointer"
-        aria-expanded={open}
-      >
-        <span className="font-semibold text-base">{title}</span>
-        <svg
-          className={`w-4 h-4 text-[var(--muted)] transition-transform duration-200 ${
-            open ? "rotate-180" : ""
-          }`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2}
+      <div className="flex items-center bg-[var(--surface)] hover:bg-[var(--surface-hover)] transition-colors">
+        <button
+          onClick={() => setOpen((v) => !v)}
+          className="flex-1 flex items-center gap-3 px-5 py-4 text-left cursor-pointer"
+          aria-expanded={open}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
+          <svg
+            className={`w-3 h-3 text-[var(--muted)] shrink-0 transition-transform duration-150 ${
+              open ? "rotate-90" : ""
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2.5}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+          <span className="font-semibold text-base">{title}</span>
+        </button>
+        {action && (
+          <div className="pr-5 shrink-0">
+            {action}
+          </div>
+        )}
+      </div>
       {open && <div className="bg-[var(--background)]">{children}</div>}
     </div>
   );
