@@ -687,10 +687,10 @@
         "albumDetails": "da \"Le Città di Pianura OST\" - Maple Death Records",
         "key": "krano___workaholica",
         "genres": [
-          "no-genre"
+          "folk", "psychedelic", "rock"
         ],
         "tidalId": "462460599",
-        "genresRaw": []
+        "genresRaw": [ "folk", "psychedelic", "rock"]
       },
       {
         "title": "Va Pian",
@@ -698,10 +698,10 @@
         "albumDetails": "da \"Le Città di Pianura OST\" - Maple Death Records",
         "key": "krano___va_pian",
         "genres": [
-          "no-genre"
+          "folk", "psychedelic", "rock"
         ],
         "tidalId": "251602408",
-        "genresRaw": []
+        "genresRaw": ["folk", "psychedelic", "rock"]
       },
       {
         "title": "Skogavakse",
