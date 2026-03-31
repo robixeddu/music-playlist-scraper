@@ -22,7 +22,6 @@ export const GENRE_FAMILY: Record<string, string> = {
   minimal:            "3-electronic",
   "new age":          "3-electronic",
   noise:              "3-electronic",
-  "post-industrial":  "3-electronic",
   techno:             "3-electronic",
   trance:             "3-electronic",
   "trip-hop":         "3-electronic",
@@ -34,6 +33,8 @@ export const GENRE_FAMILY: Record<string, string> = {
   "spoken word":      "4-experimental",
   // Rock & derivatives
   indie:              "5-rock",
+  industrial:         "5-rock",
+  metal:              "5-rock",
   shoegaze:           "5-rock",
   "new wave":         "5-rock",
   "post-hardcore":    "5-rock",

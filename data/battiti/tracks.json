@@ -687,10 +687,16 @@
         "albumDetails": "da \"Le Città di Pianura OST\" - Maple Death Records",
         "key": "krano___workaholica",
         "genres": [
-          "folk", "psychedelic", "rock"
+          "folk",
+          "psychedelic",
+          "rock"
         ],
         "tidalId": "462460599",
-        "genresRaw": [ "folk", "psychedelic", "rock"]
+        "genresRaw": [
+          "folk",
+          "psychedelic",
+          "rock"
+        ]
       },
       {
         "title": "Va Pian",
@@ -698,10 +704,16 @@
         "albumDetails": "da \"Le Città di Pianura OST\" - Maple Death Records",
         "key": "krano___va_pian",
         "genres": [
-          "folk", "psychedelic", "rock"
+          "folk",
+          "psychedelic",
+          "rock"
         ],
         "tidalId": "251602408",
-        "genresRaw": ["folk", "psychedelic", "rock"]
+        "genresRaw": [
+          "folk",
+          "psychedelic",
+          "rock"
+        ]
       },
       {
         "title": "Skogavakse",
@@ -2715,13 +2727,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "441278515",
         "genresRaw": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -2732,13 +2744,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "441278516",
         "genresRaw": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -3816,13 +3828,13 @@
         "key": "bill_laswell_genesis_porridge_percy_howard___the_old_man_of_the_mountain",
         "genres": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "electronic"
         ],
         "tidalId": "19388614",
         "genresRaw": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "electronic"
         ]
       },
@@ -4089,13 +4101,13 @@
         "key": "circuit_des_yeux___truth",
         "genres": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "avant-garde"
         ],
         "tidalId": "459423321",
         "genresRaw": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "avant-garde"
         ]
       },
@@ -4386,13 +4398,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "459829542",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -4403,13 +4415,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "459829544",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -4502,13 +4514,13 @@
         "key": "circuit_des_yeux___skeleton_key",
         "genres": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "avant-garde"
         ],
         "tidalId": "419166697",
         "genresRaw": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "avant-garde"
         ]
       },
@@ -4909,12 +4921,12 @@
         "albumDetails": "da \"Full Circle\" - Virgin",
         "key": "holger_czukay_jah_wobble_jaki_liebezeit___where's_the_money?",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "dub"
         ],
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "dub"
         ]
@@ -5343,13 +5355,13 @@
         "genres": [
           "spoken word",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "441706280",
         "genresRaw": [
           "spoken word",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -5864,7 +5876,7 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "440570073",
         "genresRaw": [
@@ -5881,7 +5893,7 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "440570065",
         "genresRaw": [
@@ -6008,13 +6020,13 @@
         "genres": [
           "spoken word",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "441706281",
         "genresRaw": [
           "spoken word",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -8329,13 +8341,13 @@
         "albumDetails": "da \"Blixa Bargeld Sings David Bowie. Accompanied By Nikko Weidemann\" – 12\" Autoproduzione",
         "key": "blixa_bargeld___lazarus",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "spoken word"
         ],
         "tidalId": "441898884",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "spoken word"
         ]
@@ -8346,13 +8358,13 @@
         "albumDetails": "da \"Blixa Bargeld Sings David Bowie. Accompanied By Nikko Weidemann\" – 12\" Autoproduzione",
         "key": "blixa_bargeld___helden",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "spoken word"
         ],
         "tidalId": "441898880",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "spoken word"
         ]
@@ -10048,13 +10060,13 @@
         "genres": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "435981451",
         "genresRaw": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -10065,13 +10077,13 @@
         "genres": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "435981457",
         "genresRaw": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -10229,13 +10241,13 @@
         "albumDetails": "da \"Birthing\" – Young God Records",
         "key": "swans___the_healers",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ],
         "tidalId": "437953620",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ]
@@ -10654,13 +10666,13 @@
         "albumDetails": "da \"Birthing\" – Young God Records",
         "key": "swans___red_yellow",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ],
         "tidalId": "437953623",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ]
@@ -10673,13 +10685,13 @@
         "genres": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "435981454",
         "genresRaw": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -11997,13 +12009,13 @@
         "genres": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "251544058",
         "genresRaw": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -15040,12 +15052,12 @@
         "key": "concerti_eventi_materiale_resistente_trentennale___savoniero_di_palagano_modena_sabato_14_giugno_2025",
         "genres": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "noise"
         ],
         "genresRaw": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "noise"
         ]
       },
@@ -17438,13 +17450,13 @@
         "genres": [
           "spoken word",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "393905702",
         "genresRaw": [
           "spoken word",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -22761,13 +22773,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "390472405",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -22778,13 +22790,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "390472400",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -22977,13 +22989,13 @@
         "albumDetails": "da \"Die Hamletmaschine\" – Our Choice",
         "key": "heiner_müller_einstürzende_neubauten___die_hamletmaschine",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ],
         "tidalId": "13363834",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ]
@@ -22994,13 +23006,13 @@
         "albumDetails": "da \"Cherie Sha La La\" – Magic Records",
         "key": "anarchic_system___pop_corn",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ],
         "tidalId": "60308191",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ]
@@ -23139,13 +23151,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "135314553",
         "genresRaw": [
           "industrial",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -25896,13 +25908,13 @@
         "genres": [
           "trip-hop",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "56291556",
         "genresRaw": [
           "trip-hop",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -27513,13 +27525,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "385251901",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -28175,13 +28187,13 @@
         "key": "andrew_weatherall___frankfurt_advice",
         "genres": [
           "electronic",
-          "post-industrial",
+          "industrial",
           "ambient"
         ],
         "tidalId": "54818035",
         "genresRaw": [
           "electronic",
-          "post-industrial",
+          "industrial",
           "ambient"
         ]
       },
@@ -31758,12 +31770,12 @@
         "genres": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ],
         "genresRaw": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -33542,13 +33554,13 @@
         "albumDetails": "da \"Moss Side Story\" – Mute",
         "key": "barry_adamson___alfred_hitchcock_presents",
         "genres": [
-          "post-industrial",
+          "industrial",
           "electronic",
           "experimental"
         ],
         "tidalId": "84145633",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "electronic",
           "experimental"
         ]
@@ -35328,13 +35340,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "367157956",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -37320,13 +37332,13 @@
         "key": "gavin_bryars_with_tom_waits___jesus'_blood_never_failed_me_yet_–_single",
         "genres": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "singer-songwriter"
         ],
         "tidalId": "7234250",
         "genresRaw": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "singer-songwriter"
         ]
       },
@@ -37736,13 +37748,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "149939626",
         "genresRaw": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -38363,12 +38375,12 @@
         "key": "brûlez_les_meubles___vaguesspider_song",
         "genres": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "noise"
         ],
         "genresRaw": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "noise"
         ]
       },
@@ -39698,13 +39710,13 @@
         "albumDetails": "da \"Opus Dei Revisited\" – Mute",
         "key": "laibach___opus_dei_яǝ",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ],
         "tidalId": "404432915",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ]
@@ -40084,13 +40096,13 @@
         "albumDetails": "da \"Opus Dei Revisited\" – Mute",
         "key": "laibach___transnational_яǝ",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ],
         "tidalId": "404432918",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ]
@@ -40826,13 +40838,13 @@
         "key": "the_advisory_circle___escape_lane",
         "genres": [
           "ambient",
-          "post-industrial",
+          "industrial",
           "experimental"
         ],
         "tidalId": "36517722",
         "genresRaw": [
           "ambient",
-          "post-industrial",
+          "industrial",
           "experimental"
         ]
       },
@@ -43774,13 +43786,13 @@
         "genres": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "251544080",
         "genresRaw": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -47017,13 +47029,13 @@
         "genres": [
           "ambient",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "388182270",
         "genresRaw": [
           "ambient",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -47376,13 +47388,13 @@
         "genres": [
           "ambient",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "388182266",
         "genresRaw": [
           "ambient",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -48156,13 +48168,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "368092441",
         "genresRaw": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -48620,12 +48632,12 @@
         "key": "meute___hypnose_future_edit",
         "genres": [
           "techno",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "318414249",
         "genresRaw": [
           "techno",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -50285,13 +50297,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "68002547",
         "genresRaw": [
           "industrial",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -50334,13 +50346,13 @@
         "genres": [
           "ambient",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "388182265",
         "genresRaw": [
           "ambient",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -50473,12 +50485,12 @@
         "albumDetails": "da \"I Am That Tempest: A Portrait\" – Caliban Records",
         "key": "eve_libertine___morning_session",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "spoken word"
         ],
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "spoken word"
         ]
@@ -51265,13 +51277,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "343762630",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -52815,13 +52827,13 @@
         "key": "test_dept___two_flames_burn",
         "genres": [
           "noise",
-          "post-industrial",
+          "industrial",
           "experimental"
         ],
         "tidalId": "448030245",
         "genresRaw": [
           "industrial",
-          "post-industrial",
+          "industrial",
           "experimental"
         ]
       },
@@ -53589,13 +53601,13 @@
         "key": "eli_keszler___lotus_awnings",
         "genres": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "electroacoustic"
         ],
         "tidalId": "394991066",
         "genresRaw": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "electroacoustic"
         ]
       },
@@ -54632,13 +54644,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "495036956",
         "genresRaw": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -54850,12 +54862,12 @@
         "genres": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ],
         "genresRaw": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -55131,13 +55143,13 @@
         "key": "eugenio_renzetti_group_zero_mit_federico_sanguineti___la_metamorfosi",
         "genres": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "electroacoustic"
         ],
         "tidalId": "418488851",
         "genresRaw": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "electroacoustic"
         ]
       },
@@ -55249,13 +55261,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "353442606",
         "genresRaw": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -56339,13 +56351,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "7863580",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -56356,13 +56368,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "93331889",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -56826,13 +56838,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "498909552",
         "genresRaw": [
           "industrial",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -56843,13 +56855,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "398314958",
         "genresRaw": [
           "industrial",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       }
     ]
@@ -58355,12 +58367,12 @@
         "genres": [
           "ambient",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "genresRaw": [
           "ambient",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -58407,13 +58419,13 @@
         "genres": [
           "ambient",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "388182273",
         "genresRaw": [
           "ambient",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -59690,13 +59702,13 @@
         "genres": [
           "spoken word",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "393905703",
         "genresRaw": [
           "spoken word",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -61719,12 +61731,12 @@
         "genres": [
           "electronic",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "genresRaw": [
           "electronic",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -61958,13 +61970,13 @@
         "genres": [
           "avant-garde",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "14101003",
         "genresRaw": [
           "avant-garde",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -62437,13 +62449,13 @@
         "genres": [
           "experimental",
           "free improvisation",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "332952858",
         "genresRaw": [
           "experimental",
           "free improvisation",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -63686,13 +63698,13 @@
         "genres": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "103992370",
         "genresRaw": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -63701,13 +63713,13 @@
         "albumDetails": "da \"But, What Ends When The Symbols Shatter?\" – New European Recordings",
         "key": "death_in_junedavid_tibet___this_is_not_paradise",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "drone"
         ],
         "tidalId": "96079577",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "drone"
         ]
@@ -63719,13 +63731,13 @@
         "key": "sumac_moor_mother___scene_3_feat_kyle_kidd",
         "genres": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "noise"
         ],
         "tidalId": "407191548",
         "genresRaw": [
           "experimental",
-          "post-industrial",
+          "industrial",
           "noise"
         ]
       },
@@ -63967,13 +63979,13 @@
         "albumDetails": "da \"Birthing\" – Young God Records",
         "key": "swans___i_am_a_tower_excerpt",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ],
         "tidalId": "419114324",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "noise"
         ]
@@ -70823,13 +70835,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "20130628",
         "genresRaw": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -71026,13 +71038,13 @@
         "genres": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "460685797",
         "genresRaw": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -72341,7 +72353,7 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "440570066",
         "genresRaw": [
@@ -73407,13 +73419,13 @@
         "genres": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "471240980",
         "genresRaw": [
           "noise",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -73672,13 +73684,13 @@
         "genres": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "460685789",
         "genresRaw": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -74641,13 +74653,13 @@
         "genres": [
           "hip-hop",
           "funk",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "84651157",
         "genresRaw": [
           "hip-hop",
           "funk",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -75614,12 +75626,12 @@
         "genres": [
           "experimental",
           "world",
-          "post-industrial"
+          "industrial"
         ],
         "genresRaw": [
           "experimental",
           "world",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -77810,13 +77822,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "471459804",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -77827,13 +77839,13 @@
         "genres": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "471459805",
         "genresRaw": [
           "experimental",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -78442,13 +78454,13 @@
         "genres": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "53835064",
         "genresRaw": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -78991,13 +79003,13 @@
         "genres": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "460685791",
         "genresRaw": [
           "dub",
           "electronic",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -80409,13 +80421,13 @@
         "genres": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "494565608",
         "genresRaw": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -83006,13 +83018,13 @@
         "key": "nine_inch_nails___she's_gone_away",
         "genres": [
           "noise",
-          "post-industrial",
+          "industrial",
           "electronic"
         ],
         "tidalId": "468165260",
         "genresRaw": [
           "industrial",
-          "post-industrial",
+          "industrial",
           "electronic"
         ]
       },
@@ -83059,13 +83071,13 @@
         "genres": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "494565606",
         "genresRaw": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -83431,13 +83443,13 @@
         "albumDetails": ", da \"Sunset And Forever\" - The Helen Scarsdale Agency",
         "key": "cindytalk___invisible_adventure",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "ambient"
         ],
         "tidalId": "481343657",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "ambient"
         ]
@@ -83448,13 +83460,13 @@
         "albumDetails": ", da \"Sunset And Forever\" - The Helen Scarsdale Agency",
         "key": "cindytalk___eien_no_yuyake",
         "genres": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "ambient"
         ],
         "tidalId": "481343653",
         "genresRaw": [
-          "post-industrial",
+          "industrial",
           "experimental",
           "ambient"
         ]
@@ -84955,13 +84967,13 @@
         "genres": [
           "post-punk",
           "experimental",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "151506575",
         "genresRaw": [
           "post-punk",
           "experimental",
-          "post-industrial"
+          "industrial"
         ]
       },
       {
@@ -87459,13 +87471,13 @@
         "key": "shapednoise___oblivion_step",
         "genres": [
           "noise",
-          "post-industrial",
+          "industrial",
           "experimental"
         ],
         "tidalId": "442672335",
         "genresRaw": [
           "noise",
-          "post-industrial",
+          "industrial",
           "experimental"
         ]
       },
@@ -87972,13 +87984,13 @@
         "genres": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ],
         "tidalId": "494565607",
         "genresRaw": [
           "experimental",
           "noise",
-          "post-industrial"
+          "industrial"
         ]
       },
       {

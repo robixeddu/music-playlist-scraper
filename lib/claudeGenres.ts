@@ -13,7 +13,7 @@ const APPROVED_GENRES = [
   "hip-hop", "house", "indie", "instrumental",
   "industrial", "jazz", "lo-fi", "metal", "minimal", "mpb",
   "new age", "new wave", "noise",
-  "pop", "post-industrial", "post-punk", "post-rock",
+  "pop", "post-punk", "post-rock",
   "psychedelic", "punk", "r&b", "reggae", "rock",
   "samba", "shoegaze", "singer-songwriter", "ska", "soul",
   "soundtrack", "spoken word", "techno", "trance",

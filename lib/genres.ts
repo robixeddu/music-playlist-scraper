@@ -188,6 +188,7 @@ const ALIASES: Record<string, string> = {
   "industrial": "industrial",
   "industrial rock": "industrial",
   "industrial metal": "industrial",
+  "post-industrial": "industrial",
 
   // Metal (all variants → metal)
   "metal": "metal",
@@ -332,7 +333,6 @@ export const GENRE_FAMILY: Record<string, string> = {
   minimal:            "3-electronic",
   "new age":          "3-electronic",
   noise:              "3-electronic",
-  "post-industrial":  "3-electronic",
   techno:             "3-electronic",
   trance:             "3-electronic",
   "trip-hop":         "3-electronic",
