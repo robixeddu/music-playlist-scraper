@@ -63,4 +63,6 @@ export const GENRE_FAMILY: Record<string, string> = {
   world:              "9-world",
   // Soundtrack
   soundtrack:         "10-soundtrack",
+  // Untagged
+  "no-genre":         "11-untagged",
 };

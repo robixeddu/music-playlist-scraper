@@ -10,6 +10,7 @@ const RESET = process.argv.includes("--reset");
 const HAIKU_ONLY = process.argv.includes("--haiku-only");
 const SONNET_PASS = process.argv.includes("--sonnet-pass"); // only run sonnet on empty
 const HAIKU_RETRY = process.argv.includes("--haiku-retry"); // retry empty artists with title case
+const MARK_EMPTY = process.argv.includes("--mark-empty"); // mark still-empty tracks as no-genre
 
 const toTitleCase = (s: string) =>
   s.replace(/\b\w+/g, (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase());
@@ -181,6 +182,18 @@ const genreEnrich = async () => {
 
   console.log(`\n✅ Sonnet: ${sonnetFound}/${emptyArtists.length} recovered.`);
   console.log(`💾 Saved to ${TRACKS_FILE}`);
+
+  if (MARK_EMPTY) {
+    let marked = 0;
+    for (const ep of episodes)
+      for (const track of ep.tracks as BaseTrack[])
+        if (!track.genres || track.genres.length === 0) {
+          track.genres = ["no-genre"];
+          marked++;
+        }
+    await fsPromises.writeFile(TRACKS_FILE, JSON.stringify(episodes, null, 2));
+    console.log(`🏷️  Marked ${marked} tracks as no-genre.`);
+  }
 };
 
 genreEnrich().catch(console.error);
