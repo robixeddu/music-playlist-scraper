@@ -54,20 +54,35 @@ export async function importPlaylist(params: {
 
   const accessToken = token.access_token;
 
-  // Get or create playlist
+  // Get or create playlist, recreating if 404
   let playlistId = getStoredPlaylistId(type, slug);
 
-  if (!playlistId) {
-    playlistId = await createPlaylist(
+  const createNew = async () => {
+    const id = await createPlaylist(
       accessToken,
       playlistName,
       `Battiti – ${playlistName}`
     );
-    savePlaylistId(type, slug, playlistId);
+    savePlaylistId(type, slug, id);
+    return id;
+  };
+
+  if (!playlistId) {
+    playlistId = await createNew();
   }
 
-  // Fetch existing track IDs from the playlist
-  const existingIds = await getPlaylistItemIds(accessToken, playlistId);
+  // Fetch existing track IDs, recreating playlist if not found
+  let existingIds: Set<string>;
+  try {
+    existingIds = await getPlaylistItemIds(accessToken, playlistId);
+  } catch (e: unknown) {
+    if (e instanceof Error && e.message.includes("not found")) {
+      playlistId = await createNew();
+      existingIds = new Set();
+    } else {
+      throw e;
+    }
+  }
 
   // Compute delta
   const newIds = tidalIds.filter((id) => !existingIds.has(id));
