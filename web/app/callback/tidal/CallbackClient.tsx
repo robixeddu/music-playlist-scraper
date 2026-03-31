@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { exchangeCodeForToken, getReturnTo, clearReturnTo } from "@/lib/tidal-auth";
+import { exchangeCodeForToken, getReturnTo, clearReturnTo, validateState } from "@/lib/tidal-auth";
 
 export default function CallbackClient() {
   const searchParams = useSearchParams();
@@ -12,9 +12,15 @@ export default function CallbackClient() {
   useEffect(() => {
     const code = searchParams.get("code");
     const errorParam = searchParams.get("error");
+    const state = searchParams.get("state");
 
     if (errorParam) {
       setError(`Autorizzazione negata: ${errorParam}`);
+      return;
+    }
+
+    if (!validateState(state)) {
+      setError("State mismatch — possibile attacco CSRF.");
       return;
     }
 

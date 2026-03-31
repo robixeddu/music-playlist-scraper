@@ -5,6 +5,7 @@ import type { TidalToken } from "./types";
 const SESSION_TOKEN_KEY = "tidal_token";
 const SESSION_VERIFIER_KEY = "tidal_pkce_verifier";
 const SESSION_RETURN_KEY = "tidal_return_to";
+const SESSION_STATE_KEY = "tidal_oauth_state";
 
 // ── PKCE helpers ──────────────────────────────────────────────────────────────
 
@@ -68,6 +69,7 @@ export async function redirectToTidal(returnTo = "/"): Promise<void> {
 
   sessionStorage.setItem(SESSION_VERIFIER_KEY, verifier);
   sessionStorage.setItem(SESSION_RETURN_KEY, returnTo);
+  sessionStorage.setItem(SESSION_STATE_KEY, state);
 
   const params = new URLSearchParams({
     response_type: "code",
@@ -138,4 +140,10 @@ export function getReturnTo(): string {
 
 export function clearReturnTo(): void {
   sessionStorage.removeItem(SESSION_RETURN_KEY);
+}
+
+export function validateState(state: string | null): boolean {
+  const stored = sessionStorage.getItem(SESSION_STATE_KEY);
+  sessionStorage.removeItem(SESSION_STATE_KEY);
+  return !!stored && stored === state;
 }

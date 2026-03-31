@@ -91964,5 +91964,380 @@
         ]
       }
     ]
+  },
+  {
+    "episodeTitle": "Shrew",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/03/Battiti-del-31032026-110c5d4d-a3c6-445c-9080-dc4caf167b53.html",
+    "date": "31 Mar 2026",
+    "tracks": [
+      {
+        "title": "Perseverance",
+        "artist": "WICKED DUB DIVISION MEETS FRANCESCO BEARZATTI",
+        "albumDetails": ", da \"Jazz My Dub\" – Roble Records",
+        "key": "wicked_dub_division_meets_francesco_bearzatti___perseverance",
+        "genres": [
+          "dub",
+          "jazz",
+          "experimental"
+        ],
+        "genresRaw": [
+          "dub",
+          "jazz",
+          "experimental"
+        ],
+        "tidalId": "489382576"
+      },
+      {
+        "title": "Subterranean Night Color",
+        "artist": "RODRIGO AMADO THIS IS OUR LANGUAGE QUARTET",
+        "albumDetails": ", da \"Wailers\" - European Echoes Archive Series",
+        "key": "rodrigo_amado_this_is_our_language_quartet___subterranean_night_color",
+        "genres": [
+          "jazz",
+          "free improvisation"
+        ],
+        "genresRaw": [
+          "jazz",
+          "free improvisation"
+        ]
+      },
+      {
+        "title": "Djine Mogo Tiki",
+        "artist": "NEBA SOLO & BENEGO DIAKITÉ",
+        "albumDetails": ", da \"A Djinn & A Hunter Went Walking (The Complete Sessions)\" – Nonesuch",
+        "key": "neba_solo_benego_diakite___djine_mogo_tiki",
+        "genres": [
+          "world",
+          "afrobeat"
+        ],
+        "genresRaw": [
+          "world",
+          "afrobeat"
+        ],
+        "tidalId": "469979398"
+      },
+      {
+        "title": "Joumana Kayrouz",
+        "artist": "PROSTITUTE",
+        "albumDetails": ", da \"Attempted Martyr\" – Mute",
+        "key": "prostitute___joumana_kayrouz",
+        "genres": [
+          "hip-hop",
+          "experimental"
+        ],
+        "genresRaw": [
+          "hip-hop",
+          "experimental"
+        ],
+        "tidalId": "472001777"
+      },
+      {
+        "title": "Milano & Savona, 7 e 8 Aprile 2026",
+        "artist": "AK'CHMEL",
+        "albumDetails": "",
+        "key": "ak'chmel___milano_savona_7_e_8_aprile_2026",
+        "genres": [
+          "electronic",
+          "ambient"
+        ],
+        "genresRaw": [
+          "electronic",
+          "ambient"
+        ]
+      },
+      {
+        "title": "Roma 7 Aprile 2026",
+        "artist": "WRENS",
+        "albumDetails": "",
+        "key": "wrens___roma_7_aprile_2026",
+        "genres": [
+          "post-rock",
+          "indie"
+        ],
+        "genresRaw": [
+          "post-rock",
+          "indie"
+        ]
+      },
+      {
+        "title": "Serpent House",
+        "artist": "AK'CHMEL",
+        "albumDetails": ", da \"Spiritually Unemployed\" - Akuphone",
+        "key": "ak'chmel___serpent_house",
+        "genres": [
+          "electronic",
+          "ambient"
+        ],
+        "genresRaw": [
+          "electronic",
+          "ambient"
+        ]
+      },
+      {
+        "title": "Crayola",
+        "artist": "WRENS",
+        "albumDetails": ", da \"Half Of What You See\" - Out Of Your Head Records",
+        "key": "wrens___crayola",
+        "genres": [
+          "post-rock",
+          "indie"
+        ],
+        "genresRaw": [
+          "post-rock",
+          "indie"
+        ],
+        "tidalId": "468512698"
+      },
+      {
+        "title": "Leaving home - O Verden, Hav Da Gode Nat! (feat. Lucy Railton)",
+        "artist": "STINE JANVIN / MORTEN JOH",
+        "albumDetails": ", da \"Or Gare: Funeral Procession Music from Ryfylke, Norway\" – Futura Resistenza",
+        "key": "stine_janvin_morten_joh___leaving_home_o_verden_hav_da_gode_nat_feat_lucy_railton",
+        "genres": [
+          "folk",
+          "experimental",
+          "instrumental"
+        ],
+        "genresRaw": [
+          "folk",
+          "experimental",
+          "instrumental"
+        ],
+        "tidalId": "478848593"
+      },
+      {
+        "title": "Processing Grief – Transcendence",
+        "artist": "STINE JANVIN / MORTEN JOH",
+        "albumDetails": ", da \"Or Gare: Funeral Procession Music from Ryfylke, Norway\" – Futura Resistenza",
+        "key": "stine_janvin_morten_joh___processing_grief_–_transcendence",
+        "genres": [
+          "folk",
+          "experimental",
+          "instrumental"
+        ],
+        "genresRaw": [
+          "folk",
+          "experimental",
+          "instrumental"
+        ],
+        "tidalId": "478848599"
+      },
+      {
+        "title": "Tycho",
+        "artist": "KAROLINE WALLACE",
+        "albumDetails": ", da \"Eon\" – Sauajazz",
+        "key": "karoline_wallace___tycho",
+        "genres": [
+          "jazz",
+          "folk",
+          "avant-garde"
+        ],
+        "genresRaw": [
+          "jazz",
+          "folk",
+          "avant-garde"
+        ],
+        "tidalId": "484146272"
+      },
+      {
+        "title": "Bittelille meg",
+        "artist": "KAROLINE WALLACE",
+        "albumDetails": ", da \"Eon\" – Sauajazz",
+        "key": "karoline_wallace___bittelille_meg",
+        "genres": [
+          "jazz",
+          "folk",
+          "avant-garde"
+        ],
+        "genresRaw": [
+          "jazz",
+          "folk",
+          "avant-garde"
+        ],
+        "tidalId": "484146273"
+      },
+      {
+        "title": "Fern",
+        "artist": "PROPAN & STINA STJERN",
+        "albumDetails": ", da \"Shrew\" – SusannaSonata",
+        "key": "propan_stina_stjern___fern",
+        "genres": [
+          "electronic",
+          "ambient"
+        ],
+        "genresRaw": [
+          "electronic",
+          "ambient"
+        ]
+      },
+      {
+        "title": "Circuit I / Run",
+        "artist": "IKI",
+        "albumDetails": ", da \"Body\" – Tila",
+        "key": "iki___circuit_i_run",
+        "genres": [
+          "electronic",
+          "experimental"
+        ],
+        "genresRaw": [
+          "electronic",
+          "experimental"
+        ],
+        "tidalId": "452511585"
+      },
+      {
+        "title": "Dance",
+        "artist": "IKI",
+        "albumDetails": ", da \"Body\" – Tila",
+        "key": "iki___dance",
+        "genres": [
+          "electronic",
+          "experimental"
+        ],
+        "genresRaw": [
+          "electronic",
+          "experimental"
+        ],
+        "tidalId": "185642016"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Young Jazz Countdown: Federico Nuti InFormal Setting",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/03/Battiti-del-30032026-8fe10243-720f-4252-88c0-0603cc0cef2c.html",
+    "date": "30 Mar 2026",
+    "tracks": [
+      {
+        "title": "Intro FEDERICO NUTI INFORMAL SETTING, Inappropriate Behavior In A Formal Setting",
+        "artist": "FEDERICO NUTI INFORMAL SETTING",
+        "albumDetails": "",
+        "key": "federico_nuti_informal_setting___intro_federico_nuti_informal_setting_inappropriate_behavior_in_a_formal_setting",
+        "genres": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "tidalId": "297778857"
+      },
+      {
+        "title": "And I Sound Like This",
+        "artist": "FEDERICO NUTI INFORMAL SETTING",
+        "albumDetails": "",
+        "key": "federico_nuti_informal_setting___and_i_sound_like_this",
+        "genres": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "tidalId": "297778863"
+      },
+      {
+        "title": "No May Turkey Supper, Maybe June",
+        "artist": "FEDERICO NUTI INFORMAL SETTING",
+        "albumDetails": "",
+        "key": "federico_nuti_informal_setting___no_may_turkey_supper_maybe_june",
+        "genres": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "tidalId": "297778861"
+      },
+      {
+        "title": "Winter Light Memories",
+        "artist": "FEDERICO NUTI INFORMAL SETTING",
+        "albumDetails": "",
+        "key": "federico_nuti_informal_setting___winter_light_memories",
+        "genres": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "tidalId": "297778859"
+      },
+      {
+        "title": "Remains Of Human Connections",
+        "artist": "FEDERICO NUTI INFORMAL SETTING",
+        "albumDetails": "",
+        "key": "federico_nuti_informal_setting___remains_of_human_connections",
+        "genres": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "tidalId": "297778860"
+      },
+      {
+        "title": "OREN#!",
+        "artist": "FEDERICO NUTI INFORMAL SETTING",
+        "albumDetails": "",
+        "key": "federico_nuti_informal_setting___oren",
+        "genres": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ]
+      },
+      {
+        "title": "Ltd & Intro",
+        "artist": "DEXTER GORDON",
+        "albumDetails": ", da \"More Than You Know\" – Gleam Records",
+        "key": "dexter_gordon___ltd_intro",
+        "genres": [
+          "jazz",
+          "instrumental"
+        ],
+        "genresRaw": [
+          "jazz",
+          "instrumental"
+        ],
+        "tidalId": "1310015"
+      },
+      {
+        "title": "Hi Fly",
+        "artist": "DEXTER GORDON",
+        "albumDetails": ", da \"More Than You Know\" – Gleam Records",
+        "key": "dexter_gordon___hi_fly",
+        "genres": [
+          "jazz",
+          "instrumental"
+        ],
+        "genresRaw": [
+          "jazz",
+          "instrumental"
+        ],
+        "tidalId": "383975693"
+      }
+    ]
   }
 ]
