@@ -11,6 +11,7 @@ export const GENRE_FAMILY: Record<string, string> = {
   soul:               "2-jazz",
   // Electronic
   ambient:            "3-electronic",
+  chillout:           "3-electronic",
   downtempo:          "3-electronic",
   drone:              "3-electronic",
   dub:                "3-electronic",
@@ -18,15 +19,22 @@ export const GENRE_FAMILY: Record<string, string> = {
   electronic:         "3-electronic",
   house:              "3-electronic",
   "lo-fi":            "3-electronic",
+  minimal:            "3-electronic",
   "new age":          "3-electronic",
   noise:              "3-electronic",
   "post-industrial":  "3-electronic",
   techno:             "3-electronic",
+  trance:             "3-electronic",
+  "trip-hop":         "3-electronic",
   // Experimental
   "avant-garde":      "4-experimental",
   experimental:       "4-experimental",
   "free improvisation": "4-experimental",
+  instrumental:       "4-experimental",
+  "spoken word":      "4-experimental",
   // Rock & derivatives
+  indie:              "5-rock",
+  shoegaze:           "5-rock",
   "new wave":         "5-rock",
   "post-hardcore":    "5-rock",
   "post-punk":        "5-rock",
@@ -53,4 +61,6 @@ export const GENRE_FAMILY: Record<string, string> = {
   flamenco:           "9-world",
   reggae:             "9-world",
   world:              "9-world",
+  // Soundtrack
+  soundtrack:         "10-soundtrack",
 };

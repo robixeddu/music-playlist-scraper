@@ -12,7 +12,7 @@ import {
   getKnownEpisodeUrls,
 } from "./lib/aggregation.js";
 import { BATTITI_URL, SKIPPED_COUNT_LIMIT, MISSING_TRACKS_FILE, GLOBAL_PLAYLIST_FILE, GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "./lib/config.js";
-import { getArtistGenres } from "./lib/claudeGenres.js";
+import { getArtistGenres, type GenreResult } from "./lib/claudeGenres.js";
 import { normalizeGenre } from "./lib/genres.js";
 import { getAccessToken } from "./lib/tidalAuth.js";
 import {
@@ -112,7 +112,7 @@ const fullSync = async () => {
   // ─── Step 3: Tag + match + distribute ─────────────────────────────────────
   console.log("\n🎵 Step 2: Genre tagging + TIDAL sync...\n");
 
-  const artistGenreCache = new Map<string, string[]>();
+  const artistGenreCache = new Map<string, GenreResult>();
   const todayExisting = new Set<string>();
   let todayAdded = 0;
   let globalAdded = 0;
@@ -132,10 +132,11 @@ const fullSync = async () => {
       artistGenreCache.set(artistKey, genres);
       await sleep(GENRE_DELAY_MS);
     }
-    const genres = artistGenreCache.get(artistKey)!;
-    if (genres.length) {
-      track.genres = genres;
-      console.log(`  🏷️  ${genres.join(", ")}`);
+    const genreResult = artistGenreCache.get(artistKey)!;
+    if (genreResult.normalized.length) {
+      track.genres = genreResult.normalized;
+      track.genresRaw = genreResult.raw;
+      console.log(`  🏷️  ${genreResult.normalized.join(", ")}`);
     }
 
     // TIDAL match
@@ -167,7 +168,7 @@ const fullSync = async () => {
     }
 
     // Genre playlists (dedup)
-    for (const rawGenre of genres) {
+    for (const rawGenre of genreResult.normalized) {
       const genre = normalizeGenre(rawGenre);
       if (!genre) continue;
 

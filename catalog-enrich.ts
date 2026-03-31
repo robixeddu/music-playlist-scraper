@@ -2,7 +2,7 @@ import "dotenv/config";
 import fsPromises from "fs/promises";
 import { getAccessToken } from "./lib/tidalAuth.js";
 import { findTidalMatch } from "./lib/tidalClient.js";
-import { TRACKS_FILE } from "./lib/config.js";
+import { TRACKS_FILE, MISSING_TRACKS_FILE } from "./lib/config.js";
 import { EpisodeAggregated, BaseTrack } from "./lib/types.js";
 import { logError } from "./lib/logger.js";
 
@@ -66,6 +66,18 @@ const catalogEnrich = async () => {
   await fsPromises.writeFile(TRACKS_FILE, JSON.stringify(episodes, null, 2));
   console.log(`\n✅ Done. Found: ${found}, Not found: ${notFound}`);
   console.log(`💾 Saved to ${TRACKS_FILE}`);
+
+  // Regenerate missing_tracks.txt: all genre-tagged tracks still without tidalId, deduplicated
+  const missingSet = new Set<string>();
+  for (const ep of episodes) {
+    for (const t of ep.tracks) {
+      if (!t.tidalId && t.genres?.length) {
+        missingSet.add(`${t.artist} - ${t.title}`);
+      }
+    }
+  }
+  await fsPromises.writeFile(MISSING_TRACKS_FILE, [...missingSet].join("\n") + "\n");
+  console.log(`📄 Missing tracks updated: ${missingSet.size} entries → ${MISSING_TRACKS_FILE}`);
 };
 
 catalogEnrich().catch((e) => logError("tidal-catalog-enrich", e.message));

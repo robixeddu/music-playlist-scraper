@@ -3,7 +3,8 @@ export interface BaseTrack {
   artist: string;
   albumDetails?: string;
   key: string;
-  genres?: string[];
+  genres?: string[];        // normalized via ALIASES (used for playlists/UI)
+  genresRaw?: string[];     // raw Haiku output (audit trail)
   tidalId?: string;
 }
 export interface BaseEpisode {

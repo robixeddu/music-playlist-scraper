@@ -1,7 +1,7 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
 import { getAccessToken } from "./lib/tidalAuth.js";
-import { createPlaylist, getPlaylistTrackIds, addTrackToPlaylist } from "./lib/tidalClient.js";
+import { createPlaylist, getPlaylistTrackIds, addTrackToPlaylist, deletePlaylist } from "./lib/tidalClient.js";
 import { TRACKS_FILE, GLOBAL_PLAYLIST_FILE, GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "./lib/config.js";
 import { EpisodeAggregated } from "./lib/types.js";
 import { logError } from "./lib/logger.js";
@@ -31,6 +31,8 @@ const getOrCreateGlobalPlaylist = async (token: string): Promise<string> => {
     return id;
   }
 };
+
+const REBUILD = process.argv.includes("--rebuild");
 
 const genrePlaylist = async () => {
   const raw = await fsPromises.readFile(TRACKS_FILE, "utf-8");
@@ -87,17 +89,31 @@ const genrePlaylist = async () => {
   for (const [genre, trackIds] of eligibleGenres) {
     const playlistName = `${PLAYLIST_PREFIX}-${genre}`;
 
+    token = await getAccessToken();
+    let playlistId = genrePlaylists[genre];
+
+    if (REBUILD && playlistId) {
+      try {
+        await deletePlaylist(playlistId, token);
+        console.log(`🗑️  Deleted playlist "${playlistName}" (${playlistId})`);
+      } catch {
+        console.log(`   ⚠️  Could not delete "${playlistName}", will recreate anyway`);
+      }
+      delete genrePlaylists[genre];
+      playlistId = undefined as any;
+    }
+
     // Create playlist if it doesn't exist yet
-    if (!genrePlaylists[genre]) {
+    if (!playlistId) {
       genrePlaylists[genre] = await createPlaylist(playlistName, token);
+      playlistId = genrePlaylists[genre];
       await fsPromises.writeFile(GENRE_PLAYLISTS_FILE, JSON.stringify(genrePlaylists, null, 2));
-      console.log(`📋 Created playlist "${playlistName}" (${genrePlaylists[genre]})`);
+      console.log(`📋 Created playlist "${playlistName}" (${playlistId})`);
     } else {
-      console.log(`📋 Reusing playlist "${playlistName}" (${genrePlaylists[genre]})`);
+      console.log(`📋 Reusing playlist "${playlistName}" (${playlistId})`);
     }
 
     token = await getAccessToken();
-    let playlistId = genrePlaylists[genre];
     let existing: Set<string>;
     try {
       existing = await getPlaylistTrackIds(playlistId, token);

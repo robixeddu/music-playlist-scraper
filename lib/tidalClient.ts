@@ -104,6 +104,7 @@ const cleanTitle = (title: string): string =>
     .replace(/,\s*"[^"]*"/g, "")                    // RAI: , "Album Name" (quoted album after comma)
     .replace(/\s*[-–]\s*live\s*@.*/gi, "")          // "Title – live @ Venue 2025"
     .replace(/\s*–\s*.+$/, "")                      // em-dash: label/format annotation (– 12" Rough Trade, – Les Disques Bongo Joe…)
+    .replace(/\s+-\s+\w+$/, "")                     // hyphen: single-word label suffix (- Tzadik, - ECM)
     .replace(/\s*[\(\[].*?[\)\]]/g, "")             // "(singolo)", "[remix]", "(1971)", etc.
     .replace(/\s*[-–]\s*(?:feat\.?|ft\.?)\s+.*/gi, "") // "Title - feat. Artist"
     .replace(/\s+(?:feat\.?|ft\.?)\s+.*/gi, "")        // "Title feat. Artist"
@@ -122,13 +123,13 @@ const normalizeArtistForSearch = (artist: string): string =>
 
 // Normalize title for search: strip apostrophes that can confuse TIDAL search API
 const normalizeTitleForSearch = (title: string): string =>
-  title.replace(/[''']/g, " ").replace(/[!?*+#@]/g, "").replace(/\s+/g, " ").trim();
+  title.replace(/[''']/g, "").replace(/[!?*+#@]/g, "").replace(/\s+/g, " ").trim();
 
 // Return unique artist variants to try: full, normalized, each slash/& part
 const artistSearchVariants = (artist: string): string[] => {
   const norm = normalizeArtistForSearch(artist);
   const parts = artist
-    .split(/\s*[\/&]\s*|\s+(?:feat\.?|ft\.?)\s+/i)
+    .split(/\s*[\/&–]\s*|\s+(?:feat\.?|ft\.?)\s+/i)  // also split on em-dash (JOHN ZORN – JESSE HARRIS)
     .map((s) => s.trim())
     .filter(Boolean);
   return [...new Set([artist, norm, ...parts])].filter(Boolean);
@@ -225,8 +226,8 @@ export const findTidalMatch = async (
 
   // Extra: apostrophe-stripped title variant (helps TIDAL search for e.g. "Jes' Grew")
   const cleanNorm = normalizeTitleForSearch(clean || title);
-  const fbNorm = cleanNorm !== (clean || title)
-    ? (await sleep(SEARCH_DELAY_MS), await searchTracks(`${primaryArtist} ${cleanNorm}`, artist, token, artistById))
+  const fbNorm = cleanNorm !== (clean || title) || normArtist !== primaryArtist
+    ? (await sleep(SEARCH_DELAY_MS), await searchTracks(`${normArtist} ${cleanNorm}`, artist, token, artistById))
     : [];
 
   // Extra: normalized artist (dots expanded) + each slash/& part
@@ -343,6 +344,13 @@ export const getPlaylistTrackIds = async (
   }
 
   return ids;
+};
+
+export const deletePlaylist = async (
+  playlistId: string,
+  token: string
+): Promise<void> => {
+  await tidalFetch(`/playlists/${playlistId}`, token, { method: "DELETE" });
 };
 
 export const addTrackToPlaylist = async (
