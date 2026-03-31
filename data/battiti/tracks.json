@@ -6702,7 +6702,7 @@
         "genres": [
           "experimental",
           "electronic",
-          "folktronica"
+          "folk"
         ],
         "tidalId": "19265070",
         "genresRaw": [
@@ -6898,7 +6898,7 @@
         "albumDetails": "da \"Ensamble Grande\" - Loumi Records",
         "key": "fuensanta___yo_te_buscaba_tanto",
         "genres": [
-          "flamenco"
+          "world"
         ],
         "tidalId": "221276898",
         "genresRaw": [
@@ -7351,7 +7351,7 @@
         "key": "ranil_y_su_conjunto_tropical___las_oladas",
         "genres": [
           "cumbia",
-          "tropical"
+          "world"
         ],
         "tidalId": "427573442",
         "genresRaw": [
@@ -7366,7 +7366,7 @@
         "key": "ranil_y_su_conjunto_tropical___chinito_rulo",
         "genres": [
           "cumbia",
-          "tropical"
+          "world"
         ],
         "tidalId": "445120028",
         "genresRaw": [
@@ -13158,7 +13158,7 @@
         "albumDetails": "da \"Principio del fuego\" - GroundUP",
         "key": "fuensanta___cuándo_te_voy_a_decir",
         "genres": [
-          "flamenco"
+          "world"
         ],
         "tidalId": "462543357",
         "genresRaw": [
@@ -15543,7 +15543,7 @@
         "genres": [
           "experimental",
           "electronic",
-          "folktronica"
+          "folk"
         ],
         "tidalId": "19265067",
         "genresRaw": [
@@ -19093,8 +19093,7 @@
         "key": "new_order___leave_me_alone",
         "genres": [
           "post-punk",
-          "electronic",
-          "dance"
+          "electronic"
         ],
         "tidalId": "94580519",
         "genresRaw": [
@@ -22251,7 +22250,6 @@
         "key": "angel_bat_dawid_naima_nefertari___heru_the_oasis",
         "genres": [
           "jazz",
-          "spiritual",
           "experimental"
         ],
         "tidalId": "420029789",
@@ -23134,8 +23132,7 @@
         "albumDetails": "da \"Greatest Hits Vol. 2\" – Polar",
         "key": "abba___gimme_gimme_gimme_a_man_after_midnight",
         "genres": [
-          "pop",
-          "disco"
+          "pop"
         ],
         "tidalId": "1771758",
         "genresRaw": [
@@ -23167,8 +23164,7 @@
         "key": "gala___freed_from_desire",
         "genres": [
           "pop",
-          "electronic",
-          "dance"
+          "electronic"
         ],
         "tidalId": "70681623",
         "genresRaw": [
@@ -23247,7 +23243,6 @@
         "key": "angel_bat_dawid_naima_nefertari___black_stones_of_sirus",
         "genres": [
           "jazz",
-          "spiritual",
           "experimental"
         ],
         "tidalId": "421629494",
@@ -23704,7 +23699,6 @@
         "key": "angel_bat_dawid_naima_nefertari___procession_of_the_equinox",
         "genres": [
           "jazz",
-          "spiritual",
           "experimental"
         ],
         "tidalId": "420029787",
@@ -32032,8 +32026,7 @@
         "key": "stanislas_tohon___dja_dja_dja",
         "genres": [
           "world",
-          "instrumental",
-          "traditional"
+          "instrumental"
         ],
         "tidalId": "86491229",
         "genresRaw": [
@@ -36520,7 +36513,7 @@
         "genres": [
           "experimental",
           "electronic",
-          "folktronica"
+          "folk"
         ],
         "tidalId": "19265072",
         "genresRaw": [
@@ -37684,8 +37677,7 @@
         "key": "mc5___ramblin'_rose",
         "genres": [
           "rock",
-          "punk",
-          "proto-punk"
+          "punk"
         ],
         "tidalId": "68669961",
         "genresRaw": [
@@ -39475,7 +39467,7 @@
         "albumDetails": "da \"Imidiwan: Companions\" – Independiente",
         "key": "tinariwen___assuf_ag_assuf",
         "genres": [
-          "psych​edelic",
+          "psychedelic",
           "world",
           "blues"
         ],
@@ -48422,8 +48414,7 @@
         "key": "charles_lloyd___lift_every_voice_and_sing",
         "genres": [
           "jazz",
-          "world",
-          "spiritual"
+          "world"
         ],
         "tidalId": "88931481",
         "genresRaw": [
@@ -49705,8 +49696,7 @@
         "key": "charles_lloyd___monk's_dance",
         "genres": [
           "jazz",
-          "world",
-          "spiritual"
+          "world"
         ],
         "tidalId": "349711052",
         "genresRaw": [
@@ -50393,7 +50383,7 @@
         "albumDetails": "da \"Idrache (Traces Of The Past)\" – Wedge",
         "key": "tinariwen___imidiwan_ma_tennam",
         "genres": [
-          "psych​edelic",
+          "psychedelic",
           "world",
           "blues"
         ],
@@ -52058,7 +52048,7 @@
         "albumDetails": "da \"Idrache (Traces Of The Past)\" – Wedge",
         "key": "tinariwen___azaman_amikankanen",
         "genres": [
-          "psych​edelic",
+          "psychedelic",
           "world",
           "blues"
         ],
@@ -55956,7 +55946,7 @@
         "albumDetails": "da \"Idrache (Traces Of The Past)\" – Wedge",
         "key": "tinariwen___adounia_ti_chidjret",
         "genres": [
-          "psych​edelic",
+          "psychedelic",
           "world",
           "blues"
         ],
@@ -56893,7 +56883,7 @@
         "albumDetails": "da \"Idrache (Traces Of The Past)\" – Wedge",
         "key": "tinariwen___alkhar_dessouf",
         "genres": [
-          "psych​edelic",
+          "psychedelic",
           "world",
           "blues"
         ],
@@ -58845,8 +58835,7 @@
         "key": "aretha_franklin___moody's_mood",
         "genres": [
           "soul",
-          "r&b",
-          "gospel"
+          "r&b"
         ],
         "tidalId": "1845318",
         "genresRaw": [
@@ -64846,7 +64835,6 @@
         "key": "angel_bat_dawid_naima_nefertari___black_stones_of_sirius",
         "genres": [
           "jazz",
-          "spiritual",
           "experimental"
         ],
         "tidalId": "421629494",
@@ -65538,7 +65526,6 @@
         "key": "mavis_staples___we_got_to_have_peace",
         "genres": [
           "soul",
-          "gospel",
           "r&b"
         ],
         "tidalId": "95482571",
@@ -65555,7 +65542,6 @@
         "key": "mavis_staples___everybody_needs_love",
         "genres": [
           "soul",
-          "gospel",
           "r&b"
         ],
         "tidalId": "59947424",
@@ -66943,7 +66929,7 @@
         "key": "ludovica_manzo___song_ii_[sometimes_in_winter]_coda",
         "genres": [
           "jazz",
-          "improvisation"
+          "free improvisation"
         ],
         "tidalId": "474715641",
         "genresRaw": [
@@ -68238,7 +68224,7 @@
         "key": "ludovica_manzo___soliloquies_little_dance",
         "genres": [
           "jazz",
-          "improvisation"
+          "free improvisation"
         ],
         "tidalId": "474715644",
         "genresRaw": [
@@ -69263,8 +69249,7 @@
         "key": "boban_marko_marković_orchestra_versus_fanfare_ciocărlia___caravan_feat_fanfare_ciocarlia",
         "genres": [
           "world",
-          "folk",
-          "brass band"
+          "folk"
         ],
         "genresRaw": [
           "world",
@@ -78154,7 +78139,7 @@
         "key": "ludovica_manzo___song_i",
         "genres": [
           "jazz",
-          "improvisation"
+          "free improvisation"
         ],
         "tidalId": "474715639",
         "genresRaw": [
@@ -79753,7 +79738,7 @@
         "genres": [
           "pop",
           "r&b",
-          "dance"
+          "electronic"
         ],
         "tidalId": "87793593",
         "genresRaw": [
@@ -84589,7 +84574,7 @@
         "key": "ranil_y_su_conjunto_tropical___bahia",
         "genres": [
           "cumbia",
-          "tropical"
+          "world"
         ],
         "tidalId": "52360298",
         "genresRaw": [
@@ -84604,7 +84589,7 @@
         "key": "ranil_y_su_conjunto_tropical___lindo_atardecer",
         "genres": [
           "cumbia",
-          "tropical"
+          "world"
         ],
         "tidalId": "471852803",
         "genresRaw": [
@@ -85070,7 +85055,7 @@
         "albumDetails": ", da \"Lunar\" – Redshift Music",
         "key": "the_avantgarde_flamenco_trio___corazones",
         "genres": [
-          "flamenco",
+          "world",
           "avant-garde",
           "instrumental"
         ],
@@ -86693,7 +86678,6 @@
         "albumDetails": ", da \"Joseph Kamaru, Heavy Combination 1966-2007\" – Disciples",
         "key": "joseph_kamaru_kamaru_super_stars___karolina",
         "genres": [
-          "benga",
           "world"
         ],
         "tidalId": "330232607",
@@ -86815,7 +86799,7 @@
         "albumDetails": ", da \"Lunar\" – Redshift Music",
         "key": "the_avantgarde_flamenco_trio___que_pena",
         "genres": [
-          "flamenco",
+          "world",
           "avant-garde",
           "instrumental"
         ],
@@ -87753,8 +87737,7 @@
         "albumDetails": ", da \"Dialogue\" – Aut Records",
         "key": "jacopo_fagioli___dome",
         "genres": [
-          "classica",
-          "baroque"
+          "classica"
         ],
         "tidalId": "429162855",
         "genresRaw": [
@@ -88339,8 +88322,7 @@
         "key": "aretha_franklin___mary_don't_you_weep",
         "genres": [
           "soul",
-          "r&b",
-          "gospel"
+          "r&b"
         ],
         "tidalId": "233933381",
         "genresRaw": [
@@ -90563,7 +90545,7 @@
         "albumDetails": ", da \"Hoggar\" – Wedge",
         "key": "tinariwen___amidinim_ehaf_solan",
         "genres": [
-          "psych​edelic",
+          "psychedelic",
           "world",
           "blues"
         ],
@@ -90580,7 +90562,7 @@
         "albumDetails": ", da \"Hoggar\" – Wedge",
         "key": "tinariwen___erghad_afewo",
         "genres": [
-          "psych​edelic",
+          "psychedelic",
           "world",
           "blues"
         ],
@@ -91028,7 +91010,7 @@
         "albumDetails": ", da \"Hoggar\" – Wedge",
         "key": "tinariwen___sagherat_assani_feat_solafa_elyas",
         "genres": [
-          "psych​edelic",
+          "psychedelic",
           "world",
           "blues"
         ],
@@ -91045,7 +91027,7 @@
         "albumDetails": ", da \"Hoggar\" – Wedge",
         "key": "tinariwen___khay_erilan",
         "genres": [
-          "psych​edelic",
+          "psychedelic",
           "world",
           "blues"
         ],
@@ -91134,7 +91116,6 @@
         "key": "amuleto___cammina_piu_piano",
         "genres": [
           "rock",
-          "psych rock",
           "psychedelic"
         ],
         "tidalId": "493718635",
@@ -91151,7 +91132,6 @@
         "key": "amuleto___certe_cose_al_buio",
         "genres": [
           "rock",
-          "psych rock",
           "psychedelic"
         ],
         "tidalId": "493718641",

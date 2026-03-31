@@ -308,6 +308,28 @@ const ALIASES: Record<string, string> = {
   "lo fi": "lo-fi",
   "avantgarde": "avant-garde",
   "poetry": "spoken word",
+
+  // Additional mappings
+  "folktronica": "folk",
+  "flamenco": "world",
+  "tropical": "world",
+  "dance": "electronic",
+  "disco": "pop",
+  "spiritual": "jazz",
+  "gospel": "soul",
+  "traditional": "world",
+  "proto-punk": "punk",
+  "improvisation": "free improvisation",
+  "brass band": "world",
+  "benga": "world",
+  "baroque": "classica",
+  "psych rock": "psychedelic",
+  "highlife": "world",
+  "salsa": "world",
+  "raï": "world",
+  "rebetiko": "world",
+  "qawwali": "world",
+  "vocal": "experimental",
 };
 
 // Canonical genre → display family (for proximity sorting in UI)
