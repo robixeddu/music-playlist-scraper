@@ -183,7 +183,25 @@ const ALIASES: Record<string, string> = {
   "noise rock": "noise",
   "harsh noise": "noise",
   "power electronics": "noise",
-  "industrial": "noise",
+
+  // Industrial
+  "industrial": "industrial",
+  "industrial rock": "industrial",
+  "industrial metal": "industrial",
+
+  // Metal (all variants → metal)
+  "metal": "metal",
+  "heavy metal": "metal",
+  "death metal": "metal",
+  "black metal": "metal",
+  "doom metal": "metal",
+  "sludge metal": "metal",
+  "drone metal": "metal",
+  "noise metal": "metal",
+  "post-metal": "metal",
+  "math metal": "metal",
+  "thrash metal": "metal",
+  "progressive metal": "metal",
 
   // Classical (all variants → classica)
   "classical": "classica",
@@ -326,6 +344,8 @@ export const GENRE_FAMILY: Record<string, string> = {
   "spoken word":      "4-experimental",
   // Rock & derivatives
   indie:              "5-rock",
+  industrial:         "5-rock",
+  metal:              "5-rock",
   shoegaze:           "5-rock",
   "new wave":         "5-rock",
   "post-hardcore":    "5-rock",

@@ -1,6 +1,6 @@
 "use client";
 
-const BASE = "https://openapi.tidal.com/v2";
+const BASE = "/tidal-api";
 
 function headers(token: string): HeadersInit {
   return {

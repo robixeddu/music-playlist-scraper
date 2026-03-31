@@ -11,7 +11,7 @@ const APPROVED_GENRES = [
   "electroacoustic", "electronic", "experimental",
   "folk", "free improvisation", "funk",
   "hip-hop", "house", "indie", "instrumental",
-  "jazz", "lo-fi", "minimal", "mpb",
+  "industrial", "jazz", "lo-fi", "metal", "minimal", "mpb",
   "new age", "new wave", "noise",
   "pop", "post-industrial", "post-punk", "post-rock",
   "psychedelic", "punk", "r&b", "reggae", "rock",
