@@ -145,6 +145,12 @@ Each artist is classified once per run (cached). Claude returns 1–3 genres fro
 - **BLACKLIST**: geographic tags (country names, cities, nationalities, pan-regional terms), instruments, roles, junk tags. Rule: **any geographic name goes in the blacklist**.
 - **ALIASES**: semantic merges into canonical forms (e.g. `free jazz` → `jazz`, `darkwave` → `new wave`, `tribal` → `world`). Rule: **any variant of an existing genre goes in aliases**.
 
+### Canonical genres
+
+Genres are organized into families for UI sorting. Key canonical values include: `jazz`, `blues`, `soul`, `electronic`, `ambient`, `drone`, `experimental`, `avant-garde`, `rock`, `post-punk`, `post-rock`, `metal`, `industrial`, `punk`, `psychedelic`, `noise`, `folk`, `pop`, `hip-hop`, `r&b`, `world`, `reggae`, `classica`, `soundtrack`, and the special `no-genre` tag for untagged tracks.
+
+`no-genre` is assigned via `genre-enrich.ts --mark-empty` after all other enrichment passes are done. Every track that still has no genre gets `["no-genre"]`, which maps to a dedicated `BATTITI-no-genre` TIDAL playlist.
+
 ### Auto-playlist creation
 
 - **During `npm start`**: a new `BATTITI-{genre}` playlist is created on TIDAL immediately when the first track of a new genre appears.
@@ -206,12 +212,14 @@ Each candidate is verified against the real TIDAL artist (separate API call) bef
 
 ## Web UI
 
-A read-only Next.js 16 app in `web/` that browses the catalog:
+A read-only Next.js 16 app in `web/` that browses the catalog — deployed at [music-playlist-scraper.vercel.app](https://music-playlist-scraper.vercel.app):
 
 - **Language auto-detection** from `Accept-Language` header — no `/it` or `/en` prefix in URLs
 - Browse episodes by date, filter by genre, see TIDAL coverage per episode
-- Import any section (global, genre, episode) directly into TIDAL via OAuth
-- Hosted statically; data fetched from GitHub raw URLs with 1-hour in-memory cache
+- Import any section (global, genre, episode) directly into TIDAL via OAuth 2.1 PKCE
+- Import buttons disabled until connected to TIDAL
+- TIDAL API calls proxied via Next.js rewrites (avoids CORS)
+- Data fetched from GitHub raw URLs with 1-hour in-memory cache
 
 ```bash
 cd web && npm install && npm run dev   # http://localhost:3000

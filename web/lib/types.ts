@@ -1,4 +1,19 @@
-export type { BaseTrack as Track, EpisodeAggregated } from "@root/lib/types";
+export interface Track {
+  title: string;
+  artist: string;
+  albumDetails?: string;
+  key: string;
+  genres?: string[];
+  genresRaw?: string[];
+  tidalId?: string;
+}
+
+export interface EpisodeAggregated {
+  episodeTitle: string;
+  episodeUrl: string;
+  date: string;
+  tracks: Track[];
+}
 
 export interface Source {
   id: string;
