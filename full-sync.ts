@@ -108,7 +108,6 @@ const fullSync = async () => {
 
   const genrePlaylists = await loadGenrePlaylists();
   const genreExisting = new Map<string, Set<string>>();
-  const missingGenres = new Set<string>(); // 404'd this run — skip without recreating
 
   // ─── Step 3: Tag + match + distribute ─────────────────────────────────────
   console.log("\n🎵 Step 2: Genre tagging + TIDAL sync...\n");
@@ -171,7 +170,7 @@ const fullSync = async () => {
     // Genre playlists (dedup)
     for (const rawGenre of genreResult.normalized) {
       const genre = normalizeGenre(rawGenre);
-      if (!genre || missingGenres.has(genre)) continue;
+      if (!genre) continue;
 
       // Create playlist if new genre
       if (!genrePlaylists[genre]) {
@@ -184,16 +183,16 @@ const fullSync = async () => {
         console.log(`  📋 Created new genre playlist "${PLAYLIST_PREFIX}-${genre}"`);
       }
 
-      // Load existing IDs if not cached yet — skip genre on 404 (don't auto-recreate)
+      // Load existing IDs if not cached yet — recreate on 404
       if (!genreExisting.has(genre)) {
         try {
           genreExisting.set(genre, await getPlaylistTrackIds(genrePlaylists[genre], token));
         } catch (e: any) {
           if (!e.message?.includes("404")) throw e;
-          console.log(`  ⚠️  Playlist "${PLAYLIST_PREFIX}-${genre}" not found on TIDAL — skipping this run.`);
-          console.log(`     Run \`npm run genre-playlist\` to recreate missing playlists.`);
-          missingGenres.add(genre);
-          continue;
+          console.log(`  ⚠️  ${PLAYLIST_PREFIX}-${genre} not found on TIDAL, recreating...`);
+          genrePlaylists[genre] = await createPlaylist(`${PLAYLIST_PREFIX}-${genre}`, token);
+          await fsPromises.writeFile(GENRE_PLAYLISTS_FILE, JSON.stringify(genrePlaylists, null, 2));
+          genreExisting.set(genre, new Set());
         }
       }
 
