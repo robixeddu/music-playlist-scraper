@@ -34,18 +34,19 @@ function genreSortKey(genre: string): string {
 }
 
 export function getGenres(episodes: EpisodeAggregated[]): GenreRow[] {
-  const counts: Record<string, number> = {};
+  const genreIds: Record<string, Set<string>> = {};
   for (const ep of episodes) {
     for (const track of ep.tracks) {
       if (!track.tidalId) continue;
       for (const genre of track.genres ?? []) {
-        counts[genre] = (counts[genre] ?? 0) + 1;
+        if (!genreIds[genre]) genreIds[genre] = new Set();
+        genreIds[genre].add(track.tidalId);
       }
     }
   }
-  return Object.entries(counts)
-    .filter(([, count]) => count >= MIN_GENRE_TRACKS)
-    .map(([genre, count]) => ({ genre, count }))
+  return Object.entries(genreIds)
+    .filter(([, ids]) => ids.size >= MIN_GENRE_TRACKS)
+    .map(([genre, ids]) => ({ genre, count: ids.size }))
     .sort((a, b) => genreSortKey(a.genre).localeCompare(genreSortKey(b.genre)));
 }
 
