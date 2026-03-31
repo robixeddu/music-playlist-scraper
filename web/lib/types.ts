@@ -1,3 +1,5 @@
+export type { BaseTrack as Track, EpisodeAggregated } from "@root/lib/types";
+
 export interface Source {
   id: string;
   name: string;
@@ -6,22 +8,6 @@ export interface Source {
   playlistPrefix: string;
   color: string;
   active: boolean;
-}
-
-export interface Track {
-  title: string;
-  artist: string;
-  albumDetails?: string;
-  key?: string;
-  genres?: string[];
-  tidalId?: string | null;
-}
-
-export interface EpisodeAggregated {
-  episodeTitle: string;
-  episodeUrl: string;
-  date: string;
-  tracks: Track[];
 }
 
 export interface TidalToken {

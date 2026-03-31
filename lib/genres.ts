@@ -197,7 +197,6 @@ const ALIASES: Record<string, string> = {
   "black metal": "metal",
   "doom metal": "metal",
   "sludge metal": "metal",
-  "drone metal": "metal",
   "noise metal": "metal",
   "post-metal": "metal",
   "math metal": "metal",
