@@ -1,37 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { getStoredToken, clearToken, redirectToTidal } from "@/lib/tidal-auth";
+import { redirectToTidal } from "@/lib/tidal-auth";
+import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useT } from "./LangProvider";
 
 export default function TidalPill() {
   const tr = useT();
   const pathname = usePathname();
-  const [connected, setConnected] = useState(() => getStoredToken() !== null);
-
-  // Listen for token changes (e.g. after callback redirect)
-  useEffect(() => {
-    function checkToken() {
-      setConnected(getStoredToken() !== null);
-    }
-    window.addEventListener("focus", checkToken);
-    return () => window.removeEventListener("focus", checkToken);
-  }, []);
+  const [connected, disconnect] = useTidalConnected();
 
   function handleConnect() {
     redirectToTidal(pathname).catch(console.error);
   }
 
-  function handleDisconnect() {
-    clearToken();
-    setConnected(false);
-  }
-
   if (connected) {
     return (
       <button
-        onClick={handleDisconnect}
+        onClick={disconnect}
         title={tr.disconnectTitle}
         className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/20 transition-colors cursor-pointer"
       >

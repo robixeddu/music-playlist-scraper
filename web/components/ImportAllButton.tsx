@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { importPlaylist, type PlaylistType } from "@/lib/tidal-import";
+import { useTidalConnected } from "@/lib/useTidalConnected";
 import { redirectToTidal, getStoredToken } from "@/lib/tidal-auth";
 import { useT } from "./LangProvider";
 
@@ -24,6 +25,7 @@ type State =
 
 export default function ImportAllButton({ items }: ImportAllButtonProps) {
   const tr = useT();
+  const [connected] = useTidalConnected();
   const [status, setStatus] = useState<State>({ state: "idle" });
 
   async function handleClick() {
@@ -61,7 +63,7 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     return (
       <button
         onClick={handleClick}
-        disabled={items.every((it) => it.tidalIds.length === 0)}
+        disabled={!connected || items.every((it) => it.tidalIds.length === 0)}
         className="px-3 py-1.5 rounded text-sm font-medium border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer whitespace-nowrap"
       >
         {tr.importAll}

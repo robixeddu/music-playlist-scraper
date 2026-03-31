@@ -73,13 +73,13 @@ export async function redirectToTidal(returnTo = "/"): Promise<void> {
     response_type: "code",
     client_id: clientId,
     redirect_uri: redirectUri,
-    scope: "playlists.write",
+    scope: "playlists.read playlists.write user.read",
     code_challenge: challenge,
     code_challenge_method: "S256",
     state,
   });
 
-  window.location.href = `https://login.tidal.com/oauth2/authorize?${params.toString()}`;
+  window.location.href = `https://login.tidal.com/authorize?${params.toString()}`;
 }
 
 export async function exchangeCodeForToken(
