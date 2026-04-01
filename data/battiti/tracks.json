@@ -11452,9 +11452,9 @@
         "artist": "DJ KATAPILA",
         "albumDetails": "da \"Aaro EP\" – Awesome Tapes From Africa",
         "key": "dj_katapila___african_techno",
-        "genres": ["electronic", "techno", "dub"],
+        "genres": ["electronic", "techno"],
         "tidalId": "85210059",
-        "genresRaw": ["electronic", "techno", "dub"]
+        "genresRaw": ["electronic", "techno"]
       },
       {
         "title": "I Am A Beggar For A Home",
