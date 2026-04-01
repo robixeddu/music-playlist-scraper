@@ -81,8 +81,7 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
   if (status.state === "loading") {
     return (
       <button
-        disabled
-        className="px-3 py-1.5 rounded text-sm font-medium bg-[var(--surface)] text-[var(--muted)] flex items-center gap-2 whitespace-nowrap"
+        className="px-3 py-1.5 rounded text-sm font-medium bg-[var(--surface)] text-[var(--muted)] flex items-center gap-2 whitespace-nowrap cursor-default"
       >
         <svg
           className="animate-spin h-3.5 w-3.5"

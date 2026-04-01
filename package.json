@@ -19,7 +19,9 @@
     "dedup-genres": "node dist/dedup-genre-playlists.js",
     "prededup-genres": "npm run build",
     "set-tidal-id": "node dist/set-tidal-id.js",
-    "preset-tidal-id": "npm run build"
+    "preset-tidal-id": "npm run build",
+    "prune-genres": "node dist/prune-genre-playlists.js",
+    "preprune-genres": "npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
