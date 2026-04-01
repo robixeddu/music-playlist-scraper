@@ -13490,7 +13490,6 @@
         "albumDetails": "da \"Psalms For I\" – Lantern Rec.",
         "key": "prince_far_i___the_lords_prayer",
         "genres": ["reggae", "dub", "world"],
-        "tidalId": "151133066",
         "genresRaw": ["reggae", "dub", "roots"]
       },
       {
@@ -13743,7 +13742,6 @@
         "albumDetails": "da \"Psalms For I\" – Lantern Rec.",
         "key": "prince_far_i___psalm_2",
         "genres": ["reggae", "dub", "world"],
-        "tidalId": "82262713",
         "genresRaw": ["reggae", "dub", "roots"]
       },
       {
@@ -14813,7 +14811,6 @@
         "albumDetails": "da \"Black Heart Man - Bushay Collection 1974 – 1978\" - Lantern Rec.",
         "key": "prince_jazzbo___meet_me_in_the_6th_street",
         "genres": ["reggae", "dub"],
-        "tidalId": "96438831",
         "genresRaw": ["reggae", "dub"]
       },
       {
@@ -14830,7 +14827,6 @@
         "albumDetails": "da \"Tappa Records Showcase\" – Real Rock Records",
         "key": "u_roy___dancehall_memories",
         "genres": ["reggae", "dub"],
-        "tidalId": "5948404",
         "genresRaw": ["reggae", "dub"]
       },
       {
@@ -14874,7 +14870,7 @@
         "key": "dub_syndicate___ravi_shankar_on_the_wire_theme",
         "genres": ["dub", "reggae", "electronic"],
         "tidalId": "106696131",
-        "genresRaw": ["dub", "reggae", "electronic"]
+        "genresRaw": ["dub", "reggae"]
       },
       {
         "title": "Rooting For A Cause",
@@ -32379,7 +32375,6 @@
         "albumDetails": "da \"Dub Battle For Seattle!\" – Lovedub Limited",
         "key": "prince_fatty___come_as_you_are_dub",
         "genres": ["reggae", "dub"],
-        "tidalId": "471364964",
         "genresRaw": ["reggae", "dub"]
       },
       {
@@ -42409,7 +42404,7 @@
         "albumDetails": "da \"Uscire da fuori\" - Blacks Sweat Records",
         "key": "papiro___la_statua_illuminata",
         "genres": ["reggae", "dub"],
-        "tidalId": "645839",
+        "tidalId": "481219058",
         "genresRaw": ["reggae", "dub"]
       },
       {
