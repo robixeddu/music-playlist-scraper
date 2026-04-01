@@ -3,6 +3,12 @@
 import { useState, useEffect } from "react";
 import { getStoredToken, clearToken } from "./tidal-auth";
 
+const subscribers = new Set<(v: boolean) => void>();
+
+function broadcast(v: boolean) {
+  subscribers.forEach((fn) => fn(v));
+}
+
 export function useTidalConnected(): [boolean, () => void] {
   const [connected, setConnected] = useState(() => {
     if (typeof window === "undefined") return false;
@@ -10,17 +16,21 @@ export function useTidalConnected(): [boolean, () => void] {
   });
 
   useEffect(() => {
+    subscribers.add(setConnected);
     function checkToken() {
-      setConnected(getStoredToken() !== null);
+      broadcast(getStoredToken() !== null);
     }
     window.addEventListener("focus", checkToken);
     checkToken();
-    return () => window.removeEventListener("focus", checkToken);
+    return () => {
+      subscribers.delete(setConnected);
+      window.removeEventListener("focus", checkToken);
+    };
   }, []);
 
   function disconnect() {
     clearToken();
-    setConnected(false);
+    broadcast(false);
   }
 
   return [connected, disconnect];

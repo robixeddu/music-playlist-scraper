@@ -72,7 +72,7 @@ export default function ImportButton({
   if (status.state === "loading") {
     return (
       <button
-        className="px-3 py-1.5 rounded text-sm font-medium bg-[var(--surface)] text-[var(--muted)] flex items-center gap-2 whitespace-nowrap cursor-default"
+        className="px-3 py-1.5 rounded text-sm font-medium bg-[var(--accent)] text-white flex items-center gap-2 whitespace-nowrap cursor-default opacity-80"
       >
         <svg
           className="animate-spin h-3.5 w-3.5"
