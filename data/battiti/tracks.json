@@ -25,9 +25,9 @@
         "artist": "LO.RENZO & ČIPKICE",
         "albumDetails": "da \"Croatia In Dub\"",
         "key": "lorenzo_čipkice___berem_dunje_al'ne_lomim_grane_[remix]",
-        "genres": ["electronic", "experimental"],
+        "genres": ["folk", "experimental"],
         "tidalId": "477196462",
-        "genresRaw": ["electronic", "experimental"]
+        "genresRaw": ["folk", "experimental"]
       },
       {
         "title": "Panic In The Chillout Room, Magnetic Edit",
@@ -42,27 +42,27 @@
         "artist": "DUBROTHERS",
         "albumDetails": "da \"Yaksha\" - Dub-O-Matic Records",
         "key": "dubrothers___my_sweet_love",
-        "genres": ["dub", "reggae", "electronic"],
+        "genres": ["r&b", "reggae"],
         "tidalId": "470886416",
-        "genresRaw": ["dub", "reggae", "electronic"]
+        "genresRaw": ["r&b", "reggae"]
       },
       {
         "title": "Cool Jazztice",
         "artist": "GAUDI",
         "albumDetails": "da \"Jazz Gone Dub\" - Dubmission Records",
         "key": "gaudi___cool_jazztice",
-        "genres": ["electronic", "ambient", "downtempo"],
+        "genres": ["dub", "jazz"],
         "tidalId": "473762472",
-        "genresRaw": ["electronic", "ambient", "downtempo"]
+        "genresRaw": ["dub", "jazz"]
       },
       {
         "title": "Ganja Provides The Answer - feat. Flowdan",
         "artist": "PHONOLAB",
         "albumDetails": "da \"Disturbia\" - Subsounds Records",
         "key": "phonolab___ganja_provides_the_answer_feat_flowdan",
-        "genres": ["electronic", "experimental"],
+        "genres": ["electronic"],
         "tidalId": "457536935",
-        "genresRaw": ["electronic", "experimental"]
+        "genresRaw": ["electronic", "dubstep", "bass"]
       },
       {
         "title": "Ha'penny Dub",
@@ -78,9 +78,9 @@
         "artist": "THE ALIEN DUB ORCHESTRA",
         "albumDetails": "da \"Plays The Breadminster Songbook\" – Alien Transistor",
         "key": "the_alien_dub_orchestra___vine_and_fig_tree",
-        "genres": ["dub", "electronic", "experimental"],
+        "genres": ["dub", "folk"],
         "tidalId": "456529683",
-        "genresRaw": ["dub", "electronic", "experimental"]
+        "genresRaw": ["dub", "folk"]
       },
       {
         "title": "Steppes Frequencies",
@@ -114,9 +114,9 @@
         "artist": "MAXIE / SCIENTIST & BARNABAS",
         "albumDetails": "da \"Three The Hard Way\" – Lantern Rec.",
         "key": "maxie_scientist_barnabas___prophecy_in_dub",
-        "genres": ["dub", "reggae", "electronic"],
+        "genres": ["dub", "reggae"],
         "tidalId": "12309765",
-        "genresRaw": ["dub", "reggae", "electronic"]
+        "genresRaw": ["dub", "reggae"]
       },
       {
         "title": "Skylarking",
@@ -158,9 +158,9 @@
         "artist": "KING TUBBY",
         "albumDetails": "da \"Augustus Pablo Presents King Tubby (20 Unreleased Dubs By The Late Great King Tubby)\" – Rhino Records",
         "key": "king_tubby___borderline_dub",
-        "genres": ["dub", "reggae", "electronic"],
+        "genres": ["dub", "reggae"],
         "tidalId": "40281800",
-        "genresRaw": ["dub", "reggae", "electronic"]
+        "genresRaw": ["dub", "reggae"]
       }
     ]
   },
@@ -201,9 +201,9 @@
         "artist": "BEDOUIN BURGER",
         "albumDetails": "da \"Ma Li Beit\" - PopArabia",
         "key": "bedouin_burger___nomad",
-        "genres": ["electronic", "ambient"],
+        "genres": ["world", "ambient"],
         "tidalId": "363395859",
-        "genresRaw": ["electronic", "ambient"]
+        "genresRaw": ["world", "ambient"]
       },
       {
         "title": "Kun Fe Ko",
@@ -43085,9 +43085,9 @@
         "artist": "FABRIZIO OTTAVIUCCI",
         "albumDetails": "da \"Scelsi Collection vol.9\" – Stradivarius",
         "key": "fabrizio_ottaviucci___suite_xib_iii_movimento",
-        "genres": ["electronic", "ambient", "experimental"],
+        "genres": ["classica", "experimental"],
         "tidalId": "450716644",
-        "genresRaw": ["electronic", "ambient", "experimental"]
+        "genresRaw": ["classica", "experimental"]
       }
     ]
   },

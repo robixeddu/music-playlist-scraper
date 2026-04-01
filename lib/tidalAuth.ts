@@ -7,7 +7,8 @@ import { logError } from "./logger.js";
 // Register your app at https://developer.tidal.com/
 
 const TOKEN_FILE = "./.tidal_token.json";
-const REDIRECT_URI = "http://localhost:3000/callback";
+const CLI_PORT = parseInt(process.env.TIDAL_CLI_PORT ?? "3001", 10);
+const REDIRECT_URI = `http://localhost:${CLI_PORT}/callback/tidal`;
 const AUTH_URL = "https://login.tidal.com/authorize";
 const TOKEN_URL = "https://auth.tidal.com/v1/oauth2/token";
 
@@ -69,11 +70,11 @@ const loginWithPKCE = async (): Promise<TokenData> => {
   });
 
   console.log(`\n🔐 Open this URL to authenticate with TIDAL:\n\n${AUTH_URL}?${params}\n`);
-  console.log("Waiting for authentication on http://localhost:3000 ...\n");
+  console.log(`Waiting for authentication on http://localhost:${CLI_PORT} ...\n`);
 
   const code = await new Promise<string>((resolve, reject) => {
     const server = http.createServer((req, res) => {
-      const url = new URL(req.url!, "http://localhost:3000");
+      const url = new URL(req.url!, `http://localhost:${CLI_PORT}`);
       const code = url.searchParams.get("code");
 
       if (code) {
@@ -86,7 +87,7 @@ const loginWithPKCE = async (): Promise<TokenData> => {
         reject(new Error("No authorization code received"));
       }
     });
-    server.listen(3000);
+    server.listen(CLI_PORT);
   });
 
   const token = await exchangeToken(new URLSearchParams({

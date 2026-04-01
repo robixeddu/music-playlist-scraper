@@ -21,7 +21,9 @@
     "set-tidal-id": "node dist/set-tidal-id.js",
     "preset-tidal-id": "npm run build",
     "prune-genres": "node dist/prune-genre-playlists.js",
-    "preprune-genres": "npm run build"
+    "preprune-genres": "npm run build",
+    "verify-tidal-ids": "node dist/verify-tidal-ids.js",
+    "preverify-tidal-ids": "npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
