@@ -3,9 +3,7 @@ import { getAccessToken } from "./lib/tidalAuth.js";
 import { findTidalMatch } from "./lib/tidalClient.js";
 
 const queries = [
-  { artist: "U ROY", title: "Dancehall Memories", album: "Tappa Records Showcase" },
-  { artist: "PRINCE JAZZBO", title: "Meet Me In The 6th Street", album: "Black Heart Man - Bushay Collection 1974 – 1978" },
-  { artist: "BOB MOULD", title: "You Need To Shine", album: "Here We Go Crazy" },
+  { artist: "DJ SPOOKY THAT SUBLIMINAL KID", title: "Not In Our Name Remix (featuring Saul Williams)", album: "Celestial Mechanix" },
 ];
 
 const token = await getAccessToken();

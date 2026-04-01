@@ -1,5 +1,5 @@
 import { logError } from "./logger.js";
-import { computeMatchScore, CONFIDENT_THRESHOLD } from "./similarity.js";
+import { computeMatchScore, CONFIDENT_THRESHOLD, MIN_ARTIST_VERIFY } from "./similarity.js";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const SEARCH_DELAY_MS = 800;
@@ -197,6 +197,7 @@ export const findTidalMatch = async (
       if (!actualArtist) return undefined; // lookup failed, skip
       const verified = computeMatchScore(verifyArtist, verifyTitle, actualArtist, cleanTitle(candidate.candidate.title));
       if (verified.score < CONFIDENT_THRESHOLD) return null; // wrong artist confirmed
+      if (verified.artistScore < MIN_ARTIST_VERIFY) return null; // artist too different even if title matches
       return { id: candidate.candidate.id, ...verified };
     } catch {
       return undefined; // network error, skip

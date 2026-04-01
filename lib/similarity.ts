@@ -69,20 +69,20 @@ export const computeMatchScore = (
     containment(na, ta),
     ...artistParts.map((p) => Math.max(jaccard(p, ta), containment(p, ta)))
   );
-  // Containment on titles only if the smaller set has ≥ 2 tokens —
-  // a single shared word ("Fever" in "Gun Fever") must not give titleScore 1.0
+  // Containment on titles only if the smaller set has ≥ 3 tokens —
+  // 2-token titles like "Blue Night" contained in "Beautiful Blue Night" must not give titleScore 1.0
   const titleContainment = (a: string, b: string): number => {
     const ta = new Set(a.split(" ").filter(Boolean));
     const tb = new Set(b.split(" ").filter(Boolean));
     const smaller = ta.size <= tb.size ? ta : tb;
-    return smaller.size >= 2 ? containment(a, b) : 0;
+    return smaller.size >= 3 ? containment(a, b) : 0;
   };
   const titleScore = Math.max(jaccard(nt, tt), compactJaccard(nt, tt), titleContainment(nt, tt));
 
   // When the title matches very well but the artist only partially matches
   // (typos like ELLIOT/ELLIOTT, or multi-artist slash entries), use a weighted
-  // score — requires some artist signal but avoids strict false negatives.
-  const score = titleScore >= 0.8 && artistScore >= 0.3
+  // score — requires meaningful artist signal (≥0.45) to avoid same-title/wrong-artist matches.
+  const score = titleScore >= 0.8 && artistScore >= 0.45
     ? titleScore * 0.6 + artistScore * 0.4
     : Math.min(artistScore, titleScore);
 
@@ -90,3 +90,7 @@ export const computeMatchScore = (
 };
 
 export const CONFIDENT_THRESHOLD = 0.5;
+
+// Minimum artist score required in the verify step — even a perfect title match
+// must not override a clearly wrong artist (artistScore below this → reject).
+export const MIN_ARTIST_VERIFY = 0.4;
