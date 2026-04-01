@@ -69,7 +69,15 @@ export const computeMatchScore = (
     containment(na, ta),
     ...artistParts.map((p) => Math.max(jaccard(p, ta), containment(p, ta)))
   );
-  const titleScore = Math.max(jaccard(nt, tt), compactJaccard(nt, tt), containment(nt, tt));
+  // Containment on titles only if the smaller set has ≥ 2 tokens —
+  // a single shared word ("Fever" in "Gun Fever") must not give titleScore 1.0
+  const titleContainment = (a: string, b: string): number => {
+    const ta = new Set(a.split(" ").filter(Boolean));
+    const tb = new Set(b.split(" ").filter(Boolean));
+    const smaller = ta.size <= tb.size ? ta : tb;
+    return smaller.size >= 2 ? containment(a, b) : 0;
+  };
+  const titleScore = Math.max(jaccard(nt, tt), compactJaccard(nt, tt), titleContainment(nt, tt));
 
   // When the title matches very well but the artist only partially matches
   // (typos like ELLIOT/ELLIOTT, or multi-artist slash entries), use a weighted

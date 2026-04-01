@@ -42,7 +42,7 @@ export async function getPlaylistItemIds(
 ): Promise<Set<string>> {
   const ids = new Set<string>();
   let url: string | null =
-    `${BASE}/playlists/${playlistId}/relationships/items?countryCode=IT&limit=100`;
+    `${BASE}/playlists/${playlistId}/relationships/items?limit=100`;
 
   while (url) {
     const res = await fetch(url, { headers: headers(token) });
