@@ -370,7 +370,6 @@
         "albumDetails": "da \"Crônicas\" – Beatwise Recordings",
         "key": "fleezus___nós_é_nós",
         "genres": ["hip-hop"],
-        "tidalId": "139510708",
         "genresRaw": ["hip-hop"]
       },
       {
@@ -652,7 +651,7 @@
         "albumDetails": "da \"Crônicas\" – Beatwise Recordings",
         "key": "fleezus___joia_rara",
         "genres": ["hip-hop"],
-        "tidalId": "80400576",
+        "tidalId": "463868812",
         "genresRaw": ["hip-hop"]
       },
       {
@@ -669,7 +668,6 @@
         "albumDetails": "da \"Pájaro de tres piernas\" - Tsss Tapes",
         "key": "zarabatana___as_bruxas_as_beatas",
         "genres": ["world", "folk", "instrumental"],
-        "tidalId": "88547078",
         "genresRaw": ["world", "folk", "instrumental"]
       },
       {
@@ -678,7 +676,6 @@
         "albumDetails": "da \"Music Of The Terrazoku: Ethnographic Recordings From An Imagined Future\" - Not Applicable",
         "key": "will_glaser___only_the_rain",
         "genres": ["indie", "singer-songwriter"],
-        "tidalId": "429945828",
         "genresRaw": ["indie", "singer-songwriter"]
       },
       {
@@ -687,7 +684,6 @@
         "albumDetails": "da \"Music Of The Terrazoku: Ethnographic Recordings From An Imagined Future\" - Not Applicable",
         "key": "will_glaser___another_disenchanted_forest",
         "genres": ["indie", "singer-songwriter"],
-        "tidalId": "97624349",
         "genresRaw": ["indie", "singer-songwriter"]
       },
       {
@@ -783,9 +779,9 @@
         "artist": "HABIBI FUNK",
         "albumDetails": "da \"Habibi Funk 031: A Selection Of Music From Libyan Tapes\" – Habibi Funk",
         "key": "habibi_funk___fathi_aldiyqz_sons_of_africa_band_palestine_is_my_homeland",
-        "genres": ["funk", "electronic"],
+        "genres": ["reggae"],
         "tidalId": "453621158",
-        "genresRaw": ["funk", "electronic"]
+        "genresRaw": ["reggae"]
       },
       {
         "title": "Nightclouds",
@@ -873,7 +869,6 @@
         "albumDetails": "da \"Radio Lusaka\" – Mississippi Records",
         "key": "alick_nkhata's_quartet___elena",
         "genres": ["jazz", "world"],
-        "tidalId": "12157439",
         "genresRaw": ["jazz", "world"]
       },
       {
@@ -923,7 +918,6 @@
         "albumDetails": "",
         "key": "flight_mode___flight_1",
         "genres": ["no-genre"],
-        "tidalId": "47638162",
         "genresRaw": []
       },
       {
@@ -1073,7 +1067,7 @@
         "albumDetails": "da \"Sunwise\" – Glitterbeat",
         "key": "brìghde_chaimbeul___bog_an_lochan",
         "genres": ["folk", "instrumental"],
-        "tidalId": "49640747",
+        "tidalId": "421783537",
         "genresRaw": ["folk", "instrumental"]
       },
       {
@@ -1161,7 +1155,7 @@
         "albumDetails": "da \"Sundial\" - Awal Recordings America, Inc.",
         "key": "noname___afro_futurism",
         "genres": ["hip-hop", "soul", "lo-fi"],
-        "tidalId": "476776873",
+        "tidalId": "309034516",
         "genresRaw": ["hip-hop", "soul", "lo-fi"]
       },
       {
@@ -1169,9 +1163,9 @@
         "artist": "SAULT",
         "albumDetails": "da \"11\" - Forever Living Originals",
         "key": "sault___glory",
-        "genres": ["soul", "electronic", "experimental"],
-        "tidalId": "333058913",
-        "genresRaw": ["soul", "electronic", "experimental"]
+        "genres": ["soul", "experimental"],
+        "tidalId": "259346544",
+        "genresRaw": ["soul", "experimental"]
       },
       {
         "title": "Shiver",
@@ -1249,7 +1243,7 @@
         "albumDetails": "da \">>>>\" - Invada INV319LP, Temporary Residence Limited",
         "key": "beak>___ah_yeh",
         "genres": ["post-rock", "experimental", "instrumental"],
-        "tidalId": "497588456",
+        "tidalId": "411870516",
         "genresRaw": ["post-rock", "experimental", "instrumental"]
       },
       {
@@ -1258,7 +1252,6 @@
         "albumDetails": "da \"Onilu\" - Eremite Records",
         "key": "onilu___same_shame",
         "genres": ["funk", "afrobeat"],
-        "tidalId": "9645871",
         "genresRaw": ["funk", "afrobeat"]
       },
       {
@@ -1397,9 +1390,9 @@
         "artist": "BARRY KERR",
         "albumDetails": "da \"Curlew's Cry\" – Autoproduzione",
         "key": "barry_kerr___the_snows_they_melt_the_soonest",
-        "genres": ["no-genre"],
-        "tidalId": "469063107",
-        "genresRaw": []
+        "genres": ["acoustic", "folk", "singer-songwriter"],
+        "tidalId": "456610354",
+        "genresRaw": ["acoustic", "folk", "singer-songwriter"]
       },
       {
         "title": "Murmuration / The Gate",
@@ -1423,7 +1416,6 @@
         "albumDetails": "da \"Terrona\" - Kakakids Records",
         "key": "maria_violenza___nero_e_bianco",
         "genres": ["post-punk", "experimental", "noise"],
-        "tidalId": "83183500",
         "genresRaw": ["post-punk", "experimental", "noise"]
       },
       {
@@ -1440,9 +1432,9 @@
         "artist": "RAFAEL TORAL",
         "albumDetails": "da \"Traveling Light\" - Drag City",
         "key": "rafael_toral___god_bless_the_child",
-        "genres": ["electronic", "experimental", "electroacoustic"],
-        "tidalId": "99351994",
-        "genresRaw": ["electronic", "experimental", "electroacoustic"]
+        "genres": ["electronic", "experimental"],
+        "tidalId": "446657856",
+        "genresRaw": ["electronic", "experimental"]
       },
       {
         "title": "You Died",

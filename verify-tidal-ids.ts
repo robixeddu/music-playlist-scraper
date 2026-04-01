@@ -8,8 +8,23 @@ import { computeMatchScore, MIN_ARTIST_VERIFY } from "./lib/similarity.js";
 const COUNTRY_CODE = process.env.TIDAL_COUNTRY_CODE ?? "IT";
 const BASE_URL = "https://openapi.tidal.com/v2";
 const FETCH_DELAY_MS = 500;
-// Tracks with score below this are flagged as mismatches
-const MISMATCH_THRESHOLD = 0.5;
+const SAVE_EVERY = 50;
+
+// A match is flagged only when BOTH score and artistScore are below threshold.
+// If artistScore is high (≥0.8) but titleScore is low, TIDAL likely moved a feat.
+// into the artist field — treat it as OK.
+const MISMATCH_SCORE_THRESHOLD = 0.5;
+
+const CHECKPOINT_FILE = "./data/battiti/tidal_verify_checkpoint.json";
+const REPORT_FILE = "./data/battiti/tidal_id_mismatches.txt";
+
+interface Checkpoint {
+  processedCount: number;
+  ok: number;
+  mismatches: number;
+  notFound: number;
+  report: string[];
+}
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -35,32 +50,53 @@ const fetchTrack = async (id: string, token: string): Promise<{ title: string; a
   }
 };
 
+const isMismatch = (
+  score: number,
+  artistScore: number,
+): boolean => {
+  // Artist matches well → TIDAL may have split a feat. into a separate artist entry.
+  // Don't flag these as mismatches.
+  if (artistScore >= 0.8) return false;
+  return score < MISMATCH_SCORE_THRESHOLD || artistScore < MIN_ARTIST_VERIFY;
+};
+
+// ── Main ───────────────────────────────────────────────────────────────────────
+
+const isResume = process.argv.includes("--resume");
+
 const raw = await fsPromises.readFile(TRACKS_FILE, "utf-8");
 const episodes: EpisodeAggregated[] = JSON.parse(raw);
 
-// Collect unique (tidalId → track) — one representative per ID
 const byId = new Map<string, BaseTrack>();
 for (const ep of episodes) {
   for (const t of ep.tracks) {
     if (t.tidalId && !byId.has(t.tidalId)) byId.set(t.tidalId, t);
   }
 }
+const entries = [...byId.entries()];
+const total = entries.length;
 
-const total = byId.size;
-console.log(`\n🔍 Verifying ${total} unique TIDAL IDs...\n`);
+let checkpoint: Checkpoint = { processedCount: 0, ok: 0, mismatches: 0, notFound: 0, report: [] };
 
+if (isResume) {
+  try {
+    const raw = await fsPromises.readFile(CHECKPOINT_FILE, "utf-8");
+    checkpoint = JSON.parse(raw);
+    console.log(`\n▶️  Resuming from track ${checkpoint.processedCount + 1}/${total}\n`);
+  } catch {
+    console.log("\n⚠️  No checkpoint found, starting from the beginning.\n");
+  }
+} else {
+  console.log(`\n🔍 Verifying ${total} unique TIDAL IDs...\n`);
+}
+
+let { processedCount, ok, mismatches, notFound, report } = checkpoint;
 let token = await getAccessToken();
-let ok = 0;
-let mismatches = 0;
-let notFound = 0;
-let i = 0;
 
-const report: string[] = [];
+for (let i = processedCount; i < entries.length; i++) {
+  if (i % 50 === 0 && i > 0) token = await getAccessToken();
 
-for (const [tidalId, track] of byId) {
-  i++;
-  if (i % 50 === 0) token = await getAccessToken();
-
+  const [tidalId, track] = entries[i];
   await sleep(FETCH_DELAY_MS);
   const tidal = await fetchTrack(tidalId, token);
 
@@ -69,30 +105,38 @@ for (const [tidalId, track] of byId) {
     const line = `[NOT FOUND] ${tidalId} | ${track.artist} – ${track.title}`;
     console.log(`❓ ${line}`);
     report.push(line);
-    continue;
+    await fsPromises.appendFile(REPORT_FILE, line + "\n\n");
+  } else {
+    const { score, artistScore, titleScore } = computeMatchScore(
+      track.artist, track.title, tidal.artist, tidal.title
+    );
+
+    if (isMismatch(score, artistScore)) {
+      mismatches++;
+      const line = [
+        `[MISMATCH] ${tidalId}`,
+        `  ours:  ${track.artist} – ${track.title}`,
+        `  tidal: ${tidal.artist} – ${tidal.title}`,
+        `  score=${score.toFixed(2)} artist=${artistScore.toFixed(2)} title=${titleScore.toFixed(2)}`,
+      ].join("\n");
+      console.log(`❌ ${line}`);
+      report.push(line);
+      await fsPromises.appendFile(REPORT_FILE, line + "\n\n");
+    } else {
+      ok++;
+      process.stdout.write(`✅ [${i + 1}/${total}] ${track.artist} – ${track.title}\r`);
+    }
   }
 
-  const { score, artistScore, titleScore } = computeMatchScore(
-    track.artist, track.title, tidal.artist, tidal.title
-  );
+  processedCount = i + 1;
 
-  const isMismatch = score < MISMATCH_THRESHOLD || artistScore < MIN_ARTIST_VERIFY;
-
-  if (isMismatch) {
-    mismatches++;
-    const line = [
-      `[MISMATCH] ${tidalId}`,
-      `  ours:  ${track.artist} – ${track.title}`,
-      `  tidal: ${tidal.artist} – ${tidal.title}`,
-      `  score=${score.toFixed(2)} artist=${artistScore.toFixed(2)} title=${titleScore.toFixed(2)}`,
-    ].join("\n");
-    console.log(`❌ ${line}`);
-    report.push(line);
-  } else {
-    ok++;
-    process.stdout.write(`✅ [${i}/${total}] ${track.artist} – ${track.title}\r`);
+  if (processedCount % SAVE_EVERY === 0) {
+    await fsPromises.writeFile(CHECKPOINT_FILE, JSON.stringify({ processedCount, ok, mismatches, notFound, report }, null, 2));
   }
 }
+
+// Final save
+await fsPromises.writeFile(CHECKPOINT_FILE, JSON.stringify({ processedCount, ok, mismatches, notFound, report }, null, 2));
 
 console.log(`\n\n── Results ──────────────────────────────`);
 console.log(`✅ OK:         ${ok}`);
@@ -101,7 +145,5 @@ console.log(`❓ Not found:  ${notFound}`);
 console.log(`─────────────────────────────────────────\n`);
 
 if (report.length > 0) {
-  const reportFile = "./data/battiti/tidal_id_mismatches.txt";
-  await fsPromises.writeFile(reportFile, report.join("\n\n") + "\n");
-  console.log(`📄 Report saved to ${reportFile}`);
+  console.log(`📄 Report in ${REPORT_FILE}`);
 }
