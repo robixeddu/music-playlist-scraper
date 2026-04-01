@@ -5989,9 +5989,9 @@
         "artist": "TICKLAH",
         "albumDetails": "da \"Ya Llegó\" – Names You Can Trust",
         "key": "ticklah___el_dia_de_suerte",
-        "genres": ["dub", "reggae", "electronic"],
-        "tidalId": "83748692",
-        "genresRaw": ["dub", "reggae", "electronic"]
+        "genres": ["dub", "reggae"],
+        "tidalId": "36102191",
+        "genresRaw": ["dub", "reggae"]
       }
     ]
   },
@@ -6147,9 +6147,9 @@
         "artist": "MARK STEWART",
         "albumDetails": "da \"The Fateful Symmetry\" – Mute",
         "key": "mark_stewart___this_is_the_rain",
-        "genres": ["post-punk", "experimental", "dub"],
+        "genres": ["post-punk", "experimental"],
         "tidalId": "446318706",
-        "genresRaw": ["post-punk", "experimental", "dub"]
+        "genresRaw": ["post-punk", "experimental"]
       },
       {
         "title": "The Healers",

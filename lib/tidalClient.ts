@@ -239,7 +239,15 @@ export const findTidalMatch = async (
     extraSearches.push(...res);
   }
 
-  // Album hint: some tracks are not indexed by title but appear when searching by album
+  // Build the set of IDs found by non-album searches (stronger signal)
+  const nonAlbumIds = new Set(
+    [...primary, ...fbTitle, ...fbArtist, ...fbDot, ...fbReversed, ...fbClean, ...fbNorm, ...extraSearches].map((c) => c.id)
+  );
+
+  // Album hint: some tracks are not indexed by title but appear when searching by album.
+  // Album-only candidates (not found by any other query) require a higher threshold
+  // to avoid false positives from same-album tracks with unrelated titles.
+  const ALBUM_ONLY_THRESHOLD = 0.7;
   if (album) {
     await sleep(SEARCH_DELAY_MS);
     const fbAlbum = await searchTracks(`${primaryArtist} ${album}`, artist, token, artistById);
@@ -263,7 +271,12 @@ export const findTidalMatch = async (
       top5.forEach(s => console.log(`    score=${s.score.toFixed(2)} artist=${s.candidate.artistName} title=${s.candidate.title}`));
     }
   }
-  const topCandidates = scored.filter((s) => s.score >= CONFIDENT_THRESHOLD).slice(0, 20);
+  const topCandidates = scored
+    .filter((s) => {
+      const threshold = nonAlbumIds.has(s.candidate.id) ? CONFIDENT_THRESHOLD : ALBUM_ONLY_THRESHOLD;
+      return s.score >= threshold;
+    })
+    .slice(0, 20);
 
   for (const candidate of topCandidates) {
     const result = await verify(candidate);
