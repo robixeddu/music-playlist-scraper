@@ -42,8 +42,8 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     const eligible = items.filter((it) => it.tidalIds.length > 0);
     if (eligible.length === 0) return;
 
-    acquire();
     setStatus({ state: "loading", done: 0, total: eligible.length });
+    acquire();
 
     let totalAdded = 0;
     let totalPresent = 0;

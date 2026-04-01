@@ -40,8 +40,8 @@ export default function ImportButton({
       return;
     }
 
-    acquire();
     setStatus({ state: "loading" });
+    acquire();
     try {
       const result = await importPlaylist({ type, slug, playlistName, tidalIds });
       setStatus({
