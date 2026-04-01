@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { ImportStatus } from "@/lib/types";
 import { importPlaylist, type PlaylistType } from "@/lib/tidal-import";
 import { useTidalConnected } from "@/lib/useTidalConnected";
+import { useImportLock } from "@/lib/useImportLock";
 import { redirectToTidal, getStoredToken } from "@/lib/tidal-auth";
 import { useT } from "./LangProvider";
 
@@ -22,10 +23,11 @@ export default function ImportButton({
 }: ImportButtonProps) {
   const tr = useT();
   const [connected] = useTidalConnected();
+  const { importing, acquire, release } = useImportLock();
   const [status, setStatus] = useState<ImportStatus>({ state: "idle" });
 
   async function handleClick() {
-    if (status.state === "loading") return;
+    if (status.state === "loading" || importing) return;
 
     const token = getStoredToken();
     if (!token) {
@@ -38,6 +40,7 @@ export default function ImportButton({
       return;
     }
 
+    acquire();
     setStatus({ state: "loading" });
     try {
       const result = await importPlaylist({ type, slug, playlistName, tidalIds });
@@ -49,6 +52,8 @@ export default function ImportButton({
     } catch (err) {
       const message = err instanceof Error ? err.message : "Errore sconosciuto";
       setStatus({ state: "error", message });
+    } finally {
+      release();
     }
   }
 
@@ -56,7 +61,7 @@ export default function ImportButton({
     return (
       <button
         onClick={handleClick}
-        disabled={!connected || tidalIds.length === 0}
+        disabled={!connected || tidalIds.length === 0 || importing}
         className="px-3 py-1.5 rounded text-sm font-medium bg-[var(--accent)] text-white hover:opacity-90 transition-opacity disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer whitespace-nowrap"
       >
         {tr.import}

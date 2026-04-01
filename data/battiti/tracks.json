@@ -56213,8 +56213,8 @@
         "artist": "STINE JANVIN / MORTEN JOH",
         "albumDetails": ", da \"Or Gare: Funeral Procession Music from Ryfylke, Norway\" – Futura Resistenza",
         "key": "stine_janvin_morten_joh___leaving_home_o_verden_hav_da_gode_nat_feat_lucy_railton",
-        "genres": ["folk", "experimental", "instrumental"],
-        "genresRaw": ["folk", "experimental", "instrumental"],
+        "genres": ["experimental", "instrumental"],
+        "genresRaw": ["experimental", "instrumental"],
         "tidalId": "478848593"
       },
       {
@@ -56222,8 +56222,8 @@
         "artist": "STINE JANVIN / MORTEN JOH",
         "albumDetails": ", da \"Or Gare: Funeral Procession Music from Ryfylke, Norway\" – Futura Resistenza",
         "key": "stine_janvin_morten_joh___processing_grief_–_transcendence",
-        "genres": ["folk", "experimental", "instrumental"],
-        "genresRaw": ["folk", "experimental", "instrumental"],
+        "genres": ["experimental", "instrumental"],
+        "genresRaw": ["experimental", "instrumental"],
         "tidalId": "478848599"
       },
       {
@@ -56231,8 +56231,8 @@
         "artist": "KAROLINE WALLACE",
         "albumDetails": ", da \"Eon\" – Sauajazz",
         "key": "karoline_wallace___tycho",
-        "genres": ["jazz", "folk", "avant-garde"],
-        "genresRaw": ["jazz", "folk", "avant-garde"],
+        "genres": ["jazz", "avant-garde"],
+        "genresRaw": ["jazz", "avant-garde"],
         "tidalId": "484146272"
       },
       {
@@ -56240,8 +56240,8 @@
         "artist": "KAROLINE WALLACE",
         "albumDetails": ", da \"Eon\" – Sauajazz",
         "key": "karoline_wallace___bittelille_meg",
-        "genres": ["jazz", "folk", "avant-garde"],
-        "genresRaw": ["jazz", "folk", "avant-garde"],
+        "genres": ["jazz", "avant-garde"],
+        "genresRaw": ["jazz", "avant-garde"],
         "tidalId": "484146273"
       },
       {

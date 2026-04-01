@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { importPlaylist, type PlaylistType } from "@/lib/tidal-import";
 import { useTidalConnected } from "@/lib/useTidalConnected";
+import { useImportLock } from "@/lib/useImportLock";
 import { redirectToTidal, getStoredToken } from "@/lib/tidal-auth";
 import { useT } from "./LangProvider";
 
@@ -26,10 +27,11 @@ type State =
 export default function ImportAllButton({ items }: ImportAllButtonProps) {
   const tr = useT();
   const [connected] = useTidalConnected();
+  const { importing, acquire, release } = useImportLock();
   const [status, setStatus] = useState<State>({ state: "idle" });
 
   async function handleClick() {
-    if (status.state === "loading") return;
+    if (status.state === "loading" || importing) return;
 
     const token = getStoredToken();
     if (!token) {
@@ -40,20 +42,25 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     const eligible = items.filter((it) => it.tidalIds.length > 0);
     if (eligible.length === 0) return;
 
+    acquire();
     setStatus({ state: "loading", done: 0, total: eligible.length });
 
     let totalAdded = 0;
     let totalPresent = 0;
 
-    for (let i = 0; i < eligible.length; i++) {
-      try {
-        const result = await importPlaylist(eligible[i]);
-        totalAdded += result.added;
-        totalPresent += result.alreadyPresent;
-      } catch {
-        // skip failures, continue with remaining
+    try {
+      for (let i = 0; i < eligible.length; i++) {
+        try {
+          const result = await importPlaylist(eligible[i]);
+          totalAdded += result.added;
+          totalPresent += result.alreadyPresent;
+        } catch {
+          // skip failures, continue with remaining
+        }
+        setStatus({ state: "loading", done: i + 1, total: eligible.length });
       }
-      setStatus({ state: "loading", done: i + 1, total: eligible.length });
+    } finally {
+      release();
     }
 
     setStatus({ state: "success", added: totalAdded, alreadyPresent: totalPresent });
@@ -63,7 +70,7 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     return (
       <button
         onClick={handleClick}
-        disabled={!connected || items.every((it) => it.tidalIds.length === 0)}
+        disabled={!connected || importing || items.every((it) => it.tidalIds.length === 0)}
         className="px-3 py-1.5 rounded text-sm font-medium border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer whitespace-nowrap"
       >
         {tr.importAll}

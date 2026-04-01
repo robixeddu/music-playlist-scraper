@@ -8,6 +8,7 @@ import GlobalSection from "./GlobalSection";
 import GenreSection from "./GenreSection";
 import EpisodeSection from "./EpisodeSection";
 import ImportAllButton from "./ImportAllButton";
+import { ImportLockContext, useImportLockState } from "@/lib/useImportLock";
 
 interface ProgramBlockProps {
   source: Source;
@@ -16,6 +17,7 @@ interface ProgramBlockProps {
 
 export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
   const tr = useT();
+  const importLock = useImportLockState();
   const genres = getGenres(episodes);
   const sortedEpisodes = getEpisodesSortedDesc(episodes);
 
@@ -44,6 +46,7 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
   });
 
   return (
+    <ImportLockContext.Provider value={importLock}>
     <section className="space-y-3">
       <div className="items-baseline gap-3 mb-8 px-5">
         <h2 className="text-xl font-semibold mb-3">{source.name}</h2>
@@ -69,5 +72,6 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
         <EpisodeSection episodes={sortedEpisodes} sourceId={source.id} />
       </Accordion>
     </section>
+    </ImportLockContext.Provider>
   );
 }
