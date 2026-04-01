@@ -13101,9 +13101,9 @@
         "artist": "CEMENTO ATLANTICO",
         "albumDetails": "",
         "key": "cemento_atlantico___amazonienne",
-        "genres": ["post-rock", "experimental", "instrumental"],
+        "genres": ["electronic", "experimental", "instrumental"],
         "tidalId": "250289699",
-        "genresRaw": ["post-rock", "experimental", "instrumental"]
+        "genresRaw": ["electronic", "experimental", "instrumental"]
       },
       {
         "title": "Kashi Fire",
@@ -14940,7 +14940,7 @@
         "albumDetails": "da \"Every Man Ought To Know\" – VP Records",
         "key": "max_romeo___i_woke_up_in_love_this_morning",
         "genres": ["reggae", "dub"],
-        "tidalId": "92702321",
+        "tidalId": "387896956",
         "genresRaw": ["reggae", "dub"]
       }
     ]
@@ -15343,7 +15343,7 @@
         "albumDetails": "da \"Here We Go Crazy\" – BMG",
         "key": "bob_mould___you_need_to_shine",
         "genres": ["rock", "post-punk", "indie"],
-        "tidalId": "98163516",
+        "tidalId": "492308331",
         "genresRaw": ["rock", "post-punk", "indie"]
       },
       {
