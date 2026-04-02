@@ -34,8 +34,28 @@ const catalogEnrich = async () => {
 
   let found = 0;
   let notFound = 0;
+  let currentIndex = 0;
+
+  const saveProgress = async () => {
+    await fsPromises.writeFile(TRACKS_FILE, JSON.stringify(episodes, null, 2));
+    const missingSet = new Set<string>();
+    for (const ep of episodes) {
+      for (const t of ep.tracks) {
+        if (!t.tidalId && t.genres?.length) missingSet.add(`${t.artist} - ${t.title}`);
+      }
+    }
+    await fsPromises.writeFile(MISSING_TRACKS_FILE, [...missingSet].join("\n") + "\n");
+  };
+
+  process.on("SIGINT", async () => {
+    console.log(`\n\n⚠️  Interrupted at ${currentIndex}/${queue.length} — saving...`);
+    await saveProgress();
+    console.log(`💾 Saved. Relaunch to resume (queue rebuilds automatically from tracks.json).`);
+    process.exit(0);
+  });
 
   for (let i = 0; i < queue.length; i++) {
+    currentIndex = i;
     if (i % 50 === 0) token = await getAccessToken();
     const { track, ep, idx } = queue[i];
     process.stdout.write(`[${i + 1}/${queue.length}] ${track.artist} – ${track.title} → `);
@@ -58,26 +78,14 @@ const catalogEnrich = async () => {
     }
 
     if ((i + 1) % SAVE_EVERY === 0) {
-      await fsPromises.writeFile(TRACKS_FILE, JSON.stringify(episodes, null, 2));
+      await saveProgress();
       console.log(`  💾 Progress saved (${i + 1}/${queue.length})\n`);
     }
   }
 
-  await fsPromises.writeFile(TRACKS_FILE, JSON.stringify(episodes, null, 2));
+  await saveProgress();
   console.log(`\n✅ Done. Found: ${found}, Not found: ${notFound}`);
   console.log(`💾 Saved to ${TRACKS_FILE}`);
-
-  // Regenerate missing_tracks.txt: all genre-tagged tracks still without tidalId, deduplicated
-  const missingSet = new Set<string>();
-  for (const ep of episodes) {
-    for (const t of ep.tracks) {
-      if (!t.tidalId && t.genres?.length) {
-        missingSet.add(`${t.artist} - ${t.title}`);
-      }
-    }
-  }
-  await fsPromises.writeFile(MISSING_TRACKS_FILE, [...missingSet].join("\n") + "\n");
-  console.log(`📄 Missing tracks updated: ${missingSet.size} entries → ${MISSING_TRACKS_FILE}`);
 };
 
 catalogEnrich().catch((e) => logError("tidal-catalog-enrich", e.message));
