@@ -87,6 +87,7 @@ if (isResume) {
     console.log("\n⚠️  No checkpoint found, starting from the beginning.\n");
   }
 } else {
+  await fsPromises.writeFile(REPORT_FILE, "");
   console.log(`\n🔍 Verifying ${total} unique TIDAL IDs...\n`);
 }
 
