@@ -235,7 +235,8 @@
         "genresRaw": [
           "reggae",
           "dub"
-        ]
+        ],
+        "tidalId": "11250095"
       },
       {
         "title": "Conquering Dub",
@@ -3785,7 +3786,8 @@
           "punk",
           "new wave",
           "post-punk"
-        ]
+        ],
+        "tidalId": "180305905"
       },
       {
         "title": "Henry McCullough",
@@ -3975,7 +3977,8 @@
         "genresRaw": [
           "world",
           "folk"
-        ]
+        ],
+        "tidalId": "404645398"
       },
       {
         "title": "Soumbou Toure",
@@ -4068,7 +4071,8 @@
         "genresRaw": [
           "afrobeat",
           "world"
-        ]
+        ],
+        "tidalId": "137890142"
       }
     ]
   },
@@ -5400,7 +5404,8 @@
         "genresRaw": [
           "minimalism",
           "experimental"
-        ]
+        ],
+        "tidalId": "283403231"
       },
       {
         "title": "Oblivion",
@@ -9129,6 +9134,7 @@
           "classica",
           "world"
         ],
+        "tidalId": "480530626",
         "genresRaw": [
           "classical",
           "world"
@@ -9203,6 +9209,7 @@
           "classica",
           "world"
         ],
+        "tidalId": "480530667",
         "genresRaw": [
           "classical",
           "world"
@@ -9277,6 +9284,7 @@
           "classica",
           "world"
         ],
+        "tidalId": "480530671",
         "genresRaw": [
           "classical",
           "world"
@@ -9306,6 +9314,7 @@
           "classica",
           "world"
         ],
+        "tidalId": "406197275",
         "genresRaw": [
           "classical",
           "world"
@@ -9912,6 +9921,7 @@
           "avant-garde",
           "experimental"
         ],
+        "tidalId": "107022183",
         "genresRaw": [
           "avant-garde",
           "experimental",
