@@ -17,6 +17,8 @@ export interface Translations {
   importSuccess: (added: number, present: number) => string;
   importError: string;
   noTidalTracks: string;
+  upToDate: string;
+  newTracks: (count: number) => string;
   connectTidal: string;
   connected: string;
   disconnectTitle: string;
@@ -40,6 +42,8 @@ export const translations: Record<Lang, Translations> = {
     importSuccess: (a, p) => `✓ ${a} aggiunti, ${p} già presenti`,
     importError: "Errore",
     noTidalTracks: "Nessuna traccia TIDAL disponibile",
+    upToDate: "✓ Aggiornata",
+    newTracks: (n) => `+${n} nuove`,
     connectTidal: "Connetti TIDAL",
     connected: "Connesso",
     disconnectTitle: "Clicca per disconnetterti",
@@ -61,6 +65,8 @@ export const translations: Record<Lang, Translations> = {
     importSuccess: (a, p) => `✓ ${a} added, ${p} already present`,
     importError: "Error",
     noTidalTracks: "No TIDAL tracks available",
+    upToDate: "✓ Up to date",
+    newTracks: (n) => `+${n} new`,
     connectTidal: "Connect TIDAL",
     connected: "Connected",
     disconnectTitle: "Click to disconnect",

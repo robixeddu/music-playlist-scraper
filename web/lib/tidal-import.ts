@@ -16,7 +16,7 @@ function storageKey(type: PlaylistType, slug: string): string {
   return `battiti_tidal_${type}_${slug}`;
 }
 
-function getStoredPlaylistId(type: PlaylistType, slug: string): string | null {
+export function getStoredPlaylistId(type: PlaylistType, slug: string): string | null {
   try {
     return localStorage.getItem(storageKey(type, slug));
   } catch {
@@ -29,6 +29,24 @@ function savePlaylistId(type: PlaylistType, slug: string, id: string): void {
     localStorage.setItem(storageKey(type, slug), id);
   } catch {
     // silently ignore storage errors
+  }
+}
+
+export async function checkDelta(params: {
+  type: PlaylistType;
+  slug: string;
+  tidalIds: string[];
+  accessToken: string;
+}): Promise<{ newCount: number } | null> {
+  const playlistId = getStoredPlaylistId(params.type, params.slug);
+  if (!playlistId) return null;
+  try {
+    const existingIds = await getPlaylistItemIds(params.accessToken, playlistId);
+    const newCount = params.tidalIds.filter((id) => !existingIds.has(id)).length;
+    return { newCount };
+  } catch (e: unknown) {
+    if (e instanceof Error && e.message.toLowerCase().includes("not found")) return null;
+    throw e;
   }
 }
 
