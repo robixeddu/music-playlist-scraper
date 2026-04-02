@@ -11,14 +11,12 @@ import {
   updateAllTracks,
   getKnownEpisodeUrls,
 } from "./lib/aggregation.js";
-import { BATTITI_URL, SKIPPED_COUNT_LIMIT, MISSING_TRACKS_FILE, GLOBAL_PLAYLIST_FILE, GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "./lib/config.js";
+import { BATTITI_URL, SKIPPED_COUNT_LIMIT, MISSING_TRACKS_FILE, PROGRAM_ID } from "./lib/config.js";
 import { getArtistGenres, type GenreResult } from "./lib/claudeGenres.js";
-import { normalizeGenre } from "./lib/genres.js";
 import { getAccessToken } from "./lib/tidalAuth.js";
 import {
   findTidalMatch,
   createPlaylist,
-  getPlaylistTrackIds,
   addTrackToPlaylist,
 } from "./lib/tidalClient.js";
 import { logError } from "./lib/logger.js";
@@ -33,32 +31,6 @@ const today = (() => {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 })();
-
-const getOrCreateGlobalPlaylist = async (token: string): Promise<string> => {
-  try {
-    const data = JSON.parse(
-      await fsPromises.readFile(GLOBAL_PLAYLIST_FILE, "utf-8")
-    );
-    console.log(`📋 Global playlist "${PLAYLIST_PREFIX}" (${data.id})`);
-    return data.id;
-  } catch {
-    const id = await createPlaylist(PLAYLIST_PREFIX, token);
-    await fsPromises.writeFile(
-      GLOBAL_PLAYLIST_FILE,
-      JSON.stringify({ id }, null, 2)
-    );
-    console.log(`📋 Created global playlist "${PLAYLIST_PREFIX}" (${id})`);
-    return id;
-  }
-};
-
-const loadGenrePlaylists = async (): Promise<Record<string, string>> => {
-  try {
-    return JSON.parse(await fsPromises.readFile(GENRE_PLAYLISTS_FILE, "utf-8"));
-  } catch {
-    return {};
-  }
-};
 
 const fullSync = async () => {
   await ensureDataDirectory();
@@ -97,26 +69,18 @@ const fullSync = async () => {
 
   console.log(`\n🆕 ${newTracks.length} new tracks found.\n`);
 
-  // ─── Step 2: TIDAL auth + playlist setup ───────────────────────────────────
+  // ─── Step 2: TIDAL auth + daily staging playlist ─────────────────────────
   let token = await getAccessToken();
 
   const todayId = await createPlaylist(`${PROGRAM_ID}-${today}`, token);
-  console.log(`📋 Created today's playlist "${PROGRAM_ID}-${today}" (${todayId})\n`);
+  console.log(`📋 Created staging playlist "${PROGRAM_ID}-${today}" (${todayId})\n`);
 
-  const globalId = await getOrCreateGlobalPlaylist(token);
-  const globalExisting = await getPlaylistTrackIds(globalId, token);
-
-  const genrePlaylists = await loadGenrePlaylists();
-  const genreExisting = new Map<string, Set<string>>();
-
-  // ─── Step 3: Tag + match + distribute ─────────────────────────────────────
-  console.log("\n🎵 Step 2: Genre tagging + TIDAL sync...\n");
+  // ─── Step 3: Tag + match + stage ──────────────────────────────────────────
+  console.log("\n🎵 Step 2: Genre tagging + TIDAL match...\n");
 
   const artistGenreCache = new Map<string, GenreResult>();
   const todayExisting = new Set<string>();
   let todayAdded = 0;
-  let globalAdded = 0;
-  const genreAdded: Record<string, number> = {};
   let notFound = 0;
   const newMissing: string[] = [];
 
@@ -151,58 +115,12 @@ const fullSync = async () => {
     track.tidalId = match.id;
     console.log(`  ✅ ${match.id} (score: ${match.score.toFixed(2)})`);
 
-    // Today's playlist (dedup)
+    // Staging playlist (dedup)
     if (!todayExisting.has(match.id)) {
       await sleep(ADD_DELAY_MS);
       await addTrackToPlaylist(todayId, match.id, token);
       todayExisting.add(match.id);
       todayAdded++;
-    }
-
-    // Global playlist (dedup)
-    if (!globalExisting.has(match.id)) {
-      await sleep(ADD_DELAY_MS);
-      await addTrackToPlaylist(globalId, match.id, token);
-      globalExisting.add(match.id);
-      globalAdded++;
-    }
-
-    // Genre playlists (dedup)
-    for (const rawGenre of genreResult.normalized) {
-      const genre = normalizeGenre(rawGenre);
-      if (!genre) continue;
-
-      // Create playlist if new genre
-      if (!genrePlaylists[genre]) {
-        genrePlaylists[genre] = await createPlaylist(`${PLAYLIST_PREFIX}-${genre}`, token);
-        await fsPromises.writeFile(
-          GENRE_PLAYLISTS_FILE,
-          JSON.stringify(genrePlaylists, null, 2)
-        );
-        genreExisting.set(genre, new Set());
-        console.log(`  📋 Created new genre playlist "${PLAYLIST_PREFIX}-${genre}"`);
-      }
-
-      // Load existing IDs if not cached yet — recreate on 404
-      if (!genreExisting.has(genre)) {
-        try {
-          genreExisting.set(genre, await getPlaylistTrackIds(genrePlaylists[genre], token));
-        } catch (e: any) {
-          if (!e.message?.includes("404")) throw e;
-          console.log(`  ⚠️  ${PLAYLIST_PREFIX}-${genre} not found on TIDAL, recreating...`);
-          genrePlaylists[genre] = await createPlaylist(`${PLAYLIST_PREFIX}-${genre}`, token);
-          await fsPromises.writeFile(GENRE_PLAYLISTS_FILE, JSON.stringify(genrePlaylists, null, 2));
-          genreExisting.set(genre, new Set());
-        }
-      }
-
-      const existing = genreExisting.get(genre)!;
-      if (!existing.has(match.id)) {
-        await sleep(ADD_DELAY_MS);
-        await addTrackToPlaylist(genrePlaylists[genre], match.id, token);
-        existing.add(match.id);
-        genreAdded[genre] = (genreAdded[genre] ?? 0) + 1;
-      }
     }
 
     console.log();
@@ -218,12 +136,9 @@ const fullSync = async () => {
 
   // ─── Summary ───────────────────────────────────────────────────────────────
   console.log("─".repeat(50));
-  console.log(`📅 ${PROGRAM_ID}-${today}:     ${todayAdded} tracks added`);
-  console.log(`🌍 ${PLAYLIST_PREFIX} (global):    +${globalAdded} new tracks`);
-  for (const [genre, count] of Object.entries(genreAdded).sort((a, b) => b[1] - a[1])) {
-    console.log(`🎵 ${PLAYLIST_PREFIX}-${genre}: +${count}`);
-  }
-  console.log(`❌ Not found on TIDAL:  ${notFound}`);
+  console.log(`📅 ${PROGRAM_ID}-${today}: ${todayAdded} tracks staged`);
+  console.log(`❌ Not found on TIDAL:   ${notFound}`);
+  console.log(`\n👉 Review ${PROGRAM_ID}-${today} on TIDAL, edit tracks.json if needed, then run: npm run propagate`);
 };
 
 fullSync().catch((e) => logError("battiti-full-sync", e.message));

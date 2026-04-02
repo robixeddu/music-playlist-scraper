@@ -97,6 +97,14 @@ export function parseEpisodeDate(dateStr: string): number {
   return new Date(dateStr).getTime();
 }
 
+export function slugifyTitle(title: string): string {
+  return title
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 export function episodeDateToSlug(dateStr: string): string {
   // Convert "DD Mon YYYY" → "YYYY-MM-DD"
   const parts = dateStr.trim().split(/\s+/);

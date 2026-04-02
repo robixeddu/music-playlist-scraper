@@ -12,6 +12,8 @@
     "pregenre-enrich": "npm run build",
     "catalog-enrich": "node dist/catalog-enrich.js",
     "precatalog-enrich": "npm run build",
+    "propagate": "node dist/genre-playlist.js",
+    "prepropagate": "npm run build",
     "genre-playlist": "node dist/genre-playlist.js",
     "pregenre-playlist": "npm run build",
     "dedup-global-playlist": "node dist/dedup-global-playlist.js",

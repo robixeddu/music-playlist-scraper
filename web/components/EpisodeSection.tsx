@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { EpisodeAggregated } from "@/lib/types";
-import { episodeDateToSlug, episodeDateDisplay } from "@/lib/data";
+import { episodeDateToSlug, episodeDateDisplay, slugifyTitle } from "@/lib/data";
 import { useT } from "./LangProvider";
 import ImportButton from "./ImportButton";
 import TrackList from "./TrackList";
@@ -28,7 +28,7 @@ export default function EpisodeSection({ episodes, sourceId }: EpisodeSectionPro
     <div>
       {episodes.map((ep, i) => {
         const tidalIds = ep.tracks.filter((t) => t.tidalId).map((t) => t.tidalId as string);
-        const slug = episodeDateToSlug(ep.date);
+        const slug = `${episodeDateToSlug(ep.date)}-${slugifyTitle(ep.episodeTitle)}`;
         const playlistName = `${sourceId}-${slug}`;
         const key = `${ep.date}-${ep.episodeTitle}`;
         const isExpanded = expanded === key;
