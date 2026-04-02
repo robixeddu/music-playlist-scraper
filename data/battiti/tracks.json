@@ -81211,7 +81211,8 @@
           "post-punk",
           "electronic",
           "experimental"
-        ]
+        ],
+        "tidalId": "456559682"
       },
       {
         "title": "Viet Vet",
@@ -82154,7 +82155,8 @@
           "singer-songwriter",
           "indie",
           "folk"
-        ]
+        ],
+        "tidalId": "188483398"
       },
       {
         "title": "El sol sigue ahí",
@@ -82170,7 +82172,8 @@
           "singer-songwriter",
           "indie",
           "folk"
-        ]
+        ],
+        "tidalId": "129694765"
       },
       {
         "title": "Aire",
@@ -82299,6 +82302,7 @@
           "soundtrack",
           "ambient"
         ],
+        "tidalId": "19351195",
         "genresRaw": [
           "soundtrack",
           "ambient"
@@ -82352,7 +82356,8 @@
           "jazz",
           "soundtrack",
           "instrumental"
-        ]
+        ],
+        "tidalId": "35133852"
       },
       {
         "title": "In Dreams",
@@ -82396,7 +82401,8 @@
           "rock",
           "country",
           "pop"
-        ]
+        ],
+        "tidalId": "186242383"
       },
       {
         "title": "Dance Of The Dream Man",
@@ -82408,6 +82414,7 @@
           "soundtrack",
           "instrumental"
         ],
+        "tidalId": "4625727",
         "genresRaw": [
           "jazz",
           "soundtrack",
@@ -82574,7 +82581,8 @@
           "singer-songwriter",
           "pop",
           "indie"
-        ]
+        ],
+        "tidalId": "503008668"
       },
       {
         "title": "Go Get Some",
@@ -82584,6 +82592,7 @@
         "genres": [
           "no-genre"
         ],
+        "tidalId": "250330065",
         "genresRaw": []
       },
       {
@@ -82600,7 +82609,8 @@
           "ambient",
           "experimental",
           "soundtrack"
-        ]
+        ],
+        "tidalId": "223399161"
       },
       {
         "title": "The Locomotion",
@@ -82664,7 +82674,8 @@
           "ambient",
           "experimental",
           "soundtrack"
-        ]
+        ],
+        "tidalId": "383058809"
       },
       {
         "title": "Windswept (Reprise)",
@@ -83188,7 +83199,8 @@
           "electronic",
           "chillout",
           "ambient"
-        ]
+        ],
+        "tidalId": "18735149"
       },
       {
         "title": "Boys Do Not Think",
@@ -83215,7 +83227,8 @@
           "indie",
           "folk",
           "experimental"
-        ]
+        ],
+        "tidalId": "18735414"
       },
       {
         "title": "Oh Sweet Fire (feat. Ben LaMar Gay)",
@@ -83231,7 +83244,8 @@
           "post-rock",
           "experimental",
           "electronic"
-        ]
+        ],
+        "tidalId": "157140520"
       },
       {
         "title": "USA feat. Lars Rudolph",
@@ -83323,7 +83337,8 @@
           "world",
           "blues",
           "folk"
-        ]
+        ],
+        "tidalId": "490905102"
       },
       {
         "title": "Manakoidé",
@@ -83626,7 +83641,8 @@
           "reggae",
           "hip-hop",
           "dancehall"
-        ]
+        ],
+        "tidalId": "323124951"
       },
       {
         "title": "This Love",
@@ -83642,7 +83658,8 @@
           "soul",
           "funk",
           "r&b"
-        ]
+        ],
+        "tidalId": "122003974"
       },
       {
         "title": "Aldebarán",
@@ -83673,7 +83690,8 @@
           "indie",
           "electronic",
           "pop"
-        ]
+        ],
+        "tidalId": "184819531"
       },
       {
         "title": "Impronte",
@@ -83776,7 +83794,8 @@
           "electronic",
           "experimental",
           "pop"
-        ]
+        ],
+        "tidalId": "114308493"
       },
       {
         "title": "New Breath, da \"Zero Life Night Vision\"",
@@ -83845,7 +83864,8 @@
           "indie",
           "singer-songwriter",
           "rock"
-        ]
+        ],
+        "tidalId": "51915939"
       }
     ]
   },
@@ -83937,7 +83957,8 @@
         "genresRaw": [
           "classical",
           "jazz"
-        ]
+        ],
+        "tidalId": "472481835"
       },
       {
         "title": "Tamago",
@@ -84681,7 +84702,8 @@
           "post-rock",
           "instrumental",
           "experimental"
-        ]
+        ],
+        "tidalId": "127420156"
       },
       {
         "title": "Colour Me In",
@@ -84697,7 +84719,8 @@
           "electronic",
           "indie",
           "experimental"
-        ]
+        ],
+        "tidalId": "16025854"
       }
     ]
   },
@@ -84750,7 +84773,8 @@
           "flamenco",
           "avant-garde",
           "instrumental"
-        ]
+        ],
+        "tidalId": "501380478"
       },
       {
         "title": "Pixelwissen",
@@ -84910,7 +84934,8 @@
         "genres": [
           "no-genre"
         ],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "446782067"
       }
     ]
   },
@@ -85570,7 +85595,8 @@
         "albumDetails": ", da \"Chelsea Girl\" – Verve Records",
         "key": "nico___chelsea_girl",
         "genres": [
-          "singer-songwriter",
+          "post-punk",
+          "experimental",
           "folk"
         ],
         "tidalId": "94440041",
@@ -85616,7 +85642,8 @@
           "highlife",
           "funk",
           "afrobeat"
-        ]
+        ],
+        "tidalId": "184769566"
       },
       {
         "title": "Kruman Dey",
@@ -86019,7 +86046,8 @@
           "experimental",
           "avant-garde",
           "rock"
-        ]
+        ],
+        "tidalId": "46890080"
       },
       {
         "title": "Giù la testa (Duck, You Sucker!)",
@@ -86085,7 +86113,8 @@
         "genresRaw": [
           "pop",
           "rock"
-        ]
+        ],
+        "tidalId": "58520577"
       },
       {
         "title": "Ces Gens-là",
@@ -86172,7 +86201,8 @@
         "genresRaw": [
           "jazz",
           "free improvisation"
-        ]
+        ],
+        "tidalId": "241353996"
       },
       {
         "title": "You Know It",
@@ -86199,7 +86229,8 @@
           "free improvisation",
           "jazz",
           "experimental"
-        ]
+        ],
+        "tidalId": "194697437"
       },
       {
         "title": "The Great Pretender",
@@ -86213,7 +86244,8 @@
         "genresRaw": [
           "jazz",
           "free improvisation"
-        ]
+        ],
+        "tidalId": "14335482"
       }
     ]
   },
@@ -86248,7 +86280,8 @@
         "genresRaw": [
           "blues",
           "soul"
-        ]
+        ],
+        "tidalId": "431500875"
       },
       {
         "title": "Al Maraya",

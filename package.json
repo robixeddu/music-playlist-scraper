@@ -27,7 +27,9 @@
     "clear-mismatched-ids": "node dist/clear-mismatched-ids.js",
     "preclear-mismatched-ids": "npm run build",
     "fix-mismatched-ids": "node dist/fix-mismatched-ids.js",
-    "prefix-mismatched-ids": "npm run build"
+    "prefix-mismatched-ids": "npm run build",
+    "reconcile-global-playlist": "node dist/reconcile-global-playlist.js",
+    "prereconcile-global-playlist": "npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
