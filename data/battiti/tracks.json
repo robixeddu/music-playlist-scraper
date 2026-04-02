@@ -1555,7 +1555,6 @@
         "albumDetails": "da \"Terrona\" - Kakakids Records",
         "key": "maria_violenza___u_mari",
         "genres": ["post-punk", "experimental", "noise"],
-        "tidalId": "386496442",
         "genresRaw": ["post-punk", "experimental", "noise"]
       },
       {
@@ -1732,7 +1731,6 @@
         "albumDetails": "da \"Momentum\" - New Soil",
         "key": "joshua_abrams___abide_in_sunset",
         "genres": ["jazz", "free improvisation", "instrumental"],
-        "tidalId": "444721739",
         "genresRaw": ["jazz", "free improvisation", "instrumental"]
       },
       {
@@ -1784,7 +1782,7 @@
         "albumDetails": "",
         "key": "fontaines_dc___boys_in_the_better_land",
         "genres": ["post-punk", "indie", "rock"],
-        "tidalId": "507480069",
+        "tidalId": "103456454",
         "genresRaw": ["post-punk", "indie", "rock"]
       },
       {
@@ -1847,7 +1845,6 @@
         "albumDetails": "",
         "key": "kneecap___it's_been_ages",
         "genres": ["hip-hop", "punk", "experimental"],
-        "tidalId": "7761298",
         "genresRaw": ["hip-hop", "punk", "experimental"]
       },
       {
@@ -1901,7 +1898,7 @@
         "albumDetails": "",
         "key": "kneecap___fine_art",
         "genres": ["hip-hop", "punk", "experimental"],
-        "tidalId": "499232355",
+        "tidalId": "368305778",
         "genresRaw": ["hip-hop", "punk", "experimental"]
       },
       {
@@ -1910,7 +1907,7 @@
         "albumDetails": "",
         "key": "kneecap___rhino_ket",
         "genres": ["hip-hop", "punk", "experimental"],
-        "tidalId": "83307016",
+        "tidalId": "368305792",
         "genresRaw": ["hip-hop", "punk", "experimental"]
       },
       {
@@ -1919,7 +1916,7 @@
         "albumDetails": "",
         "key": "kneecap___guilty_conscience",
         "genres": ["hip-hop", "punk", "experimental"],
-        "tidalId": "83640953",
+        "tidalId": "343038728",
         "genresRaw": ["hip-hop", "punk", "experimental"]
       },
       {
@@ -1946,7 +1943,7 @@
         "albumDetails": "",
         "key": "kneecap___the_recap",
         "genres": ["hip-hop", "punk", "experimental"],
-        "tidalId": "89223906",
+        "tidalId": "442794868",
         "genresRaw": ["hip-hop", "punk", "experimental"]
       }
     ]
@@ -2056,9 +2053,9 @@
         "artist": "MAKARA",
         "albumDetails": "da \"Ngong Ngong\" - Autoproduzione",
         "key": "makara___silver_spoon",
-        "genres": ["no-genre"],
-        "tidalId": "8776546",
-        "genresRaw": []
+        "genres": ["psychedelic", "world"],
+        "tidalId": "450420783",
+        "genresRaw": ["psychedelic", "world"]
       },
       {
         "title": "Namaste Ji",
@@ -2101,7 +2098,6 @@
         "albumDetails": "da \"Hex Shell\" - Autoproduzione",
         "key": "hex_shell___the_cat_20",
         "genres": ["experimental", "electronic", "noise"],
-        "tidalId": "204061987",
         "genresRaw": ["experimental", "electronic", "noise"]
       },
       {
@@ -2144,7 +2140,7 @@
         "albumDetails": "da \"Control Songs\" – Review Records",
         "key": "david_garland___i_am_with_you",
         "genres": ["singer-songwriter", "folk"],
-        "tidalId": "93177223",
+        "tidalId": "366299176",
         "genresRaw": ["singer-songwriter", "folk"]
       },
       {
@@ -2284,7 +2280,7 @@
         "albumDetails": "da \"Cool Down The Heat\" – Greensleeves Records",
         "key": "junior_murvin___police_and_thieves",
         "genres": ["reggae"],
-        "tidalId": "93960390",
+        "tidalId": "445463163",
         "genresRaw": ["reggae", "roots reggae"]
       },
       {
@@ -2328,9 +2324,9 @@
         "artist": "CAMILLA GEORGE",
         "albumDetails": "da \"Ibio Ibio\" – Ever Records",
         "key": "camilla_george___journey_across_the_sea",
-        "genres": ["jazz", "post-rock"],
-        "tidalId": "82169227",
-        "genresRaw": ["jazz", "post-rock"]
+        "genres": ["jazz", "afrobeat"],
+        "tidalId": "229961604",
+        "genresRaw": ["jazz", "afrobeat"]
       },
       {
         "title": "The Orchard",
@@ -2478,7 +2474,7 @@
         "albumDetails": "da \"Cosmos Nucleus\" – Time Traveller Recordings",
         "key": "carlos_garnett___mystery_of_ages",
         "genres": ["jazz", "funk"],
-        "tidalId": "402123084",
+        "tidalId": "34363066",
         "genresRaw": ["jazz", "funk"]
       },
       {
@@ -2566,7 +2562,6 @@
         "albumDetails": "da \"The Wild Joy\" - Torto Editions",
         "key": "duchamp___the_wild_joy",
         "genres": ["experimental", "avant-garde"],
-        "tidalId": "28675883",
         "genresRaw": ["experimental", "avant-garde"]
       },
       {
@@ -2627,7 +2622,7 @@
         "albumDetails": "da \"Disquiet\" - Northern Spy",
         "key": "the_necks___rapid_eye_movement",
         "genres": ["jazz", "free improvisation", "experimental"],
-        "tidalId": "80999700",
+        "tidalId": "450368941",
         "genresRaw": ["jazz", "free improvisation", "experimental"]
       }
     ]
@@ -2939,7 +2934,7 @@
         "albumDetails": "da \"On the Beach\" - Reprise Records",
         "key": "neil_young___on_the_beach",
         "genres": ["rock", "folk", "country"],
-        "tidalId": "82271131",
+        "tidalId": "76441196",
         "genresRaw": ["rock", "folk", "country"]
       },
       {
@@ -3221,7 +3216,7 @@
         "albumDetails": "da \"Third Trip To Mu\" – Folderol",
         "key": "mu___gentle_rain_over_mu",
         "genres": ["no-genre"],
-        "tidalId": "199988576",
+        "tidalId": "472987434",
         "genresRaw": []
       },
       {
@@ -3333,7 +3328,7 @@
         "albumDetails": "da \"Cream\" – Warp Rcords",
         "key": "kassa_overall___nothin_but_a_\"g\"_thang",
         "genres": ["jazz", "hip-hop", "experimental"],
-        "tidalId": "377578728",
+        "tidalId": "438931298",
         "genresRaw": ["jazz", "hip-hop", "experimental"]
       },
       {
@@ -3481,7 +3476,7 @@
         "albumDetails": "da \"Reflections on: The Autobiography of an Ex-Colored Man\" – Giant Step Arts",
         "key": "mark_turner___movement_1_anonymous",
         "genres": ["jazz", "instrumental"],
-        "tidalId": "184694912",
+        "tidalId": "450347129",
         "genresRaw": ["jazz", "instrumental"]
       },
       {
@@ -3490,7 +3485,6 @@
         "albumDetails": "da \"Reflections on: The Autobiography of an Ex-Colored Man\" – Giant Step Arts",
         "key": "mark_turner___movement_8_pragmatism",
         "genres": ["jazz", "instrumental"],
-        "tidalId": "213160819",
         "genresRaw": ["jazz", "instrumental"]
       },
       {
@@ -4034,8 +4028,8 @@
         "artist": "MOIN",
         "albumDetails": "da \"Belly Up\" - AD 93",
         "key": "moin___you_leave_me_breathless",
-        "genres": ["no-genre"],
-        "tidalId": "77708317",
+        "genres": ["post-punk", "indie", "experimental"],
+        "tidalId": "423267515",
         "genresRaw": []
       },
       {
@@ -4175,18 +4169,18 @@
         "artist": "TERA TERA",
         "albumDetails": "da \"Tera Tera\" - Hyperjazz Records",
         "key": "tera_tera___tera_tera",
-        "genres": ["no-genre"],
-        "tidalId": "103180118",
-        "genresRaw": []
+        "genres": ["experimental"],
+        "tidalId": "436149128",
+        "genresRaw": ["experimental"]
       },
       {
         "title": "Tessalonica feat. Laura Agnusdei",
         "artist": "TETUAN",
         "albumDetails": "da \"Memet\" - Bloody Sound",
         "key": "tetuan___tessalonica_feat_laura_agnusdei",
-        "genres": ["no-genre"],
-        "tidalId": "224310424",
-        "genresRaw": []
+        "genres": ["experimental", "jazz"],
+        "tidalId": "459224949",
+        "genresRaw": ["experimental", "jazz"]
       },
       {
         "title": "Moana-nui-ka-lehua",
@@ -4228,7 +4222,6 @@
         "albumDetails": "da \"The Freedom Suite, Novoa / Carter / Mela Trio, Vol. 2\" - 577 Records",
         "key": "eva_novoa___free_to_be_free",
         "genres": ["singer-songwriter", "folk", "indie"],
-        "tidalId": "449272739",
         "genresRaw": ["singer-songwriter", "folk", "indie"]
       },
       {
@@ -4289,7 +4282,7 @@
         "albumDetails": "da \"We Live In Sand\" - Ruptured",
         "key": "snakeskin___october_sun",
         "genres": ["no-genre"],
-        "tidalId": "96366676",
+        "tidalId": "452527957",
         "genresRaw": []
       },
       {
@@ -4527,7 +4520,7 @@
         "albumDetails": "da \"We Live In Sand\" – Ruptured",
         "key": "snakeskin___the_fear",
         "genres": ["no-genre"],
-        "tidalId": "7935252",
+        "tidalId": "452521712",
         "genresRaw": []
       },
       {
@@ -4562,9 +4555,9 @@
         "artist": "GANAVYA",
         "albumDetails": "da \"Nilam\" - Leiter",
         "key": "ganavya___not_a_burden",
-        "genres": ["jazz", "world"],
-        "tidalId": "71970462",
-        "genresRaw": ["jazz", "world"]
+        "genres": ["world"],
+        "tidalId": "423407559",
+        "genresRaw": ["world"]
       },
       {
         "title": "Aside (excerpt)",
@@ -22171,9 +22164,9 @@
         "artist": "KASSA OVERALL",
         "albumDetails": "da \"I Think I'm Good\" - Brownswood Recordings",
         "key": "kassa_overall___show_me_a_prison",
-        "genres": ["jazz", "hip-hop", "experimental"],
+        "genres": ["jazz", "experimental"],
         "tidalId": "68084031",
-        "genresRaw": ["jazz", "hip-hop", "experimental"]
+        "genresRaw": ["jazz", "experimental"]
       },
       {
         "title": "Spells",
