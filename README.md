@@ -7,10 +7,11 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
 - Scrapes episodes from RAI Play Sound, extracts artist/title/album
 - Genre tagging via **Claude Haiku** (`claude-haiku-4-5`) — one API call per artist, cached, returns 1–3 genres from an approved list
 - TIDAL matching with fuzzy scoring (Jaccard) + real artist verification to prevent cover-song mismatches
-- Distributes tracks across three levels of playlists (no duplicates):
-  - `battiti-YYYY/MM/DD` — daily playlist for each run
-  - `BATTITI` — global persistent playlist
-  - `BATTITI-{genre}` — one playlist per canonical genre
+- **Two-phase workflow** — scrape/match first, manual review, then propagate:
+  - `battiti-YYYY-MM-DD` — staging playlist created on each run for review
+  - `BATTITI` — global persistent playlist (populated after review via `propagate`)
+  - `BATTITI-{genre}` — one playlist per canonical genre (populated after review via `propagate`)
+- `tracks.json` is the single source of truth — edit it after review before propagating
 - **Auto-creates new genre playlists** as new genres accumulate — no manual setup needed, review them on TIDAL later
 - Token auto-refresh every 50 tracks (handles long runs without 401 errors)
 - Auto-recreates 404 playlists
@@ -32,13 +33,14 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
 ## Project Structure
 
 ```
-├── full-sync.ts              # Main entrypoint: scrape + tag + match + distribute
-├── ingest.ts                 # Scrape only (no TIDAL)
-├── genre-enrich.ts           # Backfill genres via Claude on all tracks
-├── catalog-enrich.ts         # Backfill TIDAL IDs for genre-tagged tracks
-├── genre-playlist.ts         # Rebuild/update all genre playlists from tracks.json
-├── dedup-global-playlist.ts  # Deduplicate global playlist
-├── dedup-genre-playlists.ts  # Deduplicate all genre playlists
+├── full-sync.ts                    # Phase 1: scrape + tag + match → tracks.json + staging playlist
+├── genre-playlist.ts               # Phase 2 (propagate): distribute tracks.json → global + genre playlists
+├── ingest.ts                       # Scrape only (no TIDAL)
+├── genre-enrich.ts                 # Backfill genres via Claude on all tracks
+├── catalog-enrich.ts               # Backfill TIDAL IDs for genre-tagged tracks
+├── reconcile-global-playlist.ts    # One-shot: rebuild global playlist from tracks.json (removes stale IDs)
+├── dedup-global-playlist.ts        # Deduplicate global playlist
+├── dedup-genre-playlists.ts        # Deduplicate all genre playlists
 ├── scripts/
 │   └── sync-and-notify.sh   # Cron wrapper: PROGRAM_ID=battiti npm start
 ├── lib/
@@ -105,13 +107,25 @@ On first run, the terminal prints a TIDAL OAuth URL. Open it in the browser, aut
 
 ## Usage
 
-### Normal cycle
+### Normal cycle (two-phase)
+
+**Phase 1 — scrape, tag, match:**
 
 ```bash
 npm start
 ```
 
-Scrapes new episodes, tags genres via Claude, finds TIDAL matches, and distributes to all playlists. New genre playlists are created automatically the first time a genre appears.
+Scrapes new episodes, tags genres via Claude, finds TIDAL matches, writes results to `tracks.json` and `missing_tracks.txt`, and creates a staging playlist `battiti-YYYY-MM-DD` on TIDAL for review.
+
+**Review:** open the staging playlist on TIDAL, edit `tracks.json` / `missing_tracks.txt` if needed.
+
+**Phase 2 — propagate to playlists:**
+
+```bash
+npm run propagate
+```
+
+Reads the verified `tracks.json` and distributes all tracks to `BATTITI` (global) and all `BATTITI-{genre}` playlists. Idempotent — only adds tracks not already present.
 
 ### Scrape only (no TIDAL)
 
@@ -124,14 +138,15 @@ npm run scrape
 ```bash
 npm run genre-enrich       # Tag genres for all tracks in tracks.json (via Claude)
 npm run catalog-enrich     # Find TIDAL IDs for genre-tagged tracks
-npm run genre-playlist     # Redistribute all tracks into genre playlists
+npm run propagate          # Redistribute all tracks from tracks.json into global + genre playlists
 ```
 
-### Deduplication
+### Maintenance
 
 ```bash
-npm run dedup-global-playlist   # Dedup global BATTITI
-npm run dedup-genres            # Dedup all genre playlists
+npm run dedup-global-playlist        # Dedup global BATTITI
+npm run dedup-genres                 # Dedup all genre playlists
+npm run reconcile-global-playlist    # Rebuild global playlist from tracks.json, removing stale IDs
 ```
 
 ## Genre System
@@ -153,8 +168,7 @@ Genres are organized into families for UI sorting. Key canonical values include:
 
 ### Auto-playlist creation
 
-- **During `npm start`**: a new `BATTITI-{genre}` playlist is created on TIDAL immediately when the first track of a new genre appears.
-- **During `npm run genre-playlist`**: playlists are created only for genres with ≥ 10 tracks (`MIN_TRACKS`).
+- **During `npm run propagate`**: playlists are created for genres with ≥ 10 tracks (`MIN_TRACKS`).
 
 New playlists are logged to the console and persisted in `data/genre_playlists.json`. Review and clean them up manually on TIDAL if needed.
 
@@ -217,9 +231,11 @@ A read-only Next.js 16 app in `web/` that browses the catalog — deployed at [m
 - **Language auto-detection** from `Accept-Language` header — no `/it` or `/en` prefix in URLs
 - Browse episodes by date, filter by genre, see TIDAL coverage per episode
 - Import any section (global, genre, episode) directly into TIDAL via OAuth 2.1 PKCE
+  - Episode playlists are named `{sourceId}-YYYY-MM-DD-nome-episodio` (date + slugified title)
 - Import buttons disabled until connected to TIDAL
 - TIDAL API calls proxied via Next.js rewrites (avoids CORS)
 - Data fetched from GitHub raw URLs with 1-hour in-memory cache
+- `tracks.json` is the single source of truth for all data displayed
 
 ```bash
 cd web && npm install && npm run dev   # http://localhost:3000
