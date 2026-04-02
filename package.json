@@ -23,7 +23,11 @@
     "prune-genres": "node dist/prune-genre-playlists.js",
     "preprune-genres": "npm run build",
     "verify-tidal-ids": "node dist/verify-tidal-ids.js",
-    "preverify-tidal-ids": "npm run build"
+    "preverify-tidal-ids": "npm run build",
+    "clear-mismatched-ids": "node dist/clear-mismatched-ids.js",
+    "preclear-mismatched-ids": "npm run build",
+    "fix-mismatched-ids": "node dist/fix-mismatched-ids.js",
+    "prefix-mismatched-ids": "npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

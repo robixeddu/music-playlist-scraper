@@ -11,6 +11,7 @@ export interface TidalTrack {
   id: string;
   title: string;
   artistName: string;
+  albumName?: string;
 }
 
 const tidalFetch = async (
@@ -54,13 +55,13 @@ export const searchTracks = async (
   try {
     const encoded = encodeURIComponent(query);
     const data = await tidalFetch(
-      `/searchResults/${encoded}?countryCode=${COUNTRY_CODE}&include=tracks%2Cartists`,
+      `/searchResults/${encoded}?countryCode=${COUNTRY_CODE}&include=tracks%2Cartists%2Calbums`,
       token
     );
 
     const included: any[] = data?.included ?? [];
 
-    // Build id → name map for all included artists
+    // Build id → name maps for artists and albums
     const localArtistMap = new Map<string, string>();
     for (const a of included.filter((r: any) => r.type === "artists")) {
       if (a.id && a.attributes?.name) {
@@ -68,18 +69,24 @@ export const searchTracks = async (
         artistById?.set(a.id, a.attributes.name);
       }
     }
+    const localAlbumMap = new Map<string, string>();
+    for (const al of included.filter((r: any) => r.type === "albums")) {
+      if (al.id && al.attributes?.title) localAlbumMap.set(al.id, al.attributes.title);
+    }
 
     return included
       .filter((r: any) => r.type === "tracks")
       .map((t: any) => {
-        // Use each track's own linked artists, not a pooled guess
         const artistIds: string[] = t.relationships?.artists?.data?.map((a: any) => a.id) ?? [];
         const artistName = artistIds.map((id) => localArtistMap.get(id)).find(Boolean)
           ?? expectedArtist;
+        const albumIds: string[] = t.relationships?.albums?.data?.map((a: any) => a.id) ?? [];
+        const albumName = albumIds.map((id) => localAlbumMap.get(id)).find(Boolean);
         return {
           id: t.id,
           title: t.attributes?.title ?? "",
           artistName,
+          albumName,
         };
       })
       .filter((t) => t.title);
@@ -205,88 +212,91 @@ export const findTidalMatch = async (
   };
 
   const artistVariants = artistSearchVariants(artist);
-  const primaryArtist = artistVariants[0]; // original
-  const normArtist = artistVariants[1];    // dot-normalized
+  const normArtist = artistVariants[1] ?? artistVariants[0];
+  const cleanNorm = normalizeTitleForSearch(scoreTitle);
 
+  // ── 1. Title-only searches (primary — high recall) ───────────────────────
   await sleep(SEARCH_DELAY_MS);
-  const primary = await searchTracks(`${primaryArtist} ${title}`, artist, token, artistById);
+  const byTitle = await searchTracks(scoreTitle, artist, token, artistById);
 
-  // Build full candidate pool — run fallbacks immediately so reversed queries
-  // can surface tracks that primary search buries (e.g. niche catalog artists)
-  await sleep(SEARCH_DELAY_MS);
-  const fbTitle = await searchTracks(title, artist, token, artistById);
-  await sleep(SEARCH_DELAY_MS);
-  const fbArtist = await searchTracks(primaryArtist, artist, token, artistById);
-  await sleep(SEARCH_DELAY_MS);
-  const fbDot = await searchTracks(`${primaryArtist} ${title}.`, artist, token, artistById);
-  await sleep(SEARCH_DELAY_MS);
-  const fbReversed = await searchTracks(`${title} ${primaryArtist}`, artist, token, artistById);
-  const fbClean = clean !== title
-    ? (await sleep(SEARCH_DELAY_MS), await searchTracks(`${primaryArtist} ${clean}`, artist, token, artistById))
+  const byTitleNorm = cleanNorm !== scoreTitle
+    ? (await sleep(SEARCH_DELAY_MS), await searchTracks(cleanNorm, artist, token, artistById))
     : [];
 
-  // Extra: apostrophe-stripped title variant (helps TIDAL search for e.g. "Jes' Grew")
-  const cleanNorm = normalizeTitleForSearch(clean || title);
-  const fbNorm = cleanNorm !== (clean || title) || normArtist !== primaryArtist
-    ? (await sleep(SEARCH_DELAY_MS), await searchTracks(`${normArtist} ${cleanNorm}`, artist, token, artistById))
-    : [];
+  // ── 2. "title - artist" (TIDAL indexes this format well for many catalogs) ──
+  await sleep(SEARCH_DELAY_MS);
+  const byTitleDashArtist = await searchTracks(`${scoreTitle} - ${normArtist}`, artist, token, artistById);
 
-  // Extra: normalized artist (dots expanded) + each slash/& part
-  const extraSearches: TidalTrack[] = [];
-  for (const variant of artistVariants.slice(1)) { // skip [0] = original already done
-    if (variant === primaryArtist) continue;
+  // ── 3. Artist search (surfaces catalog when title alone is ambiguous) ─────
+  await sleep(SEARCH_DELAY_MS);
+  const byArtist = await searchTracks(normArtist, artist, token, artistById);
+
+  // Extra artist variants (dots, slash, & parts)
+  const byVariants: TidalTrack[] = [];
+  for (const variant of artistVariants.slice(2)) {
     await sleep(SEARCH_DELAY_MS);
-    const res = await searchTracks(`${variant} ${clean || title}`, artist, token, artistById);
-    extraSearches.push(...res);
+    byVariants.push(...await searchTracks(variant, artist, token, artistById));
   }
 
-  // Build the set of IDs found by non-album searches (stronger signal)
-  const nonAlbumIds = new Set(
-    [...primary, ...fbTitle, ...fbArtist, ...fbDot, ...fbReversed, ...fbClean, ...fbNorm, ...extraSearches].map((c) => c.id)
-  );
-
-  // Album hint: some tracks are not indexed by title but appear when searching by album.
-  // Album-only candidates (not found by any other query) require a higher threshold
-  // to avoid false positives from same-album tracks with unrelated titles.
-  const ALBUM_ONLY_THRESHOLD = 0.7;
+  // ── 3. Album searches (strong signal for niche catalog artists) ───────────
+  const byAlbum: TidalTrack[] = [];
   if (album) {
     await sleep(SEARCH_DELAY_MS);
-    const fbAlbum = await searchTracks(`${primaryArtist} ${album}`, artist, token, artistById);
-    extraSearches.push(...fbAlbum);
+    byAlbum.push(...await searchTracks(album, artist, token, artistById));
+    await sleep(SEARCH_DELAY_MS);
+    byAlbum.push(...await searchTracks(`${normArtist} ${album}`, artist, token, artistById));
   }
 
+  // ── 4. Merge & deduplicate ────────────────────────────────────────────────
+  const nonAlbumIds = new Set(
+    [...byTitle, ...byTitleNorm, ...byTitleDashArtist, ...byArtist, ...byVariants].map((c) => c.id)
+  );
   const merged = [
     ...new Map(
-      [...primary, ...fbTitle, ...fbArtist, ...fbDot, ...fbReversed, ...fbClean, ...fbNorm, ...extraSearches].map((c) => [c.id, c])
+      [...byTitle, ...byTitleNorm, ...byTitleDashArtist, ...byArtist, ...byVariants, ...byAlbum].map((c) => [c.id, c])
     ).values(),
   ];
 
-  // Sort candidates by score descending, verify until one passes
-  const scored = scoreAll(merged).sort((a, b) => b.score - a.score);
-  if (process.env.TIDAL_DEBUG) {
-    const top5 = scored.slice(0, 5);
-    if (top5.length === 0) {
-      console.log(`  [debug] no candidates returned by search`);
-    } else {
-      console.log(`  [debug] top candidates:`);
-      top5.forEach(s => console.log(`    score=${s.score.toFixed(2)} artist=${s.candidate.artistName} title=${s.candidate.title}`));
-    }
-  }
-  const topCandidates = scored
+  // ── 5. Score, filter by title, rank by artist → album → title ────────────
+  // Album score: compare our album string against TIDAL album name (if available).
+  const albumScore = (c: TidalTrack): number =>
+    album && c.albumName
+      ? computeMatchScore("", album, "", c.albumName).titleScore
+      : 0;
+
+  const TITLE_THRESHOLD = 0.55;
+  const ALBUM_ONLY_TITLE_THRESHOLD = 0.7;
+
+  const topCandidates = scoreAll(merged)
     .filter((s) => {
-      const threshold = nonAlbumIds.has(s.candidate.id) ? CONFIDENT_THRESHOLD : ALBUM_ONLY_THRESHOLD;
-      return s.score >= threshold;
+      const minTitle = nonAlbumIds.has(s.candidate.id) ? TITLE_THRESHOLD : ALBUM_ONLY_TITLE_THRESHOLD;
+      return s.titleScore >= minTitle;
     })
+    .sort((a, b) =>
+      b.artistScore - a.artistScore ||
+      albumScore(b.candidate) - albumScore(a.candidate) ||
+      b.titleScore - a.titleScore
+    )
     .slice(0, 20);
 
-  for (const candidate of topCandidates) {
-    const result = await verify(candidate);
-    if (result !== null && result !== undefined) return result; // verified ✓
-    // null = wrong artist confirmed, undefined = lookup failed — try next in both cases
+  if (process.env.TIDAL_DEBUG) {
+    if (topCandidates.length === 0) {
+      console.log(`  [debug] no candidates above title threshold`);
+    } else {
+      console.log(`  [debug] top candidates:`);
+      topCandidates.slice(0, 5).forEach((s) =>
+        console.log(`    artist=${s.artistScore.toFixed(2)} album=${albumScore(s.candidate).toFixed(2)} title=${s.titleScore.toFixed(2)} — ${s.candidate.artistName} – ${s.candidate.title}`)
+      );
+    }
   }
 
-  // Fallback: RAI sometimes stores label/show as artist and "Real Artist - Real Title" in title.
-  // If title contains " - ", extract potential altArtist + altTitle and try a separate search.
+  // ── 6. Verify ─────────────────────────────────────────────────────────────
+  for (const candidate of topCandidates) {
+    const result = await verify(candidate);
+    if (result !== null && result !== undefined) return result;
+  }
+
+  // ── 7. Fallback: RAI label-as-artist pattern ("Real Artist - Real Title") ─
   const dashIdx = title.indexOf(" - ");
   if (dashIdx > 0) {
     const altArtist = title.slice(0, dashIdx).trim();
