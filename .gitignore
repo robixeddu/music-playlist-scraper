@@ -8,3 +8,7 @@
 .env
 .tidal_token.json
 /logs
+data/battiti/tidal_id_mismatches.txt
+data/battiti/tidal_verify_checkpoint.json
+data/battiti/fix_mismatched_checkpoint.json
+search-test.ts
