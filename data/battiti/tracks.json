@@ -85570,10 +85570,10 @@
         "albumDetails": ", da \"Chelsea Girl\" – Verve Records",
         "key": "nico___chelsea_girl",
         "genres": [
-          "post-punk",
-          "experimental",
+          "singer-songwriter",
           "folk"
         ],
+        "tidalId": "94440041",
         "genresRaw": [
           "post-punk",
           "experimental",
@@ -86616,7 +86616,8 @@
           "electronic",
           "experimental",
           "ambient"
-        ]
+        ],
+        "tidalId": "482470960"
       },
       {
         "title": "Jardin Secret",
@@ -86632,7 +86633,8 @@
           "electronic",
           "experimental",
           "ambient"
-        ]
+        ],
+        "tidalId": "482470955"
       },
       {
         "title": "The Pearl",
@@ -86766,7 +86768,8 @@
           "jazz",
           "free improvisation",
           "experimental"
-        ]
+        ],
+        "tidalId": "480061761"
       },
       {
         "title": "Thank You For Your Silence",
@@ -86918,7 +86921,8 @@
         "genres": [
           "no-genre"
         ],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "492947132"
       },
       {
         "title": "Hold The Dub",
@@ -86928,7 +86932,8 @@
         "genres": [
           "no-genre"
         ],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "492947135"
       },
       {
         "title": "Malang's Mama",
@@ -87194,7 +87199,8 @@
           "indie",
           "experimental",
           "electronic"
-        ]
+        ],
+        "tidalId": "417723438"
       },
       {
         "title": "The Disintegration Of Eric Omelette",
@@ -87686,7 +87692,8 @@
         "genresRaw": [
           "jazz",
           "funk"
-        ]
+        ],
+        "tidalId": "30918613"
       },
       {
         "title": "Made Of The Sun",
@@ -88088,7 +88095,8 @@
         "genres": [
           "no-genre"
         ],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "80508281"
       },
       {
         "title": "2.8",
@@ -88421,7 +88429,8 @@
         "genresRaw": [
           "jazz",
           "free improvisation"
-        ]
+        ],
+        "tidalId": "79936261"
       },
       {
         "title": "Sugar Rush, da \"Saturday's Child\"",
@@ -88466,7 +88475,8 @@
           "jazz",
           "free improvisation",
           "experimental"
-        ]
+        ],
+        "tidalId": "482663295"
       },
       {
         "title": "Rejoice, Disrupt, Resist",
@@ -88627,7 +88637,8 @@
         "genres": [
           "no-genre"
         ],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "469197182"
       },
       {
         "title": "Rito: What Is Endures",
@@ -88995,7 +89006,8 @@
         "genresRaw": [
           "instrumental",
           "experimental"
-        ]
+        ],
+        "tidalId": "499485011"
       },
       {
         "title": "Sueño",
@@ -89211,7 +89223,8 @@
         "genresRaw": [
           "blues",
           "rock"
-        ]
+        ],
+        "tidalId": "469890552"
       }
     ]
   },
@@ -89854,7 +89867,8 @@
           "electronic",
           "ambient",
           "downtempo"
-        ]
+        ],
+        "tidalId": "473762475"
       },
       {
         "title": "Bologna / Roma / Molfetta (BA), 8",
@@ -89919,7 +89933,8 @@
           "dub",
           "reggae",
           "electronic"
-        ]
+        ],
+        "tidalId": "327586980"
       },
       {
         "title": "You'll Never Find",
@@ -89935,7 +89950,8 @@
           "dub",
           "reggae",
           "instrumental"
-        ]
+        ],
+        "tidalId": "1349585"
       },
       {
         "title": "Hoy: Jazzbo",
@@ -90094,7 +90110,8 @@
           "jazz",
           "reggae",
           "instrumental"
-        ]
+        ],
+        "tidalId": "54834247"
       },
       {
         "title": "Fragile Hands",
@@ -90908,7 +90925,8 @@
           "experimental",
           "post-rock",
           "instrumental"
-        ]
+        ],
+        "tidalId": "484396275"
       },
       {
         "title": "Regina Silva",
