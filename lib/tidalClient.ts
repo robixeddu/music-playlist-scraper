@@ -351,7 +351,7 @@ export const getPlaylistTrackIds = async (
 
   try {
     let nextPath: string | null =
-      `/playlists/${playlistId}/relationships/items`;
+      `/playlists/${playlistId}/relationships/items?countryCode=${COUNTRY_CODE}`;
 
     do {
       const data = await tidalFetch(nextPath, token);
