@@ -1348,9 +1348,9 @@
         "artist": "ALPHA MAID",
         "albumDetails": "da \"Is This A Queue\" – AD 93",
         "key": "alpha_maid___on_smoke",
-        "genres": ["no-genre"],
+        "genres": ["experimental", "post-punk"],
         "tidalId": "462441864",
-        "genresRaw": []
+        "genresRaw": ["experimental", "post-punk"]
       },
       {
         "title": "Lingua Do Mundo (feat. Tim Bernardes)",
@@ -7634,6 +7634,7 @@
         "albumDetails": "da \"Chet On Poetry\" - Mono Jazz",
         "key": "chet_baker___in_a_sentimental_mood",
         "genres": ["jazz", "instrumental"],
+        "tidalId": "347499302",
         "genresRaw": ["jazz", "instrumental"]
       },
       {
@@ -19325,6 +19326,7 @@
         "albumDetails": "da \"Πέτρα (Petra)\" – WV Sorcerer",
         "key": "mai_mai_mai___πέτρα_petra",
         "genres": ["experimental", "noise", "industrial"],
+        "tidalId": "344561589",
         "genresRaw": ["experimental", "noise", "industrial"]
       },
       {
@@ -26075,16 +26077,18 @@
         "artist": "DJ ZNOBIA",
         "albumDetails": "da \"Inventor VOL 2\" - Nyege Nyege Tapes",
         "key": "dj_znobia___mondandenguem",
-        "genres": ["house", "electronic"],
-        "genresRaw": ["house", "electronic"]
+        "genres": ["electronic", "world"],
+        "tidalId": "368821815",
+        "genresRaw": ["electronic", "world"]
       },
       {
         "title": "Kuduro Ou Hundergound",
         "artist": "DJ ZNOBIA",
         "albumDetails": "da \"Inventor VOL 2\" - Nyege Nyege Tapes",
         "key": "dj_znobia___kuduro_ou_hundergound",
-        "genres": ["house", "electronic"],
-        "genresRaw": ["house", "electronic"]
+        "genres": ["techno", "electronic"],
+        "tidalId": "368821812",
+        "genresRaw": ["techno", "electronic"]
       },
       {
         "title": "The Voices",
@@ -26663,6 +26667,7 @@
         "albumDetails": "",
         "key": "stefano_pilia_spiralis_aurea___aurea_parte_uno",
         "genres": ["electronic", "experimental", "ambient"],
+        "tidalId": "387554110",
         "genresRaw": ["electronic", "experimental", "ambient"]
       },
       {
@@ -26671,6 +26676,7 @@
         "albumDetails": "",
         "key": "stefano_pilia_spiralis_aurea___aurea_parte_due",
         "genres": ["electronic", "experimental", "ambient"],
+        "tidalId": "387554115",
         "genresRaw": ["electronic", "experimental", "ambient"]
       },
       {
@@ -27720,16 +27726,18 @@
         "artist": "MARMALSANA",
         "albumDetails": "da \"Marmalsana\" - Ruptured",
         "key": "marmalsana___forvelu",
-        "genres": ["no-genre"],
-        "genresRaw": []
+        "genres": ["experimental", "avant-garde"],
+        "tidalId": "366418682",
+        "genresRaw": ["experimental", "avant-garde"]
       },
       {
         "title": "Inundo",
         "artist": "MARMALSANA",
         "albumDetails": "da \"Marmalsana\" - Ruptured",
         "key": "marmalsana___inundo",
-        "genres": ["no-genre"],
-        "genresRaw": []
+        "genres": ["experimental", "avant-garde"],
+        "tidalId": "366418682",
+        "genresRaw": ["experimental", "avant-garde"]
       },
       {
         "title": "Part III - Mneme feat. Eric Thielemans",
@@ -30922,7 +30930,8 @@
         "albumDetails": "da \"Rectangles And Circumstance\" - Nonesuch",
         "key": "caroline_shaw_sō_percussion___rectangles_and_circumstance",
         "genres": ["classica", "instrumental"],
-        "genresRaw": ["classical", "contemporary classical", "instrumental"]
+        "genresRaw": ["classical", "contemporary classical", "instrumental"],
+        "tidalId": "356416740"
       },
       {
         "title": "Angels",
@@ -32143,6 +32152,7 @@
         "albumDetails": "da \"Love In The Time Of Science\" - One Little Indian",
         "key": "emiliana_torrini___baby_blue",
         "genres": ["indie", "singer-songwriter", "electroacoustic"],
+        "tidalId": "341261889",
         "genresRaw": ["indie", "singer-songwriter", "electroacoustic"]
       },
       {
@@ -33039,7 +33049,8 @@
         "albumDetails": "da \"Väntenätter\" - Heilo Records",
         "key": "mojna___ljusnar",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "429111264"
       },
       {
         "title": "Väntenätter ft. Erlend Apneseth",
@@ -33047,7 +33058,8 @@
         "albumDetails": "da \"Väntenätter\" - Heilo Records",
         "key": "mojna___väntenätter_ft_erlend_apneseth",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "415786555"
       }
     ]
   },
@@ -33219,7 +33231,8 @@
         "albumDetails": "da \"Straight No Chaser (Music From The Motion Picture)\" - CBS",
         "key": "thelonious_monk___pannonica",
         "genres": ["jazz", "avant-garde"],
-        "genresRaw": ["jazz", "avant-garde"]
+        "genresRaw": ["jazz", "avant-garde"],
+        "tidalId": "101445402"
       },
       {
         "title": "Bright Horses",
@@ -34938,6 +34951,7 @@
         "albumDetails": "da \"Indivisible\"",
         "key": "lungfish___tick_tock",
         "genres": ["post-rock", "experimental", "noise"],
+        "tidalId": "83245247",
         "genresRaw": ["post-rock", "experimental", "noise"]
       },
       {
@@ -35684,7 +35698,8 @@
         "albumDetails": "da \"Ella & Basie!\" – Verve Records",
         "key": "ella_basie___i'm_beginning_to_see_the_light",
         "genres": ["jazz"],
-        "genresRaw": ["jazz", "swing"]
+        "genresRaw": ["jazz", "swing"],
+        "tidalId": "17082231"
       },
       {
         "title": "Groovy Gravy / Hikky-Burr (featuring Bill Cosby)",
@@ -36156,9 +36171,9 @@
         "artist": "GRAND RIVER AND ABUL MOGARD",
         "albumDetails": "da \"In uno spazio immenso\" - Light-years",
         "key": "grand_river_and_abul_mogard___dissolvi",
-        "genres": ["no-genre"],
+        "genres": ["ambient", "electronic"],
         "tidalId": "357663753",
-        "genresRaw": []
+        "genresRaw": ["ambient", "electronic"]
       }
     ]
   },
@@ -36200,7 +36215,8 @@
         "albumDetails": "da \"Palm Wine\" – PTP",
         "key": "yatta___too_good",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "392234182"
       },
       {
         "title": "Inappropriabili. Relazioni, opere e lotte nelle arti performative in Italia (1959-1979) - Marsilio",
@@ -36380,7 +36396,8 @@
         "albumDetails": "da \"Get The Message\" - Brownswood Recordings",
         "key": "kokoroko___three_piece_suit_featuring_azeke",
         "genres": ["afrobeat", "jazz", "funk"],
-        "genresRaw": ["afrobeat", "jazz", "funk"]
+        "genresRaw": ["afrobeat", "jazz", "funk"],
+        "tidalId": "385314652"
       },
       {
         "title": "We Walk In Gold feat. Georgia Anne Muldrow",
@@ -38089,7 +38106,8 @@
         "albumDetails": "da \"The Dictionary of Lost Meanings\" - Discrepant",
         "key": "praed_orchestra___the_spell",
         "genres": ["instrumental", "experimental"],
-        "genresRaw": ["instrumental", "experimental"]
+        "genresRaw": ["instrumental", "experimental"],
+        "tidalId": "465636520"
       },
       {
         "title": "lato A",
@@ -38114,7 +38132,8 @@
         "albumDetails": "da \"Mareld\" - Heilo",
         "key": "mojna___färger_av_gamla_båtar",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "458166103"
       }
     ]
   },
@@ -38765,7 +38784,8 @@
         "albumDetails": "da \"Journey In Satchidananda\" – Impulse!",
         "key": "alice_coltrane_ft_pharoah_sanders___journey_in_satchidananda",
         "genres": ["jazz", "free improvisation"],
-        "genresRaw": ["jazz", "spiritual", "free improvisation"]
+        "genresRaw": ["jazz", "spiritual", "free improvisation"],
+        "tidalId": "173018839"
       },
       {
         "title": "Until The Fire",
@@ -38885,7 +38905,8 @@
         "albumDetails": "da \"The Fateful Symmetry\" – Mute",
         "key": "mark_stewart___a_long_road",
         "genres": ["post-punk", "experimental", "dub"],
-        "genresRaw": ["post-punk", "experimental", "dub"]
+        "genresRaw": ["post-punk", "experimental", "dub"],
+        "tidalId": "446318712"
       },
       {
         "title": "Choose Your Weapon",
@@ -40153,7 +40174,8 @@
         "albumDetails": "da \"The Gift of Purpose [Hopper Family Benefit Album]\" – Cuneiform Records",
         "key": "bone_nick_didkovsky_hugh_hopper_john_roulat___we'll_ask_the_questions_around_here_part_2",
         "genres": ["free improvisation", "jazz", "experimental"],
-        "genresRaw": ["free improvisation", "jazz", "experimental"]
+        "genresRaw": ["free improvisation", "jazz", "experimental"],
+        "tidalId": "11250463"
       },
       {
         "title": "Monigote",
@@ -41300,7 +41322,8 @@
         "albumDetails": "da \"The Need Of Love\" – Warner Bros. Records",
         "key": "earth___wind_and_fire_energy",
         "genres": ["drone", "ambient", "post-rock"],
-        "genresRaw": ["drone", "ambient", "post-rock"]
+        "genresRaw": ["drone", "ambient", "post-rock"],
+        "tidalId": "52616537"
       },
       {
         "title": "Unity",
@@ -41536,7 +41559,8 @@
         "albumDetails": "da \"Hourglass\" – Daptone Recording Co.",
         "key": "antibalas___escape",
         "genres": ["funk", "afrobeat", "rock"],
-        "genresRaw": ["funk", "afrobeat", "rock"]
+        "genresRaw": ["funk", "afrobeat", "rock"],
+        "tidalId": "457974480"
       },
       {
         "title": "Djèmèrègn",
@@ -41560,7 +41584,8 @@
         "albumDetails": "da \"Kromosoma Maris\" - Terzo Millennio Records",
         "key": "luigi_cinque_hypertext_o'rchestra___kromaris_c'è_solo_un_mare",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "443959353"
       },
       {
         "title": "Alto e basso",
@@ -42035,7 +42060,8 @@
         "albumDetails": "da \"Balkan Brass Battle\" – Asphalt Tango Records",
         "key": "boban_marko_marković_orchestra_versus_fanfare_ciocărlia___caravan_feat_fanfare_ciocarlia",
         "genres": ["world", "folk"],
-        "genresRaw": ["world", "folk", "brass band"]
+        "genresRaw": ["world", "folk", "brass band"],
+        "tidalId": "87623549"
       },
       {
         "title": "Alsema Dub",
@@ -42061,7 +42087,8 @@
         "albumDetails": "da \"All Those Streets I Must Find Cities For\" - Alien Transistor",
         "key": "the_plastik_beatniks___war_memoir_feat_moor_mother",
         "genres": ["punk", "ska"],
-        "genresRaw": ["punk", "ska"]
+        "genresRaw": ["punk", "ska"],
+        "tidalId": "223213497"
       },
       {
         "title": "A Woman Waits For Me",
@@ -42087,7 +42114,8 @@
         "albumDetails": "da \"Selam\" – Terp Records African Series",
         "key": "tsehaytu_beraki___atzmtom_keskisom",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "505957928"
       },
       {
         "title": "Stepney (feat. Milta Vega-Cardona)",
@@ -42328,6 +42356,7 @@
         "albumDetails": "",
         "key": "silvia_tarozzi_deborah_walker___il_bersagliere",
         "genres": ["experimental", "electroacoustic", "ambient"],
+        "tidalId": "218297143",
         "genresRaw": ["experimental", "electroacoustic", "ambient"]
       },
       {
@@ -42431,7 +42460,8 @@
         "albumDetails": "da \"Presence\" – NAKID",
         "key": "rai_tateishi___presence_ii",
         "genres": ["electronic", "ambient"],
-        "genresRaw": ["electronic", "ambient"]
+        "genresRaw": ["electronic", "ambient"],
+        "tidalId": "491180009"
       },
       {
         "title": "Little Rascals",
@@ -42759,7 +42789,8 @@
         "albumDetails": "da \"Splash\" - Intakt Records",
         "key": "myra_melford___the_wayward_line",
         "genres": ["jazz", "free improvisation", "experimental"],
-        "genresRaw": ["jazz", "free improvisation", "experimental"]
+        "genresRaw": ["jazz", "free improvisation", "experimental"],
+        "tidalId": "362474507"
       }
     ]
   },
@@ -43394,7 +43425,8 @@
         "albumDetails": "da \"K. Frimpong & His Cubano Fiesta\" - Ofo Bros",
         "key": "k_frimpong_his_cubano_fiesta___kyenkyen_bi_adi_m'awu",
         "genres": ["afrobeat", "funk"],
-        "genresRaw": ["afrobeat", "funk"]
+        "genresRaw": ["afrobeat", "funk"],
+        "tidalId": "184776680"
       },
       {
         "title": "The Proposal",
@@ -43666,7 +43698,8 @@
         "albumDetails": "da \"Sama'a (Audition)\" – Otoroku",
         "key": "ahmed___isma'a_[listen]",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "177468099"
       },
       {
         "title": "Surroundings",
@@ -43897,7 +43930,8 @@
         "albumDetails": "",
         "key": "yara_asmar___you_saw_what_you_were_looking_at_and_you_touched_what_you_were_touching_da_\"everyone_i_love_is_sleeping_and_i_love_them_so_so_much\"_hive_mind_records",
         "genres": ["singer-songwriter", "indie", "folk"],
-        "genresRaw": ["singer-songwriter", "indie", "folk"]
+        "genresRaw": ["singer-songwriter", "indie", "folk"],
+        "tidalId": "457860067"
       },
       {
         "title": "Stagno",
@@ -44364,7 +44398,8 @@
         "albumDetails": "da \"Instrumental Music Of The Kalahari San\" - Ethnic Folkways Records",
         "key": "kung_san_of_northeastern_namibia___gut_pluriarc_with_3_men's_voices",
         "genres": ["world", "folk", "instrumental"],
-        "genresRaw": ["world", "folk", "instrumental"]
+        "genresRaw": ["world", "folk", "instrumental"],
+        "tidalId": "45546654"
       },
       {
         "title": "Theme",
@@ -45692,7 +45727,8 @@
         "albumDetails": ", da \"Crown Jewels\" - Alligator Records",
         "key": "koko_taylor___wang_dang_doodle",
         "genres": ["blues", "soul", "funk"],
-        "genresRaw": ["blues", "soul", "funk"]
+        "genresRaw": ["blues", "soul", "funk"],
+        "tidalId": "21907480"
       },
       {
         "title": "I'm A Woman",
@@ -46001,7 +46037,8 @@
         "albumDetails": ", da \"Einstein On The Beach\" – Vlek",
         "key": "philip_glass_ictus_suzanne_vega_collegium_vocale_gent___knee_2",
         "genres": ["classica"],
-        "genresRaw": ["minimalist", "classical", "contemporary"]
+        "genresRaw": ["minimalist", "classical", "contemporary"],
+        "tidalId": "219440705"
       },
       {
         "title": "Prelude Op. 28 No. 22 (feat. Lee Ranaldo, Zoh Amba)",
@@ -46125,7 +46162,8 @@
         "albumDetails": "",
         "key": "asachang_junray___hana_flower",
         "genres": ["electronic", "experimental", "ambient"],
-        "genresRaw": ["electronic", "experimental", "ambient"]
+        "genresRaw": ["electronic", "experimental", "ambient"],
+        "tidalId": "110712332"
       },
       {
         "title": "Rajio no Yõ ni (Like a Radio)",
@@ -46148,7 +46186,8 @@
         "albumDetails": ", da \"The Harder They Come (Original Soundtrack Recording)\" – Island Records",
         "key": "jimmy_cliff___the_harder_they_come",
         "genres": ["reggae", "rock", "soul"],
-        "genresRaw": ["reggae", "rock", "soul"]
+        "genresRaw": ["reggae", "rock", "soul"],
+        "tidalId": "158296914"
       },
       {
         "title": "I'm Sorry",
@@ -46216,7 +46255,8 @@
         "albumDetails": ", da \"Jimmy Cliff\" - Trojan Records",
         "key": "jimmy_cliff___use_what_i_got",
         "genres": ["reggae", "rock", "soul"],
-        "genresRaw": ["reggae", "rock", "soul"]
+        "genresRaw": ["reggae", "rock", "soul"],
+        "tidalId": "36146761"
       },
       {
         "title": "Wonderful World, Beautiful People",
@@ -46224,7 +46264,8 @@
         "albumDetails": ", da \"Jimmy Cliff\" - Trojan Records",
         "key": "jimmy_cliff___wonderful_world_beautiful_people",
         "genres": ["reggae", "rock", "soul"],
-        "genresRaw": ["reggae", "rock", "soul"]
+        "genresRaw": ["reggae", "rock", "soul"],
+        "tidalId": "3871732"
       },
       {
         "title": "Many River To Cross",
@@ -46232,7 +46273,8 @@
         "albumDetails": ", da \"Jimmy Cliff\" - Trojan Records",
         "key": "jimmy_cliff___many_river_to_cross",
         "genres": ["reggae", "rock", "soul"],
-        "genresRaw": ["reggae", "rock", "soul"]
+        "genresRaw": ["reggae", "rock", "soul"],
+        "tidalId": "11055142"
       },
       {
         "title": "Vietnam",
@@ -46249,7 +46291,8 @@
         "albumDetails": ", da \"The Harder They Come (Original Soundtrack Recording)\" – Island Records",
         "key": "the_melodians___rivers_of_babylon",
         "genres": ["reggae", "soul"],
-        "genresRaw": ["reggae", "soul"]
+        "genresRaw": ["reggae", "soul"],
+        "tidalId": "158296911"
       },
       {
         "title": "Fundamental Reggay",
@@ -46387,7 +46430,8 @@
         "albumDetails": ", da \"Phasor\" - 4AD",
         "key": "helado_negro___colores_del_mar",
         "genres": ["electronic", "experimental", "ambient"],
-        "genresRaw": ["electronic", "experimental", "ambient"]
+        "genresRaw": ["electronic", "experimental", "ambient"],
+        "tidalId": "340588368"
       },
       {
         "title": "Los Pendencieros Del Latin",
@@ -46529,7 +46573,8 @@
         "albumDetails": ", da \"The Incredible Jazz Guitar Of Wes Montgomery\" - Riverside Records",
         "key": "wes_montgomery___polka_dots_and_moonbeams",
         "genres": ["jazz", "instrumental"],
-        "genresRaw": ["jazz", "instrumental"]
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "1285615"
       }
     ]
   },
@@ -46681,15 +46726,17 @@
         "albumDetails": ", da \"The Vertical Luminous\" – Hive Mind Records",
         "key": "fampism___lunar_mansions",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "469635327"
       },
       {
         "title": "Weightless",
         "artist": "PULLMAN",
         "albumDetails": ", da \"III\" – Western Vinyl",
         "key": "pullman___weightless",
-        "genres": ["indie", "rock"],
-        "genresRaw": ["indie", "rock"]
+        "genres": ["indie", "post-rock"],
+        "tidalId": "463637672",
+        "genresRaw": ["indie", "post-rock"]
       },
       {
         "title": "When Kabuya Dances",
@@ -46916,7 +46963,8 @@
         "albumDetails": ", da \"Forever\" - Drag City",
         "key": "glyders___hard_ride",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "451670041"
       },
       {
         "title": "New Realm",
@@ -47035,7 +47083,8 @@
         "albumDetails": ", da \"Chapter 1\" – Forever Living Originals",
         "key": "sault___lord_have_mercy",
         "genres": ["soul", "electronic", "experimental"],
-        "genresRaw": ["soul", "electronic", "experimental"]
+        "genresRaw": ["soul", "electronic", "experimental"],
+        "tidalId": "487911008"
       },
       {
         "title": "A Finch's Walk (Gaby's Song)",
@@ -47644,7 +47693,8 @@
         "albumDetails": ", da \"Peanut Butter Blues & Melancholy Jam\" – Brownswood Recordings",
         "key": "ghostpoet___us_against_whatever_else",
         "genres": ["hip-hop", "post-punk", "experimental"],
-        "genresRaw": ["hip-hop", "post-punk", "experimental"]
+        "genresRaw": ["hip-hop", "post-punk", "experimental"],
+        "tidalId": "179152483"
       },
       {
         "title": "Black Gold (feat. Jermain Jackman)",
@@ -48100,7 +48150,8 @@
         "albumDetails": ", da \"Tekchbila Vol. 1\" - HSS-HSS",
         "key": "gj_leith___who_dis",
         "genres": ["singer-songwriter", "indie", "folk"],
-        "genresRaw": ["singer-songwriter", "indie", "folk"]
+        "genresRaw": ["singer-songwriter", "indie", "folk"],
+        "tidalId": "260653694"
       },
       {
         "title": "Jawgnawa ft. Maâlem Driss Filali",
@@ -48108,7 +48159,8 @@
         "albumDetails": ", da \"Tagnawit EP\" – Rebel Up Records",
         "key": "cheb_runner___jawgnawa_ft_maalem_driss_filali",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "137065329"
       },
       {
         "title": "Ismgan Turbo",
@@ -48116,7 +48168,8 @@
         "albumDetails": ", da \"Tekchbila Vol. 1\" – HSS-HSS",
         "key": "cheb_runner___ismgan_turbo",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "260653696"
       },
       {
         "title": "Sultane (1973) part III",
@@ -48390,7 +48443,8 @@
         "albumDetails": ", da \"Eu Só Quero É Ser Feliz\" - Spotlight",
         "key": "cidinho_doca___rap_da_felicidade",
         "genres": ["samba", "mpb"],
-        "genresRaw": ["samba", "mpb"]
+        "genresRaw": ["samba", "mpb"],
+        "tidalId": "3454380"
       },
       {
         "title": "Alexandrino",
@@ -48443,7 +48497,8 @@
         "albumDetails": ", da \"2 De Junho\" – Autoproduzione WILSON SIMONAL, Tributo A Martin Luther King, da \"Tributo A Martin Luther King\" – Odeon",
         "key": "adriana_calcanhotto___2_de_junho",
         "genres": ["mpb", "bossa nova", "singer-songwriter"],
-        "genresRaw": ["mpb", "bossa nova", "singer-songwriter"]
+        "genresRaw": ["mpb", "bossa nova", "singer-songwriter"],
+        "tidalId": "155246741"
       },
       {
         "title": "Zé Do Caroço",
@@ -48514,7 +48569,8 @@
         "albumDetails": ", da \"Cru\" - Fla Flu Prod.",
         "key": "seu_jorge___eu_sou_favela",
         "genres": ["mpb", "singer-songwriter", "world"],
-        "genresRaw": ["mpb", "singer-songwriter", "world"]
+        "genresRaw": ["mpb", "singer-songwriter", "world"],
+        "tidalId": "288903866"
       },
       {
         "title": "Mtg Quem Não Quer Sou Eu",
@@ -48522,7 +48578,8 @@
         "albumDetails": ", da \"Mtg Quem Não Quer Sou Eu\" – Autoproduzione",
         "key": "dj_topomc_leozinseu_jorgemc_g15___mtg_quem_nao_quer_sou_eu",
         "genres": ["hip-hop", "funk"],
-        "genresRaw": ["hip-hop", "funk"]
+        "genresRaw": ["hip-hop", "funk"],
+        "tidalId": "362986895"
       },
       {
         "title": "Glamourosa",
@@ -48548,7 +48605,8 @@
         "albumDetails": ", da \"Vamos Pra Gaiola\" - ADPar",
         "key": "mc_kevin_o_chrisfp_do_trem_bala___vamos_pra_gaiola",
         "genres": ["funk", "hip-hop"],
-        "genresRaw": ["funk", "hip-hop"]
+        "genresRaw": ["funk", "hip-hop"],
+        "tidalId": "101264384"
       },
       {
         "title": "Hoje eu Vou Parar Na Gaiola",
@@ -48601,7 +48659,8 @@
         "albumDetails": "",
         "key": "elza_soares___rap_da_felicidade",
         "genres": ["samba", "soul", "mpb"],
-        "genresRaw": ["samba", "soul", "mpb"]
+        "genresRaw": ["samba", "soul", "mpb"],
+        "tidalId": "155410420"
       }
     ]
   },
@@ -48616,7 +48675,8 @@
         "albumDetails": ", da \"In The Land Of Grey And Pink\" – London Records",
         "key": "caravan___golf_girl",
         "genres": ["rock", "psychedelic"],
-        "genresRaw": ["rock", "psychedelic"]
+        "genresRaw": ["rock", "psychedelic"],
+        "tidalId": "336480"
       },
       {
         "title": "Shockproof",
@@ -48703,7 +48763,8 @@
         "albumDetails": ", da \"Jolifanto\" – Lovemonk",
         "key": "za_+_tomas_de_perrate___pregones",
         "genres": ["experimental", "avant-garde", "electronic"],
-        "genresRaw": ["experimental", "avant-garde", "electronic"]
+        "genresRaw": ["experimental", "avant-garde", "electronic"],
+        "tidalId": "419988691"
       },
       {
         "title": "Suffragette City (feat. The Expanders)",
@@ -48895,7 +48956,8 @@
         "albumDetails": ", da \"Low Clouds Hang, This Land Is On Fire\" – Drag City",
         "key": "tashi_dorji___burn_the_throne",
         "genres": ["free improvisation", "experimental", "avant-garde"],
-        "genresRaw": ["free improvisation", "experimental", "avant-garde"]
+        "genresRaw": ["free improvisation", "experimental", "avant-garde"],
+        "tidalId": "465096245"
       },
       {
         "title": "A Sutra",
@@ -48961,7 +49023,8 @@
         "albumDetails": ", da \"The Call\" - Constellation",
         "key": "bellbird___the_call",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "469197185"
       },
       {
         "title": "Firenze, 12 febbraio",
@@ -49031,7 +49094,8 @@
         "albumDetails": ", da \"Body\" – TILA",
         "key": "iki___remember",
         "genres": ["no-genre"],
-        "genresRaw": []
+        "genresRaw": [],
+        "tidalId": "452511600"
       },
       {
         "title": "Float, dada \"Body\"",
