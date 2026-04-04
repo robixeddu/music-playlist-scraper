@@ -28,6 +28,7 @@ export interface Source {
 export interface TidalToken {
   access_token: string;
   expires_at: number;
+  userId: string;
 }
 
 export type ImportStatus =

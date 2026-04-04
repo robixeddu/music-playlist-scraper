@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
-import { importPlaylist, checkDelta, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, checkDelta, getLocalImportedIds, type PlaylistType } from "@/lib/tidal-import";
 import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useImportLock } from "@/lib/useImportLock";
 import { redirectToTidal, getStoredToken } from "@/lib/tidal-auth";
@@ -24,15 +24,18 @@ export default function ImportButton({
   const tr = useT();
   const [connected] = useTidalConnected();
   const { importing, acquire, release } = useImportLock();
-  const [status, setStatus] = useState<ImportStatus>({ state: "idle" });
+  const [status, setStatus] = useState<ImportStatus>(() => {
+    const imported = getLocalImportedIds(type, slug);
+    if (!imported) return { state: "idle" };
+    const newCount = tidalIds.filter((id) => !imported.has(id)).length;
+    return newCount === 0 ? { state: "up-to-date" } : { state: "has-new", count: newCount };
+  });
 
   useEffect(() => {
     if (!connected || tidalIds.length === 0) return;
-    const token = getStoredToken();
-    if (!token) return;
 
-    setStatus({ state: "checking" });
-    checkDelta({ type, slug, tidalIds, accessToken: token.access_token })
+    if (!getLocalImportedIds(type, slug)) setStatus({ state: "checking" });
+    checkDelta({ type, slug, tidalIds })
       .then((result) => {
         if (result === null) {
           setStatus({ state: "idle" });
@@ -95,15 +98,26 @@ export default function ImportButton({
     );
   }
 
-  if (status.state === "idle" || status.state === "has-new") {
-    const label = status.state === "has-new" ? tr.newTracks(status.count) : tr.import;
+  if (status.state === "idle") {
     return (
       <button
         onClick={handleClick}
         disabled={!connected || tidalIds.length === 0 || importing}
         className="px-3 py-1.5 rounded text-sm font-medium bg-[var(--accent)] text-white hover:opacity-90 transition-opacity disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer whitespace-nowrap"
       >
-        {label}
+        {tr.import}
+      </button>
+    );
+  }
+
+  if (status.state === "has-new") {
+    return (
+      <button
+        onClick={handleClick}
+        disabled={importing}
+        className="px-3 py-1.5 rounded text-sm font-medium border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer whitespace-nowrap"
+      >
+        {tr.newTracks(status.count)}
       </button>
     );
   }

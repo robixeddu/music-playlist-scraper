@@ -27,6 +27,18 @@ async function generateCodeChallenge(verifier: string): Promise<string> {
     .replace(/=+$/, "");
 }
 
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function extractUserIdFromJwt(token: string): string | null {
+  try {
+    const payload = JSON.parse(atob(token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/")));
+    const id = payload.sub ?? payload.userId ?? payload.uid ?? payload.id;
+    return id ? String(id) : null;
+  } catch {
+    return null;
+  }
+}
+
 // ── Token storage ─────────────────────────────────────────────────────────────
 
 export function getStoredToken(): TidalToken | null {
@@ -120,13 +132,20 @@ export async function exchangeCodeForToken(
   const data = (await res.json()) as {
     access_token: string;
     expires_in: number;
+    user?: { userId?: number | string };
+    user_id?: number | string;
   };
 
   sessionStorage.removeItem(SESSION_VERIFIER_KEY);
 
+  // Extract userId: try token response fields first, then JWT payload
+  const rawUserId = data.user?.userId ?? data.user_id ?? extractUserIdFromJwt(data.access_token);
+  const userId = rawUserId ? String(rawUserId) : "unknown";
+
   const token: TidalToken = {
     access_token: data.access_token,
     expires_at: Date.now() + data.expires_in * 1000,
+    userId,
   };
 
   saveToken(token);
