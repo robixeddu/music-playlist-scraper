@@ -45,33 +45,30 @@ export default function ImportButton({
     if (!userId) return;
 
     loadImportedIds(userId, type, slug).then((imported) => {
-      if (!imported) {
-        setStatus({ state: "idle" });
-        return;
+      // Show best-effort state from Redis while TIDAL verification runs
+      if (imported) {
+        const newCount = tidalIds.filter((id) => !imported.has(id)).length;
+        setStatus(newCount === 0 ? { state: "up-to-date" } : { state: "has-new", count: newCount });
       }
-      const newCount = tidalIds.filter((id) => !imported.has(id)).length;
-      setStatus(newCount === 0 ? { state: "up-to-date" } : { state: "has-new", count: newCount });
 
-      if (newCount === 0) {
-        const token = getStoredToken();
-        const playlistId = getLocalPlaylistId(type, slug);
-        if (token && playlistId) {
-          enqueueVerify({
-            type, slug, playlistId, tidalIds,
-            token: token.access_token,
-            onVerified: () => {
-              // Ensure playlistId is in Redis (re-sync if it was cleared)
-              persistPlaylistId(userId, type, slug, playlistId);
-            },
-            onResult: (missing) => {
-              if (missing > 0) setStatus({ state: "has-new", count: missing });
-            },
-            onNotFound: () => {
-              clearPlaylistState(userId, type, slug);
-              setStatus({ state: "idle" });
-            },
-          });
-        }
+      // Always verify against live TIDAL when connected — TIDAL is source of truth
+      const token = getStoredToken();
+      const playlistId = getLocalPlaylistId(type, slug);
+      if (token && playlistId) {
+        enqueueVerify({
+          type, slug, playlistId, tidalIds,
+          token: token.access_token,
+          onVerified: () => {
+            persistPlaylistId(userId, type, slug, playlistId);
+          },
+          onResult: (missing) => {
+            setStatus(missing > 0 ? { state: "has-new", count: missing } : { state: "up-to-date" });
+          },
+          onNotFound: () => {
+            clearPlaylistState(userId, type, slug);
+            setStatus({ state: "idle" });
+          },
+        });
       }
     }).catch(() => {});
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
