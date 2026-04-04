@@ -114,13 +114,12 @@ export async function loadImportedIds(
   const { playlistId, importedIds: dbIds } = await fetchDbState(userId, type, slug);
 
   if (!playlistId) {
-    // Playlist removed from DB — clear any stale local state
-    try { localStorage.removeItem(importedIdsKey(type, slug)); } catch {}
-    try { localStorage.removeItem(storageKey(type, slug)); } catch {}
-    return null;
+    // Redis has no state — fall back to localStorage without clearing it.
+    // The TIDAL verification queue will detect stale IDs via 404 and clean up.
+    return getLocalImportedIds(type, slug);
   }
 
-  // Playlist exists — prefer local cache, fall back to DB
+  // Playlist exists in Redis — prefer local cache, fall back to DB
   const local = getLocalImportedIds(type, slug);
   if (local) return local;
 
@@ -130,7 +129,7 @@ export async function loadImportedIds(
     return new Set(dbIds);
   }
 
-  return null; // playlist exists but no import record yet
+  return null;
 }
 
 // ── Persist: both localStorage and DB ─────────────────────────────────────────
