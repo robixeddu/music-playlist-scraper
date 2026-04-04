@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
-import { importPlaylist, loadImportedIds, getLocalImportedIds, getLocalPlaylistId, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, loadImportedIds, getLocalImportedIds, getLocalPlaylistId, clearPlaylistState, type PlaylistType } from "@/lib/tidal-import";
 import { enqueueVerify } from "@/lib/tidalVerifyQueue";
 import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useImportLock } from "@/lib/useImportLock";
@@ -61,6 +61,10 @@ export default function ImportButton({
             token: token.access_token,
             onResult: (missing) => {
               if (missing > 0) setStatus({ state: "has-new", count: missing });
+            },
+            onNotFound: () => {
+              clearPlaylistState(userId, type, slug);
+              setStatus({ state: "idle" });
             },
           });
         }

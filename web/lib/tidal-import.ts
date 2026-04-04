@@ -70,6 +70,13 @@ function saveDbState(
   }).catch(() => {});
 }
 
+export function clearPlaylistState(userId: string, type: PlaylistType, slug: string): void {
+  try { localStorage.removeItem(importedIdsKey(type, slug)); } catch {}
+  try { localStorage.removeItem(storageKey(type, slug)); } catch {}
+  try { localStorage.removeItem(`battiti_verified_${type}_${slug}`); } catch {}
+  deleteDbState(userId, type, slug);
+}
+
 function deleteDbState(userId: string, type: PlaylistType, slug: string): void {
   fetch(`/api/playlists?userId=${encodeURIComponent(userId)}&type=${type}&slug=${encodeURIComponent(slug)}`, {
     method: "DELETE",

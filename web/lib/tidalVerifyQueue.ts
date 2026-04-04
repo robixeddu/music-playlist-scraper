@@ -13,6 +13,7 @@ type VerifyRequest = {
   tidalIds: string[];
   token: string;
   onResult: (missing: number) => void;
+  onNotFound: () => void;
 };
 
 function verifiedKey(type: string, slug: string): string {
@@ -44,8 +45,11 @@ async function processQueue() {
       const missing = req.tidalIds.filter((id) => !tidalSet.has(id)).length;
       markVerified(req.type, req.slug);
       req.onResult(missing);
-    } catch {
-      // skip failed checks, will retry after stale window
+    } catch (e: unknown) {
+      if (e instanceof Error && e.message.toLowerCase().includes("not found")) {
+        req.onNotFound();
+      }
+      // other errors: skip silently, will retry after stale window
     }
     if (queue.length > 0) await new Promise<void>((r) => setTimeout(r, VERIFY_DELAY_MS));
   }
