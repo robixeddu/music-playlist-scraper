@@ -30,7 +30,7 @@ function setLocalPlaylistId(type: PlaylistType, slug: string, id: string): void 
 }
 
 // Stores the set of tidalIds known to be in the playlist — used for instant delta on remount
-function importedIdsKey(type: PlaylistType, slug: string): string {
+export function importedIdsKey(type: PlaylistType, slug: string): string {
   return `${storageKey(type, slug)}_ids`;
 }
 
@@ -122,19 +122,25 @@ export async function checkDelta(params: {
   type: PlaylistType;
   slug: string;
   tidalIds: string[];
-}): Promise<{ newCount: number } | null> {
+}): Promise<{ newCount: number; deleted?: boolean } | null> {
   const token = getStoredToken();
   if (!token) return null;
 
   const playlistId = await resolvePlaylistId(token.userId, params.type, params.slug);
-  if (!playlistId) return null;
+  if (!playlistId) return null; // no ID known — unknown state, keep cache
 
   try {
     const existingIds = await getPlaylistItemIds(token.access_token, playlistId);
-    const newCount = params.tidalIds.filter((id) => !existingIds.has(id)).length;
-    return { newCount };
+    const inPlaylist = params.tidalIds.filter((id) => existingIds.has(id));
+    // Keep cache in sync with actual TIDAL state
+    saveLocalImportedIds(params.type, params.slug, inPlaylist);
+    return { newCount: params.tidalIds.length - inPlaylist.length };
   } catch (e: unknown) {
-    if (e instanceof Error && e.message.toLowerCase().includes("not found")) return null;
+    if (e instanceof Error && e.message.toLowerCase().includes("not found")) {
+      // Playlist deleted from TIDAL — clear local cache
+      try { localStorage.removeItem(importedIdsKey(params.type, params.slug)); } catch {}
+      return { newCount: 0, deleted: true };
+    }
     throw e;
   }
 }

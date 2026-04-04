@@ -34,18 +34,30 @@ export default function ImportButton({
   useEffect(() => {
     if (!connected || tidalIds.length === 0) return;
 
-    if (!getLocalImportedIds(type, slug)) setStatus({ state: "checking" });
+    const hasCache = getLocalImportedIds(type, slug) !== null;
+    if (!hasCache) setStatus({ state: "checking" });
+
     checkDelta({ type, slug, tidalIds })
       .then((result) => {
         if (result === null) {
+          // Playlist ID non trovato — tieni la cache se disponibile, altrimenti idle
+          if (!hasCache) setStatus({ state: "idle" });
+          return;
+        }
+        if (result.deleted) {
+          // Playlist cancellata da TIDAL — reset sempre
           setStatus({ state: "idle" });
-        } else if (result.newCount === 0) {
+          return;
+        }
+        if (result.newCount === 0) {
           setStatus({ state: "up-to-date" });
         } else {
           setStatus({ state: "has-new", count: result.newCount });
         }
       })
-      .catch(() => setStatus({ state: "idle" }));
+      .catch(() => {
+        if (!hasCache) setStatus({ state: "idle" });
+      });
   }, [connected]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleClick() {
