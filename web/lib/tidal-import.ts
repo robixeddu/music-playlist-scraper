@@ -90,10 +90,14 @@ async function resolvePlaylistId(
   type: PlaylistType,
   slug: string
 ): Promise<string | null> {
-  // Always fetch from DB (Redis) as authoritative source — localStorage can be stale
   const { playlistId } = await fetchDbState(userId, type, slug);
-  if (playlistId) setLocalPlaylistId(type, slug, playlistId); // keep local in sync
-  return playlistId;
+  if (playlistId) {
+    setLocalPlaylistId(type, slug, playlistId);
+    return playlistId;
+  }
+  // Redis empty (e.g. cleared) — fall back to localStorage
+  // If the ID is stale/deleted on TIDAL, importPlaylist will auto-recreate
+  return getLocalPlaylistId(type, slug);
 }
 
 /**
@@ -131,7 +135,7 @@ export async function loadImportedIds(
 
 // ── Persist: both localStorage and DB ─────────────────────────────────────────
 
-function persistPlaylistId(
+export function persistPlaylistId(
   userId: string,
   type: PlaylistType,
   slug: string,
