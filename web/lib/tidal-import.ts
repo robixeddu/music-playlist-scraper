@@ -15,7 +15,7 @@ function storageKey(type: PlaylistType, slug: string): string {
 
 // ── localStorage helpers ───────────────────────────────────────────────────────
 
-function getLocalPlaylistId(type: PlaylistType, slug: string): string | null {
+export function getLocalPlaylistId(type: PlaylistType, slug: string): string | null {
   try { return localStorage.getItem(storageKey(type, slug)); } catch { return null; }
 }
 

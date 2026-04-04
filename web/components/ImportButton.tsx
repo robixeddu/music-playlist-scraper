@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
-import { importPlaylist, loadImportedIds, getLocalImportedIds, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, loadImportedIds, getLocalImportedIds, getLocalPlaylistId, type PlaylistType } from "@/lib/tidal-import";
+import { enqueueVerify } from "@/lib/tidalVerifyQueue";
 import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useImportLock } from "@/lib/useImportLock";
 import { redirectToTidal, getStoredToken, getStoredUserId } from "@/lib/tidal-auth";
@@ -50,6 +51,20 @@ export default function ImportButton({
       }
       const newCount = tidalIds.filter((id) => !imported.has(id)).length;
       setStatus(newCount === 0 ? { state: "up-to-date" } : { state: "has-new", count: newCount });
+
+      if (newCount === 0) {
+        const token = getStoredToken();
+        const playlistId = getLocalPlaylistId(type, slug);
+        if (token && playlistId) {
+          enqueueVerify({
+            type, slug, playlistId, tidalIds,
+            token: token.access_token,
+            onResult: (missing) => {
+              if (missing > 0) setStatus({ state: "has-new", count: missing });
+            },
+          });
+        }
+      }
     }).catch(() => {});
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
