@@ -178,13 +178,15 @@ export async function importPlaylist(params: {
     existingIds = await getPlaylistItemIds(accessToken, playlistId);
   } catch (e: unknown) {
     if (e instanceof Error && e.message.toLowerCase().includes("not found")) {
-      // Playlist deleted from TIDAL — clear all stale state, let user re-import explicitly
+      // Playlist deleted from TIDAL — recreate it transparently
       try { localStorage.removeItem(importedIdsKey(type, slug)); } catch {}
       try { localStorage.removeItem(storageKey(type, slug)); } catch {}
       deleteDbState(userId, type, slug);
-      throw new Error("Playlist non trovata su TIDAL. Clicca Import per ricrearla.");
+      playlistId = await createNew();
+      existingIds = new Set();
+    } else {
+      throw e;
     }
-    throw e;
   }
 
   const newIds = tidalIds.filter((id) => !existingIds.has(id));
