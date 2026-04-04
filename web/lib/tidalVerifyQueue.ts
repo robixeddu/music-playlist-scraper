@@ -1,6 +1,6 @@
 "use client";
 
-import { getPlaylistItemIds } from "./tidal-api";
+import { getPlaylistItemIds, TidalNotFoundError } from "./tidal-api";
 import type { PlaylistType } from "./tidal-import";
 
 const VERIFY_DELAY_MS = 400;
@@ -46,7 +46,7 @@ async function processQueue() {
       markVerified(req.type, req.slug);
       req.onResult(missing);
     } catch (e: unknown) {
-      if (e instanceof Error && e.message.toLowerCase().includes("not found")) {
+      if (e instanceof TidalNotFoundError) {
         req.onNotFound();
       }
       // other errors: skip silently, will retry after stale window

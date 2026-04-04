@@ -5,6 +5,7 @@ import {
   createPlaylist,
   getPlaylistItemIds,
   addTracksToPlaylist,
+  TidalNotFoundError,
 } from "./tidal-api";
 
 export type PlaylistType = "global" | "genre" | "episode";
@@ -184,7 +185,7 @@ export async function importPlaylist(params: {
   try {
     existingIds = await getPlaylistItemIds(accessToken, playlistId);
   } catch (e: unknown) {
-    if (e instanceof Error && e.message.toLowerCase().includes("not found")) {
+    if (e instanceof TidalNotFoundError) {
       // Playlist deleted from TIDAL — recreate it transparently
       try { localStorage.removeItem(importedIdsKey(type, slug)); } catch {}
       try { localStorage.removeItem(storageKey(type, slug)); } catch {}

@@ -60,6 +60,10 @@ async function fetchWithRetry(url: string, opts: RequestInit): Promise<Response>
   throw new Error("Too many retries (429)");
 }
 
+export class TidalNotFoundError extends Error {
+  constructor() { super("TIDAL_PLAYLIST_NOT_FOUND"); }
+}
+
 export async function getPlaylistItemIds(
   token: string,
   playlistId: string
@@ -75,6 +79,7 @@ export async function getPlaylistItemIds(
 
     const res = await fetchWithRetry(url, { headers: headers(token) });
     if (!res.ok) {
+      if (res.status === 404) throw new TidalNotFoundError();
       const text = await res.text();
       throw new Error(`Get playlist items failed: ${text}`);
     }
