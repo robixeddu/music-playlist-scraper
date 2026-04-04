@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
 import { importPlaylist, loadImportedIds, getLocalImportedIds, getLocalPlaylistId, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
 import { enqueueVerify } from "@/lib/tidalVerifyQueue";
+import { discoverUserPlaylists } from "@/lib/tidalDiscovery";
 import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useImportLock } from "@/lib/useImportLock";
 import { redirectToTidal, getStoredToken, getStoredUserId } from "@/lib/tidal-auth";
@@ -53,14 +54,15 @@ export default function ImportButton({
 
       // Always verify against live TIDAL when connected — TIDAL is source of truth
       const token = getStoredToken();
-      const playlistId = getLocalPlaylistId(type, slug);
-      if (token && playlistId) {
+      if (!token) return;
+
+      const knownId = getLocalPlaylistId(type, slug);
+
+      const scheduleVerify = (playlistId: string) => {
         enqueueVerify({
           type, slug, playlistId, tidalIds,
           token: token.access_token,
-          onVerified: () => {
-            persistPlaylistId(userId, type, slug, playlistId);
-          },
+          onVerified: () => { persistPlaylistId(userId, type, slug, playlistId); },
           onResult: (missing) => {
             setStatus(missing > 0 ? { state: "has-new", count: missing } : { state: "up-to-date" });
           },
@@ -69,6 +71,20 @@ export default function ImportButton({
             setStatus({ state: "idle" });
           },
         });
+      };
+
+      if (knownId) {
+        scheduleVerify(knownId);
+      } else {
+        // No known ID — discover from TIDAL by playlist name
+        discoverUserPlaylists(token.access_token).then((map) => {
+          const discoveredId = map.get(playlistName);
+          if (discoveredId) {
+            persistPlaylistId(userId, type, slug, discoveredId);
+            scheduleVerify(discoveredId);
+          }
+          // If not found, stays "idle" — user hasn't imported this playlist yet
+        }).catch(() => {});
       }
     }).catch(() => {});
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

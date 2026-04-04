@@ -10,6 +10,34 @@ function headers(token: string): HeadersInit {
   };
 }
 
+// ── List user playlists ───────────────────────────────────────────────────────
+
+export async function getUserPlaylistsMap(token: string): Promise<Map<string, string>> {
+  const map = new Map<string, string>();
+  let url: string | null =
+    `${BASE}/playlists?ownedByMe=true&countryCode=${COUNTRY_CODE}&limit=50`;
+
+  while (url) {
+    const res = await fetchWithRetry(url, { headers: headers(token) });
+    if (!res.ok) break; // unsupported or auth error — return what we have
+    const json = (await res.json()) as {
+      data: Array<{ id: string; attributes?: { name?: string } }>;
+      links?: { next?: string | null };
+    };
+    for (const item of json.data) {
+      const name = item.attributes?.name;
+      if (name) map.set(name, item.id);
+    }
+    const next = json.links?.next ?? null;
+    if (!next) break;
+    const path = next.replace("https://openapi.tidal.com/v2", "");
+    url = path.startsWith(BASE) ? path : `${BASE}${path}`;
+    await delay(PAGE_DELAY_MS);
+  }
+
+  return map;
+}
+
 // ── Create playlist ───────────────────────────────────────────────────────────
 
 export async function createPlaylist(
