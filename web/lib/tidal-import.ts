@@ -74,7 +74,6 @@ function saveDbState(
 export function clearPlaylistState(userId: string, type: PlaylistType, slug: string): void {
   try { localStorage.removeItem(importedIdsKey(type, slug)); } catch {}
   try { localStorage.removeItem(storageKey(type, slug)); } catch {}
-  try { localStorage.removeItem(`battiti_verified_${type}_${slug}`); } catch {}
   deleteDbState(userId, type, slug);
 }
 
