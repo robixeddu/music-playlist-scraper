@@ -16,6 +16,19 @@ interface TokenData {
   access_token: string;
   refresh_token: string;
   expires_at: number;
+  userId?: string;
+}
+
+function extractUserIdFromJwt(token: string): string | null {
+  try {
+    const payload = JSON.parse(
+      Buffer.from(token.split(".")[1].replace(/-/g, "+").replace(/_/g, "/"), "base64").toString("utf-8")
+    );
+    const id = payload.sub ?? payload.userId ?? payload.uid ?? payload.id;
+    return id ? String(id) : null;
+  } catch {
+    return null;
+  }
 }
 
 const CLIENT_ID = process.env.TIDAL_CLIENT_ID!;
@@ -49,10 +62,12 @@ const exchangeToken = async (params: URLSearchParams): Promise<TokenData> => {
   if (!res.ok) throw new Error(`Token request failed: ${res.status}`);
 
   const data: any = await res.json();
+  const rawUserId = data.user?.userId ?? data.user_id ?? extractUserIdFromJwt(data.access_token);
   return {
     access_token: data.access_token,
     refresh_token: data.refresh_token,
     expires_at: Date.now() + data.expires_in * 1000,
+    userId: rawUserId ? String(rawUserId) : undefined,
   };
 };
 
@@ -115,6 +130,8 @@ export const getAccessToken = async (): Promise<string> => {
         client_id: CLIENT_ID,
         refresh_token: token.refresh_token,
       }));
+      // Preserve userId across refreshes (refresh response may not include it)
+      if (!refreshed.userId && token.userId) refreshed.userId = token.userId;
       await saveToken(refreshed);
       return refreshed.access_token;
     } catch {
@@ -124,4 +141,19 @@ export const getAccessToken = async (): Promise<string> => {
   }
 
   return token.access_token;
+};
+
+export const getUserId = async (): Promise<string> => {
+  const token = await loadToken();
+  if (token?.userId) return token.userId;
+  // Try to extract from current access_token
+  const accessToken = await getAccessToken();
+  const id = extractUserIdFromJwt(accessToken);
+  if (id) {
+    // Cache it for next time
+    const stored = await loadToken();
+    if (stored) { stored.userId = id; await saveToken(stored); }
+    return id;
+  }
+  return "unknown";
 };

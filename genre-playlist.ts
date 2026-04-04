@@ -1,35 +1,25 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
-import { getAccessToken } from "./lib/tidalAuth.js";
+import { getAccessToken, getUserId } from "./lib/tidalAuth.js";
 import { createPlaylist, getPlaylistTrackIds, addTrackToPlaylist, deletePlaylist } from "./lib/tidalClient.js";
-import { TRACKS_FILE, GLOBAL_PLAYLIST_FILE, GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "./lib/config.js";
+import { TRACKS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "./lib/config.js";
 import { EpisodeAggregated } from "./lib/types.js";
 import { logError } from "./lib/logger.js";
 import { normalizeGenre } from "./lib/genres.js";
+import { getPlaylistId, setPlaylistId } from "./lib/redisClient.js";
 
 const MIN_TRACKS = 10;
 const ADD_DELAY_MS = 600;
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-const loadGenrePlaylists = async (): Promise<Record<string, string>> => {
-  try {
-    return JSON.parse(await fsPromises.readFile(GENRE_PLAYLISTS_FILE, "utf-8"));
-  } catch {
-    return {};
-  }
-};
-
-const getOrCreateGlobalPlaylist = async (token: string): Promise<string> => {
-  try {
-    const data = JSON.parse(await fsPromises.readFile(GLOBAL_PLAYLIST_FILE, "utf-8"));
-    return data.id;
-  } catch {
-    const id = await createPlaylist(PLAYLIST_PREFIX, token);
-    await fsPromises.writeFile(GLOBAL_PLAYLIST_FILE, JSON.stringify({ id }, null, 2));
-    console.log(`📋 Created global playlist "${PLAYLIST_PREFIX}" (${id})\n`);
-    return id;
-  }
+const getOrCreateGlobalPlaylist = async (token: string, userId: string): Promise<string> => {
+  const existing = await getPlaylistId(userId, "global", PROGRAM_ID);
+  if (existing) return existing;
+  const id = await createPlaylist(PLAYLIST_PREFIX, token);
+  await setPlaylistId(userId, "global", PROGRAM_ID, id);
+  console.log(`📋 Created global playlist "${PLAYLIST_PREFIX}" (${id})\n`);
+  return id;
 };
 
 const REBUILD = process.argv.includes("--rebuild");
@@ -64,9 +54,10 @@ const genrePlaylist = async () => {
   console.log(`🎵 Genre playlists: ${eligibleGenres.length} genres\n`);
 
   let token = await getAccessToken();
+  const userId = await getUserId();
 
   // ── Global playlist ──────────────────────────────────────────────────────
-  const globalId = await getOrCreateGlobalPlaylist(token);
+  const globalId = await getOrCreateGlobalPlaylist(token, userId);
   const globalExisting = await getPlaylistTrackIds(globalId, token);
   const globalToAdd = [...allTidalIds].filter((id) => !globalExisting.has(id));
   console.log(`📋 ${PLAYLIST_PREFIX} (global): ${globalToAdd.length} new tracks to add (${globalExisting.size} already present)`);
@@ -84,13 +75,12 @@ const genrePlaylist = async () => {
     return;
   }
 
-  const genrePlaylists = await loadGenrePlaylists();
-
   for (const [genre, trackIds] of eligibleGenres) {
     const playlistName = `${PLAYLIST_PREFIX}-${genre}`;
+    const genreSlug = genre.toLowerCase().replace(/\s+/g, "-");
 
     token = await getAccessToken();
-    let playlistId = genrePlaylists[genre];
+    let playlistId = await getPlaylistId(userId, "genre", genreSlug);
 
     if (REBUILD && playlistId) {
       try {
@@ -99,15 +89,13 @@ const genrePlaylist = async () => {
       } catch {
         console.log(`   ⚠️  Could not delete "${playlistName}", will recreate anyway`);
       }
-      delete genrePlaylists[genre];
-      playlistId = undefined as any;
+      playlistId = null;
     }
 
     // Create playlist if it doesn't exist yet
     if (!playlistId) {
-      genrePlaylists[genre] = await createPlaylist(playlistName, token);
-      playlistId = genrePlaylists[genre];
-      await fsPromises.writeFile(GENRE_PLAYLISTS_FILE, JSON.stringify(genrePlaylists, null, 2));
+      playlistId = await createPlaylist(playlistName, token);
+      await setPlaylistId(userId, "genre", genreSlug, playlistId);
       console.log(`📋 Created playlist "${playlistName}" (${playlistId})`);
     } else {
       console.log(`📋 Reusing playlist "${playlistName}" (${playlistId})`);
@@ -122,8 +110,7 @@ const genrePlaylist = async () => {
       // Playlist was deleted on TIDAL — recreate it
       console.log(`   ⚠️  Playlist 404, recreating "${playlistName}"...`);
       playlistId = await createPlaylist(playlistName, token);
-      genrePlaylists[genre] = playlistId;
-      await fsPromises.writeFile(GENRE_PLAYLISTS_FILE, JSON.stringify(genrePlaylists, null, 2));
+      await setPlaylistId(userId, "genre", genreSlug, playlistId);
       existing = new Set();
     }
 
