@@ -31,7 +31,9 @@
     "fix-mismatched-ids": "node dist/fix-mismatched-ids.js",
     "prefix-mismatched-ids": "npm run build",
     "reconcile-global-playlist": "node dist/reconcile-global-playlist.js",
-    "prereconcile-global-playlist": "npm run build"
+    "prereconcile-global-playlist": "npm run build",
+    "seed-redis": "node dist/seed-redis.js",
+    "preseed-redis": "npm run build"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
-import { importPlaylist, checkDelta, getLocalImportedIds, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, loadImportedIds, getLocalImportedIds, type PlaylistType } from "@/lib/tidal-import";
 import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useImportLock } from "@/lib/useImportLock";
-import { redirectToTidal, getStoredToken } from "@/lib/tidal-auth";
+import { redirectToTidal, getStoredToken, getStoredUserId } from "@/lib/tidal-auth";
+import { usePlaylistStatus } from "@/lib/usePlaylistStatus";
 import { useT } from "./LangProvider";
 
 interface ImportButtonProps {
@@ -24,6 +25,7 @@ export default function ImportButton({
   const tr = useT();
   const [connected] = useTidalConnected();
   const { importing, acquire, release } = useImportLock();
+  const playlistStatus = usePlaylistStatus();
   const [status, setStatus] = useState<ImportStatus>(() => {
     const imported = getLocalImportedIds(type, slug);
     if (!imported) return { state: "idle" };
@@ -32,33 +34,24 @@ export default function ImportButton({
   });
 
   useEffect(() => {
-    if (!connected || tidalIds.length === 0) return;
+    playlistStatus?.report(`${type}:${slug}`, status.state);
+  }, [status.state]); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const hasCache = getLocalImportedIds(type, slug) !== null;
-    if (!hasCache) setStatus({ state: "checking" });
+  // Load state from Redis on mount — works even without active TIDAL session
+  useEffect(() => {
+    if (tidalIds.length === 0) return;
+    const userId = getStoredUserId() ?? getStoredToken()?.userId;
+    if (!userId) return;
 
-    checkDelta({ type, slug, tidalIds })
-      .then((result) => {
-        if (result === null) {
-          // Playlist ID non trovato — tieni la cache se disponibile, altrimenti idle
-          if (!hasCache) setStatus({ state: "idle" });
-          return;
-        }
-        if (result.deleted) {
-          // Playlist cancellata da TIDAL — reset sempre
-          setStatus({ state: "idle" });
-          return;
-        }
-        if (result.newCount === 0) {
-          setStatus({ state: "up-to-date" });
-        } else {
-          setStatus({ state: "has-new", count: result.newCount });
-        }
-      })
-      .catch(() => {
-        if (!hasCache) setStatus({ state: "idle" });
-      });
-  }, [connected]); // eslint-disable-line react-hooks/exhaustive-deps
+    loadImportedIds(userId, type, slug).then((imported) => {
+      if (!imported) {
+        setStatus({ state: "idle" });
+        return;
+      }
+      const newCount = tidalIds.filter((id) => !imported.has(id)).length;
+      setStatus(newCount === 0 ? { state: "up-to-date" } : { state: "has-new", count: newCount });
+    }).catch(() => {});
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleClick() {
     if (status.state === "loading" || importing) return;
@@ -91,16 +84,6 @@ export default function ImportButton({
     }
   }
 
-  if (status.state === "checking") {
-    return (
-      <span className="px-3 py-1.5 text-sm text-[var(--muted)] whitespace-nowrap">
-        <svg className="inline animate-spin h-3 w-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-        </svg>
-      </span>
-    );
-  }
 
   if (status.state === "up-to-date") {
     return (

@@ -390,7 +390,6 @@ export const GENRE_FAMILY: Record<string, string> = {
   // Soundtrack
   soundtrack:         "10-soundtrack",
   // Untagged
-  "no-genre":         "11-untagged",
   // World
   afrobeat:           "9-world",
   calypso:            "9-world",

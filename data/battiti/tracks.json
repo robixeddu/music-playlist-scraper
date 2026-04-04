@@ -92606,13 +92606,14 @@
         "key": "ondatropica___bomba_tropica",
         "genres": [
           "cumbia",
-          "electronic",
+          "salsa",
           "world"
         ],
         "genresRaw": [
           "cumbia",
-          "electronic",
-          "world"
+          "salsa",
+          "world", 
+          "tropical"
         ],
         "tidalId": "218236283"
       },
@@ -92623,11 +92624,11 @@
         "key": "dgo_sound_system___pepe_mojica_dub",
         "genres": [
           "dub",
-          "reggae"
+          "latin"
         ],
         "genresRaw": [
           "dub",
-          "reggae"
+          "latin"
         ],
         "tidalId": "291138814"
       },
@@ -92637,10 +92638,12 @@
         "albumDetails": "– 7\" Tropical",
         "key": "lucho_better_y_su_orquesta___cumbia_marina",
         "genres": [
-          "cumbia"
+          "cumbia",
+          "latin"
         ],
         "genresRaw": [
-          "cumbia"
+          "cumbia",
+          "latin"
         ],
         "tidalId": "56047224"
       },

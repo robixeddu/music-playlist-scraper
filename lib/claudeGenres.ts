@@ -20,7 +20,7 @@ const APPROVED_GENRES = [
   "trip-hop", "world",
 ].sort();
 
-const SYSTEM_PROMPT = `You are a music genre expert. Given an artist name and optionally a track/album title, respond with a JSON array of 1–3 genres that best describe their musical style.
+const SYSTEM_PROMPT = `You are a music genre expert. Given an artist name and track title, respond with a JSON array of 1–3 genres that best describe THIS SPECIFIC TRACK.
 
 Choose ONLY from this approved list:
 ${APPROVED_GENRES.join(", ")}
@@ -28,9 +28,10 @@ ${APPROVED_GENRES.join(", ")}
 Rules:
 - Return ONLY a valid JSON array of strings, no explanation
 - Use at most 3 genres, from most to least specific
-- Use your knowledge to identify the genre — artist names may be in ALL CAPS
+- Base your answer on the track itself, not the artist's general catalog
+- If this track is in a different style from the artist's usual work, reflect the track's actual genre
+- Artist names may be in ALL CAPS
 - Return [] if you are not certain — wrong is worse than empty
-- Only return genres you are confident about from your knowledge
 - Example output: ["jazz", "experimental"]`;
 
 const SEARCH_SYSTEM_PROMPT = `You are a music genre expert with web search access. Search for the artist and identify their musical genre based on real information.

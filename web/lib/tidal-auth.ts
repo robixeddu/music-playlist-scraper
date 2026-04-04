@@ -57,8 +57,15 @@ export function getStoredToken(): TidalToken | null {
   }
 }
 
+const LS_USER_ID_KEY = "battiti_tidal_userId";
+
 export function saveToken(token: TidalToken): void {
   sessionStorage.setItem(SESSION_TOKEN_KEY, JSON.stringify(token));
+  try { localStorage.setItem(LS_USER_ID_KEY, token.userId); } catch {}
+}
+
+export function getStoredUserId(): string | null {
+  try { return localStorage.getItem(LS_USER_ID_KEY); } catch { return null; }
 }
 
 export function clearToken(): void {

@@ -13,23 +13,16 @@ function storageKey(type: PlaylistType, slug: string): string {
   return `battiti_tidal_${type}_${slug}`;
 }
 
-// ── localStorage helpers (fast cache) ─────────────────────────────────────────
+// ── localStorage helpers ───────────────────────────────────────────────────────
 
 function getLocalPlaylistId(type: PlaylistType, slug: string): string | null {
-  try {
-    return localStorage.getItem(storageKey(type, slug));
-  } catch {
-    return null;
-  }
+  try { return localStorage.getItem(storageKey(type, slug)); } catch { return null; }
 }
 
 function setLocalPlaylistId(type: PlaylistType, slug: string, id: string): void {
-  try {
-    localStorage.setItem(storageKey(type, slug), id);
-  } catch {}
+  try { localStorage.setItem(storageKey(type, slug), id); } catch {}
 }
 
-// Stores the set of tidalIds known to be in the playlist — used for instant delta on remount
 export function importedIdsKey(type: PlaylistType, slug: string): string {
   return `${storageKey(type, slug)}_ids`;
 }
@@ -39,64 +32,94 @@ export function getLocalImportedIds(type: PlaylistType, slug: string): Set<strin
     const raw = localStorage.getItem(importedIdsKey(type, slug));
     if (!raw) return null;
     return new Set(JSON.parse(raw) as string[]);
-  } catch {
-    return null;
-  }
+  } catch { return null; }
 }
 
 function saveLocalImportedIds(type: PlaylistType, slug: string, ids: string[]): void {
-  try {
-    localStorage.setItem(importedIdsKey(type, slug), JSON.stringify(ids));
-  } catch {}
+  try { localStorage.setItem(importedIdsKey(type, slug), JSON.stringify(ids)); } catch {}
 }
 
 // ── DB helpers (persistent, cross-device) ─────────────────────────────────────
 
-async function getDbPlaylistId(
+async function fetchDbState(
   userId: string,
   type: PlaylistType,
   slug: string
-): Promise<string | null> {
+): Promise<{ playlistId: string | null; importedIds: string[] | null }> {
   try {
     const res = await fetch(
       `/api/playlists?userId=${encodeURIComponent(userId)}&type=${type}&slug=${encodeURIComponent(slug)}`
     );
-    const data = (await res.json()) as { playlistId: string | null };
-    return data.playlistId ?? null;
+    const data = (await res.json()) as { playlistId: string | null; importedIds: string[] | null };
+    return data;
   } catch {
-    return null;
+    return { playlistId: null, importedIds: null };
   }
 }
 
-function saveDbPlaylistId(
+function saveDbState(
   userId: string,
   type: PlaylistType,
   slug: string,
-  id: string
+  opts: { playlistId?: string; importedIds?: string[] }
 ): void {
-  // Fire and forget — don't block the import flow
   fetch("/api/playlists", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ userId, type, slug, playlistId: id }),
+    body: JSON.stringify({ userId, type, slug, ...opts }),
   }).catch(() => {});
 }
 
-// ── Resolve: localStorage first, then DB ──────────────────────────────────────
+function deleteDbState(userId: string, type: PlaylistType, slug: string): void {
+  fetch(`/api/playlists?userId=${encodeURIComponent(userId)}&type=${type}&slug=${encodeURIComponent(slug)}`, {
+    method: "DELETE",
+  }).catch(() => {});
+}
+
+// ── Resolve state: localStorage first, then DB ────────────────────────────────
 
 async function resolvePlaylistId(
   userId: string,
   type: PlaylistType,
   slug: string
 ): Promise<string | null> {
-  const local = getLocalPlaylistId(type, slug);
+  // Always fetch from DB (Redis) as authoritative source — localStorage can be stale
+  const { playlistId } = await fetchDbState(userId, type, slug);
+  if (playlistId) setLocalPlaylistId(type, slug, playlistId); // keep local in sync
+  return playlistId;
+}
+
+/**
+ * Loads the imported IDs for a playlist, validating against DB.
+ * If the playlist no longer exists in DB, clears stale local cache.
+ * Returns null if no import record or playlist no longer exists.
+ * Does NOT call TIDAL.
+ */
+export async function loadImportedIds(
+  userId: string,
+  type: PlaylistType,
+  slug: string
+): Promise<Set<string> | null> {
+  const { playlistId, importedIds: dbIds } = await fetchDbState(userId, type, slug);
+
+  if (!playlistId) {
+    // Playlist removed from DB — clear any stale local state
+    try { localStorage.removeItem(importedIdsKey(type, slug)); } catch {}
+    try { localStorage.removeItem(storageKey(type, slug)); } catch {}
+    return null;
+  }
+
+  // Playlist exists — prefer local cache, fall back to DB
+  const local = getLocalImportedIds(type, slug);
   if (local) return local;
 
-  const remote = await getDbPlaylistId(userId, type, slug);
-  if (remote) {
-    setLocalPlaylistId(type, slug, remote); // populate cache
+  if (dbIds) {
+    saveLocalImportedIds(type, slug, dbIds);
+    setLocalPlaylistId(type, slug, playlistId);
+    return new Set(dbIds);
   }
-  return remote;
+
+  return null; // playlist exists but no import record yet
 }
 
 // ── Persist: both localStorage and DB ─────────────────────────────────────────
@@ -108,7 +131,17 @@ function persistPlaylistId(
   id: string
 ): void {
   setLocalPlaylistId(type, slug, id);
-  saveDbPlaylistId(userId, type, slug, id);
+  saveDbState(userId, type, slug, { playlistId: id });
+}
+
+function persistImportedIds(
+  userId: string,
+  type: PlaylistType,
+  slug: string,
+  ids: string[]
+): void {
+  saveLocalImportedIds(type, slug, ids);
+  saveDbState(userId, type, slug, { importedIds: ids });
 }
 
 // ── Public API ────────────────────────────────────────────────────────────────
@@ -116,33 +149,6 @@ function persistPlaylistId(
 export interface ImportResult {
   added: number;
   alreadyPresent: number;
-}
-
-export async function checkDelta(params: {
-  type: PlaylistType;
-  slug: string;
-  tidalIds: string[];
-}): Promise<{ newCount: number; deleted?: boolean } | null> {
-  const token = getStoredToken();
-  if (!token) return null;
-
-  const playlistId = await resolvePlaylistId(token.userId, params.type, params.slug);
-  if (!playlistId) return null; // no ID known — unknown state, keep cache
-
-  try {
-    const existingIds = await getPlaylistItemIds(token.access_token, playlistId);
-    const inPlaylist = params.tidalIds.filter((id) => existingIds.has(id));
-    // Keep cache in sync with actual TIDAL state
-    saveLocalImportedIds(params.type, params.slug, inPlaylist);
-    return { newCount: params.tidalIds.length - inPlaylist.length };
-  } catch (e: unknown) {
-    if (e instanceof Error && e.message.toLowerCase().includes("not found")) {
-      // Playlist deleted from TIDAL — clear local cache
-      try { localStorage.removeItem(importedIdsKey(params.type, params.slug)); } catch {}
-      return { newCount: 0, deleted: true };
-    }
-    throw e;
-  }
 }
 
 export async function importPlaylist(params: {
@@ -159,31 +165,26 @@ export async function importPlaylist(params: {
   const { access_token: accessToken, userId } = token;
 
   const createNew = async () => {
-    const id = await createPlaylist(
-      accessToken,
-      playlistName,
-      `Battiti – ${playlistName}`
-    );
+    const id = await createPlaylist(accessToken, playlistName, `Battiti – ${playlistName}`);
     persistPlaylistId(userId, type, slug, id);
     return id;
   };
 
   let playlistId = await resolvePlaylistId(userId, type, slug);
-  if (!playlistId) {
-    playlistId = await createNew();
-  }
+  if (!playlistId) playlistId = await createNew();
 
-  // Fetch existing track IDs, recreating playlist if not found
   let existingIds: Set<string>;
   try {
     existingIds = await getPlaylistItemIds(accessToken, playlistId);
   } catch (e: unknown) {
-    if (e instanceof Error && e.message.includes("not found")) {
-      playlistId = await createNew();
-      existingIds = new Set();
-    } else {
-      throw e;
+    if (e instanceof Error && e.message.toLowerCase().includes("not found")) {
+      // Playlist deleted from TIDAL — clear all stale state, let user re-import explicitly
+      try { localStorage.removeItem(importedIdsKey(type, slug)); } catch {}
+      try { localStorage.removeItem(storageKey(type, slug)); } catch {}
+      deleteDbState(userId, type, slug);
+      throw new Error("Playlist non trovata su TIDAL. Clicca Import per ricrearla.");
     }
+    throw e;
   }
 
   const newIds = tidalIds.filter((id) => !existingIds.has(id));
@@ -193,8 +194,8 @@ export async function importPlaylist(params: {
     await addTracksToPlaylist(accessToken, playlistId, newIds);
   }
 
-  // Persist the full current set so next render can compute delta instantly
-  saveLocalImportedIds(type, slug, tidalIds);
+  // Persist the full current set to localStorage + Redis
+  persistImportedIds(userId, type, slug, tidalIds);
 
   return { added: newIds.length, alreadyPresent };
 }

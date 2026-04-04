@@ -59,7 +59,10 @@ const exchangeToken = async (params: URLSearchParams): Promise<TokenData> => {
     body: params,
   });
 
-  if (!res.ok) throw new Error(`Token request failed: ${res.status}`);
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`Token request failed: ${res.status} — ${body}`);
+  }
 
   const data: any = await res.json();
   const rawUserId = data.user?.userId ?? data.user_id ?? extractUserIdFromJwt(data.access_token);
@@ -91,17 +94,32 @@ const loginWithPKCE = async (): Promise<TokenData> => {
     const server = http.createServer((req, res) => {
       const url = new URL(req.url!, `http://localhost:${CLI_PORT}`);
       const code = url.searchParams.get("code");
+      const error = url.searchParams.get("error");
 
       if (code) {
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end("<h1>Authentication successful! You can close this tab.</h1>");
         server.close();
         resolve(code);
-      } else {
+      } else if (error) {
+        res.writeHead(400, { "Content-Type": "text/html" });
+        res.end(`<h1>Authentication failed: ${error}</h1>`);
         server.close();
-        reject(new Error("No authorization code received"));
+        reject(new Error(`TIDAL auth error: ${error}`));
+      }
+      // ignore other requests (e.g. favicon.ico)
+    });
+
+    server.on("error", (err: NodeJS.ErrnoException) => {
+      if (err.code === "EADDRINUSE") {
+        reject(new Error(
+          `Port ${CLI_PORT} is already in use — stop the /web dev server first, then retry.`
+        ));
+      } else {
+        reject(err);
       }
     });
+
     server.listen(CLI_PORT);
   });
 

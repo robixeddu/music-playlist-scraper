@@ -5,6 +5,7 @@ import { importPlaylist, type PlaylistType } from "@/lib/tidal-import";
 import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useImportLock } from "@/lib/useImportLock";
 import { redirectToTidal, getStoredToken } from "@/lib/tidal-auth";
+import { usePlaylistStatus } from "@/lib/usePlaylistStatus";
 import { useT } from "./LangProvider";
 
 interface ImportAllItem {
@@ -29,6 +30,14 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
   const [connected] = useTidalConnected();
   const { importing, acquire, release } = useImportLock();
   const [status, setStatus] = useState<State>({ state: "idle" });
+  const playlistStatus = usePlaylistStatus();
+
+  const upToDate =
+    items.length > 0 &&
+    items.every((it) => {
+      if (it.tidalIds.length === 0) return true;
+      return playlistStatus?.statuses.get(`${it.type}:${it.slug}`) === "up-to-date";
+    });
 
   async function handleClick() {
     if (status.state === "loading" || importing) return;
@@ -67,6 +76,7 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
   }
 
   if (status.state === "idle") {
+    if (upToDate) return null;
     return (
       <button
         onClick={handleClick}

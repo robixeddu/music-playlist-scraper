@@ -33,7 +33,6 @@ export interface TidalToken {
 
 export type ImportStatus =
   | { state: "idle" }
-  | { state: "checking" }
   | { state: "has-new"; count: number }
   | { state: "up-to-date" }
   | { state: "loading" }
