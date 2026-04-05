@@ -3,7 +3,7 @@
 import { getPlaylistItemIds, getPlaylistCount, TidalNotFoundError } from "./tidal-api";
 import type { PlaylistType } from "./tidal-import";
 
-const VERIFY_DELAY_MS = 400;
+const VERIFY_DELAY_MS = 150;
 
 type VerifyRequest = {
   type: PlaylistType;

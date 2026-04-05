@@ -42,6 +42,7 @@ export default function ImportButton({
     resolvePlaylistId(userId, type, slug).then((storedId) => {
       if (!storedId) return; // user hasn't imported yet → stays idle
 
+      setStatus({ state: "checking" });
       const stored = getLocalImportedIds(type, slug);
       enqueueVerify({
         type, slug, playlistId: storedId, tidalIds,
@@ -62,7 +63,7 @@ export default function ImportButton({
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleClick() {
-    if (status.state === "loading" || importing) return;
+    if (status.state === "loading" || status.state === "checking" || importing) return;
 
     const token = getStoredToken();
     if (!token) {
@@ -94,6 +95,14 @@ export default function ImportButton({
     }
   }
 
+
+  if (status.state === "checking") {
+    return (
+      <span className="px-3 py-1.5 text-sm text-[var(--muted)] whitespace-nowrap opacity-50">
+        …
+      </span>
+    );
+  }
 
   if (status.state === "up-to-date") {
     return (
