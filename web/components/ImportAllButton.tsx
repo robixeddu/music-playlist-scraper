@@ -75,8 +75,15 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     setStatus({ state: "success", added: totalAdded, alreadyPresent: totalPresent });
   }
 
+  if (upToDate) {
+    return (
+      <span className="px-3 py-1.5 text-sm text-[var(--muted)] whitespace-nowrap">
+        {tr.upToDate}
+      </span>
+    );
+  }
+
   if (status.state === "idle") {
-    if (upToDate) return null;
     return (
       <button
         onClick={handleClick}
