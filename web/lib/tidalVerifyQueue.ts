@@ -11,7 +11,7 @@ type VerifyRequest = {
   playlistId: string;
   tidalIds: string[];
   token: string;
-  onResult: (missing: number) => void;
+  onResult: (missing: number, playlistId: string) => void;
   onNotFound: () => void;
   onVerified: () => void;
 };
@@ -28,7 +28,7 @@ async function processQueue() {
       const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
       const missing = req.tidalIds.filter((id) => !tidalSet.has(id)).length;
       req.onVerified();
-      req.onResult(missing);
+      req.onResult(missing, req.playlistId);
     } catch (e: unknown) {
       if (e instanceof TidalNotFoundError) {
         req.onNotFound();

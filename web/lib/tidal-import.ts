@@ -6,7 +6,6 @@ import {
   getPlaylistItemIds,
   addTracksToPlaylist,
   TidalNotFoundError,
-  getUserPlaylistsMap,
 } from "./tidal-api";
 
 export type PlaylistType = "global" | "genre" | "episode";
@@ -167,6 +166,7 @@ export async function importPlaylist(params: {
   slug: string;
   playlistName: string;
   tidalIds: string[];
+  playlistId?: string; // pass-through from verification state — skips resolve
 }): Promise<ImportResult> {
   const { type, slug, playlistName, tidalIds } = params;
 
@@ -176,19 +176,12 @@ export async function importPlaylist(params: {
   const { access_token: accessToken, userId } = token;
 
   const createNew = async () => {
-    // Check if a playlist with this name already exists on TIDAL before creating
-    const existingMap = await getUserPlaylistsMap(accessToken).catch(() => new Map<string, string>());
-    const existingId = existingMap.get(playlistName);
-    if (existingId) {
-      persistPlaylistId(userId, type, slug, existingId);
-      return existingId;
-    }
     const id = await createPlaylist(accessToken, playlistName, `Battiti – ${playlistName}`);
     persistPlaylistId(userId, type, slug, id);
     return id;
   };
 
-  let playlistId = await resolvePlaylistId(userId, type, slug);
+  let playlistId = params.playlistId ?? await resolvePlaylistId(userId, type, slug);
   if (!playlistId) playlistId = await createNew();
 
   let existingIds: Set<string>;

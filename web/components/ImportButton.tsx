@@ -46,25 +46,28 @@ export default function ImportButton({
     if (!userId) return;
 
     loadImportedIds(userId, type, slug).then((imported) => {
-      // Show best-effort state from Redis while TIDAL verification runs
-      if (imported) {
+      const token = getStoredToken();
+      const knownId = getLocalPlaylistId(type, slug);
+
+      // Show best-effort state from Redis/localStorage while TIDAL verification runs
+      if (imported && knownId) {
         const newCount = tidalIds.filter((id) => !imported.has(id)).length;
-        setStatus(newCount === 0 ? { state: "up-to-date" } : { state: "has-new", count: newCount });
+        setStatus(newCount === 0
+          ? { state: "up-to-date", playlistId: knownId }
+          : { state: "has-new", count: newCount, playlistId: knownId });
       }
 
-      // Always verify against live TIDAL when connected — TIDAL is source of truth
-      const token = getStoredToken();
       if (!token) return;
-
-      const knownId = getLocalPlaylistId(type, slug);
 
       const scheduleVerify = (playlistId: string) => {
         enqueueVerify({
           type, slug, playlistId, tidalIds,
           token: token.access_token,
           onVerified: () => { persistPlaylistId(userId, type, slug, playlistId); },
-          onResult: (missing) => {
-            setStatus(missing > 0 ? { state: "has-new", count: missing } : { state: "up-to-date" });
+          onResult: (missing, pid) => {
+            setStatus(missing > 0
+              ? { state: "has-new", count: missing, playlistId: pid }
+              : { state: "up-to-date", playlistId: pid });
           },
           onNotFound: () => {
             clearPlaylistState(userId, type, slug);
@@ -83,7 +86,6 @@ export default function ImportButton({
             persistPlaylistId(userId, type, slug, discoveredId);
             scheduleVerify(discoveredId);
           }
-          // If not found, stays "idle" — user hasn't imported this playlist yet
         }).catch(() => {});
       }
     }).catch(() => {});
@@ -105,8 +107,10 @@ export default function ImportButton({
 
     setStatus({ state: "loading" });
     acquire();
+    const knownPlaylistId = (status.state === "has-new" || status.state === "up-to-date")
+      ? status.playlistId : undefined;
     try {
-      const result = await importPlaylist({ type, slug, playlistName, tidalIds });
+      const result = await importPlaylist({ type, slug, playlistName, tidalIds, playlistId: knownPlaylistId });
       setStatus({
         state: "success",
         added: result.added,
