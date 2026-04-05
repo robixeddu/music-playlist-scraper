@@ -12,21 +12,23 @@ function headers(token: string): HeadersInit {
 
 // ── List user playlists ───────────────────────────────────────────────────────
 
-export async function getUserPlaylistsMap(token: string): Promise<Map<string, string>> {
-  const map = new Map<string, string>();
+export type TidalPlaylistInfo = { id: string; count: number };
+
+export async function getUserPlaylistsMap(token: string): Promise<Map<string, TidalPlaylistInfo>> {
+  const map = new Map<string, TidalPlaylistInfo>();
   let url: string | null =
     `${BASE}/playlists?ownedByMe=true&countryCode=${COUNTRY_CODE}&limit=50`;
 
   while (url) {
     const res = await fetchWithRetry(url, { headers: headers(token) });
-    if (!res.ok) break; // unsupported or auth error — return what we have
+    if (!res.ok) break;
     const json = (await res.json()) as {
-      data: Array<{ id: string; attributes?: { name?: string } }>;
+      data: Array<{ id: string; attributes?: { name?: string; numberOfItems?: number } }>;
       links?: { next?: string | null };
     };
     for (const item of json.data) {
       const name = item.attributes?.name;
-      if (name) map.set(name, item.id);
+      if (name) map.set(name, { id: item.id, count: item.attributes?.numberOfItems ?? 0 });
     }
     const next = json.links?.next ?? null;
     if (!next) break;
