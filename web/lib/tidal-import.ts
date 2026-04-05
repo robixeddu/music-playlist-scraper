@@ -166,6 +166,22 @@ export interface ImportResult {
   alreadyPresent: number;
 }
 
+export async function importDelta(params: {
+  type: PlaylistType;
+  slug: string;
+  playlistId: string;
+  newIds: string[];
+  allTidalIds: string[];
+  token: string;
+  userId: string;
+}): Promise<ImportResult> {
+  if (params.newIds.length > 0) {
+    await addTracksToPlaylist(params.token, params.playlistId, params.newIds);
+  }
+  persistImportedIds(params.userId, params.type, params.slug, params.allTidalIds);
+  return { added: params.newIds.length, alreadyPresent: params.allTidalIds.length - params.newIds.length };
+}
+
 export async function importPlaylist(params: {
   type: PlaylistType;
   slug: string;

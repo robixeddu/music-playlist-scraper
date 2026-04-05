@@ -12,7 +12,7 @@ type VerifyRequest = {
   tidalIds: string[];
   referenceIds?: string[]; // tidalIds stored at last import — avoids false "+N" for TIDAL-unavailable tracks
   token: string;
-  onResult: (missing: number, playlistId: string) => void;
+  onResult: (newIds: string[], playlistId: string) => void;
   onNotFound: () => void;
   onVerified: () => void;
 };
@@ -31,20 +31,20 @@ async function processQueue() {
         // Shows +N only for tracks genuinely new since last import.
         // 404 detection happens lazily on next import attempt.
         const refSet = new Set(req.referenceIds);
-        const newTracks = req.tidalIds.filter((id) => !refSet.has(id)).length;
+        const newIds = req.tidalIds.filter((id) => !refSet.has(id));
         req.onVerified();
-        req.onResult(newTracks, req.playlistId);
+        req.onResult(newIds, req.playlistId);
       } else {
         // No reference — verify against TIDAL (first import or state lost)
         const count = await getPlaylistCount(req.token, req.playlistId);
         if (count !== null && count >= req.tidalIds.length) {
           req.onVerified();
-          req.onResult(0, req.playlistId);
+          req.onResult([], req.playlistId);
         } else {
           const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
-          const missing = req.tidalIds.filter((id) => !tidalSet.has(id)).length;
+          const newIds = req.tidalIds.filter((id) => !tidalSet.has(id));
           req.onVerified();
-          req.onResult(missing, req.playlistId);
+          req.onResult(newIds, req.playlistId);
         }
       }
     } catch (e: unknown) {
