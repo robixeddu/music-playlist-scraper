@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
-import { importPlaylist, resolvePlaylistId, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, resolvePlaylistId, getLocalImportedIds, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
 import { enqueueVerify } from "@/lib/tidalVerifyQueue";
 import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useImportLock } from "@/lib/useImportLock";
@@ -42,8 +42,10 @@ export default function ImportButton({
     resolvePlaylistId(userId, type, slug).then((storedId) => {
       if (!storedId) return; // user hasn't imported yet → stays idle
 
+      const stored = getLocalImportedIds(type, slug);
       enqueueVerify({
         type, slug, playlistId: storedId, tidalIds,
+        referenceIds: stored ? Array.from(stored) : undefined,
         token: token.access_token,
         onVerified: () => { persistPlaylistId(userId, type, slug, storedId); },
         onResult: (missing, pid) => {

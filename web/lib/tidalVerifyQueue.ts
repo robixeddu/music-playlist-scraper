@@ -10,6 +10,7 @@ type VerifyRequest = {
   slug: string;
   playlistId: string;
   tidalIds: string[];
+  referenceIds?: string[]; // tidalIds stored at last import — avoids false "+N" for TIDAL-unavailable tracks
   token: string;
   onResult: (missing: number, playlistId: string) => void;
   onNotFound: () => void;
@@ -25,14 +26,21 @@ async function processQueue() {
   while (queue.length > 0) {
     const req = queue.shift()!;
     try {
-      // Fast count check — single API call, no pagination
+      // Always do count check — fast single call, also detects playlist deletion (404)
       const count = await getPlaylistCount(req.token, req.playlistId);
-      if (count !== null && count >= req.tidalIds.length) {
-        // Count matches or exceeds — all tracks present, skip full ID fetch
+
+      if (req.referenceIds) {
+        // We have a reference from last import: only show "+N" for genuinely new app tracks,
+        // not for tracks that TIDAL silently rejected as unavailable at import time.
+        const refSet = new Set(req.referenceIds);
+        const newTracks = req.tidalIds.filter((id) => !refSet.has(id)).length;
+        req.onVerified();
+        req.onResult(newTracks, req.playlistId);
+      } else if (count !== null && count >= req.tidalIds.length) {
         req.onVerified();
         req.onResult(0, req.playlistId);
       } else {
-        // Count mismatch — fetch full ID set for precise diff
+        // No reference and count mismatch — fetch full ID set for precise diff
         const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
         const missing = req.tidalIds.filter((id) => !tidalSet.has(id)).length;
         req.onVerified();
