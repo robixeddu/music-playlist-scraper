@@ -14,6 +14,7 @@ export interface Translations {
   tracks: string;
   import: string;
   importing: string;
+  checking: string;
   importSuccess: (added: number, present: number) => string;
   importError: string;
   noTidalTracks: string;
@@ -39,6 +40,7 @@ export const translations: Record<Lang, Translations> = {
     tracks: "tracce",
     import: "Importa",
     importing: "Importazione...",
+    checking: "Checking...",
     importSuccess: (a, p) => `✓ ${a} aggiunti, ${p} già presenti`,
     importError: "Errore",
     noTidalTracks: "Nessuna traccia TIDAL disponibile",
@@ -62,6 +64,7 @@ export const translations: Record<Lang, Translations> = {
     tracks: "tracks",
     import: "Import",
     importing: "Importing...",
+    checking: "Checking...",
     importSuccess: (a, p) => `✓ ${a} added, ${p} already present`,
     importError: "Error",
     noTidalTracks: "No TIDAL tracks available",
