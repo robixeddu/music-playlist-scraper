@@ -14,26 +14,29 @@ function headers(token: string): HeadersInit {
 
 export type TidalPlaylistInfo = { id: string; count: number };
 
+const USER_BASE = "/tidal-user-api";
+
 export async function getUserPlaylistsMap(token: string): Promise<Map<string, TidalPlaylistInfo>> {
   const map = new Map<string, TidalPlaylistInfo>();
-  let url: string | null =
-    `${BASE}/playlists?ownedByMe=true&countryCode=${COUNTRY_CODE}&limit=50`;
+  const limit = 50;
+  let offset = 0;
+  let total = Infinity;
 
-  while (url) {
+  while (offset < total) {
+    const url = `${USER_BASE}/my-collection/playlists/folders?folderId=root&includeOnly=PLAYLIST&limit=${limit}&offset=${offset}`;
     const res = await fetchWithRetry(url, { headers: headers(token) });
     if (!res.ok) break;
     const json = (await res.json()) as {
-      data: Array<{ id: string; attributes?: { name?: string; numberOfItems?: number } }>;
-      links?: { next?: string | null };
+      items: Array<{ data: { uuid: string; title: string; numberOfTracks: number } }>;
+      totalNumberOfItems: number;
     };
-    for (const item of json.data) {
-      const name = item.attributes?.name;
-      if (name) map.set(name, { id: item.id, count: item.attributes?.numberOfItems ?? 0 });
+    total = json.totalNumberOfItems;
+    for (const item of json.items) {
+      const { uuid, title, numberOfTracks } = item.data;
+      if (title) map.set(title, { id: uuid, count: numberOfTracks });
     }
-    const next = json.links?.next ?? null;
-    if (!next) break;
-    const path = next.replace("https://openapi.tidal.com/v2", "");
-    url = path.startsWith(BASE) ? path : `${BASE}${path}`;
+    offset += json.items.length;
+    if (json.items.length < limit) break;
     await delay(PAGE_DELAY_MS);
   }
 

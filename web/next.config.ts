@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         source: "/tidal-api/:path*",
         destination: "https://openapi.tidal.com/v2/:path*",
       },
+      {
+        source: "/tidal-user-api/:path*",
+        destination: "https://api.tidal.com/v2/:path*",
+      },
     ];
   },
 };
