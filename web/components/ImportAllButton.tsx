@@ -53,7 +53,11 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
       return;
     }
 
-    const eligible = items.filter((it) => it.tidalIds.length > 0);
+    const eligible = items.filter((it) => {
+      if (it.tidalIds.length === 0) return false;
+      const s = playlistStatus?.statuses.get(`${it.type}:${it.slug}`);
+      return s !== "up-to-date";
+    });
     if (eligible.length === 0) return;
 
     setStatus({ state: "loading", done: 0, total: eligible.length });
