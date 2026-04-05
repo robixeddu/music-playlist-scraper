@@ -30,8 +30,25 @@ export default function ImportButton({
   const [status, setStatus] = useState<ImportStatus>({ state: "idle" });
 
   useEffect(() => {
-    playlistStatus?.report(`${type}:${slug}`, status.state);
+    const entry =
+      status.state === "has-new"
+        ? { state: status.state, playlistId: status.playlistId, newIds: status.newIds }
+        : status.state === "up-to-date"
+        ? { state: status.state, playlistId: status.playlistId }
+        : { state: status.state };
+    playlistStatus?.report(`${type}:${slug}`, entry);
   }, [status.state]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Sync state when ImportAllButton marks this playlist as up-to-date externally
+  const contextEntry = playlistStatus?.statuses.get(`${type}:${slug}`);
+  useEffect(() => {
+    if (
+      contextEntry?.state === "up-to-date" &&
+      (status.state === "has-new" || status.state === "checking")
+    ) {
+      setStatus({ state: "up-to-date", playlistId: contextEntry.playlistId! });
+    }
+  }, [contextEntry?.state]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (tidalIds.length === 0) return;
@@ -49,9 +66,9 @@ export default function ImportButton({
         referenceIds: stored ? Array.from(stored) : undefined,
         token: token.access_token,
         onVerified: () => { persistPlaylistId(userId, type, slug, storedId); },
-        onResult: (missing, pid) => {
-          setStatus(missing > 0
-            ? { state: "has-new", count: missing, playlistId: pid }
+        onResult: (newIds, pid) => {
+          setStatus(newIds.length > 0
+            ? { state: "has-new", count: newIds.length, playlistId: pid, newIds }
             : { state: "up-to-date", playlistId: pid });
         },
         onNotFound: () => {

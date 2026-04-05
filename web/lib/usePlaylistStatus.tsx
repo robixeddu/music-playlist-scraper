@@ -3,18 +3,28 @@
 import { createContext, useContext, useState, useCallback } from "react";
 import type { ImportStatus } from "./types";
 
-type StatusMap = Map<string, ImportStatus["state"]>;
+export type StatusEntry = {
+  state: ImportStatus["state"];
+  playlistId?: string;
+  newIds?: string[];
+};
+
+type StatusMap = Map<string, StatusEntry>;
 
 const PlaylistStatusContext = createContext<{
-  report: (key: string, state: ImportStatus["state"]) => void;
+  report: (key: string, entry: StatusEntry) => void;
   statuses: StatusMap;
 } | null>(null);
 
 export function PlaylistStatusProvider({ children }: { children: React.ReactNode }) {
   const [statuses, setStatuses] = useState<StatusMap>(new Map());
 
-  const report = useCallback((key: string, state: ImportStatus["state"]) => {
-    setStatuses((prev) => new Map(prev).set(key, state));
+  const report = useCallback((key: string, entry: StatusEntry) => {
+    setStatuses((prev) => {
+      const existing = prev.get(key);
+      if (existing?.state === entry.state && existing?.playlistId === entry.playlistId) return prev;
+      return new Map(prev).set(key, entry);
+    });
   }, []);
 
   return (

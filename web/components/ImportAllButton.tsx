@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { importPlaylist, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, importDelta, type PlaylistType } from "@/lib/tidal-import";
 import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useImportLock } from "@/lib/useImportLock";
-import { redirectToTidal, getStoredToken } from "@/lib/tidal-auth";
+import { redirectToTidal, getStoredToken, getStoredUserId } from "@/lib/tidal-auth";
 import { usePlaylistStatus } from "@/lib/usePlaylistStatus";
 import { useT } from "./LangProvider";
 
@@ -36,12 +36,12 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     items.length > 0 &&
     items.every((it) => {
       if (it.tidalIds.length === 0) return true;
-      return playlistStatus?.statuses.get(`${it.type}:${it.slug}`) === "up-to-date";
+      return playlistStatus?.statuses.get(`${it.type}:${it.slug}`)?.state === "up-to-date";
     });
 
   const isChecking = items.some((it) => {
     if (it.tidalIds.length === 0) return false;
-    return playlistStatus?.statuses.get(`${it.type}:${it.slug}`) === "checking";
+    return playlistStatus?.statuses.get(`${it.type}:${it.slug}`)?.state === "checking";
   });
 
   async function handleClick() {
@@ -53,10 +53,11 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
       return;
     }
 
+    const userId = token.userId ?? getStoredUserId();
+
     const eligible = items.filter((it) => {
       if (it.tidalIds.length === 0) return false;
-      const s = playlistStatus?.statuses.get(`${it.type}:${it.slug}`);
-      return s !== "up-to-date";
+      return playlistStatus?.statuses.get(`${it.type}:${it.slug}`)?.state !== "up-to-date";
     });
     if (eligible.length === 0) return;
 
@@ -69,9 +70,28 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     try {
       for (let i = 0; i < eligible.length; i++) {
         try {
-          const result = await importPlaylist(eligible[i]);
+          const entry = playlistStatus?.statuses.get(`${eligible[i].type}:${eligible[i].slug}`);
+          const isDelta = entry?.state === "has-new" && entry.playlistId && entry.newIds && userId;
+          const result = isDelta
+            ? await importDelta({
+                type: eligible[i].type,
+                slug: eligible[i].slug,
+                playlistId: entry!.playlistId!,
+                newIds: entry!.newIds!,
+                allTidalIds: eligible[i].tidalIds,
+                token: token.access_token,
+                userId: userId!,
+              })
+            : await importPlaylist(eligible[i]);
           totalAdded += result.added;
           totalPresent += result.alreadyPresent;
+          const importedPlaylistId = isDelta ? entry!.playlistId! : undefined;
+          if (importedPlaylistId) {
+            playlistStatus?.report(`${eligible[i].type}:${eligible[i].slug}`, {
+              state: "up-to-date",
+              playlistId: importedPlaylistId,
+            });
+          }
         } catch {
           // skip failures, continue with remaining
         }
