@@ -4,7 +4,9 @@ import { useState } from "react";
 import type { EpisodeAggregated, GenreRow } from "@/lib/types";
 import { useT } from "./LangProvider";
 import ImportButton from "./ImportButton";
+import PlaylistCover from "./PlaylistCover";
 import TrackList from "./TrackList";
+import { gradientForGenre } from "@/lib/genreColors";
 
 interface GenreSectionProps {
   playlistPrefix: string;
@@ -67,9 +69,10 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
             <div className="px-5 py-0 flex items-center justify-between gap-4">
               <button
                 onClick={() => setExpanded(isExpanded ? null : row.genre)}
-                className="flex items-center py-5 gap-3 min-w-0 text-left flex-1 cursor-pointer"
+                className="flex items-center py-3 gap-3 min-w-0 text-left flex-1 cursor-pointer"
                 aria-expanded={isExpanded}
               >
+                <PlaylistCover gradient={gradientForGenre(row.genre)} size={40} />
                 <svg
                   className={`w-3 h-3 text-[var(--muted)] shrink-0 transition-transform duration-150 ${isExpanded ? "rotate-90" : ""}`}
                   fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
