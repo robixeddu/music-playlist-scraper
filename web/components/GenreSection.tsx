@@ -6,7 +6,7 @@ import { useT } from "./LangProvider";
 import ImportButton from "./ImportButton";
 import PlaylistCover from "./PlaylistCover";
 import TrackList from "./TrackList";
-import { gradientForGenre } from "@/lib/genreColors";
+import { colorForGenre } from "@/lib/genreColors";
 
 interface GenreSectionProps {
   playlistPrefix: string;
@@ -72,7 +72,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
                 className="flex items-center py-3 gap-3 min-w-0 text-left flex-1 cursor-pointer"
                 aria-expanded={isExpanded}
               >
-                <PlaylistCover gradient={gradientForGenre(row.genre)} size={40} />
+                <PlaylistCover color={colorForGenre(row.genre)} size={40} />
                 <svg
                   className={`w-3 h-3 text-[var(--muted)] shrink-0 transition-transform duration-150 ${isExpanded ? "rotate-90" : ""}`}
                   fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}

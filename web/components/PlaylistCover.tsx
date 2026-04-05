@@ -1,15 +1,15 @@
 interface PlaylistCoverProps {
-  gradient: [string, string];
+  color: string;
   size?: number;
 }
 
-export default function PlaylistCover({ gradient, size = 40 }: PlaylistCoverProps) {
+export default function PlaylistCover({ color, size = 40 }: PlaylistCoverProps) {
   return (
     <div
       style={{
         width: size,
         height: size,
-        background: `linear-gradient(145deg, ${gradient[0]}, ${gradient[1]})`,
+        backgroundColor: color,
         borderRadius: Math.round(size * 0.1),
         flexShrink: 0,
       }}
