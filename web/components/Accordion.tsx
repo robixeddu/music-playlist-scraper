@@ -44,7 +44,7 @@ export default function Accordion({
           </div>
         )}
       </div>
-      {open && <div className="bg-[var(--background)]">{children}</div>}
+      <div className={`bg-[var(--background)]${open ? "" : " hidden"}`}>{children}</div>
     </div>
   );
 }
