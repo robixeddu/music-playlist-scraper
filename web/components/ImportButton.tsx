@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
-import { importPlaylist, resolvePlaylistId, getLocalImportedIds, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, importDelta, resolvePlaylistId, getLocalImportedIds, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
 import { enqueueVerify } from "@/lib/tidalVerifyQueue";
 import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useImportLock } from "@/lib/useImportLock";
@@ -95,10 +95,22 @@ export default function ImportButton({
 
     setStatus({ state: "loading" });
     acquire();
-    const knownPlaylistId = (status.state === "has-new" || status.state === "up-to-date")
-      ? status.playlistId : undefined;
     try {
-      const result = await importPlaylist({ type, slug, playlistName, tidalIds, playlistId: knownPlaylistId });
+      const userId = token.userId ?? getStoredUserId();
+      const result =
+        status.state === "has-new" && userId
+          ? await importDelta({
+              type, slug,
+              playlistId: status.playlistId,
+              newIds: status.newIds,
+              allTidalIds: tidalIds,
+              token: token.access_token,
+              userId,
+            })
+          : await importPlaylist({
+              type, slug, playlistName, tidalIds,
+              playlistId: status.state === "up-to-date" ? status.playlistId : undefined,
+            });
       setStatus({
         state: "success",
         added: result.added,
