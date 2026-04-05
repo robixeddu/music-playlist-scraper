@@ -47,13 +47,18 @@ async function fetchDbState(
   type: PlaylistType,
   slug: string
 ): Promise<{ playlistId: string | null; importedIds: string[] | null }> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 5000);
   try {
     const res = await fetch(
-      `/api/playlists?userId=${encodeURIComponent(userId)}&type=${type}&slug=${encodeURIComponent(slug)}`
+      `/api/playlists?userId=${encodeURIComponent(userId)}&type=${type}&slug=${encodeURIComponent(slug)}`,
+      { signal: controller.signal }
     );
+    clearTimeout(timer);
     const data = (await res.json()) as { playlistId: string | null; importedIds: string[] | null };
     return data;
   } catch {
+    clearTimeout(timer);
     return { playlistId: null, importedIds: null };
   }
 }

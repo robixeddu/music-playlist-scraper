@@ -34,7 +34,7 @@ export async function createPlaylist(
   name: string,
   description: string
 ): Promise<string> {
-  const res = await fetch(`${BASE}/playlists`, {
+  const res = await fetchWithRetry(`${BASE}/playlists`, {
     method: "POST",
     headers: headers(token),
     body: JSON.stringify({
@@ -132,7 +132,7 @@ export async function addTracksToPlaylist(
 ): Promise<void> {
   for (let i = 0; i < tidalIds.length; i += BATCH_SIZE) {
     const batch = tidalIds.slice(i, i + BATCH_SIZE);
-    const res = await fetch(`${BASE}/playlists/${playlistId}/relationships/items`, {
+    const res = await fetchWithRetry(`${BASE}/playlists/${playlistId}/relationships/items`, {
       method: "POST",
       headers: headers(token),
       body: JSON.stringify({
