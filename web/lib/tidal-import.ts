@@ -85,7 +85,7 @@ function deleteDbState(userId: string, type: PlaylistType, slug: string): void {
 
 // ── Resolve state: localStorage first, then DB ────────────────────────────────
 
-async function resolvePlaylistId(
+export async function resolvePlaylistId(
   userId: string,
   type: PlaylistType,
   slug: string
@@ -182,7 +182,11 @@ export async function importPlaylist(params: {
   };
 
   let playlistId = params.playlistId ?? await resolvePlaylistId(userId, type, slug);
-  if (!playlistId) playlistId = await createNew();
+  if (!playlistId) {
+    playlistId = await createNew();
+  } else {
+    persistPlaylistId(userId, type, slug, playlistId); // keep Redis in sync
+  }
 
   let existingIds: Set<string>;
   try {

@@ -1,6 +1,6 @@
 "use client";
 
-import { getPlaylistItemIds, TidalNotFoundError } from "./tidal-api";
+import { getPlaylistItemIds, getPlaylistCount, TidalNotFoundError } from "./tidal-api";
 import type { PlaylistType } from "./tidal-import";
 
 const VERIFY_DELAY_MS = 400;
@@ -25,10 +25,19 @@ async function processQueue() {
   while (queue.length > 0) {
     const req = queue.shift()!;
     try {
-      const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
-      const missing = req.tidalIds.filter((id) => !tidalSet.has(id)).length;
-      req.onVerified();
-      req.onResult(missing, req.playlistId);
+      // Fast count check — single API call, no pagination
+      const count = await getPlaylistCount(req.token, req.playlistId);
+      if (count !== null && count >= req.tidalIds.length) {
+        // Count matches or exceeds — all tracks present, skip full ID fetch
+        req.onVerified();
+        req.onResult(0, req.playlistId);
+      } else {
+        // Count mismatch — fetch full ID set for precise diff
+        const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
+        const missing = req.tidalIds.filter((id) => !tidalSet.has(id)).length;
+        req.onVerified();
+        req.onResult(missing, req.playlistId);
+      }
     } catch (e: unknown) {
       if (e instanceof TidalNotFoundError) {
         req.onNotFound();

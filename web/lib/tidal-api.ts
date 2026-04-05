@@ -10,37 +10,21 @@ function headers(token: string): HeadersInit {
   };
 }
 
-// ── List user playlists ───────────────────────────────────────────────────────
+// ── Get playlist info (count without fetching all items) ─────────────────────
 
-export type TidalPlaylistInfo = { id: string; count: number };
-
-const USER_BASE = "/tidal-user-api";
-
-export async function getUserPlaylistsMap(token: string): Promise<Map<string, TidalPlaylistInfo>> {
-  const map = new Map<string, TidalPlaylistInfo>();
-  const limit = 50;
-  let offset = 0;
-  let total = Infinity;
-
-  while (offset < total) {
-    const url = `${USER_BASE}/my-collection/playlists/folders?folderId=root&includeOnly=PLAYLIST&limit=${limit}&offset=${offset}`;
-    const res = await fetchWithRetry(url, { headers: headers(token) });
-    if (!res.ok) break;
-    const json = (await res.json()) as {
-      items: Array<{ data: { uuid: string; title: string; numberOfTracks: number } }>;
-      totalNumberOfItems: number;
-    };
-    total = json.totalNumberOfItems;
-    for (const item of json.items) {
-      const { uuid, title, numberOfTracks } = item.data;
-      if (title) map.set(title, { id: uuid, count: numberOfTracks });
-    }
-    offset += json.items.length;
-    if (json.items.length < limit) break;
-    await delay(PAGE_DELAY_MS);
+export async function getPlaylistCount(token: string, playlistId: string): Promise<number | null> {
+  const res = await fetchWithRetry(
+    `${BASE}/playlists/${playlistId}?countryCode=${COUNTRY_CODE}`,
+    { headers: headers(token) }
+  );
+  if (!res.ok) {
+    if (res.status === 404) throw new TidalNotFoundError();
+    return null;
   }
-
-  return map;
+  const json = (await res.json()) as {
+    data?: { attributes?: { numberOfItems?: number } };
+  };
+  return json.data?.attributes?.numberOfItems ?? null;
 }
 
 // ── Create playlist ───────────────────────────────────────────────────────────

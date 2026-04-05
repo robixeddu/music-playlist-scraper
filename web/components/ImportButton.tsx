@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
-import { importPlaylist, getLocalImportedIds, getLocalPlaylistId, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, resolvePlaylistId, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
 import { enqueueVerify } from "@/lib/tidalVerifyQueue";
-import { discoverUserPlaylists } from "@/lib/tidalDiscovery";
 import { useTidalConnected } from "@/lib/useTidalConnected";
 import { useImportLock } from "@/lib/useImportLock";
 import { redirectToTidal, getStoredToken, getStoredUserId } from "@/lib/tidal-auth";
@@ -40,11 +39,13 @@ export default function ImportButton({
     const userId = token?.userId ?? getStoredUserId();
     if (!token || !userId) return;
 
-    const scheduleVerify = (playlistId: string) => {
+    resolvePlaylistId(userId, type, slug).then((storedId) => {
+      if (!storedId) return; // user hasn't imported yet → stays idle
+
       enqueueVerify({
-        type, slug, playlistId, tidalIds,
+        type, slug, playlistId: storedId, tidalIds,
         token: token.access_token,
-        onVerified: () => { persistPlaylistId(userId, type, slug, playlistId); },
+        onVerified: () => { persistPlaylistId(userId, type, slug, storedId); },
         onResult: (missing, pid) => {
           setStatus(missing > 0
             ? { state: "has-new", count: missing, playlistId: pid }
@@ -55,37 +56,7 @@ export default function ImportButton({
           setStatus({ state: "idle" });
         },
       });
-    };
-
-    // Try to list TIDAL playlists for count-based quick check
-    discoverUserPlaylists(token.access_token).then((map) => {
-      if (map.size > 0) {
-        // Discovery worked — use TIDAL as source of truth
-        const info = map.get(playlistName);
-        if (!info) {
-          setStatus({ state: "idle" });
-          return;
-        }
-        const { id: playlistId, count: tidalCount } = info;
-        persistPlaylistId(userId, type, slug, playlistId);
-        if (tidalCount >= tidalIds.length) {
-          setStatus({ state: "up-to-date", playlistId });
-        } else {
-          scheduleVerify(playlistId);
-        }
-        return;
-      }
-
-      // Discovery not available — fall back to stored playlistId
-      const storedId = getLocalPlaylistId(type, slug);
-      if (storedId) {
-        scheduleVerify(storedId);
-      }
-      // No stored ID and no discovery → stays idle
-    }).catch(() => {
-      const storedId = getLocalPlaylistId(type, slug);
-      if (storedId) scheduleVerify(storedId);
-    });
+    }).catch(() => {}); // ignore resolve errors — stays idle
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleClick() {
