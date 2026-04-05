@@ -52,26 +52,7 @@ export default function ImportButton({
     const userId = token?.userId ?? getStoredUserId();
     if (!token || !userId) return;
 
-    // Single TIDAL call shared across all buttons — get all user playlists with track counts
-    discoverUserPlaylists(token.access_token).then((map) => {
-      const info = map.get(playlistName);
-
-      if (!info) {
-        // Playlist doesn't exist on TIDAL
-        setStatus({ state: "idle" });
-        return;
-      }
-
-      const { id: playlistId, count: tidalCount } = info;
-      persistPlaylistId(userId, type, slug, playlistId);
-
-      if (tidalCount >= tidalIds.length) {
-        // TIDAL has same or more tracks — up-to-date
-        setStatus({ state: "up-to-date", playlistId });
-        return;
-      }
-
-      // Count mismatch: fetch exact track IDs to find what's missing
+    const scheduleVerify = (playlistId: string) => {
       enqueueVerify({
         type, slug, playlistId, tidalIds,
         token: token.access_token,
@@ -86,7 +67,37 @@ export default function ImportButton({
           setStatus({ state: "idle" });
         },
       });
-    }).catch(() => {});
+    };
+
+    // Try to list TIDAL playlists for count-based quick check
+    discoverUserPlaylists(token.access_token).then((map) => {
+      if (map.size > 0) {
+        // Discovery worked — use TIDAL as source of truth
+        const info = map.get(playlistName);
+        if (!info) {
+          setStatus({ state: "idle" });
+          return;
+        }
+        const { id: playlistId, count: tidalCount } = info;
+        persistPlaylistId(userId, type, slug, playlistId);
+        if (tidalCount >= tidalIds.length) {
+          setStatus({ state: "up-to-date", playlistId });
+        } else {
+          scheduleVerify(playlistId);
+        }
+        return;
+      }
+
+      // Discovery not available — fall back to stored playlistId
+      const storedId = getLocalPlaylistId(type, slug);
+      if (storedId) {
+        scheduleVerify(storedId);
+      }
+      // No stored ID and no discovery → stays idle
+    }).catch(() => {
+      const storedId = getLocalPlaylistId(type, slug);
+      if (storedId) scheduleVerify(storedId);
+    });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function handleClick() {
