@@ -56603,7 +56603,12 @@
         "albumDetails": ", da \"Metamorphose\" – Fifth House Music",
         "key": "shawn_mativestsky_amir_amiri_sarah_page___maktrismos",
         "genres": ["experimental", "instrumental", "electroacoustic", "world"],
-        "genresRaw": ["experimental", "instrumental", "electroacoustic", "world"],
+        "genresRaw": [
+          "experimental",
+          "instrumental",
+          "electroacoustic",
+          "world"
+        ],
         "tidalId": "500541141"
       },
       {
@@ -56623,6 +56628,156 @@
         "genres": ["jazz", "folk"],
         "tidalId": "503815423",
         "genresRaw": ["jazz", "folk"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Bla Bla Bla",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-05042026-649d239a-4f4f-4955-8f06-fe1a2e6c11bf.html",
+    "date": "05 Apr 2026",
+    "tracks": [
+      {
+        "title": "Üdü Ẁüdü",
+        "artist": "MAGMA",
+        "albumDetails": ", da \"Üdü Ẁüdü\" - Utopia",
+        "key": "magma___udu_wudu",
+        "genres": ["rock", "experimental", "avant-garde"],
+        "genresRaw": ["progressive rock", "experimental", "avant-garde"],
+        "tidalId": "11725494"
+      },
+      {
+        "title": "Aïna",
+        "artist": "MAGMA",
+        "albumDetails": ", da \"Magma/Kobaïa\" - Philips",
+        "key": "magma___aina",
+        "genres": ["rock", "experimental", "avant-garde"],
+        "genresRaw": ["progressive rock", "experimental", "avant-garde"],
+        "tidalId": "158699930"
+      },
+      {
+        "title": "Mibingvhare",
+        "artist": "KOENJIHYAKKEI",
+        "albumDetails": ", da \"Angherr Shisspa\" - Skin Graft Records",
+        "key": "koenjihyakkei___mibingvhare",
+        "genres": ["rock", "experimental"],
+        "tidalId": "113491791",
+        "genresRaw": ["progressive rock", "experimental"]
+      },
+      {
+        "title": "Untitled #1",
+        "artist": "SIGUR RÓS",
+        "albumDetails": ", da \"()\" - FatCat Records",
+        "key": "sigur_ros___untitled_1",
+        "genres": ["post-rock", "ambient", "instrumental"],
+        "genresRaw": ["post-rock", "ambient", "instrumental"],
+        "tidalId": "101997562"
+      },
+      {
+        "title": "Cicely",
+        "artist": "COCTEAU TWINS",
+        "albumDetails": ", da \"Treasure\" - 4AD",
+        "key": "cocteau_twins___cicely",
+        "genres": ["pop", "indie", "ambient"],
+        "genresRaw": ["dream pop", "indie", "ethereal"],
+        "tidalId": "49794660"
+      },
+      {
+        "title": "Vespering",
+        "artist": "DVA",
+        "albumDetails": ", da \"Nipomo\" - Northern Spy",
+        "key": "dva___vespering",
+        "genres": ["ambient", "electronic"],
+        "genresRaw": ["ambient", "electronic"],
+        "tidalId": "111767582"
+      },
+      {
+        "title": "Castrati Stack",
+        "artist": "TIM HECKER",
+        "albumDetails": ", da \"Love Streams\" - 4AD",
+        "key": "tim_hecker___castrati_stack",
+        "genres": ["experimental", "drone", "electronic"],
+        "genresRaw": ["experimental", "drone", "electronic"],
+        "tidalId": "58769324"
+      },
+      {
+        "title": "Karlheinz Stockhausen, which difficulties are involved in conserving electronic music on magnetic tape?",
+        "artist": "JAN JELINEK",
+        "albumDetails": ", da \"Zwischen\" - Faitiche",
+        "key": "jan_jelinek___karlheinz_stockhausen_which_difficulties_are_involved_in_conserving_electronic_music_on_magnetic_tape?",
+        "genres": ["experimental", "electroacoustic", "spoken word"],
+        "tidalId": "86252168",
+        "genresRaw": ["experimental", "electroacoustic", "spoken word"]
+      },
+      {
+        "title": "[02:46]",
+        "artist": "SIDSEL ENDRESEN",
+        "albumDetails": ", da \"One\" - Sofa",
+        "key": "sidsel_endresen___[0246]",
+        "genres": ["free improvisation", "jazz", "experimental"],
+        "genresRaw": ["free improvisation", "jazz", "experimental"]
+      },
+      {
+        "title": "Sanctuary Revisited",
+        "artist": "ERIK HONORÉ",
+        "albumDetails": ", da \"Heliographs\" - Hubro",
+        "key": "erik_honore___sanctuary_revisited",
+        "genres": ["ambient", "electronic"],
+        "genresRaw": ["ambient", "electronic"],
+        "tidalId": "415532360"
+      },
+      {
+        "title": "Chorus",
+        "artist": "HOLLY HERNDON",
+        "albumDetails": ", da \"Platform\" - 4AD",
+        "key": "holly_herndon___chorus",
+        "genres": ["electronic", "experimental", "ambient"],
+        "genresRaw": ["electronic", "experimental", "ambient"],
+        "tidalId": "45185789"
+      },
+      {
+        "title": "Babel",
+        "artist": "MARINA HERLOP",
+        "albumDetails": ", da \"Nekkuja\" - PAN",
+        "key": "marina_herlop___babel",
+        "genres": ["electronic", "experimental", "singer-songwriter", "ambient"],
+        "genresRaw": ["electronic", "experimental", "singer-songwriter", "ambient"],
+        "tidalId": "317105231"
+      },
+      {
+        "title": "I Zimbra",
+        "artist": "TALKING HEADS",
+        "albumDetails": ", da \"Fear For Music\" - Sire",
+        "key": "talking_heads___i_zimbra",
+        "genres": ["post-punk", "experimental", "funk"],
+        "genresRaw": ["post-punk", "experimental", "funk"],
+        "tidalId": "248715195"
+      },
+      {
+        "title": "Warszawa",
+        "artist": "DAVID BOWIE",
+        "albumDetails": ", da \"Low\" - RCA Victor",
+        "key": "david_bowie___warszawa",
+        "genres": ["ambient", "electroacoustic"],
+        "genresRaw": ["ambient", "electroacoustic"],
+        "tidalId": "246305405"
+      },
+      {
+        "title": "Horizon",
+        "artist": "IOSONOUNCANE",
+        "albumDetails": ", da \"Ira\" - Trovarobato",
+        "key": "iosonouncane___horizon",
+        "genres": ["ambient", "electronic", "new age"],
+        "tidalId": "180115718",
+        "genresRaw": ["ambient", "electronic", "new age"]
+      },
+      {
+        "title": "Fanfole",
+        "artist": "RANCORE",
+        "albumDetails": ", da \"Fanfole\" - Django Music",
+        "key": "rancore___fanfole",
+        "genres": ["rap", "italian hip-hop"],
+        "genresRaw": ["rap", "italian hip-hop"],
+        "tidalId": "510534788"
       }
     ]
   }

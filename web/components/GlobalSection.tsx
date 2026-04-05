@@ -3,6 +3,8 @@
 import type { EpisodeAggregated } from "@/lib/types";
 import { useT } from "./LangProvider";
 import ImportButton from "./ImportButton";
+import PlaylistCover from "./PlaylistCover";
+import { gradientForGlobal } from "@/lib/genreColors";
 
 interface GlobalSectionProps {
   playlistPrefix: string;
