@@ -28,19 +28,7 @@ export default function ImportButton({
   const [connected] = useTidalConnected();
   const { importing, acquire, release } = useImportLock();
   const playlistStatus = usePlaylistStatus();
-  const [status, setStatus] = useState<ImportStatus>(() => {
-    // Best-effort initial state from localStorage while TIDAL check runs
-    if (typeof window === "undefined") return { state: "idle" };
-    const token = getStoredToken();
-    if (!token) return { state: "idle" };
-    const imported = getLocalImportedIds(type, slug);
-    const playlistId = getLocalPlaylistId(type, slug);
-    if (!imported || !playlistId) return { state: "idle" };
-    const newCount = tidalIds.filter((id) => !imported.has(id)).length;
-    return newCount === 0
-      ? { state: "up-to-date", playlistId }
-      : { state: "has-new", count: newCount, playlistId };
-  });
+  const [status, setStatus] = useState<ImportStatus>({ state: "idle" });
 
   useEffect(() => {
     playlistStatus?.report(`${type}:${slug}`, status.state);

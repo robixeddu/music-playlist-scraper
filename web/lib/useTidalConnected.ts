@@ -10,10 +10,7 @@ function broadcast(v: boolean) {
 }
 
 export function useTidalConnected(): [boolean, () => void] {
-  const [connected, setConnected] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return getStoredToken() !== null;
-  });
+  const [connected, setConnected] = useState(false);
 
   useEffect(() => {
     subscribers.add(setConnected);
