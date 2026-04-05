@@ -7,9 +7,6 @@ const SOURCES_URL =
 const TRACKS_URL =
   "https://raw.githubusercontent.com/robixeddu/music-playlist-scraper/main/data/battiti/tracks.json";
 
-const TTL = 3600 * 1000;
-let tracksCache: { data: EpisodeAggregated[]; ts: number } | null = null;
-
 export async function fetchSources(): Promise<Source[]> {
   const res = await fetch(SOURCES_URL, { next: { revalidate: 3600 } });
   if (!res.ok) throw new Error("Failed to fetch sources");
@@ -17,13 +14,9 @@ export async function fetchSources(): Promise<Source[]> {
 }
 
 export async function fetchEpisodes(): Promise<EpisodeAggregated[]> {
-  const now = Date.now();
-  if (tracksCache && now - tracksCache.ts < TTL) return tracksCache.data;
-  const res = await fetch(TRACKS_URL, { cache: "no-store" });
+  const res = await fetch(TRACKS_URL, { next: { revalidate: 300 } });
   if (!res.ok) throw new Error("Failed to fetch tracks");
-  const data: EpisodeAggregated[] = await res.json();
-  tracksCache = { data, ts: now };
-  return data;
+  return res.json();
 }
 
 const MIN_GENRE_TRACKS = 10;
