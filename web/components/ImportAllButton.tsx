@@ -39,6 +39,11 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
       return playlistStatus?.statuses.get(`${it.type}:${it.slug}`) === "up-to-date";
     });
 
+  const isChecking = items.some((it) => {
+    if (it.tidalIds.length === 0) return false;
+    return playlistStatus?.statuses.get(`${it.type}:${it.slug}`) === "checking";
+  });
+
   async function handleClick() {
     if (status.state === "loading" || importing) return;
 
@@ -87,7 +92,7 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     return (
       <button
         onClick={handleClick}
-        disabled={!connected || importing || items.every((it) => it.tidalIds.length === 0)}
+        disabled={!connected || importing || isChecking || items.every((it) => it.tidalIds.length === 0)}
         className="px-3 py-1.5 rounded text-sm font-medium border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer whitespace-nowrap"
       >
         {tr.importAll}
