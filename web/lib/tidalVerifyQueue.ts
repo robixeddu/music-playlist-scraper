@@ -26,25 +26,26 @@ async function processQueue() {
   while (queue.length > 0) {
     const req = queue.shift()!;
     try {
-      // Always do count check — fast single call, also detects playlist deletion (404)
-      const count = await getPlaylistCount(req.token, req.playlistId);
-
       if (req.referenceIds) {
-        // We have a reference from last import: only show "+N" for genuinely new app tracks,
-        // not for tracks that TIDAL silently rejected as unavailable at import time.
+        // Fast path: pure in-memory diff, no API call needed.
+        // Shows +N only for tracks genuinely new since last import.
+        // 404 detection happens lazily on next import attempt.
         const refSet = new Set(req.referenceIds);
         const newTracks = req.tidalIds.filter((id) => !refSet.has(id)).length;
         req.onVerified();
         req.onResult(newTracks, req.playlistId);
-      } else if (count !== null && count >= req.tidalIds.length) {
-        req.onVerified();
-        req.onResult(0, req.playlistId);
       } else {
-        // No reference and count mismatch — fetch full ID set for precise diff
-        const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
-        const missing = req.tidalIds.filter((id) => !tidalSet.has(id)).length;
-        req.onVerified();
-        req.onResult(missing, req.playlistId);
+        // No reference — verify against TIDAL (first import or state lost)
+        const count = await getPlaylistCount(req.token, req.playlistId);
+        if (count !== null && count >= req.tidalIds.length) {
+          req.onVerified();
+          req.onResult(0, req.playlistId);
+        } else {
+          const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
+          const missing = req.tidalIds.filter((id) => !tidalSet.has(id)).length;
+          req.onVerified();
+          req.onResult(missing, req.playlistId);
+        }
       }
     } catch (e: unknown) {
       if (e instanceof TidalNotFoundError) {
@@ -52,7 +53,10 @@ async function processQueue() {
       }
       // other errors: skip silently
     }
-    if (queue.length > 0) await new Promise<void>((r) => setTimeout(r, VERIFY_DELAY_MS));
+    // Only delay before API-bound requests (no referenceIds = calls TIDAL)
+    if (queue.length > 0 && !queue[0].referenceIds) {
+      await new Promise<void>((r) => setTimeout(r, VERIFY_DELAY_MS));
+    }
   }
   running = false;
 }
