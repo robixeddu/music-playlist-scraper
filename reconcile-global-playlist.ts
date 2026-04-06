@@ -4,7 +4,6 @@ import { getAccessToken } from "./lib/tidalAuth.js";
 import { createPlaylist, addTrackToPlaylist } from "./lib/tidalClient.js";
 import { TRACKS_FILE, GLOBAL_PLAYLIST_FILE, PLAYLIST_PREFIX } from "./lib/config.js";
 import { EpisodeAggregated } from "./lib/types.js";
-import { logError } from "./lib/logger.js";
 
 const BASE_URL = "https://openapi.tidal.com/v2";
 const COUNTRY_CODE = process.env.TIDAL_COUNTRY_CODE ?? "IT";
@@ -103,4 +102,4 @@ const reconcile = async () => {
   }
 };
 
-reconcile().catch((e) => logError("reconcile-global-playlist", e.message));
+reconcile().catch((e) => console.error(`❌ Error during reconcile-global-playlist: ${e.message}`));

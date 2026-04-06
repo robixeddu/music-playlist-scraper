@@ -1,6 +1,5 @@
 import * as cheerio from "cheerio";
 import { parseTrackString } from "./parser.js";
-import { logError, logSuccessParsing } from "./logger.js";
 import { BASE_URL, SELECTORS } from "./config.js";
 import { Track, BaseTrack } from "./types.js";
 
@@ -24,7 +23,7 @@ const getEpisodeLinks = async (mainUrl: string): Promise<string[]> => {
     });
     return links;
   } catch (e: any) {
-    logError(`loading main page (${mainUrl})`, e.message);
+    console.error(`❌ Error during loading main page (${mainUrl}): ${e.message}`);
     return [];
   }
 };
@@ -67,11 +66,11 @@ const getTracksFromEpisode = async (episodeUrl: string): Promise<Track[]> => {
       })
       .filter((t): t is Track => t !== null);
 
-    logSuccessParsing(tracks.length, episodeTitle);
+    console.log(`✅ Successfully parsed ${tracks.length} tracks from episode ${episodeTitle}`);
 
     return tracks;
   } catch (e: any) {
-    logError(`fetching episode data (${episodeUrl})`, e.message);
+    console.error(`❌ Error during fetching episode data (${episodeUrl}): ${e.message}`);
     return [];
   }
 };

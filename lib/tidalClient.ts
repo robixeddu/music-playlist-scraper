@@ -1,4 +1,3 @@
-import { logError } from "./logger.js";
 import { computeMatchScore, CONFIDENT_THRESHOLD, MIN_ARTIST_VERIFY } from "./similarity.js";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -91,7 +90,7 @@ export const searchTracks = async (
       })
       .filter((t) => t.title);
   } catch (e: any) {
-    logError(`TIDAL search "${query}"`, e.message);
+    console.error(`❌ Error during TIDAL search "${query}": ${e.message}`);
     return [];
   }
 };
@@ -364,7 +363,7 @@ export const getPlaylistTrackIds = async (
     } while (nextPath);
   } catch (e: any) {
     if (e.message?.includes("404")) throw e;
-    logError(`fetching playlist tracks`, e.message);
+    console.error(`❌ Error during fetching playlist tracks: ${e.message}`);
   }
 
   return ids;
@@ -391,7 +390,7 @@ export const addTrackToPlaylist = async (
     });
     return true;
   } catch (e: any) {
-    logError(`adding track ${trackId} to playlist`, e.message);
+    console.error(`❌ Error during adding track ${trackId} to playlist: ${e.message}`);
     return false;
   }
 };

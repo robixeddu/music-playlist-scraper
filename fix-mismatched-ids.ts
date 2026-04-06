@@ -4,7 +4,6 @@ import { getAccessToken } from "./lib/tidalAuth.js";
 import { findTidalMatch } from "./lib/tidalClient.js";
 import { TRACKS_FILE } from "./lib/config.js";
 import { EpisodeAggregated, BaseTrack } from "./lib/types.js";
-import { logError } from "./lib/logger.js";
 
 const REPORT_FILE = "./data/battiti/tidal_id_mismatches.txt";
 const CHECKPOINT_FILE = "./data/battiti/fix_mismatched_checkpoint.json";
@@ -121,7 +120,7 @@ for (let i = startFrom; i < queue.length; i++) {
       notFound++;
     }
   } catch (e: any) {
-    logError(`searching "${artist} ${title}"`, e.message);
+    console.error(`❌ Error during searching "${artist} ${title}": ${e.message}`);
     notFound++;
   }
 

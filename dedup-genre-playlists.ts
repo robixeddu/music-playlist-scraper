@@ -2,7 +2,6 @@ import "dotenv/config";
 import fsPromises from "fs/promises";
 import { getAccessToken } from "./lib/tidalAuth.js";
 import { createPlaylist, addTrackToPlaylist } from "./lib/tidalClient.js";
-import { logError } from "./lib/logger.js";
 
 const BASE_URL = "https://openapi.tidal.com/v2";
 const COUNTRY_CODE = process.env.TIDAL_COUNTRY_CODE ?? "IT";
@@ -116,4 +115,4 @@ const main = async () => {
   console.log(`\n✅ Done. ${processed}/${genres.length} playlists processed, ${totalDups} total duplicates removed.`);
 };
 
-main().catch((e) => logError("dedup-genre-playlists", e.message));
+main().catch((e) => console.error(`❌ Error during dedup-genre-playlists: ${e.message}`));

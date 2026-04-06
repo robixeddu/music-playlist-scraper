@@ -19,7 +19,6 @@ import {
   createPlaylist,
   addTrackToPlaylist,
 } from "./lib/tidalClient.js";
-import { logError } from "./lib/logger.js";
 import { Track } from "./lib/types.js";
 
 const GENRE_DELAY_MS = 250;
@@ -58,7 +57,7 @@ const fullSync = async () => {
       const episodeTracks = await getTracksFromEpisode(link);
       allTracks = updateAllTracks(allTracks, episodeTracks, newTracks);
     } catch (e: any) {
-      logError(`scraping ${link}`, e.message);
+      console.error(`❌ Error during scraping ${link}: ${e.message}`);
     }
   }
 
@@ -141,4 +140,4 @@ const fullSync = async () => {
   console.log(`\n👉 Review ${PROGRAM_ID}-${today} on TIDAL, edit tracks.json if needed, then run: npm run propagate`);
 };
 
-fullSync().catch((e) => logError("battiti-full-sync", e.message));
+fullSync().catch((e) => console.error(`❌ Error during battiti-full-sync: ${e.message}`));

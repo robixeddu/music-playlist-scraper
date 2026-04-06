@@ -4,7 +4,6 @@ import { getAccessToken, getUserId } from "./lib/tidalAuth.js";
 import { createPlaylist, getPlaylistTrackIds, addTrackToPlaylist, deletePlaylist } from "./lib/tidalClient.js";
 import { TRACKS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "./lib/config.js";
 import { EpisodeAggregated } from "./lib/types.js";
-import { logError } from "./lib/logger.js";
 import { normalizeGenre } from "./lib/genres.js";
 import { getPlaylistId, setPlaylistId } from "./lib/redisClient.js";
 
@@ -131,4 +130,4 @@ const genrePlaylist = async () => {
   console.log("✅ All genre playlists updated.");
 };
 
-genrePlaylist().catch((e) => logError("genre-playlist", e.message));
+genrePlaylist().catch((e) => console.error(`❌ Error during genre-playlist: ${e.message}`));

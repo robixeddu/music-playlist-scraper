@@ -2,7 +2,6 @@ import "dotenv/config";
 import fsPromises from "fs/promises";
 import { getAccessToken } from "./lib/tidalAuth.js";
 import { createPlaylist, addTrackToPlaylist } from "./lib/tidalClient.js";
-import { logError } from "./lib/logger.js";
 
 const BASE_URL = "https://openapi.tidal.com/v2";
 const COUNTRY_CODE = process.env.TIDAL_COUNTRY_CODE ?? "IT";
@@ -98,4 +97,4 @@ const dedupGlobalPlaylist = async () => {
   }
 };
 
-dedupGlobalPlaylist().catch((e) => logError("dedup-playlist", e.message));
+dedupGlobalPlaylist().catch((e) => console.error(`❌ Error during dedup-playlist: ${e.message}`));

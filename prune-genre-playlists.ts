@@ -14,7 +14,6 @@ import { createPlaylist, addTrackToPlaylist, deletePlaylist } from "./lib/tidalC
 import { TRACKS_FILE, GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX } from "./lib/config.js";
 import { EpisodeAggregated } from "./lib/types.js";
 import { normalizeGenre } from "./lib/genres.js";
-import { logError } from "./lib/logger.js";
 
 const ADD_DELAY_MS = 600;
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -132,4 +131,4 @@ const main = async () => {
   console.log(`\n✅ Done. ${rebuilt} playlists rebuilt, ${totalPruned} stale tracks removed.`);
 };
 
-main().catch((e) => logError("prune-genre-playlists", e.message));
+main().catch((e) => console.error(`❌ Error during prune-genre-playlists: ${e.message}`));

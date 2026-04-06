@@ -1,7 +1,6 @@
 import crypto from "crypto";
 import http from "http";
 import fsPromises from "fs/promises";
-import { logError } from "./logger.js";
 
 // Required env vars: TIDAL_CLIENT_ID, TIDAL_CLIENT_SECRET
 // Register your app at https://developer.tidal.com/
@@ -153,7 +152,7 @@ export const getAccessToken = async (): Promise<string> => {
       await saveToken(refreshed);
       return refreshed.access_token;
     } catch {
-      logError("token refresh", "Re-authentication required");
+      console.error("❌ Error during token refresh: Re-authentication required");
       return (await loginWithPKCE()).access_token;
     }
   }

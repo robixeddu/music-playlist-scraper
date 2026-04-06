@@ -2,14 +2,13 @@ import { loadPreviousTracks, saveTracks, exportNewTracks, ensureDataDirectory } 
 import { getEpisodeLinks, getTracksFromEpisode } from "./lib/scraper.js";
 import { aggregateTracksByEpisode } from "./lib/aggregation.js";
 import { updateAllTracks, getKnownEpisodeUrls } from "./lib/aggregation.js";
-import { logStart, logAnalysisSummary, logNewTracks, logInterruption, logError } from "./lib/logger.js";
 import { BATTITI_URL, SKIPPED_COUNT_LIMIT } from "./lib/config.js";
 import { Track } from "./lib/types.js";
 
 async function ingest(): Promise<void> {
     await ensureDataDirectory();
 
-    logStart(BATTITI_URL);
+    console.log(`🎧 Start scraping ${BATTITI_URL}`);
 
     const previousTracks = await loadPreviousTracks();
     const episodeLinks = await getEpisodeLinks(BATTITI_URL);
@@ -27,7 +26,7 @@ async function ingest(): Promise<void> {
             skippedCount++;
 
             if (isNewEpisodeFound || skippedCount > SKIPPED_COUNT_LIMIT) {
-                logInterruption(link);
+                console.log(`⏭️ Found known episode (${link}). Stopping incremental analysis.`);
                 break;
             }
             continue;
@@ -42,17 +41,18 @@ async function ingest(): Promise<void> {
             allTracks = updateAllTracks(allTracks, episodeTracks, newTracks);
 
         } catch (e: any) {
-            logError(`episode processing ${link}`, e.message);
+            console.error(`❌ Error during episode processing ${link}: ${e.message}`);
         }
     }
 
-    logAnalysisSummary(scrapedCount, episodeLinks.length, skippedCount);
-    logNewTracks(newTracks.length, allTracks.length);
+    console.log(`---`);
+    console.log(`✅ Episodes analyzed: ${scrapedCount}/${episodeLinks.length} (Skipped: ${skippedCount})`);
+    console.log(`🎧 Found **${newTracks.length}** new tracks (total historical: ${allTracks.length})`);
 
     await saveTracks(aggregateTracksByEpisode(allTracks));
     await exportNewTracks(newTracks);
 }
 
 ingest().catch((err: any) =>
-    logError("application startup", (err as Error).message || "Unknown error")
+    console.error(`❌ Error during application startup: ${(err as Error).message || "Unknown error"}`)
 );

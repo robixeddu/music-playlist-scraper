@@ -1,11 +1,5 @@
 import fsPromises from "fs/promises";
 import path from "path";
-import {
-  logError,
-  logCompletion,
-  logCreatedDirectory,
-  logSavedTracks,
-} from "./logger.js";
 import { TRACKS_FILE, EXPORT_FILE } from "./config.js";
 import { Track, EpisodeAggregated, BaseTrack } from "./types.js";
 
@@ -13,9 +7,9 @@ const ensureDataDirectory = async (): Promise<void> => {
   const dirPath = path.dirname(TRACKS_FILE);
   try {
     const created = await fsPromises.mkdir(dirPath, { recursive: true });
-    if (created) logCreatedDirectory(dirPath);
+    if (created) console.log(`Created directory: ${dirPath}`);
   } catch (e: any) {
-    logError("creating data directory", e.message);
+    console.error(`❌ Error during creating data directory: ${e.message}`);
     throw e;
   }
 };
@@ -50,10 +44,10 @@ const loadPreviousTracks = async (): Promise<Track[]> => {
   } catch (e: any) {
     if (e.code === "ENOENT") return [];
     if (e instanceof SyntaxError) {
-      logError("loading tracks.json", `Invalid JSON — fix or restore the file before running. (${e.message})`);
+      console.error(`❌ Error during loading tracks.json: Invalid JSON — fix or restore the file before running. (${e.message})`);
       process.exit(1);
     }
-    logError("loading tracks.json", e.message);
+    console.error(`❌ Error during loading tracks.json: ${e.message}`);
     return [];
   }
 };
@@ -67,15 +61,16 @@ const saveTracks = async (
       TRACKS_FILE,
       JSON.stringify(aggregatedTracks, null, 2)
     );
-    logSavedTracks(aggregatedTracks.length, TRACKS_FILE, newEpisodes);
+    const newPart = newEpisodes !== undefined ? `+${newEpisodes} new, ` : "";
+    console.log(`💾 Saved to ${TRACKS_FILE} (${newPart}${aggregatedTracks.length} total episodes)`);
   } catch (e: any) {
-    logError("saving tracks.json", e.message);
+    console.error(`❌ Error during saving tracks.json: ${e.message}`);
   }
 };
 
 const exportNewTracks = async (tracks: Track[]): Promise<void> => {
   if (tracks.length === 0) {
-    logCompletion("No new tracks to export.");
+    console.log("✅ No new tracks to export.");
     return;
   }
 
@@ -93,9 +88,9 @@ const exportNewTracks = async (tracks: Track[]): Promise<void> => {
 
   try {
     await fsPromises.writeFile(EXPORT_FILE, cleanedContent);
-    logCompletion(`${tracks.length} tracks exported to ${EXPORT_FILE}.`);
+    console.log(`✅ ${tracks.length} tracks exported to ${EXPORT_FILE}.`);
   } catch (e: any) {
-    logError("exporting new tracks", e.message);
+    console.error(`❌ Error during exporting new tracks: ${e.message}`);
   }
 };
 

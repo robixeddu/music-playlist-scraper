@@ -1,4 +1,3 @@
-import { logWarn } from "./logger.js";
 
 export const PROGRAM_ID = process.env.PROGRAM_ID ?? "battiti";
 export const PLAYLIST_PREFIX = PROGRAM_ID.toUpperCase();
@@ -24,5 +23,5 @@ export const SELECTORS = {
 };
 
 if (!BASE_URL || !PROGRAM_PATH) {
-    logWarn("⚠️ WARNING: SCRAPER_BASE_URL or SCRAPER_PROGRAM_PATH not found in environment variables. Check your .env file.");
+    console.warn("⚠️ WARNING: SCRAPER_BASE_URL or SCRAPER_PROGRAM_PATH not found in environment variables. Check your .env file.");
 }

@@ -4,7 +4,6 @@ import { getAccessToken } from "./lib/tidalAuth.js";
 import { findTidalMatch } from "./lib/tidalClient.js";
 import { TRACKS_FILE, MISSING_TRACKS_FILE } from "./lib/config.js";
 import { EpisodeAggregated, BaseTrack } from "./lib/types.js";
-import { logError } from "./lib/logger.js";
 
 const SAVE_EVERY = 50; // persist progress every N tracks
 
@@ -73,7 +72,7 @@ const catalogEnrich = async () => {
         notFound++;
       }
     } catch (e: any) {
-      logError(`searching "${track.artist} ${track.title}"`, e.message);
+      console.error(`❌ Error during searching "${track.artist} ${track.title}": ${e.message}`);
       notFound++;
     }
 
@@ -88,4 +87,4 @@ const catalogEnrich = async () => {
   console.log(`💾 Saved to ${TRACKS_FILE}`);
 };
 
-catalogEnrich().catch((e) => logError("tidal-catalog-enrich", e.message));
+catalogEnrich().catch((e) => console.error(`❌ Error during tidal-catalog-enrich: ${e.message}`));

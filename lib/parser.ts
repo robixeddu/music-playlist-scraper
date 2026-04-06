@@ -1,4 +1,3 @@
-import { logError, logWarn } from "./logger.js";
 import { BaseTrack } from "./types.js";
 
 const normalizeString = (str: string): string => {
@@ -26,7 +25,7 @@ const parseTrackString = (trackStr: string): BaseTrack | null => {
 
     const firstComma = cleaned.indexOf(",");
     if (firstComma === -1) {
-      logWarn(`No comma found in: ${cleaned}`);
+      console.warn(`⚠️ Warning No comma found in: ${cleaned}`);
       return null;
     }
 
@@ -62,7 +61,7 @@ const parseTrackString = (trackStr: string): BaseTrack | null => {
     }
 
     if (!artist || !title || artist.length < 2 || title.length < 2) {
-      logWarn(`Invalid artist/title: "${artist}" / "${title}"`);
+      console.warn(`⚠️ Warning Invalid artist/title: "${artist}" / "${title}"`);
       return null;
     }
 
@@ -70,7 +69,7 @@ const parseTrackString = (trackStr: string): BaseTrack | null => {
 
     return { title, artist, albumDetails, key };
   } catch (error: any) {
-    logError(`Parse error for: ${trackStr}`, error.message);
+    console.error(`❌ Error during Parse error for: ${trackStr}: ${error.message}`);
     return null;
   }
 };
