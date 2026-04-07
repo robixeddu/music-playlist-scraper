@@ -2,9 +2,8 @@
 /web/node_modules
 /web/.next
 /missing_tracks
-/data/new_tracks_for_playlist.txt
+data/battiti/missing_tracks.txt
 /data/tidal_sync_report.json
-/dist
 .env
 .tidal_token.json
 /logs

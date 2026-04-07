@@ -1,4 +1,5 @@
-import { loadPreviousTracks, saveTracks, exportNewTracks, ensureDataDirectory } from "./lib/fileHandler.js";
+import "dotenv/config";
+import { loadPreviousTracks, saveTracks, ensureDataDirectory } from "./lib/fileHandler.js";
 import { getEpisodeLinks, getTracksFromEpisode } from "./lib/scraper.js";
 import { aggregateTracksByEpisode } from "./lib/aggregation.js";
 import { updateAllTracks, getKnownEpisodeUrls } from "./lib/aggregation.js";
@@ -50,7 +51,6 @@ async function ingest(): Promise<void> {
     console.log(`🎧 Found **${newTracks.length}** new tracks (total historical: ${allTracks.length})`);
 
     await saveTracks(aggregateTracksByEpisode(allTracks));
-    await exportNewTracks(newTracks);
 }
 
 ingest().catch((err: any) =>

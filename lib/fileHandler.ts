@@ -1,6 +1,6 @@
 import fsPromises from "fs/promises";
 import path from "path";
-import { TRACKS_FILE, EXPORT_FILE } from "./config.js";
+import { TRACKS_FILE } from "./config.js";
 import { Track, EpisodeAggregated, BaseTrack } from "./types.js";
 
 const ensureDataDirectory = async (): Promise<void> => {
@@ -68,30 +68,4 @@ const saveTracks = async (
   }
 };
 
-const exportNewTracks = async (tracks: Track[]): Promise<void> => {
-  if (tracks.length === 0) {
-    console.log("✅ No new tracks to export.");
-    return;
-  }
-
-  const cleanedContent = tracks
-    .map((t) => {
-      const clean = (str: string) =>
-        str
-          .replace(/ \(([^)]+)\)/g, "")
-          .replace(/ \[([^\]]+)\]/g, "")
-          .trim();
-
-      return `${clean(t.artist)} - ${clean(t.title)}`;
-    })
-    .join("\n");
-
-  try {
-    await fsPromises.writeFile(EXPORT_FILE, cleanedContent);
-    console.log(`✅ ${tracks.length} tracks exported to ${EXPORT_FILE}.`);
-  } catch (e: any) {
-    console.error(`❌ Error during exporting new tracks: ${e.message}`);
-  }
-};
-
-export { ensureDataDirectory, loadPreviousTracks, saveTracks, exportNewTracks };
+export { ensureDataDirectory, loadPreviousTracks, saveTracks };

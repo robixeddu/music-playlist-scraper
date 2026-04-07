@@ -39015,7 +39015,7 @@
         "genresRaw": ["electronic", "experimental", "electroacoustic"]
       },
       {
-        "title": "No Smoke",
+        "title": "On Smoke",
         "artist": "ALPHA MAID",
         "albumDetails": "da \"Is This A Queue\" – AD 93",
         "key": "alpha_maid___no_smoke",
@@ -56739,8 +56739,18 @@
         "artist": "MARINA HERLOP",
         "albumDetails": ", da \"Nekkuja\" - PAN",
         "key": "marina_herlop___babel",
-        "genres": ["electronic", "experimental", "singer-songwriter", "ambient"],
-        "genresRaw": ["electronic", "experimental", "singer-songwriter", "ambient"],
+        "genres": [
+          "electronic",
+          "experimental",
+          "singer-songwriter",
+          "ambient"
+        ],
+        "genresRaw": [
+          "electronic",
+          "experimental",
+          "singer-songwriter",
+          "ambient"
+        ],
         "tidalId": "317105231"
       },
       {
@@ -56778,6 +56788,148 @@
         "genres": ["rap", "italian hip-hop"],
         "genresRaw": ["rap", "italian hip-hop"],
         "tidalId": "510534788"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Lars Rock Fest 2025: Party Dozen Les Docks 2025: Primal Scream",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-06042026-14ebfff3-80a4-463f-8a36-caf9493bcd9c.html",
+    "date": "06 Apr 2026",
+    "tracks": [
+      {
+        "title": "Dead Joe",
+        "artist": "THE BIRTHDAY PARTY",
+        "albumDetails": ", da \"Junkyard\" - 4AD",
+        "key": "the_birthday_party___dead_joe",
+        "genres": ["post-punk", "noise", "experimental"],
+        "genresRaw": ["post-punk", "noise", "experimental"],
+        "tidalId": "102762439"
+      },
+      {
+        "title": "The Worker",
+        "artist": "PARTY DOZEN",
+        "albumDetails": "",
+        "key": "party_dozen___the_worker",
+        "genres": ["post-punk", "experimental", "noise"],
+        "genresRaw": ["post-punk", "experimental", "noise"],
+        "tidalId": "215806115"
+      },
+      {
+        "title": "Wake In Might",
+        "artist": "PARTY DOZEN",
+        "albumDetails": "",
+        "key": "party_dozen___wake_in_might",
+        "genres": ["post-punk", "experimental", "noise"],
+        "genresRaw": ["post-punk", "experimental", "noise"],
+        "tidalId": "365080840"
+      },
+      {
+        "title": "Coup De Gronk",
+        "artist": "PARTY DOZEN",
+        "albumDetails": "",
+        "key": "party_dozen___coup_de_gronk",
+        "genres": ["post-punk", "experimental", "noise"],
+        "genresRaw": ["post-punk", "experimental", "noise"],
+        "tidalId": "365080839"
+      },
+      {
+        "title": "Sports Authority",
+        "artist": "PARTY DOZEN",
+        "albumDetails": "",
+        "key": "party_dozen___sports_authority",
+        "genres": ["post-punk", "experimental", "noise"],
+        "genresRaw": ["post-punk", "experimental", "noise"],
+        "tidalId": "213930817"
+      },
+      {
+        "title": "Bad News Department",
+        "artist": "PARTY DOZEN",
+        "albumDetails": "",
+        "key": "party_dozen___bad_news_department",
+        "genres": ["post-punk", "experimental", "noise"],
+        "genresRaw": ["post-punk", "experimental", "noise"],
+        "tidalId": "365080845"
+      },
+      {
+        "title": "Fruits Of Labour",
+        "artist": "PARTY DOZEN",
+        "albumDetails": "",
+        "key": "party_dozen___fruits_of_labour",
+        "genres": ["post-punk", "experimental", "noise"],
+        "genresRaw": ["post-punk", "experimental", "noise"],
+        "tidalId": "224178961"
+      },
+      {
+        "title": "Party Dozen",
+        "artist": "PARTY DOZEN",
+        "albumDetails": "",
+        "key": "party_dozen___party_dozen",
+        "genres": ["post-punk", "experimental", "noise"],
+        "genresRaw": ["post-punk", "experimental", "noise"],
+        "tidalId": "213501623"
+      },
+      {
+        "title": "Money & The Drugs",
+        "artist": "PARTY DOZEN",
+        "albumDetails": "",
+        "key": "party_dozen___money_the_drugs",
+        "genres": ["post-punk", "experimental", "noise"],
+        "genresRaw": ["post-punk", "experimental", "noise"],
+        "tidalId": "365080706"
+      },
+      {
+        "title": "The Iron Boot",
+        "artist": "PARTY DOZEN",
+        "albumDetails": "",
+        "key": "party_dozen___the_iron_boot",
+        "genres": ["post-punk", "experimental", "noise"],
+        "genresRaw": ["post-punk", "experimental", "noise"],
+        "tidalId": "215806112"
+      },
+      {
+        "title": "Loaded",
+        "artist": "PRIMAL SCREAM",
+        "albumDetails": "",
+        "key": "primal_scream___loaded",
+        "genres": ["rock", "psychedelic"],
+        "genresRaw": ["rock", "psychedelic"],
+        "tidalId": "108938433"
+      },
+      {
+        "title": "Swastika Eyes",
+        "artist": "PRIMAL SCREAM",
+        "albumDetails": "",
+        "key": "primal_scream___swastika_eyes",
+        "genres": ["rock", "psychedelic", "electronic"],
+        "genresRaw": ["rock", "psychedelic", "electronic"],
+        "tidalId": "10697859"
+      },
+      {
+        "title": "Movin On Up",
+        "artist": "PRIMAL SCREAM",
+        "albumDetails": "",
+        "key": "primal_scream___movin_on_up",
+        "genres": ["rock", "psychedelic"],
+        "genresRaw": ["rock", "psychedelic"],
+        "tidalId": "1267589"
+      },
+      {
+        "title": "Country Girl",
+        "artist": "PRIMAL SCREAM",
+        "albumDetails": "",
+        "key": "primal_scream___country_girl",
+        "genres": ["rock", "psychedelic"],
+        "genresRaw": ["rock", "psychedelic"],
+        "tidalId": "10697870"
+      },
+      {
+        "title": "Come Together",
+        "artist": "PRIMAL SCREAM",
+        "albumDetails": "",
+        "key": "primal_scream___come_together",
+        "genres": ["rock", "psychedelic", "electronic"],
+        "genresRaw": ["rock", "psychedelic", "electronic"],
+        "tidalId": "1267594"
       }
     ]
   }
