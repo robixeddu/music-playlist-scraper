@@ -1,5 +1,6 @@
 "use client";
 
+const TIDAL_BASE_URL = "https://openapi.tidal.com/v2";
 const BASE = "/tidal-api";
 const COUNTRY_CODE = process.env.NEXT_PUBLIC_TIDAL_COUNTRY_CODE ?? "IT";
 
@@ -112,7 +113,7 @@ export async function getPlaylistItemIds(
     if (!next) {
       url = null;
     } else {
-      const path = next.replace("https://openapi.tidal.com/v2", "");
+      const path = next.replace(TIDAL_BASE_URL, "");
       url = path.startsWith(BASE) ? path : `${BASE}${path}`;
     }
   }
