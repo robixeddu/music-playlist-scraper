@@ -4,22 +4,22 @@ import {
   loadPreviousTracks,
   saveTracks,
   ensureDataDirectory,
-} from "./lib/fileHandler.js";
-import { getEpisodeLinks, getTracksFromEpisode } from "./lib/scraper.js";
+} from "../lib/fileHandler.js";
+import { getEpisodeLinks, getTracksFromEpisode } from "../lib/scraper.js";
 import {
   aggregateTracksByEpisode,
   updateAllTracks,
   getKnownEpisodeUrls,
-} from "./lib/aggregation.js";
-import { BATTITI_URL, SKIPPED_COUNT_LIMIT, MISSING_TRACKS_FILE, PROGRAM_ID } from "./lib/config.js";
-import { getArtistGenres, type GenreResult } from "./lib/claudeGenres.js";
-import { getAccessToken } from "./lib/tidalAuth.js";
+} from "../lib/aggregation.js";
+import { BATTITI_URL, SKIPPED_COUNT_LIMIT, MISSING_TRACKS_FILE, PROGRAM_ID } from "../lib/config.js";
+import { getArtistGenres, type GenreResult } from "../lib/claudeGenres.js";
+import { getAccessToken } from "../lib/tidalAuth.js";
 import {
   findTidalMatch,
   createPlaylist,
   addTrackToPlaylist,
-} from "./lib/tidalClient.js";
-import { Track } from "./lib/types.js";
+} from "../lib/tidalClient.js";
+import { Track } from "../lib/types.js";
 
 const GENRE_DELAY_MS = 250;
 const ADD_DELAY_MS = 600;
@@ -84,15 +84,20 @@ const fullSync = async () => {
   const newMissing: string[] = [];
 
   for (let trackIdx = 0; trackIdx < newTracks.length; trackIdx++) {
-    token = await getAccessToken();
+    if (trackIdx % 50 === 0) token = await getAccessToken();
     const track = newTracks[trackIdx];
     console.log(`→ ${track.artist} – ${track.title}`);
 
     // Genre (cached per artist)
     const artistKey = track.artist.toLowerCase();
     if (!artistGenreCache.has(artistKey)) {
-      const genres = await getArtistGenres(track.artist, track.title);
-      artistGenreCache.set(artistKey, genres);
+      try {
+        const genres = await getArtistGenres(track.artist, track.title);
+        artistGenreCache.set(artistKey, genres);
+      } catch (e: any) {
+        console.error(`❌ Error during genre tagging for "${track.artist}": ${e.message}`);
+        artistGenreCache.set(artistKey, { normalized: [], raw: [] });
+      }
       await sleep(GENRE_DELAY_MS);
     }
     const genreResult = artistGenreCache.get(artistKey)!;

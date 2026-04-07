@@ -1,11 +1,11 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
-import { getUserId } from "./lib/tidalAuth.js";
+import { getUserId } from "../lib/tidalAuth.js";
 import {
   setPlaylistId, setImportedIds, deletePlaylistKeys,
   getSeededGenreSlugs, setSeededGenreSlugs,
-} from "./lib/redisClient.js";
-import { GLOBAL_PLAYLIST_FILE, GENRE_PLAYLISTS_FILE, TRACKS_FILE, PROGRAM_ID } from "./lib/config.js";
+} from "../lib/redisClient.js";
+import { GLOBAL_PLAYLIST_FILE, GENRE_PLAYLISTS_FILE, TRACKS_FILE, PROGRAM_ID } from "../lib/config.js";
 
 const slugify = (s: string) => s.toLowerCase().replace(/\s+/g, "-");
 

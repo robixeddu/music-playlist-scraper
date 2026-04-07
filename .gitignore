@@ -1,15 +1,12 @@
 /node_modules
 /web/node_modules
 /web/.next
-/missing_tracks
-data/battiti/missing_tracks.txt
-/data/tidal_sync_report.json
 .env
 .tidal_token.json
-/logs
+data/battiti/missing_tracks.txt
 data/battiti/genre_playlists.json
 data/battiti/global_playlist.json
 data/battiti/tidal_id_mismatches.txt
 data/battiti/tidal_verify_checkpoint.json
 data/battiti/fix_mismatched_checkpoint.json
-search-test.ts
+/logs

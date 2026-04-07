@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getStoredToken, clearToken } from "./tidal-auth";
+import { getStoredToken, clearToken } from "../lib/tidal-auth";
 
 const subscribers = new Set<(v: boolean) => void>();
 

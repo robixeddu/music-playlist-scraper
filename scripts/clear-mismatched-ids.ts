@@ -1,7 +1,7 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
-import { TRACKS_FILE } from "./lib/config.js";
-import { EpisodeAggregated } from "./lib/types.js";
+import { TRACKS_FILE } from "../lib/config.js";
+import { EpisodeAggregated } from "../lib/types.js";
 
 const REPORT_FILE = "./data/battiti/tidal_id_mismatches.txt";
 

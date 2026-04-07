@@ -1,6 +1,6 @@
 import "dotenv/config";
-import { getAccessToken } from "./lib/tidalAuth.js";
-import { findTidalMatch } from "./lib/tidalClient.js";
+import { getAccessToken } from "../lib/tidalAuth.js";
+import { findTidalMatch } from "../lib/tidalClient.js";
 
 const tests: { artist: string; title: string; album?: string; expectId?: string; expectNull?: boolean; label?: string }[] = [
   // ── Precedentemente sbagliati → devono essere not found o trovare il corretto ──

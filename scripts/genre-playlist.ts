@@ -1,11 +1,11 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
-import { getAccessToken, getUserId } from "./lib/tidalAuth.js";
-import { createPlaylist, getPlaylistTrackIds, addTrackToPlaylist, deletePlaylist } from "./lib/tidalClient.js";
-import { TRACKS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "./lib/config.js";
-import { EpisodeAggregated } from "./lib/types.js";
-import { normalizeGenre } from "./lib/genres.js";
-import { getPlaylistId, setPlaylistId } from "./lib/redisClient.js";
+import { getAccessToken, getUserId } from "../lib/tidalAuth.js";
+import { createPlaylist, getPlaylistTrackIds, addTrackToPlaylist, deletePlaylist } from "../lib/tidalClient.js";
+import { TRACKS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "../lib/config.js";
+import { EpisodeAggregated } from "../lib/types.js";
+import { normalizeGenre } from "../lib/genres.js";
+import { getPlaylistId, setPlaylistId } from "../lib/redisClient.js";
 
 const MIN_TRACKS = 10;
 const ADD_DELAY_MS = 600;

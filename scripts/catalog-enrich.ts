@@ -1,9 +1,9 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
-import { getAccessToken } from "./lib/tidalAuth.js";
-import { findTidalMatch } from "./lib/tidalClient.js";
-import { TRACKS_FILE, MISSING_TRACKS_FILE } from "./lib/config.js";
-import { EpisodeAggregated, BaseTrack } from "./lib/types.js";
+import { getAccessToken } from "../lib/tidalAuth.js";
+import { findTidalMatch } from "../lib/tidalClient.js";
+import { TRACKS_FILE, MISSING_TRACKS_FILE } from "../lib/config.js";
+import { EpisodeAggregated, BaseTrack } from "../lib/types.js";
 
 const SAVE_EVERY = 50; // persist progress every N tracks
 

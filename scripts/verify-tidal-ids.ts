@@ -1,9 +1,9 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
-import { getAccessToken } from "./lib/tidalAuth.js";
-import { TRACKS_FILE } from "./lib/config.js";
-import { EpisodeAggregated, BaseTrack } from "./lib/types.js";
-import { computeMatchScore, MIN_ARTIST_VERIFY } from "./lib/similarity.js";
+import { getAccessToken } from "../lib/tidalAuth.js";
+import { TRACKS_FILE } from "../lib/config.js";
+import { EpisodeAggregated, BaseTrack } from "../lib/types.js";
+import { computeMatchScore, MIN_ARTIST_VERIFY } from "../lib/similarity.js";
 
 const COUNTRY_CODE = process.env.TIDAL_COUNTRY_CODE ?? "IT";
 const BASE_URL = "https://openapi.tidal.com/v2";

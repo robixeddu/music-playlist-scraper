@@ -1,9 +1,9 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
-import { getAccessToken } from "./lib/tidalAuth.js";
-import { findTidalMatch } from "./lib/tidalClient.js";
-import { TRACKS_FILE } from "./lib/config.js";
-import { EpisodeAggregated, BaseTrack } from "./lib/types.js";
+import { getAccessToken } from "../lib/tidalAuth.js";
+import { findTidalMatch } from "../lib/tidalClient.js";
+import { TRACKS_FILE } from "../lib/config.js";
+import { EpisodeAggregated, BaseTrack } from "../lib/types.js";
 
 const REPORT_FILE = "./data/battiti/tidal_id_mismatches.txt";
 const CHECKPOINT_FILE = "./data/battiti/fix_mismatched_checkpoint.json";

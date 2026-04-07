@@ -1105,7 +1105,6 @@
         "albumDetails": "da \"Tent Music\" – Whited Sepulchre Records",
         "key": "white_boy_scream_joshua_hill___ouverture",
         "genres": ["experimental", "post-rock"],
-        "tidalId": "492388513",
         "genresRaw": ["experimental", "post-rock"]
       }
     ]
@@ -14587,9 +14586,9 @@
         "artist": "WILLIAM TYLER",
         "albumDetails": "da \"Time Indefinite\" - Psychic Hotline",
         "key": "william_tyler___the_hardest_land_to_harvest",
-        "genres": ["post-rock", "instrumental", "folk"],
+        "genres": ["ambient", "instrumental", "electronic"],
         "tidalId": "409603799",
-        "genresRaw": ["post-rock", "instrumental", "folk"]
+        "genresRaw": ["ambient", "instrumental", "electronic"]
       }
     ]
   },
@@ -24571,9 +24570,9 @@
         "artist": "TIAGO SOUSA",
         "albumDetails": "da \"Organic Music Tapes Vol. 4\" - Sucata Tapes",
         "key": "tiago_sousa___sculping_time",
-        "genres": ["instrumental", "post-rock"],
+        "genres": ["instrumental", "post-rock", "ambient"],
         "tidalId": "408965307",
-        "genresRaw": ["instrumental", "post-rock"]
+        "genresRaw": ["instrumental", "post-rock", "ambient"]
       },
       {
         "title": "Spheres Dance",

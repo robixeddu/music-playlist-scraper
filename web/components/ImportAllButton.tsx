@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { importPlaylist, importDelta, type PlaylistType } from "@/lib/tidal-import";
-import { useTidalConnected } from "@/lib/useTidalConnected";
-import { useImportLock } from "@/lib/useImportLock";
+import { useTidalConnected } from "@/hooks/useTidalConnected";
+import { useImportLock } from "@/hooks/useImportLock";
 import { redirectToTidal, getStoredToken, getStoredUserId } from "@/lib/tidal-auth";
-import { usePlaylistStatus } from "@/lib/usePlaylistStatus";
+import { usePlaylistStatus } from "@/hooks/usePlaylistStatus";
 import { useT } from "./LangProvider";
 
 interface ImportAllItem {

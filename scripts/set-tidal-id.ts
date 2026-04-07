@@ -1,7 +1,7 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
-import { TRACKS_FILE } from "./lib/config.js";
-import { EpisodeAggregated } from "./lib/types.js";
+import { TRACKS_FILE } from "../lib/config.js";
+import { EpisodeAggregated } from "../lib/types.js";
 
 const [, , tidalId, ...rest] = process.argv;
 const query = rest.join(" ").toLowerCase();

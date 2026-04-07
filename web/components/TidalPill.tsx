@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { redirectToTidal } from "@/lib/tidal-auth";
-import { useTidalConnected } from "@/lib/useTidalConnected";
+import { useTidalConnected } from "@/hooks/useTidalConnected";
 import { useT } from "./LangProvider";
 
 export default function TidalPill() {

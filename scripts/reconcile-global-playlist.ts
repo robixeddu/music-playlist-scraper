@@ -1,40 +1,11 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
-import { getAccessToken } from "./lib/tidalAuth.js";
-import { createPlaylist, addTrackToPlaylist } from "./lib/tidalClient.js";
-import { TRACKS_FILE, GLOBAL_PLAYLIST_FILE, PLAYLIST_PREFIX } from "./lib/config.js";
-import { EpisodeAggregated } from "./lib/types.js";
+import { getAccessToken } from "../lib/tidalAuth.js";
+import { createPlaylist, addTrackToPlaylist, getPlaylistTrackIds, deletePlaylist } from "../lib/tidalClient.js";
+import { TRACKS_FILE, GLOBAL_PLAYLIST_FILE, PLAYLIST_PREFIX } from "../lib/config.js";
+import { EpisodeAggregated } from "../lib/types.js";
 
-const BASE_URL = "https://openapi.tidal.com/v2";
-const COUNTRY_CODE = process.env.TIDAL_COUNTRY_CODE ?? "IT";
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-
-const tidalFetch = async (path: string, token: string): Promise<any> => {
-  const res = await fetch(`${BASE_URL}${path}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/vnd.api+json",
-    },
-  });
-  if (!res.ok) throw new Error(`TIDAL API ${res.status} on ${path}`);
-  const text = await res.text();
-  return text ? JSON.parse(text) : null;
-};
-
-const fetchAllTrackIds = async (playlistId: string, token: string): Promise<string[]> => {
-  const ids: string[] = [];
-  let nextPath: string | null =
-    `/playlists/${playlistId}/relationships/items?countryCode=${COUNTRY_CODE}`;
-  do {
-    const data = await tidalFetch(nextPath, token);
-    for (const item of data?.data ?? []) {
-      if (item.id) ids.push(item.id);
-    }
-    nextPath = data?.links?.next ?? null;
-    if (nextPath) await sleep(1000);
-  } while (nextPath);
-  return ids;
-};
 
 const reconcile = async () => {
   // Load valid IDs from tracks.json
@@ -51,7 +22,7 @@ const reconcile = async () => {
   let token = await getAccessToken();
 
   console.log(`🔍 Fetching all tracks from ${PLAYLIST_PREFIX} (${oldId})...`);
-  const playlistIds = await fetchAllTrackIds(oldId, token);
+  const playlistIds = [...await getPlaylistTrackIds(oldId, token)];
   console.log(`   Playlist items: ${playlistIds.length}`);
 
   const toKeep = [...new Set(playlistIds)].filter((id) => validIds.has(id));
@@ -86,19 +57,16 @@ const reconcile = async () => {
   console.log(`\n✅ Added ${added}/${toKeep.length} (${failed} failed).`);
 
   // Delete old playlist
+  token = await getAccessToken();
   try {
-    token = await getAccessToken();
-    const res = await fetch(`${BASE_URL}/playlists/${oldId}?countryCode=${COUNTRY_CODE}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/vnd.api+json" },
-    });
-    if (res.ok || res.status === 404) {
+    await deletePlaylist(oldId, token);
+    console.log(`🗑️  Old playlist ${oldId} deleted.`);
+  } catch (e: any) {
+    if (e.message?.includes("404")) {
       console.log(`🗑️  Old playlist ${oldId} deleted.`);
     } else {
-      console.log(`⚠️  Could not delete old playlist (${res.status}) — cancellala manualmente.`);
+      console.log(`⚠️  Could not delete old playlist (${e.message}) — cancellala manualmente.`);
     }
-  } catch {
-    console.log(`⚠️  Could not delete old playlist — cancellala manualmente.`);
   }
 };
 

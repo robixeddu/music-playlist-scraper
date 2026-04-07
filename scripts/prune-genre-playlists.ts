@@ -9,42 +9,14 @@
 
 import "dotenv/config";
 import fsPromises from "fs/promises";
-import { getAccessToken } from "./lib/tidalAuth.js";
-import { createPlaylist, addTrackToPlaylist, deletePlaylist } from "./lib/tidalClient.js";
-import { TRACKS_FILE, GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX } from "./lib/config.js";
-import { EpisodeAggregated } from "./lib/types.js";
-import { normalizeGenre } from "./lib/genres.js";
+import { getAccessToken } from "../lib/tidalAuth.js";
+import { createPlaylist, addTrackToPlaylist, deletePlaylist, getPlaylistTrackIds } from "../lib/tidalClient.js";
+import { TRACKS_FILE, GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX } from "../lib/config.js";
+import { EpisodeAggregated } from "../lib/types.js";
+import { normalizeGenre } from "../lib/genres.js";
 
 const ADD_DELAY_MS = 600;
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-
-const BASE_URL = "https://openapi.tidal.com/v2";
-
-const tidalFetch = async (path: string, token: string): Promise<any> => {
-  const res = await fetch(`${BASE_URL}${path}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/vnd.api+json",
-    },
-  });
-  if (!res.ok) throw new Error(`TIDAL API ${res.status} on ${path}`);
-  const text = await res.text();
-  return text ? JSON.parse(text) : null;
-};
-
-const fetchAllTrackIds = async (playlistId: string, token: string): Promise<string[]> => {
-  const ids: string[] = [];
-  let nextPath: string | null = `/playlists/${playlistId}/relationships/items`;
-  do {
-    const data = await tidalFetch(nextPath, token);
-    for (const item of data?.data ?? []) {
-      if (item.id) ids.push(item.id);
-    }
-    nextPath = data?.links?.next ?? null;
-    if (nextPath) await sleep(1000);
-  } while (nextPath);
-  return ids;
-};
 
 const main = async () => {
   const episodes: EpisodeAggregated[] = JSON.parse(
@@ -87,7 +59,7 @@ const main = async () => {
 
     let currentIds: string[];
     try {
-      currentIds = await fetchAllTrackIds(playlistId, token);
+      currentIds = [...await getPlaylistTrackIds(playlistId, token)];
     } catch (e: any) {
       if (e.message?.includes("404")) {
         console.log(`→ 404, skipping`);

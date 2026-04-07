@@ -8,8 +8,8 @@ import GlobalSection from "./GlobalSection";
 import GenreSection from "./GenreSection";
 import EpisodeSection from "./EpisodeSection";
 import ImportAllButton from "./ImportAllButton";
-import { ImportLockContext, useImportLockState } from "@/lib/useImportLock";
-import { PlaylistStatusProvider } from "@/lib/usePlaylistStatus";
+import { ImportLockContext, useImportLockState } from "@/hooks/useImportLock";
+import { PlaylistStatusProvider } from "@/hooks/usePlaylistStatus";
 
 interface ProgramBlockProps {
   source: Source;

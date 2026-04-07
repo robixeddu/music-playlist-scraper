@@ -1,7 +1,7 @@
 import "dotenv/config";
-import { getAccessToken } from "./lib/tidalAuth.js";
-import { searchTracks } from "./lib/tidalClient.js";
-import { computeMatchScore } from "./lib/similarity.js";
+import { getAccessToken } from "../lib/tidalAuth.js";
+import { searchTracks } from "../lib/tidalClient.js";
+import { computeMatchScore } from "../lib/similarity.js";
 
 const [, , artist, ...titleParts] = process.argv;
 const title = titleParts.join(" ");

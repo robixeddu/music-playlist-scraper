@@ -1,10 +1,10 @@
 import "dotenv/config";
-import { loadPreviousTracks, saveTracks, ensureDataDirectory } from "./lib/fileHandler.js";
-import { getEpisodeLinks, getTracksFromEpisode } from "./lib/scraper.js";
-import { aggregateTracksByEpisode } from "./lib/aggregation.js";
-import { updateAllTracks, getKnownEpisodeUrls } from "./lib/aggregation.js";
-import { BATTITI_URL, SKIPPED_COUNT_LIMIT } from "./lib/config.js";
-import { Track } from "./lib/types.js";
+import { loadPreviousTracks, saveTracks, ensureDataDirectory } from "../lib/fileHandler.js";
+import { getEpisodeLinks, getTracksFromEpisode } from "../lib/scraper.js";
+import { aggregateTracksByEpisode } from "../lib/aggregation.js";
+import { updateAllTracks, getKnownEpisodeUrls } from "../lib/aggregation.js";
+import { BATTITI_URL, SKIPPED_COUNT_LIMIT } from "../lib/config.js";
+import { Track } from "../lib/types.js";
 
 async function ingest(): Promise<void> {
     await ensureDataDirectory();

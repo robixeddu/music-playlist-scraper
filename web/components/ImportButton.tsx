@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
 import { importPlaylist, importDelta, resolvePlaylistId, getLocalImportedIds, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
 import { enqueueVerify } from "@/lib/tidalVerifyQueue";
-import { useTidalConnected } from "@/lib/useTidalConnected";
-import { useImportLock } from "@/lib/useImportLock";
+import { useTidalConnected } from "@/hooks/useTidalConnected";
+import { useImportLock } from "@/hooks/useImportLock";
 import { redirectToTidal, getStoredToken, getStoredUserId } from "@/lib/tidal-auth";
-import { usePlaylistStatus } from "@/lib/usePlaylistStatus";
+import { usePlaylistStatus } from "@/hooks/usePlaylistStatus";
 import { useT } from "./LangProvider";
 
 interface ImportButtonProps {

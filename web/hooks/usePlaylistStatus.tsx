@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback } from "react";
-import type { ImportStatus } from "./types";
+import type { ImportStatus } from "../lib/types";
 
 export type StatusEntry = {
   state: ImportStatus["state"];
