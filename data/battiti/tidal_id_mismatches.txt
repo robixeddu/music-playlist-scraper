@@ -1,4 +1,0 @@
-[MISMATCH] 215708
-  ours:  URI CAINE TRIO WITH BARBARA WALKER – Stormy Monday
-  tidal: T-Bone Walker – Stormy Monday (aka Call It Stormy Monday)
-  score=0.40 artist=0.50 title=0.40
