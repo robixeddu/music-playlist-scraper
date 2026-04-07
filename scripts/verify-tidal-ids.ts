@@ -1,12 +1,11 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
 import { getAccessToken } from "../lib/tidalAuth.js";
+import { getTrackInfo } from "../lib/tidalClient.js";
 import { TRACKS_FILE } from "../lib/config.js";
 import { EpisodeAggregated, BaseTrack } from "../lib/types.js";
 import { computeMatchScore, MIN_ARTIST_VERIFY } from "../lib/similarity.js";
 
-const COUNTRY_CODE = process.env.TIDAL_COUNTRY_CODE ?? "IT";
-const BASE_URL = "https://openapi.tidal.com/v2";
 const FETCH_DELAY_MS = 500;
 const SAVE_EVERY = 50;
 
@@ -28,27 +27,6 @@ interface Checkpoint {
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-const fetchTrack = async (id: string, token: string): Promise<{ title: string; artist: string } | null> => {
-  try {
-    const res = await fetch(`${BASE_URL}/tracks/${id}?countryCode=${COUNTRY_CODE}&include=artists`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/vnd.api+json",
-      },
-    });
-    if (res.status === 404) return null;
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const d = await res.json() as any;
-    const title: string = d.data?.attributes?.title ?? "";
-    const artists: string[] = (d.included ?? [])
-      .filter((x: any) => x.type === "artists")
-      .map((a: any) => a.attributes?.name ?? "")
-      .filter(Boolean);
-    return { title, artist: artists.join(", ") || "?" };
-  } catch {
-    return null;
-  }
-};
 
 const isMismatch = (
   score: number,
@@ -99,7 +77,7 @@ for (let i = processedCount; i < entries.length; i++) {
 
   const [tidalId, track] = entries[i];
   await sleep(FETCH_DELAY_MS);
-  const tidal = await fetchTrack(tidalId, token);
+  const tidal = await getTrackInfo(tidalId, token);
 
   if (!tidal) {
     notFound++;

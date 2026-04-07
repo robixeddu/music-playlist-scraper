@@ -376,6 +376,23 @@ export const deletePlaylist = async (
   await tidalFetch(`/playlists/${playlistId}`, token, { method: "DELETE" });
 };
 
+export const getTrackInfo = async (
+  id: string,
+  token: string
+): Promise<{ title: string; artist: string } | null> => {
+  try {
+    const data = await tidalFetch(`/tracks/${id}?countryCode=${COUNTRY_CODE}&include=artists`, token);
+    const title: string = data?.data?.attributes?.title ?? "";
+    const artists: string[] = (data?.included ?? [])
+      .filter((x: any) => x.type === "artists")
+      .map((a: any) => a.attributes?.name ?? "")
+      .filter(Boolean);
+    return { title, artist: artists.join(", ") || "?" };
+  } catch {
+    return null;
+  }
+};
+
 export const addTrackToPlaylist = async (
   playlistId: string,
   trackId: string,
