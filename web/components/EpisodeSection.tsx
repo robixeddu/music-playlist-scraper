@@ -38,7 +38,7 @@ export default function EpisodeSection({ episodes, sourceId }: EpisodeSectionPro
             key={key}
             className={i < episodes.length - 1 ? "border-b border-[var(--border)]" : ""}
           >
-            <div className="px-5 py-0 flex items-center justify-between gap-4">
+            <div className={`px-5 py-0 flex items-center justify-between gap-4${isExpanded ? " sticky top-14 z-10 bg-[var(--surface)]/90 backdrop-blur-sm border-b border-[var(--border)]" : ""}`}>
               <button
                 onClick={() => setExpanded(isExpanded ? null : key)}
                 className="flex items-center py-3 gap-3 min-w-0 text-left flex-1 cursor-pointer"
@@ -55,25 +55,29 @@ export default function EpisodeSection({ episodes, sourceId }: EpisodeSectionPro
                     <span className="text-xs text-[var(--muted)] shrink-0 font-mono">
                       {episodeDateDisplay(ep.date)}
                     </span>
+                    <span className="text-sm font-medium truncate" title={ep.episodeTitle}>
+                      {ep.episodeTitle}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 mt-0.5">
+                    <span className="text-xs text-[var(--muted)]">
+                      {tr.tracksOnTidal(tidalIds.length, ep.tracks.length)}
+                    </span>
                     <a
                       href={ep.episodeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="text-sm font-medium truncate hover:text-[var(--accent)] transition-colors"
-                      title={ep.episodeTitle}
+                      className="text-xs text-[var(--muted)] hover:text-[var(--accent)] transition-colors ml-2"
                     >
-                      {ep.episodeTitle}
+                      RAI Play Sound ↗
                     </a>
                   </div>
-                  <span className="text-xs text-[var(--muted)] mt-0.5">
-                    {tr.tracksOnTidal(tidalIds.length, ep.tracks.length)}
-                  </span>
                 </div>
               </button>
               <ImportButton type="episode" slug={slug} playlistName={playlistName} tidalIds={tidalIds} />
             </div>
-            {isExpanded && <TrackList tracks={ep.tracks} />}
+            {isExpanded && <TrackList tracks={ep.tracks} className="pl-11 pr-5" />}
           </div>
         );
       })}

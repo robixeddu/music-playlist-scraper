@@ -6,9 +6,9 @@ interface Track {
   tidalId?: string | null;
 }
 
-export default function TrackList({ tracks }: { tracks: Track[] }) {
+export default function TrackList({ tracks, className = "px-5" }: { tracks: Track[]; className?: string }) {
   return (
-    <ul className="px-5 py-2 space-y-1 border-t border-[var(--border)] bg-[var(--background)]">
+    <ul className={`${className} py-2 space-y-1 border-t border-[var(--border)] bg-[var(--background)]`}>
       {[...tracks].reverse().map((t, i) => (
         <li
           key={i}

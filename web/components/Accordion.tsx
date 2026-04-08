@@ -18,8 +18,12 @@ export default function Accordion({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="border border-[var(--border)] rounded-lg overflow-hidden">
-      <div className="flex items-center bg-[var(--surface)] hover:bg-[var(--surface-hover)] transition-colors">
+    <div className="border border-[var(--border)] rounded-lg">
+      <div
+        className={`flex items-center bg-[var(--surface)] hover:bg-[var(--surface-hover)] transition-colors rounded-t-lg${
+          open ? " border-b border-[var(--border)]" : " rounded-b-lg"
+        }`}
+      >
         <button
           onClick={() => setOpen((v) => !v)}
           className="flex-1 flex items-center gap-3 px-5 py-4 text-left cursor-pointer"
@@ -44,7 +48,7 @@ export default function Accordion({
           </div>
         )}
       </div>
-      <div className={`bg-[var(--background)]${open ? "" : " hidden"}`}>{children}</div>
+      <div className={`bg-[var(--background)] rounded-b-lg${open ? "" : " hidden"}`}>{children}</div>
     </div>
   );
 }

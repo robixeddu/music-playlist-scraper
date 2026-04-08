@@ -66,7 +66,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
             key={row.genre}
             className={i < genres.length - 1 ? "border-b border-[var(--border)]" : ""}
           >
-            <div className="px-5 py-0 flex items-center justify-between gap-4">
+            <div className={`px-5 py-0 flex items-center justify-between gap-4${isExpanded ? " sticky top-14 z-10 bg-[var(--surface)]/90 backdrop-blur-sm border-b border-[var(--border)]" : ""}`}>
               <button
                 onClick={() => setExpanded(isExpanded ? null : row.genre)}
                 className="flex items-center py-3 gap-3 min-w-0 text-left flex-1 cursor-pointer"
@@ -84,7 +84,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
               </button>
               <ImportButton type="genre" slug={slug} playlistName={playlistName} tidalIds={tidalIds} />
             </div>
-            {isExpanded && <TrackList tracks={tracks} />}
+            {isExpanded && <TrackList tracks={tracks} className="pl-24 pr-5" />}
           </div>
         );
       })}
