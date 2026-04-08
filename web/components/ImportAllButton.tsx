@@ -72,20 +72,26 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
         try {
           const entry = playlistStatus?.statuses.get(`${eligible[i].type}:${eligible[i].slug}`);
           const isDelta = entry?.state === "has-new" && entry.playlistId && entry.newIds && userId;
-          const result = isDelta
-            ? await importDelta({
-                type: eligible[i].type,
-                slug: eligible[i].slug,
-                playlistId: entry!.playlistId!,
-                newIds: entry!.newIds!,
-                allTidalIds: eligible[i].tidalIds,
-                token: token.access_token,
-                userId: userId!,
-              })
-            : await importPlaylist(eligible[i]);
-          totalAdded += result.added;
-          totalPresent += result.alreadyPresent;
-          const importedPlaylistId = isDelta ? entry!.playlistId! : undefined;
+          let importedPlaylistId: string | undefined;
+          if (isDelta) {
+            importedPlaylistId = entry!.playlistId!;
+            const result = await importDelta({
+              type: eligible[i].type,
+              slug: eligible[i].slug,
+              playlistId: importedPlaylistId,
+              newIds: entry!.newIds!,
+              allTidalIds: eligible[i].tidalIds,
+              token: token.access_token,
+              userId: userId!,
+            });
+            totalAdded += result.added;
+            totalPresent += result.alreadyPresent;
+          } else {
+            const result = await importPlaylist(eligible[i]);
+            totalAdded += result.added;
+            totalPresent += result.alreadyPresent;
+            importedPlaylistId = result.playlistId;
+          }
           if (importedPlaylistId) {
             playlistStatus?.report(`${eligible[i].type}:${eligible[i].slug}`, {
               state: "up-to-date",

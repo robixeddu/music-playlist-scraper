@@ -164,6 +164,7 @@ function persistImportedIds(
 export interface ImportResult {
   added: number;
   alreadyPresent: number;
+  playlistId?: string;
 }
 
 export async function importDelta(params: {
@@ -235,5 +236,5 @@ export async function importPlaylist(params: {
   // Persist the full current set to localStorage + Redis
   persistImportedIds(userId, type, slug, tidalIds);
 
-  return { added: newIds.length, alreadyPresent };
+  return { added: newIds.length, alreadyPresent, playlistId };
 }
