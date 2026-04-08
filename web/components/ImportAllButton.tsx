@@ -147,7 +147,7 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
 
   if (upToDate) {
     return (
-      <span className="flex items-end gap-2 whitespace-nowrap">
+      <span className="flex items-center gap-2 whitespace-nowrap">
         <span className="px-3 py-1.5 text-sm text-[var(--muted)]">
           {status.state === "dedup-done" ? tr.dedupRemoved(status.removed) : tr.upToDate}
         </span>
