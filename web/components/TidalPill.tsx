@@ -19,9 +19,9 @@ export default function TidalPill() {
       <button
         onClick={disconnect}
         title={tr.disconnectTitle}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/20 transition-colors cursor-pointer"
+        className="group flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium bg-green-500/10 text-green-400 border border-green-500/20 hover:bg-red-500/10 hover:text-red-400 hover:border-red-500/20 transition-colors cursor-pointer"
       >
-        <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
+        <span className="w-2 h-2 rounded-full bg-green-400 group-hover:bg-red-400 inline-block transition-colors" />
         {tr.connected}
       </button>
     );

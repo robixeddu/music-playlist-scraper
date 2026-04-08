@@ -9,7 +9,7 @@ interface Track {
 export default function TrackList({ tracks }: { tracks: Track[] }) {
   return (
     <ul className="px-5 py-2 space-y-1 border-t border-[var(--border)] bg-[var(--background)]">
-      {tracks.map((t, i) => (
+      {[...tracks].reverse().map((t, i) => (
         <li
           key={i}
           className={`text-xs py-0.5 flex gap-2 ${
