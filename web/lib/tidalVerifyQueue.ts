@@ -35,17 +35,12 @@ async function processQueue() {
         req.onVerified();
         req.onResult(newIds, req.playlistId);
       } else {
-        // No reference — verify against TIDAL (first import or state lost)
-        const count = await getPlaylistCount(req.token, req.playlistId);
-        if (count !== null && count >= req.tidalIds.length) {
-          req.onVerified();
-          req.onResult([], req.playlistId);
-        } else {
-          const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
-          const newIds = req.tidalIds.filter((id) => !tidalSet.has(id));
-          req.onVerified();
-          req.onResult(newIds, req.playlistId);
-        }
+        // No reference — always diff by ID (count alone is unreliable: TIDAL may have
+        // stale tracks that inflate the count while missing specific new ones)
+        const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
+        const newIds = req.tidalIds.filter((id) => !tidalSet.has(id));
+        req.onVerified();
+        req.onResult(newIds, req.playlistId);
       }
     } catch (e: unknown) {
       if (e instanceof TidalNotFoundError) {
