@@ -12,7 +12,7 @@ type VerifyRequest = {
   tidalIds: string[];
   referenceIds?: string[]; // tidalIds stored at last import — avoids false "+N" for TIDAL-unavailable tracks
   token: string;
-  onResult: (newIds: string[], playlistId: string) => void;
+  onResult: (newIds: string[], playlistId: string, hasExcess?: boolean) => void;
   onNotFound: () => void;
   onVerified: () => void;
 };
@@ -39,14 +39,15 @@ async function processQueue() {
         // count === tidalIds.length → safe to assume up-to-date (avoids full pagination)
         // count !== tidalIds.length → must diff by ID to know exactly which are missing
         const count = await getPlaylistCount(req.token, req.playlistId);
+        const hasExcess = count !== null && count > req.tidalIds.length;
         if (count !== null && count === req.tidalIds.length) {
           req.onVerified();
-          req.onResult([], req.playlistId);
+          req.onResult([], req.playlistId, false);
         } else {
           const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
           const newIds = req.tidalIds.filter((id) => !tidalSet.has(id));
           req.onVerified();
-          req.onResult(newIds, req.playlistId);
+          req.onResult(newIds, req.playlistId, hasExcess);
         }
       }
     } catch (e: unknown) {

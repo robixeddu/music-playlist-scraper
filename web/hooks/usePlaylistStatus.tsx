@@ -7,6 +7,7 @@ export type StatusEntry = {
   state: ImportStatus["state"];
   playlistId?: string;
   newIds?: string[];
+  hasExcess?: boolean;
 };
 
 type StatusMap = Map<string, StatusEntry>;

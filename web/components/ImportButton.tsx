@@ -35,9 +35,9 @@ export default function ImportButton({
   useEffect(() => {
     const entry =
       status.state === "has-new"
-        ? { state: status.state, playlistId: status.playlistId, newIds: status.newIds }
+        ? { state: status.state, playlistId: status.playlistId, newIds: status.newIds, hasExcess: status.hasExcess }
         : status.state === "up-to-date"
-        ? { state: status.state, playlistId: status.playlistId }
+        ? { state: status.state, playlistId: status.playlistId, hasExcess: status.hasExcess }
         : { state: status.state };
     playlistStatus?.report(`${type}:${slug}`, entry);
   }, [status.state]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -69,10 +69,10 @@ export default function ImportButton({
         referenceIds: stored ? Array.from(stored) : undefined,
         token: token.access_token,
         onVerified: () => { persistPlaylistId(userId, type, slug, storedId); },
-        onResult: (newIds, pid) => {
+        onResult: (newIds, pid, hasExcess) => {
           setStatus(newIds.length > 0
-            ? { state: "has-new", count: newIds.length, playlistId: pid, newIds }
-            : { state: "up-to-date", playlistId: pid });
+            ? { state: "has-new", count: newIds.length, playlistId: pid, newIds, hasExcess }
+            : { state: "up-to-date", playlistId: pid, hasExcess });
         },
         onNotFound: () => {
           clearPlaylistState(userId, type, slug);
@@ -163,6 +163,7 @@ export default function ImportButton({
   }
 
   if (status.state === "up-to-date") {
+    const showDedup = status.hasExcess || dedupResult !== null || dedupError !== null;
     return (
       <span className="flex items-center gap-2 whitespace-nowrap">
         <span className="px-3 py-1.5 text-sm text-[var(--muted)]">
@@ -170,14 +171,16 @@ export default function ImportButton({
             ? dedupResult === 0 ? tr.upToDate : `−${dedupResult} duplicati`
             : tr.upToDate}
         </span>
-        <button
-          onClick={handleDedup}
-          disabled={deduping}
-          title={dedupError ?? "Rimuovi duplicati"}
-          className={`text-xs transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px] ${dedupError ? "text-red-400" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
-        >
-          {deduping ? "…" : dedupError ? "err" : "dedup"}
-        </button>
+        {showDedup && (
+          <button
+            onClick={handleDedup}
+            disabled={deduping}
+            title={dedupError ?? "Rimuovi duplicati"}
+            className={`text-xs transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px] ${dedupError ? "text-red-400" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
+          >
+            {deduping ? "…" : dedupError ? "err" : "dedup"}
+          </button>
+        )}
       </span>
     );
   }
@@ -195,6 +198,7 @@ export default function ImportButton({
   }
 
   if (status.state === "has-new") {
+    const showDedup = status.hasExcess || dedupResult !== null || dedupError !== null;
     return (
       <span className="flex items-center gap-2 whitespace-nowrap">
         <button
@@ -204,14 +208,16 @@ export default function ImportButton({
         >
           {tr.newTracks(status.count)}
         </button>
-        <button
-          onClick={handleDedup}
-          disabled={deduping}
-          title={dedupError ?? "Rimuovi duplicati"}
-          className={`text-xs transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px] ${dedupError ? "text-red-400" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
-        >
-          {deduping ? "…" : dedupError ? "err" : dedupResult !== null ? `−${dedupResult}` : "dedup"}
-        </button>
+        {showDedup && (
+          <button
+            onClick={handleDedup}
+            disabled={deduping}
+            title={dedupError ?? "Rimuovi duplicati"}
+            className={`text-xs transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px] ${dedupError ? "text-red-400" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
+          >
+            {deduping ? "…" : dedupError ? "err" : dedupResult !== null ? `−${dedupResult}` : "dedup"}
+          </button>
+        )}
       </span>
     );
   }

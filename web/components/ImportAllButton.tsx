@@ -140,24 +140,31 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     setStatus({ state: "dedup-done", removed: totalRemoved });
   }
 
+  const anyExcess = items.some((it) =>
+    playlistStatus?.statuses.get(`${it.type}:${it.slug}`)?.hasExcess
+  );
+  const showDedupAll = anyExcess || status.state === "deduping" || status.state === "dedup-done";
+
   if (upToDate) {
     return (
-      <span className="flex items-center gap-2 whitespace-nowrap">
+      <span className="flex items-end gap-2 whitespace-nowrap">
         <span className="px-3 py-1.5 text-sm text-[var(--muted)]">
           {status.state === "dedup-done"
             ? status.removed === 0 ? tr.upToDate : `−${status.removed} duplicati`
             : tr.upToDate}
         </span>
-        <button
-          onClick={handleDedup}
-          disabled={status.state === "deduping" || !connected}
-          title="Rimuovi duplicati da tutte le playlist"
-          className="text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px]"
-        >
-          {status.state === "deduping"
-            ? `dedup ${status.done}/${status.total}`
-            : "dedup all"}
-        </button>
+        {showDedupAll && (
+          <button
+            onClick={handleDedup}
+            disabled={status.state === "deduping" || !connected}
+            title="Rimuovi duplicati da tutte le playlist"
+            className="text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px]"
+          >
+            {status.state === "deduping"
+              ? `dedup ${status.done}/${status.total}`
+              : "dedup all"}
+          </button>
+        )}
       </span>
     );
   }
