@@ -90,13 +90,16 @@ web/
 │   ├── EpisodeSection.tsx      Episode playlist list
 │   ├── ImportButton.tsx        Single playlist import
 │   └── ImportAllButton.tsx     Batch import for all genres/episodes
+├── hooks/
+│   ├── useImportLock.ts        Serializes concurrent imports
+│   ├── usePlaylistStatus.tsx   Per-playlist status (up-to-date / has-new / idle)
+│   └── useTidalConnected.ts    Shared hook: [connected, disconnect]
 ├── lib/
 │   ├── types.ts                Standalone TypeScript types (Track, EpisodeAggregated, …)
 │   ├── data.ts                 Data fetching + getGenres (unique tidalId counts)
 │   ├── genreFamily.ts          Standalone GENRE_FAMILY map (copy from lib/genres.ts)
-│   ├── useTidalConnected.ts    Shared hook: [connected, disconnect]
 │   ├── tidal-auth.ts           PKCE OAuth helpers
-│   ├── tidal-api.ts            TIDAL API calls (BASE = /tidal-api proxy)
+│   ├── tidal-api.ts            TIDAL API calls (TIDAL_BASE_URL + fetchWithRetry)
 │   └── tidal-import.ts         Import orchestration + 404 recreation
 ├── .env.local.example
 └── next.config.ts              rewrites() proxy for TIDAL API

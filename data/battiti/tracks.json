@@ -56931,5 +56931,188 @@
         "tidalId": "1267594"
       }
     ]
+  },
+  {
+    "episodeTitle": "Wide",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-07042026-1772eb5f-b626-4ef0-9e4c-0951aae0408b.html",
+    "date": "07 Apr 2026",
+    "tracks": [
+      {
+        "title": "Superimposed",
+        "artist": "UPSAMMY & VALENTINA MAGALETTI",
+        "albumDetails": ", da \"Seismo\" - PAN",
+        "key": "upsammy_valentina_magaletti___superimposed",
+        "genres": ["electronic", "experimental", "avant-garde"],
+        "genresRaw": ["electronic", "experimental", "avant-garde"],
+        "tidalId": "493051312"
+      },
+      {
+        "title": "Crunch The Numbers",
+        "artist": "MORE EAZE",
+        "albumDetails": ", da \"Sentence Structure In The Country\" - Thrill Jockey",
+        "key": "more_eaze___crunch_the_numbers",
+        "genres": ["ambient", "instrumental"],
+        "genresRaw": ["glitch", "instrumental", "ambient"],
+        "tidalId": "475354564"
+      },
+      {
+        "title": "Waiting",
+        "artist": "GHASSAN SAHHAB",
+        "albumDetails": ", da \"Land 03: A Compilation For The Displaced In Lebanon\" - Tunefork Studios / bandcamp",
+        "key": "ghassan_sahhab___waiting",
+        "genres": ["ambient", "electronic"],
+        "genresRaw": ["ambient", "electronic"]
+      },
+      {
+        "title": "Tombal feat. Pierre Bastien, Massimo Silverio, Marco Baldini",
+        "artist": "NICOLAS REMONDINO",
+        "albumDetails": ", da \"Hìeratico\" - OOH Sounds",
+        "key": "nicolas_remondino___tombal_feat_pierre_bastien_massimo_silverio_marco_baldini",
+        "genres": ["experimental", "electroacoustic"],
+        "genresRaw": ["experimental", "electroacoustic"],
+        "tidalId": "495652044"
+      },
+      {
+        "title": "tour italiano, 14 aprile",
+        "artist": "LERO LERO",
+        "albumDetails": "– 8 maggio 2026",
+        "key": "lero_lero___tour_italiano_14_aprile",
+        "genres": ["psychedelic", "experimental"],
+        "genresRaw": ["psychedelic", "experimental"]
+      },
+      {
+        "title": "tour italiano 10 aprile",
+        "artist": "ULAN BATOR",
+        "albumDetails": "– 24 maggio 2026",
+        "key": "ulan_bator___tour_italiano_10_aprile",
+        "genres": ["electronic", "experimental"],
+        "genresRaw": ["electronic", "experimental"]
+      },
+      {
+        "title": "tour italiano 13",
+        "artist": "STEVE GUNN",
+        "albumDetails": "-17 aprile 2026",
+        "key": "steve_gunn___tour_italiano_13",
+        "genres": ["instrumental", "post-rock", "experimental"],
+        "genresRaw": ["instrumental", "post-rock", "experimental"]
+      },
+      {
+        "title": "Com'haiu a fari",
+        "artist": "LERO LERO",
+        "albumDetails": ", da \"Lero Lero\" – Panta Records",
+        "key": "lero_lero___com'haiu_a_fari",
+        "genres": ["psychedelic", "experimental", "world"],
+        "tidalId": "511648956",
+        "genresRaw": ["psychedelic", "experimental", "world"]
+      },
+      {
+        "title": "Franculina",
+        "artist": "LERO LERO",
+        "albumDetails": ", da \"Lero Lero\" – Panta Records",
+        "key": "lero_lero___franculina",
+        "genres": ["psychedelic", "world"],
+        "genresRaw": ["psychedelic", "mediterranean", "world"],
+        "tidalId": "511648958"
+      },
+      {
+        "title": "Solitaire",
+        "artist": "ULAN BATOR",
+        "albumDetails": ", da \"Dark Times\" – Improved Sequence",
+        "key": "ulan_bator___solitaire",
+        "genres": ["post-rock", "experimental", "noise"],
+        "tidalId": "459595087",
+        "genresRaw": ["post-rock", "experimental", "noise"]
+      },
+      {
+        "title": "Hardian's Wall",
+        "artist": "STEVE GUNN",
+        "albumDetails": ", da \"Daylight Daylight\" – No Quarter",
+        "key": "steve_gunn___hardian's_wall",
+        "genres": ["folk", "folk-rock", "singer-songwriter"],
+        "tidalId": "451394542",
+        "genresRaw": ["folk", "folk-rock", "singer-songwriter"]
+      },
+      {
+        "title": "Tide",
+        "artist": "ISOLATED SYSTEM",
+        "albumDetails": ", da \"Hopeless\" – Autoproduzione 2026",
+        "key": "isolated_system___tide",
+        "genres": ["noise", "drone"],
+        "genresRaw": ["noise", "drone"],
+        "tidalId": "484486154"
+      },
+      {
+        "title": "Shoot",
+        "artist": "ISOLATED SYSTEM",
+        "albumDetails": ", da \"Hopeless\" – Autoproduzione 2026",
+        "key": "isolated_system___shoot",
+        "genres": ["punk", "post-punk"],
+        "genresRaw": ["punk", "post-punk"],
+        "tidalId": "484486158"
+      },
+      {
+        "title": "Can You Hear Me, da \"It Won't Be Nice EP\"",
+        "artist": "WIDE HIPS 69",
+        "albumDetails": "– Area Pirata 2026",
+        "key": "wide_hips_69___can_you_hear_me_da_\"it_won't_be_nice_ep\"",
+        "genres": ["punk", "rock"],
+        "tidalId": "504627991",
+        "genresRaw": ["punk", "garage", "rock"]
+      },
+      {
+        "title": "Not For Me, da \"It Won't Be Nice EP\"",
+        "artist": "WIDE HIPS 69",
+        "albumDetails": "– Area Pirata 2026",
+        "key": "wide_hips_69___not_for_me_da_\"it_won't_be_nice_ep\"",
+        "genres": ["punk", "rock"],
+        "tidalId": "504627987",
+        "genresRaw": ["punk", "garage", "rock"]
+      },
+      {
+        "title": "Hero and Leander",
+        "artist": "KÆRY ANN",
+        "albumDetails": ", da \"Moonstone\" – Subsound Records",
+        "key": "kæry_ann___hero_and_leander",
+        "genres": ["indie", "post-punk", "noise"],
+        "genresRaw": ["indie", "post-punk", "noise"],
+        "tidalId": "476963231"
+      },
+      {
+        "title": "The Road",
+        "artist": "KÆRY ANN",
+        "albumDetails": ", da \"Moonstone\" – Subsound Records",
+        "key": "kæry_ann___the_road",
+        "genres": ["post-punk", "noise", "indie"],
+        "genresRaw": ["post-punk", "noise", "indie"],
+        "tidalId": "476963230"
+      },
+      {
+        "title": "Bitter Absinthe",
+        "artist": "EXTREMA RATIO",
+        "albumDetails": ", da \"Vexata Quæstio\" – Wave Guardian Records",
+        "key": "extrema_ratio___bitter_absinthe",
+        "genres": ["industrial", "experimental", "noise"],
+        "genresRaw": ["industrial", "experimental", "noise"],
+        "tidalId": "490735103"
+      },
+      {
+        "title": "Esquisito River",
+        "artist": "LOVVBÖMBING!",
+        "albumDetails": ", da \"Piss! Peas! Peace!\" – Vina Records",
+        "key": "lovvbombing___esquisito_river",
+        "genres": ["punk", "post-punk", "psychedelic"],
+        "genresRaw": ["punk", "post-punk", "psychedelic"],
+        "tidalId": "495191051"
+      },
+      {
+        "title": "President Alien",
+        "artist": "LOVVBÖMBING!",
+        "albumDetails": ", da \"Piss! Peas! Peace!\" – Vina Records",
+        "key": "lovvbombing___president_alien",
+        "genres": ["punk", "post-punk", "garage"],
+        "genresRaw": ["punk", "post-punk", "garage"],
+        "tidalId": "485741502"
+      }
+    ]
   }
 ]

@@ -17,7 +17,7 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
 - Auto-recreates 404 playlists
 - Retry logic for 429 (rate limit) and 5xx errors
 - Fail-fast on corrupted `tracks.json` (SyntaxError → process exits with clear message)
-- Automated via system cron: every Tuesday and Friday at 09:03
+- Run manually to allow genre review before propagating
 
 ## Technology
 
@@ -33,16 +33,16 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
 ## Project Structure
 
 ```
-├── full-sync.ts                    # Phase 1: scrape + tag + match → tracks.json + staging playlist
-├── genre-playlist.ts               # Phase 2 (propagate): distribute tracks.json → global + genre playlists
-├── ingest.ts                       # Scrape only (no TIDAL)
-├── genre-enrich.ts                 # Backfill genres via Claude on all tracks
-├── catalog-enrich.ts               # Backfill TIDAL IDs for genre-tagged tracks
-├── reconcile-global-playlist.ts    # One-shot: rebuild global playlist from tracks.json (removes stale IDs)
-├── dedup-global-playlist.ts        # Deduplicate global playlist
-├── dedup-genre-playlists.ts        # Deduplicate all genre playlists
 ├── scripts/
-│   └── sync-and-notify.sh   # Cron wrapper: PROGRAM_ID=battiti npm start
+│   ├── full-sync.ts                    # Phase 1: scrape + tag + match → tracks.json + staging playlist
+│   ├── genre-playlist.ts               # Phase 2 (propagate): distribute tracks.json → global + genre playlists
+│   ├── ingest.ts                       # Scrape only (no TIDAL)
+│   ├── genre-enrich.ts                 # Backfill genres via Claude on all tracks
+│   ├── catalog-enrich.ts               # Backfill TIDAL IDs for genre-tagged tracks
+│   ├── reconcile-global-playlist.ts    # One-shot: rebuild global playlist from tracks.json (removes stale IDs)
+│   ├── dedup-global-playlist.ts        # Deduplicate global playlist
+│   ├── dedup-genre-playlists.ts        # Deduplicate all genre playlists
+│   └── sync-and-notify.sh              # Cron wrapper: PROGRAM_ID=battiti npm start
 ├── lib/
 │   ├── scraper.ts            # HTML fetch + episode parsing
 │   ├── parser.ts             # Track string parsing ("Artist, Title, da Album")
@@ -194,16 +194,6 @@ The project is designed to support multiple radio show sources. Each program liv
 3. Run with `PROGRAM_ID=stereonotte npm start`
 
 All scripts are program-aware via the `PROGRAM_ID` env variable. Playlist names, data paths, and prefixes are derived automatically.
-
-## Automation
-
-The sync runs automatically via system cron (`crontab -e`):
-
-```
-3 9 * * 2,5   /path/to/scripts/sync-and-notify.sh
-```
-
-Logs are saved to `logs/battiti-sync-YYYY-MM-DD.log` (gitignored).
 
 ## TIDAL Matching
 

@@ -148,6 +148,7 @@ const ALIASES: Record<string, string> = {
   "gothic": "new wave",
 
   // Post-hardcore / emo (all variants → post-hardcore → rock)
+  "noise-core": "post-hardcore",
   "screamo": "post-hardcore",
   "emo": "post-hardcore",
   "emo violence": "post-hardcore",
@@ -155,9 +156,11 @@ const ALIASES: Record<string, string> = {
 
   // Rock (all variants → rock)
   "indie rock": "rock",
+  "indie": "rock",
   "classic rock": "rock",
   "art rock": "rock",
   "garage rock": "rock",
+  "garage": "rock",
   "neo-psychedelia": "psychedelic",
   "neo psychedelia": "psychedelic",
   "psychedelia": "psychedelic",
@@ -171,7 +174,6 @@ const ALIASES: Record<string, string> = {
   "progressive rock": "rock",
   "art-rock": "rock",
   "experimental rock": "rock",
-  "post-hardcore": "rock",
   
   // Post-rock (all variants → post-rock)
   "post-rock": "post-rock",
