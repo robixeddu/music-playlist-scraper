@@ -163,22 +163,20 @@ export default function ImportButton({
   }
 
   if (status.state === "up-to-date") {
-    const showDedup = status.hasExcess || dedupResult !== null || dedupError !== null;
+    const showDedup = (status.hasExcess || dedupError !== null) && dedupResult === null;
     return (
       <span className="flex items-center gap-2 whitespace-nowrap">
         <span className="px-3 py-1.5 text-sm text-[var(--muted)]">
-          {dedupResult !== null
-            ? dedupResult === 0 ? tr.upToDate : `−${dedupResult} duplicati`
-            : tr.upToDate}
+          {dedupResult !== null ? tr.dedupRemoved(dedupResult) : tr.upToDate}
         </span>
         {showDedup && (
           <button
             onClick={handleDedup}
             disabled={deduping}
-            title={dedupError ?? "Rimuovi duplicati"}
+            title={dedupError ?? tr.dedup}
             className={`text-xs transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px] ${dedupError ? "text-red-400" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
           >
-            {deduping ? "…" : dedupError ? "err" : "dedup"}
+            {deduping ? "…" : dedupError ? tr.dedupError : tr.dedup}
           </button>
         )}
       </span>
@@ -198,7 +196,7 @@ export default function ImportButton({
   }
 
   if (status.state === "has-new") {
-    const showDedup = status.hasExcess || dedupResult !== null || dedupError !== null;
+    const showDedup = (status.hasExcess || dedupError !== null) && dedupResult === null;
     return (
       <span className="flex items-center gap-2 whitespace-nowrap">
         <button
@@ -212,10 +210,10 @@ export default function ImportButton({
           <button
             onClick={handleDedup}
             disabled={deduping}
-            title={dedupError ?? "Rimuovi duplicati"}
+            title={dedupError ?? tr.dedup}
             className={`text-xs transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px] ${dedupError ? "text-red-400" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
           >
-            {deduping ? "…" : dedupError ? "err" : dedupResult !== null ? `−${dedupResult}` : "dedup"}
+            {deduping ? "…" : dedupError ? tr.dedupError : tr.dedup}
           </button>
         )}
       </span>

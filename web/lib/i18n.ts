@@ -26,6 +26,11 @@ export interface Translations {
   footerData: string;
   importAll: string;
   importAllProgress: (done: number, total: number) => string;
+  dedup: string;
+  dedupAll: string;
+  dedupAllProgress: (done: number, total: number) => string;
+  dedupRemoved: (n: number) => string;
+  dedupError: string;
 }
 
 export const translations: Record<Lang, Translations> = {
@@ -52,6 +57,11 @@ export const translations: Record<Lang, Translations> = {
     footerData: "Dati da",
     importAll: "Importa tutti",
     importAllProgress: (d, t) => `${d}/${t}...`,
+    dedup: "dedup",
+    dedupAll: "dedup tutti",
+    dedupAllProgress: (d, t) => `dedup ${d}/${t}`,
+    dedupRemoved: (n) => n === 0 ? "✓ Aggiornata" : `−${n} duplicati`,
+    dedupError: "err",
   },
   en: {
     noPrograms: "No active programs.",
@@ -76,5 +86,10 @@ export const translations: Record<Lang, Translations> = {
     footerData: "Data from",
     importAll: "Import all",
     importAllProgress: (d, t) => `${d}/${t}...`,
+    dedup: "dedup",
+    dedupAll: "dedup all",
+    dedupAllProgress: (d, t) => `dedup ${d}/${t}`,
+    dedupRemoved: (n) => n === 0 ? "✓ Up to date" : `−${n} duplicates`,
+    dedupError: "err",
   },
 };

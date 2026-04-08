@@ -143,7 +143,7 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
   const anyExcess = items.some((it) =>
     playlistStatus?.statuses.get(`${it.type}:${it.slug}`)?.hasExcess
   );
-  const showDedupAll = anyExcess || status.state === "deduping" || status.state === "dedup-done";
+  const showDedupAll = (anyExcess || status.state === "deduping") && status.state !== "dedup-done";
 
   if (upToDate) {
     return (
