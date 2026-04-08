@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { importPlaylist, importDelta, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, importDelta, dedupPlaylist, type PlaylistType } from "@/lib/tidal-import";
 import { useTidalConnected } from "@/hooks/useTidalConnected";
 import { useImportLock } from "@/hooks/useImportLock";
 import { redirectToTidal, getStoredToken, getStoredUserId } from "@/lib/tidal-auth";
@@ -23,6 +23,8 @@ type State =
   | { state: "idle" }
   | { state: "loading"; done: number; total: number }
   | { state: "success"; added: number; alreadyPresent: number }
+  | { state: "deduping"; done: number; total: number }
+  | { state: "dedup-done"; removed: number }
   | { state: "error"; message: string };
 
 export default function ImportAllButton({ items }: ImportAllButtonProps) {
@@ -110,10 +112,52 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     setStatus({ state: "success", added: totalAdded, alreadyPresent: totalPresent });
   }
 
+  async function handleDedup() {
+    if (status.state === "deduping") return;
+    const token = getStoredToken();
+    if (!token) return;
+
+    const withPlaylistId = items.filter((it) => {
+      const entry = playlistStatus?.statuses.get(`${it.type}:${it.slug}`);
+      return entry?.playlistId != null;
+    });
+    if (withPlaylistId.length === 0) return;
+
+    setStatus({ state: "deduping", done: 0, total: withPlaylistId.length });
+    let totalRemoved = 0;
+
+    for (let i = 0; i < withPlaylistId.length; i++) {
+      try {
+        const entry = playlistStatus?.statuses.get(`${withPlaylistId[i].type}:${withPlaylistId[i].slug}`);
+        const { removed } = await dedupPlaylist(token.access_token, entry!.playlistId!);
+        totalRemoved += removed;
+      } catch {
+        // skip failures
+      }
+      setStatus({ state: "deduping", done: i + 1, total: withPlaylistId.length });
+    }
+
+    setStatus({ state: "dedup-done", removed: totalRemoved });
+  }
+
   if (upToDate) {
     return (
-      <span className="px-3 py-1.5 text-sm text-[var(--muted)] whitespace-nowrap">
-        {tr.upToDate}
+      <span className="flex items-center gap-2 whitespace-nowrap">
+        <span className="px-3 py-1.5 text-sm text-[var(--muted)]">
+          {status.state === "dedup-done"
+            ? status.removed === 0 ? tr.upToDate : `−${status.removed} duplicati`
+            : tr.upToDate}
+        </span>
+        <button
+          onClick={handleDedup}
+          disabled={status.state === "deduping" || !connected}
+          title="Rimuovi duplicati da tutte le playlist"
+          className="text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px]"
+        >
+          {status.state === "deduping"
+            ? `dedup ${status.done}/${status.total}`
+            : "dedup all"}
+        </button>
       </span>
     );
   }

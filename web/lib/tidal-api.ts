@@ -121,6 +121,85 @@ export async function getPlaylistItemIds(
   return ids;
 }
 
+// ── Get playlist items with meta.itemId (for deletion) ───────────────────────
+
+export interface PlaylistItemMeta {
+  id: string;     // track ID
+  itemId: string; // meta.itemId — required for DELETE
+}
+
+export async function getPlaylistItemsWithMeta(
+  token: string,
+  playlistId: string
+): Promise<PlaylistItemMeta[]> {
+  const items: PlaylistItemMeta[] = [];
+  let url: string | null =
+    `${BASE}/playlists/${playlistId}/relationships/items?countryCode=${COUNTRY_CODE}&limit=100`;
+  let firstPage = true;
+
+  while (url) {
+    if (!firstPage) await delay(PAGE_DELAY_MS);
+    firstPage = false;
+
+    const res = await fetchWithRetry(url, { headers: headers(token) });
+    if (!res.ok) {
+      if (res.status === 404) throw new TidalNotFoundError();
+      const text = await res.text();
+      throw new Error(`Get playlist items failed: ${text}`);
+    }
+    const json = (await res.json()) as {
+      data: Array<{ id: string; meta?: { itemId?: string } }>;
+      links?: { next?: string | null };
+    };
+    for (const item of json.data) {
+      if (item.meta?.itemId) {
+        items.push({ id: item.id, itemId: item.meta.itemId });
+      }
+    }
+    const next = json.links?.next ?? null;
+    if (!next) {
+      url = null;
+    } else {
+      const path = next.replace(TIDAL_BASE_URL, "");
+      url = path.startsWith(BASE) ? path : `${BASE}${path}`;
+    }
+  }
+
+  return items;
+}
+
+// ── Remove items by meta.itemId ───────────────────────────────────────────────
+
+const DELETE_BATCH_SIZE = 20;
+
+export async function removeItemsFromPlaylist(
+  token: string,
+  playlistId: string,
+  items: PlaylistItemMeta[]
+): Promise<void> {
+  for (let i = 0; i < items.length; i += DELETE_BATCH_SIZE) {
+    const batch = items.slice(i, i + DELETE_BATCH_SIZE);
+    const res = await fetchWithRetry(`${BASE}/playlists/${playlistId}/relationships/items`, {
+      method: "DELETE",
+      headers: headers(token),
+      body: JSON.stringify({
+        data: batch.map((item) => ({
+          id: item.id,
+          type: "tracks",
+          meta: { itemId: item.itemId },
+        })),
+      }),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Remove items failed: ${text}`);
+    }
+    if (i + DELETE_BATCH_SIZE < items.length) {
+      await delay(BATCH_DELAY_MS);
+    }
+  }
+}
+
 // ── Add tracks in batches ─────────────────────────────────────────────────────
 
 const BATCH_SIZE = 20;

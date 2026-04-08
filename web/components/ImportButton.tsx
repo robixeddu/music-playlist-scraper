@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
-import { importPlaylist, importDelta, resolvePlaylistId, getLocalImportedIds, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, importDelta, dedupPlaylist, resolvePlaylistId, getLocalImportedIds, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
 import { enqueueVerify } from "@/lib/tidalVerifyQueue";
 import { useTidalConnected } from "@/hooks/useTidalConnected";
 import { useImportLock } from "@/hooks/useImportLock";
@@ -28,6 +28,9 @@ export default function ImportButton({
   const { importing, acquire, release } = useImportLock();
   const playlistStatus = usePlaylistStatus();
   const [status, setStatus] = useState<ImportStatus>({ state: "idle" });
+  const [deduping, setDeduping] = useState(false);
+  const [dedupResult, setDedupResult] = useState<number | null>(null);
+  const [dedupError, setDedupError] = useState<string | null>(null);
 
   useEffect(() => {
     const entry =
@@ -142,10 +145,39 @@ export default function ImportButton({
     );
   }
 
+  async function handleDedup() {
+    if (deduping || status.state !== "up-to-date") return;
+    const token = getStoredToken();
+    if (!token || !status.playlistId) return;
+    setDeduping(true);
+    setDedupResult(null);
+    setDedupError(null);
+    try {
+      const { removed } = await dedupPlaylist(token.access_token, status.playlistId);
+      setDedupResult(removed);
+    } catch (err) {
+      setDedupError(err instanceof Error ? err.message : "errore dedup");
+    } finally {
+      setDeduping(false);
+    }
+  }
+
   if (status.state === "up-to-date") {
     return (
-      <span className="px-3 py-1.5 text-sm text-[var(--muted)] whitespace-nowrap">
-        {tr.upToDate}
+      <span className="flex items-center gap-2 whitespace-nowrap">
+        <span className="px-3 py-1.5 text-sm text-[var(--muted)]">
+          {dedupResult !== null
+            ? dedupResult === 0 ? tr.upToDate : `−${dedupResult} duplicati`
+            : tr.upToDate}
+        </span>
+        <button
+          onClick={handleDedup}
+          disabled={deduping}
+          title={dedupError ?? "Rimuovi duplicati"}
+          className={`text-xs transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px] ${dedupError ? "text-red-400" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
+        >
+          {deduping ? "…" : dedupError ? "err" : "dedup"}
+        </button>
       </span>
     );
   }
@@ -164,13 +196,23 @@ export default function ImportButton({
 
   if (status.state === "has-new") {
     return (
-      <button
-        onClick={handleClick}
-        disabled={importing}
-        className="px-3 py-1.5 rounded text-sm font-medium border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer whitespace-nowrap"
-      >
-        {tr.newTracks(status.count)}
-      </button>
+      <span className="flex items-center gap-2 whitespace-nowrap">
+        <button
+          onClick={handleClick}
+          disabled={importing}
+          className="px-3 py-1.5 rounded text-sm font-medium border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+        >
+          {tr.newTracks(status.count)}
+        </button>
+        <button
+          onClick={handleDedup}
+          disabled={deduping}
+          title={dedupError ?? "Rimuovi duplicati"}
+          className={`text-xs transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px] ${dedupError ? "text-red-400" : "text-[var(--muted)] hover:text-[var(--foreground)]"}`}
+        >
+          {deduping ? "…" : dedupError ? "err" : dedupResult !== null ? `−${dedupResult}` : "dedup"}
+        </button>
+      </span>
     );
   }
 

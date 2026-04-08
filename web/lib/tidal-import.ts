@@ -4,6 +4,8 @@ import { getStoredToken } from "./tidal-auth";
 import {
   createPlaylist,
   getPlaylistItemIds,
+  getPlaylistItemsWithMeta,
+  removeItemsFromPlaylist,
   addTracksToPlaylist,
   TidalNotFoundError,
 } from "./tidal-api";
@@ -237,4 +239,21 @@ export async function importPlaylist(params: {
   persistImportedIds(userId, type, slug, tidalIds);
 
   return { added: newIds.length, alreadyPresent, playlistId };
+}
+
+export async function dedupPlaylist(
+  token: string,
+  playlistId: string
+): Promise<{ removed: number }> {
+  const items = await getPlaylistItemsWithMeta(token, playlistId);
+  const seen = new Set<string>();
+  const toRemove = items.filter((item) => {
+    if (seen.has(item.id)) return true;
+    seen.add(item.id);
+    return false;
+  });
+  if (toRemove.length > 0) {
+    await removeItemsFromPlaylist(token, playlistId, toRemove);
+  }
+  return { removed: toRemove.length };
 }
