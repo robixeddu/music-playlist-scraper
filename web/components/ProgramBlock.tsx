@@ -8,6 +8,7 @@ import GlobalSection from "./GlobalSection";
 import GenreSection from "./GenreSection";
 import EpisodeSection from "./EpisodeSection";
 import ImportAllButton from "./ImportAllButton";
+import { useState } from "react";
 import { ImportLockContext, useImportLockState } from "@/hooks/useImportLock";
 import { PlaylistStatusProvider } from "@/hooks/usePlaylistStatus";
 
@@ -19,6 +20,7 @@ interface ProgramBlockProps {
 export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
   const tr = useT();
   const importLock = useImportLockState();
+  const [descExpanded, setDescExpanded] = useState(false);
   const genres = getGenres(episodes);
   const sortedEpisodes = getEpisodesSortedDesc(episodes);
 
@@ -50,9 +52,14 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
     <ImportLockContext.Provider value={importLock}>
     <PlaylistStatusProvider>
     <section className="space-y-3">
-      <div className="items-baseline gap-3 mb-8 px-5">
+      <div className="mb-8 px-5">
         <h2 className="text-xl font-semibold mb-3">{source.name}</h2>
-        <p className="text-sm text-[var(--muted)]">{source.description}</p>
+        <p
+          onClick={() => setDescExpanded((v) => !v)}
+          className={`text-sm text-[var(--muted)] md:cursor-default md:line-clamp-none ${descExpanded ? "" : "line-clamp-4 cursor-pointer"}`}
+        >
+          {source.description}
+        </p>
       </div>
 
       <div className="border border-[var(--border)] rounded-lg overflow-hidden">

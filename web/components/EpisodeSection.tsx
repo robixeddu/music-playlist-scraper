@@ -77,7 +77,7 @@ export default function EpisodeSection({ episodes, sourceId }: EpisodeSectionPro
               </button>
               <ImportButton type="episode" slug={slug} playlistName={playlistName} tidalIds={tidalIds} />
             </div>
-            {isExpanded && <TrackList tracks={ep.tracks} className="pl-11 pr-5" />}
+            {isExpanded && <TrackList tracks={ep.tracks} className="px-5 md:pl-11" />}
           </div>
         );
       })}
