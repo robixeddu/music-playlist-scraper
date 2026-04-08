@@ -19,7 +19,7 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-sm">
+      <header className="sticky top-0 z-30 border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-sm">
         <div className="max-w-3xl mx-auto px-5 h-14 flex items-center justify-between">
           <span className="text-sm font-medium tracking-wide text-[var(--accent)]">
             music playlist scraper

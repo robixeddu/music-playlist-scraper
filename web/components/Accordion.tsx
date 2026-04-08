@@ -21,7 +21,9 @@ export default function Accordion({
     <div className="border border-[var(--border)] rounded-lg">
       <div
         className={`flex items-center bg-[var(--surface)] hover:bg-[var(--surface-hover)] transition-colors rounded-t-lg${
-          open ? " border-b border-[var(--border)]" : " rounded-b-lg"
+          open
+            ? " sticky top-14 z-20 border-b border-[var(--border)] bg-[var(--surface)]/90 backdrop-blur-sm"
+            : " rounded-b-lg"
         }`}
       >
         <button
@@ -48,7 +50,7 @@ export default function Accordion({
           </div>
         )}
       </div>
-      <div className={`bg-[var(--background)] rounded-b-lg${open ? "" : " hidden"}`}>{children}</div>
+      <div className={`relative z-0 bg-[var(--background)] rounded-b-lg${open ? "" : " hidden"}`}>{children}</div>
     </div>
   );
 }
