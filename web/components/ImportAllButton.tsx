@@ -149,20 +149,18 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     return (
       <span className="flex items-end gap-2 whitespace-nowrap">
         <span className="px-3 py-1.5 text-sm text-[var(--muted)]">
-          {status.state === "dedup-done"
-            ? status.removed === 0 ? tr.upToDate : `−${status.removed} duplicati`
-            : tr.upToDate}
+          {status.state === "dedup-done" ? tr.dedupRemoved(status.removed) : tr.upToDate}
         </span>
         {showDedupAll && (
           <button
             onClick={handleDedup}
             disabled={status.state === "deduping" || !connected}
-            title="Rimuovi duplicati da tutte le playlist"
+            title={tr.dedupAll}
             className="text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer mt-[2px]"
           >
             {status.state === "deduping"
-              ? `dedup ${status.done}/${status.total}`
-              : "dedup all"}
+              ? tr.dedupAllProgress(status.done, status.total)
+              : tr.dedupAll}
           </button>
         )}
       </span>
