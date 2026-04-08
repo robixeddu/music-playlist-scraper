@@ -3,7 +3,7 @@
 import { getPlaylistItemIds, getPlaylistCount, TidalNotFoundError } from "./tidal-api";
 import type { PlaylistType } from "./tidal-import";
 
-const VERIFY_DELAY_MS = 150;
+const VERIFY_DELAY_MS = 600;
 
 type VerifyRequest = {
   type: PlaylistType;
@@ -35,12 +35,19 @@ async function processQueue() {
         req.onVerified();
         req.onResult(newIds, req.playlistId);
       } else {
-        // No reference — always diff by ID (count alone is unreliable: TIDAL may have
-        // stale tracks that inflate the count while missing specific new ones)
-        const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
-        const newIds = req.tidalIds.filter((id) => !tidalSet.has(id));
-        req.onVerified();
-        req.onResult(newIds, req.playlistId);
+        // No reference — count check as fast path for the exact-match case only.
+        // count === tidalIds.length → safe to assume up-to-date (avoids full pagination)
+        // count !== tidalIds.length → must diff by ID to know exactly which are missing
+        const count = await getPlaylistCount(req.token, req.playlistId);
+        if (count !== null && count === req.tidalIds.length) {
+          req.onVerified();
+          req.onResult([], req.playlistId);
+        } else {
+          const tidalSet = await getPlaylistItemIds(req.token, req.playlistId);
+          const newIds = req.tidalIds.filter((id) => !tidalSet.has(id));
+          req.onVerified();
+          req.onResult(newIds, req.playlistId);
+        }
       }
     } catch (e: unknown) {
       if (e instanceof TidalNotFoundError) {

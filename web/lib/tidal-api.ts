@@ -61,7 +61,7 @@ function delay(ms: number): Promise<void> {
 
 // ── Get existing playlist items (paginated) ───────────────────────────────────
 
-const PAGE_DELAY_MS = 150;
+const PAGE_DELAY_MS = 400;
 const MAX_RETRIES = 3;
 
 async function fetchWithRetry(url: string, opts: RequestInit): Promise<Response> {
