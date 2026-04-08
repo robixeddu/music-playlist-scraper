@@ -38,7 +38,7 @@ export function getLocalImportedIds(type: PlaylistType, slug: string): Set<strin
   } catch { return null; }
 }
 
-function saveLocalImportedIds(type: PlaylistType, slug: string, ids: string[]): void {
+export function saveLocalImportedIds(type: PlaylistType, slug: string, ids: string[]): void {
   try { localStorage.setItem(importedIdsKey(type, slug), JSON.stringify(ids)); } catch {}
 }
 
@@ -102,9 +102,37 @@ export async function resolvePlaylistId(
     setLocalPlaylistId(type, slug, playlistId);
     return playlistId;
   }
-  // Redis empty (e.g. cleared) — fall back to localStorage
-  // If the ID is stale/deleted on TIDAL, importPlaylist will auto-recreate
   return getLocalPlaylistId(type, slug);
+}
+
+/**
+ * Single Redis call that returns both playlistId and importedIds.
+ * Use this on mount to avoid two separate fetches per playlist.
+ */
+export async function resolvePlaylistState(
+  userId: string,
+  type: PlaylistType,
+  slug: string
+): Promise<{ playlistId: string | null; importedIds: Set<string> | null }> {
+  const { playlistId, importedIds: dbIds } = await fetchDbState(userId, type, slug);
+
+  let resolvedId: string | null = null;
+  if (playlistId) {
+    setLocalPlaylistId(type, slug, playlistId);
+    resolvedId = playlistId;
+  } else {
+    resolvedId = getLocalPlaylistId(type, slug);
+  }
+
+  // Prefer localStorage (fastest), fall back to Redis
+  const localIds = getLocalImportedIds(type, slug);
+  let resolvedIds: Set<string> | null = localIds;
+  if (!resolvedIds && dbIds) {
+    saveLocalImportedIds(type, slug, dbIds);
+    resolvedIds = new Set(dbIds);
+  }
+
+  return { playlistId: resolvedId, importedIds: resolvedIds };
 }
 
 /**

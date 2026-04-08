@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
-import { importPlaylist, importDelta, dedupPlaylist, resolvePlaylistId, getLocalImportedIds, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
+import { importPlaylist, importDelta, dedupPlaylist, resolvePlaylistState, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
 import { enqueueVerify } from "@/lib/tidalVerifyQueue";
 import { useTidalConnected } from "@/hooks/useTidalConnected";
 import { useImportLock } from "@/hooks/useImportLock";
@@ -59,14 +59,13 @@ export default function ImportButton({
     const userId = token?.userId ?? getStoredUserId();
     if (!token || !userId) return;
 
-    resolvePlaylistId(userId, type, slug).then((storedId) => {
+    resolvePlaylistState(userId, type, slug).then(({ playlistId: storedId, importedIds }) => {
       if (!storedId) return; // user hasn't imported yet → stays idle
 
       setStatus({ state: "checking" });
-      const stored = getLocalImportedIds(type, slug);
       enqueueVerify({
         type, slug, playlistId: storedId, tidalIds,
-        referenceIds: stored ? Array.from(stored) : undefined,
+        referenceIds: importedIds ? Array.from(importedIds) : undefined,
         token: token.access_token,
         onVerified: () => { persistPlaylistId(userId, type, slug, storedId); },
         onResult: (newIds, pid, hasExcess) => {
