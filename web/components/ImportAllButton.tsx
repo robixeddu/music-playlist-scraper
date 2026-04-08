@@ -201,9 +201,11 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
     );
   }
 
+  // error state
+  const message = status.state === "error" ? status.message : "";
   return (
     <span
-      title={status.message}
+      title={message}
       className="px-3 py-1.5 rounded text-sm font-medium text-red-400 bg-red-400/10 whitespace-nowrap cursor-help"
     >
       ✗ {tr.importError}
