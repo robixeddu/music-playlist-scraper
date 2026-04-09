@@ -84,7 +84,8 @@ export class TidalNotFoundError extends Error {
 
 export async function getPlaylistItemIds(
   token: string,
-  playlistId: string
+  playlistId: string,
+  { noDelay = false }: { noDelay?: boolean } = {}
 ): Promise<Set<string>> {
   const ids = new Set<string>();
   let url: string | null =
@@ -92,7 +93,7 @@ export async function getPlaylistItemIds(
   let firstPage = true;
 
   while (url) {
-    if (!firstPage) await delay(PAGE_DELAY_MS);
+    if (!firstPage && !noDelay) await delay(PAGE_DELAY_MS);
     firstPage = false;
 
     const res = await fetchWithRetry(url, { headers: headers(token) });

@@ -207,10 +207,18 @@ export async function importDelta(params: {
   userId: string;
 }): Promise<ImportResult> {
   if (params.newIds.length > 0) {
-    await addTracksToPlaylist(params.token, params.playlistId, params.newIds);
+    // Always diff against real TIDAL content to avoid duplicates from stale localStorage.
+    // noDelay skips inter-page waits since this is a user-triggered action, not a background queue.
+    const existingIds = await getPlaylistItemIds(params.token, params.playlistId, { noDelay: true });
+    const toAdd = params.newIds.filter((id) => !existingIds.has(id));
+    if (toAdd.length > 0) {
+      await addTracksToPlaylist(params.token, params.playlistId, toAdd);
+    }
+    persistImportedIds(params.userId, params.type, params.slug, params.allTidalIds);
+    return { added: toAdd.length, alreadyPresent: params.allTidalIds.length - toAdd.length };
   }
   persistImportedIds(params.userId, params.type, params.slug, params.allTidalIds);
-  return { added: params.newIds.length, alreadyPresent: params.allTidalIds.length - params.newIds.length };
+  return { added: 0, alreadyPresent: params.allTidalIds.length };
 }
 
 export async function importPlaylist(params: {
