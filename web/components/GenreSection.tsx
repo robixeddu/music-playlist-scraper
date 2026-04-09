@@ -84,7 +84,15 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
               </button>
               <ImportButton type="genre" slug={slug} playlistName={playlistName} tidalIds={tidalIds} />
             </div>
-            {isExpanded && <TrackList tracks={tracks} className="px-5 md:pl-24" />}
+            {isExpanded && (
+              <div className="flex">
+                <div
+                  style={{ backgroundColor: colorForGenre(row.genre) }}
+                  className="shrink-0 ml-5 w-10 opacity-70 rounded-sm"
+                />
+                <TrackList tracks={tracks} className="flex-1 min-w-0 px-5" />
+              </div>
+            )}
           </div>
         );
       })}

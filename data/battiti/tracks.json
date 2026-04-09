@@ -951,9 +951,9 @@
         "artist": "ALE HOP",
         "albumDetails": "da \"Why Is It They Say A City Like Any City?\" – Karlrecords",
         "key": "ale_hop___latitud_0_collab_with_daniela_huerta_manongo_mujica",
-        "genres": ["no-genre"],
+        "genres": ["electronic", "experimental"],
         "tidalId": "208377073",
-        "genresRaw": []
+        "genresRaw": ["electronic", "experimental"]
       },
       {
         "title": "Markaz Azraq (December 6)",
@@ -1078,7 +1078,6 @@
         "albumDetails": "da \"Musique migratoire – Enregistrement nomade\" – Ormo Records",
         "key": "la_démesure_du_pas___somewhere",
         "genres": ["no-genre"],
-        "tidalId": "14719040",
         "genresRaw": []
       },
       {
