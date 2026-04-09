@@ -34,11 +34,13 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
   const [status, setStatus] = useState<State>({ state: "idle" });
   const playlistStatus = usePlaylistStatus();
 
+  const doneStates = new Set(["up-to-date", "success"]);
+
   const upToDate =
     items.length > 0 &&
     items.every((it) => {
       if (it.tidalIds.length === 0) return true;
-      return playlistStatus?.statuses.get(`${it.type}:${it.slug}`)?.state === "up-to-date";
+      return doneStates.has(playlistStatus?.statuses.get(`${it.type}:${it.slug}`)?.state ?? "");
     });
 
   const isChecking = items.some((it) => {
@@ -59,7 +61,7 @@ export default function ImportAllButton({ items }: ImportAllButtonProps) {
 
     const eligible = items.filter((it) => {
       if (it.tidalIds.length === 0) return false;
-      return playlistStatus?.statuses.get(`${it.type}:${it.slug}`)?.state !== "up-to-date";
+      return !doneStates.has(playlistStatus?.statuses.get(`${it.type}:${it.slug}`)?.state ?? "");
     });
     if (eligible.length === 0) return;
 

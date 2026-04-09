@@ -1145,9 +1145,9 @@
         "artist": "BETTER CORNERS",
         "albumDetails": "da \"Continuous Miracles Vol. 2\" - The state51 Conspiracy",
         "key": "better_corners___cremated_pets",
-        "genres": ["no-genre"],
+        "genres": ["electronic", "ambient"],
         "tidalId": "308455360",
-        "genresRaw": []
+        "genresRaw": ["electronic", "ambient"]
       },
       {
         "title": "Afro Futurism",
@@ -1197,9 +1197,9 @@
         "artist": "YUNIS",
         "albumDetails": "da \"Mulid El-Magnoun\" – Akuphone",
         "key": "yunis___mulid_elmagnoun",
-        "genres": ["no-genre"],
+        "genres": ["world", "electronic", "psychedelic"],
         "tidalId": "175396429",
-        "genresRaw": []
+        "genresRaw": ["world", "electronic", "psychedelic"]
       },
       {
         "title": "Titular",
@@ -1215,9 +1215,9 @@
         "artist": "DON KING",
         "albumDetails": "da \"On The Mediterranean\" - Nashazphone",
         "key": "don_king___summertime",
-        "genres": ["no-genre"],
+        "genres": ["jazz", "experimental", "instrumental"],
         "tidalId": "49954532",
-        "genresRaw": []
+        "genresRaw": ["jazz", "experimental", "instrumental"]
       },
       {
         "title": "Conan El Barbudo",
