@@ -9424,9 +9424,9 @@
         "artist": "EMICIDA",
         "albumDetails": "da \"Criolo e emicida ao Vivo\" - Oloko Records",
         "key": "emicida___criolo_viva_melô_dos_vileiros",
-        "genres": ["hip-hop", "afrobeat", "funk"],
+        "genres": ["hip-hop", "funk"],
         "tidalId": "23597842",
-        "genresRaw": ["hip-hop", "afrobeat", "funk"]
+        "genresRaw": ["hip-hop", "funk"]
       },
       {
         "title": "Alright",
