@@ -105,9 +105,9 @@
         "artist": "PACHYMAN",
         "albumDetails": "da \"Another Place\" – ATO Records",
         "key": "pachyman___take_me_to_dance",
-        "genres": ["no-genre"],
+        "genres": ["dub", "reggae"],
         "tidalId": "415679115",
-        "genresRaw": []
+        "genresRaw": ["dub", "reggae"]
       },
       {
         "title": "Prophecy In Dub",
@@ -238,9 +238,9 @@
         "artist": "KTYB",
         "albumDetails": "da \"Ja9lou9\" - Jaiye Music Group",
         "key": "ktyb___eb7ath_3ani",
-        "genres": ["no-genre"],
+        "genres": ["rap"],
         "tidalId": "476582626",
-        "genresRaw": []
+        "genresRaw": ["rap"]
       },
       {
         "title": "Hafle",
@@ -378,9 +378,9 @@
         "artist": "AYLU",
         "albumDetails": "da \"Fobia\" – Other People",
         "key": "aylu___cometierra",
-        "genres": ["no-genre"],
+        "genres": ["electronic"],
         "tidalId": "456699350",
-        "genresRaw": []
+        "genresRaw": ["electronic"]
       },
       {
         "title": "Another Fade",
@@ -762,9 +762,9 @@
         "artist": "AYLU",
         "albumDetails": "da \"Fobia\" – Other People",
         "key": "aylu___prospero",
-        "genres": ["no-genre"],
+        "genres": ["electronic", "experimental"],
         "tidalId": "456699347",
-        "genresRaw": []
+        "genresRaw": ["electronic", "experimental"]
       },
       {
         "title": "Avanziamo La notte con passo preciso e insicuro",
@@ -807,9 +807,9 @@
         "artist": "LA CHINA DE LA GASOLINA",
         "albumDetails": "da \"Coco María Presents Club Coco: New Dimensions In Latin Music\" – Club Coco",
         "key": "la_china_de_la_gasolina___ricky_ricardo",
-        "genres": ["no-genre"],
+        "genres": ["tropical", "latin"],
         "tidalId": "457876313",
-        "genresRaw": []
+        "genresRaw": ["tropical", "latin"]
       },
       {
         "title": "Cumbia Ritual",
@@ -852,9 +852,9 @@
         "artist": "GUITARI BARO",
         "albumDetails": "da \"Guitari Baro\" - Chrysalis Global",
         "key": "guitari_baro___lamban_blues",
-        "genres": ["no-genre"],
+        "genres": ["world", "folk"],
         "tidalId": "450976874",
-        "genresRaw": []
+        "genresRaw": ["world", "folk", "desert blues"]
       },
       {
         "title": "Kapata Mukaya",
