@@ -1224,18 +1224,18 @@
         "artist": "LAGOSS",
         "albumDetails": "da \"Splitting Hits For The Heat Damage\" - Artetetra",
         "key": "lagoss___conan_el_barbudo",
-        "genres": ["no-genre"],
+        "genres": ["electronic", "experimental", "world"],
         "tidalId": "451214617",
-        "genresRaw": []
+        "genresRaw": ["electronic", "experimental", "world"]
       },
       {
         "title": "Liquor",
         "artist": "SIMILOU",
         "albumDetails": "da \"Inferno Bizzarro\" - Love Boat Records",
         "key": "similou___liquor",
-        "genres": ["no-genre"],
+        "genres": ["psychedelic", "experimental"],
         "tidalId": "279480779",
-        "genresRaw": []
+        "genresRaw": ["psychedelic", "experimental"]
       },
       {
         "title": "Ah Yeh",

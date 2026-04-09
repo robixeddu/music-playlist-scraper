@@ -88,7 +88,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
               <div className="flex">
                 <div
                   style={{ backgroundColor: colorForGenre(row.genre) }}
-                  className="shrink-0 ml-5 w-10 opacity-70 rounded-sm"
+                  className="shrink-0 ml-5 mt-3 w-10 opacity-70 rounded-sm"
                 />
                 <TrackList tracks={tracks} className="flex-1 min-w-0 px-5" />
               </div>
