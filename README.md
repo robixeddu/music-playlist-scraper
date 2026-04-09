@@ -168,7 +168,8 @@ Genres are organized into families for UI sorting. Key canonical values include:
 
 ### Auto-playlist creation
 
-- **During `npm run propagate`**: playlists are created for genres with ≥ 10 tracks (`MIN_TRACKS`).
+- **During `npm start`**: a new `BATTITI-{genre}` playlist is created immediately the first time a genre appears — no threshold, no confirmation.
+- **During `npm run propagate`**: playlists are only created for genres with ≥ 10 tracks (`MIN_TRACKS`), since propagate is a backfill tool and sparse genres are noise.
 
 New playlists are logged to the console and persisted in `data/genre_playlists.json`. Review and clean them up manually on TIDAL if needed.
 

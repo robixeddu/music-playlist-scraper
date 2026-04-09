@@ -1,7 +1,7 @@
 "use client";
 
 import type { Source, EpisodeAggregated } from "@/lib/types";
-import { getGenres, getEpisodesSortedDesc, episodeDateToSlug } from "@/lib/data";
+import { getGenres, getEpisodesSortedDesc, episodeDateToSlug, slugifyTitle } from "@/lib/data";
 import { useT } from "./LangProvider";
 import Accordion from "./Accordion";
 import GlobalSection from "./GlobalSection";
@@ -39,7 +39,7 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
   }));
 
   const episodeItems = sortedEpisodes.map((ep) => {
-    const slug = episodeDateToSlug(ep.date);
+    const slug = `${episodeDateToSlug(ep.date)}-${slugifyTitle(ep.episodeTitle)}`;
     return {
       type: "episode" as const,
       slug,
