@@ -3044,9 +3044,9 @@
         "artist": "SUN ARAW & M. GEDDES GENGRAS MEET THE CONGOS",
         "albumDetails": "da \"Icon Give Thank\" – RVNG Intl.",
         "key": "sun_araw_m_geddes_gengras_meet_the_congos___happy_song",
-        "genres": ["dub", "experimental", "reggae"],
+        "genres": ["electronic", "experimental"],
         "tidalId": "19329894",
-        "genresRaw": ["dub", "experimental", "reggae"]
+        "genresRaw": ["electronic", "experimental"]
       },
       {
         "title": "Medicine For A Nightmare",
@@ -7703,9 +7703,9 @@
         "artist": "SARA HEBE",
         "albumDetails": "da \"La Hija Del Loco\" - Autoproduzione",
         "key": "sara_hebe___la_nueva_ley",
-        "genres": ["hip-hop", "reggae"],
+        "genres": ["hip-hop"],
         "tidalId": "367416378",
-        "genresRaw": ["hip-hop", "reggae"]
+        "genresRaw": ["hip-hop", "reggaeton"]
       },
       {
         "title": "HELIO DELMIRO, Samambaia",
@@ -57253,6 +57253,284 @@
         "genres": ["jazz"],
         "genresRaw": ["jazz"],
         "tidalId": "489037887"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "The Garden",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-10042026-00e540f0-b5bb-41a5-80e6-7499a460c008.html",
+    "date": "10 Apr 2026",
+    "tracks": [
+      {
+        "title": "El Faqd",
+        "artist": "MARYAM SALEH",
+        "albumDetails": ", da \"Syrr\" - Simsara Records",
+        "key": "maryam_saleh___el_faqd",
+        "genres": ["world"],
+        "genresRaw": ["world", "mediterranean"],
+        "tidalId": "473394825"
+      },
+      {
+        "title": "Biters",
+        "artist": "MORE EAZE",
+        "albumDetails": ", da \"Sentence Structure In The Country\" - Thrill Jockey",
+        "key": "more_eaze___biters",
+        "genres": ["electronic", "experimental"],
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "475354565"
+      },
+      {
+        "title": "Thickness Of Signs",
+        "artist": "UPSAMMY & VALENTINA MAGALETTI",
+        "albumDetails": ", da \"Seismo\" - PAN",
+        "key": "upsammy_valentina_magaletti___thickness_of_signs",
+        "genres": ["experimental", "electronic"],
+        "genresRaw": ["experimental", "electronic", "glitch"],
+        "tidalId": "487891329"
+      },
+      {
+        "title": "Shadow | Mess",
+        "artist": "WHITNEY JOHNSON / LIA KOHL / MACIE STEWART",
+        "albumDetails": ", da \"Body Sound\" - International Anthem",
+        "key": "whitney_johnson_lia_kohl_macie_stewart___shadow_|_mess",
+        "genres": ["experimental", "avant-garde"],
+        "genresRaw": ["experimental", "avant-garde"],
+        "tidalId": "487604785"
+      },
+      {
+        "title": "Seven",
+        "artist": "KALYN FAY",
+        "albumDetails": ", da \"ᎠᎾᏒᎤ - Garden\" – Horton Records",
+        "key": "kalyn_fay___seven",
+        "genres": ["pop", "rock"],
+        "genresRaw": ["pop", "rock"],
+        "tidalId": "494370263"
+      },
+      {
+        "title": "Garden",
+        "artist": "KALYN FAY",
+        "albumDetails": ", da \"ᎠᎾᏒᎤ - Garden\" – Horton Records",
+        "key": "kalyn_fay___garden",
+        "genres": ["rock", "acoustic", "country"],
+        "genresRaw": ["rock", "acoustic", "country"],
+        "tidalId": "494370270"
+      },
+      {
+        "title": "Gift",
+        "artist": "MARGARETH KAMMERER",
+        "albumDetails": ", da \"The Garden\" - Ftarri Uta",
+        "key": "margareth_kammerer___gift",
+        "genres": ["bossa nova", "jazz"],
+        "genresRaw": ["bossa nova", "jazz"]
+      },
+      {
+        "title": "Circus",
+        "artist": "MARGARETH KAMMERER",
+        "albumDetails": ", da \"The Garden\" - Ftarri Uta",
+        "key": "margareth_kammerer___circus",
+        "genres": ["bossa nova", "jazz"],
+        "genresRaw": ["bossa nova", "jazz"]
+      },
+      {
+        "title": "The Blackleg Miner",
+        "artist": "LES CARAVANES",
+        "albumDetails": ", da \"Hark, Hark! The Drums Do Beat, My Love\" – Les Caravanes",
+        "key": "les_caravanes___the_blackleg_miner",
+        "genres": ["folk", "rock", "instrumental"],
+        "genresRaw": ["folk", "rock", "instrumental"]
+      },
+      {
+        "title": "Burning Of Auchindoun",
+        "artist": "SAM GRASSIE",
+        "albumDetails": ", da \"Where Two Hawks Fly\" – Broadside Hacks Recordings",
+        "key": "sam_grassie___burning_of_auchindoun",
+        "genres": ["folk", "acoustic", "singer-songwriter"],
+        "genresRaw": ["folk", "acoustic", "singer-songwriter"],
+        "tidalId": "500725741"
+      },
+      {
+        "title": "Keep Your Lamp Trimmed And Burning",
+        "artist": "UNCLE SINNER",
+        "albumDetails": ", da \"Everybody Wants to Know How I Die\" - Stomp The Bug Music",
+        "key": "uncle_sinner___keep_your_lamp_trimmed_and_burning",
+        "genres": ["blues", "folk"],
+        "tidalId": "474834918",
+        "genresRaw": ["gospel", "folk", "blues"]
+      },
+      {
+        "title": "Plant Me In A Holler",
+        "artist": "UNCLE SINNER",
+        "albumDetails": ", da \"Everybody Wants to Know How I Die\" - Stomp The Bug Music",
+        "key": "uncle_sinner___plant_me_in_a_holler",
+        "genres": ["country", "folk"],
+        "genresRaw": ["gospel", "folk", "country"],
+        "tidalId": "474834920"
+      },
+      {
+        "title": "Lemonade Tycoon",
+        "artist": "TAUPE",
+        "albumDetails": ", da \"Waxing | Waning\" – Minority Records",
+        "key": "taupe___lemonade_tycoon",
+        "genres": ["jazz", "free-jazz"],
+        "genresRaw": ["free improvisation", "jazz-core"],
+        "tidalId": "479268684"
+      },
+      {
+        "title": "Candy Candy",
+        "artist": "FRANCESCO CUSA AND THE ASSASSINS",
+        "albumDetails": ", da \"Plays Cartoons\" – Improvvisatore Involontario",
+        "key": "francesco_cusa_and_the_assassins___candy_candy",
+        "genres": ["experimental", "electronic"],
+        "genresRaw": ["experimental", "electronic", "free-jazz"],
+        "tidalId": "492435410"
+      },
+      {
+        "title": "Moon",
+        "artist": "FILIPPO SALA",
+        "albumDetails": ", da \"Maree\" – Aut Records",
+        "key": "filippo_sala___moon",
+        "genres": ["jazz", "free-jazz", "jazz-core", "instrumental"],
+        "genresRaw": ["jazz", "free-jazz", "jazz-core", "instrumental"],
+        "tidalId": "501432675"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Music Of Many Nows",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-09042026-774faff7-5b06-4f54-9bc7-7f52a8367725.html",
+    "date": "09 Apr 2026",
+    "tracks": [
+      {
+        "title": "Mediocre Demon",
+        "artist": "MEMORIALS",
+        "albumDetails": ", da \"All Clouds Bring Not Rain\" - Fire Records",
+        "key": "memorials___mediocre_demon",
+        "genres": ["indie", "experimental", "jazz", "soul"],
+        "genresRaw": ["indie", "experimental", "jazz", "soul"],
+        "tidalId": "478596262"
+      },
+      {
+        "title": "boku ga feat. Adele Altro",
+        "artist": "NICOLAS REMONDINO",
+        "albumDetails": ", da \"Hìeratico\" - OOH Sounds",
+        "key": "nicolas_remondino___boku_ga_feat_adele_altro",
+        "genres": ["electronic", "ambient"],
+        "genresRaw": ["electronic", "ambient"],
+        "tidalId": "495652046"
+      },
+      {
+        "title": "Keep Going",
+        "artist": "IRREVERSIBLE ENTANGLEMENTS",
+        "albumDetails": ", da \"Future Present Past\" - Impulse!",
+        "key": "irreversible_entanglements___keep_going",
+        "genres": ["free improvisation", "jazz"],
+        "genresRaw": ["free improvisation", "jazz"],
+        "tidalId": "508666466"
+      },
+      {
+        "title": "Feather",
+        "artist": "SARY MOUSSA",
+        "albumDetails": ", da \"Land 03: A Compilation For The Displaced In Lebanon\" - Tunefork Studios / bandcamp",
+        "key": "sary_moussa___feather",
+        "genres": ["ambient", "world", "electroacoustic"],
+        "genresRaw": ["ambient", "world", "electroacoustic"]
+      },
+      {
+        "title": "Vicenza, 10",
+        "artist": "ALTROVI FESTIVAL",
+        "albumDetails": "-11 Aprile 2026",
+        "key": "altrovi_festival___vicenza_10",
+        "genres": ["ambient", "electronic", "instrumental"],
+        "genresRaw": ["ambient", "electronic", "instrumental"]
+      },
+      {
+        "title": "Piacenza, Genova, 10, 11 Aprile 2026",
+        "artist": "IZTOK KOREN/RAPHAEL ROGIŃSKI",
+        "albumDetails": "",
+        "key": "iztok_korenraphael_roginski___piacenza_genova_10_11_aprile_2026",
+        "genres": ["free improvisation", "experimental", "instrumental"],
+        "genresRaw": ["free improvisation", "experimental", "instrumental"]
+      },
+      {
+        "title": "Luce il tuo nome",
+        "artist": "ONDAKEIKI",
+        "albumDetails": ", da \"Canti Vol. 2\" - 42 Records",
+        "key": "ondakeiki___luce_il_tuo_nome",
+        "genres": ["psychedelic", "new age"],
+        "genresRaw": ["psychedelic", "new age"],
+        "tidalId": "463687887"
+      },
+      {
+        "title": "Secrets Reveal Themselves gently",
+        "artist": "IZTOK KOREN/RAPHAEL ROGIŃSKI",
+        "albumDetails": ", da \"Nocturnal Consolations\" - Instant Classic",
+        "key": "iztok_korenraphael_roginski___secrets_reveal_themselves_gently",
+        "genres": ["free improvisation", "experimental", "instrumental", "world"],
+        "genresRaw": ["free improvisation", "experimental", "instrumental", "world"],
+        "tidalId": "506299212"
+      },
+      {
+        "title": "Flux, da \"L'ineluctable pulsation du temps\"",
+        "artist": "DELPHINE DORA",
+        "albumDetails": "- Marionette",
+        "key": "delphine_dora___flux_da_\"l'ineluctable_pulsation_du_temps\"",
+        "genres": ["ambient", "electroacoustic", "experimental"],
+        "genresRaw": ["ambient", "electroacoustic", "experimental"],
+        "tidalId": "499880405"
+      },
+      {
+        "title": "Les heures flottantes, da \"L'ineluctable pulsation du temps\"",
+        "artist": "DELPHINE DORA",
+        "albumDetails": "- Marionette",
+        "key": "delphine_dora___les_heures_flottantes_da_\"l'ineluctable_pulsation_du_temps\"",
+        "genres": ["ambient", "electroacoustic", "experimental"],
+        "genresRaw": ["ambient", "electroacoustic", "experimental"],
+        "tidalId": "499880401"
+      },
+      {
+        "title": "Everything Is Moving",
+        "artist": "HARA ALONSO",
+        "albumDetails": ", da \"Music Of Many Nows\" - FUU",
+        "key": "hara_alonso___everything_is_moving",
+        "genres": ["ambient", "electronic"],
+        "genresRaw": ["ambient", "electronic"],
+        "tidalId": "508155947"
+      },
+      {
+        "title": "Soft Wanderlust",
+        "artist": "HARA ALONSO",
+        "albumDetails": ", da \"Music Of Many Nows\" - FUU",
+        "key": "hara_alonso___soft_wanderlust",
+        "genres": ["ambient", "electronic"],
+        "genresRaw": ["ambient", "electronic"],
+        "tidalId": "508155948"
+      },
+      {
+        "title": "Sopro ft. Camila Nebbia",
+        "artist": "VIC BANG",
+        "albumDetails": ", da \"Oda\" - Mondoj",
+        "key": "vic_bang___sopro_ft_camila_nebbia",
+        "genres": ["ambient", "experimental"],
+        "genresRaw": ["ambient", "experimental"],
+        "tidalId": "491202783"
+      },
+      {
+        "title": "Ritmika",
+        "artist": "VIC BANG",
+        "albumDetails": ", da \"Oda\" - Mondoj",
+        "key": "vic_bang___ritmika",
+        "genres": ["ambient", "experimental"],
+        "genresRaw": ["ambient", "experimental"],
+        "tidalId": "491202789"
+      },
+      {
+        "title": "Aguas Abiertas",
+        "artist": "COLLEEN",
+        "albumDetails": ", da \"Libres Antes Del Final\" - Thrill Jockey",
+        "key": "colleen___aguas_abiertas",
+        "genres": ["ambient", "experimental", "electronic"],
+        "genresRaw": ["ambient", "experimental", "electronic"],
+        "tidalId": "475603957"
       }
     ]
   }
