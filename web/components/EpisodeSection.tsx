@@ -70,7 +70,7 @@ export default function EpisodeSection({ episodes, sourceId }: EpisodeSectionPro
                       onClick={(e) => e.stopPropagation()}
                       className="text-xs text-[var(--muted)] hover:text-[var(--accent)] transition-colors ml-2"
                     >
-                      RAI Play Sound ↗
+                      RAI Play Sound
                     </a>
                   </div>
                 </div>
