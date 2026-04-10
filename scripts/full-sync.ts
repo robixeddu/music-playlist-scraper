@@ -101,8 +101,7 @@ const fullSync = async () => {
       await sleep(GENRE_DELAY_MS);
     }
     const genreResult = artistGenreCache.get(artistKey)!;
-    if (genreResult.normalized.length) {
-      track.genres = genreResult.normalized;
+    if (genreResult.raw.length) {
       track.genresRaw = genreResult.raw;
       console.log(`  🏷️  ${genreResult.normalized.join(", ")}`);
     }

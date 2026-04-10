@@ -7,6 +7,7 @@ import ImportButton from "./ImportButton";
 import PlaylistCover from "./PlaylistCover";
 import TrackList from "./TrackList";
 import { colorForGenre } from "@/lib/genreColors";
+import { filterGenres } from "@/lib/genres";
 
 interface GenreSectionProps {
   playlistPrefix: string;
@@ -23,7 +24,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
     const result: { artist: string; title: string; tidalId?: string | null }[] = [];
     for (const ep of episodes) {
       for (const track of ep.tracks) {
-        if (!track.genres?.includes(genre)) continue;
+        if (!filterGenres(track.genresRaw ?? []).includes(genre)) continue;
         const key = `${track.artist}|${track.title}`;
         if (!seen.has(key)) {
           seen.add(key);
@@ -38,7 +39,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
     const ids = new Set<string>();
     for (const ep of episodes) {
       for (const track of ep.tracks) {
-        if (track.tidalId && track.genres?.includes(genre)) ids.add(track.tidalId);
+        if (track.tidalId && filterGenres(track.genresRaw ?? []).includes(genre)) ids.add(track.tidalId);
       }
     }
     return Array.from(ids);

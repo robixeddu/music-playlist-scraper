@@ -13,7 +13,7 @@ import { getAccessToken } from "../lib/tidalAuth.js";
 import { createPlaylist, addTrackToPlaylist, deletePlaylist, getPlaylistTrackIds } from "../lib/tidalClient.js";
 import { TRACKS_FILE, GENRE_PLAYLISTS_FILE, PLAYLIST_PREFIX } from "../lib/config.js";
 import { EpisodeAggregated } from "../lib/types.js";
-import { normalizeGenre } from "../lib/genres.js";
+import { filterGenres } from "../lib/genres.js";
 
 const ADD_DELAY_MS = 600;
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -28,9 +28,7 @@ const main = async () => {
   for (const ep of episodes) {
     for (const track of ep.tracks) {
       if (!track.tidalId) continue;
-      for (const rawGenre of track.genres ?? []) {
-        const genre = normalizeGenre(rawGenre);
-        if (!genre) continue;
+      for (const genre of filterGenres(track.genresRaw ?? [])) {
         if (!validIds.has(genre)) validIds.set(genre, new Set());
         validIds.get(genre)!.add(track.tidalId);
       }

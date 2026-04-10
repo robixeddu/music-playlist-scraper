@@ -16,7 +16,7 @@ const catalogEnrich = async () => {
   for (let i = 0; i < episodes.length; i++) {
     for (let j = 0; j < episodes[i].tracks.length; j++) {
       const t = episodes[i].tracks[j];
-      if (!t.tidalId && t.genres?.length) {
+      if (!t.tidalId && t.genresRaw?.length) {
         queue.push({ track: t, ep: i, idx: j });
       }
     }
@@ -40,7 +40,7 @@ const catalogEnrich = async () => {
     const missingSet = new Set<string>();
     for (const ep of episodes) {
       for (const t of ep.tracks) {
-        if (!t.tidalId && t.genres?.length) missingSet.add(`${t.artist} - ${t.title}`);
+        if (!t.tidalId && t.genresRaw?.length) missingSet.add(`${t.artist} - ${t.title}`);
       }
     }
     await fsPromises.writeFile(MISSING_TRACKS_FILE, [...missingSet].join("\n") + "\n");

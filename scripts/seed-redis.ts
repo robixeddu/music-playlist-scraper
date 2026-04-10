@@ -6,10 +6,11 @@ import {
   getSeededGenreSlugs, setSeededGenreSlugs,
 } from "../lib/redisClient.js";
 import { GLOBAL_PLAYLIST_FILE, GENRE_PLAYLISTS_FILE, TRACKS_FILE, PROGRAM_ID } from "../lib/config.js";
+import { filterGenres } from "../lib/genres.js";
 
 const slugify = (s: string) => s.toLowerCase().replace(/\s+/g, "-");
 
-interface Track { tidalId?: string; genres?: string[]; }
+interface Track { tidalId?: string; genresRaw?: string[]; }
 interface Episode { tracks: Track[]; }
 
 const seed = async () => {
@@ -63,8 +64,8 @@ const seed = async () => {
   // Build genre → tidalIds map
   const genreIds: Record<string, string[]> = {};
   for (const track of allTracks) {
-    if (!track.tidalId || !track.genres) continue;
-    for (const genre of track.genres) {
+    if (!track.tidalId || !track.genresRaw?.length) continue;
+    for (const genre of filterGenres(track.genresRaw)) {
       const slug = slugify(genre);
       (genreIds[slug] ??= []).push(track.tidalId);
     }

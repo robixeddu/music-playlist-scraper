@@ -1,5 +1,6 @@
 import type { Source, EpisodeAggregated, GenreRow } from "./types";
 import { GENRE_FAMILY } from "./genreFamily";
+import { filterGenres } from "./genres";
 
 const SOURCES_URL =
   "https://raw.githubusercontent.com/robixeddu/music-playlist-scraper/main/data/sources.json";
@@ -31,7 +32,7 @@ export function getGenres(episodes: EpisodeAggregated[]): GenreRow[] {
   for (const ep of episodes) {
     for (const track of ep.tracks) {
       if (!track.tidalId) continue;
-      for (const genre of track.genres ?? []) {
+      for (const genre of filterGenres(track.genresRaw ?? [])) {
         if (!genreIds[genre]) genreIds[genre] = new Set();
         genreIds[genre].add(track.tidalId);
       }

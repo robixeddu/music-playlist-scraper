@@ -3,7 +3,6 @@ export interface Track {
   artist: string;
   albumDetails?: string;
   key: string;
-  genres?: string[];
   genresRaw?: string[];
   tidalId?: string;
 }

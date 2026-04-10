@@ -4,7 +4,7 @@ import { getAccessToken, getUserId } from "../lib/tidalAuth.js";
 import { createPlaylist, getPlaylistTrackIds, addTrackToPlaylist, deletePlaylist } from "../lib/tidalClient.js";
 import { TRACKS_FILE, PLAYLIST_PREFIX, PROGRAM_ID } from "../lib/config.js";
 import { EpisodeAggregated } from "../lib/types.js";
-import { normalizeGenre } from "../lib/genres.js";
+import { filterGenres } from "../lib/genres.js";
 import { getPlaylistId, setPlaylistId } from "../lib/redisClient.js";
 
 const MIN_TRACKS = 10;
@@ -34,10 +34,7 @@ const genrePlaylist = async () => {
     for (const track of ep.tracks) {
       if (!track.tidalId) continue;
       allTidalIds.add(track.tidalId);
-      if (!track.genres?.length) continue;
-      for (const rawGenre of track.genres) {
-        const genre = normalizeGenre(rawGenre);
-        if (!genre) continue;
+      for (const genre of filterGenres(track.genresRaw ?? [])) {
         if (!genreMap.has(genre)) genreMap.set(genre, new Set());
         genreMap.get(genre)!.add(track.tidalId);
       }

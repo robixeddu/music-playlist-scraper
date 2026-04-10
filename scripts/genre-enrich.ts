@@ -2,6 +2,7 @@ import "dotenv/config";
 import fsPromises from "fs/promises";
 import { TRACKS_FILE } from "../lib/config.js";
 import { getGenresHaiku, type GenreResult } from "../lib/claudeGenres.js";
+import { filterGenres } from "../lib/genres.js";
 import { EpisodeAggregated, BaseTrack } from "../lib/types.js";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -21,7 +22,6 @@ const genreEnrich = async () => {
   if (RESET) {
     for (const ep of episodes)
       for (const track of ep.tracks as BaseTrack[]) {
-        track.genres = [];
         track.genresRaw = [];
       }
     console.log("🗑️  All genres cleared.\n");
@@ -33,7 +33,7 @@ const genreEnrich = async () => {
 
   for (const ep of episodes) {
     for (const track of ep.tracks as BaseTrack[]) {
-      if (track.genres && track.genres.length > 0) continue; // already tagged
+      if (track.genresRaw && track.genresRaw.length > 0) continue; // already tagged
       const key = trackKey(track.artist, track.title);
       if (seen.has(key)) continue;
       seen.add(key);
@@ -61,8 +61,9 @@ const genreEnrich = async () => {
     try {
       const result = await getGenresHaiku(`Artist: ${displayName}\nTrack: ${title}`);
       cache.set(key, result);
-      if (result.normalized.length > 0) {
-        console.log(result.normalized.join(", "));
+      const normalized = filterGenres(result.raw);
+      if (normalized.length > 0) {
+        console.log(normalized.join(", "));
         found++;
       } else {
         console.log("(no tags)");
@@ -81,28 +82,13 @@ const genreEnrich = async () => {
       const key = trackKey(track.artist, track.title);
       const result = cache.get(key);
       if (result) {
-        track.genres = result.normalized;
         track.genresRaw = result.raw;
       }
     }
   }
 
-  markEmpty(episodes);
-
   await fsPromises.writeFile(TRACKS_FILE, JSON.stringify(episodes, null, 2));
   console.log(`\n✅ Tagged ${found}/${toTag.length} tracks → saved.`);
 };
-
-function markEmpty(episodes: EpisodeAggregated[]) {
-  let marked = 0;
-  for (const ep of episodes)
-    for (const track of ep.tracks as BaseTrack[])
-      if (!track.genres || track.genres.length === 0) {
-        track.genres = ["no-genre"];
-        track.genresRaw = [];
-        marked++;
-      }
-  if (marked > 0) console.log(`🏷️  ${marked} uncertain tracks marked as no-genre.`);
-}
 
 genreEnrich().catch(console.error);

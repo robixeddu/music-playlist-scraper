@@ -2,6 +2,7 @@
 
 import type { Source, EpisodeAggregated } from "@/lib/types";
 import { getGenres, getEpisodesSortedDesc, episodeDateToSlug, slugifyTitle } from "@/lib/data";
+import { filterGenres } from "@/lib/genres";
 import { useT } from "./LangProvider";
 import Accordion from "./Accordion";
 import GlobalSection from "./GlobalSection";
@@ -31,7 +32,7 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
     tidalIds: Array.from(
       episodes.reduce((ids, ep) => {
         for (const t of ep.tracks) {
-          if (t.tidalId && t.genres?.includes(row.genre)) ids.add(t.tidalId);
+          if (t.tidalId && filterGenres(t.genresRaw ?? []).includes(row.genre)) ids.add(t.tidalId);
         }
         return ids;
       }, new Set<string>())
