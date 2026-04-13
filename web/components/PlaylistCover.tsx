@@ -6,6 +6,7 @@ interface PlaylistCoverProps {
 export default function PlaylistCover({ color, size = 40 }: PlaylistCoverProps) {
   return (
     <div
+      aria-hidden="true"
       style={{
         width: size,
         height: size,

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, type ReactNode } from "react";
+import { useState, useId, type ReactNode } from "react";
 
 interface AccordionProps {
   title: string;
@@ -16,6 +16,7 @@ export default function Accordion({
   action,
 }: AccordionProps) {
   const [open, setOpen] = useState(defaultOpen);
+  const contentId = useId();
 
   return (
     <div className="border border-[var(--border)] rounded-lg">
@@ -23,6 +24,7 @@ export default function Accordion({
         role="button"
         tabIndex={0}
         aria-expanded={open}
+        aria-controls={contentId}
         onClick={(e) => {
           if ((e.target as HTMLElement).closest("button, a")) return;
           setOpen((v) => !v);
@@ -55,7 +57,7 @@ export default function Accordion({
           </div>
         )}
       </div>
-      <div className={`relative z-0 bg-[var(--background)] rounded-b-lg${open ? "" : " hidden"}`}>{children}</div>
+      <div id={contentId} className={`relative z-0 bg-[var(--background)] rounded-b-lg${open ? "" : " hidden"}`}>{children}</div>
     </div>
   );
 }
