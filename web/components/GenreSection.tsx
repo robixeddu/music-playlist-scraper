@@ -87,7 +87,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
               <ImportButton type="genre" slug={slug} playlistName={playlistName} tidalIds={tidalIds} />
             </div>
             {isExpanded && (
-              <div className="flex">
+              <div className="flex mb-3">
                 <div
                   style={{ backgroundColor: colorForGenre(row.genre) }}
                   className="shrink-0 ml-5 mt-3 w-10 opacity-70 rounded-sm"
