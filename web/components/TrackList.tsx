@@ -9,9 +9,9 @@ interface Track {
 export default function TrackList({ tracks, className = "px-5" }: { tracks: Track[]; className?: string }) {
   return (
     <ul className={`${className} py-2 space-y-1 border-t border-[var(--border)] bg-[var(--background)]`}>
-      {[...tracks].reverse().map((t, i) => (
+      {[...tracks].reverse().map((t) => (
         <li
-          key={i}
+          key={t.tidalId ?? `${t.artist}|${t.title}`}
           className={`text-xs py-0.5 flex gap-2 ${
             t.tidalId ? "text-[var(--foreground)]" : "text-[var(--muted)]"
           }`}
