@@ -36330,7 +36330,7 @@
         "artist": "BASTIEN KEB",
         "albumDetails": "da \"Ghouls\" – First World Records",
         "key": "bastien_keb___the_city_is_beautiful",
-        "genresRaw": ["afrobeat", "world"],
+        "genresRaw": ["jazz", "hip-hop", "spoken-word"],
         "tidalId": "459702108"
       },
       {
@@ -36339,7 +36339,7 @@
         "albumDetails": "da \"Ghouls\" – First World Records",
         "key": "bastien_keb___nighthawks",
         "tidalId": "459702105",
-        "genresRaw": ["afrobeat", "world"]
+        "genresRaw": ["hip-hop", "soul"]
       },
       {
         "title": "Moonlight",
@@ -36347,7 +36347,7 @@
         "albumDetails": "da \"Ghouls\" – First World Records",
         "key": "bastien_keb___moonlight",
         "tidalId": "459702121",
-        "genresRaw": ["afrobeat", "world"]
+        "genresRaw": ["soul"]
       },
       {
         "title": "Garçom da Ausência",
@@ -46986,8 +46986,8 @@
         "artist": "TUNJI OYELANA & THE BENDERS",
         "albumDetails": ", da \"Tunji Oyelana\" – Soundway Records",
         "key": "tunji_oyelana_the_benders___to_whom_it_may_concern",
-        "tidalId": "87749730",
-        "genresRaw": ["afrobeat", "funk", "world"]
+        "tidalId": "218118956",
+        "genresRaw": ["world", "folk"]
       },
       {
         "title": "Ipasan",
