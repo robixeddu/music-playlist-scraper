@@ -36,6 +36,7 @@ export default function Accordion({
       >
         <div className="flex-1 flex items-center gap-3 px-5 py-4">
           <svg
+            aria-hidden="true"
             className={`w-3 h-3 text-[var(--muted)] shrink-0 transition-transform duration-150 ${
               open ? "rotate-90" : ""
             }`}

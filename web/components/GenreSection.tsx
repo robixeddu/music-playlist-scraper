@@ -75,6 +75,7 @@ export default function GenreSection({ playlistPrefix, episodes, genres }: Genre
               >
                 <PlaylistCover color={colorForGenre(row.genre)} size={40} />
                 <svg
+                  aria-hidden="true"
                   className={`w-3 h-3 text-[var(--muted)] shrink-0 transition-transform duration-150 ${isExpanded ? "rotate-90" : ""}`}
                   fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
                 >

@@ -131,6 +131,7 @@ export default function ImportButton({
     return (
       <span className="px-3 py-1.5 rounded text-sm font-medium text-[var(--muted)] flex items-center gap-2 whitespace-nowrap">
         <svg
+          aria-hidden="true"
           className="animate-spin h-3.5 w-3.5"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -225,6 +226,7 @@ export default function ImportButton({
         className="px-3 py-1.5 rounded text-sm font-medium bg-[var(--accent)] text-white flex items-center gap-2 whitespace-nowrap cursor-default opacity-80"
       >
         <svg
+          aria-hidden="true"
           className="animate-spin h-3.5 w-3.5"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
