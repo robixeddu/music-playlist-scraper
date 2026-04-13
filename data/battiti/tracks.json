@@ -4346,7 +4346,7 @@
         "albumDetails": "da \"Nimerudi\" - Rocket Recordings",
         "key": "goat_+_mc_yallah___nimerudi",
         "tidalId": "405344136",
-        "genresRaw": ["hip-hop", "afrobeat"]
+        "genresRaw": ["hip-hop"]
       },
       {
         "title": "Echos De Medjerda",
@@ -8646,8 +8646,8 @@
         "artist": "CELIA CRUZ",
         "albumDetails": "da \"La Negra Tiene Tumbao\" – Sony Discos",
         "key": "celia_cruz___la_negra_tiene_tumbao_feat_mikey_perfecto",
-        "tidalId": "4955661",
-        "genresRaw": ["salsa", "afrobeat", "latin"]
+        "tidalId": "3180656",
+        "genresRaw": ["salsa", "latin"]
       },
       {
         "title": "DADDY YANKEE, GALLEGO, TEGO CALDERON, VOLTIO, IVY QUEEN, JOHNNY PREZ, WISO G, LENNOX, Quítate Tu Pa' Ponerme Yo",
@@ -25817,7 +25817,7 @@
         "albumDetails": "da \"Vol. 2\" – Awesome Tapes From Africa",
         "key": "na_hawa_doumbia___jigi_yiri",
         "tidalId": "386756754",
-        "genresRaw": ["world", "folk", "afrobeat"]
+        "genresRaw": ["world", "folk"]
       },
       {
         "title": "Hippo Road",
