@@ -1,24 +1,13 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { filterGenres } from "./genres.js";
+import { GENRE_FAMILY } from "./genreConfig.js";
 
 const client = new Anthropic();
 
-// Canonical genre list — must stay in sync with ALIASES canonical values in genres.ts
-const APPROVED_GENRES = [
-  "acoustic", "afrobeat", "ambient", "avant-garde",
-  "blues", "bossa nova", "chillout", "classica",
-  "country", "cumbia", "downtempo", "drone", "dub",
-  "electroacoustic", "electronic", "experimental",
-  "folk", "free improvisation", "funk",
-  "hip-hop", "house", "indie", "instrumental",
-  "industrial", "jazz", "lo-fi", "metal", "minimal", "mpb",
-  "new age", "new wave", "noise",
-  "pop", "post-punk", "post-rock",
-  "psychedelic", "punk", "r&b", "reggae", "rock",
-  "samba", "shoegaze", "singer-songwriter", "ska", "soul",
-  "soundtrack", "spoken word", "techno", "trance",
-  "trip-hop", "world",
-].sort();
+// Derived from GENRE_FAMILY canonical keys — no manual list to maintain.
+const APPROVED_GENRES = Object.keys(GENRE_FAMILY)
+  .filter((g) => g !== "no-genre")
+  .sort();
 
 const SYSTEM_PROMPT = `You are a music genre expert. Given an artist name and track title, respond with a JSON array of 1–3 genres that best describe THIS SPECIFIC TRACK.
 
