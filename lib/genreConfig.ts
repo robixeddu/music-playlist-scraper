@@ -196,7 +196,6 @@ export const ALIASES: Record<string, string> = {
   // Noise
   "noise rock":       "noise",
   "harsh noise":      "noise",
-  "power electronics":"noise",
 
   // Industrial
   "industrial rock":   "industrial",
@@ -320,6 +319,10 @@ export const ALIASES: Record<string, string> = {
   "spoken-word":  "experimental",
   "poetry":       "experimental",
   "vocal":        "experimental",
+  "field recordings":"experimental",
+  "field recording": "experimental",
+  "musique concrète":"experimental",
+  "musique concrete":"experimental",
 
   // Soundtrack
   "ost":        "soundtrack",
