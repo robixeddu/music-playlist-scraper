@@ -51,8 +51,9 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
 │   ├── tidalAuth.ts          # OAuth 2.1 PKCE, token persistence + refresh
 │   ├── tidalClient.ts        # Search, match, playlist CRUD
 │   ├── similarity.ts         # Jaccard scoring for track matching
-│   ├── claudeGenres.ts       # Genre tagging via Claude Haiku
-│   ├── genres.ts             # BLACKLIST + ALIASES for genre normalization
+│   ├── genreConfig.ts        # Single source of truth: BLACKLIST, ALIASES, GENRE_FAMILY
+│   ├── claudeGenres.ts       # Genre tagging: Haiku → Brave Search + Haiku fallback
+│   ├── genres.ts             # Thin wrapper: normalizeGenre + filterGenres
 │   ├── types.ts              # Shared types
 │   ├── config.ts             # Program-aware constants (reads PROGRAM_ID from env)
 │   └── logger.ts             # Console helpers
@@ -95,6 +96,7 @@ TIDAL_CLIENT_SECRET="your_client_secret"
 TIDAL_COUNTRY_CODE="IT"
 
 ANTHROPIC_API_KEY="your_anthropic_key"
+BRAVE_SEARCH_API_KEY="your_brave_key"   # Brave Search API — fallback genre lookup
 ```
 
 ### 4. First run (TIDAL auth)
@@ -151,20 +153,32 @@ npm run reconcile-global-playlist    # Rebuild global playlist from tracks.json,
 
 ## Genre System
 
-### Claude Haiku tagger (`lib/claudeGenres.ts`)
+### Genre tagger (`lib/claudeGenres.ts`)
 
-Each artist is classified once per run (cached). Claude returns 1–3 genres from a fixed approved list (`APPROVED_GENRES` in `claudeGenres.ts`). This replaces crowd-sourced Last.fm tags, which were noisy and geographically biased.
+Two-step pipeline, cheapest path first:
 
-### Normalization (`lib/genres.ts`)
+1. **Claude Haiku** — classifies from memory (artist + title). Returns 1–3 genres from the approved list or `[]` if uncertain.
+2. **Brave Search + Haiku** — fallback when Haiku returns `[]`. Searches `"artist title genre"` via Brave Search API (free tier: 1000 req/month), passes top-5 snippets to Haiku for extraction.
+
+`APPROVED_GENRES` is derived automatically from `GENRE_FAMILY` keys — no manual list to maintain.
+
+Requires `BRAVE_SEARCH_API_KEY` in `.env` (local only — not needed on Vercel).
+
+### Genre configuration (`lib/genreConfig.ts`)
+
+Single source of truth for the entire genre system. Edit only here — `lib/genres.ts`, `web/lib/genres.ts`, and `web/lib/genreFamily.ts` are thin wrappers that import from it.
 
 - **BLACKLIST**: geographic tags (country names, cities, nationalities, pan-regional terms), instruments, roles, junk tags. Rule: **any geographic name goes in the blacklist**.
-- **ALIASES**: semantic merges into canonical forms (e.g. `free jazz` → `jazz`, `darkwave` → `new wave`, `tribal` → `world`). Rule: **any variant of an existing genre goes in aliases**.
+- **ALIASES**: maps raw/variant tags → canonical names (e.g. `free jazz` → `jazz`, `darkwave` → `new wave`, `tribal` → `world`). Rule: **any variant of an existing genre goes in aliases**.
+- **GENRE_FAMILY**: canonical genre → display family for UI sorting and color assignment.
 
 ### Canonical genres
 
-Genres are organized into families for UI sorting. Key canonical values include: `jazz`, `blues`, `soul`, `electronic`, `ambient`, `drone`, `experimental`, `avant-garde`, `rock`, `post-punk`, `post-rock`, `metal`, `industrial`, `punk`, `psychedelic`, `noise`, `folk`, `pop`, `hip-hop`, `r&b`, `world`, `reggae`, `classica`, `soundtrack`, and the special `no-genre` tag for untagged tracks.
+Key canonical values: `jazz`, `blues`, `soul`, `electronic`, `ambient`, `drone`, `experimental`, `rock`, `post-punk`, `post-rock`, `metal`, `industrial`, `punk`, `psychedelic`, `noise`, `folk`, `pop`, `hip-hop`, `r&b`, `world`, `reggae`, `classica`, `soundtrack`, and `no-genre` for untagged tracks.
 
 `no-genre` is assigned via `genre-enrich.ts --mark-empty` after all other enrichment passes are done. Every track that still has no genre gets `["no-genre"]`, which maps to a dedicated `BATTITI-no-genre` TIDAL playlist.
+
+**Adding a new genre:** edit only `lib/genreConfig.ts` — add the alias in `ALIASES` and/or a new canonical entry in `GENRE_FAMILY`. Everything else updates automatically.
 
 ### Auto-playlist creation
 

@@ -97,7 +97,7 @@ web/
 ├── lib/
 │   ├── types.ts                Standalone TypeScript types (Track, EpisodeAggregated, …)
 │   ├── data.ts                 Data fetching + getGenres (unique tidalId counts)
-│   ├── genreFamily.ts          Standalone GENRE_FAMILY map (copy from lib/genres.ts)
+│   ├── genreFamily.ts          Re-export of GENRE_FAMILY from lib/genreConfig
 │   ├── tidal-auth.ts           PKCE OAuth helpers
 │   ├── tidal-api.ts            TIDAL API calls (TIDAL_BASE_URL + fetchWithRetry)
 │   └── tidal-import.ts         Import orchestration + 404 recreation
@@ -105,4 +105,4 @@ web/
 └── next.config.ts              rewrites() proxy for TIDAL API
 ```
 
-> **Note:** `web/lib/types.ts` and `web/lib/genreFamily.ts` are standalone copies — do not replace them with cross-directory imports from `../../lib/`. Vercel deploys only the `web/` directory and Turbopack cannot resolve parent-directory modules.
+> **Note:** `web/lib/genres.ts` and `web/lib/genreFamily.ts` import from `../../lib/genreConfig` — all genre logic lives in a single source of truth. To add or change a genre, edit only `lib/genreConfig.ts`.
