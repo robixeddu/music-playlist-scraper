@@ -23,17 +23,18 @@ Rules:
 - Return [] if you are not certain — wrong is worse than empty
 - Example output: ["jazz", "experimental"]`;
 
-const SEARCH_SYSTEM_PROMPT = `You are a music genre expert with web search access. Search for the artist and identify their musical genre based on real information.
+const SEARCH_SYSTEM_PROMPT = `You are a music genre classifier. You will receive an artist name, a track title, and web search snippets about the artist/track.
+
+Based ONLY on the search snippets, identify the genre of this specific track.
 
 Choose ONLY from this approved list:
 ${APPROVED_GENRES.join(", ")}
 
 Rules:
-- Search for the artist to find accurate genre information
 - Return ONLY a valid JSON array of 1–3 strings, no explanation
 - Use at most 3 genres, from most to least specific
-- Return [] only if search yields no useful genre information
-- Example output: ["dub", "electronic"]`;
+- Return [] if the snippets contain no useful genre information
+- Example output: ["electronic", "experimental"]`;
 
 export interface GenreResult {
   raw: string[];        // as returned by model
@@ -45,12 +46,10 @@ const APPROVED_GENRES_SET = new Set(APPROVED_GENRES);
 const parseGenreResponse = (text: string): GenreResult => {
   try {
     const cleaned = text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "").trim();
-    // Extract first JSON array if there's trailing text
     const match = cleaned.match(/\[[\s\S]*?\]/);
     const parsed: unknown = JSON.parse(match ? match[0] : cleaned);
     if (!Array.isArray(parsed)) return { raw: [], normalized: [] };
     const raw = (parsed as string[]).map((g) => String(g).toLowerCase().trim()).filter(Boolean);
-    // filterGenres applies ALIASES + BLACKLIST, then restrict to canonical APPROVED_GENRES
     const normalized = filterGenres(raw).filter((g) => APPROVED_GENRES_SET.has(g)).slice(0, 3);
     return { raw, normalized };
   } catch {
@@ -70,31 +69,53 @@ export const getGenresHaiku = async (content: string): Promise<GenreResult> => {
   return parseGenreResponse(text);
 };
 
-// Sonnet + web_search: fallback for unknown artists
-// server_tool_use (web_search) is handled server-side — single call, no agentic loop needed
-export const getGenresSonnetSearch = async (content: string): Promise<GenreResult> => {
+// Brave Search: fetch snippets for "artist title genre"
+const searchBrave = async (artist: string, title: string): Promise<string> => {
+  const apiKey = process.env.BRAVE_SEARCH_API_KEY;
+  if (!apiKey) throw new Error("BRAVE_SEARCH_API_KEY not set");
+
+  const q = encodeURIComponent(`${artist} ${title} genre`);
+  const res = await fetch(
+    `https://api.search.brave.com/res/v1/web/search?q=${q}&count=5&text_decorations=false`,
+    {
+      headers: {
+        "Accept": "application/json",
+        "X-Subscription-Token": apiKey,
+      },
+    }
+  );
+
+  if (!res.ok) throw new Error(`Brave Search API ${res.status}`);
+  const data = (await res.json()) as {
+    web?: { results?: Array<{ title?: string; description?: string }> };
+  };
+
+  const snippets = (data.web?.results ?? [])
+    .slice(0, 5)
+    .map((r) => [r.title, r.description].filter(Boolean).join(" — "))
+    .filter(Boolean)
+    .join("\n");
+
+  return snippets;
+};
+
+// Brave Search + Haiku: fallback for unknown artists
+export const getGenresBraveHaiku = async (
+  artist: string,
+  title: string
+): Promise<GenreResult> => {
+  const snippets = await searchBrave(artist, title);
+  if (!snippets) return { raw: [], normalized: [] };
+
+  const content = `Artist: ${artist}\nTrack: ${title}\n\nSearch results:\n${snippets}`;
   const response = await client.messages.create({
-    model: "claude-sonnet-4-5",
-    max_tokens: 1024,
+    model: "claude-haiku-4-5",
+    max_tokens: 64,
     system: SEARCH_SYSTEM_PROMPT,
-    tools: [{ type: "web_search_20250305" as any, name: "web_search" }],
     messages: [{ role: "user", content }],
   });
-
-  // Find the last text block containing a JSON array
-  const textBlocks = response.content.filter((c) => c.type === "text");
-  for (let i = textBlocks.length - 1; i >= 0; i--) {
-    const text = (textBlocks[i] as Anthropic.TextBlock).text.trim();
-    const jsonMatch = text.match(/\[[\s\S]*?\]/);
-    if (jsonMatch) {
-      try {
-        return parseGenreResponse(jsonMatch[0]);
-      } catch {
-        continue;
-      }
-    }
-  }
-  return { raw: [], normalized: [] };
+  const text = response.content[0].type === "text" ? response.content[0].text.trim() : "[]";
+  return parseGenreResponse(text);
 };
 
 export const getArtistGenres = async (
@@ -109,8 +130,9 @@ export const getArtistGenres = async (
     const haiku = await getGenresHaiku(content);
     if (haiku.normalized.length > 0) return haiku;
 
-    // Haiku unsure — fallback to Sonnet + web search
-    return await getGenresSonnetSearch(content);
+    // Haiku unsure — fallback to Brave Search + Haiku
+    if (title) return await getGenresBraveHaiku(artist, title);
+    return { raw: [], normalized: [] };
   } catch {
     return { raw: [], normalized: [] };
   }
