@@ -2571,7 +2571,7 @@
         "albumDetails": "",
         "key": "ondakeiki_live___una_stanza",
         "tidalId": "463687885",
-        "genresRaw": ["experimental", "instrumental", "jazz"]
+        "genresRaw": ["experimental", "psychedelic"]
       },
       {
         "title": "Un cerchio",
@@ -2579,7 +2579,7 @@
         "albumDetails": "",
         "key": "ondakeiki_live___un_cerchio",
         "tidalId": "463687886",
-        "genresRaw": ["experimental", "instrumental", "jazz"]
+        "genresRaw": ["reggae"]
       },
       {
         "title": "Nel tempio blu",
@@ -2587,7 +2587,7 @@
         "albumDetails": "",
         "key": "ondakeiki_live___nel_tempio_blu",
         "tidalId": "361556675",
-        "genresRaw": ["experimental", "instrumental", "jazz"]
+        "genresRaw": ["psychedelic", "dub"]
       },
       {
         "title": "Culla il mio petto",
@@ -2595,7 +2595,7 @@
         "albumDetails": "",
         "key": "ondakeiki_live___culla_il_mio_petto",
         "tidalId": "463687890",
-        "genresRaw": ["experimental", "instrumental", "jazz"]
+        "genresRaw": ["psychedelic", "reggae"]
       },
       {
         "title": "Where's The Money?",
@@ -6518,7 +6518,7 @@
         "albumDetails": "da \"Ghosted III\" – Drag City",
         "key": "oren_ambarchi_johan_berthling_andreas_werliin___chahar",
         "tidalId": "435536556",
-        "genresRaw": ["electronic", "experimental", "jazz"]
+        "genresRaw": ["electronic", "psychedelic", "jazz"]
       },
       {
         "title": "Danger",
@@ -51785,6 +51785,143 @@
         "albumDetails": "",
         "key": "gli_i___grazie",
         "genresRaw": []
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Drift",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-15042026-879b1e08-e0a6-4bf1-b0c9-6e2dd901c40a.html",
+    "date": "15 Apr 2026",
+    "tracks": [
+      {
+        "title": "Island In The Midst Of A Dried-Up Sea",
+        "artist": "IZTOK KOREN/RAPHAEL ROGIŃSKI",
+        "albumDetails": ", da \"Nocturnal Consolations\" - Instant Classic",
+        "key": "iztok_korenraphael_roginski___island_in_the_midst_of_a_driedup_sea",
+        "genresRaw": ["world", "electroacoustic"],
+        "tidalId": "506299211"
+      },
+      {
+        "title": "I Submerge Myself",
+        "artist": "IZTOK KOREN/RAPHAEL ROGIŃSKI",
+        "albumDetails": ", da \"Nocturnal Consolations\" - Instant Classic",
+        "key": "iztok_korenraphael_roginski___i_submerge_myself",
+        "genresRaw": ["experimental", "electroacoustic", "psychedelic"],
+        "tidalId": "506299219"
+      },
+      {
+        "title": "Sono dei viventi , da \"L'uso e gli attributi del cuore\"",
+        "artist": "RADIO HITO",
+        "albumDetails": "- Maple Death Records",
+        "key": "radio_hito___sono_dei_viventi_da_\"l'uso_e_gli_attributi_del_cuore\"",
+        "genresRaw": ["ambient", "experimental", "electronic"],
+        "tidalId": "497758862"
+      },
+      {
+        "title": "C'est Bien",
+        "artist": "MONSIEUR THIBAULT",
+        "albumDetails": ", da \"Port-Cucu\" - Dur & Doux 2026",
+        "key": "monsieur_thibault___c'est_bien",
+        "genresRaw": ["progressive rock", "math-rock"],
+        "tidalId": "499458176"
+      },
+      {
+        "title": "Darn Den Draumen",
+        "artist": "HENRIETTE EILERTSEN TRIO",
+        "albumDetails": ", da \"Moder\" - Motvind Records",
+        "key": "henriette_eilertsen_trio___darn_den_draumen",
+        "genresRaw": ["jazz", "experimental", "avant-garde"],
+        "tidalId": "495920184"
+      },
+      {
+        "title": "tour italiano, 13",
+        "artist": "JONAH PARZEN JOHNSON & LAU NAU",
+        "albumDetails": "– 18 aprile 2026",
+        "key": "jonah_parzen_johnson_lau_nau___tour_italiano_13",
+        "genresRaw": ["post-rock", "instrumental", "ambient"]
+      },
+      {
+        "title": "Decalcomania release party, Magazzino sul Po, Torino, 16 aprile 2026",
+        "artist": "LARSEN & LORI GOLDSTON",
+        "albumDetails": "",
+        "key": "larsen_lori_goldston___decalcomania_release_party_magazzino_sul_po_torino_16_aprile_2026",
+        "genresRaw": ["experimental", "electroacoustic", "ambient"]
+      },
+      {
+        "title": "Milano e Bologna, 17 e 18 aprile 2026",
+        "artist": "TORTOISE",
+        "albumDetails": "",
+        "key": "tortoise___milano_e_bologna_17_e_18_aprile_2026",
+        "genresRaw": ["post-rock", "instrumental", "experimental"]
+      },
+      {
+        "title": "Flight Attendant",
+        "artist": "JONAH PARZEN-JOHNSON/LAU NAU",
+        "albumDetails": ", da \"A Few We Remember\" - We Jazz Records",
+        "key": "jonah_parzenjohnsonlau_nau___flight_attendant",
+        "genresRaw": ["experimental", "ambient"],
+        "tidalId": "456434176"
+      },
+      {
+        "title": "Works And Days",
+        "artist": "TORTOISE",
+        "albumDetails": ", da \"Touch\" – International Anthem",
+        "key": "tortoise___works_and_days",
+        "genresRaw": ["post-rock", "instrumental"],
+        "tidalId": "470366723"
+      },
+      {
+        "title": "Lithification",
+        "artist": "SIMON BERZ",
+        "albumDetails": ", da \"Tectonic\" – Karlrecords",
+        "key": "simon_berz___lithification",
+        "genresRaw": ["electronic", "experimental", "field recordings"],
+        "tidalId": "507629667"
+      },
+      {
+        "title": "Emergent Terrain",
+        "artist": "SIMON BERZ",
+        "albumDetails": ", da \"Tectonic\" – Karlrecords",
+        "key": "simon_berz___emergent_terrain",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "507629672"
+      },
+      {
+        "title": "Riso",
+        "artist": "DIOGO ALVIM",
+        "albumDetails": ", da \"Música para Mysterious Heart\" – Crónica",
+        "key": "diogo_alvim___riso",
+        "genresRaw": []
+      },
+      {
+        "title": "Quadros",
+        "artist": "DIOGO ALVIM",
+        "albumDetails": ", da \"Música para Mysterious Heart\" – Crónica",
+        "key": "diogo_alvim___quadros",
+        "genresRaw": []
+      },
+      {
+        "title": "Extended Impressions",
+        "artist": "RE-GHOSTER EXTENDED",
+        "albumDetails": ", da \"Dreaming With The Lights On\" – Konnekt",
+        "key": "reghoster_extended___extended_impressions",
+        "genresRaw": []
+      },
+      {
+        "title": "Bending Myself",
+        "artist": "THOMAS PETER",
+        "albumDetails": ", da \"Changing Bodies\" – Hallow Ground",
+        "key": "thomas_peter___bending_myself",
+        "genresRaw": ["electronic", "field recordings"],
+        "tidalId": "498153252"
+      },
+      {
+        "title": "Nos Deixei",
+        "artist": "SERPENTE",
+        "albumDetails": ", da \"Visita do Fogo\" – Souk",
+        "key": "serpente___nos_deixei",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "502225334"
       }
     ]
   }
