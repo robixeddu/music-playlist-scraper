@@ -45368,7 +45368,7 @@
         "albumDetails": ", da \"Talking Timbuktu\" – World Circuit",
         "key": "ali_farka_toure_with_ry_cooder___amandrai",
         "tidalId": "490875245",
-        "genresRaw": ["world", "blues", "folk"]
+        "genresRaw": ["world", "blues"]
       },
       {
         "title": "Timbarma",
@@ -46561,8 +46561,8 @@
         "artist": "NICO",
         "albumDetails": ", da \"Chelsea Girl\" – Verve Records",
         "key": "nico___chelsea_girl",
-        "tidalId": "2500997",
-        "genresRaw": ["post-punk", "experimental", "folk"]
+        "tidalId": "94440041",
+        "genresRaw": ["singer-songwriter", "folk"]
       }
     ]
   },
