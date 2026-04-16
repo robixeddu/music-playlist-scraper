@@ -155,10 +155,12 @@ npm run reconcile-global-playlist    # Rebuild global playlist from tracks.json,
 
 ### Genre tagger (`lib/claudeGenres.ts`)
 
-Two-step pipeline, cheapest path first:
+Two-step pipeline per track, cheapest path first:
 
-1. **Claude Haiku** — classifies from memory (artist + title). Returns 1–3 genres from the approved list or `[]` if uncertain.
+1. **Claude Haiku** — classifies from memory (artist + title). Returns `[]` when uncertain: unknown artist, foreign-language title with no clear genre signal, or only a geographic/cultural inference. Wrong is worse than empty.
 2. **Brave Search + Haiku** — fallback when Haiku returns `[]`. Searches `"artist title genre"` via Brave Search API (free tier: 1000 req/month), passes top-5 snippets to Haiku for extraction.
+
+Each track is tagged individually — no per-artist cache — so the title influences every call and Brave can fire per-track. The log shows `[brave]` when the fallback is used.
 
 `APPROVED_GENRES` is derived automatically from `GENRE_FAMILY` keys — no manual list to maintain.
 
