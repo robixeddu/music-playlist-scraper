@@ -51924,5 +51924,127 @@
         "tidalId": "502225334"
       }
     ]
+  },
+  {
+    "episodeTitle": "Make A Mess",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-16042026-7f69e5d0-cfb1-4786-87bd-a86c9434e967.html",
+    "date": "16 Apr 2026",
+    "tracks": [
+      {
+        "title": "Umdumakhanda",
+        "artist": "BCUC",
+        "albumDetails": ", da \"The Road Is Never Easy\" - Out Here Records",
+        "key": "bcuc___umdumakhanda",
+        "genresRaw": ["world", "psychedelic"],
+        "tidalId": "506221309"
+      },
+      {
+        "title": "I Put Horns On My Worries",
+        "artist": "IZTOK KOREN/RAPHAEL ROGIŃSKI",
+        "albumDetails": ", da \"Nocturnal Consolations\" - Instant Classic",
+        "key": "iztok_korenraphael_roginski___i_put_horns_on_my_worries",
+        "genresRaw": ["world", "experimental", "instrumental"],
+        "tidalId": "506299207"
+      },
+      {
+        "title": "Senses (ft. Sampha)",
+        "artist": "ARLO PARKS",
+        "albumDetails": ", da \"Ambiguous Desire\" - Transgressive Records",
+        "key": "arlo_parks___senses_ft_sampha",
+        "genresRaw": ["electronic", "soul", "pop"],
+        "tidalId": "511014669"
+      },
+      {
+        "title": "Scorpio Purple Skies",
+        "artist": "FÉLICIA ATKINSON/CHRISTINA VANTZOU",
+        "albumDetails": ", da \"Reflections Vol. 3: Water Poem\" - RVNG intl",
+        "key": "felicia_atkinsonchristina_vantzou___scorpio_purple_skies",
+        "genresRaw": ["field recordings", "experimental", "electroacoustic"],
+        "tidalId": "472495313"
+      },
+      {
+        "title": "Champidou",
+        "artist": "TOUT BLEU",
+        "albumDetails": ", da \"You Are Tree\" - Carton Records",
+        "key": "tout_bleu___champidou",
+        "genresRaw": ["electronic", "chillout"]
+      },
+      {
+        "title": "Technosapiens",
+        "artist": "TOUT BLEU",
+        "albumDetails": ", da \"You Are Tree\" - Carton Records",
+        "key": "tout_bleu___technosapiens",
+        "genresRaw": ["electronic", "chillout"]
+      },
+      {
+        "title": "In My Head",
+        "artist": "MASMAS",
+        "albumDetails": ", da \"Make A Mess\" - Dischi Durevoli Records",
+        "key": "masmas___in_my_head",
+        "genresRaw": ["electronic", "ambient"],
+        "tidalId": "495632109"
+      },
+      {
+        "title": "Make A Mess",
+        "artist": "MASMAS",
+        "albumDetails": ", da \"Make A Mess\" - Dischi Durevoli Records",
+        "key": "masmas___make_a_mess",
+        "genresRaw": ["electronic", "ambient"],
+        "tidalId": "495632106"
+      },
+      {
+        "title": "Hymenocera Picta",
+        "artist": "TUKTU AND THE BELUGAS QUARTET",
+        "albumDetails": ", da \"Selat Lembeh\" - Chiærichetti Æditore Ræcordings",
+        "key": "tuktu_and_the_belugas_quartet___hymenocera_picta",
+        "genresRaw": ["ambient", "electronic", "experimental"]
+      },
+      {
+        "title": "Echidna Nebulosa",
+        "artist": "TUKTU AND THE BELUGAS QUARTET",
+        "albumDetails": ", da \"Selat Lembeh\" - Chiærichetti Æditore Ræcordings",
+        "key": "tuktu_and_the_belugas_quartet___echidna_nebulosa",
+        "genresRaw": ["ambient", "electronic", "experimental"]
+      },
+      {
+        "title": "Rubens' House",
+        "artist": "EMMA TRICCA",
+        "albumDetails": ", da \"Prisms Of Winter\" – Autoproduzione 2025",
+        "key": "emma_tricca___rubens'_house",
+        "genresRaw": ["pop"],
+        "tidalId": "286820533"
+      },
+      {
+        "title": "All The Pretty Flowers",
+        "artist": "EMMA TRICCA",
+        "albumDetails": ", da \"Prisms Of Winter\" – Autoproduzione 2025",
+        "key": "emma_tricca___all_the_pretty_flowers",
+        "genresRaw": []
+      },
+      {
+        "title": "King Blixa",
+        "artist": "EMMA TRICCA",
+        "albumDetails": ", da \"Prisms Of Winter\" – Autoproduzione 2025",
+        "key": "emma_tricca___king_blixa",
+        "genresRaw": ["pop"],
+        "tidalId": "286820532"
+      },
+      {
+        "title": "On A Ship Of Old Age",
+        "artist": "THEO SIEBEN",
+        "albumDetails": ", da \"Theodore\" - Continental Blue Heaven",
+        "key": "theo_sieben___on_a_ship_of_old_age",
+        "genresRaw": ["blues", "singer-songwriter", "acoustic"],
+        "tidalId": "497643103"
+      },
+      {
+        "title": "Come On In",
+        "artist": "THEO SIEBEN",
+        "albumDetails": ", da \"Theodore\" - Continental Blue Heaven",
+        "key": "theo_sieben___come_on_in",
+        "genresRaw": ["blues", "singer-songwriter", "acoustic"],
+        "tidalId": "497643106"
+      }
+    ]
   }
 ]
