@@ -11,3 +11,5 @@ data/battiti/tidal_verify_checkpoint.json
 data/battiti/fix_mismatched_checkpoint.json
 /logs
 .claude/
+CLAUDE.md
+AGENTS.md
