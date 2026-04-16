@@ -1,4 +1,4 @@
-import { BLACKLIST, ALIASES } from "../../lib/genreConfig";
+import { BLACKLIST, ALIASES } from "./genreConfig";
 
 export const normalizeGenre = (tag: string): string | null => {
   const lower = tag.toLowerCase().trim();

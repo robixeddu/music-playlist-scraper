@@ -55,11 +55,14 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
     <section className="space-y-3">
       <div className="mb-8 px-5">
         <h2 className="text-xl font-semibold mb-3">{source.name}</h2>
+        <p className={`text-sm text-[var(--muted)] ${descExpanded ? "" : "line-clamp-4"} md:line-clamp-none`}>
+          {source.description}
+        </p>
         <button
           onClick={() => setDescExpanded((v) => !v)}
-          className={`text-sm text-[var(--muted)] text-left w-full md:cursor-default md:pointer-events-none md:line-clamp-none ${descExpanded ? "" : "line-clamp-4 cursor-pointer"}`}
+          className="md:hidden mt-1 text-xs text-[var(--muted)] underline underline-offset-2"
         >
-          {source.description}
+          {descExpanded ? tr.showLess : tr.showMore}
         </button>
       </div>
 

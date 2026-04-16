@@ -1,1 +1,1 @@
-export { GENRE_FAMILY } from "../../lib/genreConfig";
+export { GENRE_FAMILY } from "./genreConfig";

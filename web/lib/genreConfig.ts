@@ -1,7 +1,5 @@
-// Single source of truth for genre normalization (scraper side).
-// Imported by lib/genres.ts and lib/claudeGenres.ts.
-// web/lib/genreConfig.ts is a local copy (Next.js cannot bundle files outside web/).
-// When editing genres, update BOTH this file and web/lib/genreConfig.ts.
+// Web-local copy of lib/genreConfig.ts — keep in sync with the root lib.
+// Next.js cannot bundle files outside the web/ project root, so this copy is necessary.
 
 export const BLACKLIST = new Set([
   // Rule: ANY geographic name (country, region, city, nationality adjective) is blacklisted.
