@@ -17,10 +17,13 @@ ${APPROVED_GENRES.join(", ")}
 Rules:
 - Return ONLY a valid JSON array of strings, no explanation
 - Use at most 3 genres, from most to least specific
-- Base your answer on the track itself, not the artist's general catalog
-- If this track is in a different style from the artist's usual work, reflect the track's actual genre
 - Artist names may be in ALL CAPS
-- Return [] if you are not certain — wrong is worse than empty
+- Return [] in ALL of these cases:
+  * You do not recognise the artist with confidence
+  * The track title is in a foreign language and gives no clear genre signal on its own
+  * Your only signal is a broad cultural/geographic category (e.g. the title sounds Brazilian, African, Arabic) — that is NOT a genre
+  * You are guessing rather than knowing
+- Wrong is far worse than empty — prefer [] over a plausible-sounding guess
 - Example output: ["jazz", "experimental"]`;
 
 const SEARCH_SYSTEM_PROMPT = `You are a music genre classifier. You will receive an artist name, a track title, and web search snippets about the artist/track.

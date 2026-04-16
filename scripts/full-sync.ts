@@ -12,7 +12,7 @@ import {
   getKnownEpisodeUrls,
 } from "../lib/aggregation.js";
 import { BATTITI_URL, SKIPPED_COUNT_LIMIT, MISSING_TRACKS_FILE, PROGRAM_ID } from "../lib/config.js";
-import { getArtistGenres, type GenreResult } from "../lib/claudeGenres.js";
+import { getArtistGenres } from "../lib/claudeGenres.js";
 import { getAccessToken } from "../lib/tidalAuth.js";
 import {
   findTidalMatch,
@@ -77,7 +77,6 @@ const fullSync = async () => {
   // ─── Step 3: Tag + match + stage ──────────────────────────────────────────
   console.log("\n🎵 Step 2: Genre tagging + TIDAL match...\n");
 
-  const artistGenreCache = new Map<string, GenreResult>();
   const todayExisting = new Set<string>();
   let todayAdded = 0;
   let notFound = 0;
@@ -88,24 +87,18 @@ const fullSync = async () => {
     const track = newTracks[trackIdx];
     console.log(`→ ${track.artist} – ${track.title}`);
 
-    // Genre (cached per artist)
-    const artistKey = track.artist.toLowerCase();
-    if (!artistGenreCache.has(artistKey)) {
-      try {
-        const genres = await getArtistGenres(track.artist, track.title);
-        artistGenreCache.set(artistKey, genres);
-      } catch (e: any) {
-        console.error(`❌ Error during genre tagging for "${track.artist}": ${e.message}`);
-        artistGenreCache.set(artistKey, { normalized: [], raw: [], source: "none" });
+    // Genre (per track — no cache, title matters)
+    try {
+      const genreResult = await getArtistGenres(track.artist, track.title);
+      if (genreResult.raw.length) {
+        track.genresRaw = genreResult.raw;
+        const src = genreResult.source === "brave" ? " [brave]" : "";
+        console.log(`  🏷️  ${genreResult.normalized.join(", ")}${src}`);
       }
-      await sleep(GENRE_DELAY_MS);
+    } catch (e: any) {
+      console.error(`❌ Error during genre tagging for "${track.artist}": ${e.message}`);
     }
-    const genreResult = artistGenreCache.get(artistKey)!;
-    if (genreResult.raw.length) {
-      track.genresRaw = genreResult.raw;
-      const src = genreResult.source === "brave" ? " [brave]" : "";
-      console.log(`  🏷️  ${genreResult.normalized.join(", ")}${src}`);
-    }
+    await sleep(GENRE_DELAY_MS);
 
     // TIDAL match
     const match = await findTidalMatch(track.artist, track.title, token);
