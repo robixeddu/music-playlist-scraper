@@ -66,10 +66,18 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
           onClick={() => setDescExpanded((v) => !v)}
           className="md:hidden w-full text-left min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--border)] rounded"
         >
-          <span id={`desc-${source.id}`} className={descExpanded ? "block text-sm text-[var(--muted)]" : "block text-sm text-[var(--muted)] line-clamp-4"}>
+          <span
+            id={`desc-${source.id}`}
+            className="block text-sm text-[var(--muted)]"
+            style={descExpanded ? undefined : { overflow: "hidden", display: "-webkit-box", WebkitBoxOrient: "vertical", WebkitLineClamp: 4 }}
+          >
             {source.description}
           </span>
-          <span aria-hidden="true" className={descExpanded ? "block text-[var(--muted)] mt-1 rotate-180 motion-reduce:transition-none transition-transform duration-200" : "block text-[var(--muted)] mt-1 motion-reduce:transition-none transition-transform duration-200"}>▾</span>
+          <span
+            aria-hidden="true"
+            className="inline-block text-[var(--muted)] mt-1"
+            style={{ transform: descExpanded ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 200ms" }}
+          >▾</span>
         </button>
       </div>
 
