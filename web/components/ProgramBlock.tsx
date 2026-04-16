@@ -55,14 +55,18 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
     <section className="space-y-3">
       <div className="mb-8 px-5">
         <h2 className="text-xl font-semibold mb-3">{source.name}</h2>
-        <p className={`text-sm text-[var(--muted)] ${descExpanded ? "" : "line-clamp-4"} md:line-clamp-none`}>
+        <p className="hidden md:block text-sm text-[var(--muted)]">
           {source.description}
         </p>
         <button
+          type="button"
+          aria-expanded={descExpanded}
           onClick={() => setDescExpanded((v) => !v)}
-          className="md:hidden mt-1 text-xs text-[var(--muted)] underline underline-offset-2"
+          className="md:hidden w-full text-left min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--border)] rounded"
         >
-          {descExpanded ? tr.showLess : tr.showMore}
+          <p className={`text-sm text-[var(--muted)] ${descExpanded ? "" : "line-clamp-4"}`}>
+            {source.description}
+          </p>
         </button>
       </div>
 

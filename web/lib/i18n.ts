@@ -31,8 +31,6 @@ export interface Translations {
   dedupAllProgress: (done: number, total: number) => string;
   dedupRemoved: (n: number) => string;
   dedupError: string;
-  showMore: string;
-  showLess: string;
 }
 
 export const translations: Record<Lang, Translations> = {
@@ -64,8 +62,6 @@ export const translations: Record<Lang, Translations> = {
     dedupAllProgress: (d, t) => `dedup ${d}/${t}`,
     dedupRemoved: (n) => n === 0 ? "✓ Aggiornata" : `−${n} duplicati`,
     dedupError: "err",
-    showMore: "Mostra di più",
-    showLess: "Mostra meno",
   },
   en: {
     noPrograms: "No active programs.",
@@ -95,7 +91,5 @@ export const translations: Record<Lang, Translations> = {
     dedupAllProgress: (d, t) => `dedup ${d}/${t}`,
     dedupRemoved: (n) => n === 0 ? "✓ Up to date" : `−${n} duplicates`,
     dedupError: "err",
-    showMore: "Show more",
-    showLess: "Show less",
   },
 };
