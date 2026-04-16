@@ -96,14 +96,15 @@ const fullSync = async () => {
         artistGenreCache.set(artistKey, genres);
       } catch (e: any) {
         console.error(`❌ Error during genre tagging for "${track.artist}": ${e.message}`);
-        artistGenreCache.set(artistKey, { normalized: [], raw: [] });
+        artistGenreCache.set(artistKey, { normalized: [], raw: [], source: "none" });
       }
       await sleep(GENRE_DELAY_MS);
     }
     const genreResult = artistGenreCache.get(artistKey)!;
     if (genreResult.raw.length) {
       track.genresRaw = genreResult.raw;
-      console.log(`  🏷️  ${genreResult.normalized.join(", ")}`);
+      const src = genreResult.source === "brave" ? " [brave]" : "";
+      console.log(`  🏷️  ${genreResult.normalized.join(", ")}${src}`);
     }
 
     // TIDAL match

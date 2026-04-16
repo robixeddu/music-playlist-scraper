@@ -39,21 +39,22 @@ Rules:
 export interface GenreResult {
   raw: string[];        // as returned by model
   normalized: string[]; // after ALIASES normalization
+  source: "haiku" | "brave" | "none";
 }
 
 const APPROVED_GENRES_SET = new Set(APPROVED_GENRES);
 
-const parseGenreResponse = (text: string): GenreResult => {
+const parseGenreResponse = (text: string, source: GenreResult["source"]): GenreResult => {
   try {
     const cleaned = text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "").trim();
     const match = cleaned.match(/\[[\s\S]*?\]/);
     const parsed: unknown = JSON.parse(match ? match[0] : cleaned);
-    if (!Array.isArray(parsed)) return { raw: [], normalized: [] };
+    if (!Array.isArray(parsed)) return { raw: [], normalized: [], source: "none" };
     const raw = (parsed as string[]).map((g) => String(g).toLowerCase().trim()).filter(Boolean);
     const normalized = filterGenres(raw).filter((g) => APPROVED_GENRES_SET.has(g)).slice(0, 3);
-    return { raw, normalized };
+    return { raw, normalized, source: normalized.length > 0 ? source : "none" };
   } catch {
-    return { raw: [], normalized: [] };
+    return { raw: [], normalized: [], source: "none" };
   }
 };
 
@@ -66,7 +67,7 @@ export const getGenresHaiku = async (content: string): Promise<GenreResult> => {
     messages: [{ role: "user", content }],
   });
   const text = response.content[0].type === "text" ? response.content[0].text.trim() : "[]";
-  return parseGenreResponse(text);
+  return parseGenreResponse(text, "haiku");
 };
 
 // Brave Search: fetch snippets for "artist title genre"
@@ -105,7 +106,7 @@ export const getGenresBraveHaiku = async (
   title: string
 ): Promise<GenreResult> => {
   const snippets = await searchBrave(artist, title);
-  if (!snippets) return { raw: [], normalized: [] };
+  if (!snippets) return { raw: [], normalized: [], source: "none" };
 
   const content = `Artist: ${artist}\nTrack: ${title}\n\nSearch results:\n${snippets}`;
   const response = await client.messages.create({
@@ -115,7 +116,7 @@ export const getGenresBraveHaiku = async (
     messages: [{ role: "user", content }],
   });
   const text = response.content[0].type === "text" ? response.content[0].text.trim() : "[]";
-  return parseGenreResponse(text);
+  return parseGenreResponse(text, "brave");
 };
 
 export const getArtistGenres = async (
@@ -132,8 +133,8 @@ export const getArtistGenres = async (
 
     // Haiku unsure — fallback to Brave Search + Haiku
     if (title) return await getGenresBraveHaiku(artist, title);
-    return { raw: [], normalized: [] };
+    return { raw: [], normalized: [], source: "none" };
   } catch {
-    return { raw: [], normalized: [] };
+    return { raw: [], normalized: [], source: "none" };
   }
 };

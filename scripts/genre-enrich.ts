@@ -1,7 +1,7 @@
 import "dotenv/config";
 import fsPromises from "fs/promises";
 import { TRACKS_FILE } from "../lib/config.js";
-import { getGenresHaiku, type GenreResult } from "../lib/claudeGenres.js";
+import { getArtistGenres, type GenreResult } from "../lib/claudeGenres.js";
 import { filterGenres } from "../lib/genres.js";
 import { EpisodeAggregated, BaseTrack } from "../lib/types.js";
 
@@ -47,7 +47,7 @@ const genreEnrich = async () => {
     return;
   }
 
-  console.log(`\n🤖 Haiku — tagging ${toTag.length} tracks...\n`);
+  console.log(`\n🤖 tagging ${toTag.length} tracks (Haiku → Brave fallback)...\n`);
 
   const cache = new Map<string, GenreResult>();
   let found = 0;
@@ -59,18 +59,18 @@ const genreEnrich = async () => {
     process.stdout.write(`[${i + 1}/${toTag.length}] ${displayName} — ${title} → `);
 
     try {
-      const result = await getGenresHaiku(`Artist: ${displayName}\nTrack: ${title}`);
+      const result = await getArtistGenres(displayName, title);
       cache.set(key, result);
-      const normalized = filterGenres(result.raw);
-      if (normalized.length > 0) {
-        console.log(normalized.join(", "));
+      if (result.normalized.length > 0) {
+        const src = result.source === "brave" ? " [brave]" : "";
+        console.log(`${result.normalized.join(", ")}${src}`);
         found++;
       } else {
         console.log("(no tags)");
       }
     } catch (e: any) {
       console.log(`ERROR: ${e.message}`);
-      cache.set(key, { raw: [], normalized: [] });
+      cache.set(key, { raw: [], normalized: [], source: "none" });
     }
 
     if (i < toTag.length - 1) await sleep(250);
