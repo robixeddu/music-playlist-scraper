@@ -90,12 +90,13 @@ const fullSync = async () => {
     // Genre (per track — no cache, title matters)
     try {
       const genreResult = await getArtistGenres(track.artist, track.title);
+      track.genresRaw = genreResult.raw;
       if (genreResult.raw.length) {
-        track.genresRaw = genreResult.raw;
         const src = genreResult.source === "brave" ? " [brave]" : "";
         console.log(`  🏷️  ${genreResult.normalized.join(", ")}${src}`);
       }
     } catch (e: any) {
+      track.genresRaw = [];
       console.error(`❌ Error during genre tagging for "${track.artist}": ${e.message}`);
     }
     await sleep(GENRE_DELAY_MS);
