@@ -306,10 +306,21 @@ export const ALIASES: Record<string, string> = {
   "benga":       "world",
 
   // Electronic
-  "electronica": "electronic",
-  "electro":     "electronic",
-  "idm":         "electronic",
-  "dance":       "electronic",
+  "electronica":    "electronic",
+  "electro":        "electronic",
+  "idm":            "electronic",
+  "dance":          "electronic",
+  "drum-and-bass":  "electronic",
+  "drum and bass":  "electronic",
+  "drum & bass":    "electronic",
+  "d&b":            "electronic",
+  "dnb":            "electronic",
+  "breakcore":      "electronic",
+  "glitch":         "electronic",
+  "bass music":     "electronic",
+  "bass-music":     "electronic",
+  "footwork":       "electronic",
+  "jungle":         "electronic",
 
   // Experimental
   "avant-garde":  "experimental",

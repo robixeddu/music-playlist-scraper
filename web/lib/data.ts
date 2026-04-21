@@ -1,6 +1,7 @@
 import type { Source, EpisodeAggregated, GenreRow } from "./types";
 import { GENRE_FAMILY } from "./genreFamily";
 import { filterGenres } from "./genres";
+import { cacheLife } from "next/cache";
 
 const SOURCES_URL =
   "https://raw.githubusercontent.com/robixeddu/music-playlist-scraper/main/data/sources.json";
@@ -9,13 +10,17 @@ const TRACKS_URL =
   "https://raw.githubusercontent.com/robixeddu/music-playlist-scraper/main/data/battiti/tracks.json";
 
 export async function fetchSources(): Promise<Source[]> {
-  const res = await fetch(SOURCES_URL, { next: { revalidate: 3600 } });
+  "use cache";
+  cacheLife("days");
+  const res = await fetch(SOURCES_URL);
   if (!res.ok) throw new Error("Failed to fetch sources");
   return res.json();
 }
 
 export async function fetchEpisodes(): Promise<EpisodeAggregated[]> {
-  const res = await fetch(TRACKS_URL, { next: { revalidate: 300 } });
+  "use cache";
+  cacheLife("hours");
+  const res = await fetch(TRACKS_URL);
   if (!res.ok) throw new Error("Failed to fetch tracks");
   return res.json();
 }
