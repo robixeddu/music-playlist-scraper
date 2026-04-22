@@ -5337,7 +5337,7 @@
         "albumDetails": "da \"Ya Llegó\" – Names You Can Trust",
         "key": "ticklah___el_dia_de_suerte",
         "tidalId": "36102191",
-        "genresRaw": ["dub", "reggae"]
+        "genresRaw": ["dub", "reggae", "salsa"]
       }
     ]
   },
@@ -28084,7 +28084,7 @@
         "artist": "KODE9",
         "albumDetails": "da \"Escapology\" - Hyperdub",
         "key": "kode9___lagrange_point",
-        "genresRaw": ["electronic", "dub", "experimental"],
+        "genresRaw": ["electronic", "drum-and-bass"],
         "tidalId": "229952093"
       },
       {
@@ -30873,7 +30873,7 @@
         "artist": "DENNIS BOVELL DUB BAND",
         "albumDetails": "da \"Sufferer Sounds\" – Disciples",
         "key": "dennis_bovell_dub_band___suffrah_dub_sufferer_sound_disco_45",
-        "genresRaw": ["dub", "reggae", "electronic"]
+        "genresRaw": ["dub", "reggae", "ska"]
       },
       {
         "title": "Chewing Gum",
@@ -37547,8 +37547,7 @@
         "artist": "JAH WOBBLE / BILL LASWELL",
         "albumDetails": "da \"Radioaxiom. A Dub Transmission\" - Palm Pictures",
         "key": "jah_wobble_bill_laswell___alsema_dub",
-        "tidalId": "153264999",
-        "genresRaw": ["dub", "experimental", "world"]
+        "genresRaw": []
       },
       {
         "title": "SWAMIMILLION, Road To Essaouira",
@@ -39761,7 +39760,7 @@
         "artist": "CIMARONS",
         "albumDetails": "da \"Harder Than The Rock\" - A-Lone Productions",
         "key": "cimarons___morning_sun",
-        "genresRaw": ["reggae", "dub"]
+        "genresRaw": ["reggae"]
       },
       {
         "title": "Fabulation For K",
@@ -44732,7 +44731,7 @@
         "albumDetails": ", da \"A Time To Love, A Time To Die\" – SA Recordings",
         "key": "amor_muere___la",
         "tidalId": "323834813",
-        "genresRaw": ["reggae", "dub"]
+        "genresRaw": ["experimental", "electroacoustic"]
       },
       {
         "title": "Cosa Rara (En La Playa) [Remix Mabe Fratti]",
@@ -52453,6 +52452,282 @@
         "key": "bim_sherman___fire_dub",
         "genresRaw": ["dub", "reggae"],
         "tidalId": "487838840"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Conversazioni",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-22042026-d3559a89-6fb3-409a-a89b-0bd26fffbeb0.html",
+    "date": "22 Apr 2026",
+    "tracks": [
+      {
+        "title": "Yikes Bikes",
+        "artist": "ABIGAIL SNAIL",
+        "albumDetails": ", da \"Rad Berms\" – Romac Puncture Repairs",
+        "key": "abigail_snail___yikes_bikes",
+        "genresRaw": ["no-wave", "noise"],
+        "tidalId": "502231200"
+      },
+      {
+        "title": "Show Breaking To Waves",
+        "artist": "ABIGAIL SNAIL",
+        "albumDetails": ", da \"Rad Berms\" – Romac Puncture Repairs",
+        "key": "abigail_snail___show_breaking_to_waves",
+        "genresRaw": ["post-rock", "free-jazz"],
+        "tidalId": "502231192"
+      },
+      {
+        "title": "Bamako Dub (feat Ousmane Dagnon, Banjougou Koné)",
+        "artist": "INVISIBLE SYSTEM",
+        "albumDetails": ", da \"Dub\" – Harper-Joseph Records",
+        "key": "invisible_system___bamako_dub_feat_ousmane_dagnon_banjougou_kone",
+        "genresRaw": ["dub", "world"],
+        "tidalId": "494883049"
+      },
+      {
+        "title": "Edu & Judgitzu",
+        "artist": "E'DU & JUDGITZU",
+        "albumDetails": ", da \"Nuku\" – Nyege Nyege Tapes",
+        "key": "e'du_judgitzu___edu_judgitzu",
+        "genresRaw": []
+      },
+      {
+        "title": "Mystical Journey",
+        "artist": "LAY LLAMAS",
+        "albumDetails": ", da \"Time, Islands and Thresholds\" – Zel Zele",
+        "key": "lay_llamas___mystical_journey",
+        "genresRaw": ["psychedelic", "dub", "post-rock"],
+        "tidalId": "500751389"
+      },
+      {
+        "title": "Vilienza",
+        "artist": "INDIAN WELLS",
+        "albumDetails": ", da \"Vita Lenta\" - Bomba Dischi",
+        "key": "indian_wells___vilienza",
+        "genresRaw": ["ambient", "field recordings", "experimental"],
+        "tidalId": "469114970"
+      },
+      {
+        "title": "Mare Sport",
+        "artist": "MAI MAI MAI",
+        "albumDetails": ", da \"Vita Lenta\" - Bomba Dischi",
+        "key": "mai_mai_mai___mare_sport",
+        "genresRaw": []
+      },
+      {
+        "title": "Astral Blue",
+        "artist": "CLAP! CLAP!",
+        "albumDetails": ", da \"Vita Lenta\" - Bomba Dischi",
+        "key": "clap_clap___astral_blue",
+        "genresRaw": ["electronic", "wonky"],
+        "tidalId": "469134880"
+      },
+      {
+        "title": "Royalties",
+        "artist": "TALK SHOW (STEPH RICHARDS & QASIM NAQVI)",
+        "albumDetails": ", da \"Miss America\" – We Jazz",
+        "key": "talk_show_steph_richards_qasim_naqvi___royalties",
+        "genresRaw": ["free-jazz"],
+        "tidalId": "457881346"
+      },
+      {
+        "title": "Willie Whipporwill Heads Back Home",
+        "artist": "MARTY EHRLICH & JULIUS HEMPHILL",
+        "albumDetails": ", da \"Circle The Heart\" – Relative Pitch Records",
+        "key": "marty_ehrlich_julius_hemphill___willie_whipporwill_heads_back_home",
+        "genresRaw": ["jazz", "free-jazz"],
+        "tidalId": "471724135"
+      },
+      {
+        "title": "Announcing Good News From The West / Revolutionary Enka 2001 / Grand Pink Junction Ballad / Crossing Snow Mountains With Yamaha Bike",
+        "artist": "GROUND ZERO",
+        "albumDetails": ", da \"Revolutionary Pekinese Opera Ver. 1.28\" – Spittle Records",
+        "key": "ground_zero___announcing_good_news_from_the_west_revolutionary_enka_2001_grand_pink_junction_ballad_crossing_snow_mountains_with_yamaha_bike",
+        "genresRaw": []
+      },
+      {
+        "title": "Morning Joy",
+        "artist": "JEAN DEROME & SOMEBODY SPECIAL",
+        "albumDetails": ", da \"Le sourire\" – Ambiances Magnétiques",
+        "key": "jean_derome_somebody_special___morning_joy",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "510883713"
+      },
+      {
+        "title": "A Plea",
+        "artist": "FLEA",
+        "albumDetails": ", da \"Honora\" – Nonesuch",
+        "key": "flea___a_plea",
+        "genresRaw": ["funk", "jazz"],
+        "tidalId": "504977271"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Those Who Fight",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-21042026-3c6780ad-bb27-4315-a950-580b99cd154b.html",
+    "date": "21 Apr 2026",
+    "tracks": [
+      {
+        "title": "Panic In Detroit",
+        "artist": "STEVEN BROWN",
+        "albumDetails": ", da \"In This Very World\" – Crammed Discs",
+        "key": "steven_brown___panic_in_detroit",
+        "genresRaw": ["jazz", "rock"],
+        "tidalId": "509159466"
+      },
+      {
+        "title": "Danza de la pluma",
+        "artist": "STEVEN BROWN",
+        "albumDetails": ", da \"In This Very World\" – Crammed Discs",
+        "key": "steven_brown___danza_de_la_pluma",
+        "genresRaw": ["instrumental", "acoustic"],
+        "tidalId": "509159465"
+      },
+      {
+        "title": "Third Nature",
+        "artist": "BOOKER STARDRUM",
+        "albumDetails": ", da \"Close-up On The Outside\" – We Jazz",
+        "key": "booker_stardrum___third_nature",
+        "genresRaw": ["ambient", "jazz", "avant-garde"],
+        "tidalId": "476604576"
+      },
+      {
+        "title": "Edu",
+        "artist": "EDU & JUDGITZU",
+        "albumDetails": ", da \"Nuku\" – Nyege Nyege Tapes",
+        "key": "edu_judgitzu___edu",
+        "genresRaw": []
+      },
+      {
+        "title": "Sinestesia",
+        "artist": "ÆTERNA FRAGMA",
+        "albumDetails": ", da \"AA.VV., Transmisiones: Cuba\" – Buh Records",
+        "key": "æterna_fragma___sinestesia",
+        "genresRaw": []
+      },
+      {
+        "title": "Camino",
+        "artist": "KI DEI",
+        "albumDetails": ", da \"AA.VV., Transmisiones: Cuba\" – Buh Records",
+        "key": "ki_dei___camino",
+        "genresRaw": []
+      },
+      {
+        "title": "Roma e Padova, 21 e 22 aprile 2026",
+        "artist": "TINARIWEN",
+        "albumDetails": "",
+        "key": "tinariwen___roma_e_padova_21_e_22_aprile_2026",
+        "genresRaw": []
+      },
+      {
+        "title": "Roma/Bologna/Torino, 23 aprile, 15 e 29 maggio 2026",
+        "artist": "BONO / BURATTINI",
+        "albumDetails": "",
+        "key": "bono_burattini___romabolognatorino_23_aprile_15_e_29_maggio_2026",
+        "genresRaw": []
+      },
+      {
+        "title": "Pesaro & Trieste, 23 e 24 aprile 2026",
+        "artist": "TEHO TEARDO & BLIXA BARGELD",
+        "albumDetails": "",
+        "key": "teho_teardo_blixa_bargeld___pesaro_trieste_23_e_24_aprile_2026",
+        "genresRaw": ["experimental", "electronic", "post-rock"]
+      },
+      {
+        "title": "Roma, Auditorium Parco della musica, 23 aprile",
+        "artist": "AURA SATZ: LEI RICALIBRA / SHE RECALIBRATES",
+        "albumDetails": "- 14 giugno",
+        "key": "aura_satz_lei_ricalibra_she_recalibrates___roma_auditorium_parco_della_musica_23_aprile",
+        "genresRaw": []
+      },
+      {
+        "title": "Fragili danze",
+        "artist": "BONO / BURATTINI",
+        "albumDetails": ", da \"Ora sono un lago\" - Maple Death Records",
+        "key": "bono_burattini___fragili_danze",
+        "genresRaw": ["experimental", "electronic"],
+        "tidalId": "489338452"
+      },
+      {
+        "title": "Amidinin Wadar Nohar",
+        "artist": "TINARIWEN",
+        "albumDetails": ", da \"Hoggar\" – Wedge",
+        "key": "tinariwen___amidinin_wadar_nohar",
+        "genresRaw": ["desert blues", "world", "psychedelic"],
+        "tidalId": "467688442"
+      },
+      {
+        "title": "Cabanes/Castellon",
+        "artist": "SHAKE STEW",
+        "albumDetails": ", da \"Ten One Two\" - Traumton Records",
+        "key": "shake_stew___cabanescastellon",
+        "genresRaw": ["jazz", "psychedelic"],
+        "tidalId": "473117300"
+      },
+      {
+        "title": "Free Your eyes",
+        "artist": "SHAKE STEW",
+        "albumDetails": ", da \"Ten One Two\" – Traumton Records",
+        "key": "shake_stew___free_your_eyes",
+        "genresRaw": ["jazz", "psychedelic"],
+        "tidalId": "473117302"
+      },
+      {
+        "title": "È che non io ho più paura",
+        "artist": "CUCOMA COMBO",
+        "albumDetails": ", da \"Non Basta\" – Black Sweat",
+        "key": "cucoma_combo___e_che_non_io_ho_piu_paura",
+        "genresRaw": ["afrobeat"],
+        "tidalId": "496285651"
+      },
+      {
+        "title": "Non Basta",
+        "artist": "CUCOMA COMBO",
+        "albumDetails": ", da \"Non Basta\" – Black Sweat",
+        "key": "cucoma_combo___non_basta",
+        "genresRaw": ["afrobeat"],
+        "tidalId": "496285646"
+      },
+      {
+        "title": "Those Who Fight",
+        "artist": "CUCOMA COMBO",
+        "albumDetails": ", da \"Non Basta\" – Black Sweat",
+        "key": "cucoma_combo___those_who_fight",
+        "genresRaw": ["afrobeat"],
+        "tidalId": "496285648"
+      },
+      {
+        "title": "La Luna",
+        "artist": "NUEVOS RÍOS",
+        "albumDetails": ", da \"Nuevos Rios\" - ZZK Records",
+        "key": "nuevos_rios___la_luna",
+        "genresRaw": ["cumbia", "marimba", "world"],
+        "tidalId": "486554998"
+      },
+      {
+        "title": "La memoria de Justino",
+        "artist": "NUEVOS RÍOS",
+        "albumDetails": ", da \"Nuevos Rios\" - ZZK Records",
+        "key": "nuevos_rios___la_memoria_de_justino",
+        "genresRaw": ["tropical", "marimba"],
+        "tidalId": "486555004"
+      },
+      {
+        "title": "Santa Teresa Degli Scalzi",
+        "artist": "ORCHESTRA TOPICA",
+        "albumDetails": ", da \"Magic Umbu\" - Retro Records",
+        "key": "orchestra_topica___santa_teresa_degli_scalzi",
+        "genresRaw": ["jazz"],
+        "tidalId": "509656183"
+      },
+      {
+        "title": "Stuti",
+        "artist": "ORCHESTRA TOPICA",
+        "albumDetails": ", da \"Magic Umbu\" - Retro Records",
+        "key": "orchestra_topica___stuti",
+        "genresRaw": ["jazz"],
+        "tidalId": "509656181"
       }
     ]
   }

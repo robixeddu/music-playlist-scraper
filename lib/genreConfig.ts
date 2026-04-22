@@ -323,6 +323,9 @@ export const ALIASES: Record<string, string> = {
   "bass-music":     "electronic",
   "footwork":       "electronic",
   "jungle":         "electronic",
+  "wonky":         "electronic",
+  "wonky beats":   "electronic",
+  "wonky-beats":   "electronic",
 
   // Experimental
   "avant-garde":      "experimental",

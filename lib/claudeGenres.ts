@@ -64,7 +64,7 @@ const parseGenreResponse = (text: string, source: GenreResult["source"]): GenreR
 // Haiku: fast, cheap — used first
 export const getGenresHaiku = async (content: string): Promise<GenreResult> => {
   const response = await client.messages.create({
-    model: "claude-haiku-4-5",
+    model: "claude-haiku-4-5-20251001",
     max_tokens: 64,
     system: SYSTEM_PROMPT,
     messages: [{ role: "user", content }],
@@ -72,6 +72,8 @@ export const getGenresHaiku = async (content: string): Promise<GenreResult> => {
   const text = response.content[0].type === "text" ? response.content[0].text.trim() : "[]";
   return parseGenreResponse(text, "haiku");
 };
+
+// Brave Search: fetch snippets for "artist title genre"
 
 // Brave Search: fetch snippets for "artist title genre"
 const searchBrave = async (artist: string, title: string): Promise<string> => {
