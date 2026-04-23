@@ -52730,5 +52730,128 @@
         "tidalId": "509656181"
       }
     ]
+  },
+  {
+    "episodeTitle": "Vila",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-23042026-8cca8717-90b3-41bd-8d53-a6760a82957d.html",
+    "date": "23 Apr 2026",
+    "tracks": [
+      {
+        "title": "Despite My Effort, I'm Rottin' Away In The Same Place As Before Whereas I Feel Too Much",
+        "artist": "BRANCH",
+        "albumDetails": ", da \"AA.VV., Transmisiones: Cuba\" – Buh Records",
+        "key": "branch___despite_my_effort_i'm_rottin'_away_in_the_same_place_as_before_whereas_i_feel_too_much",
+        "genresRaw": ["experimental"],
+        "tidalId": "457044096"
+      },
+      {
+        "title": "El vacío",
+        "artist": "CUBALIBRE.EXE",
+        "albumDetails": ", da \"AA.VV., Transmisiones: Cuba\" – Buh Records",
+        "key": "cubalibreexe___el_vacio",
+        "genresRaw": ["ambient", "industrial", "experimental"]
+      },
+      {
+        "title": "Fruit (Is Good For You) Dub (feat. Juldeh Camara)",
+        "artist": "INVISIBLE SYSTEM",
+        "albumDetails": ", da \"Dub\" – Harper-Joseph Records",
+        "key": "invisible_system___fruit_is_good_for_you_dub_feat_juldeh_camara",
+        "genresRaw": ["dub", "world"],
+        "tidalId": "307377583"
+      },
+      {
+        "title": "Telluric",
+        "artist": "BOOKER STARDRUM",
+        "albumDetails": ", da \"Close-up On The Outside\" – We Jazz",
+        "key": "booker_stardrum___telluric",
+        "genresRaw": ["electroacoustic", "experimental", "instrumental", "jazz"],
+        "tidalId": "476604574"
+      },
+      {
+        "title": "Ne dites pas",
+        "artist": "JAC BERROCAL / VINCENT EPPLAY / TIMO VAN LUIJK",
+        "albumDetails": ", da \"Ste Cy\" – La Scie Dorée",
+        "key": "jac_berrocal_vincent_epplay_timo_van_luijk___ne_dites_pas",
+        "genresRaw": ["experimental", "electroacoustic", "instrumental"]
+      },
+      {
+        "title": "Spring Theme",
+        "artist": "FABIANO DO NASCIMENTO & VITTOR SANTOS ORCHESTRA",
+        "albumDetails": ", da \"Vila\" - Far Out Recordings",
+        "key": "fabiano_do_nascimento_vittor_santos_orchestra___spring_theme",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "476663798"
+      },
+      {
+        "title": "Floresta Dos Sonhos",
+        "artist": "FABIANO DO NASCIMENTO & VITTOR SANTOS ORCHESTRA",
+        "albumDetails": ", da \"Vila\" - Far Out Recordings",
+        "key": "fabiano_do_nascimento_vittor_santos_orchestra___floresta_dos_sonhos",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "375495477"
+      },
+      {
+        "title": "Scala",
+        "artist": "ANTON TOORELL",
+        "albumDetails": ", da \"Solo II\" – Thanatosis",
+        "key": "anton_toorell___scala",
+        "genresRaw": ["instrumental", "experimental", "acoustic"],
+        "tidalId": "495196146"
+      },
+      {
+        "title": "Cripta",
+        "artist": "ANTON TOORELL",
+        "albumDetails": ", da \"Solo II\" – Thanatosis",
+        "key": "anton_toorell___cripta",
+        "genresRaw": ["minimalist", "acoustic", "experimental"],
+        "tidalId": "495196145"
+      },
+      {
+        "title": "Innermost",
+        "artist": "ZEROSUMMER",
+        "albumDetails": ", da \"The Blue Hours\" – Driftworks",
+        "key": "zerosummer___innermost",
+        "genresRaw": ["drone", "ambient", "instrumental"]
+      },
+      {
+        "title": "Aube",
+        "artist": "ZEROSUMMER",
+        "albumDetails": ", da \"The Blue Hours\" – Driftworks",
+        "key": "zerosummer___aube",
+        "genresRaw": ["drone", "ambient", "electroacoustic"]
+      },
+      {
+        "title": "Even God Gets Stuck In Devotion ft. Austyn Wohlers",
+        "artist": "DAGMAR ZUNIGA",
+        "albumDetails": ", da \"In Filth Your Mystery Is Kingdom / Far Smile Peasant In Yellow Music\" - AD 93",
+        "key": "dagmar_zuniga___even_god_gets_stuck_in_devotion_ft_austyn_wohlers",
+        "genresRaw": ["folk", "experimental"],
+        "tidalId": "501997150"
+      },
+      {
+        "title": "In Filth Your Mystery Is Kingdom",
+        "artist": "DAGMAR ZUNIGA",
+        "albumDetails": ", da \"In Filth Your Mystery Is Kingdom / Far Smile Peasant In Yellow Music\" - AD 93",
+        "key": "dagmar_zuniga___in_filth_your_mystery_is_kingdom",
+        "genresRaw": ["psych-folk", "experimental", "lo-fi"],
+        "tidalId": "501997164"
+      },
+      {
+        "title": "Inside",
+        "artist": "DAO STROM",
+        "albumDetails": ", da \"Redux\" - Disasters By Choice",
+        "key": "dao_strom___inside",
+        "genresRaw": ["experimental", "ambient", "singer-songwriter"],
+        "tidalId": "218921106"
+      },
+      {
+        "title": "Day That We Met",
+        "artist": "DAO STROM",
+        "albumDetails": ", da \"Redux\" - Disasters By Choice",
+        "key": "dao_strom___day_that_we_met",
+        "genresRaw": ["dream pop", "folk", "ambient"],
+        "tidalId": "218921101"
+      }
+    ]
   }
 ]
