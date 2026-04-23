@@ -5,7 +5,7 @@ A Node.js/TypeScript project that scrapes the **Battiti** radio show on RAI Play
 ## Features
 
 - Scrapes episodes from RAI Play Sound, extracts artist/title/album
-- Genre tagging via **Claude Haiku** (`claude-haiku-4-5`) — one API call per artist, cached, returns 1–3 genres from an approved list
+- Genre tagging via **Claude Haiku** (`claude-haiku-4-5-20251001`) — one API call per track, returns 1–3 genres from an approved list
 - TIDAL matching with fuzzy scoring (Jaccard) + real artist verification to prevent cover-song mismatches
 - **Two-phase workflow** — scrape/match first, manual review, then propagate:
   - `battiti-YYYY-MM-DD` — staging playlist created on each run for review
@@ -241,7 +241,7 @@ A read-only Next.js 16 app in `web/` that browses the catalog — deployed at [m
   - Episode playlists are named `{sourceId}-YYYY-MM-DD-nome-episodio` (date + slugified title)
 - Import buttons disabled until connected to TIDAL
 - TIDAL API calls proxied via Next.js rewrites (avoids CORS)
-- Data fetched from GitHub raw URLs with 1-hour in-memory cache
+- Data fetched from GitHub raw URLs via Next.js `'use cache'` directive (revalidates hourly; bypasses the 2MB fetch cache limit)
 - `tracks.json` is the single source of truth for all data displayed
 
 ```bash
