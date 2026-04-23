@@ -74,8 +74,6 @@ export const getGenresHaiku = async (content: string): Promise<GenreResult> => {
 };
 
 // Brave Search: fetch snippets for "artist title genre"
-
-// Brave Search: fetch snippets for "artist title genre"
 const searchBrave = async (artist: string, title: string): Promise<string> => {
   const apiKey = process.env.BRAVE_SEARCH_API_KEY;
   if (!apiKey) throw new Error("BRAVE_SEARCH_API_KEY not set");
@@ -139,7 +137,8 @@ export const getArtistGenres = async (
     // Haiku unsure — fallback to Brave Search + Haiku
     if (title) return await getGenresBraveHaiku(artist, title);
     return { raw: [], normalized: [], source: "none" };
-  } catch {
+  } catch (e: any) {
+    console.error(`  ⚠️  genre error [${artist}]: ${e.message}`);
     return { raw: [], normalized: [], source: "none" };
   }
 };
