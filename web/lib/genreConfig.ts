@@ -232,10 +232,11 @@ export const ALIASES: Record<string, string> = {
   "rhythm and blues": "r&b",
 
   // Folk
-  "avant-folk":     "folk",
-  "psychedelic folk":"folk",
-  "indie folk":     "folk",
-  "indie-folk":     "folk",
+  "avant-folk":       "folk",
+  "psychedelic folk": "folk",
+  "psych-folk":       "folk",
+  "indie folk":       "folk",
+  "indie-folk":       "folk",
   "neo-folk":       "folk",
   "neo folk":       "folk",
   "dark-folk":      "folk",
