@@ -52764,7 +52764,12 @@
         "artist": "BOOKER STARDRUM",
         "albumDetails": ", da \"Close-up On The Outside\" – We Jazz",
         "key": "booker_stardrum___telluric",
-        "genresRaw": ["electroacoustic", "experimental", "instrumental", "jazz"],
+        "genresRaw": [
+          "electroacoustic",
+          "experimental",
+          "instrumental",
+          "jazz"
+        ],
         "tidalId": "476604574"
       },
       {
@@ -52851,6 +52856,514 @@
         "key": "dao_strom___day_that_we_met",
         "genresRaw": ["dream pop", "folk", "ambient"],
         "tidalId": "218921101"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Fire",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-24042026-f0df9368-418a-403b-9643-2a979e2076a5.html",
+    "date": "24 Apr 2026",
+    "tracks": [
+      {
+        "title": "Up Your Hands In Front The Sun",
+        "artist": "LAY LLAMAS",
+        "albumDetails": ", da \"Time, Islands and Thresholds\" – Zel",
+        "key": "lay_llamas___up_your_hands_in_front_the_sun",
+        "genresRaw": ["electronic", "psychedelic", "experimental"],
+        "tidalId": "500443145"
+      },
+      {
+        "title": "Island",
+        "artist": "LAY LLAMAS",
+        "albumDetails": ", da \"Time, Islands and Thresholds\" – Zel",
+        "key": "lay_llamas___island",
+        "genresRaw": ["psychedelic", "experimental", "electronic"],
+        "tidalId": "500443148"
+      },
+      {
+        "title": "L'Âge d'or",
+        "artist": "JAC BERROCAL / VINCENT EPPLAY / TIMO VAN LUIJK",
+        "albumDetails": ", da \"Ste Cy\" – La Scie Dorée",
+        "key": "jac_berrocal_vincent_epplay_timo_van_luijk___l'age_d'or",
+        "genresRaw": ["experimental", "musique concrète", "electroacoustic"]
+      },
+      {
+        "title": "Horizontal Valley",
+        "artist": "JAC BERROCAL / VINCENT EPPLAY / TIMO VAN LUIJK",
+        "albumDetails": ", da \"Ste Cy\" – La Scie Dorée",
+        "key": "jac_berrocal_vincent_epplay_timo_van_luijk___horizontal_valley",
+        "genresRaw": ["experimental", "ambient", "electroacoustic"]
+      },
+      {
+        "title": "Attach Bayonets",
+        "artist": "ABIGAIL SNAIL",
+        "albumDetails": ", da \"Rad Berms\" – Romac Puncture Repairs",
+        "key": "abigail_snail___attach_bayonets",
+        "genresRaw": ["experimental", "post-rock"],
+        "tidalId": "502231196"
+      },
+      {
+        "title": "Wordsworth",
+        "artist": "STEVEN BROWN",
+        "albumDetails": ", da \"In This Very World\" – Crammed Discs",
+        "key": "steven_brown___wordsworth",
+        "genresRaw": ["experimental", "jazz", "post-punk"],
+        "tidalId": "509159464"
+      },
+      {
+        "title": "Museums III",
+        "artist": "WALL OF VOODOO",
+        "albumDetails": ", da \"Museums\" - Label 51 Recordings",
+        "key": "wall_of_voodoo___museums_iii",
+        "genresRaw": ["post-punk", "experimental", "industrial"],
+        "tidalId": "2284394"
+      },
+      {
+        "title": "Big City",
+        "artist": "WALL OF VOODOO",
+        "albumDetails": ", da \"Museums\" - Label 51 Recordings",
+        "key": "wall_of_voodoo___big_city",
+        "genresRaw": ["new wave", "post-punk"],
+        "tidalId": "2284392"
+      },
+      {
+        "title": "TV People Still Throwing Tvs At People, da \"It's The Long Goodbye\"",
+        "artist": "THE TWILIGHT SAD",
+        "albumDetails": "- Rock Action Records",
+        "key": "the_twilight_sad___tv_people_still_throwing_tvs_at_people_da_\"it's_the_long_goodbye\"",
+        "genresRaw": ["post-rock", "indie rock", "shoegaze"],
+        "tidalId": "509159592"
+      },
+      {
+        "title": "Dead Flowers, da \"It's The Long Goodbye\"",
+        "artist": "THE TWILIGHT SAD",
+        "albumDetails": "- Rock Action Records",
+        "key": "the_twilight_sad___dead_flowers_da_\"it's_the_long_goodbye\"",
+        "genresRaw": ["post-rock", "indie rock"],
+        "tidalId": "509159588"
+      },
+      {
+        "title": "Instakill",
+        "artist": "STUCK",
+        "albumDetails": ", da \"Optimizer\" - Exploding In Sound Records",
+        "key": "stuck___instakill",
+        "genresRaw": ["post-punk", "noise rock"],
+        "tidalId": "484253892"
+      },
+      {
+        "title": "Fire, Man",
+        "artist": "STUCK",
+        "albumDetails": ", da \"Optimizer\" - Exploding In Sound Records",
+        "key": "stuck___fire_man",
+        "genresRaw": ["post-punk"],
+        "tidalId": "484253896"
+      },
+      {
+        "title": "Assumption",
+        "artist": "LANDOWNER",
+        "albumDetails": ", da \"Assumption\" – Exploding In Sound Records",
+        "key": "landowner___assumption",
+        "genresRaw": ["post-punk", "punk", "experimental"],
+        "tidalId": "474510235"
+      },
+      {
+        "title": "Normal Returns to Normal",
+        "artist": "LANDOWNER",
+        "albumDetails": ", da \"Assumption\" – Exploding In Sound Records",
+        "key": "landowner___normal_returns_to_normal",
+        "genresRaw": ["post-punk", "alternative"],
+        "tidalId": "474510246"
+      },
+      {
+        "title": "Ring Of Fire",
+        "artist": "WALL OF VOODOO",
+        "albumDetails": ", da \"The Ugly Americans In Australia\" – I.R.S. Record",
+        "key": "wall_of_voodoo___ring_of_fire",
+        "genresRaw": ["post-punk", "experimental", "industrial"],
+        "tidalId": "338881"
+      },
+      {
+        "title": "Original Faubus Fables",
+        "artist": "CHARLES MINGUS",
+        "albumDetails": ", da \"Charles Mingus Presents Charles Mingus\" – Candid",
+        "key": "charles_mingus___original_faubus_fables",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "113065847"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Jazz Is Dead 2025: IBELISSE GUARDIA FERRAGUTTI & FRANK ROSALY + HJIROK",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-27042026-58f5d0df-e88d-41eb-88b0-8b1233648a0d.html",
+    "date": "27 Apr 2026",
+    "tracks": [
+      {
+        "title": "Turbulência",
+        "artist": "IBELISSE GUARDIA FERRAGUTTI & FRANK ROSALY",
+        "albumDetails": "",
+        "key": "ibelisse_guardia_ferragutti_frank_rosaly___turbulencia",
+        "genresRaw": ["afrobeat", "samba", "jazz"],
+        "tidalId": "345285651"
+      },
+      {
+        "title": "Bless Thee Mundane",
+        "artist": "IBELISSE GUARDIA FERRAGUTTI & FRANK ROSALY",
+        "albumDetails": "",
+        "key": "ibelisse_guardia_ferragutti_frank_rosaly___bless_thee_mundane",
+        "genresRaw": ["experimental", "jazz", "instrumental"],
+        "tidalId": "345285657"
+      },
+      {
+        "title": "Barro",
+        "artist": "IBELISSE GUARDIA FERRAGUTTI & FRANK ROSALY",
+        "albumDetails": "",
+        "key": "ibelisse_guardia_ferragutti_frank_rosaly___barro",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "345285654"
+      },
+      {
+        "title": "Writing With Knots",
+        "artist": "IBELISSE GUARDIA FERRAGUTTI & FRANK ROSALY",
+        "albumDetails": "",
+        "key": "ibelisse_guardia_ferragutti_frank_rosaly___writing_with_knots",
+        "genresRaw": ["jazz", "experimental", "post-rock"],
+        "tidalId": "345285659"
+      },
+      {
+        "title": "Sirinus",
+        "artist": "IBELISSE GUARDIA FERRAGUTTI & FRANK ROSALY",
+        "albumDetails": "",
+        "key": "ibelisse_guardia_ferragutti_frank_rosaly___sirinus",
+        "genresRaw": ["jazz", "experimental", "folk"],
+        "tidalId": "345285660"
+      },
+      {
+        "title": "Intro",
+        "artist": "HJIROK (HANI MOJTAHEDI / ANDI TOMA)",
+        "albumDetails": "",
+        "key": "hjirok_hani_mojtahedi_andi_toma___intro",
+        "genresRaw": ["electronic", "world", "experimental"]
+      },
+      {
+        "title": "Goman",
+        "artist": "HJIROK (HANI MOJTAHEDI / ANDI TOMA)",
+        "albumDetails": "",
+        "key": "hjirok_hani_mojtahedi_andi_toma___goman",
+        "genresRaw": ["electronic", "world", "experimental"],
+        "tidalId": "345339013"
+      },
+      {
+        "title": "Meselek",
+        "artist": "HJIROK (HANI MOJTAHEDI / ANDI TOMA)",
+        "albumDetails": "",
+        "key": "hjirok_hani_mojtahedi_andi_toma___meselek",
+        "genresRaw": ["experimental", "electronic", "world"],
+        "tidalId": "345339012"
+      },
+      {
+        "title": "Hjirok Rock",
+        "artist": "HJIROK (HANI MOJTAHEDI / ANDI TOMA)",
+        "albumDetails": "",
+        "key": "hjirok_hani_mojtahedi_andi_toma___hjirok_rock",
+        "genresRaw": ["electronic", "experimental", "world"],
+        "tidalId": "345339008"
+      },
+      {
+        "title": "Jin Bo Chie",
+        "artist": "HJIROK (HANI MOJTAHEDI / ANDI TOMA)",
+        "albumDetails": "",
+        "key": "hjirok_hani_mojtahedi_andi_toma___jin_bo_chie",
+        "genresRaw": ["electronic", "world", "experimental"],
+        "tidalId": "333127825"
+      },
+      {
+        "title": "Sanandaj",
+        "artist": "HJIROK (HANI MOJTAHEDI / ANDI TOMA)",
+        "albumDetails": "",
+        "key": "hjirok_hani_mojtahedi_andi_toma___sanandaj",
+        "genresRaw": ["electronic", "world", "experimental"],
+        "tidalId": "345339007"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BASTA NOW: Women, trans & non binary in experimental music. Intervista e mixtape con Fanny Chiarello",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-26042026-f155e48a-6ea4-4f38-b780-0f28fe9d31d3.html",
+    "date": "26 Apr 2026",
+    "tracks": [
+      {
+        "title": "Claim It",
+        "artist": "KLEIN",
+        "albumDetails": ", da \"Lifetime\" - Ijn Inc.",
+        "key": "klein___claim_it",
+        "genresRaw": ["electronic", "house"],
+        "tidalId": "115219716"
+      },
+      {
+        "title": "Spacegirls II",
+        "artist": "HÄSTKÖTTSKANDALEN",
+        "albumDetails": ", da \"Spacegirls\" - Fylkingen Records",
+        "key": "hastkottskandalen___spacegirls_ii",
+        "genresRaw": ["ambient", "experimental", "instrumental"]
+      },
+      {
+        "title": "Frank Ni",
+        "artist": "AUNT SALLY",
+        "albumDetails": ", da \"Aunt Sally\" - Klimt Records",
+        "key": "aunt_sally___frank_ni",
+        "genresRaw": ["post-punk", "experimental", "punk"],
+        "tidalId": "201099986"
+      },
+      {
+        "title": "I Took A Train To Mars",
+        "artist": "KLANK.IST ENSEMBLE",
+        "albumDetails": ", da \"V. Di̇alogs\" - bandcamp 2024",
+        "key": "klankist_ensemble___i_took_a_train_to_mars",
+        "genresRaw": ["electronic", "experimental", "ambient"],
+        "tidalId": "179572611"
+      },
+      {
+        "title": "Tendril",
+        "artist": "LYRA PRAMUK",
+        "albumDetails": ", da \"Fountain\" - Bedroom Community",
+        "key": "lyra_pramuk___tendril",
+        "genresRaw": ["experimental", "electronic", "ambient"],
+        "tidalId": "482756945"
+      },
+      {
+        "title": "Jhaptal",
+        "artist": "SELVHENTER",
+        "albumDetails": ", da \"Mesmerizer\" - Hands In The Dark",
+        "key": "selvhenter___jhaptal",
+        "genresRaw": ["experimental", "electronic"],
+        "tidalId": "292877548"
+      },
+      {
+        "title": "Unbeknownst",
+        "artist": "MATANA ROBERTS",
+        "albumDetails": ", da \"Coin Coin Chapter Five: In The Garden\" – Constellation Records",
+        "key": "matana_roberts___unbeknownst",
+        "genresRaw": ["jazz", "experimental", "spoken word"],
+        "tidalId": "297414599"
+      },
+      {
+        "title": "In Letting Go, She Finds Her Grip",
+        "artist": "ANNE EFTERNØLER / MARIA LAURETTE FRIIS / JOHANNA BORCHERT",
+        "albumDetails": ", da \"We Are. Profoundly. Predisposed. To Drowning.\" – Relative Pitch Records",
+        "key": "anne_efternøler_maria_laurette_friis_johanna_borchert___in_letting_go_she_finds_her_grip",
+        "genresRaw": ["experimental", "jazz", "instrumental"],
+        "tidalId": "478170159"
+      },
+      {
+        "title": "Damp Room",
+        "artist": "ELENA KAKALIAGOU",
+        "albumDetails": ", da \"Hydratmos\" – autoproduzione 2022",
+        "key": "elena_kakaliagou___damp_room",
+        "genresRaw": ["experimental", "ambient", "electroacoustic"]
+      },
+      {
+        "title": "Erin",
+        "artist": "JOAN LA BARBARA",
+        "albumDetails": ", da \"Sound Paintings\" – Lovely Music",
+        "key": "joan_la_barbara___erin",
+        "genresRaw": ["experimental", "vocal", "electroacoustic"]
+      },
+      {
+        "title": "There Is Nothing In The Well",
+        "artist": "THORN WYCH",
+        "albumDetails": ", da \"Aesthesis\" – Hood Faire",
+        "key": "thorn_wych___there_is_nothing_in_the_well",
+        "genresRaw": ["folk", "experimental", "acoustic"]
+      },
+      {
+        "title": "A Rhythm And Portrait Song",
+        "artist": "ALE HOP",
+        "albumDetails": ", da \"First Album\" - Superpang",
+        "key": "ale_hop___a_rhythm_and_portrait_song",
+        "genresRaw": ["folk", "singer-songwriter"]
+      },
+      {
+        "title": "#4",
+        "artist": "NISENNENMONDAI",
+        "albumDetails": ", da \"#N/A\" – On-U Sound",
+        "key": "nisennenmondai___4",
+        "genresRaw": ["experimental", "instrumental", "noise"],
+        "tidalId": "106696876"
+      },
+      {
+        "title": "Apparition du faune one",
+        "artist": "MÉRYLL AMPE",
+        "albumDetails": ", da \"Two Daughters\" – Croux Records",
+        "key": "meryll_ampe___apparition_du_faune_one",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "496263341"
+      },
+      {
+        "title": "I Want U 2 ft. Alya Al-Sultani",
+        "artist": "MARIAM REZAEI",
+        "albumDetails": ", da \"Bown\" – Heat Crimes",
+        "key": "mariam_rezaei___i_want_u_2_ft_alya_alsultani",
+        "genresRaw": ["experimental", "electronic", "noise"],
+        "tidalId": "311197556"
+      },
+      {
+        "title": "Xtinti",
+        "artist": "XEXA",
+        "albumDetails": ", da \"Kissom\" – Príncipe",
+        "key": "xexa___xtinti",
+        "genresRaw": ["experimental", "electronic", "noise"],
+        "tidalId": "457109971"
+      },
+      {
+        "title": "Nana Butu",
+        "artist": "SISSI RADA",
+        "albumDetails": ", da \"Nana Butu\" – Ash International",
+        "key": "sissi_rada___nana_butu",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "478930842"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Vibrisse #43",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-25042026-4be3fa22-a5d5-47c3-9320-95871c2446a6.html",
+    "date": "25 Apr 2026",
+    "tracks": [
+      {
+        "title": "Oh! Darling",
+        "artist": "MIKE WESTBROOK",
+        "albumDetails": ", da \"After Abbey Road\" – Westbrook Records",
+        "key": "mike_westbrook___oh_darling",
+        "genresRaw": ["jazz"],
+        "tidalId": "86721997"
+      },
+      {
+        "title": "You Must Be Certain Of The Devil",
+        "artist": "DIAMANDA GALÁS",
+        "albumDetails": ", da \"You Must Be Certain Of The Devil\" – Mute",
+        "key": "diamanda_galas___you_must_be_certain_of_the_devil",
+        "genresRaw": ["experimental", "pop", "vocal"],
+        "tidalId": "107022192"
+      },
+      {
+        "title": "Down Home Girl",
+        "artist": "BETTY DAVIS",
+        "albumDetails": ", da \"The Columbia Years 1968-1969\" – Light In The Attic",
+        "key": "betty_davis___down_home_girl",
+        "genresRaw": ["funk", "soul"],
+        "tidalId": "67810229"
+      },
+      {
+        "title": "Dapagara (feat. Orlando Julius, Zenabu)",
+        "artist": "KING AYISOBA",
+        "albumDetails": ", da \"1000 Can Die\" – Glitterbeat",
+        "key": "king_ayisoba___dapagara_feat_orlando_julius_zenabu",
+        "genresRaw": ["afrobeat", "world"],
+        "tidalId": "70224773"
+      },
+      {
+        "title": "Deep Vein Thrombosis",
+        "artist": "NENEH CHERRY",
+        "albumDetails": ", da \"Broken Politics\" – Smalltown Supersound",
+        "key": "neneh_cherry___deep_vein_thrombosis",
+        "genresRaw": ["electronic", "world"],
+        "tidalId": "243583212"
+      },
+      {
+        "title": "Lou Nina",
+        "artist": "ORGUE AGNÈS",
+        "albumDetails": ", da \"A Une Gorge\" – Three:four Records",
+        "key": "orgue_agnes___lou_nina",
+        "genresRaw": ["experimental", "electronic", "post-punk"],
+        "tidalId": "403376103"
+      },
+      {
+        "title": "Brother Where Are You?",
+        "artist": "DWIGHT TRIBLE",
+        "albumDetails": ", da \"Mothership\" – Gearbox Records",
+        "key": "dwight_trible___brother_where_are_you?",
+        "genresRaw": ["soul", "jazz"],
+        "tidalId": "315611438"
+      },
+      {
+        "title": "Ohiyee",
+        "artist": "DUR DUR OF SOMALIA",
+        "albumDetails": ", da \"Volume 1 ★ Volume 2\" – Analog Africa",
+        "key": "dur_dur_of_somalia___ohiyee",
+        "genresRaw": ["funk", "afrobeat", "psychedelic"],
+        "tidalId": "93277529"
+      },
+      {
+        "title": "Private Silence (feat. Reef The Lost Cauze)",
+        "artist": "MOOR MOTHER",
+        "albumDetails": ", da \"Analog Fluids Of Sonic Black Holes\" – Don Giovanni Records",
+        "key": "moor_mother___private_silence_feat_reef_the_lost_cauze",
+        "genresRaw": ["hip-hop", "experimental"],
+        "tidalId": "113420670"
+      },
+      {
+        "title": "Isivunguvungu (feat. Saul Williams)",
+        "artist": "BCUC",
+        "albumDetails": ", da \"The Healing\" – Buda Musique",
+        "key": "bcuc___isivunguvungu_feat_saul_williams",
+        "genresRaw": ["afrobeat", "world"],
+        "tidalId": "107983347"
+      },
+      {
+        "title": "Mother Time",
+        "artist": "DUMAMA + KECHOU",
+        "albumDetails": ", da \"Buffering Juju\" – Mushroom Hour Half Hour",
+        "key": "dumama_+_kechou___mother_time",
+        "genresRaw": ["world", "experimental"],
+        "tidalId": "316034519"
+      },
+      {
+        "title": "Fearless",
+        "artist": "JON HASSELL",
+        "albumDetails": ", da \"Seeing Through Sound (Pentimento Volume Two)\" – Ndeya",
+        "key": "jon_hassell___fearless",
+        "genresRaw": ["ambient", "electronic"],
+        "tidalId": "149444190"
+      },
+      {
+        "title": "Soledad Saboteur",
+        "artist": "ANTELOPER",
+        "albumDetails": ", da \"Tour Beats Vol. 1\" – International Anthem Recording Company",
+        "key": "anteloper___soledad_saboteur",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "184815784"
+      },
+      {
+        "title": "Ey Paavi",
+        "artist": "AMMAR 808",
+        "albumDetails": ", da \"Global Control / Invisible Invasion\" – Glitterbeat",
+        "key": "ammar_808___ey_paavi",
+        "genresRaw": ["electronic", "experimental", "world"],
+        "tidalId": "148410032"
+      },
+      {
+        "title": "Black Wax",
+        "artist": "GUEDRA GUEDRA كدرة كدرة",
+        "albumDetails": ", da \"Son Of Sun E.P\" – On The Corner Records",
+        "key": "guedra_guedra_كدرة_كدرة___black_wax",
+        "genresRaw": ["electronic", "world"],
+        "tidalId": "184776075"
+      },
+      {
+        "title": "The Day We Gave The Globes Back",
+        "artist": "HEROES ARE GANG LEADERS",
+        "albumDetails": ", da \"Artificial Happiness Button\" – Ropeadope",
+        "key": "heroes_are_gang_leaders___the_day_we_gave_the_globes_back",
+        "genresRaw": ["free-jazz", "free-funk"],
+        "tidalId": "254203957"
+      },
+      {
+        "title": "Fetch The Bolt Cutters",
+        "artist": "FIONA APPLE",
+        "albumDetails": ", da \"Fetch The Bolt Cutters\" – Epic",
+        "key": "fiona_apple___fetch_the_bolt_cutters",
+        "genresRaw": ["art pop", "singer-songwriter"],
+        "tidalId": "137338104"
       }
     ]
   }

@@ -131,6 +131,10 @@ export const ALIASES: Record<string, string> = {
   "spiritual":          "jazz",
   "improvisation":      "jazz",
 
+  // Funk
+  "free-funk":      "funk",
+  "psychedelic funk":"funk",
+
   // Punk
   "proto-punk": "punk",
 
@@ -272,6 +276,10 @@ export const ALIASES: Record<string, string> = {
   "doo wop":       "soul",
   "doo-wop":       "soul",
   "gospel":        "soul",
+  "soul jazz":     "soul",
+  "soul-jazz":     "soul",
+  "soul funk":     "soul",
+  "soul-funk":     "soul",
 
   // Ambient
   "dark ambient":    "ambient",
