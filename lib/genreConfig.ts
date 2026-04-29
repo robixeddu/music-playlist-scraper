@@ -240,6 +240,7 @@ export const ALIASES: Record<string, string> = {
   // Folk
   "avant-folk":       "folk",
   "psychedelic folk": "folk",
+  "progressive folk":   "folk",
   "psych-folk":       "folk",
   "indie folk":       "folk",
   "indie-folk":       "folk",

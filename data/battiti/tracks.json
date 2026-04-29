@@ -53362,8 +53362,266 @@
         "artist": "FIONA APPLE",
         "albumDetails": ", da \"Fetch The Bolt Cutters\" – Epic",
         "key": "fiona_apple___fetch_the_bolt_cutters",
-        "genresRaw": ["art pop", "singer-songwriter"],
+        "genresRaw": ["rock", "experimental", "punk"],
         "tidalId": "137338104"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Alchimisti",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-29042026-45d53b2a-e718-49ab-8a5b-10029572068b.html",
+    "date": "29 Apr 2026",
+    "tracks": [
+      {
+        "title": "Lonely City",
+        "artist": "BILL CALLAHAN",
+        "albumDetails": ", da \"My Days Of 58\" – Drag City",
+        "key": "bill_callahan___lonely_city",
+        "genresRaw": ["singer-songwriter", "folk"],
+        "tidalId": "468933166"
+      },
+      {
+        "title": "The Clouds Will Part Eventually",
+        "artist": "PAUL DUNMALL",
+        "albumDetails": ", da \"Afghan Women\" – Rogue Art",
+        "key": "paul_dunmall___the_clouds_will_part_eventually",
+        "genresRaw": ["jazz", "experimental"]
+      },
+      {
+        "title": "No One Is Coming",
+        "artist": "ADULT.",
+        "albumDetails": ", da \"Kissing Luck Goodbye\" – Dais Records",
+        "key": "adult___no_one_is_coming",
+        "genresRaw": ["post-punk", "electronic", "industrial"],
+        "tidalId": "484190700"
+      },
+      {
+        "title": "No Song",
+        "artist": "ADULT.",
+        "albumDetails": ", da \"Kissing Luck Goodbye\" – Dais Records",
+        "key": "adult___no_song",
+        "genresRaw": ["electronic", "industrial"],
+        "tidalId": "487176461"
+      },
+      {
+        "title": "Silver Tramway (In Snow)",
+        "artist": "PAN•AMERICAN",
+        "albumDetails": ", da \"Fly The Ocean In A Silver Plane\" – Kranky",
+        "key": "pan•american___silver_tramway_in_snow",
+        "genresRaw": ["ambient", "electronic", "instrumental"],
+        "tidalId": "494042957"
+      },
+      {
+        "title": "Your Body, My Body",
+        "artist": "DOROTHY MOSKOWITZ & THE UNITED STATES OF ALCHEMY",
+        "albumDetails": ", da \"Songs Of Compassion\" - 13",
+        "key": "dorothy_moskowitz_the_united_states_of_alchemy___your_body_my_body",
+        "genresRaw": ["psychedelic", "rock", "experimental"]
+      },
+      {
+        "title": "Ship Of Fools",
+        "artist": "DOROTHY MOSKOWITZ & THE UNITED STATES OF ALCHEMY",
+        "albumDetails": ", da \"Songs Of Compassion\" - 13",
+        "key": "dorothy_moskowitz_the_united_states_of_alchemy___ship_of_fools",
+        "genresRaw": []
+      },
+      {
+        "title": "Blue Hymne (ft. Limpe Fuchs)",
+        "artist": "NICOLAS REMONDINO",
+        "albumDetails": ", da \"Hìeratico\" - OOH Sounds",
+        "key": "nicolas_remondino___blue_hymne_ft_limpe_fuchs",
+        "genresRaw": ["ambient", "experimental", "electroacoustic"],
+        "tidalId": "495652039"
+      },
+      {
+        "title": "Hìeratico",
+        "artist": "NICOLAS REMONDINO",
+        "albumDetails": ", da \"Hìeratico\" - OOH Sounds",
+        "key": "nicolas_remondino___hieratico",
+        "genresRaw": ["experimental", "ambient", "industrial"],
+        "tidalId": "495652037"
+      },
+      {
+        "title": "THE GIVER OF ILLNESS, We Sleep In The Self",
+        "artist": "AK'CHAMEL",
+        "albumDetails": ", da \"Spiritually Unemployed\" - Akuphone",
+        "key": "ak'chamel___the_giver_of_illness_we_sleep_in_the_self",
+        "genresRaw": ["psychedelic", "world", "noise"],
+        "tidalId": "502411431"
+      },
+      {
+        "title": "THE GIVER OF ILLNESS, Serpent House",
+        "artist": "AK'CHAMEL",
+        "albumDetails": ", da \"Spiritually Unemployed\" - Akuphone",
+        "key": "ak'chamel___the_giver_of_illness_serpent_house",
+        "genresRaw": ["psychedelic", "psych-folk", "world"],
+        "tidalId": "502411433"
+      },
+      {
+        "title": "THE GIVER OF ILLNESS, Nothin Wounded Goes Uphill",
+        "artist": "AK'CHAMEL",
+        "albumDetails": ", da \"Spiritually Unemployed\" - Akuphone",
+        "key": "ak'chamel___the_giver_of_illness_nothin_wounded_goes_uphill",
+        "genresRaw": ["psychedelic", "psych-folk"],
+        "tidalId": "502411436"
+      },
+      {
+        "title": "The Dark Mountain",
+        "artist": "ANTONIO BERTONI / MASSIMO DE MATTIA / STEFANO LEONARDI",
+        "albumDetails": ", da \"Tatzlwurm\" - Aut Records",
+        "key": "antonio_bertoni_massimo_de_mattia_stefano_leonardi___the_dark_mountain",
+        "genresRaw": ["world", "experimental", "instrumental"],
+        "tidalId": "477565591"
+      },
+      {
+        "title": "Pasha Hamou",
+        "artist": "MAALEM ABDELRAZAK EL MOUSTAKIM",
+        "albumDetails": ", da \"Dar Gnaoua\" - Hive Mind Records",
+        "key": "maalem_abdelrazak_el_moustakim___pasha_hamou",
+        "genresRaw": ["gnawa", "world", "moroccan"]
+      },
+      {
+        "title": "En Munfull Sand",
+        "artist": "FAUNA",
+        "albumDetails": ", da \"Taiga Trans\" - Glitterbeat",
+        "key": "fauna___en_munfull_sand",
+        "genresRaw": ["psychedelic", "psych-folk", "world"],
+        "tidalId": "496277942"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Caminhos de Água",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-28042026-2cfd6f73-543a-4963-a421-6ec04872e89c.html",
+    "date": "28 Apr 2026",
+    "tracks": [
+      {
+        "title": "Guide Us Jah",
+        "artist": "PAT BIO",
+        "albumDetails": ", da \"Fight The Fire: Digital Reggae, Conscious Roots and Dub in Nigeria 1986-91\" - Soundway Records",
+        "key": "pat_bio___guide_us_jah",
+        "genresRaw": ["reggae", "dub"],
+        "tidalId": "490746024"
+      },
+      {
+        "title": "The Ark",
+        "artist": "ANTHONY JOSEPH",
+        "albumDetails": ", da \"The Ark\" - Heavenly Sweetness",
+        "key": "anthony_joseph___the_ark",
+        "genresRaw": ["jazz", "experimental", "spoken word"],
+        "tidalId": "503792444"
+      },
+      {
+        "title": "Stave In The Ground",
+        "artist": "KRONOS QUARTET",
+        "albumDetails": ", da \"Glorious Mahalia\" - Smithsonian Folkways Recordings",
+        "key": "kronos_quartet___stave_in_the_ground",
+        "genresRaw": ["contemporary classical", "jazz", "spoken word"],
+        "tidalId": "483119125"
+      },
+      {
+        "title": "In The Blink Of An Eye",
+        "artist": "MY NEW BAND BELIEVE",
+        "albumDetails": ", da \"My New Band Believe\" – Rough Trade",
+        "key": "my_new_band_believe___in_the_blink_of_an_eye",
+        "genresRaw": ["progressive folk", "art rock", "alternative rock"],
+        "tidalId": "508353195"
+      },
+      {
+        "title": "Fauna Song",
+        "artist": "RAP MAN GAVIN/JESSE THE TREE",
+        "albumDetails": ", da \"Garden Dance\" - Bottom Rock",
+        "key": "rap_man_gavinjesse_the_tree___fauna_song",
+        "genresRaw": ["hip-hop"],
+        "tidalId": "513967247"
+      },
+      {
+        "title": "Ritual Of Art",
+        "artist": "RAP MAN GAVIN/JESSE THE TREE",
+        "albumDetails": ", da \"Garden Dance\" - Bottom Rock",
+        "key": "rap_man_gavinjesse_the_tree___ritual_of_art",
+        "genresRaw": ["hip-hop", "rap"],
+        "tidalId": "513967250"
+      },
+      {
+        "title": "Lavender Town",
+        "artist": "RAP MAN GAVIN/JESSE THE TREE",
+        "albumDetails": ", da \"Garden Dance\" - Bottom Rock",
+        "key": "rap_man_gavinjesse_the_tree___lavender_town",
+        "genresRaw": ["hip-hop"]
+      },
+      {
+        "title": "Spaceheater",
+        "artist": "CISE GREENY/LUNGS",
+        "albumDetails": ", da \"Spaceheater\" - Autoproduzione",
+        "key": "cise_greenylungs___spaceheater",
+        "genresRaw": ["hip-hop"]
+      },
+      {
+        "title": "Armored Drop",
+        "artist": "CISE GREENY/LUNGS",
+        "albumDetails": ", da \"Spaceheater\" - Autoproduzione",
+        "key": "cise_greenylungs___armored_drop",
+        "genresRaw": ["electronic", "experimental"]
+      },
+      {
+        "title": "Must Be",
+        "artist": "OL' BURGER BEATS",
+        "albumDetails": ", da \"Piano Pieces\" - Ol' Burger Beats",
+        "key": "ol'_burger_beats___must_be",
+        "genresRaw": ["hip-hop", "instrumental", "jazz"],
+        "tidalId": "467593380"
+      },
+      {
+        "title": "Water Nights",
+        "artist": "OL' BURGER BEATS",
+        "albumDetails": ", da \"Piano Pieces\" - Ol' Burger Beats",
+        "key": "ol'_burger_beats___water_nights",
+        "genresRaw": ["hip-hop", "instrumental"]
+      },
+      {
+        "title": "Rio Preto",
+        "artist": "KAATAYRA",
+        "albumDetails": ", da \"Caminhos de Água\" – Autoproduzione",
+        "key": "kaatayra___rio_preto",
+        "genresRaw": ["metal", "folk", "experimental"]
+      },
+      {
+        "title": "Águas Passadas",
+        "artist": "KAATAYRA",
+        "albumDetails": ", da \"Caminhos de Água\" – Autoproduzione",
+        "key": "kaatayra___aguas_passadas",
+        "genresRaw": ["metal", "atmospheric black metal", "folk metal"]
+      },
+      {
+        "title": "Mâtîrja (Ancestral Mothers)",
+        "artist": "AYLA SCHAFER",
+        "albumDetails": ", da \"Mâtîrja (Ancestral Mothers)\" – Autoproduzione",
+        "key": "ayla_schafer___matirja_ancestral_mothers",
+        "genresRaw": ["world", "folk", "singer-songwriter"],
+        "tidalId": "487888844"
+      },
+      {
+        "title": "Ati-Regth (Come Back Again)",
+        "artist": "AYLA SCHAFER",
+        "albumDetails": ", da \"Mâtîrja (Ancestral Mothers)\" – Autoproduzione",
+        "key": "ayla_schafer___atiregth_come_back_again",
+        "genresRaw": ["world", "folk", "singer-songwriter"],
+        "tidalId": "487888840"
+      },
+      {
+        "title": "Apolitotita",
+        "artist": "ANGEL'S CORPSE",
+        "albumDetails": ", da \"Vanity Bay\" – Heat Crimes",
+        "key": "angel's_corpse___apolitotita",
+        "genresRaw": ["ambient", "experimental", "electronic"]
+      },
+      {
+        "title": "Sto Tiktok De Bainw, De Xazeuw",
+        "artist": "ANGEL'S CORPSE",
+        "albumDetails": ", da \"Vanity Bay\" – Heat Crimes",
+        "key": "angel's_corpse___sto_tiktok_de_bainw_de_xazeuw",
+        "genresRaw": ["ambient", "experimental", "techno"]
       }
     ]
   }
