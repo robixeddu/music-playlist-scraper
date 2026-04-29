@@ -1,5 +1,5 @@
 import { headers } from "next/headers";
-import { fetchSources, fetchEpisodes } from "@/lib/data";
+import { fetchSources, fetchEpisodes } from "@/lib/fetch";
 import { DEFAULT_LANG, translations, type Lang, LANGS } from "@/lib/i18n";
 import TidalPill from "@/components/TidalPill";
 import ProgramBlock from "@/components/ProgramBlock";
