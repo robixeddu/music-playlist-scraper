@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import { headers } from "next/headers";
 import { LangProvider } from "@/components/LangProvider";
 import { DEFAULT_LANG, type Lang } from "@/lib/i18n";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,6 +28,7 @@ export default async function RootLayout({
     <html lang={lang} className={`${geistSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-[var(--background)] text-[var(--foreground)]">
         <LangProvider lang={lang}>{children}</LangProvider>
+        <Analytics />
       </body>
     </html>
   );
