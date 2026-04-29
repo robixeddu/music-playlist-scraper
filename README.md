@@ -233,7 +233,7 @@ Each candidate is verified against the real TIDAL artist (separate API call) bef
 
 ## Web UI
 
-A read-only Next.js 16 app in `web/` that browses the catalog — deployed at [music-playlist-scraper.vercel.app](https://music-playlist-scraper.vercel.app):
+A Next.js 16 app in `web/` that browses the catalog and imports playlists — deployed at [music-playlist-scraper.vercel.app](https://music-playlist-scraper.vercel.app):
 
 - **Language auto-detection** from `Accept-Language` header — no `/it` or `/en` prefix in URLs
 - Browse episodes by date, filter by genre, see TIDAL coverage per episode
@@ -241,8 +241,38 @@ A read-only Next.js 16 app in `web/` that browses the catalog — deployed at [m
   - Episode playlists are named `{sourceId}-YYYY-MM-DD-nome-episodio` (date + slugified title)
 - Import buttons disabled until connected to TIDAL
 - TIDAL API calls proxied via Next.js rewrites (avoids CORS)
-- Data fetched from GitHub raw URLs via Next.js `'use cache'` directive (revalidates hourly; bypasses the 2MB fetch cache limit)
+- Data fetched from GitHub raw URLs via `"use cache"` (sources: daily, tracks: hourly)
 - `tracks.json` is the single source of truth for all data displayed
+- **Playlist state** (imported TIDAL IDs per user) persisted in Upstash Redis via `/api/playlists`
+- **Genre filter** shows only genres with ≥ 10 TIDAL-matched tracks (`MIN_GENRE_TRACKS`)
+
+### Web structure
+
+```
+web/
+├── app/
+│   ├── layout.tsx              # Static shell; lang detection via LangShell + Suspense
+│   ├── page.tsx                # Home — fetches sources + episodes (Server Component)
+│   ├── api/
+│   │   ├── playlists/          # GET/POST/DELETE playlist state (Upstash Redis)
+│   │   └── admin/seed/         # Admin seed endpoint (requires ADMIN_SECRET)
+│   └── callback/tidal/         # TIDAL OAuth callback
+├── components/
+│   └── LangShell.tsx           # Async Server Component: reads x-lang header, wraps LangProvider
+├── lib/
+│   ├── fetch.ts                # "use cache" — fetchSources, fetchEpisodes (server-only)
+│   ├── data.ts                 # Pure utilities: getGenres, getEpisodesSortedDesc, slugify…
+│   └── redis.ts                # Upstash Redis client
+└── proxy.ts                    # Next.js 16 proxy (replaces middleware.ts)
+```
+
+### Env vars (Vercel)
+
+| Variable | Required | Notes |
+|---|---|---|
+| `UPSTASH_REDIS_REST_URL` | Yes | Mark as Sensitive |
+| `UPSTASH_REDIS_REST_TOKEN` | Yes | Mark as Sensitive |
+| `ADMIN_SECRET` | Optional | Protects `/api/admin/seed` |
 
 ```bash
 cd web && npm install && npm run dev   # http://localhost:3000
