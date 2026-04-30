@@ -10667,7 +10667,7 @@
         "albumDetails": "da \"Open Vocal Phrases Where Songs Come In And Out (Live 12/20/85)\" - Rough Trade",
         "key": "arthur_russell___allboy_allgirltiger_stripesyou_can't_hold_me_down",
         "tidalId": "423365531",
-        "genresRaw": ["experimental", "electronic", "house"]
+        "genresRaw": ["art-pop", "avant-garde"]
       },
       {
         "title": "Third Movement",
@@ -22318,8 +22318,7 @@
         "artist": "DJ/RUPTURE & ANDY MOOR",
         "albumDetails": "da \"Patches\" – Unsuitable Records",
         "key": "djrupture_andy_moor___hot_pink_orleans",
-        "genresRaw": ["house", "techno", "electronic"],
-        "tidalId": "429520110"
+        "genresRaw": ["house", "techno", "electronic"]
       },
       {
         "title": "Maggie And Milly And Molly And Mae",
@@ -27310,7 +27309,7 @@
         "albumDetails": "da \"Christian & Mauro\" – Specula Records",
         "key": "teho_teardo_blixa_bargeld___starkregen",
         "tidalId": "388182265",
-        "genresRaw": ["ambient", "experimental", "industrial"]
+        "genresRaw": ["avant-garde"]
       },
       {
         "title": "Fuadi",
@@ -30835,7 +30834,7 @@
         "artist": "CHELSEA WOLF",
         "albumDetails": "da \"Unbound\" – Loma Vista",
         "key": "chelsea_wolf___whispers_in_the_echo_chamber",
-        "genresRaw": ["industrial", "experimental", "industrial"],
+        "genresRaw": ["industrial", "experimental"],
         "tidalId": "343267460"
       },
       {
@@ -30844,7 +30843,7 @@
         "albumDetails": "da \"Unbound\" – Loma Vista",
         "key": "chelsea_wolf___the_liminal",
         "tidalId": "398314958",
-        "genresRaw": ["industrial", "experimental", "industrial"]
+        "genresRaw": ["industrial", "experimental"]
       }
     ]
   },
@@ -52939,7 +52938,7 @@
         "artist": "THE TWILIGHT SAD",
         "albumDetails": "- Rock Action Records",
         "key": "the_twilight_sad___dead_flowers_da_\"it's_the_long_goodbye\"",
-        "genresRaw": ["post-rock", "indie rock"],
+        "genresRaw": ["post-rock", "indie rock", "shoegaze"],
         "tidalId": "509159588"
       },
       {
@@ -53622,6 +53621,137 @@
         "albumDetails": ", da \"Vanity Bay\" – Heat Crimes",
         "key": "angel's_corpse___sto_tiktok_de_bainw_de_xazeuw",
         "genresRaw": ["ambient", "experimental", "techno"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Music In Continuous Motion",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/04/Battiti-del-30042026-e7629e15-7465-4602-919a-bcce2c1aa33a.html",
+    "date": "30 Apr 2026",
+    "tracks": [
+      {
+        "title": "Affordable Decorating",
+        "artist": "ADULT.",
+        "albumDetails": ", da \"Kissing Luck Goodbye\" – Dais Records",
+        "key": "adult___affordable_decorating",
+        "genresRaw": ["electronic", "industrial"],
+        "tidalId": "487176456"
+      },
+      {
+        "title": "None Of It's Fun",
+        "artist": "ADULT.",
+        "albumDetails": ", da \"Kissing Luck Goodbye\" – Dais Records",
+        "key": "adult___none_of_it's_fun",
+        "genresRaw": ["industrial", "post-punk"],
+        "tidalId": "487176463"
+      },
+      {
+        "title": "Baron Samedi",
+        "artist": "ANTHONY JOSEPH",
+        "albumDetails": ", da \"The Ark\" - Heavenly Sweetness",
+        "key": "anthony_joseph___baron_samedi",
+        "genresRaw": [
+          "jazz",
+          "funk",
+          "experimental",
+          "psychedelic",
+          "spoken word"
+        ],
+        "tidalId": "503792447"
+      },
+      {
+        "title": "Death Cleaning",
+        "artist": "PAN•AMERICAN",
+        "albumDetails": ", da \"Fly The Ocean In A Silver Plane\" – Kranky",
+        "key": "pan•american___death_cleaning",
+        "genresRaw": ["ambient", "post-rock", "electroacoustic"],
+        "tidalId": "494042953"
+      },
+      {
+        "title": "Afghan Women",
+        "artist": "PAUL DUNMALL",
+        "albumDetails": ", da \"Afghan Women\" – Rogue Art",
+        "key": "paul_dunmall___afghan_women",
+        "genresRaw": ["jazz", "post-bop", "experimental"]
+      },
+      {
+        "title": "Good Grief",
+        "artist": "ABIGAIL SNAIL",
+        "albumDetails": ", da \"Rad Berms\" – Romac Puncture Repairs",
+        "key": "abigail_snail___good_grief",
+        "genresRaw": ["post-punk", "post-rock", "noise"],
+        "tidalId": "502231194"
+      },
+      {
+        "title": "Stay Rad",
+        "artist": "ABIGAIL SNAIL",
+        "albumDetails": ", da \"Rad Berms\" – Romac Puncture Repairs",
+        "key": "abigail_snail___stay_rad",
+        "genresRaw": ["rock", "slacker indie"],
+        "tidalId": "502231198"
+      },
+      {
+        "title": "Have a Go, Hero",
+        "artist": "LET SPIN",
+        "albumDetails": ", da \"I am Alien\" – Discus Music",
+        "key": "let_spin___have_a_go_hero",
+        "genresRaw": ["jazz", "jazz-core", "jazz-funk"],
+        "tidalId": "496167314"
+      },
+      {
+        "title": "No Filter",
+        "artist": "LET SPIN",
+        "albumDetails": ", da \"I am Alien\" – Discus Music",
+        "key": "let_spin___no_filter",
+        "genresRaw": ["jazz-core"],
+        "tidalId": "496167319"
+      },
+      {
+        "title": "Spa Day",
+        "artist": "HEBBEX D'EXPECTATIO EXPECTATA",
+        "albumDetails": ", da \"Kva er Vald\" – Drid Machine Records",
+        "key": "hebbex_d'expectatio_expectata___spa_day",
+        "genresRaw": ["experimental"]
+      },
+      {
+        "title": "Anti-Bird-Spike-Bird-Nest",
+        "artist": "TAUPE",
+        "albumDetails": ", da \"Waxing | Waning\" – Minority Records",
+        "key": "taupe___antibirdspikebirdnest",
+        "genresRaw": ["jazz-core"],
+        "tidalId": "479268685"
+      },
+      {
+        "title": "Impossible To Reach",
+        "artist": "BILL ORCUTT",
+        "albumDetails": ", da \"Music In Continuous Motion\" – Palilalia Records",
+        "key": "bill_orcutt___impossible_to_reach",
+        "genresRaw": ["experimental", "math-rock"],
+        "tidalId": "490015772"
+      },
+      {
+        "title": "UPS Brown",
+        "artist": "MILDRED",
+        "albumDetails": ", da \"Fenceline\" - Memorials Of Distinction",
+        "key": "mildred___ups_brown",
+        "genresRaw": ["indie-country", "indie-folk"],
+        "tidalId": "480118446"
+      },
+      {
+        "title": "Mumblecore Melody",
+        "artist": "MILDRED",
+        "albumDetails": ", da \"Fenceline\" - Memorials Of Distinction",
+        "key": "mildred___mumblecore_melody",
+        "genresRaw": ["indie-country", "indie-folk"],
+        "tidalId": "480118455"
+      },
+      {
+        "title": "A Friend Like You",
+        "artist": "THE MILK CARTON KIDS",
+        "albumDetails": ", da \"Lost Cause Lover Fool\" - Far Cry",
+        "key": "the_milk_carton_kids___a_friend_like_you",
+        "genresRaw": ["folk", "indie-folk", "acoustic"],
+        "tidalId": "480761923"
       }
     ]
   }
