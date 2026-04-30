@@ -130,6 +130,8 @@ export const ALIASES: Record<string, string> = {
   "jazz piano":         "jazz",
   "spiritual":          "jazz",
   "improvisation":      "jazz",
+  "jazz-core":          "jazz",
+  "jazz core":          "jazz",
 
   // Funk
   "free-funk":      "funk",
@@ -172,6 +174,7 @@ export const ALIASES: Record<string, string> = {
   // Rock
   "indie rock":       "rock",
   "indie":            "rock",
+  "slacker indie":    "rock",
   "classic rock":     "rock",
   "art rock":         "rock",
   "art-rock":         "rock",
@@ -299,6 +302,12 @@ export const ALIASES: Record<string, string> = {
   "alt-country":        "country",
   "alternative country":"country",
   "americana":          "country",
+  "indie-country":      "country",
+  "indie country":      "country",
+  "country rock":       "country",
+  "country-folk":       "country",
+  "country folk":       "country",
+  "cowpunk":            "country",
 
   // World
   "world music": "world",

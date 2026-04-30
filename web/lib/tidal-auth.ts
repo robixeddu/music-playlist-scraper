@@ -94,7 +94,7 @@ export async function redirectToTidal(returnTo = "/"): Promise<void> {
     response_type: "code",
     client_id: clientId,
     redirect_uri: redirectUri,
-    scope: "playlists.read playlists.write user.read",
+    scope: "playlists.read playlists.write user.read collection.read",
     code_challenge: challenge,
     code_challenge_method: "S256",
     state,

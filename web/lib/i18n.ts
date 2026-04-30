@@ -8,6 +8,10 @@ export interface Translations {
   sectionGlobal: string;
   sectionGenre: string;
   sectionEpisode: string;
+  sectionLoved: string;
+  sectionLovedDesc: string;
+  sectionLovedCount: (n: number) => string;
+  sectionLovedEmpty: string;
   tracksOnTidal: (found: number, total: number) => string;
   noGenres: string;
   noEpisodes: string;
@@ -41,6 +45,10 @@ export const translations: Record<Lang, Translations> = {
     sectionGlobal: "Globale",
     sectionGenre: "Per genere",
     sectionEpisode: "Per episodio",
+    sectionLoved: "Loved on TIDAL",
+    sectionLovedDesc: "Quando metti un brano Battiti tra i preferiti su TIDAL, viene aggiunto a questa playlist",
+    sectionLovedCount: (n) => `${n} brani loved`,
+    sectionLovedEmpty: "Nessun brano Battiti loved su TIDAL",
     tracksOnTidal: (f, t) => `${f} / ${t} tracce su TIDAL`,
     noGenres: "Nessun genere con tracce TIDAL disponibili.",
     noEpisodes: "Nessun episodio disponibile.",
@@ -72,6 +80,10 @@ export const translations: Record<Lang, Translations> = {
     sectionGlobal: "Global",
     sectionGenre: "By genre",
     sectionEpisode: "By episode",
+    sectionLoved: "Loved on TIDAL",
+    sectionLovedDesc: "When you love a Battiti track on TIDAL, it gets added to this playlist",
+    sectionLovedCount: (n) => `${n} loved tracks`,
+    sectionLovedEmpty: "No Battiti tracks loved on TIDAL yet",
     tracksOnTidal: (f, t) => `${f} / ${t} tracks on TIDAL`,
     noGenres: "No genres with TIDAL tracks available.",
     noEpisodes: "No episodes available.",

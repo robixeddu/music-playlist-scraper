@@ -6,6 +6,7 @@ import { filterGenres } from "@/lib/genres";
 import { useT } from "./LangProvider";
 import Accordion from "./Accordion";
 import GlobalSection from "./GlobalSection";
+import LovedSection from "./LovedSection";
 import GenreSection from "./GenreSection";
 import EpisodeSection from "./EpisodeSection";
 import ImportAllButton from "./ImportAllButton";
@@ -83,6 +84,10 @@ export default function ProgramBlock({ source, episodes }: ProgramBlockProps) {
 
       <div className="border border-[var(--border)] rounded-lg overflow-hidden">
         <GlobalSection
+          playlistPrefix={source.playlistPrefix}
+          episodes={episodes}
+        />
+        <LovedSection
           playlistPrefix={source.playlistPrefix}
           episodes={episodes}
         />

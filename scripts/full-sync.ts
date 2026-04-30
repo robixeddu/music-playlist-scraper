@@ -19,6 +19,7 @@ import {
   createPlaylist,
   addTrackToPlaylist,
 } from "../lib/tidalClient.js";
+import { loved } from "./loved.js";
 import { Track } from "../lib/types.js";
 
 const GENRE_DELAY_MS = 250;
@@ -62,10 +63,8 @@ const fullSync = async () => {
   }
 
   if (newTracks.length === 0) {
-    console.log("✅ No new tracks found.");
-    return;
-  }
-
+    console.log("✅ No new tracks found.\n");
+  } else {
   console.log(`\n🆕 ${newTracks.length} new tracks found.\n`);
 
   // ─── Step 2: TIDAL auth + daily staging playlist ─────────────────────────
@@ -137,6 +136,15 @@ const fullSync = async () => {
   console.log(`📅 ${PROGRAM_ID}-${today}: ${todayAdded} tracks staged`);
   console.log(`❌ Not found on TIDAL:   ${notFound}`);
   console.log(`\n👉 Review ${PROGRAM_ID}-${today} on TIDAL, edit tracks.json if needed, then run: npm run propagate`);
+  } // end if (newTracks.length > 0)
+
+  // ─── Step 5: Loved playlist (always, checkpoint-based) ───────────────────
+  console.log("\n❤️  Step 5: Syncing loved playlist...\n");
+  try {
+    await loved();
+  } catch (e: any) {
+    console.error(`❌ Loved sync error: ${e.message}`);
+  }
 };
 
 fullSync().catch((e) => console.error(`❌ Error during battiti-full-sync: ${e.message}`));

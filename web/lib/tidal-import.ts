@@ -10,7 +10,7 @@ import {
   TidalNotFoundError,
 } from "./tidal-api";
 
-export type PlaylistType = "global" | "genre" | "episode";
+export type PlaylistType = "global" | "genre" | "episode" | "loved";
 
 function storageKey(type: PlaylistType, slug: string): string {
   return `battiti_tidal_${type}_${slug}`;

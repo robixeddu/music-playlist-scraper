@@ -17,7 +17,8 @@
     "clear-mismatched-ids": "tsx scripts/clear-mismatched-ids.ts",
     "fix-mismatched-ids": "tsx scripts/fix-mismatched-ids.ts",
     "reconcile-global-playlist": "tsx scripts/reconcile-global-playlist.ts",
-    "seed-redis": "tsx scripts/seed-redis.ts"
+    "seed-redis": "tsx scripts/seed-redis.ts",
+    "loved": "tsx scripts/loved.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

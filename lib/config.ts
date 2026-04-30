@@ -8,6 +8,7 @@ export const TRACKS_FILE = `${PROGRAM_DIR}/tracks.json`;
 export const MISSING_TRACKS_FILE = `${PROGRAM_DIR}/missing_tracks.txt`;
 export const GLOBAL_PLAYLIST_FILE = `${PROGRAM_DIR}/global_playlist.json`;
 export const GENRE_PLAYLISTS_FILE = `${PROGRAM_DIR}/genre_playlists.json`;
+export const LOVED_CHECKPOINT_FILE = `${PROGRAM_DIR}/loved_checkpoint.json`;
 
 export const BASE_URL = process.env.SCRAPER_BASE_URL;
 export const PROGRAM_PATH = process.env.SCRAPER_PROGRAM_PATH;

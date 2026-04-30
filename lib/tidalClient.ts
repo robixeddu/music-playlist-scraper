@@ -393,18 +393,59 @@ export const getTrackInfo = async (
   }
 };
 
+export const getUserFavoriteTrackIds = async (
+  userId: string,
+  token: string,
+  /** ISO date string — stop fetching pages once all items on a page are older than this */
+  sinceDate?: string
+): Promise<{ ids: Set<string>; latestDate: string | null }> => {
+  const ids = new Set<string>();
+  let latestDate: string | null = null;
+  const since = sinceDate ? new Date(sinceDate).getTime() : null;
+
+  // Items arrive newest-first; stop as soon as we hit the checkpoint date
+  let nextPath: string | null =
+    `/userCollections/${userId}/relationships/tracks?countryCode=${COUNTRY_CODE}`;
+
+  do {
+    const data = await tidalFetch(nextPath, token);
+    let hitCheckpoint = false;
+
+    for (const entry of (data?.data ?? []) as Array<{ id: string; meta: { addedAt: string } }>) {
+      const addedAt = entry.meta?.addedAt ?? null;
+      if (addedAt && (!latestDate || addedAt > latestDate)) latestDate = addedAt;
+      if (since && addedAt && new Date(addedAt).getTime() <= since) {
+        hitCheckpoint = true;
+        break;
+      }
+      ids.add(entry.id);
+    }
+
+    if (hitCheckpoint) break;
+    nextPath = data?.links?.next ?? null;
+    if (nextPath) await sleep(600);
+  } while (nextPath);
+
+  return { ids, latestDate };
+};
+
 export const addTrackToPlaylist = async (
   playlistId: string,
   trackId: string,
   token: string
 ): Promise<boolean> => {
   try {
-    await tidalFetch(`/playlists/${playlistId}/relationships/items`, token, {
+    const res = await tidalFetch(`/playlists/${playlistId}/relationships/items`, token, {
       method: "POST",
       body: JSON.stringify({
         data: [{ id: trackId, type: "tracks" }],
       }),
     });
+    // data: [] means TIDAL rejected the add (geo-restricted or unavailable)
+    if (res && Array.isArray(res.data) && res.data.length === 0) {
+      console.log(`   ↳ track ${trackId}: skipped (unavailable in region)`);
+      return false;
+    }
     return true;
   } catch (e: any) {
     console.error(`❌ Error during adding track ${trackId} to playlist: ${e.message}`);

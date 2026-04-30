@@ -201,6 +201,64 @@ export async function removeItemsFromPlaylist(
   }
 }
 
+// ── Get user collection track IDs (liked tracks) ─────────────────────────────
+
+/**
+ * Fetches user collection track IDs, optionally stopping once items older
+ * than `sinceDate` are encountered (items arrive newest-first).
+ * Returns the IDs seen and the most recent `addedAt` date found.
+ */
+export async function getUserCollectionTrackIds(
+  token: string,
+  userId: string,
+  sinceDate?: string
+): Promise<{ ids: Set<string>; latestAddedAt: string | null }> {
+  const ids = new Set<string>();
+  let latestAddedAt: string | null = null;
+  const since = sinceDate ? new Date(sinceDate).getTime() : null;
+
+  let url: string | null =
+    `/tidal-api/userCollections/${userId}/relationships/tracks?countryCode=${COUNTRY_CODE}&limit=100`;
+  let firstPage = true;
+
+  while (url) {
+    if (!firstPage) await delay(PAGE_DELAY_MS);
+    firstPage = false;
+
+    const res = await fetchWithRetry(url, { headers: headers(token) });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Get collection tracks failed: ${text}`);
+    }
+    const json = (await res.json()) as {
+      data: Array<{ id: string; meta?: { addedAt?: string } }>;
+      links?: { next?: string | null };
+    };
+
+    let hitCheckpoint = false;
+    for (const item of json.data) {
+      const addedAt = item.meta?.addedAt ?? null;
+      if (addedAt && (!latestAddedAt || addedAt > latestAddedAt)) latestAddedAt = addedAt;
+      if (since && addedAt && new Date(addedAt).getTime() <= since) {
+        hitCheckpoint = true;
+        break;
+      }
+      ids.add(item.id);
+    }
+
+    if (hitCheckpoint) break;
+    const next = json.links?.next ?? null;
+    if (!next) {
+      url = null;
+    } else {
+      const path = next.replace(TIDAL_BASE_URL, "");
+      url = path.startsWith("/tidal-api") ? path : `/tidal-api${path}`;
+    }
+  }
+
+  return { ids, latestAddedAt };
+}
+
 // ── Add tracks in batches ─────────────────────────────────────────────────────
 
 const BATCH_SIZE = 20;
