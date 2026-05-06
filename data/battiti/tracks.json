@@ -53754,5 +53754,489 @@
         "tidalId": "480761923"
       }
     ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Transmissions XVII: Sanam",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-04052026-7845c07b-60cd-42b7-b6bf-e2879053ece8.html",
+    "date": "04 Mag 2026",
+    "tracks": [
+      {
+        "title": "Dreams Of The Imagination",
+        "artist": "SANDY CHAMOUN",
+        "albumDetails": "- bandcamp 2021",
+        "key": "sandy_chamoun___dreams_of_the_imagination",
+        "genresRaw": ["experimental", "world", "psychedelic"]
+      },
+      {
+        "title": "Aykathani malakon",
+        "artist": "SANAM",
+        "albumDetails": "",
+        "key": "sanam___aykathani_malakon",
+        "genresRaw": ["experimental", "world", "psychedelic"],
+        "tidalId": "294236943"
+      },
+      {
+        "title": "Bell",
+        "artist": "SANAM",
+        "albumDetails": "",
+        "key": "sanam___bell",
+        "genresRaw": ["experimental", "world", "psychedelic"],
+        "tidalId": "294236944"
+      },
+      {
+        "title": "Ya nass",
+        "artist": "SANAM",
+        "albumDetails": "",
+        "key": "sanam___ya_nass",
+        "genresRaw": ["experimental", "world", "psychedelic"],
+        "tidalId": "294236946"
+      },
+      {
+        "title": "Goblin",
+        "artist": "SANAM",
+        "albumDetails": "",
+        "key": "sanam___goblin",
+        "genresRaw": ["experimental", "world", "psychedelic"],
+        "tidalId": "433117758"
+      },
+      {
+        "title": "Hamam",
+        "artist": "SANAM",
+        "albumDetails": "",
+        "key": "sanam___hamam",
+        "genresRaw": ["experimental", "psychedelic", "world"],
+        "tidalId": "433117761"
+      },
+      {
+        "title": "Ayouha al taiin fi al mawt",
+        "artist": "SANAM",
+        "albumDetails": "",
+        "key": "sanam___ayouha_al_taiin_fi_al_mawt",
+        "genresRaw": ["experimental", "world", "psychedelic"],
+        "tidalId": "294236945"
+      },
+      {
+        "title": "Mallifa",
+        "artist": "PREFACES",
+        "albumDetails": ", da \"Acqua Marina\" - Ruptured",
+        "key": "prefaces___mallifa",
+        "genresRaw": ["rock", "surf rock", "psychedelic"],
+        "tidalId": "442354816"
+      },
+      {
+        "title": "Marmoura",
+        "artist": "PREFACES",
+        "albumDetails": ", da \"Acqua Marina\" - Ruptured",
+        "key": "prefaces___marmoura",
+        "genresRaw": ["funk", "surf rock", "world"],
+        "tidalId": "442354818"
+      },
+      {
+        "title": "Oublie",
+        "artist": "MAUD ZEINOUN",
+        "albumDetails": ", da \"For The Waves I Rode / And The Ones That Broke Inside Me\" - Ruptured",
+        "key": "maud_zeinoun___oublie",
+        "genresRaw": ["electronic", "experimental", "ambient"],
+        "tidalId": "462420642"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Gurbaaz's Radio: An Indian Wave",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-03052026-5c2808c6-3ae2-44dd-b890-f0ede301b9f8.html",
+    "date": "03 Mag 2026",
+    "tracks": [
+      {
+        "title": "In Aankhon Ki Masti",
+        "artist": "ASHA BHOSLE",
+        "albumDetails": ", da \"Umrao Jaan\" - His Master's Voice ECLP",
+        "key": "asha_bhosle___in_aankhon_ki_masti",
+        "genresRaw": ["electronic", "world", "pop"],
+        "tidalId": "287233427"
+      },
+      {
+        "title": "Main Hoon Jadugar",
+        "artist": "ASHA BHOSLE",
+        "albumDetails": ", da \"Dushman Dost (Original Motion Picture Soundtrack)\" - Saregama",
+        "key": "asha_bhosle___main_hoon_jadugar",
+        "genresRaw": ["world", "pop"],
+        "tidalId": "80714259"
+      },
+      {
+        "title": "The Shadow Light",
+        "artist": "GORILLAZ/ASHA BHOSLE/GRUFF RHYS/AJAY PRASANNA/AMAAN/AYAAN ALI BANGASH",
+        "albumDetails": ", da \"The Mountain\" - Parlophone",
+        "key": "gorillazasha_bhoslegruff_rhysajay_prasannaamaanayaan_ali_bangash___the_shadow_light",
+        "genresRaw": ["world", "electronic", "pop"],
+        "tidalId": "500753060"
+      },
+      {
+        "title": "Uyire Uyire",
+        "artist": "A.R. RAHMAN/HARIHARAN/K.S.CHITRA",
+        "albumDetails": ", da \" Introducing A. R. Rahman\" - Saregama",
+        "key": "ar_rahmanhariharankschitra___uyire_uyire",
+        "genresRaw": ["world", "pop"],
+        "tidalId": "344252568"
+      },
+      {
+        "title": "Om Shanti Om",
+        "artist": "KISHORE KUMAR",
+        "albumDetails": ", da \"Karz\" - His Master's Voice",
+        "key": "kishore_kumar___om_shanti_om",
+        "genresRaw": ["pop", "bollywood"],
+        "tidalId": "83682376"
+      },
+      {
+        "title": "Kesariya",
+        "artist": "PRITAM/ARIJIT SINGH",
+        "albumDetails": ", da \"Brahmastra\" - Sony Music",
+        "key": "pritamarijit_singh___kesariya",
+        "genresRaw": ["bollywood", "pop"],
+        "tidalId": "238349801"
+      },
+      {
+        "title": "Raghupati Raghav Raja Ram",
+        "artist": "VISHNU DIGAMBAR PALUSKAR",
+        "albumDetails": ", da \"50 Glorious Years Of Popular Bhajan\" - Saregama",
+        "key": "vishnu_digambar_paluskar___raghupati_raghav_raja_ram",
+        "genresRaw": ["instrumental", "world"]
+      },
+      {
+        "title": "Sitar Todi",
+        "artist": "RAVI SHANKAR",
+        "albumDetails": ", da \"The Genius Of Ravi Shankar\" - Columbia",
+        "key": "ravi_shankar___sitar_todi",
+        "genresRaw": ["psychedelic", "instrumental", "world"],
+        "tidalId": "27569496"
+      },
+      {
+        "title": "Tera Yaar Bolda",
+        "artist": "SURJIT BINDRAKHLA",
+        "albumDetails": ",da \"Tera Yaar Bolda\" - T-Series",
+        "key": "surjit_bindrakhla___tera_yaar_bolda",
+        "genresRaw": ["world", "punjabi"],
+        "tidalId": "13830147"
+      },
+      {
+        "title": "Pind De Gehre",
+        "artist": "RUPINDER HANDA",
+        "albumDetails": ", da \"Pind De Gehre\" - Saga Music",
+        "key": "rupinder_handa___pind_de_gehre",
+        "genresRaw": ["pop", "punjabi"],
+        "tidalId": "408712859"
+      },
+      {
+        "title": "Lollypop Lagelu",
+        "artist": "PAWAN SINGH",
+        "albumDetails": ", da \"Lollypop Lagelu\" - Wave Music",
+        "key": "pawan_singh___lollypop_lagelu",
+        "genresRaw": ["pop"],
+        "tidalId": "259577672"
+      },
+      {
+        "title": "Vaathi Coming, da \"Master (Original Motion Picture Soundtrack)",
+        "artist": "ANIRUDH RAVICHANDER",
+        "albumDetails": "- Sony Music South",
+        "key": "anirudh_ravichander___vaathi_coming_da_\"master_original_motion_picture_soundtrack",
+        "genresRaw": ["world", "soundtrack"],
+        "tidalId": "406083574"
+      },
+      {
+        "title": "Lakh Khushian Patshahian",
+        "artist": "BHAI JOGINDER SINGH PAIR",
+        "albumDetails": ", da \"Ghar Sukh Vaseya Bahar Sukh Paeya\" - T-Series",
+        "key": "bhai_joginder_singh_pair___lakh_khushian_patshahian",
+        "genresRaw": ["world", "punjabi"],
+        "tidalId": "27423487"
+      },
+      {
+        "title": "Bam Lehari",
+        "artist": "SHRI BANSI JOGI",
+        "albumDetails": ", da \"Bam Lehari\" - Autoproduzione",
+        "key": "shri_bansi_jogi___bam_lehari",
+        "genresRaw": ["devotional folk", "world"],
+        "tidalId": "510938235"
+      },
+      {
+        "title": "Halgi mangachi",
+        "artist": "DJ YASH NSK",
+        "albumDetails": ", da \"Halgi mangachi\" - Autoproduzione",
+        "key": "dj_yash_nsk___halgi_mangachi",
+        "genresRaw": ["electronic", "world"]
+      },
+      {
+        "title": "Overbit",
+        "artist": "BAALTI",
+        "albumDetails": ", da \"Mela\" - Steel City Dance Discs",
+        "key": "baalti___overbit",
+        "genresRaw": ["electronic", "house"],
+        "tidalId": "464695809"
+      },
+      {
+        "title": "Mere Gully Mein, Da \"Mere Gully Mein\"",
+        "artist": "DIVINE/NAEZY",
+        "albumDetails": "- Sony Music India",
+        "key": "divinenaezy___mere_gully_mein_da_\"mere_gully_mein\"",
+        "genresRaw": ["hip-hop"],
+        "tidalId": "245612108"
+      },
+      {
+        "title": "Ahmer",
+        "artist": "KASHEER",
+        "albumDetails": ", da \"Ahmer\" - Azadi Records",
+        "key": "kasheer___ahmer",
+        "genresRaw": ["hip-hop"],
+        "tidalId": "422419147"
+      },
+      {
+        "title": "Butcher's Scale",
+        "artist": "RAF SAPERRA/BENNY THE BUTCHER",
+        "albumDetails": ", da \"Venomz Vol. II\" - Mass Appeal",
+        "key": "raf_saperrabenny_the_butcher___butcher's_scale",
+        "genresRaw": ["hip-hop"],
+        "tidalId": "482298523"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Vibrisse #44",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-02052026-c5d5fbfb-8606-4698-88fb-6877daba411a.html",
+    "date": "02 Mag 2026",
+    "tracks": [
+      {
+        "title": "Solidarity Forever",
+        "artist": "PETE SEEGER",
+        "albumDetails": ", da \"If I Had A Hammer: Songs Of Hope & Struggle\" – Smithsonian Folkways",
+        "key": "pete_seeger___solidarity_forever",
+        "genresRaw": ["folk"],
+        "tidalId": "106098216"
+      },
+      {
+        "title": "La lega (Featuring Coro delle Mondine di Bentivoglio), da \"Canti di guerra, di lavoro e d'amore\"",
+        "artist": "SILVIA TAROZZI & DEBORAH WALKER",
+        "albumDetails": "- Unseen Worlds",
+        "key": "silvia_tarozzi_deborah_walker___la_lega_featuring_coro_delle_mondine_di_bentivoglio_da_\"canti_di_guerra_di_lavoro_e_d'amore\"",
+        "genresRaw": ["folk", "experimental"],
+        "tidalId": "218297139"
+      },
+      {
+        "title": "La tatuata bella",
+        "artist": "TRE ALLEGRI RAGAZZI MORTI",
+        "albumDetails": ", da \"Rarities\" – Coconino Press",
+        "key": "tre_allegri_ragazzi_morti___la_tatuata_bella",
+        "genresRaw": ["folk", "rock"],
+        "tidalId": "18463477"
+      },
+      {
+        "title": "Torino Pausa Pranzo",
+        "artist": "IOSONOUNCANE",
+        "albumDetails": ", da \"La Macarena Su Roma\" – Trovarobato",
+        "key": "iosonouncane___torino_pausa_pranzo",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "157786748"
+      },
+      {
+        "title": "Joe Hill",
+        "artist": "PHIL OCHS",
+        "albumDetails": ", da \"Live In Montreal, 10/22/1966\" – RockBeat Records",
+        "key": "phil_ochs___joe_hill",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "478024"
+      },
+      {
+        "title": "Pig Feet (feat. Denzel Curry, Kamasi Washington, G Perico & Daylyt)",
+        "artist": "TERRACE MARTIN",
+        "albumDetails": "– 7\" Sounds Of Crenshaw",
+        "key": "terrace_martin___pig_feet_feat_denzel_curry_kamasi_washington_g_perico_daylyt",
+        "genresRaw": ["hip-hop", "jazz", "funk"],
+        "tidalId": "143369066"
+      },
+      {
+        "title": "Keep Ya Head Up",
+        "artist": "2PAC",
+        "albumDetails": ", da \"Strictly 4 My N.I.G.G.A.Z...\" – Interscope Records",
+        "key": "2pac___keep_ya_head_up",
+        "genresRaw": ["hip-hop", "funk"],
+        "tidalId": "276033094"
+      },
+      {
+        "title": "Mannenberg ~ 'Is Where It's Happening', da \"Mannenberg ~ 'Is Where It's Happening'\"",
+        "artist": "DOLLAR BRAND",
+        "albumDetails": "– The Sun",
+        "key": "dollar_brand___mannenberg_'is_where_it's_happening'_da_\"mannenberg_'is_where_it's_happening'\"",
+        "genresRaw": ["jazz", "instrumental"]
+      },
+      {
+        "title": "Interception",
+        "artist": "DAVID HOLLAND QUARTET",
+        "albumDetails": ", da \"Conference Of The Birds\" – ECM Records",
+        "key": "david_holland_quartet___interception",
+        "genresRaw": ["jazz", "post-rock"],
+        "tidalId": "77646107"
+      },
+      {
+        "title": "Truth Don Die",
+        "artist": "FEMI KUTI",
+        "albumDetails": ", da \"Shoki Shoki\" – Barclay",
+        "key": "femi_kuti___truth_don_die",
+        "genresRaw": ["afrobeat", "funk"],
+        "tidalId": "438668479"
+      },
+      {
+        "title": "We Die Hia, da \"6°30'33​.​372\"N 3°22'0​.​66\"E\"",
+        "artist": "EMEKA OGBOH",
+        "albumDetails": "– Danfotronics",
+        "key": "emeka_ogboh___we_die_hia_da_\"6°30'33​​372\"n_3°22'0​​66\"e\"",
+        "genresRaw": ["electronic", "field recordings"],
+        "tidalId": "235840823"
+      },
+      {
+        "title": "Rough Dub",
+        "artist": "REVOLUTIONARY DUB WARRIORS",
+        "albumDetails": ", da \"State Of Evolution\" – On-U Sound",
+        "key": "revolutionary_dub_warriors___rough_dub",
+        "genresRaw": ["dub"],
+        "tidalId": "106696418"
+      },
+      {
+        "title": "Hunger",
+        "artist": "HECTOR ZAZOU",
+        "albumDetails": ", da \"Sahara Blue\" – Crammed Disc",
+        "key": "hector_zazou___hunger",
+        "genresRaw": ["world", "experimental"]
+      },
+      {
+        "title": "I'm An Old Man Now, And A Lonesome Man in Kansas",
+        "artist": "ALLEN GINSBERG / PHILIP GLASS",
+        "albumDetails": ", da \"Wichita Vortex Sutra\" – Artemis Records",
+        "key": "allen_ginsberg_philip_glass___i'm_an_old_man_now_and_a_lonesome_man_in_kansas",
+        "genresRaw": ["experimental", "spoken word"],
+        "tidalId": "38353029"
+      },
+      {
+        "title": "Pirate Jenny",
+        "artist": "SHILPA RAY / NICK CAVE / WARREN ELLIS",
+        "albumDetails": ", da \"Son Of Rogues Gallery (Pirate Ballads, Sea Songs & Chanteys)\" – Anti-",
+        "key": "shilpa_ray_nick_cave_warren_ellis___pirate_jenny",
+        "genresRaw": ["rock", "experimental", "folk"],
+        "tidalId": "121132512"
+      },
+      {
+        "title": "Cumbia triste feat. Davide Toffolo",
+        "artist": "CACAO MENTAL",
+        "albumDetails": ", da \"Para Extrañas Criaturas\" – La Tempesta Sur",
+        "key": "cacao_mental___cumbia_triste_feat_davide_toffolo",
+        "genresRaw": ["cumbia"],
+        "tidalId": "85381755"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "ambiente, musica, memoria",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-01052026-52d109ec-3b2d-417d-80cd-256146c954a9.html",
+    "date": "01 Mag 2026",
+    "tracks": [
+      {
+        "title": "Sometime I Feel Like A Motherless Child",
+        "artist": "KRONOS QUARTET",
+        "albumDetails": ", da \"Glorious Mahalia\" - Smithsonian Folkways Recordings",
+        "key": "kronos_quartet___sometime_i_feel_like_a_motherless_child",
+        "genresRaw": ["classical", "gospel"],
+        "tidalId": "483119127"
+      },
+      {
+        "title": "Stepping Out For Air",
+        "artist": "BILL CALLAHAN",
+        "albumDetails": ", da \"My Days Of 58\" – Drag City",
+        "key": "bill_callahan___stepping_out_for_air",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "468939757"
+      },
+      {
+        "title": "Heart Of Darkness",
+        "artist": "MY NEW BAND BELIEVE",
+        "albumDetails": ", da \"My New Band Believe\" – Rough Trade",
+        "key": "my_new_band_believe___heart_of_darkness",
+        "genresRaw": ["progressive rock", "progressive folk"],
+        "tidalId": "508353196"
+      },
+      {
+        "title": "Raid Dem Jah",
+        "artist": "OBY ONYIOHA",
+        "albumDetails": ", da \"Fight The Fire: Digital Reggae, Conscious Roots and Dub in Nigeria 1986-91\" - Soundway Records",
+        "key": "oby_onyioha___raid_dem_jah",
+        "genresRaw": ["funk", "world"],
+        "tidalId": "490746029"
+      },
+      {
+        "title": "Bologna, 5",
+        "artist": "ANGELICA FESTIVAL INTERNAZIONALE DI MUSICA",
+        "albumDetails": "-30 Maggio 2026",
+        "key": "angelica_festival_internazionale_di_musica___bologna_5",
+        "genresRaw": ["contemporary", "experimental", "instrumental"]
+      },
+      {
+        "title": "Dùsgagh/Walking",
+        "artist": "BRÌGHDE CHAIMBEUL",
+        "albumDetails": ", da \"Sunwise\" - Glitterbeat",
+        "key": "brighde_chaimbeul___dusgaghwalking",
+        "genresRaw": ["folk", "instrumental"],
+        "tidalId": "427714849"
+      },
+      {
+        "title": "Music For Pulse Meridian Foliation (brief immersion)",
+        "artist": "JOSHUA ABRAMS",
+        "albumDetails": ", da \"Music For Pulse Meridian Foliation\" – Drag City",
+        "key": "joshua_abrams___music_for_pulse_meridian_foliation_brief_immersion",
+        "genresRaw": ["experimental", "ambient", "electroacoustic"],
+        "tidalId": "477266732"
+      },
+      {
+        "title": "Soft Rain On A Silent River",
+        "artist": "NAÏSSAM JALAL",
+        "albumDetails": ", da \"Landscape of Eternity\" – Les Couleurs Du Son",
+        "key": "naissam_jalal___soft_rain_on_a_silent_river",
+        "genresRaw": ["world", "ambient", "instrumental"],
+        "tidalId": "495198223"
+      },
+      {
+        "title": "Psalm",
+        "artist": "DIMITRI GRECHI ESPINOZA",
+        "albumDetails": ", da \"Meditation On A Love Supreme\" – Ponderosa Music Records",
+        "key": "dimitri_grechi_espinoza___psalm",
+        "genresRaw": ["jazz", "spoken word"],
+        "tidalId": "497565100"
+      },
+      {
+        "title": "Haō",
+        "artist": "MEITEi",
+        "albumDetails": ", da \"Agate / 瑪瑙\" – Kitchen. Label",
+        "key": "meitei___hao",
+        "genresRaw": ["ambient", "electronic", "experimental"],
+        "tidalId": "509676663"
+      },
+      {
+        "title": "3rd Incantation (Binding)",
+        "artist": "MEREDITH BATES",
+        "albumDetails": ", da \"The Observer Effect - Books I & II\" – Phonometrograph",
+        "key": "meredith_bates___3rd_incantation_binding",
+        "genresRaw": ["electroacoustic", "instrumental"]
+      },
+      {
+        "title": "Arrival",
+        "artist": "OD",
+        "albumDetails": ", da \"Svalr\" – Driftworks",
+        "key": "od___arrival",
+        "genresRaw": ["electronic"],
+        "tidalId": "499835858"
+      },
+      {
+        "title": "Room One, Section VI (estratto)",
+        "artist": "PIETRO BARDINI",
+        "albumDetails": ", da \"Parallel Rooms\" – Strata",
+        "key": "pietro_bardini___room_one_section_vi_estratto",
+        "genresRaw": ["instrumental", "classical"]
+      }
+    ]
   }
 ]

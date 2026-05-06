@@ -189,6 +189,8 @@ export const ALIASES: Record<string, string> = {
   "hard rock":        "rock",
   "progressive rock": "rock",
   "experimental rock":"rock",
+  "surf rock":         "rock",
+  "surf":              "rock",
 
   // Psychedelic
   "neo-psychedelia": "psychedelic",
@@ -253,6 +255,8 @@ export const ALIASES: Record<string, string> = {
   "dark folk":        "folk",
   "neofolk":          "folk",
   "folktronica":      "folk",
+  "punjabi":          "folk",
+  "devotional folk":  "folk",
 
   // Reggae
   "dancehall":    "reggae",
@@ -364,6 +368,7 @@ export const ALIASES: Record<string, string> = {
   "film score": "soundtrack",
   "film music": "soundtrack",
   "score":      "soundtrack",
+  "bollywood":   "soundtrack",
 
   // Formatting fixes
   "lo fi": "lo-fi",
