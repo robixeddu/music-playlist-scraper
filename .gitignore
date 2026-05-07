@@ -9,6 +9,7 @@ data/battiti/global_playlist.json
 data/battiti/tidal_id_mismatches.txt
 data/battiti/tidal_verify_checkpoint.json
 data/battiti/fix_mismatched_checkpoint.json
+data/battiti/loved_checkpoint.json
 /logs
 .claude/
 CLAUDE.md

@@ -54238,5 +54238,351 @@
         "genresRaw": ["instrumental", "classical"]
       }
     ]
+  },
+  {
+    "episodeTitle": "Postcards From Italy",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-07052026-bf676df2-43a2-49f4-b33a-00c3f46819c9.html",
+    "date": "07 Mag 2026",
+    "tracks": [
+      {
+        "title": "The Multiple Hallucinations Of An Assassin - Part 2",
+        "artist": "ALVARIUS B.",
+        "albumDetails": ", da \"Malarial Dream\" - Abduction",
+        "key": "alvarius_b___the_multiple_hallucinations_of_an_assassin_part_2",
+        "genresRaw": ["experimental", "world"],
+        "tidalId": "517700976"
+      },
+      {
+        "title": "Fish Without A Bicycle",
+        "artist": "ROSA BRUNELLO",
+        "albumDetails": ", da \"We Are Surging Waters\" - Domanda Music",
+        "key": "rosa_brunello___fish_without_a_bicycle",
+        "genresRaw": ["experimental", "electronic"]
+      },
+      {
+        "title": "Fractal Hash",
+        "artist": "HARRINGTON / JAFFE / SHIROISHI",
+        "albumDetails": ", da \"Making Colors\" - AKP Recordings",
+        "key": "harrington_jaffe_shiroishi___fractal_hash",
+        "genresRaw": ["experimental", "avant-garde jazz", "electronic"],
+        "tidalId": "497934031"
+      },
+      {
+        "title": "Naba Ba Papedi",
+        "artist": "SEROKOLO 7",
+        "albumDetails": ", da \"Maramfa Musik Pro\" - Nyege Nyege Tapes",
+        "key": "serokolo_7___naba_ba_papedi",
+        "genresRaw": ["electronic", "world", "drum & bass"],
+        "tidalId": "512968254"
+      },
+      {
+        "title": "vari luoghi in Romagna, 10 maggio",
+        "artist": "ELEMENTI",
+        "albumDetails": "– 31 luglio 2026",
+        "key": "elementi___vari_luoghi_in_romagna_10_maggio",
+        "genresRaw": ["instrumental", "experimental"]
+      },
+      {
+        "title": "Chilling In The Cosmic Sea",
+        "artist": "NICOLAS GAUNIN",
+        "albumDetails": ", da \"Wormhole\" – Moon Glyph",
+        "key": "nicolas_gaunin___chilling_in_the_cosmic_sea",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "350770644"
+      },
+      {
+        "title": "Dear Palomar",
+        "artist": "GIACOMO ZANUS",
+        "albumDetails": ", da \"Wandering Away Is Safer Than Getting Lost On Your Own\" - Okum Produzioni",
+        "key": "giacomo_zanus___dear_palomar",
+        "genresRaw": ["jazz", "post-rock", "folk"],
+        "tidalId": "504982828"
+      },
+      {
+        "title": "Canto pagano",
+        "artist": "GIACOMO ZANUS",
+        "albumDetails": ", da \"Wandering Away Is Safer Than Getting Lost On Your Own\" - Okum Produzioni",
+        "key": "giacomo_zanus___canto_pagano",
+        "genresRaw": ["jazz", "post-rock", "folk"],
+        "tidalId": "504982832"
+      },
+      {
+        "title": "Olac Porcirol",
+        "artist": "DUO BOTTASSO",
+        "albumDetails": ", da \"Postcards From Italy\" - bandcamp 2026",
+        "key": "duo_bottasso___olac_porcirol",
+        "genresRaw": ["folk", "world", "instrumental"]
+      },
+      {
+        "title": "Contrabbandieri",
+        "artist": "DUO BOTTASSO",
+        "albumDetails": ", da \"Postcards From Italy\" - bandcamp 2026",
+        "key": "duo_bottasso___contrabbandieri",
+        "genresRaw": ["world", "folk", "experimental"]
+      },
+      {
+        "title": "Alice chiacchierina",
+        "artist": "VALENTINA FIN / FEDERICA FURLANI",
+        "albumDetails": ", da \"Rodari Connection\" - Kohlhaas",
+        "key": "valentina_fin_federica_furlani___alice_chiacchierina",
+        "genresRaw": ["electroacoustic", "electronic", "experimental"]
+      },
+      {
+        "title": "Di un distratto",
+        "artist": "VALENTINA FIN / FEDERICA FURLANI",
+        "albumDetails": ", da \"Rodari Connection\" - Kohlhaas",
+        "key": "valentina_fin_federica_furlani___di_un_distratto",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "496536616"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Be Love",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-06052026-5a3070b7-b4ee-4af7-b9a0-1b2e23e71059.html",
+    "date": "06 Mag 2026",
+    "tracks": [
+      {
+        "title": "Eating The Others",
+        "artist": "DUMAMA",
+        "albumDetails": ", da \"Towards An Expanse\" - Soundway Records",
+        "key": "dumama___eating_the_others",
+        "genresRaw": ["experimental", "nu folk"],
+        "tidalId": "495859712"
+      },
+      {
+        "title": "Sweat Street 7-QS:ZBN9_",
+        "artist": "HARRINGTON / JAFFE / SHIROISHI",
+        "albumDetails": ", da \"Making Colors\" - AKP Recordings",
+        "key": "harrington_jaffe_shiroishi___sweat_street_7qszbn9",
+        "genresRaw": ["experimental", "jazz"],
+        "tidalId": "497562347"
+      },
+      {
+        "title": "Texas Headphones",
+        "artist": "ALVARIUS B.",
+        "albumDetails": ", da \"Malarial Dream\" - Abduction",
+        "key": "alvarius_b___texas_headphones",
+        "genresRaw": ["experimental", "electronic", "psychedelic"],
+        "tidalId": "517700980"
+      },
+      {
+        "title": "Topeng Keras",
+        "artist": "BALI GAMELAN SOUND",
+        "albumDetails": ", da \"Topeng Semar Pegulingan\" - bandcamp 2026",
+        "key": "bali_gamelan_sound___topeng_keras",
+        "genresRaw": ["world", "instrumental", "experimental"],
+        "tidalId": "168971992"
+      },
+      {
+        "title": "Nirvanina",
+        "artist": "VICKI RUMMLER",
+        "albumDetails": ", da \"Snapshots\" – Dodicilune Dischi",
+        "key": "vicki_rummler___nirvanina",
+        "genresRaw": ["jazz", "vocal jazz"],
+        "tidalId": "509534432"
+      },
+      {
+        "title": "Snapshots",
+        "artist": "VICKI RUMMLER",
+        "albumDetails": ", da \"Snapshots\" – Dodicilune Dischi",
+        "key": "vicki_rummler___snapshots",
+        "genresRaw": ["jazz", "vocal jazz"],
+        "tidalId": "509534433"
+      },
+      {
+        "title": "Sharanam",
+        "artist": "ENRICO GHELARDI SHANTI PROJECT",
+        "albumDetails": ", da \"Be Love\" – Alfa Music",
+        "key": "enrico_ghelardi_shanti_project___sharanam",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "509554427"
+      },
+      {
+        "title": "Kaveriot Korridor",
+        "artist": "JEAN-BAPTISTE ROUSSEAUX",
+        "albumDetails": ", da \"Kaveriot Korridor\" – Gleam Records",
+        "key": "jeanbaptiste_rousseaux___kaveriot_korridor",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "507067522"
+      },
+      {
+        "title": "Sileok",
+        "artist": "JEAN-BAPTISTE ROUSSEAUX",
+        "albumDetails": ", da \"Kaveriot Korridor\" – Gleam Records",
+        "key": "jeanbaptiste_rousseaux___sileok",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "507067525"
+      },
+      {
+        "title": "Bumblebee Funk",
+        "artist": "FADITA",
+        "albumDetails": ", da \"Journey To Rhodos\" – WoW Records",
+        "key": "fadita___bumblebee_funk",
+        "genresRaw": ["funk", "electronic"]
+      },
+      {
+        "title": "Camilla's Steps",
+        "artist": "FADITA",
+        "albumDetails": ", da \"Journey To Rhodos\" – WoW Records",
+        "key": "fadita___camilla's_steps",
+        "genresRaw": ["jazz", "funk", "world"]
+      },
+      {
+        "title": "Boustan El Achar",
+        "artist": "YASSINE NANA",
+        "albumDetails": ", da \"Modern Pop from Mauritania (1984-1989)\" – Les Disques Bongo Joe",
+        "key": "yassine_nana___boustan_el_achar",
+        "genresRaw": ["pop", "world"],
+        "tidalId": "295195076"
+      },
+      {
+        "title": "Telephone",
+        "artist": "YASSINE NANA",
+        "albumDetails": ", da \"Modern Pop from Mauritania (1984-1989)\" – Les Disques Bongo Joe",
+        "key": "yassine_nana___telephone",
+        "genresRaw": ["pop", "world"],
+        "tidalId": "497841847"
+      },
+      {
+        "title": "Just For You (Eden)",
+        "artist": "ROLAND BRIVAL",
+        "albumDetails": ", da \"Créole Gypsy\" – Soundway",
+        "key": "roland_brival___just_for_you_eden",
+        "genresRaw": ["jazz", "soul"],
+        "tidalId": "491865371"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Solo",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-05052026-e561c543-525b-40d1-8d8e-9929816eea5d.html",
+    "date": "05 Mag 2026",
+    "tracks": [
+      {
+        "title": "Line Unbroken",
+        "artist": "ROSA BRUNELLO",
+        "albumDetails": ", da \"We Are Surging Waters\" - Domanda Music",
+        "key": "rosa_brunello___line_unbroken",
+        "genresRaw": ["jazz", "experimental", "afrobeat"],
+        "tidalId": "508870729"
+      },
+      {
+        "title": "Unmake A World",
+        "artist": "BEN VIDA",
+        "albumDetails": ", da \"Oblivion Seekers\" - Shelter Press",
+        "key": "ben_vida___unmake_a_world",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "493066304"
+      },
+      {
+        "title": "Gum Bump",
+        "artist": "SETTING",
+        "albumDetails": ", da \"Setting\" - Thrill Jockey Records",
+        "key": "setting___gum_bump",
+        "genresRaw": ["experimental", "funk"],
+        "tidalId": "489781426"
+      },
+      {
+        "title": "Bonkoko Bagana",
+        "artist": "SEROKOLO 7",
+        "albumDetails": ", da \"Maramfa Musik Pro\" - Nyege Nyege Tapes",
+        "key": "serokolo_7___bonkoko_bagana",
+        "genresRaw": ["experimental", "electronic", "afrobeat"],
+        "tidalId": "512968258"
+      },
+      {
+        "title": "programmazione maggio 2026",
+        "artist": "FLAMING CREATURES",
+        "albumDetails": "",
+        "key": "flaming_creatures___programmazione_maggio_2026",
+        "genresRaw": []
+      },
+      {
+        "title": "minitour italiano, 17 aprile",
+        "artist": "TELLKUJIRA",
+        "albumDetails": "– 9 maggio 2026",
+        "key": "tellkujira___minitour_italiano_17_aprile",
+        "genresRaw": ["jazz", "experimental", "rock"]
+      },
+      {
+        "title": "Danza del ventre",
+        "artist": "ABDULLAH MINIAWY",
+        "albumDetails": ", da \"Peacock Dreams أَحْلَامُ الطَّاوُوسِ\" – PPL Songs",
+        "key": "abdullah_miniawy___danza_del_ventre",
+        "genresRaw": ["world", "instrumental"]
+      },
+      {
+        "title": "Walking On The Beach / What To Love And Fight For",
+        "artist": "TELLKUJIRA",
+        "albumDetails": ", da \"La lucha es un poema colectivo\" – Superpang",
+        "key": "tellkujira___walking_on_the_beach_what_to_love_and_fight_for",
+        "genresRaw": ["electronic", "experimental", "ambient"]
+      },
+      {
+        "title": "I Viden",
+        "artist": "EMIL MARK",
+        "albumDetails": ", da \"Mellemtid\" - Tonal Union",
+        "key": "emil_mark___i_viden",
+        "genresRaw": ["ambient", "minimal", "electronic"],
+        "tidalId": "477514494"
+      },
+      {
+        "title": "Rejser",
+        "artist": "EMIL MARK",
+        "albumDetails": ", da \"Mellemtid\" - Tonal Union",
+        "key": "emil_mark___rejser",
+        "genresRaw": ["minimal", "electronic"],
+        "tidalId": "478319490"
+      },
+      {
+        "title": "The Brink Is Home",
+        "artist": "JANEL LEPPIN",
+        "albumDetails": ", da \"Slowly Melting\" - Cuneiform Records Rune",
+        "key": "janel_leppin___the_brink_is_home",
+        "genresRaw": ["post-rock", "experimental", "instrumental"],
+        "tidalId": "496331056"
+      },
+      {
+        "title": "L.A. Land",
+        "artist": "JANEL LEPPIN",
+        "albumDetails": ", da \"Slowly Melting\" - Cuneiform Records Rune",
+        "key": "janel_leppin___la_land",
+        "genresRaw": ["post-rock", "experimental", "instrumental"],
+        "tidalId": "496331061"
+      },
+      {
+        "title": "Brisk",
+        "artist": "JULI DEÁK",
+        "albumDetails": ", da \"Brisk\" - Thanatosis",
+        "key": "juli_deak___brisk",
+        "genresRaw": ["experimental", "instrumental"],
+        "tidalId": "495626103"
+      },
+      {
+        "title": "Trace",
+        "artist": "JULI DEÁK",
+        "albumDetails": ", da \"Brisk\" - Thanatosis",
+        "key": "juli_deak___trace",
+        "genresRaw": ["instrumental", "contemporary classical"],
+        "tidalId": "495626106"
+      },
+      {
+        "title": "Ernst Friedrich Schumacher 1973",
+        "artist": "LE MILLIPEDE",
+        "albumDetails": ", da \"Radical Hope\" - Radical Hope",
+        "key": "le_millipede___ernst_friedrich_schumacher_1973",
+        "genresRaw": ["electronic", "minimal"],
+        "tidalId": "495901620"
+      },
+      {
+        "title": "Joanna Macy 2003",
+        "artist": "LE MILLIPEDE",
+        "albumDetails": ", da \"Radical Hope\" - Radical Hope",
+        "key": "le_millipede___joanna_macy_2003",
+        "genresRaw": ["instrumental", "ambient"],
+        "tidalId": "495901622"
+      }
+    ]
   }
 ]
