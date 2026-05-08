@@ -54584,5 +54584,129 @@
         "tidalId": "495901622"
       }
     ]
+  },
+  {
+    "episodeTitle": "Arise & Shine",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-08052026-9c069bdc-09b3-43c0-92db-0d7b39b15f33.html",
+    "date": "08 Mag 2026",
+    "tracks": [
+      {
+        "title": "Heard A Bubble",
+        "artist": "SETTING",
+        "albumDetails": ", da \"Setting\" - Thrill Jockey Records",
+        "key": "setting___heard_a_bubble",
+        "genresRaw": ["krautrock", "psychedelic", "instrumental"],
+        "tidalId": "489781425"
+      },
+      {
+        "title": "No Abiding City",
+        "artist": "DUMAMA",
+        "albumDetails": ", da \"Towards An Expanse\" - Soundway Records",
+        "key": "dumama___no_abiding_city",
+        "genresRaw": ["electronic", "ambient", "experimental"],
+        "tidalId": "488187390"
+      },
+      {
+        "title": "New Distortion Properties",
+        "artist": "BEN VIDA",
+        "albumDetails": ", da \"Oblivion Seekers\" - Shelter Press",
+        "key": "ben_vida___new_distortion_properties",
+        "genresRaw": ["experimental", "electronic"],
+        "tidalId": "493066302"
+      },
+      {
+        "title": "Topeng Siddhakarya",
+        "artist": "BALI GAMELAN SOUND",
+        "albumDetails": ", da \"Topeng Semar Pegulingan\" - bandcamp 2026",
+        "key": "bali_gamelan_sound___topeng_siddhakarya",
+        "genresRaw": ["instrumental", "world"],
+        "tidalId": "167701633"
+      },
+      {
+        "title": "Dub Is An Attitude",
+        "artist": "SHANTI LION MEETS DUBZOIC",
+        "albumDetails": "- Shanti Lion Records",
+        "key": "shanti_lion_meets_dubzoic___dub_is_an_attitude",
+        "genresRaw": ["dub", "electronic"],
+        "tidalId": "511827802"
+      },
+      {
+        "title": "Yes Yes Dub",
+        "artist": "RANKING DREAD",
+        "albumDetails": ", da \"Ranking Dread In Dub\" – Real Rock Records",
+        "key": "ranking_dread___yes_yes_dub",
+        "genresRaw": ["dub", "reggae"]
+      },
+      {
+        "title": "Lion Step",
+        "artist": "MICHAEL EXODUS MEETS SENDEM SOUNDS",
+        "albumDetails": "- Bassline Society Records",
+        "key": "michael_exodus_meets_sendem_sounds___lion_step",
+        "genresRaw": ["reggae", "dub"],
+        "tidalId": "510798282"
+      },
+      {
+        "title": "Chase The Devil (melodica)",
+        "artist": "IMPERIAL SOUND ARMY",
+        "albumDetails": ", da \"Tribute To The Foundation\" - Imperial Roots Records",
+        "key": "imperial_sound_army___chase_the_devil_melodica",
+        "genresRaw": ["reggae", "dub"]
+      },
+      {
+        "title": "Got To Be Careful",
+        "artist": "IMPERIAL SOUND ARMY",
+        "albumDetails": ", da \"Tribute To The Foundation\" - Imperial Roots Records",
+        "key": "imperial_sound_army___got_to_be_careful",
+        "genresRaw": ["reggae", "dub"]
+      },
+      {
+        "title": "Arise And Shine",
+        "artist": "HUGH MUNDELL",
+        "albumDetails": ", da \"Arise\" - Real Rock Records",
+        "key": "hugh_mundell___arise_and_shine",
+        "genresRaw": ["reggae"],
+        "tidalId": "429538284"
+      },
+      {
+        "title": "Blessing Of Far I",
+        "artist": "HUGH MUNDELL",
+        "albumDetails": ", da \"Arise\" - Real Rock Records",
+        "key": "hugh_mundell___blessing_of_far_i",
+        "genresRaw": ["reggae"],
+        "tidalId": "429538280"
+      },
+      {
+        "title": "Wayunki Dub",
+        "artist": "MICHAEL EXODUS",
+        "albumDetails": "- Dub-O-Matic Records",
+        "key": "michael_exodus___wayunki_dub",
+        "genresRaw": ["dub", "reggae", "electronic"],
+        "tidalId": "509738423"
+      },
+      {
+        "title": "You The Vandal",
+        "artist": "GLISSANDRO 70",
+        "albumDetails": ", da \"G70 2: Bones Of Dundasa\" – Constellation",
+        "key": "glissandro_70___you_the_vandal",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "493642246"
+      },
+      {
+        "title": "Lucky Cloud (feat. Peter Zummo)",
+        "artist": "GLISSANDRO 70",
+        "albumDetails": ", da \"G70 2: Bones Of Dundasa\" – Constellation",
+        "key": "glissandro_70___lucky_cloud_feat_peter_zummo",
+        "genresRaw": ["electronic", "experimental", "indie-rock"],
+        "tidalId": "493642236"
+      },
+      {
+        "title": "All The Mess (feat Jessica Higgins)",
+        "artist": "KATZ MULK",
+        "albumDetails": ", da \"All The Mess\" – Futura Resistenza",
+        "key": "katz_mulk___all_the_mess_feat_jessica_higgins",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "514287227"
+      }
+    ]
   }
 ]

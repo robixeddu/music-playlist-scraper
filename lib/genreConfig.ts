@@ -184,7 +184,6 @@ export const ALIASES: Record<string, string> = {
   "alternative rock": "rock",
   "alternative":      "rock",
   "space rock":       "rock",
-  "krautrock":        "rock",
   "stoner rock":      "rock",
   "hard rock":        "rock",
   "progressive rock": "rock",
@@ -197,6 +196,7 @@ export const ALIASES: Record<string, string> = {
   "neo psychedelia": "psychedelic",
   "psychedelia":     "psychedelic",
   "psych rock":      "psychedelic",
+  "krautrock":        "psychedelic",
 
   // Post-rock
   "post rock":  "post-rock",
