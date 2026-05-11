@@ -26848,7 +26848,7 @@
         "genresRaw": ["instrumental", "experimental", "post-rock"]
       },
       {
-        "title": "Amager ft. billy woods",
+        "title": "Amager ft. Billy Woods",
         "artist": "ØKSE",
         "albumDetails": "da \"Økse\" - Backwoodz Studioz",
         "key": "økse___amager_ft_billy_woods",
@@ -54706,6 +54706,97 @@
         "key": "katz_mulk___all_the_mess_feat_jessica_higgins",
         "genresRaw": ["electronic", "experimental"],
         "tidalId": "514287227"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Ryley Walker in solo + trio con Davide Cedolin e Tommaso Rolando",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-11052026-5e5d6579-e792-4cb6-b0eb-2725fc6f32f1.html",
+    "date": "11 Mag 2026",
+    "tracks": [
+      {
+        "title": "Sweet Satisfaction",
+        "artist": "RYLEY WALKER",
+        "albumDetails": ", da \"Primrose Green\" - Dead Oceans",
+        "key": "ryley_walker___sweet_satisfaction",
+        "genresRaw": ["folk", "singer-songwriter", "acoustic"],
+        "tidalId": "42972966"
+      },
+      {
+        "title": "Intro",
+        "artist": "RYLEY WALKER IN SOLO",
+        "albumDetails": "",
+        "key": "ryley_walker_in_solo___intro",
+        "genresRaw": ["singer-songwriter", "psychedelic", "post-rock"]
+      },
+      {
+        "title": "Impro Jam #1",
+        "artist": "RYLEY WALKER IN TRIO",
+        "albumDetails": "",
+        "key": "ryley_walker_in_trio___impro_jam_1",
+        "genresRaw": ["experimental", "psychedelic", "instrumental"]
+      },
+      {
+        "title": "One - Husky Pants",
+        "artist": "RYLEY WALKER & PAPA M",
+        "albumDetails": "",
+        "key": "ryley_walker_papa_m___one_husky_pants",
+        "genresRaw": ["folk", "experimental", "psychedelic"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Rewire Festival: Il Report",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-10052026-c0ca153c-c3c9-4f2a-892e-19468d20fd02.html",
+    "date": "10 Mag 2026",
+    "tracks": [
+      {
+        "title": "Evangelina",
+        "artist": "ALEJANDRA CÁRDENAS",
+        "albumDetails": ", da \"A Body Like A Home\" - Other People",
+        "key": "alejandra_cardenas___evangelina",
+        "genresRaw": ["experimental", "post-rock", "spoken word"],
+        "tidalId": "456700267"
+      },
+      {
+        "title": "Taamir (Bahriyyeh)",
+        "artist": "MAYSSA JALLAD",
+        "albumDetails": "- Ruptured Records",
+        "key": "mayssa_jallad___taamir_bahriyyeh",
+        "genresRaw": ["post-rock", "experimental"],
+        "tidalId": "505918605"
+      },
+      {
+        "title": "I Set My Face To The Hillside",
+        "artist": "TORTOISE",
+        "albumDetails": ", da \"TNT\" - Thrill Jockey",
+        "key": "tortoise___i_set_my_face_to_the_hillside",
+        "genresRaw": ["post-rock", "instrumental"],
+        "tidalId": "279505863"
+      },
+      {
+        "title": "Tek",
+        "artist": "ELIAS STEMESEDER/CHRISTIAN LILLINGER",
+        "albumDetails": ", da \"Penumbra\" - Plaist Plaist",
+        "key": "elias_stemesederchristian_lillinger___tek",
+        "genresRaw": ["post-rock", "experimental"],
+        "tidalId": "242602157"
+      },
+      {
+        "title": "Antidoto",
+        "artist": "COLLEEN",
+        "albumDetails": ", da \"Libres Antes Del Final\" - Thrill Jockey",
+        "key": "colleen___antidoto",
+        "genresRaw": ["electronic", "experimental", "instrumental"],
+        "tidalId": "475603956"
+      },
+      {
+        "title": "Estrela Da Manhã",
+        "artist": "RAKTA",
+        "albumDetails": ", da \"Falha Comum\" - Iron Lung Records",
+        "key": "rakta___estrela_da_manha",
+        "genresRaw": ["experimental", "post-punk"],
+        "tidalId": "107292777"
       }
     ]
   }
