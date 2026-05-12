@@ -54799,5 +54799,153 @@
         "tidalId": "107292777"
       }
     ]
+  },
+  {
+    "episodeTitle": "In This World",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-12052026-ef330d3e-46d1-4d22-9eec-4ab82225692e.html",
+    "date": "12 Mag 2026",
+    "tracks": [
+      {
+        "title": "Yeri Yeri",
+        "artist": "ANNA FERRER",
+        "albumDetails": ", da \"PA\" - La Castanya",
+        "key": "anna_ferrer___yeri_yeri",
+        "genresRaw": ["folk", "folktronica"],
+        "tidalId": "513548404"
+      },
+      {
+        "title": "Yo quiero ser una vaca",
+        "artist": "ANNA FERRER",
+        "albumDetails": ", da \"PA\" - La Castanya",
+        "key": "anna_ferrer___yo_quiero_ser_una_vaca",
+        "genresRaw": ["folk", "experimental"],
+        "tidalId": "513548402"
+      },
+      {
+        "title": "Crash Test Dummy",
+        "artist": "BLACK MILK",
+        "albumDetails": ", da \"Ceremonial\" - Computer Ugly",
+        "key": "black_milk___crash_test_dummy",
+        "genresRaw": ["hip-hop", "soul"],
+        "tidalId": "517727379"
+      },
+      {
+        "title": "Signpost",
+        "artist": "SATOKO FUJII/MYRA MELFORD",
+        "albumDetails": ", da \"Katarahi\" - Rogueart",
+        "key": "satoko_fujiimyra_melford___signpost",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "434279126"
+      },
+      {
+        "title": "Epistrophy",
+        "artist": "حمد [AHMED]",
+        "albumDetails": ", da \"Play Monk\" - Otoroku",
+        "key": "حمد_[ahmed]___epistrophy",
+        "genresRaw": ["jazz", "free jazz"],
+        "tidalId": "510322111"
+      },
+      {
+        "title": "tour italiano, 12",
+        "artist": "ONEIDA",
+        "albumDetails": "- 16 maggio 2026",
+        "key": "oneida___tour_italiano_12",
+        "genresRaw": ["experimental", "rock"]
+      },
+      {
+        "title": "tour italiano, 14 maggio",
+        "artist": "ONDAKEIKI",
+        "albumDetails": "- 13 giugno 2026",
+        "key": "ondakeiki___tour_italiano_14_maggio",
+        "genresRaw": ["post-punk", "reggae", "psychedelic"]
+      },
+      {
+        "title": "Expensive Air",
+        "artist": "ONEIDA",
+        "albumDetails": ", da \"Expensive Air\" - Joyful Noise Recordings",
+        "key": "oneida___expensive_air",
+        "genresRaw": ["rock", "psychedelic"],
+        "tidalId": "354356600"
+      },
+      {
+        "title": "Un cerchio",
+        "artist": "ONDAKEIKI",
+        "albumDetails": ", da \"Canti Vol. 2\" - 42 Records 42-103s",
+        "key": "ondakeiki___un_cerchio",
+        "genresRaw": ["reggae", "psychedelic", "dub"],
+        "tidalId": "463687886"
+      },
+      {
+        "title": "Stars",
+        "artist": "STEVEN BROWN",
+        "albumDetails": ", da \"In This Very World\" – Crammed Discs",
+        "key": "steven_brown___stars",
+        "genresRaw": ["avant-garde jazz"],
+        "tidalId": "509159462"
+      },
+      {
+        "title": "Nella Terra (Live)",
+        "artist": "STEVEN BROWN",
+        "albumDetails": ", da \"In This Very World\" – Crammed Discs",
+        "key": "steven_brown___nella_terra_live",
+        "genresRaw": ["avant-garde jazz", "new wave"],
+        "tidalId": "509159484"
+      },
+      {
+        "title": "A Fire On The Hill",
+        "artist": "LAY LLAMAS",
+        "albumDetails": ", da \"Time, Islands And Thresholds\" – Zel Zele",
+        "key": "lay_llamas___a_fire_on_the_hill",
+        "genresRaw": ["psychedelic"],
+        "tidalId": "500443154"
+      },
+      {
+        "title": "Disguise You By Animal",
+        "artist": "LAY LLAMAS",
+        "albumDetails": ", da \"Time, Islands And Thresholds\" – Zel Zele",
+        "key": "lay_llamas___disguise_you_by_animal",
+        "genresRaw": ["psychedelic"],
+        "tidalId": "500443152"
+      },
+      {
+        "title": "Come Inside (Giba Wedebet) Dub",
+        "artist": "INVISIBLE SYSTEM",
+        "albumDetails": ", da \"Dub\" – Harper-Joseph Records",
+        "key": "invisible_system___come_inside_giba_wedebet_dub",
+        "genresRaw": ["dub", "world"],
+        "tidalId": "494883044"
+      },
+      {
+        "title": "Mama Yey Dub",
+        "artist": "INVISIBLE SYSTEM",
+        "albumDetails": ", da \"Dub\" – Harper-Joseph Records",
+        "key": "invisible_system___mama_yey_dub",
+        "genresRaw": ["dub", "world"],
+        "tidalId": "494883046"
+      },
+      {
+        "title": "Man Joke",
+        "artist": "THIS HOUSE",
+        "albumDetails": ", da \"Soft Rains Will Come\" – Pink Cotton Candy Records",
+        "key": "this_house___man_joke",
+        "genresRaw": ["post-punk", "rock"],
+        "tidalId": "468315256"
+      },
+      {
+        "title": "Saint, Sainte, Saints",
+        "artist": "JAC BERROCAL / VINCENT EPPLAY / TIMO VAN LUIJK",
+        "albumDetails": ", da \"Ste Cy\" – La Scie Dorée",
+        "key": "jac_berrocal_vincent_epplay_timo_van_luijk___saint_sainte_saints",
+        "genresRaw": ["experimental", "jazz", "dark jazz"]
+      },
+      {
+        "title": "Tamarind",
+        "artist": "ANTHONY JOSEPH",
+        "albumDetails": ", da \"Time\" – Naive",
+        "key": "anthony_joseph___tamarind",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "39479176"
+      }
+    ]
   }
 ]
