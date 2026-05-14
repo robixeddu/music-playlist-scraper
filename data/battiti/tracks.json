@@ -55074,5 +55074,137 @@
         "tidalId": "423831796"
       }
     ]
+  },
+  {
+    "episodeTitle": "New Slavery",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-14052026-e6d52dac-2be0-4230-baa0-2b1d4b8ef064.html",
+    "date": "14 Mag 2026",
+    "tracks": [
+      {
+        "title": "Feel Sum'n Heal Sum'n",
+        "artist": "BLACK MILK",
+        "albumDetails": ", da \"Ceremonial\" - Computer Ugly",
+        "key": "black_milk___feel_sum'n_heal_sum'n",
+        "genresRaw": ["hip-hop", "soul"],
+        "tidalId": "517727377"
+      },
+      {
+        "title": "Dreams Not Only Made At Night",
+        "artist": "BLACK MILK",
+        "albumDetails": ", da \"Ceremonial\" - Computer Ugly",
+        "key": "black_milk___dreams_not_only_made_at_night",
+        "genresRaw": ["hip-hop", "soul"],
+        "tidalId": "517727380"
+      },
+      {
+        "title": "Toque N.3",
+        "artist": "VITOR ARAÚJO/METROPOLE ORKEST",
+        "albumDetails": ", da \"Toró\" - RISCO",
+        "key": "vitor_araujometropole_orkest___toque_n3",
+        "genresRaw": ["jazz", "contemporary jazz"],
+        "tidalId": "104991297"
+      },
+      {
+        "title": "Coume Sourde",
+        "artist": "ANTOINE FERRIS",
+        "albumDetails": ", da \"[KAAARST] \" - Carton Records",
+        "key": "antoine_ferris___coume_sourde",
+        "genresRaw": ["ambient", "experimental"],
+        "tidalId": "506178180"
+      },
+      {
+        "title": "Chalk",
+        "artist": "SATOKO FUJII/MYRA MELFORD",
+        "albumDetails": ", da \"Katarahi\" - Rogueart",
+        "key": "satoko_fujiimyra_melford___chalk",
+        "genresRaw": ["jazz", "experimental"]
+      },
+      {
+        "title": "Suçum Nedir",
+        "artist": "ALTIN GÜN",
+        "albumDetails": ", da \"Garip\" – Glitterbeat",
+        "key": "altin_gun___sucum_nedir",
+        "genresRaw": ["psychedelic", "soul"],
+        "tidalId": "474939777"
+      },
+      {
+        "title": "Gel Yanıma Gel",
+        "artist": "ALTIN GÜN",
+        "albumDetails": ", da \"Garip\" – Glitterbeat",
+        "key": "altin_gun___gel_yanıma_gel",
+        "genresRaw": ["psychedelic", "world", "folk"],
+        "tidalId": "474939778"
+      },
+      {
+        "title": "tour italiano, 17",
+        "artist": "ELLIOTT SHARP",
+        "albumDetails": "–24 maggio 2026 GEMINI FESTIVAL, IV edizione, DumBo, Bologna, 15-16 maggio 2026",
+        "key": "elliott_sharp___tour_italiano_17",
+        "genresRaw": ["experimental", "instrumental"]
+      },
+      {
+        "title": "Ragusa, Fano, Roma, 16",
+        "artist": "GAIA BANFI",
+        "albumDetails": "-17-30 maggio 2026",
+        "key": "gaia_banfi___ragusa_fano_roma_16",
+        "genresRaw": ["electronic", "singer-songwriter", "experimental"]
+      },
+      {
+        "title": "Amar",
+        "artist": "GAIA BANFI",
+        "albumDetails": ", da \"La Maccaia\" - Trovarobato",
+        "key": "gaia_banfi___amar",
+        "genresRaw": ["electronic", "ambient"],
+        "tidalId": "415838263"
+      },
+      {
+        "title": "Al Suo Riposo",
+        "artist": "GAIA BANFI",
+        "albumDetails": "– 7\" Trovarobato",
+        "key": "gaia_banfi___al_suo_riposo",
+        "genresRaw": ["pop", "ambient"],
+        "tidalId": "490045161"
+      },
+      {
+        "title": "Giggirriva",
+        "artist": "N.A.D. NIÙ ABDOMINAUX DANGEREUX",
+        "albumDetails": ", da \"Ghosts\" – Heron Music",
+        "key": "nad_niu_abdominaux_dangereux___giggirriva",
+        "genresRaw": ["jazz", "pop"],
+        "tidalId": "60152872"
+      },
+      {
+        "title": "Olla Podrida",
+        "artist": "ELLIOTT SHARP",
+        "albumDetails": ", da \"The Collapsed Wave\" – zOaR Records",
+        "key": "elliott_sharp___olla_podrida",
+        "genresRaw": ["experimental", "jazz"],
+        "tidalId": "323037648"
+      },
+      {
+        "title": "New Slavery",
+        "artist": "WICKED DUB DIVISION MEETS FRANCESCO BEARZATTI",
+        "albumDetails": ", da \"Jazz My Dub\" – Roble Records",
+        "key": "wicked_dub_division_meets_francesco_bearzatti___new_slavery",
+        "genresRaw": ["dub"],
+        "tidalId": "489382575"
+      },
+      {
+        "title": "Walked And Walked",
+        "artist": "RADWAN GHAZI MOUMNEH & FRÉDÉRIC D. OBERLAND",
+        "albumDetails": ", da \"Eternal Life No End\" - Constellation",
+        "key": "radwan_ghazi_moumneh_frederic_d_oberland___walked_and_walked",
+        "genresRaw": ["ambient", "experimental"],
+        "tidalId": "490037132"
+      },
+      {
+        "title": "Space Is the Place",
+        "artist": "CEE-KNOWLEDGE & SUN RA'S ARKESTRA",
+        "albumDetails": ", da \"Jazz Bizniz 3\" - Counterpoint Records",
+        "key": "ceeknowledge_sun_ra's_arkestra___space_is_the_place",
+        "genresRaw": ["jazz", "psychedelic"],
+        "tidalId": "111720720"
+      }
+    ]
   }
 ]
