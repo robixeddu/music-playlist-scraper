@@ -128,6 +128,8 @@ export const ALIASES: Record<string, string> = {
   "jazz piano":         "jazz",
   "spiritual":          "jazz",
   "improvisation":      "jazz",
+  "jazz-core":          "jazz",
+  "jazz core":          "jazz",
 
   // Funk
   "free-funk":       "funk",
@@ -170,6 +172,7 @@ export const ALIASES: Record<string, string> = {
   // Rock
   "indie rock":       "rock",
   "indie":            "rock",
+  "slacker indie":    "rock",
   "classic rock":     "rock",
   "art rock":         "rock",
   "art-rock":         "rock",
@@ -179,17 +182,19 @@ export const ALIASES: Record<string, string> = {
   "alternative rock": "rock",
   "alternative":      "rock",
   "space rock":       "rock",
-  "krautrock":        "rock",
   "stoner rock":      "rock",
   "hard rock":        "rock",
   "progressive rock": "rock",
   "experimental rock":"rock",
+  "surf rock":         "rock",
+  "surf":              "rock",
 
   // Psychedelic
   "neo-psychedelia": "psychedelic",
   "neo psychedelia": "psychedelic",
   "psychedelia":     "psychedelic",
   "psych rock":      "psychedelic",
+  "krautrock":        "psychedelic",
 
   // Post-rock
   "post rock":  "post-rock",
@@ -237,16 +242,20 @@ export const ALIASES: Record<string, string> = {
 
   // Folk
   "avant-folk":       "folk",
+  "nu folk":           "folk",
   "psychedelic folk": "folk",
+  "progressive folk":   "folk",
   "psych-folk":       "folk",
   "indie folk":       "folk",
   "indie-folk":       "folk",
-  "neo-folk":       "folk",
-  "neo folk":       "folk",
-  "dark-folk":      "folk",
-  "dark folk":      "folk",
-  "neofolk":        "folk",
-  "folktronica":    "folk",
+  "neo-folk":         "folk",
+  "neo folk":         "folk",
+  "dark-folk":        "folk",
+  "dark folk":        "folk",
+  "neofolk":          "folk",
+  "folktronica":      "folk",
+  "punjabi":          "folk",
+  "devotional folk":  "folk",
 
   // Reggae
   "dancehall":    "reggae",
@@ -296,6 +305,12 @@ export const ALIASES: Record<string, string> = {
   "alt-country":        "country",
   "alternative country":"country",
   "americana":          "country",
+  "indie-country":      "country",
+  "indie country":      "country",
+  "country rock":       "country",
+  "country-folk":       "country",
+  "country folk":       "country",
+  "cowpunk":            "country",
 
   // World
   "world music": "world",
@@ -352,6 +367,7 @@ export const ALIASES: Record<string, string> = {
   "film score": "soundtrack",
   "film music": "soundtrack",
   "score":      "soundtrack",
+  "bollywood":   "soundtrack",
 
   // Formatting fixes
   "lo fi": "lo-fi",

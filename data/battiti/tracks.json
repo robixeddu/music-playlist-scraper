@@ -54947,5 +54947,132 @@
         "tidalId": "39479176"
       }
     ]
+  },
+  {
+    "episodeTitle": "Giochi d'acqua",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-13052026-d48002e8-1a49-453d-a848-e30c368fa4fc.html",
+    "date": "13 Mag 2026",
+    "tracks": [
+      {
+        "title": "Flatline feat. Miho Hatori",
+        "artist": "LORAINE JAMES",
+        "albumDetails": ", da \"Detached From The Rest Of You\" - Hyperdub",
+        "key": "loraine_james___flatline_feat_miho_hatori",
+        "genresRaw": ["electronic", "ambient"],
+        "tidalId": "499491646"
+      },
+      {
+        "title": "Knife",
+        "artist": "ANTOINE FERRIS",
+        "albumDetails": ", da \"[KAAARST] \" - Carton Records",
+        "key": "antoine_ferris___knife",
+        "genresRaw": ["electronic", "ambient"],
+        "tidalId": "506178176"
+      },
+      {
+        "title": "Hount Orbe",
+        "artist": "ANTOINE FERRIS",
+        "albumDetails": ", da \"[KAAARST] \" - Carton Records",
+        "key": "antoine_ferris___hount_orbe",
+        "genresRaw": ["ambient", "electronic"],
+        "tidalId": "506178173"
+      },
+      {
+        "title": "Toque N.6",
+        "artist": "VITOR ARAÚJO/METROPOLE ORKEST",
+        "albumDetails": ", da \"Toró\" - RISCO",
+        "key": "vitor_araujometropole_orkest___toque_n6",
+        "genresRaw": ["jazz", "instrumental", "post-rock"],
+        "tidalId": "104991300"
+      },
+      {
+        "title": "In Frange",
+        "artist": "FERA",
+        "albumDetails": ", da \"Divora Eco\" - Maple Death",
+        "key": "fera___in_frange",
+        "genresRaw": ["electronic", "drone"],
+        "tidalId": "514470409"
+      },
+      {
+        "title": "Effervescence, da \"Jeux d'eau\"",
+        "artist": "COPENHAGEN CLARINET CHOIR & ANDERS LAUGE MELDGAARD",
+        "albumDetails": "- Conatala Records",
+        "key": "copenhagen_clarinet_choir_anders_lauge_meldgaard___effervescence_da_\"jeux_d'eau\"",
+        "genresRaw": ["modern classical", "instrumental"],
+        "tidalId": "462976378"
+      },
+      {
+        "title": "Entering The Fray, da \"Jeux d'eau\"",
+        "artist": "COPENHAGEN CLARINET CHOIR & ANDERS LAUGE MELDGAARD",
+        "albumDetails": "- Conatala Records",
+        "key": "copenhagen_clarinet_choir_anders_lauge_meldgaard___entering_the_fray_da_\"jeux_d'eau\"",
+        "genresRaw": ["modern classical", "instrumental"],
+        "tidalId": "462976373"
+      },
+      {
+        "title": "Thirteen",
+        "artist": "VLADISLAV DELAY QUINTET",
+        "albumDetails": ", da \"vd5\" - We Jazz",
+        "key": "vladislav_delay_quintet___thirteen",
+        "genresRaw": ["ambient", "electronic"],
+        "tidalId": "500430701"
+      },
+      {
+        "title": "Twelve",
+        "artist": "VLADISLAV DELAY QUINTET",
+        "albumDetails": ", da \"vd5\" - We Jazz",
+        "key": "vladislav_delay_quintet___twelve",
+        "genresRaw": ["jazz", "jazz-core"],
+        "tidalId": "500430692"
+      },
+      {
+        "title": "Newnison",
+        "artist": "CHRISTIAN WALLUMRØD ENSEMBLE",
+        "albumDetails": ", da \"Non Sonett\" - Aspen Edities",
+        "key": "christian_wallumrød_ensemble___newnison",
+        "genresRaw": ["modern classical", "instrumental"],
+        "tidalId": "523060283"
+      },
+      {
+        "title": "Not New To",
+        "artist": "CHRISTIAN WALLUMRØD ENSEMBLE",
+        "albumDetails": ", da \"Non Sonett\" - Aspen Edities",
+        "key": "christian_wallumrød_ensemble___not_new_to",
+        "genresRaw": ["modern classical", "instrumental"],
+        "tidalId": "523060284"
+      },
+      {
+        "title": "No Rush To Fly",
+        "artist": "BLOOD SUCKING MANIACS",
+        "albumDetails": ", da \"Blood Sucking Maniacs\" - Paradise Of Bachelors",
+        "key": "blood_sucking_maniacs___no_rush_to_fly",
+        "genresRaw": ["country", "blues", "americana"],
+        "tidalId": "488517699"
+      },
+      {
+        "title": "Down To The River",
+        "artist": "BLOOD SUCKING MANIACS",
+        "albumDetails": ", da \"Blood Sucking Maniacs\" - Paradise Of Bachelors",
+        "key": "blood_sucking_maniacs___down_to_the_river",
+        "genresRaw": ["rock"],
+        "tidalId": "488514595"
+      },
+      {
+        "title": "Hypnotize",
+        "artist": "CATHY HAMER",
+        "albumDetails": ", da \"Lady Full Of Dreams\" - Numero Group",
+        "key": "cathy_hamer___hypnotize",
+        "genresRaw": ["folk", "indie folk"],
+        "tidalId": "428070879"
+      },
+      {
+        "title": "The Hurt Is Still There",
+        "artist": "CATHY HAMER",
+        "albumDetails": ", da \"Lady Full Of Dreams\" - Numero Group",
+        "key": "cathy_hamer___the_hurt_is_still_there",
+        "genresRaw": ["folk", "indie folk"],
+        "tidalId": "423831796"
+      }
+    ]
   }
 ]
