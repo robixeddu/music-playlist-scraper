@@ -132,6 +132,8 @@ export const ALIASES: Record<string, string> = {
   "improvisation":      "jazz",
   "jazz-core":          "jazz",
   "jazz core":          "jazz",
+  "progressive jazz":     "jazz",
+  "progressive jazz fusion":"jazz",
 
   // Funk
   "free-funk":      "funk",
@@ -258,13 +260,16 @@ export const ALIASES: Record<string, string> = {
   "folktronica":      "folk",
   "punjabi":          "folk",
   "devotional folk":  "folk",
+  "contemporary folk": "folk",
 
   // Reggae
   "dancehall":    "reggae",
   "roots reggae": "reggae",
   "rootes":       "reggae",
   "rocksteady":   "reggae",
-  "dub reggae":   "reggae",
+
+  // Dub
+  "balkan dub": "dub",
 
   // Blues
   "delta blues":    "blues",

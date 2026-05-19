@@ -18,6 +18,7 @@ Rules:
 - Return ONLY a valid JSON array of strings, no explanation
 - Use at most 3 genres, from most to least specific
 - Artist names may be in ALL CAPS
+- NEVER infer genre from words in the track title — a title containing "Dub", "Blues", "Jazz", "Disco" etc. is NOT evidence of genre. Genre must come from your knowledge of the artist.
 - Return [] in ALL of these cases:
   * You do not recognise the artist with confidence
   * The track title is in a foreign language and gives no clear genre signal on its own
@@ -113,7 +114,7 @@ export const getGenresBraveHaiku = async (
 
   const content = `Artist: ${artist}\nTrack: ${title}\n\nSearch results:\n${snippets}`;
   const response = await client.messages.create({
-    model: "claude-haiku-4-5",
+    model: "claude-haiku-4-5-20251001",
     max_tokens: 64,
     system: SEARCH_SYSTEM_PROMPT,
     messages: [{ role: "user", content }],

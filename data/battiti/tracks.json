@@ -55206,5 +55206,494 @@
         "tidalId": "111720720"
       }
     ]
+  },
+  {
+    "episodeTitle": "Building A Nest",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-15052026-042a63f6-08c5-4702-bb19-f0e7a9443340.html",
+    "date": "15 Mag 2026",
+    "tracks": [
+      {
+        "title": "Gentille Dub",
+        "artist": "FERA",
+        "albumDetails": ", da \"Divora Eco\" - Maple Death",
+        "key": "fera___gentille_dub",
+        "genresRaw": ["drone", "electronic"],
+        "tidalId": "514470401"
+      },
+      {
+        "title": "Non Resistere",
+        "artist": "FERA",
+        "albumDetails": ", da \"Divora Eco\" - Maple Death",
+        "key": "fera___non_resistere",
+        "genresRaw": ["drone", "electronic"],
+        "tidalId": "514470411"
+      },
+      {
+        "title": "Todas Las Masas da \"PA\"",
+        "artist": "ANNA FERRER",
+        "albumDetails": "- La Castanya",
+        "key": "anna_ferrer___todas_las_masas_da_\"pa\"",
+        "genresRaw": ["folk", "contemporary folk"],
+        "tidalId": "513548400"
+      },
+      {
+        "title": "Still (Steel)",
+        "artist": "LORAINE JAMES",
+        "albumDetails": ", da \"Detached From The Rest Of You\" - Hyperdub",
+        "key": "loraine_james___still_steel",
+        "genresRaw": ["electronic", "ambient", "experimental"],
+        "tidalId": "499491651"
+      },
+      {
+        "title": "Oska T",
+        "artist": "AHMED]",
+        "albumDetails": ", da \"Play Monk\" - Otoroku",
+        "key": "ahmed]___oska_t",
+        "genresRaw": ["jazz", "free jazz"],
+        "tidalId": "510322113"
+      },
+      {
+        "title": "Later",
+        "artist": "ALVARIUS B.",
+        "albumDetails": ", da \"Malarial Dream\" - Abduction",
+        "key": "alvarius_b___later",
+        "genresRaw": ["psychedelic", "folk", "experimental"],
+        "tidalId": "517700979"
+      },
+      {
+        "title": "Malarial Dream",
+        "artist": "ALVARIUS B.",
+        "albumDetails": ", da \"Malarial Dream\" - Abduction",
+        "key": "alvarius_b___malarial_dream",
+        "genresRaw": ["folk"],
+        "tidalId": "517700977"
+      },
+      {
+        "title": "Al Hathayan",
+        "artist": "PRAED",
+        "albumDetails": ", da \"Al Wahem\" – Ruptured",
+        "key": "praed___al_hathayan",
+        "genresRaw": ["jazz", "world"],
+        "tidalId": "487815324"
+      },
+      {
+        "title": "Building A Nest",
+        "artist": "SCRAMBLED EGGS",
+        "albumDetails": ", da \"Land 02: A Compilation For The Displaced In Lebanon\" - Tunefork Studios",
+        "key": "scrambled_eggs___building_a_nest",
+        "genresRaw": ["dub", "r&b", "electronic"]
+      },
+      {
+        "title": "Ams ntahayna",
+        "artist": "YASMINE HAMDAN & OUSSAMA ABDELFATTAH",
+        "albumDetails": ", da \"Land 02: A Compilation For The Displaced In Lebanon\" - Tunefork Studios",
+        "key": "yasmine_hamdan_oussama_abdelfattah___ams_ntahayna",
+        "genresRaw": ["electronic", "experimental", "singer-songwriter"]
+      },
+      {
+        "title": "Ikleel al-Jabal",
+        "artist": "FLUGEN",
+        "albumDetails": ", da \"Land 03: A Compilation For The Displaced In Lebanon\" - Tunefork Studios",
+        "key": "flugen___ikleel_aljabal",
+        "genresRaw": []
+      },
+      {
+        "title": "Phosphorus Resting By The Entrance Of A Quantic Maze",
+        "artist": "CHARBEL HABER",
+        "albumDetails": ", da \"May A Soft Sun Bless Your Sky While You Wait For The Inevitable\" - Ruptured Records",
+        "key": "charbel_haber___phosphorus_resting_by_the_entrance_of_a_quantic_maze",
+        "genresRaw": ["ambient", "electronic"],
+        "tidalId": "503828481"
+      },
+      {
+        "title": "I Stutter When I Speak Of Love And Death",
+        "artist": "CHARBEL HABER",
+        "albumDetails": ", da \"May A Soft Sun Bless Your Sky While You Wait For The Inevitable\" - Ruptured Records",
+        "key": "charbel_haber___i_stutter_when_i_speak_of_love_and_death",
+        "genresRaw": ["ambient", "electronic"],
+        "tidalId": "503828789"
+      },
+      {
+        "title": "Parte I: I Giganti della montagna, Atto II, Cotrone, Il Mago",
+        "artist": "ROBERTO BOTTALICO",
+        "albumDetails": ", da \"Così è (se vi pare)\" – Filibusta Records",
+        "key": "roberto_bottalico___parte_i_i_giganti_della_montagna_atto_ii_cotrone_il_mago",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "516378876"
+      },
+      {
+        "title": "Parte I: I Giganti della montagna, Atto III, Epilogo: L'illusione",
+        "artist": "ROBERTO BOTTALICO",
+        "albumDetails": ", da \"Così è (se vi pare)\" – Filibusta Records",
+        "key": "roberto_bottalico___parte_i_i_giganti_della_montagna_atto_iii_epilogo_l'illusione",
+        "genresRaw": ["jazz"],
+        "tidalId": "516378883"
+      },
+      {
+        "title": "Dreamlike Thoughts",
+        "artist": "CRESCENDO SPHERE",
+        "albumDetails": ", da \"Gentle Breath\" – Emme Record Label",
+        "key": "crescendo_sphere___dreamlike_thoughts",
+        "genresRaw": ["jazz", "progressive jazz"],
+        "tidalId": "465218037"
+      },
+      {
+        "title": "Let's Ride",
+        "artist": "CRESCENDO SPHERE",
+        "albumDetails": ", da \"Gentle Breath\" – Emme Record Label",
+        "key": "crescendo_sphere___let's_ride",
+        "genresRaw": ["jazz"],
+        "tidalId": "465218042"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Jazz Is Dead 2025: Orchestre Tout Puissant Marcel Duchamp",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-18052026-40d24648-c2c9-42cb-bc51-ee22043cb9b1.html",
+    "date": "18 Mag 2026",
+    "tracks": [
+      {
+        "title": "Torino, 29",
+        "artist": "JAZZ IS DEAD 2026: BACKWARDS",
+        "albumDetails": "-31 maggio 2026",
+        "key": "jazz_is_dead_2026_backwards___torino_29",
+        "genresRaw": ["jazz", "experimental"]
+      },
+      {
+        "title": "Encounter I / Transfinite Flow",
+        "artist": "HORSE LORDS",
+        "albumDetails": ", da \"Interventions\" - Northern Spy",
+        "key": "horse_lords___encounter_i_transfinite_flow",
+        "genresRaw": ["post-rock", "instrumental"],
+        "tidalId": "421874283"
+      },
+      {
+        "title": "Be Patient",
+        "artist": "ORCHESTRE TOUT PUISSANT MARCEL DUCHAMP",
+        "albumDetails": "",
+        "key": "orchestre_tout_puissant_marcel_duchamp___be_patient",
+        "genresRaw": ["art rock", "avant-garde jazz"],
+        "tidalId": "184492100"
+      },
+      {
+        "title": "Dehors",
+        "artist": "ORCHESTRE TOUT PUISSANT MARCEL DUCHAMP",
+        "albumDetails": "",
+        "key": "orchestre_tout_puissant_marcel_duchamp___dehors",
+        "genresRaw": ["post-rock", "jazz"],
+        "tidalId": "374201750"
+      },
+      {
+        "title": "Breath",
+        "artist": "ORCHESTRE TOUT PUISSANT MARCEL DUCHAMP",
+        "albumDetails": "",
+        "key": "orchestre_tout_puissant_marcel_duchamp___breath",
+        "genresRaw": ["post-punk", "art rock"],
+        "tidalId": "374201748"
+      },
+      {
+        "title": "Tout cassé",
+        "artist": "ORCHESTRE TOUT PUISSANT MARCEL DUCHAMP",
+        "albumDetails": "",
+        "key": "orchestre_tout_puissant_marcel_duchamp___tout_casse",
+        "genresRaw": ["post-punk", "experimental"],
+        "tidalId": "374201746"
+      },
+      {
+        "title": "Petits bouts",
+        "artist": "ORCHESTRE TOUT PUISSANT MARCEL DUCHAMP",
+        "albumDetails": "",
+        "key": "orchestre_tout_puissant_marcel_duchamp___petits_bouts",
+        "genresRaw": ["post-punk", "jazz", "art rock"],
+        "tidalId": "374201756"
+      },
+      {
+        "title": "Speak by the E",
+        "artist": "ORCHESTRE TOUT PUISSANT MARCEL DUCHAMP",
+        "albumDetails": "",
+        "key": "orchestre_tout_puissant_marcel_duchamp___speak_by_the_e",
+        "genresRaw": ["post-punk", "funk"],
+        "tidalId": "374201757"
+      },
+      {
+        "title": "Les Boeufs",
+        "artist": "ORCHESTRE TOUT PUISSANT MARCEL DUCHAMP",
+        "albumDetails": "",
+        "key": "orchestre_tout_puissant_marcel_duchamp___les_boeufs",
+        "genresRaw": ["post-punk", "free-jazz"],
+        "tidalId": "374201755"
+      },
+      {
+        "title": "Beginning",
+        "artist": "ORCHESTRE TOUT PUISSANT MARCEL DUCHAMP",
+        "albumDetails": "",
+        "key": "orchestre_tout_puissant_marcel_duchamp___beginning",
+        "genresRaw": ["jazz funk", "post-punk"],
+        "tidalId": "184492107"
+      },
+      {
+        "title": "So Many Things (To Feel Guilty About)",
+        "artist": "ORCHESTRE TOUT PUISSANT MARCEL DUCHAMP",
+        "albumDetails": "",
+        "key": "orchestre_tout_puissant_marcel_duchamp___so_many_things_to_feel_guilty_about",
+        "genresRaw": ["post-punk"],
+        "tidalId": "184492102"
+      },
+      {
+        "title": "Fish Fingers Crossed",
+        "artist": "ORCHESTRE TOUT PUISSANT MARCEL DUCHAMP",
+        "albumDetails": "",
+        "key": "orchestre_tout_puissant_marcel_duchamp___fish_fingers_crossed",
+        "genresRaw": ["experimental", "electronic"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Tremor Festival 2026 - Il report di Megan Iacobini de Fazio",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-17052026-cb6e4d3d-dba8-4b27-b17c-a281636f6279.html",
+    "date": "17 Mag 2026",
+    "tracks": [
+      {
+        "title": "Trilla Negra",
+        "artist": "CURRO RODRÍGUEZ",
+        "albumDetails": ", da \"R O T A P I E D R A\" – Autoproduzione 2025",
+        "key": "curro_rodriguez___trilla_negra",
+        "genresRaw": ["flamenco"]
+      },
+      {
+        "title": "Nalgum Tempo",
+        "artist": "ENGENGROALDENGA",
+        "albumDetails": ", da \"Nalgum Tempo\" – Autoproduzione 2025",
+        "key": "engengroaldenga___nalgum_tempo",
+        "genresRaw": ["folk", "world"],
+        "tidalId": "406110193"
+      },
+      {
+        "title": "E Se Não Fosse o Sonho",
+        "artist": "JUP DO BAIRRO",
+        "albumDetails": ", da \"In.Corpo.Ração\" – Balaclava Records 2024",
+        "key": "jup_do_bairro___e_se_nao_fosse_o_sonho",
+        "genresRaw": ["hip-hop", "rap"],
+        "tidalId": "520151529"
+      },
+      {
+        "title": "Poison Dart feat. Warrior Queen",
+        "artist": "THE BUG",
+        "albumDetails": ", da \"London Zoo\" – Ninja Tune",
+        "key": "the_bug___poison_dart_feat_warrior_queen",
+        "genresRaw": ["dub", "industrial", "hip-hop"],
+        "tidalId": "6695824"
+      },
+      {
+        "title": "Sabotage",
+        "artist": "ANGRY BLACKMEN",
+        "albumDetails": ", da \"The Legend Of ABM\" – Deathbomb Arc 2024",
+        "key": "angry_blackmen___sabotage",
+        "genresRaw": ["industrial", "hip-hop"],
+        "tidalId": "445313929"
+      },
+      {
+        "title": "Okuuleekaana",
+        "artist": "ARSENAL MIKEBE",
+        "albumDetails": ", da \"Drum Machine\" – Nyege Nyege Tapes",
+        "key": "arsenal_mikebe___okuuleekaana",
+        "genresRaw": ["electronic", "industrial"],
+        "tidalId": "361623668"
+      },
+      {
+        "title": "Ódio Sem Valor",
+        "artist": "PEDRINHO XALÉ",
+        "albumDetails": ", da \"Space Echo - The Mystery Behind The Cosmic Sound Of Cabo Verde Finally Revealed!\" – Analog Africa",
+        "key": "pedrinho_xale___odio_sem_valor",
+        "genresRaw": ["funk", "world"]
+      },
+      {
+        "title": "Mchakamchaka",
+        "artist": "DJ TRAVELLA",
+        "albumDetails": ", da \"Twende\" – 7\" Nyege Nyege Tapes",
+        "key": "dj_travella___mchakamchaka",
+        "genresRaw": ["electronic", "experimental", "world"],
+        "tidalId": "412362638"
+      },
+      {
+        "title": "Cab08",
+        "artist": "MOLOM",
+        "albumDetails": ", da \"Cabeços\" - Oceani Community",
+        "key": "molom___cab08",
+        "genresRaw": ["ambient", "experimental", "electroacoustic"]
+      },
+      {
+        "title": "Vul55",
+        "artist": "MOLOM",
+        "albumDetails": ", da \"Cabeços\" - Oceani Community",
+        "key": "molom___vul55",
+        "genresRaw": ["blackgaze", "shoegaze", "metal"]
+      },
+      {
+        "title": "Lapwings At Shifford / Summer Rain & Bells At Dorchester",
+        "artist": "VIRGINIA ASTLEY",
+        "albumDetails": ", da \"The Singing Places – Music Of The Upper Reachs\" – Autoproduzione 2023",
+        "key": "virginia_astley___lapwings_at_shifford_summer_rain_bells_at_dorchester",
+        "genresRaw": ["ambient", "electroacoustic", "new age"]
+      },
+      {
+        "title": "Algorithms For Pianos And My Wounded Heart",
+        "artist": "CARBON IN PROSE",
+        "albumDetails": ", da \"Cataclysmic System Binding Loss\" – Autoproduzione 2022",
+        "key": "carbon_in_prose___algorithms_for_pianos_and_my_wounded_heart",
+        "genresRaw": ["instrumental", "experimental"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Vibrisse #46",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-16052026-20cbfe95-adb4-45d1-afcc-74e9ae53e590.html",
+    "date": "16 Mag 2026",
+    "tracks": [
+      {
+        "title": "Never Forget",
+        "artist": "SAMPA THE GREAT",
+        "albumDetails": ", da \"As Above So Bel​​ow\" - Loma Vista",
+        "key": "sampa_the_great___never_forget",
+        "genresRaw": ["hip-hop", "soul", "world"],
+        "tidalId": "234668697"
+      },
+      {
+        "title": "Mercury",
+        "artist": "STEVE LACY",
+        "albumDetails": ", da \"Gemini Rights\" - RCA",
+        "key": "steve_lacy___mercury",
+        "genresRaw": ["soul", "r&b"],
+        "tidalId": "236960237"
+      },
+      {
+        "title": "The Spoon",
+        "artist": "OSCAR JEROME",
+        "albumDetails": ", da \"The Spork\" - New Soil",
+        "key": "oscar_jerome___the_spoon",
+        "genresRaw": ["funk", "soul", "r&b"],
+        "tidalId": "236207938"
+      },
+      {
+        "title": "Sol sin luna",
+        "artist": "ANNA FERRER",
+        "albumDetails": ", da \"Krönia\" - Àudiovisuals de Sarrià",
+        "key": "anna_ferrer___sol_sin_luna",
+        "genresRaw": ["electronic", "ambient"],
+        "tidalId": "380170173"
+      },
+      {
+        "title": "Reina Mora",
+        "artist": "MARINA HERLOP",
+        "albumDetails": ", da \"Nekkuja\" - Pan",
+        "key": "marina_herlop___reina_mora",
+        "genresRaw": ["electronic"],
+        "tidalId": "317105229"
+      },
+      {
+        "title": "Sinefiasmeni Kiriaki",
+        "artist": "BIRDS ON A WIRE",
+        "albumDetails": ", da \"Ramages\" - [PIAS]",
+        "key": "birds_on_a_wire___sinefiasmeni_kiriaki",
+        "genresRaw": ["chanson", "indie pop"],
+        "tidalId": "132217835"
+      },
+      {
+        "title": "Alma en Vilo",
+        "artist": "RITA PAYÉS",
+        "albumDetails": ", da \"De camino al camino\" - Sony Music Local",
+        "key": "rita_payes___alma_en_vilo",
+        "genresRaw": ["jazz", "bossa nova"],
+        "tidalId": "313260993"
+      },
+      {
+        "title": "Mohabbat",
+        "artist": "AROOJ AFTAB",
+        "albumDetails": ", da \"Vulture Prince\" - New Amsterdam Records",
+        "key": "arooj_aftab___mohabbat",
+        "genresRaw": ["folk", "ambient", "world"],
+        "tidalId": "208034746"
+      },
+      {
+        "title": "All Things To All Men",
+        "artist": "THE CINEMATIC ORCHESTRA",
+        "albumDetails": ", da \"Every Day\" - Ninja Tune",
+        "key": "the_cinematic_orchestra___all_things_to_all_men",
+        "genresRaw": ["jazz", "hip-hop"],
+        "tidalId": "6756856"
+      },
+      {
+        "title": "Welcome To The Circus",
+        "artist": "HARIS PILTON",
+        "albumDetails": ", da \"Gipsy & Balkan Dub\" - Positive and Reality Records",
+        "key": "haris_pilton___welcome_to_the_circus",
+        "genresRaw": ["reggae", "balkan dub"],
+        "tidalId": "509027196"
+      },
+      {
+        "title": "Fogo Lento",
+        "artist": "AMARO FREITAS/CRIOLO/DINO D'SANTIAGO",
+        "albumDetails": ", da \"Criolo, Amaro e Dino\" - Criolo Produções",
+        "key": "amaro_freitascriolodino_d'santiago___fogo_lento",
+        "genresRaw": ["mpb"],
+        "tidalId": "483480444"
+      },
+      {
+        "title": "Passarinha",
+        "artist": "BALA DESEJO",
+        "albumDetails": ", da \"Sim Sim Sim\" - Noize Record Club",
+        "key": "bala_desejo___passarinha",
+        "genresRaw": ["mpb", "samba", "bossa nova"],
+        "tidalId": "294170636"
+      },
+      {
+        "title": "Keep Your Name",
+        "artist": "DIRTY PROJECTORS",
+        "albumDetails": ", da \"Dirty Projectors\" - Domino",
+        "key": "dirty_projectors___keep_your_name",
+        "genresRaw": ["indie pop", "art rock"],
+        "tidalId": "70472353"
+      },
+      {
+        "title": "Local God",
+        "artist": "EVERCLEAR",
+        "albumDetails": ", da \"Ten Years Gone: The Best Of Everclear 1994-2004\" - Capitol Records",
+        "key": "everclear___local_god",
+        "genresRaw": ["alternative rock", "rock"],
+        "tidalId": "164518"
+      },
+      {
+        "title": "New Years UnResolution",
+        "artist": "LRAIN",
+        "albumDetails": ", da \"I Killed Your Dog \" - Mexican Summer",
+        "key": "lrain___new_years_unresolution",
+        "genresRaw": ["psychedelic", "pop"],
+        "tidalId": "396078081"
+      },
+      {
+        "title": "My Way, da \"When Everything Is Better, I'll Let You Know\"",
+        "artist": "PIP MILLET",
+        "albumDetails": "- Dream Life Records",
+        "key": "pip_millet___my_way_da_\"when_everything_is_better_i'll_let_you_know\"",
+        "genresRaw": ["neo-soul", "r&b"],
+        "tidalId": "255136741"
+      },
+      {
+        "title": "Help Me Please",
+        "artist": "SONIC BOOM",
+        "albumDetails": ", da \"Spectum\" - Silvertone Records",
+        "key": "sonic_boom___help_me_please",
+        "genresRaw": ["psychedelic", "rock"],
+        "tidalId": "17664562"
+      },
+      {
+        "title": "Planet Caravan",
+        "artist": "BLACK SABBATH",
+        "albumDetails": ", da \"Paranoid\" - Vertigo",
+        "key": "black_sabbath___planet_caravan",
+        "genresRaw": ["metal", "psychedelic"],
+        "tidalId": "491622455"
+      }
+    ]
   }
 ]
