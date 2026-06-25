@@ -101,7 +101,9 @@ const fullSync = async () => {
     await sleep(GENRE_DELAY_MS);
 
     // TIDAL match
-    const match = await findTidalMatch(track.artist, track.title, token);
+    const albumMatch = track.albumDetails?.match(/["""]([^"""]+)["""]/);
+    const album = albumMatch?.[1];
+    const match = await findTidalMatch(track.artist, track.title, token, album);
     if (!match) {
       console.log(`  ❌ Not found on TIDAL\n`);
       notFound++;

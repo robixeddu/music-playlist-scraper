@@ -226,6 +226,10 @@ export const findTidalMatch = async (
   await sleep(SEARCH_DELAY_MS);
   const byTitleDashArtist = await searchTracks(`${scoreTitle} - ${normArtist}`, artist, token, artistById);
 
+  // ── 2b. "artist title" combined (most direct for niche catalog artists) ────
+  await sleep(SEARCH_DELAY_MS);
+  const byArtistTitle = await searchTracks(`${normArtist} ${cleanNorm}`, artist, token, artistById);
+
   // ── 3. Artist search (surfaces catalog when title alone is ambiguous) ─────
   await sleep(SEARCH_DELAY_MS);
   const byArtist = await searchTracks(normArtist, artist, token, artistById);
@@ -248,11 +252,11 @@ export const findTidalMatch = async (
 
   // ── 4. Merge & deduplicate ────────────────────────────────────────────────
   const nonAlbumIds = new Set(
-    [...byTitle, ...byTitleNorm, ...byTitleDashArtist, ...byArtist, ...byVariants].map((c) => c.id)
+    [...byTitle, ...byTitleNorm, ...byTitleDashArtist, ...byArtistTitle, ...byArtist, ...byVariants].map((c) => c.id)
   );
   const merged = [
     ...new Map(
-      [...byTitle, ...byTitleNorm, ...byTitleDashArtist, ...byArtist, ...byVariants, ...byAlbum].map((c) => [c.id, c])
+      [...byTitle, ...byTitleNorm, ...byTitleDashArtist, ...byArtistTitle, ...byArtist, ...byVariants, ...byAlbum].map((c) => [c.id, c])
     ).values(),
   ];
 
