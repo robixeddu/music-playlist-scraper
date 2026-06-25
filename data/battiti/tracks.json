@@ -8835,14 +8835,14 @@
         "albumDetails": "",
         "key": "merchants___quinnabar",
         "tidalId": "400341387",
-        "genresRaw": []
+        "genresRaw": ["electronic", "experimental"]
       },
       {
         "title": "Honey Birds",
         "artist": "MERCHANTS",
         "albumDetails": "",
         "key": "merchants___honey_birds",
-        "genresRaw": [],
+        "genresRaw": ["electronic", "experimental"],
         "tidalId": "400341396"
       },
       {
@@ -8851,7 +8851,7 @@
         "albumDetails": "",
         "key": "merchants___desert_magnet",
         "tidalId": "400341390",
-        "genresRaw": []
+        "genresRaw": ["electronic", "experimental"]
       },
       {
         "title": "Gamma",
@@ -8859,7 +8859,7 @@
         "albumDetails": "",
         "key": "merchants___gamma",
         "tidalId": "400341388",
-        "genresRaw": []
+        "genresRaw": ["electronic", "experimental"]
       },
       {
         "title": "Weaving The Snakes",
@@ -8867,14 +8867,14 @@
         "albumDetails": "",
         "key": "merchants___weaving_the_snakes",
         "tidalId": "400341389",
-        "genresRaw": []
+        "genresRaw": ["electronic", "experimental"]
       },
       {
         "title": "Mellified",
         "artist": "MERCHANTS",
         "albumDetails": "da \"Merchants\" - Yerevan Tapes",
         "key": "merchants___mellified",
-        "genresRaw": []
+        "genresRaw": ["electronic", "experimental"]
       }
     ]
   },
@@ -55693,6 +55693,4216 @@
         "key": "black_sabbath___planet_caravan",
         "genresRaw": ["metal", "psychedelic"],
         "tidalId": "491622455"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "In Action",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-20052026-ed855b77-906d-4cb7-8d4c-1bc93255b5b0.html",
+    "date": "20 Mag 2026",
+    "tracks": [
+      {
+        "title": "Life of Love",
+        "artist": "TAJ MAHAL & THE PHANTOM BLUES BAND",
+        "albumDetails": ", da \"Time\" – Thirty Tigers",
+        "key": "taj_mahal_the_phantom_blues_band___life_of_love",
+        "genresRaw": ["blues"],
+        "tidalId": "499877920"
+      },
+      {
+        "title": "Crazy About A Jukebox",
+        "artist": "TAJ MAHAL & THE PHANTOM BLUES BAND",
+        "albumDetails": ", da \"Time\" – Thirty Tigers",
+        "key": "taj_mahal_the_phantom_blues_band___crazy_about_a_jukebox",
+        "genresRaw": ["blues"],
+        "tidalId": "499877923"
+      },
+      {
+        "title": "Mesaustu / No sias isciau (seria), da \"Vinti 'e Maju\"",
+        "artist": "PAOLO ANGELI & TENORE MURALES DE ORGOSOLO",
+        "albumDetails": "– Anma Productions",
+        "key": "paolo_angeli_tenore_murales_de_orgosolo___mesaustu_no_sias_isciau_seria_da_\"vinti_'e_maju\"",
+        "genresRaw": ["world", "tenores"],
+        "tidalId": "511775713"
+      },
+      {
+        "title": "Clam",
+        "artist": "COCANHA",
+        "albumDetails": ", da \"Flame Folclòre\" – Les disques Bongo Joe",
+        "key": "cocanha___clam",
+        "genresRaw": ["world", "folk"],
+        "tidalId": "506517133"
+      },
+      {
+        "title": "Sacred Void",
+        "artist": "KHÔRA & MAS AYA",
+        "albumDetails": ", da \"Primordial Mind\" – Marionette",
+        "key": "khora_mas_aya___sacred_void",
+        "genresRaw": ["world", "folk", "experimental"],
+        "tidalId": "515896061"
+      },
+      {
+        "title": "tour italiano, 20",
+        "artist": "BEAUTIFY JUNKYARDS",
+        "albumDetails": "-23 maggio 2026",
+        "key": "beautify_junkyards___tour_italiano_20",
+        "genresRaw": []
+      },
+      {
+        "title": "Torino, 23",
+        "artist": "URBAPHONIA",
+        "albumDetails": "-24 maggio 2026",
+        "key": "urbaphonia___torino_23",
+        "genresRaw": []
+      },
+      {
+        "title": "Here Everything Is Still Floating",
+        "artist": "BEAUTIFY JUNKYARDS",
+        "albumDetails": ", da \"Nova\" - Ghost Box",
+        "key": "beautify_junkyards___here_everything_is_still_floating",
+        "genresRaw": ["indie pop", "psychedelic"],
+        "tidalId": "374688689"
+      },
+      {
+        "title": "Animal Poetry",
+        "artist": "CANZONIERI",
+        "albumDetails": ", da \"All Creatures\" - Kuboraum",
+        "key": "canzonieri___animal_poetry",
+        "genresRaw": ["experimental", "psychedelic", "folk"],
+        "tidalId": "431479254"
+      },
+      {
+        "title": "Cercle de Tambour Kinact",
+        "artist": "KINACT",
+        "albumDetails": ", da \"Kinshasa In Action\" - Nyege Nyege Tapes",
+        "key": "kinact___cercle_de_tambour_kinact",
+        "genresRaw": ["industrial", "experimental", "world"],
+        "tidalId": "508450560"
+      },
+      {
+        "title": "Atelier Kinact.",
+        "artist": "KINACT",
+        "albumDetails": ", da \"Kinshasa In Action\" - Nyege Nyege Tapes",
+        "key": "kinact___atelier_kinact",
+        "genresRaw": ["industrial", "experimental", "techno"],
+        "tidalId": "508450561"
+      },
+      {
+        "title": "Senegal",
+        "artist": "PROSTITUTE",
+        "albumDetails": ", da \"Attempted Martyr\" – Mute",
+        "key": "prostitute___senegal",
+        "genresRaw": ["noise", "post-hardcore"],
+        "tidalId": "472001775"
+      },
+      {
+        "title": "Tangos – a ver",
+        "artist": "THE AVANT-GARDE FLAMENCO TRIO",
+        "albumDetails": ", da \"Lunar\" – Redshift Music",
+        "key": "the_avantgarde_flamenco_trio___tangos_–_a_ver",
+        "genresRaw": ["flamenco", "esperimental"],
+        "tidalId": "501380480"
+      },
+      {
+        "title": "Hakilimaya",
+        "artist": "NEBA SOLO & BENEGO DIAKITÉ",
+        "albumDetails": ", da \"A Djinn & A Hunter Went Walking (The Complete Sessions)\" – Nonesuch",
+        "key": "neba_solo_benego_diakite___hakilimaya",
+        "genresRaw": ["world"],
+        "tidalId": "469979403"
+      },
+      {
+        "title": "Djinê Mogo Tiki (Garden Demo)",
+        "artist": "NEBA SOLO & BENEGO DIAKITÉ",
+        "albumDetails": ", da \"A Djinn & A Hunter Went Walking (The Complete Sessions)\" – Nonesuch",
+        "key": "neba_solo_benego_diakite___djine_mogo_tiki_garden_demo",
+        "genresRaw": ["world", "instrumental", "folk"],
+        "tidalId": "469979398"
+      },
+      {
+        "title": "Derfor tok det aldri slutt",
+        "artist": "ESPEN REINERTSEN",
+        "albumDetails": ", da \"Venus er i håret\" - SusannaSonata",
+        "key": "espen_reinertsen___derfor_tok_det_aldri_slutt",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "503816288"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Piccolos Before Rifles",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-19052026-bd86cc53-00ef-4c10-85ed-81d7e21d32e5.html",
+    "date": "19 Mag 2026",
+    "tracks": [
+      {
+        "title": "Pirrica",
+        "artist": "PS5",
+        "albumDetails": ", da \"Baccanalia\" – Café Saphora Records",
+        "key": "ps5___pirrica",
+        "genresRaw": []
+      },
+      {
+        "title": "Nazaré",
+        "artist": "PAAL NILSSEN-LOVE CIRCUS + THE EX GUITARS",
+        "albumDetails": ", da \"Calls!\" – Pnl Records",
+        "key": "paal_nilssenlove_circus_+_the_ex_guitars___nazare",
+        "genresRaw": ["free jazz", "experimental"],
+        "tidalId": "263565040"
+      },
+      {
+        "title": "Eg Såg",
+        "artist": "PAAL NILSSEN-LOVE CIRCUS + THE EX GUITARS",
+        "albumDetails": ", da \"Calls!\" – Pnl Records",
+        "key": "paal_nilssenlove_circus_+_the_ex_guitars___eg_sag",
+        "genresRaw": ["jazz", "experimental"]
+      },
+      {
+        "title": "Dakkerha دكّرها",
+        "artist": "DOG PLUG",
+        "albumDetails": ", da \"Dog Plug\" – Annihaya Records",
+        "key": "dog_plug___dakkerha_دكّرها",
+        "genresRaw": [],
+        "tidalId": "500361274"
+      },
+      {
+        "title": "Let X = X / It Tango",
+        "artist": "LAURIE ANDERSON WITH SEX MOB",
+        "albumDetails": ", da \"Let X = X\" – Nonesuch",
+        "key": "laurie_anderson_with_sex_mob___let_x_x_it_tango",
+        "genresRaw": ["experimental", "rock"],
+        "tidalId": "515637625"
+      },
+      {
+        "title": "Tic Toc",
+        "artist": "FABRIC",
+        "albumDetails": ", da \"Until We Are Free\" - Four Flies Records",
+        "key": "fabric___tic_toc",
+        "genresRaw": [],
+        "tidalId": "507929758"
+      },
+      {
+        "title": "Go Let Your Freedom Grow",
+        "artist": "FABRIC",
+        "albumDetails": ", da \"Until We Are Free\" - Four Flies Records",
+        "key": "fabric___go_let_your_freedom_grow",
+        "genresRaw": ["afrobeat", "funk", "soul"],
+        "tidalId": "507929756"
+      },
+      {
+        "title": "Acelera ft. María José Llergo",
+        "artist": "NU GENEA",
+        "albumDetails": ", da \"People Of The Moon\" - NG Records",
+        "key": "nu_genea___acelera_ft_maria_jose_llergo",
+        "genresRaw": ["funk", "flamenco", "electronic"],
+        "tidalId": "516253107"
+      },
+      {
+        "title": "Puleza ft. Fabiana Martone",
+        "artist": "NU GENEA",
+        "albumDetails": ", da \"People Of The Moon\" - NG Records",
+        "key": "nu_genea___puleza_ft_fabiana_martone",
+        "genresRaw": [],
+        "tidalId": "516253109"
+      },
+      {
+        "title": "Elephant Crush",
+        "artist": "MICHAEL BLAKE'S CHROMA NOVA",
+        "albumDetails": ", da \"Piccolos Before Rifles\" – P&M Records",
+        "key": "michael_blake's_chroma_nova___elephant_crush",
+        "genresRaw": [],
+        "tidalId": "511767130"
+      },
+      {
+        "title": "Mauritania",
+        "artist": "MICHAEL BLAKE'S CHROMA NOVA",
+        "albumDetails": ", da \"Piccolos Before Rifles\" – P&M Records",
+        "key": "michael_blake's_chroma_nova___mauritania",
+        "genresRaw": [],
+        "tidalId": "511767135"
+      },
+      {
+        "title": "I Pray For My Enemies",
+        "artist": "JOY HARJO",
+        "albumDetails": ", da \"Insomnia And Seven Steps To Grace\" – Smithsonian Folkways Recordings",
+        "key": "joy_harjo___i_pray_for_my_enemies",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "487975771"
+      },
+      {
+        "title": "Fear Redux",
+        "artist": "JOY HARJO",
+        "albumDetails": ", da \"Insomnia And Seven Steps To Grace\" – Smithsonian Folkways Recordings",
+        "key": "joy_harjo___fear_redux",
+        "genresRaw": ["acoustic", "singer-songwriter", "folk"],
+        "tidalId": "487975772"
+      },
+      {
+        "title": "Osawatomie Brown",
+        "artist": "CHRIS POTTER",
+        "albumDetails": ", da \"Alive With Ghosts Today\" – Edition Records",
+        "key": "chris_potter___osawatomie_brown",
+        "genresRaw": [],
+        "tidalId": "495536739"
+      },
+      {
+        "title": "This Earth Would Have No Charms For Me",
+        "artist": "CHRIS POTTER",
+        "albumDetails": ", da \"Alive With Ghosts Today\" – Edition Records",
+        "key": "chris_potter___this_earth_would_have_no_charms_for_me",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "495958951"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "What Just Happened?",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-28052026-96898426-4bac-40dd-8d37-90be9e7d2446.html",
+    "date": "28 Mag 2026",
+    "tracks": [
+      {
+        "title": "Tamburi",
+        "artist": "ANNA CARAGNANO",
+        "albumDetails": ", da \"Tamburi\" – Nautilus",
+        "key": "anna_caragnano___tamburi",
+        "genresRaw": ["folk", "experimental"],
+        "tidalId": "513816799"
+      },
+      {
+        "title": "Ling",
+        "artist": "ANNA CARAGNANO",
+        "albumDetails": ", da \"Tamburi\" – Nautilus",
+        "key": "anna_caragnano___ling",
+        "genresRaw": ["techno", "electronic", "ambient"]
+      },
+      {
+        "title": "Filani Donkono",
+        "artist": "KHALAB & BABA SISSOKO",
+        "albumDetails": ", da \"Foli Bah\" - Hyperjazz Records",
+        "key": "khalab_baba_sissoko___filani_donkono",
+        "genresRaw": ["electronic", "world", "experimental"]
+      },
+      {
+        "title": "Wāḥid – واحد",
+        "artist": "RÉKA CSISZÉR & RADWAN GHAZI MOUMNEH",
+        "albumDetails": ", da \"Le Révélateur\" - Asadun Alay Records",
+        "key": "reka_csiszer_radwan_ghazi_moumneh___wahid_–_واحد",
+        "genresRaw": ["world", "experimental"]
+      },
+      {
+        "title": "Life On The Other Side Pt. 1",
+        "artist": "NEW AGE DOOM FEATURING H. R.",
+        "albumDetails": ", da \"Angels Against Angels\" – We Are Busy Bodies",
+        "key": "new_age_doom_featuring_h_r___life_on_the_other_side_pt_1",
+        "genresRaw": ["post-rock", "experimental", "punk"],
+        "tidalId": "478183652"
+      },
+      {
+        "title": "I Should Be So Lucky",
+        "artist": "PAAL NILSSEN-LOVE CIRCUS WITH THE EX GUITARS",
+        "albumDetails": ", da \"Calls!\" – PNL",
+        "key": "paal_nilssenlove_circus_with_the_ex_guitars___i_should_be_so_lucky",
+        "genresRaw": ["free jazz", "experimental"],
+        "tidalId": "436825660"
+      },
+      {
+        "title": "Steam Waterfall",
+        "artist": "EXTRA LARGE UNIT",
+        "albumDetails": ", da \"Steam Waterfall\" – PNL",
+        "key": "extra_large_unit___steam_waterfall",
+        "genresRaw": []
+      },
+      {
+        "title": "Spread Rain",
+        "artist": "LARGE UNIT – SMALL UNITS",
+        "albumDetails": ", da \"What Just Happened?\" – PNL",
+        "key": "large_unit_–_small_units___spread_rain",
+        "genresRaw": ["instrumental", "experimental"]
+      },
+      {
+        "title": "Three Grooves For Freya",
+        "artist": "IT WAS HER IDEA",
+        "albumDetails": ", da \"Daughter Of War\" – PNL",
+        "key": "it_was_her_idea___three_grooves_for_freya",
+        "genresRaw": ["instrumental"]
+      },
+      {
+        "title": "Hohai Bushi",
+        "artist": "LARGE UNIT WITH AKIRA SAKATA",
+        "albumDetails": ", da \"Hohai Bushi\" – PNL",
+        "key": "large_unit_with_akira_sakata___hohai_bushi",
+        "genresRaw": ["jazz", "world", "experimental"],
+        "tidalId": "514497796"
+      },
+      {
+        "title": "Før De Angriper",
+        "artist": "CIRCULASIONE TOTALE ORCHESTRA",
+        "albumDetails": ", da \"Gjeddene I Sivet\" – Conrad Sound",
+        "key": "circulasione_totale_orchestra___før_de_angriper",
+        "genresRaw": ["jazz", "avant-garde", "experimental"],
+        "tidalId": "504485764"
+      },
+      {
+        "title": "Azadirachta Excelsa",
+        "artist": "TAXOLOGY",
+        "albumDetails": ", da \"A Deep Dive In The Colourful And Mysterious Garden Of Mr. Taxology\" - NOS Records",
+        "key": "taxology___azadirachta_excelsa",
+        "genresRaw": ["progressive rock", "psychedelic"],
+        "tidalId": "518216286"
+      },
+      {
+        "title": "Michelia Aenea",
+        "artist": "TAXOLOGY",
+        "albumDetails": ", da \"A Deep Dive In The Colourful And Mysterious Garden Of Mr. Taxology\" - NOS Records",
+        "key": "taxology___michelia_aenea",
+        "genresRaw": [
+          "progressive rock",
+          "psychedelic rock",
+          "experimental rock"
+        ],
+        "tidalId": "518216290"
+      },
+      {
+        "title": "Summertime",
+        "artist": "CHEYENNE",
+        "albumDetails": ", da \"The Bird in Borrowed Feathers\" - autoproduzione",
+        "key": "cheyenne___summertime",
+        "genresRaw": [],
+        "tidalId": "518892834"
+      },
+      {
+        "title": "Waiting Room",
+        "artist": "CHEYENNE",
+        "albumDetails": ", da \"The Bird in Borrowed Feathers\" - autoproduzione",
+        "key": "cheyenne___waiting_room",
+        "genresRaw": ["rock"],
+        "tidalId": "518892830"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Through Global Frequencies",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-27052026-f32a2822-4141-4d94-a8cf-a155a97ae9bf.html",
+    "date": "27 Mag 2026",
+    "tracks": [
+      {
+        "title": "Entrance Of The Small-Faced Man",
+        "artist": "FRENCH TV",
+        "albumDetails": ", da \"The Spanish Caper\" – Cuneiform Records",
+        "key": "french_tv___entrance_of_the_smallfaced_man",
+        "genresRaw": ["progressive rock", "experimental", "rock"]
+      },
+      {
+        "title": "Tara",
+        "artist": "ANNA CARAGNANO",
+        "albumDetails": ", da \"Tamburi\" – Nautilus",
+        "key": "anna_caragnano___tara",
+        "genresRaw": ["electronic", "experimental"]
+      },
+      {
+        "title": "Grani",
+        "artist": "ANNA CARAGNANO",
+        "albumDetails": ", da \"Tamburi\" – Nautilus",
+        "key": "anna_caragnano___grani",
+        "genresRaw": ["electronic", "minimal"]
+      },
+      {
+        "title": "The Bonny Hind",
+        "artist": "MICK HARRIS / MARTYN BATES",
+        "albumDetails": ", da \"Murder Ballads (Incest Songs)\" - Sub Rosa",
+        "key": "mick_harris_martyn_bates___the_bonny_hind",
+        "genresRaw": ["dark ambient", "drone", "folk"]
+      },
+      {
+        "title": "Jah People - Voice",
+        "artist": "ADDIS ROCKERS",
+        "albumDetails": ", da \"Warriors\" – Real Rock Records",
+        "key": "addis_rockers___jah_people_voice",
+        "genresRaw": ["reggae", "dub"]
+      },
+      {
+        "title": "Marina di Ravenna, 9",
+        "artist": "BEACHES BREW 2026",
+        "albumDetails": "-11 giugno 2026",
+        "key": "beaches_brew_2026___marina_di_ravenna_9",
+        "genresRaw": []
+      },
+      {
+        "title": "mini tour italiano, 10",
+        "artist": "MEMORIALS",
+        "albumDetails": "-13 giugno 2026",
+        "key": "memorials___mini_tour_italiano_10",
+        "genresRaw": ["experimental", "folk", "jazz"]
+      },
+      {
+        "title": "All The Bastards",
+        "artist": "LOS SARA FONTÁN",
+        "albumDetails": ", da \"Consuelo\" – Aloud Music",
+        "key": "los_sara_fontan___all_the_bastards",
+        "genresRaw": ["post-rock", "experimental", "instrumental"],
+        "tidalId": "488390488"
+      },
+      {
+        "title": "Bell Miner",
+        "artist": "MEMORIALS",
+        "albumDetails": ", da \"All Clouds Bring Not Rain\" – Fire Records",
+        "key": "memorials___bell_miner",
+        "genresRaw": ["psychedelic", "post-punk", "experimental"],
+        "tidalId": "478596263"
+      },
+      {
+        "title": "Le ossessioni",
+        "artist": "SILVIA TAROZZI",
+        "albumDetails": ", da \"Lucciole\" - Unseen Worlds",
+        "key": "silvia_tarozzi___le_ossessioni",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "476638386"
+      },
+      {
+        "title": "Oblivion Seekers",
+        "artist": "BEN VIDA",
+        "albumDetails": ", da \"Oblivion Seekers\" - Shelter Press",
+        "key": "ben_vida___oblivion_seekers",
+        "genresRaw": ["experimental", "ambient", "minimal"],
+        "tidalId": "493066303"
+      },
+      {
+        "title": "Through Global Frequency - Aunt Nadira",
+        "artist": "MICHEL BANABILA",
+        "albumDetails": ", da \"Through Global Frequency\" - 12th Isle",
+        "key": "michel_banabila___through_global_frequency_aunt_nadira",
+        "genresRaw": ["ambient", "electroacoustic", "electronic"],
+        "tidalId": "447938458"
+      },
+      {
+        "title": "Through Global Frequency - Philisiwe Twijnstra",
+        "artist": "MICHEL BANABILA",
+        "albumDetails": ", da \"Through Global Frequency\" - 12th Isle",
+        "key": "michel_banabila___through_global_frequency_philisiwe_twijnstra",
+        "genresRaw": ["experimental"],
+        "tidalId": "447938458"
+      },
+      {
+        "title": "Tumbled Out",
+        "artist": "DUMAMA",
+        "albumDetails": ", da \"Towards An Expanse\" - Soundway Records",
+        "key": "dumama___tumbled_out",
+        "genresRaw": ["experimental", "future-folk", "electroacoustic"],
+        "tidalId": "495859707"
+      },
+      {
+        "title": "Ma'na",
+        "artist": "MARYAM SALEH",
+        "albumDetails": ", da \"Syrr\" - Simsara Records",
+        "key": "maryam_saleh___ma'na",
+        "genresRaw": ["folk", "electronic", "world"],
+        "tidalId": "473394828"
+      },
+      {
+        "title": "Khayal",
+        "artist": "MARYAM SALEH",
+        "albumDetails": ", da \"Syrr\" - Simsara Records",
+        "key": "maryam_saleh___khayal",
+        "genresRaw": ["jazz", "world", "experimental"],
+        "tidalId": "473394831"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Baccanalia",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-26052026-b0890ae0-3ffa-4f5b-86d8-93ff59498bcc.html",
+    "date": "26 Mag 2026",
+    "tracks": [
+      {
+        "title": "Cicada",
+        "artist": "TAROUG",
+        "albumDetails": ", da \"Chott\" – Denovali Records",
+        "key": "taroug___cicada",
+        "genresRaw": ["ambient", "electronic", "downtempo"],
+        "tidalId": "448485661"
+      },
+      {
+        "title": "Khamsa – خمسة",
+        "artist": "RÉKA CSISZÉR & RADWAN GHAZI MOUMNEH",
+        "albumDetails": ", da \"Le Révélateur\" - Asadun Alay Records",
+        "key": "reka_csiszer_radwan_ghazi_moumneh___khamsa_–_خمسة",
+        "genresRaw": ["soundtrack", "experimental", "electroacoustic"]
+      },
+      {
+        "title": "Amaseganalo Pt. 1 + Pt. 2",
+        "artist": "NEW AGE DOOM FEATURING H. R.",
+        "albumDetails": ", da \"Angels Against Angels\" – We Are Busy Bodies",
+        "key": "new_age_doom_featuring_h_r___amaseganalo_pt_1_+_pt_2",
+        "genresRaw": ["post-rock", "dub", "experimental"],
+        "tidalId": "478183662"
+      },
+      {
+        "title": "Third World War - Dub",
+        "artist": "ADDIS ROCKERS",
+        "albumDetails": ", da \"Warriors\" – Real Rock Records",
+        "key": "addis_rockers___third_world_war_dub",
+        "genresRaw": ["dub", "reggae"]
+      },
+      {
+        "title": "Komos",
+        "artist": "PS5",
+        "albumDetails": ", da \"Baccanalia\" – Café Saphora Records",
+        "key": "ps5___komos",
+        "genresRaw": []
+      },
+      {
+        "title": "Aieri ci passava",
+        "artist": "LERO LERO",
+        "albumDetails": ", da \"Lero Lero\" – Panta Records",
+        "key": "lero_lero___aieri_ci_passava",
+        "genresRaw": ["experimental", "folk", "electronic"],
+        "tidalId": "511648964"
+      },
+      {
+        "title": "La majorana",
+        "artist": "COCANHA",
+        "albumDetails": ", da \"Flame folclòre\" – Les disques Bongo Joe",
+        "key": "cocanha___la_majorana",
+        "genresRaw": ["folk", "minimal", "world"],
+        "tidalId": "506517135"
+      },
+      {
+        "title": "Flame folclòre",
+        "artist": "COCANHA",
+        "albumDetails": ", da \"Flame folclòre\" – Les disques Bongo Joe",
+        "key": "cocanha___flame_folclore",
+        "genresRaw": ["folk", "world"],
+        "tidalId": "506517141"
+      },
+      {
+        "title": "Vinti 'e maju (Ballu Hantau), da \"Vinti 'e maju\"",
+        "artist": "PAOLO ANGELI & TENORE MURALES DE ORGOSOLO",
+        "albumDetails": "– Anma Productions",
+        "key": "paolo_angeli_tenore_murales_de_orgosolo___vinti_'e_maju_ballu_hantau_da_\"vinti_'e_maju\"",
+        "genresRaw": ["world", "folk"],
+        "tidalId": "511775722"
+      },
+      {
+        "title": "Sa lota 'e Pratobello, da \"Vinti 'e Maju\"",
+        "artist": "PAOLO ANGELI & TENORE MURALES DE ORGOSOLO",
+        "albumDetails": "– Anma Productions",
+        "key": "paolo_angeli_tenore_murales_de_orgosolo___sa_lota_'e_pratobello_da_\"vinti_'e_maju\"",
+        "genresRaw": ["folk", "world"],
+        "tidalId": "511775723"
+      },
+      {
+        "title": "Duori",
+        "artist": "HEITH & TARAWANGSAWELAS",
+        "albumDetails": ", da \"Duori\" – Stroom",
+        "key": "heith_tarawangsawelas___duori",
+        "genresRaw": ["world", "experimental", "ambient"],
+        "tidalId": "505927841"
+      },
+      {
+        "title": "PuzzleBuilding",
+        "artist": "YVONNE ROGERS",
+        "albumDetails": ", da \"The Button Jar \" - Pyroclastic Records",
+        "key": "yvonne_rogers___puzzlebuilding",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "494043019"
+      },
+      {
+        "title": "FirstAttempt",
+        "artist": "YVONNE ROGERS",
+        "albumDetails": ", da \"The Button Jar \" - Pyroclastic Records",
+        "key": "yvonne_rogers___firstattempt",
+        "genresRaw": ["jazz", "experimental", "instrumental"],
+        "tidalId": "494043027"
+      },
+      {
+        "title": "LittleDance",
+        "artist": "YVONNE ROGERS",
+        "albumDetails": ", da \"The Button Jar \" - Pyroclastic Records",
+        "key": "yvonne_rogers___littledance",
+        "genresRaw": ["jazz", "experimental", "instrumental"],
+        "tidalId": "494043016"
+      },
+      {
+        "title": "Top Spinner",
+        "artist": "ALISTER SPENCE",
+        "albumDetails": ", da \"Always Ever\" - Alister Spence Music",
+        "key": "alister_spence___top_spinner",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "511559638"
+      },
+      {
+        "title": "Random Access Counterpoint",
+        "artist": "ALISTER SPENCE",
+        "albumDetails": ", da \"Always Ever\" - Alister Spence Music",
+        "key": "alister_spence___random_access_counterpoint",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "511559639"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Transmissions 2025: MICAH P. HINSON + INDEX FOR WORKING MUSiK",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-25052026-0485cbfb-c463-410b-a9ee-c16b48883042.html",
+    "date": "25 Mag 2026",
+    "tracks": [
+      {
+        "title": "Ravenna, il 21 novembre 2025",
+        "artist": "registrato al Teatro Rasi",
+        "albumDetails": "",
+        "key": "registrato_al_teatro_rasi___ravenna_il_21_novembre_2025",
+        "genresRaw": []
+      },
+      {
+        "title": "Ravenna, il 22 novembre 2025",
+        "artist": "registrato al Teatro Rasi",
+        "albumDetails": "",
+        "key": "registrato_al_teatro_rasi___ravenna_il_22_novembre_2025",
+        "genresRaw": []
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Stella. Fiore. Notte",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-24052026-17b81874-fe79-4485-9406-7387b8a7bab7.html",
+    "date": "24 Mag 2026",
+    "tracks": [
+      {
+        "title": "DAVID MOORE, Rhododendron",
+        "artist": "STEVE GUNN",
+        "albumDetails": ", da \"Let The Moon Be A Planet\" - RVNG",
+        "key": "steve_gunn___david_moore_rhododendron",
+        "genresRaw": ["folk", "singer-songwriter", "acoustic"]
+      },
+      {
+        "title": "Etoile",
+        "artist": "TOMEKA REID",
+        "albumDetails": ", da \"Tomeka Reid Quartet\" - Thirsty Ear",
+        "key": "tomeka_reid___etoile",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "158117669"
+      },
+      {
+        "title": "Flowers (For Mary)",
+        "artist": "MARY HALVORSON/NOEL AKCHOTÉ",
+        "albumDetails": ", da \"Mary Halvorson & Noël Akchoté\" - Noël Akchoté Downloads",
+        "key": "mary_halvorsonnoel_akchote___flowers_for_mary",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "67212457"
+      },
+      {
+        "title": "Star",
+        "artist": "PRIMAL SCREAM",
+        "albumDetails": ", da \"Vanishing Point\" - Reprise Records",
+        "key": "primal_scream___star",
+        "genresRaw": ["psychedelic", "rock", "electronic"],
+        "tidalId": "10697889"
+      },
+      {
+        "title": "Flourish",
+        "artist": "ARTO LINSDAY TRIO",
+        "albumDetails": ", da \"Aggregates 1-26\" - Knitting Factory Works",
+        "key": "arto_linsday_trio___flourish",
+        "genresRaw": ["experimental", "jazz"]
+      },
+      {
+        "title": "This Time Of Night",
+        "artist": "NEW ORDER",
+        "albumDetails": ", da \"Low-Life\" - Qwest Records",
+        "key": "new_order___this_time_of_night",
+        "genresRaw": ["post-punk", "electronic", "new wave"],
+        "tidalId": "71106095"
+      },
+      {
+        "title": "La Estrella Azul",
+        "artist": "MERCEDES SOSA",
+        "albumDetails": ", da \"De mí\" - Philips",
+        "key": "mercedes_sosa___la_estrella_azul",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "7240205"
+      },
+      {
+        "title": "La Flor",
+        "artist": "SILVIA PEREZ CRUZ",
+        "albumDetails": ", da \"Toda La Vida, Un Dia\" - Sony Music",
+        "key": "silvia_perez_cruz___la_flor",
+        "genresRaw": ["singer-songwriter", "folk", "world"],
+        "tidalId": "286328757"
+      },
+      {
+        "title": "Aunque Es De Noche",
+        "artist": "ROSALIA",
+        "albumDetails": ", da \"Aunque Es De Noche\" - Universal Music Spain",
+        "key": "rosalia___aunque_es_de_noche",
+        "genresRaw": ["flamenco", "pop"],
+        "tidalId": "80398612"
+      },
+      {
+        "title": "Afrikan Star",
+        "artist": "SAUTI SOL/BURNA BOY",
+        "albumDetails": ", da \"Afrikan Sauce\" - Sauti Sol Entertainment",
+        "key": "sauti_solburna_boy___afrikan_star",
+        "genresRaw": ["afrobeat", "pop"],
+        "tidalId": "333664754"
+      },
+      {
+        "title": "Fleur Tropical",
+        "artist": "FRANCIS BEBEY",
+        "albumDetails": ", da \"Fleur Tropical\" - Ozileka",
+        "key": "francis_bebey___fleur_tropical",
+        "genresRaw": ["world", "folk"],
+        "tidalId": "302412574"
+      },
+      {
+        "title": "Night Must Fall",
+        "artist": "MIRIAM MAKEBA",
+        "albumDetails": ", da \"The Many Voices Of Miriam Makeba\" - Kapp Records",
+        "key": "miriam_makeba___night_must_fall",
+        "genresRaw": ["world", "jazz"],
+        "tidalId": "100805247"
+      },
+      {
+        "title": "Is Me A Star",
+        "artist": "NAPPY NINA",
+        "albumDetails": ", da \"Double Down\" - Lucid Haus",
+        "key": "nappy_nina___is_me_a_star",
+        "genresRaw": ["hip-hop", "experimental"],
+        "tidalId": "326771128"
+      },
+      {
+        "title": "Bloom",
+        "artist": "DOECHII",
+        "albumDetails": ", da \"Alligator Bites Never Heal\" - Top Dawg Entertainment",
+        "key": "doechii___bloom",
+        "genresRaw": ["hip-hop", "experimental"],
+        "tidalId": "382890860"
+      },
+      {
+        "title": "Thieves Of The Night",
+        "artist": "BLACK STAR",
+        "albumDetails": ", da \"Mos Def & Talib Kweli Are Black Star\" - Rawkus",
+        "key": "black_star___thieves_of_the_night",
+        "genresRaw": ["hip-hop", "experimental"],
+        "tidalId": "579826"
+      },
+      {
+        "title": "Estrela Estrela",
+        "artist": "GAL COSTA",
+        "albumDetails": ", da \"Fantasia\" - Philips",
+        "key": "gal_costa___estrela_estrela",
+        "genresRaw": ["mpb", "bossa nova"],
+        "tidalId": "92219145"
+      },
+      {
+        "title": "Zahret el Madaen",
+        "artist": "FAIRUZ",
+        "albumDetails": ", da \"Ghanneit Makka\" - Soutelphan",
+        "key": "fairuz___zahret_el_madaen",
+        "genresRaw": ["world", "singer-songwriter"],
+        "tidalId": "90562655"
+      },
+      {
+        "title": "Green Night",
+        "artist": "SATOMIMAGAE",
+        "albumDetails": ", da \"Awa\" - Plancha",
+        "key": "satomimagae___green_night",
+        "genresRaw": ["psychedelic", "folk", "singer-songwriter"],
+        "tidalId": "256635198"
+      },
+      {
+        "title": "Stella Nera, Da \"Musicante\"",
+        "artist": "PINO DANIELE",
+        "albumDetails": "- Bagaria",
+        "key": "pino_daniele___stella_nera_da_\"musicante\"",
+        "genresRaw": ["pop", "rock"],
+        "tidalId": "173954321"
+      },
+      {
+        "title": "Fiore Mio",
+        "artist": "ANDREA LAZLO DE SIMONE",
+        "albumDetails": ", da \"Uomo Donna\" - 42 Records",
+        "key": "andrea_lazlo_de_simone___fiore_mio",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "405096371"
+      },
+      {
+        "title": "Thrill Of The Night",
+        "artist": "GAZNEVADA",
+        "albumDetails": ", da \"Strange Life\" - CBS",
+        "key": "gaznevada___thrill_of_the_night",
+        "genresRaw": ["electronic", "new wave", "synthpop"],
+        "tidalId": "178326809"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Vibrisse #47",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-23052026-8aa75f30-23f3-4989-8391-049dfee16364.html",
+    "date": "23 Mag 2026",
+    "tracks": [
+      {
+        "title": "Congo Evidence",
+        "artist": "DINAMITRI JAZZ FOLKLORE AVEC SADIQ BEY",
+        "albumDetails": ", da \"Congo Evidence\" – Caligola",
+        "key": "dinamitri_jazz_folklore_avec_sadiq_bey___congo_evidence",
+        "genresRaw": ["jazz", "world"],
+        "tidalId": "69583367"
+      },
+      {
+        "title": "Cayeñero",
+        "artist": "LAGOSS & ABAGWAGWA",
+        "albumDetails": ", da \"Island Slang\" – Discrepant",
+        "key": "lagoss_abagwagwa___cayenero",
+        "genresRaw": ["experimental", "psychedelic", "percussion"],
+        "tidalId": "437097722"
+      },
+      {
+        "title": "Science Has Changed",
+        "artist": "ASTRAL TRAVEL",
+        "albumDetails": ", da \"If You Say You Are From This Planet, Why Do You Treat It Like You Do?\" – Hyperjazz Records",
+        "key": "astral_travel___science_has_changed",
+        "genresRaw": [],
+        "tidalId": "133270017"
+      },
+      {
+        "title": "Everything Is Space",
+        "artist": "SUN RA",
+        "albumDetails": ", da \"Somewhere Else\" – Rounder",
+        "key": "sun_ra___everything_is_space",
+        "genresRaw": ["jazz", "experimental", "psychedelic"],
+        "tidalId": "113488829"
+      },
+      {
+        "title": "The People",
+        "artist": "DIGITAL PRIMITIVES",
+        "albumDetails": ", da \"Hum Crackle & Pop\" – Hopscotch Records",
+        "key": "digital_primitives___the_people",
+        "genresRaw": ["hip-hop", "jazz", "funk"],
+        "tidalId": "33711323"
+      },
+      {
+        "title": "Una cumbia en Kinshasa",
+        "artist": "ALE HOP AND TITI BAKORTA",
+        "albumDetails": ", da \"Mapambazuko\" – Nyege Nyege Tapes",
+        "key": "ale_hop_and_titi_bakorta___una_cumbia_en_kinshasa",
+        "genresRaw": ["cumbia", "world"],
+        "tidalId": "394683403"
+      },
+      {
+        "title": "Noite de Lua Cheia (feat Mc Pânico, Mc JF)",
+        "artist": "DJ ANDERSON DO PARAISO",
+        "albumDetails": ", da \"Paraiso Sombrio\" – Nyege Nyege Tapes",
+        "key": "dj_anderson_do_paraiso___noite_de_lua_cheia_feat_mc_panico_mc_jf",
+        "genresRaw": ["funk", "hip-hop"],
+        "tidalId": "373658129"
+      },
+      {
+        "title": "Wanguila",
+        "artist": "DJ NIGGA FOX",
+        "albumDetails": ", da \"Chá Preto\" – Príncipe",
+        "key": "dj_nigga_fox___wanguila",
+        "genresRaw": ["electronic", "kuduro", "ambient"],
+        "tidalId": "345844897"
+      },
+      {
+        "title": "Acid Vaccine (feat. Clap! Clap!)",
+        "artist": "KHALAB",
+        "albumDetails": ", da \"Layers\" – Hyperjazz Records",
+        "key": "khalab___acid_vaccine_feat_clap_clap",
+        "genresRaw": ["techno", "electronic", "dub"],
+        "tidalId": "309008936"
+      },
+      {
+        "title": "We Walk",
+        "artist": "HU VIBRATIONAL",
+        "albumDetails": ", da \"Beautiful - Boonghee Music 2\" – Soul Jazz Records",
+        "key": "hu_vibrational___we_walk",
+        "genresRaw": ["electronic", "jazz", "world"],
+        "tidalId": "56045092"
+      },
+      {
+        "title": "Moon Treader (estratto)",
+        "artist": "ROB MAZUREK",
+        "albumDetails": ", da \"Alternate Moon Cycles Live At The Land School\" – International Anthem",
+        "key": "rob_mazurek___moon_treader_estratto",
+        "genresRaw": ["jazz", "experimental", "electroacoustic"]
+      },
+      {
+        "title": "Layers (feat. Joshua Idehen)",
+        "artist": "KHALAB",
+        "albumDetails": ", da \"Layers\" – Hyperjazz Records",
+        "key": "khalab___layers_feat_joshua_idehen",
+        "genresRaw": ["electronic", "ambient", "techno"],
+        "tidalId": "309008937"
+      },
+      {
+        "title": "O Superman",
+        "artist": "LAURIE ANDERSON WITH SEX MOB",
+        "albumDetails": ", da \"Let X = X\" – Nonesuch",
+        "key": "laurie_anderson_with_sex_mob___o_superman",
+        "genresRaw": ["experimental", "electronic", "post-punk"],
+        "tidalId": "1855199"
+      },
+      {
+        "title": "(Hearts Bleeding In A) September Sky / For Aime And Wifredo (feat. Sadiq Bey)",
+        "artist": "BRANDON ROSS",
+        "albumDetails": ", da \"Costume\" – Intoxicate Records",
+        "key": "brandon_ross___hearts_bleeding_in_a_september_sky_for_aime_and_wifredo_feat_sadiq_bey",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "12799332"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Colour, Group",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-22052026-a143d1b3-cfff-4c85-abfd-3b8636ffd490.html",
+    "date": "22 Mag 2026",
+    "tracks": [
+      {
+        "title": "Calls: Let They Free!",
+        "artist": "PAAL NILSSEN-LOVE CIRCUS + THE EX GUITARS",
+        "albumDetails": ", da \"Calls!\" – Pnl Records",
+        "key": "paal_nilssenlove_circus_+_the_ex_guitars___calls_let_they_free",
+        "genresRaw": ["experimental", "noise", "post-punk"],
+        "tidalId": "436825666"
+      },
+      {
+        "title": "Rowdy Blues",
+        "artist": "TAJ MAHAL & THE PHANTOM BLUES BAND",
+        "albumDetails": ", da \"Time\" – Thirty Tigers",
+        "key": "taj_mahal_the_phantom_blues_band___rowdy_blues",
+        "genresRaw": ["blues", "rock"],
+        "tidalId": "499877932"
+      },
+      {
+        "title": "Muri (baddu a passo), da \"Vinti 'e Maju\"",
+        "artist": "PAOLO ANGELI & TENORE MURALES DE ORGOSOLO",
+        "albumDetails": "– Anma Productions",
+        "key": "paolo_angeli_tenore_murales_de_orgosolo___muri_baddu_a_passo_da_\"vinti_'e_maju\"",
+        "genresRaw": ["world", "folk"],
+        "tidalId": "511775721"
+      },
+      {
+        "title": "Shamm el Hawa شم الهوى",
+        "artist": "DOG PLUG",
+        "albumDetails": ", da \"Dog Plug\" – Annihaya Records",
+        "key": "dog_plug___shamm_el_hawa_شم_الهوى",
+        "genresRaw": ["world"],
+        "tidalId": "500361276"
+      },
+      {
+        "title": "direzione musicale Montserrat Palacios, Gorizia, 23 maggio 2026",
+        "artist": "CONCERTO DI CAMPANE di Llorenç Barber",
+        "albumDetails": "",
+        "key": "concerto_di_campane_di_llorenc_barber___direzione_musicale_montserrat_palacios_gorizia_23_maggio_2026",
+        "genresRaw": ["experimental", "instrumental", "ambient"]
+      },
+      {
+        "title": "tour italiano, 25",
+        "artist": "LUCRECIA DALT",
+        "albumDetails": "– 29 maggio 2026",
+        "key": "lucrecia_dalt___tour_italiano_25",
+        "genresRaw": ["electronic", "experimental", "electroacoustic"]
+      },
+      {
+        "title": "Bells 9",
+        "artist": "LLORENÇ BARBER",
+        "albumDetails": ", da \"Erratum #4 / Sound Review / Art + Noise + Poetry\" – Erratum",
+        "key": "llorenc_barber___bells_9",
+        "genresRaw": ["experimental", "minimal", "instrumental"]
+      },
+      {
+        "title": "Cosa Rara (ft. David Sylvian)",
+        "artist": "LUCRECIA DALT",
+        "albumDetails": ", da \"A Danger To Ourselves\" – RVNG Intl.",
+        "key": "lucrecia_dalt___cosa_rara_ft_david_sylvian",
+        "genresRaw": ["experimental", "electronic"],
+        "tidalId": "411561059"
+      },
+      {
+        "title": "Abysses",
+        "artist": "HÉLÈNE DURET SYNESTET",
+        "albumDetails": ", da \"Perception\" - IGLOO Records",
+        "key": "helene_duret_synestet___abysses",
+        "genresRaw": ["jazz"],
+        "tidalId": "506955593"
+      },
+      {
+        "title": "Colère Contenue",
+        "artist": "HÉLÈNE DURET SYNESTET",
+        "albumDetails": ", da \"Perception\" - IGLOO Records",
+        "key": "helene_duret_synestet___colere_contenue",
+        "genresRaw": ["jazz"],
+        "tidalId": "506955596"
+      },
+      {
+        "title": "Requiem & Fanfare (pour Peter B.)",
+        "artist": "ENSEMBLE INFINI",
+        "albumDetails": ", da \"Volume ∞\" - Cellar Music",
+        "key": "ensemble_infini___requiem_fanfare_pour_peter_b",
+        "genresRaw": ["free jazz", "psychedelic", "experimental"],
+        "tidalId": "511779291"
+      },
+      {
+        "title": "Dream Story",
+        "artist": "ENSEMBLE INFINI",
+        "albumDetails": ", da \"Volume ∞\" - Cellar Music",
+        "key": "ensemble_infini___dream_story",
+        "genresRaw": ["experimental", "jazz", "psychedelic"],
+        "tidalId": "511779294"
+      },
+      {
+        "title": "Glass",
+        "artist": "ALABASTER DE PLUME",
+        "albumDetails": ", da \"Dear Children of Our Children, I Knew: Epilogue\" - International Anthem",
+        "key": "alabaster_de_plume___glass",
+        "genresRaw": ["soul", "experimental"],
+        "tidalId": "496293733"
+      },
+      {
+        "title": "What Did The Child Say / Facing Reality, \"Dear Children of Our Children, I Knew: Epilogue\"",
+        "artist": "ALABASTER DE PLUME",
+        "albumDetails": "- International Anthem",
+        "key": "alabaster_de_plume___what_did_the_child_say_facing_reality_\"dear_children_of_our_children_i_knew_epilogue\"",
+        "genresRaw": ["experimental", "post-punk"],
+        "tidalId": "516090243"
+      },
+      {
+        "title": "Kivu",
+        "artist": "GUIDO SPANNOCCHI",
+        "albumDetails": ", da \"Kammermusik\" - Audioguido Records",
+        "key": "guido_spannocchi___kivu",
+        "genresRaw": ["jazz", "world", "instrumental"],
+        "tidalId": "494423117"
+      },
+      {
+        "title": "Contra Corrente",
+        "artist": "GUIDO SPANNOCCHI",
+        "albumDetails": ", da \"Kammermusik\" - Audioguido Records",
+        "key": "guido_spannocchi___contra_corrente",
+        "genresRaw": ["jazz", "contemporary classical", "instrumental"],
+        "tidalId": "494423118"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Like You Really",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-21052026-3478cb1d-15c5-4f29-8b1a-399c8114e73d.html",
+    "date": "21 Mag 2026",
+    "tracks": [
+      {
+        "title": "Remenanuèch",
+        "artist": "COCANHA",
+        "albumDetails": ", da \"Flame Folclòre\" – Les disques Bongo Joe",
+        "key": "cocanha___remenanuech",
+        "genresRaw": ["folk", "experimental", "downtempo"],
+        "tidalId": "506517126"
+      },
+      {
+        "title": "Fòrabanda",
+        "artist": "COCANHA",
+        "albumDetails": ", da \"Flame Folclòre\" – Les disques Bongo Joe",
+        "key": "cocanha___forabanda",
+        "genresRaw": ["folk", "minimal", "world"],
+        "tidalId": "506517128"
+      },
+      {
+        "title": "Lupercalia",
+        "artist": "PS5",
+        "albumDetails": ", da \"Baccanalia\" – Café Saphora Records",
+        "key": "ps5___lupercalia",
+        "genresRaw": []
+      },
+      {
+        "title": "Ramon / New Angels",
+        "artist": "LAURIE ANDERSON WITH SEX MOB",
+        "albumDetails": ", da \"Let X = X\" – Nonesuch",
+        "key": "laurie_anderson_with_sex_mob___ramon_new_angels",
+        "genresRaw": ["experimental", "post-rock"],
+        "tidalId": "515637644"
+      },
+      {
+        "title": "Formless Path",
+        "artist": "KHÔRA & MAS AYA",
+        "albumDetails": ", da \"Primordial Mind\" – Marionette",
+        "key": "khora_mas_aya___formless_path",
+        "genresRaw": ["ambient", "electroacoustic", "jazz"],
+        "tidalId": "515896067"
+      },
+      {
+        "title": "Idea For A Song",
+        "artist": "GUESTS",
+        "albumDetails": ", da \"Common Domestic Bird\" - World Of Echo",
+        "key": "guests___idea_for_a_song",
+        "genresRaw": [],
+        "tidalId": "487976651"
+      },
+      {
+        "title": "Common Domestic Bird",
+        "artist": "GUESTS",
+        "albumDetails": ", da \"Common Domestic Bird\" - World Of Echo",
+        "key": "guests___common_domestic_bird",
+        "genresRaw": ["experimental", "electronic", "pop"],
+        "tidalId": "487976646"
+      },
+      {
+        "title": "Ants",
+        "artist": "MR VAST",
+        "albumDetails": ", da \"Upping The Ante\" - Cack Records",
+        "key": "mr_vast___ants",
+        "genresRaw": ["experimental", "electronic", "pop"],
+        "tidalId": "508082093"
+      },
+      {
+        "title": "I Can't Help it",
+        "artist": "MR VAST",
+        "albumDetails": ", da \"Upping Th Ante\" - Cack Records",
+        "key": "mr_vast___i_can't_help_it",
+        "genresRaw": ["drum and bass", "experimental", "electronic"]
+      },
+      {
+        "title": "Guess Who",
+        "artist": "MR VAST",
+        "albumDetails": ", da \"Upping Th Ante\" - Cack Records",
+        "key": "mr_vast___guess_who",
+        "genresRaw": ["indie", "experimental"],
+        "tidalId": "223446789"
+      },
+      {
+        "title": "Fluxstrata",
+        "artist": "LATE BUSH",
+        "albumDetails": ", da \"Hoarses\" - VLEK",
+        "key": "late_bush___fluxstrata",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "502162996"
+      },
+      {
+        "title": "Hark",
+        "artist": "LATE BUSH",
+        "albumDetails": ", da \"Hoarses\" - VLEK",
+        "key": "late_bush___hark",
+        "genresRaw": ["electronic"],
+        "tidalId": "502161973"
+      },
+      {
+        "title": "Yellow Sand",
+        "artist": "GIUSEPPE FRANCHELLUCCI",
+        "albumDetails": ", da \"De Reditu Suo\" - Cassis Records",
+        "key": "giuseppe_franchellucci___yellow_sand",
+        "genresRaw": ["instrumental"],
+        "tidalId": "470154147"
+      },
+      {
+        "title": "Light Year Embrace",
+        "artist": "FRANCESCA NAIBO & THERESA WONG",
+        "albumDetails": ", da \"Weather Eye\" - Kohlhaas",
+        "key": "francesca_naibo_theresa_wong___light_year_embrace",
+        "genresRaw": ["experimental", "electroacoustic", "instrumental"]
+      },
+      {
+        "title": "Lopsided",
+        "artist": "FRANCESCA NAIBO & THERESA WONG",
+        "albumDetails": ", da \"Weather Eye\" - Kohlhaas",
+        "key": "francesca_naibo_theresa_wong___lopsided",
+        "genresRaw": ["experimental", "electroacoustic", "instrumental"]
+      },
+      {
+        "title": "Cagnara muta",
+        "artist": "MATTEO STELLA",
+        "albumDetails": ", da \"Radeche Fonne\" - autoproduzione",
+        "key": "matteo_stella___cagnara_muta",
+        "genresRaw": ["electronic", "experimental"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Vibrisse #48",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-06062026-c31fe9e8-159b-4cc1-9bf0-e981bed2f1f7.html",
+    "date": "06 Giu 2026",
+    "tracks": [
+      {
+        "title": "Mary Of Silence",
+        "artist": "MAZZY STAR",
+        "albumDetails": ", da \"So Tonight That I Might See\" - Capitol Records",
+        "key": "mazzy_star___mary_of_silence",
+        "genresRaw": ["alternative", "singer-songwriter"],
+        "tidalId": "147478"
+      },
+      {
+        "title": "Sad And Beautiful World",
+        "artist": "MAVIS STAPLES",
+        "albumDetails": ", da \"Sad And Beautiful World\" – Anti-",
+        "key": "mavis_staples___sad_and_beautiful_world",
+        "genresRaw": ["soul", "gospel", "r&b"],
+        "tidalId": "451446211"
+      },
+      {
+        "title": "The Village Drum",
+        "artist": "BROTHER AH",
+        "albumDetails": ", da \"Divine Music\" - Manufactured Recordings",
+        "key": "brother_ah___the_village_drum",
+        "genresRaw": ["jazz", "world", "instrumental"],
+        "tidalId": "71466012"
+      },
+      {
+        "title": "Tierra Amarilla",
+        "artist": "ARTHUR KING",
+        "albumDetails": ", da \"Changing Landscapes (Mina Las Pintadas)\" - AKP Recordings",
+        "key": "arthur_king___tierra_amarilla",
+        "genresRaw": ["electronic", "experimental", "ambient"],
+        "tidalId": "480463950"
+      },
+      {
+        "title": "Machines With Ideas",
+        "artist": "TOMAGA & PIERRE BASTIEN",
+        "albumDetails": ", da \"Bandiera di carta\" - Other People",
+        "key": "tomaga_pierre_bastien___machines_with_ideas",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "360908068"
+      },
+      {
+        "title": "Awakening Day",
+        "artist": "BLUES CONTROL & LARAAJI",
+        "albumDetails": ", da \"FRKWYS Vol. 8\" - Rvng Intl.",
+        "key": "blues_control_laraaji___awakening_day",
+        "genresRaw": ["ambient", "experimental"],
+        "tidalId": "19335627"
+      },
+      {
+        "title": "The Dance #2",
+        "artist": "LARAAJI",
+        "albumDetails": ", da \"Ambient 3 (Day Of Radiance)\" - Editions",
+        "key": "laraaji___the_dance_2",
+        "genresRaw": ["ambient", "electronic", "experimental"],
+        "tidalId": "1525894"
+      },
+      {
+        "title": "Namopi ft. Laraaji & Shahzad Ismaily",
+        "artist": "MEROPE",
+        "albumDetails": ", da \"Vėjula\" - Stroom",
+        "key": "merope___namopi_ft_laraaji_shahzad_ismaily",
+        "genresRaw": ["electronic", "ambient", "folk"],
+        "tidalId": "392046534"
+      },
+      {
+        "title": "Les pierres de montodeau",
+        "artist": "ARTHUR CHAMBRY",
+        "albumDetails": ", da \"La Seuz\" - Futura Resistenza",
+        "key": "arthur_chambry___les_pierres_de_montodeau",
+        "genresRaw": ["folk", "experimental", "psychedelic"],
+        "tidalId": "289117651"
+      },
+      {
+        "title": "Il treno",
+        "artist": "GIOVANNI DI DOMENICO",
+        "albumDetails": ", da \"Polvere di rabbia\" - Kohlhaas",
+        "key": "giovanni_di_domenico___il_treno",
+        "genresRaw": ["experimental", "instrumental"],
+        "tidalId": "165209044"
+      },
+      {
+        "title": "Train Through Time",
+        "artist": "POPOL VUH",
+        "albumDetails": ", da \"Revisited & Remixed 1970-1999\" - SPV Recordings",
+        "key": "popol_vuh___train_through_time",
+        "genresRaw": ["electronic", "ambient"],
+        "tidalId": "426611487"
+      },
+      {
+        "title": "Frusta",
+        "artist": "SIMILOU",
+        "albumDetails": ", da \"Inferno Bizzarro\" - Love Boat Records",
+        "key": "similou___frusta",
+        "genresRaw": ["psychedelic", "experimental", "industrial"],
+        "tidalId": "279480787"
+      },
+      {
+        "title": "Just One",
+        "artist": "JUICY LUCY",
+        "albumDetails": ", da \"Juicy Lucy\" - Vertigo",
+        "key": "juicy_lucy___just_one",
+        "genresRaw": ["blues", "rock"],
+        "tidalId": "190392239"
+      },
+      {
+        "title": "Ecstasy Symphony / Transparent Radiation (Flashback)",
+        "artist": "SPACEMEN 3",
+        "albumDetails": ", da \"The Perfect Prescription\" - Glass Records",
+        "key": "spacemen_3___ecstasy_symphony_transparent_radiation_flashback",
+        "genresRaw": ["psychedelic", "drone", "experimental"],
+        "tidalId": "367146429"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Angels",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-05062026-4abe16a6-5e4f-4d82-a32f-97ab863bac9e.html",
+    "date": "05 Giu 2026",
+    "tracks": [
+      {
+        "title": "Imanin",
+        "artist": "TAMIKREST",
+        "albumDetails": ", da \"Assikel\" - Glitterbeat",
+        "key": "tamikrest___imanin",
+        "genresRaw": ["world", "rock"],
+        "tidalId": "496598188"
+      },
+      {
+        "title": "Sangkakala Malaikat (Bandung Version)",
+        "artist": "HEITH & TARAWANGSAWELAS",
+        "albumDetails": ", da \"Duori\" - Stroom",
+        "key": "heith_tarawangsawelas___sangkakala_malaikat_bandung_version",
+        "genresRaw": ["experimental", "world", "electronic"],
+        "tidalId": "113159140"
+      },
+      {
+        "title": "You Retreat In Time And Space",
+        "artist": "BOARDS OF CANADA",
+        "albumDetails": ", da \"Inferno\" - Warp Records",
+        "key": "boards_of_canada___you_retreat_in_time_and_space",
+        "genresRaw": ["electronic", "ambient", "downtempo"],
+        "tidalId": "528351312"
+      },
+      {
+        "title": "Like Swimwear (part one)",
+        "artist": "JEFF PARKER ETA IVtet",
+        "albumDetails": ", da \"Happy Today\" - International Anthem Recording Company",
+        "key": "jeff_parker_eta_ivtet___like_swimwear_part_one",
+        "genresRaw": ["jazz", "post-rock"],
+        "tidalId": "503917533"
+      },
+      {
+        "title": "26-28 giugno 2026, Franciacorta - 10 – 12 luglio Valle Trompia",
+        "artist": "BAO MUSIC FESTIVAL",
+        "albumDetails": "",
+        "key": "bao_music_festival___2628_giugno_2026_franciacorta_10_–_12_luglio_valle_trompia",
+        "genresRaw": []
+      },
+      {
+        "title": "Mosca Cieca",
+        "artist": "JUNI",
+        "albumDetails": ", da \"Nero, attimo\" - Factory Flows",
+        "key": "juni___mosca_cieca",
+        "genresRaw": ["electronic", "pop", "experimental"],
+        "tidalId": "452127821"
+      },
+      {
+        "title": "Angels",
+        "artist": "ALAN BRAUFMAN",
+        "albumDetails": ", da \"Anthem For Peace\" – Valley of Search",
+        "key": "alan_braufman___angels",
+        "genresRaw": ["jazz", "free jazz", "post-bop"],
+        "tidalId": "495931666"
+      },
+      {
+        "title": "In Motion",
+        "artist": "ALAN BRAUFMAN",
+        "albumDetails": ", da \"Anthem For Peace\" – Valley of Search",
+        "key": "alan_braufman___in_motion",
+        "genresRaw": ["jazz", "post-bop", "instrumental"]
+      },
+      {
+        "title": "Sueños en Cirebon",
+        "artist": "EROSÃO PERCUSSION TRIO",
+        "albumDetails": ", da \"Erosào Percussion Trio\" – Kassiani Records",
+        "key": "erosao_percussion_trio___suenos_en_cirebon",
+        "genresRaw": ["instrumental", "experimental", "jazz"],
+        "tidalId": "508789064"
+      },
+      {
+        "title": "Correnteza",
+        "artist": "EROSÃO PERCUSSION TRIO",
+        "albumDetails": ", da \"Erosão Percussion Trio\" – Kassiani Records",
+        "key": "erosao_percussion_trio___correnteza",
+        "genresRaw": ["experimental", "instrumental", "jazz"],
+        "tidalId": "508789066"
+      },
+      {
+        "title": "There To Bridge",
+        "artist": "MARTA WARELIS",
+        "albumDetails": ", da \"Still Life With Lemons\" – Relative Pitch Records",
+        "key": "marta_warelis___there_to_bridge",
+        "genresRaw": ["jazz"],
+        "tidalId": "504388238"
+      },
+      {
+        "title": "It Was",
+        "artist": "MICHAEL FORMANEK",
+        "albumDetails": ", da \"New Digs\" – Intakt Records",
+        "key": "michael_formanek___it_was",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "500140630"
+      },
+      {
+        "title": "Aka The Stinger",
+        "artist": "MICHAEL FORMANEK",
+        "albumDetails": ", da \"New Digs\" – Intakt Records",
+        "key": "michael_formanek___aka_the_stinger",
+        "genresRaw": ["jazz", "post-rock", "experimental"],
+        "tidalId": "500140632"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Substrata",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-04062026-3ed9ddbd-024e-41bf-aa5f-af509943fc8f.html",
+    "date": "04 Giu 2026",
+    "tracks": [
+      {
+        "title": "Wa",
+        "artist": "SANDY CHAMOUN",
+        "albumDetails": ", da \"Sawt El Doumouh\" - Ruptured",
+        "key": "sandy_chamoun___wa",
+        "genresRaw": ["world", "folk", "experimental"],
+        "tidalId": "517577847"
+      },
+      {
+        "title": "Heyran, \"Un Sequestro Lungo 10.000 Anni\"",
+        "artist": "BLAK SAAGAN",
+        "albumDetails": "- Maple Death Records",
+        "key": "blak_saagan___heyran_\"un_sequestro_lungo_10000_anni\"",
+        "genresRaw": ["experimental", "post-punk", "electronic"]
+      },
+      {
+        "title": "Rop Koh",
+        "artist": "MARISA ANDERSON",
+        "albumDetails": ", da \"The Anthology Of UnAmerican Folk Music (Vol. 1)\" - Thrill Jockey",
+        "key": "marisa_anderson___rop_koh",
+        "genresRaw": ["instrumental", "folk", "world"],
+        "tidalId": "495405697"
+      },
+      {
+        "title": "Elsewhere (feat. Meshell Ndegeocello & Georgia Anne Muldrow)",
+        "artist": "AJA MONET",
+        "albumDetails": ", da \"The Color Of Rain\" - Drink Sum Wtr",
+        "key": "aja_monet___elsewhere_feat_meshell_ndegeocello_georgia_anne_muldrow",
+        "genresRaw": ["soul", "r&b"],
+        "tidalId": "490308443"
+      },
+      {
+        "title": "20th Anniversary, 19",
+        "artist": "DANCITY FESTIVAL",
+        "albumDetails": "- 21 giugno 2026, Foligno (PG)",
+        "key": "dancity_festival___20th_anniversary_19",
+        "genresRaw": ["techno", "electronic", "downtempo"]
+      },
+      {
+        "title": "Midnight",
+        "artist": "THE BUG VS GHOST DUBS",
+        "albumDetails": ", da \"Implosion\" - Pressure",
+        "key": "the_bug_vs_ghost_dubs___midnight",
+        "genresRaw": ["dub", "techno", "drone"]
+      },
+      {
+        "title": "Earth Orbit One: Little Fluffy Clouds, da \"The Orb's Adventures Beyond The Ultraworld\"",
+        "artist": "THE ORB",
+        "albumDetails": "– Big Life",
+        "key": "the_orb___earth_orbit_one_little_fluffy_clouds_da_\"the_orb's_adventures_beyond_the_ultraworld\"",
+        "genresRaw": ["ambient", "electronic", "downtempo"],
+        "tidalId": "3872597"
+      },
+      {
+        "title": "We Are Two, Maybe More",
+        "artist": "HEIMITO KÜNST",
+        "albumDetails": ", da \"Vol. 3\" - Dissipatio",
+        "key": "heimito_kunst___we_are_two_maybe_more",
+        "genresRaw": ["experimental", "electronic", "ambient"]
+      },
+      {
+        "title": "Put The Mask And Go Out",
+        "artist": "HEIMITO KÜNST",
+        "albumDetails": ", da \"Vol. 3\" - Dissipatio",
+        "key": "heimito_kunst___put_the_mask_and_go_out",
+        "genresRaw": ["lo-fi", "experimental", "drone"]
+      },
+      {
+        "title": "Substrata",
+        "artist": "LARSEN",
+        "albumDetails": ", da \"Decalcomania\" - Erototox Decodings 2026",
+        "key": "larsen___substrata",
+        "genresRaw": ["ambient", "minimal"]
+      },
+      {
+        "title": "ˈŋkan.tu",
+        "artist": "SIMONE FARACI",
+        "albumDetails": ", da \"[ˈfʊ.mu]\" - Slowth Records 2026",
+        "key": "simone_faraci___ˈŋkantu",
+        "genresRaw": ["electronic", "experimental", "noise"],
+        "tidalId": "508065585"
+      },
+      {
+        "title": "Woe to the Ear, da \"May The Devil's Ear Be Deaf\"",
+        "artist": "ZÖJ",
+        "albumDetails": "- Parenthèses Records",
+        "key": "zoj___woe_to_the_ear_da_\"may_the_devil's_ear_be_deaf\"",
+        "genresRaw": ["experimental", "folk", "world"],
+        "tidalId": "528190304"
+      },
+      {
+        "title": "Lagoon",
+        "artist": "FLOCKS",
+        "albumDetails": ", da \"Lagoon\" - Karlrecords",
+        "key": "flocks___lagoon",
+        "genresRaw": ["drone", "experimental", "ambient"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Fight The Fire",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-03062026-3d577360-9373-4ade-981b-1461237ed70c.html",
+    "date": "03 Giu 2026",
+    "tracks": [
+      {
+        "title": "Il labirinto del nulla ft. Babau",
+        "artist": "HEITH & TARAWANGSAWELAS",
+        "albumDetails": ", da \"Duori\" - Stroom",
+        "key": "heith_tarawangsawelas___il_labirinto_del_nulla_ft_babau",
+        "genresRaw": ["electronic", "ambient", "world"],
+        "tidalId": "505927843"
+      },
+      {
+        "title": "Prophecy At 1420 MHz",
+        "artist": "BOARDS OF CANADA",
+        "albumDetails": ", da \"Inferno\" - Warp Records",
+        "key": "boards_of_canada___prophecy_at_1420_mhz",
+        "genresRaw": ["electronic", "ambient", "experimental"],
+        "tidalId": "528351288"
+      },
+      {
+        "title": "Ward W Shok",
+        "artist": "SANDY CHAMOUN",
+        "albumDetails": ", da \"Sawt El Doumouh\" - Ruptured",
+        "key": "sandy_chamoun___ward_w_shok",
+        "genresRaw": ["electronic", "folk", "world"],
+        "tidalId": "517578078"
+      },
+      {
+        "title": "Like Swimwear (part two)",
+        "artist": "JEFF PARKER ETA IVtet",
+        "albumDetails": ", da \"Happy Today\" - International Anthem Recording Company",
+        "key": "jeff_parker_eta_ivtet___like_swimwear_part_two",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "503917533"
+      },
+      {
+        "title": "Watiyo",
+        "artist": "DON BRUCE",
+        "albumDetails": ", da \"Fight The Fire: Digital Reggae, Conscious Roots and Dub in Nigeria 1986-91\" - Soundway Records",
+        "key": "don_bruce___watiyo",
+        "genresRaw": ["reggae", "dub"],
+        "tidalId": "490746025"
+      },
+      {
+        "title": "Abandon Nation",
+        "artist": "BOB DAZZY",
+        "albumDetails": ", da \"Fight The Fire: Digital Reggae, Conscious Roots and Dub in Nigeria 1986-91\" - Soundway Records",
+        "key": "bob_dazzy___abandon_nation",
+        "genresRaw": ["reggae", "roots reggae"],
+        "tidalId": "490746037"
+      },
+      {
+        "title": "Your Bird & I",
+        "artist": "ANTHONY JOSEPH",
+        "albumDetails": ", da \"The Ark\" - Heavenly Sweetness",
+        "key": "anthony_joseph___your_bird_i",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "503792445"
+      },
+      {
+        "title": "James",
+        "artist": "ANTHONY JOSEPH",
+        "albumDetails": ", da \"The Ark\" - Heavenly Sweetness",
+        "key": "anthony_joseph___james",
+        "genresRaw": ["jazz", "spoken word", "experimental"],
+        "tidalId": "503792439"
+      },
+      {
+        "title": "Glorious Mahalia: III. Are You Being Treated Right",
+        "artist": "KRONOS QUARTET",
+        "albumDetails": ", da \"Glorious Mahalia\" - Smithsonian Folkways Recordings",
+        "key": "kronos_quartet___glorious_mahalia_iii_are_you_being_treated_right",
+        "genresRaw": ["classical", "contemporary"],
+        "tidalId": "483119126"
+      },
+      {
+        "title": "Peace Be Till: I. Doors Of Justice / Black Thread",
+        "artist": "KRONOS QUARTET",
+        "albumDetails": ", da \"Glorious Mahalia\" - Smithsonian Folkways Recordings",
+        "key": "kronos_quartet___peace_be_till_i_doors_of_justice_black_thread",
+        "genresRaw": ["contemporary classical", "experimental", "instrumental"],
+        "tidalId": "483119130"
+      },
+      {
+        "title": "Silver Plane, Now Boarding",
+        "artist": "PAN•AMERICAN",
+        "albumDetails": ", da \"Fly The Ocean In A Silver Plane\" – Kranky",
+        "key": "pan•american___silver_plane_now_boarding",
+        "genresRaw": ["electronic", "ambient"],
+        "tidalId": "494042952"
+      },
+      {
+        "title": "Foolish Flame",
+        "artist": "ELINA DUNI / ROB LUFT",
+        "albumDetails": ", da \"Reaching For The Moon\" – ECM Records",
+        "key": "elina_duni_rob_luft___foolish_flame",
+        "genresRaw": ["jazz", "acoustic"],
+        "tidalId": "516643599"
+      },
+      {
+        "title": "Patternmaster",
+        "artist": "MARK TURNER",
+        "albumDetails": ", da \"Patternmaster\" – ECM Records",
+        "key": "mark_turner___patternmaster",
+        "genresRaw": ["jazz", "post-rock"],
+        "tidalId": "504695584"
+      },
+      {
+        "title": "New Energy",
+        "artist": "MIROSLAV VITOUS",
+        "albumDetails": ", da \"Mountain Call\" – ECM Records",
+        "key": "miroslav_vitous___new_energy",
+        "genresRaw": ["jazz", "fusion", "instrumental"],
+        "tidalId": "508679999"
+      },
+      {
+        "title": "Tribal Dance",
+        "artist": "MIROSLAV VITOUS",
+        "albumDetails": ", da \"Mountain Call\" – ECM Records",
+        "key": "miroslav_vitous___tribal_dance",
+        "genresRaw": ["jazz", "funk"],
+        "tidalId": "508680007"
+      },
+      {
+        "title": "Rhapsody: In You",
+        "artist": "MIROSLAV VITOUS",
+        "albumDetails": ", da \"Mountain Call\" – ECM Recors",
+        "key": "miroslav_vitous___rhapsody_in_you",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "508680021"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Nagalite",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-02062026-ca12359f-bc81-4abe-93d8-91f7e925730f.html",
+    "date": "02 Giu 2026",
+    "tracks": [
+      {
+        "title": "Hollyweird",
+        "artist": "AJA MONET",
+        "albumDetails": ", da \"The Color Of Rain\" - Drink Sum Wtr",
+        "key": "aja_monet___hollyweird",
+        "genresRaw": ["hip-hop", "soul"],
+        "tidalId": "490308445"
+      },
+      {
+        "title": "Hamd",
+        "artist": "MARISA ANDERSON",
+        "albumDetails": ", da \"The Anthology Of UnAmerican Folk Music (Vol. 1)\" - Thrill Jockey",
+        "key": "marisa_anderson___hamd",
+        "genresRaw": ["instrumental", "experimental"],
+        "tidalId": "495405698"
+      },
+      {
+        "title": "Eillal (ft. Ibrahim Ag Alhabib)",
+        "artist": "TAMIKREST",
+        "albumDetails": ", da \"Assikel\" - Glitterbeat",
+        "key": "tamikrest___eillal_ft_ibrahim_ag_alhabib",
+        "genresRaw": ["world", "rock"],
+        "tidalId": "496598189"
+      },
+      {
+        "title": "Benzocrazia",
+        "artist": "BLAK SAAGAN",
+        "albumDetails": ", da \"Un Sequestro Lungo 10.000 Anni\" - Maple Death Records",
+        "key": "blak_saagan___benzocrazia",
+        "genresRaw": ["coldwave", "industrial", "ambient"],
+        "tidalId": "511357254"
+      },
+      {
+        "title": "Nel ventre",
+        "artist": "BRIGAN FEAT. TORGEIR VASSVIK",
+        "albumDetails": ", da \"Voci di mare e di vento\" – Liburia Records",
+        "key": "brigan_feat_torgeir_vassvik___nel_ventre",
+        "genresRaw": ["post-rock", "instrumental"],
+        "tidalId": "509532126"
+      },
+      {
+        "title": "La bufera",
+        "artist": "BRIGAN FEAT. TORGEIR VASSVIK",
+        "albumDetails": ", da \"Voci di mare e di vento\" – Liburia Records",
+        "key": "brigan_feat_torgeir_vassvik___la_bufera",
+        "genresRaw": ["experimental", "world", "folk"],
+        "tidalId": "509532127"
+      },
+      {
+        "title": "Exuvia",
+        "artist": "LILI REFRAIN",
+        "albumDetails": ", da \"Nagalite\" - Subsound Records",
+        "key": "lili_refrain___exuvia",
+        "genresRaw": ["ambient", "experimental", "electroacoustic"],
+        "tidalId": "494757498"
+      },
+      {
+        "title": "Nagal",
+        "artist": "LILI REFRAIN",
+        "albumDetails": ", da \"Nagalite\" - Subsound Records",
+        "key": "lili_refrain___nagal",
+        "genresRaw": ["drone", "world", "experimental"],
+        "tidalId": "494757500"
+      },
+      {
+        "title": "Blame",
+        "artist": "DESIGN",
+        "albumDetails": ", da \"Faithless\" - Overdub Recordings",
+        "key": "design___blame",
+        "genresRaw": [],
+        "tidalId": "414573913"
+      },
+      {
+        "title": "Runnin' Shadows",
+        "artist": "SHINY DUST",
+        "albumDetails": ", da \"Hanbleceya\" – Soundinside Records",
+        "key": "shiny_dust___runnin'_shadows",
+        "genresRaw": ["rock", "alt-rock"]
+      },
+      {
+        "title": "Golden Life",
+        "artist": "SHINY DUST",
+        "albumDetails": ", da \"Hanbleceya\" – Soundinside Records",
+        "key": "shiny_dust___golden_life",
+        "genresRaw": ["pop", "rock"],
+        "tidalId": "464693436"
+      },
+      {
+        "title": "Kosmodrom I",
+        "artist": "COBOL PONGIDE",
+        "albumDetails": ", da \"Kosmodrom\" - Dischi Durevoli Records",
+        "key": "cobol_pongide___kosmodrom_i",
+        "genresRaw": ["electronic", "post-punk", "experimental"],
+        "tidalId": "450420851"
+      },
+      {
+        "title": "Saluti dal Cambriano",
+        "artist": "COBOL PONGIDE",
+        "albumDetails": ", da \"Kosmodrom\" - Dischi Durevoli Records",
+        "key": "cobol_pongide___saluti_dal_cambriano",
+        "genresRaw": ["electronic", "experimental", "pop"],
+        "tidalId": "450420853"
+      },
+      {
+        "title": "Brother Fox, da \"Chansons d'Automne\"",
+        "artist": "JOHN GREAVES",
+        "albumDetails": "– Dark Companion Records",
+        "key": "john_greaves___brother_fox_da_\"chansons_d'automne\"",
+        "genresRaw": ["chamber pop", "experimental"],
+        "tidalId": "503568331"
+      },
+      {
+        "title": "In Wanton Arethusa's Azur'd Armes",
+        "artist": "MALESH",
+        "albumDetails": ", da \"To The Cloud Cuckoo Land Of Color Wheels\" – Unifaun Productions",
+        "key": "malesh___in_wanton_arethusa's_azur'd_armes",
+        "genresRaw": ["experimental", "psychedelic", "instrumental"],
+        "tidalId": "509449384"
+      },
+      {
+        "title": "Tarahumara/Rere Beteame",
+        "artist": "MALESH",
+        "albumDetails": ", da \"To The Cloud Cuckoo Land Of Color Wheels\" – Unifaun Productions",
+        "key": "malesh___tarahumararere_beteame",
+        "genresRaw": ["folk", "psychedelic", "experimental"],
+        "tidalId": "509449389"
+      },
+      {
+        "title": "Au lac de tes yeux très profonds, da \"Chansons d'Automne\"",
+        "artist": "JOHN GREAVES",
+        "albumDetails": "– Dark Companion Records",
+        "key": "john_greaves___au_lac_de_tes_yeux_tres_profonds_da_\"chansons_d'automne\"",
+        "genresRaw": ["singer-songwriter"],
+        "tidalId": "249306567"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Newport Jazz Festival in Europe, Bruxelles, 1971: Miles Davis Septet",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-01062026-fd37911e-48d7-40fa-b20b-6abe118f0b72.html",
+    "date": "01 Giu 2026",
+    "tracks": [
+      {
+        "title": "Isom Dart Was",
+        "artist": "HARRIET TUBMAN & GEORGIA ANNE MULDROW",
+        "albumDetails": ", da \"Electrical Field Of Love\" – Pi Recordings",
+        "key": "harriet_tubman_georgia_anne_muldrow___isom_dart_was",
+        "genresRaw": ["hip-hop", "experimental"],
+        "tidalId": "493668791"
+      },
+      {
+        "title": "Registrato al Palais des Beaux",
+        "artist": "MILES DAVIS SEPTET",
+        "albumDetails": "-Arts, Bruxelles, 26 ottobre 1971",
+        "key": "miles_davis_septet___registrato_al_palais_des_beaux",
+        "genresRaw": ["jazz", "instrumental"]
+      },
+      {
+        "title": "Directions",
+        "artist": "MILES DAVIS SEPTET",
+        "albumDetails": "",
+        "key": "miles_davis_septet___directions",
+        "genresRaw": ["jazz", "post-bop", "instrumental"],
+        "tidalId": "1852253"
+      },
+      {
+        "title": "Honky Tonk",
+        "artist": "MILES DAVIS SEPTET",
+        "albumDetails": "",
+        "key": "miles_davis_septet___honky_tonk",
+        "genresRaw": ["jazz", "funk"],
+        "tidalId": "1766895"
+      },
+      {
+        "title": "What I Say",
+        "artist": "MILES DAVIS SEPTET",
+        "albumDetails": "",
+        "key": "miles_davis_septet___what_i_say",
+        "genresRaw": ["jazz", "bebop"],
+        "tidalId": "45351115"
+      },
+      {
+        "title": "Sanctuary",
+        "artist": "MILES DAVIS SEPTET",
+        "albumDetails": "",
+        "key": "miles_davis_septet___sanctuary",
+        "genresRaw": ["jazz", "post-bop"]
+      },
+      {
+        "title": "It's About That Time",
+        "artist": "MILES DAVIS SEPTET",
+        "albumDetails": "",
+        "key": "miles_davis_septet___it's_about_that_time",
+        "genresRaw": ["jazz", "funk", "instrumental"]
+      },
+      {
+        "title": "Yesternow",
+        "artist": "MILES DAVIS SEPTET",
+        "albumDetails": "",
+        "key": "miles_davis_septet___yesternow",
+        "genresRaw": ["jazz", "post-bop"],
+        "tidalId": "1766893"
+      },
+      {
+        "title": "Funky Tonk / Sanctuary",
+        "artist": "MILES DAVIS SEPTET",
+        "albumDetails": "",
+        "key": "miles_davis_septet___funky_tonk_sanctuary",
+        "genresRaw": ["jazz", "funk"],
+        "tidalId": "45351119"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Sketches Of Miles",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/BATTITI-bdf743d0-6f07-4621-af33-c36f7b131c8a.html",
+    "date": "31 Mag 2026",
+    "tracks": [
+      {
+        "title": "Ah-Leu-Cha",
+        "artist": "MILES DAVIS",
+        "albumDetails": ", da \"At Newport 1955-1975 (The Bootleg Series Vol. 4)\" – Columbia",
+        "key": "miles_davis___ahleucha",
+        "genresRaw": ["jazz", "bebop"],
+        "tidalId": "1318687"
+      },
+      {
+        "title": "Springsville",
+        "artist": "MILES DAVIS + 19 ORCHESTRA UNDER DIRECTION OF GIL EVANS",
+        "albumDetails": ", da \"Miles Ahead\" – Columbia",
+        "key": "miles_davis_+_19_orchestra_under_direction_of_gil_evans___springsville",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "1838335"
+      },
+      {
+        "title": "Miles Ahead",
+        "artist": "MILES DAVIS + 19 ORCHESTRA UNDER DIRECTION OF GIL EVANS",
+        "albumDetails": ", da \"Miles Ahead\" – Columbia",
+        "key": "miles_davis_+_19_orchestra_under_direction_of_gil_evans___miles_ahead",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "1218898"
+      },
+      {
+        "title": "Frelon Brun",
+        "artist": "MILES DAVIS",
+        "albumDetails": ", da \"Filles De Kilimanjaro\" – Columbia",
+        "key": "miles_davis___frelon_brun",
+        "genresRaw": ["jazz", "modal"],
+        "tidalId": "26728502"
+      },
+      {
+        "title": "Stella By Starlight",
+        "artist": "MILES DAVIS",
+        "albumDetails": ", da \"The Complete Concert 1964 - My Funny Valentine + Four & More\" – Columbia",
+        "key": "miles_davis___stella_by_starlight",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "2178503"
+      },
+      {
+        "title": "Black Satin",
+        "artist": "MILES DAVIS",
+        "albumDetails": ", da \"On The Corner\" – Columbia",
+        "key": "miles_davis___black_satin",
+        "genresRaw": ["jazz", "modal"],
+        "tidalId": "1120544"
+      },
+      {
+        "title": "Right Off",
+        "artist": "MILES DAVIS",
+        "albumDetails": ", da \"A Tribute To Jack Johnson\" – Columbia",
+        "key": "miles_davis___right_off",
+        "genresRaw": ["funk", "jazz", "rock"],
+        "tidalId": "1766890"
+      },
+      {
+        "title": "Nuit Sur Les Champs",
+        "artist": "MILES DAVIS",
+        "albumDetails": "-Élysées (Take 2), da \"Ascenseur Pour L'Échafaud (Lift To The Scaffold)\" – Fontana",
+        "key": "miles_davis___nuit_sur_les_champs",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "14190986"
+      },
+      {
+        "title": "In A Silent Way / It's About That Time",
+        "artist": "MILES DAVIS",
+        "albumDetails": ", da \"In A Silent Way\" – Columbia",
+        "key": "miles_davis___in_a_silent_way_it's_about_that_time",
+        "genresRaw": ["jazz", "electronic", "ambient"],
+        "tidalId": "26728558"
+      },
+      {
+        "title": "Fat Time",
+        "artist": "MILES DAVIS",
+        "albumDetails": ", da \"The Man With The Horn\" – CBS",
+        "key": "miles_davis___fat_time",
+        "genresRaw": ["jazz", "funk"],
+        "tidalId": "1318720"
+      },
+      {
+        "title": "The Buzzard Song",
+        "artist": "MILES DAVIS",
+        "albumDetails": ", da \"Porgy And Bess\" – CBS",
+        "key": "miles_davis___the_buzzard_song",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "117092857"
+      },
+      {
+        "title": "Blue In Green",
+        "artist": "MILES DAVIS",
+        "albumDetails": ", da \"Kind Of Blue\" – CBS",
+        "key": "miles_davis___blue_in_green",
+        "genresRaw": ["jazz", "modal jazz", "instrumental"],
+        "tidalId": "1320585"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "King Tubby At The Controls 1973 / 1976",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/BATTITI-e30635ae-caf9-4775-a74f-b382ae332636.html",
+    "date": "30 Mag 2026",
+    "tracks": [
+      {
+        "title": "Natural Vibe",
+        "artist": "FOREIGN DUBBERS FEAT. SOLE",
+        "albumDetails": "– 7\" Culture Dub Records",
+        "key": "foreign_dubbers_feat_sole___natural_vibe",
+        "genresRaw": ["dub", "reggae", "electronic"]
+      },
+      {
+        "title": "Full Dose Of Dub",
+        "artist": "HARRY MUDIE MEETS KING TUBBY",
+        "albumDetails": ", da \"In Dub Conference Volume One\" - Moodisc Record",
+        "key": "harry_mudie_meets_king_tubby___full_dose_of_dub",
+        "genresRaw": ["dub", "reggae"],
+        "tidalId": "257995617"
+      },
+      {
+        "title": "Heavy Duty Dub",
+        "artist": "HARRY MUDIE MEETS KING TUBBY",
+        "albumDetails": ", da \"In Dub Conference Volume One\" - Moodisc Record",
+        "key": "harry_mudie_meets_king_tubby___heavy_duty_dub",
+        "genresRaw": ["dub", "reggae", "instrumental"],
+        "tidalId": "257995624"
+      },
+      {
+        "title": "Serenade Talk",
+        "artist": "MABRAK",
+        "albumDetails": ", da \"Drum Talk\" - JigSaw Music",
+        "key": "mabrak___serenade_talk",
+        "genresRaw": ["dub", "reggae"]
+      },
+      {
+        "title": "Ital Talk",
+        "artist": "MABRAK",
+        "albumDetails": ", da \"Drum Talk\" - JigSaw Music",
+        "key": "mabrak___ital_talk",
+        "genresRaw": ["reggae", "dub"]
+      },
+      {
+        "title": "Herbs Of Dub",
+        "artist": "JAH LLOYD",
+        "albumDetails": ", da \"Herbs Of Dub\" - Teem",
+        "key": "jah_lloyd___herbs_of_dub",
+        "genresRaw": ["dub", "reggae"]
+      },
+      {
+        "title": "Them Dub",
+        "artist": "JAH LLOYD",
+        "albumDetails": ", da \"Herbs Of Dub\" - Teem",
+        "key": "jah_lloyd___them_dub",
+        "genresRaw": ["dub", "reggae"],
+        "tidalId": "31064156"
+      },
+      {
+        "title": "Dull Razor",
+        "artist": "JAH LLOYD",
+        "albumDetails": ", da \"Herbs Of Dub\" - Teem",
+        "key": "jah_lloyd___dull_razor",
+        "genresRaw": ["dub"]
+      },
+      {
+        "title": "African Roots",
+        "artist": "KING TUBBY MEETS THE UPSETTER",
+        "albumDetails": ", da \"At The Grass Roots Of Dub\" – VP Records",
+        "key": "king_tubby_meets_the_upsetter___african_roots",
+        "genresRaw": ["dub", "reggae", "instrumental"],
+        "tidalId": "10168385"
+      },
+      {
+        "title": "Live After You (Dub)",
+        "artist": "KING TUBBYS",
+        "albumDetails": "– 10\" Observer Gold",
+        "key": "king_tubbys___live_after_you_dub",
+        "genresRaw": ["dub", "reggae", "instrumental"]
+      },
+      {
+        "title": "Nyah Rock (Version)",
+        "artist": "KING TUBBY",
+        "albumDetails": "- 7\" Pressure Sounds",
+        "key": "king_tubby___nyah_rock_version",
+        "genresRaw": ["dub", "reggae", "instrumental"]
+      },
+      {
+        "title": "Noisy Place",
+        "artist": "I ROY",
+        "albumDetails": "– 7\" Andy's 1974",
+        "key": "i_roy___noisy_place",
+        "genresRaw": ["reggae", "dub"],
+        "tidalId": "99285996"
+      },
+      {
+        "title": "A Quiet Place Dub",
+        "artist": "KING TUBBY",
+        "albumDetails": "- 10\" Trojan Records",
+        "key": "king_tubby___a_quiet_place_dub",
+        "genresRaw": ["dub", "reggae", "instrumental"]
+      },
+      {
+        "title": "The Dub Station",
+        "artist": "KING TUBBY & PRINCE PHILIP",
+        "albumDetails": "– 12\" Shella Records",
+        "key": "king_tubby_prince_philip___the_dub_station",
+        "genresRaw": ["dub", "reggae"],
+        "tidalId": "104625225"
+      },
+      {
+        "title": "Press Along (Dub)",
+        "artist": "KING TUBBY",
+        "albumDetails": "– 7\" Striker Lee",
+        "key": "king_tubby___press_along_dub",
+        "genresRaw": ["dub", "reggae", "electronic"]
+      },
+      {
+        "title": "A Big Version",
+        "artist": "THE AGGROVATORS",
+        "albumDetails": "– 7\" Hot Stuff",
+        "key": "the_aggrovators___a_big_version",
+        "genresRaw": ["dub", "reggae"],
+        "tidalId": "12199151"
+      },
+      {
+        "title": "The Big Rip Off",
+        "artist": "AUGUSTS PABLO & KING TUBBY",
+        "albumDetails": "– 7\" Trojan Records",
+        "key": "augusts_pablo_king_tubby___the_big_rip_off",
+        "genresRaw": ["dub", "reggae"],
+        "tidalId": "7130392"
+      },
+      {
+        "title": "Dub Hill",
+        "artist": "ROCKERS ALL STAR",
+        "albumDetails": "– 7\" Rockers 1974",
+        "key": "rockers_all_star___dub_hill",
+        "genresRaw": ["dub", "reggae"]
+      },
+      {
+        "title": "Congo Dread Chapter 1 12\" Gemini",
+        "artist": "KING TUBBY & BILL HUTCHINSON ALL STAR",
+        "albumDetails": "",
+        "key": "king_tubby_bill_hutchinson_all_star___congo_dread_chapter_1_12\"_gemini",
+        "genresRaw": ["dub", "reggae"]
+      },
+      {
+        "title": "Dub Of Jerusalem",
+        "artist": "YABBY YOU MEETS KING TUBBY",
+        "albumDetails": ", da \"Walls Of Jerusalem\" - Pressure Sounds",
+        "key": "yabby_you_meets_king_tubby___dub_of_jerusalem",
+        "genresRaw": ["dub", "reggae"],
+        "tidalId": "107496917"
+      },
+      {
+        "title": "Super Dub",
+        "artist": "LLOYD CLARKE",
+        "albumDetails": "– 7\" Superstar",
+        "key": "lloyd_clarke___super_dub",
+        "genresRaw": ["reggae", "dub"]
+      },
+      {
+        "title": "Clearly State Dub",
+        "artist": "LLOYD SLIM & KING TUBBY",
+        "albumDetails": "– 7\" Record Smith Production",
+        "key": "lloyd_slim_king_tubby___clearly_state_dub",
+        "genresRaw": ["dub", "reggae"]
+      },
+      {
+        "title": "Invasion Dub",
+        "artist": "KING TUBBY & THE AGGRAVATORS",
+        "albumDetails": "– 7\" Jackpot",
+        "key": "king_tubby_the_aggravators___invasion_dub",
+        "genresRaw": ["dub", "reggae", "instrumental"],
+        "tidalId": "333180325"
+      },
+      {
+        "title": "Satta Dread (Version)",
+        "artist": "WAYNE JARRETT",
+        "albumDetails": "– 7\" Micron Music",
+        "key": "wayne_jarrett___satta_dread_version",
+        "genresRaw": ["reggae", "dub"],
+        "tidalId": "10133466"
+      },
+      {
+        "title": "Dub Universal",
+        "artist": "KING TUBBYSTYLE",
+        "albumDetails": "- 7\" South East Music",
+        "key": "king_tubbystyle___dub_universal",
+        "genresRaw": ["dub", "reggae"],
+        "tidalId": "25298777"
+      },
+      {
+        "title": "Bowla Skank",
+        "artist": "GLEN BROWN MUSIC",
+        "albumDetails": "- 7\" Pantomine",
+        "key": "glen_brown_music___bowla_skank",
+        "genresRaw": ["reggae", "dub"]
+      },
+      {
+        "title": "World Dub Conference",
+        "artist": "HARRY MUDIE MEETS KING TUBBY",
+        "albumDetails": ", da \"In Dub Conference Vol.2\" - Moodisc",
+        "key": "harry_mudie_meets_king_tubby___world_dub_conference",
+        "genresRaw": ["dub", "reggae"],
+        "tidalId": "257983657"
+      },
+      {
+        "title": "Super Cool",
+        "artist": "BONG HERMAN & KING TUBBY",
+        "albumDetails": "– 12\" Sounds by Monk",
+        "key": "bong_herman_king_tubby___super_cool",
+        "genresRaw": ["dub", "reggae"]
+      },
+      {
+        "title": "Underground Kingdom Mix Dub 2",
+        "artist": "FLOWBEEZ",
+        "albumDetails": "– 7\" Culture Dub Records",
+        "key": "flowbeez___underground_kingdom_mix_dub_2",
+        "genresRaw": ["dub"],
+        "tidalId": "520501569"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Cities And Memory",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/05/Battiti-del-29052026-36dbd416-f7f9-4664-a849-fe01efb8ec2e.html",
+    "date": "29 Mag 2026",
+    "tracks": [
+      {
+        "title": "Najet",
+        "artist": "TAROUG",
+        "albumDetails": ", da \"Chott\" – Denovali Records",
+        "key": "taroug___najet",
+        "genresRaw": ["electronic", "dub", "world"],
+        "tidalId": "497360670"
+      },
+      {
+        "title": "The Two Brothers",
+        "artist": "MICK HARRIS / MARTYN BATES",
+        "albumDetails": ", da \"Murder Ballads (Incest Songs)\" - Sub Rosa",
+        "key": "mick_harris_martyn_bates___the_two_brothers",
+        "genresRaw": ["ambient", "experimental", "drone"]
+      },
+      {
+        "title": "Sebaya",
+        "artist": "KHALAB & BABA SISSOKO",
+        "albumDetails": ", da \"Foli Bah\" - Hyperjazz Records",
+        "key": "khalab_baba_sissoko___sebaya",
+        "genresRaw": ["world", "instrumental"],
+        "tidalId": "520366805"
+      },
+      {
+        "title": "Days And Nights",
+        "artist": "FRENCH TV",
+        "albumDetails": ", da \"The Spanish Caper\" – Cuneiform Records",
+        "key": "french_tv___days_and_nights",
+        "genresRaw": ["post-punk", "new wave"]
+      },
+      {
+        "title": "Melegnano, 29",
+        "artist": "ZUMA",
+        "albumDetails": "-31 maggio 2026",
+        "key": "zuma___melegnano_29",
+        "genresRaw": []
+      },
+      {
+        "title": "Friuli Venezia Giulia, 30 maggio & 1 giugno 2026",
+        "artist": "LIVE! Musiche di Sconfine",
+        "albumDetails": "",
+        "key": "live_musiche_di_sconfine___friuli_venezia_giulia_30_maggio_1_giugno_2026",
+        "genresRaw": ["jazz", "experimental", "folk"]
+      },
+      {
+        "title": "Salerno & Roma, 30 & 31 maggio 2026",
+        "artist": "A SAD SONG FOR A",
+        "albumDetails": "",
+        "key": "a_sad_song_for_a___salerno_roma_30_31_maggio_2026",
+        "genresRaw": []
+      },
+      {
+        "title": "Hawking Bird",
+        "artist": "SVITLANA NIANIO",
+        "albumDetails": ", da \"Kytytsi\" - Koka Records",
+        "key": "svitlana_nianio___hawking_bird",
+        "genresRaw": ["folk", "experimental"],
+        "tidalId": "425002487"
+      },
+      {
+        "title": "Margins",
+        "artist": "FABIO ORSI",
+        "albumDetails": ", da \"In The Quiet Of A Short Winter, Every Hidden Thing Finds A Voice Sharper Than Memory\" - 13",
+        "key": "fabio_orsi___margins",
+        "genresRaw": ["ambient", "drone"]
+      },
+      {
+        "title": "Faint Cricket Chorus At Night, Ghana",
+        "artist": "SAMUEL KUDJODZI",
+        "albumDetails": "- Binaural, Ghana Koforidua",
+        "key": "samuel_kudjodzi___faint_cricket_chorus_at_night_ghana",
+        "genresRaw": ["ambient", "electroacoustic", "field recording"]
+      },
+      {
+        "title": "Faint Cricket Chorus At Night Memory Update Two, Ghana Koforidua 45, 1997.21.2.425_1",
+        "artist": "STUART FOWKES",
+        "albumDetails": "- Pitt Rivers Museum, University of Oxford",
+        "key": "stuart_fowkes___faint_cricket_chorus_at_night_memory_update_two_ghana_koforidua_45_19972124251",
+        "genresRaw": ["ambient", "electroacoustic", "experimental"]
+      },
+      {
+        "title": "Talea (Republic Of Congo)",
+        "artist": "SONIC INVESTIGATION UNIT",
+        "albumDetails": ", da \"A Century Of Sounds\" – Cities And Memory",
+        "key": "sonic_investigation_unit___talea_republic_of_congo",
+        "genresRaw": ["world", "experimental", "electroacoustic"]
+      },
+      {
+        "title": "Migration Soup Preparation, Slovenia Ljubljana",
+        "artist": "GORKEM OZDEMIR",
+        "albumDetails": "- Migration Sounds",
+        "key": "gorkem_ozdemir___migration_soup_preparation_slovenia_ljubljana",
+        "genresRaw": ["electroacoustic", "experimental"]
+      },
+      {
+        "title": "Slovenia Ljubljana Ocak",
+        "artist": "LAURA ROMERO",
+        "albumDetails": "- Migration Sounds",
+        "key": "laura_romero___slovenia_ljubljana_ocak",
+        "genresRaw": []
+      },
+      {
+        "title": "Polar Majestic Mammalia, Humpback whale remix",
+        "artist": "MR SAKITUMI",
+        "albumDetails": "- Polar Sounds",
+        "key": "mr_sakitumi___polar_majestic_mammalia_humpback_whale_remix",
+        "genresRaw": ["electroacoustic", "ambient", "experimental"]
+      },
+      {
+        "title": "Heritage Cristina Italiani Luca Romagnoli, 84, Italy Florence",
+        "artist": "LUCA ROMAGNOLI / CRISTINA ITALIANI",
+        "albumDetails": "- Sonic Heritage",
+        "key": "luca_romagnoli_cristina_italiani___heritage_cristina_italiani_luca_romagnoli_84_italy_florence",
+        "genresRaw": ["singer-songwriter", "folk"]
+      },
+      {
+        "title": "Heritage calcio storico Viva Florenza, Italy Florence",
+        "artist": "LUCA ROMAGNOLI / CRISTINA ITALIANI",
+        "albumDetails": "- Sonic Heritage",
+        "key": "luca_romagnoli_cristina_italiani___heritage_calcio_storico_viva_florenza_italy_florence",
+        "genresRaw": ["instrumental", "soundtrack"]
+      },
+      {
+        "title": "Yeyi (Central African Republic)",
+        "artist": "NEIL FOSTER",
+        "albumDetails": "- Cities and Memory",
+        "key": "neil_foster___yeyi_central_african_republic",
+        "genresRaw": ["world", "instrumental"]
+      },
+      {
+        "title": "We Sing Together (Central African Republic)",
+        "artist": "MICCA",
+        "albumDetails": ", da \"A Century Of Sounds\" – Cities And Memory",
+        "key": "micca___we_sing_together_central_african_republic",
+        "genresRaw": ["world", "folk", "instrumental"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Isole che Parlano 2025: Korhan Futaci Quartet",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-15062026-02bcebe6-dfea-4219-b24e-7b6ee839471f.html",
+    "date": "15 Giu 2026",
+    "tracks": [
+      {
+        "title": "Pus/improvisation",
+        "artist": "KORHAN FUTACI QUARTET",
+        "albumDetails": "",
+        "key": "korhan_futaci_quartet___pusimprovisation",
+        "genresRaw": ["jazz", "experimental", "psychedelic"],
+        "tidalId": "414343810"
+      },
+      {
+        "title": "Zaman",
+        "artist": "KORHAN FUTACI QUARTET",
+        "albumDetails": "",
+        "key": "korhan_futaci_quartet___zaman",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "414343807"
+      },
+      {
+        "title": "Nal",
+        "artist": "KORHAN FUTACI QUARTET",
+        "albumDetails": "",
+        "key": "korhan_futaci_quartet___nal",
+        "genresRaw": ["jazz", "experimental", "psychedelic"],
+        "tidalId": "414343804"
+      },
+      {
+        "title": "Bilmedigim ne cok sey var",
+        "artist": "KORHAN FUTACI QUARTET",
+        "albumDetails": "",
+        "key": "korhan_futaci_quartet___bilmedigim_ne_cok_sey_var",
+        "genresRaw": ["jazz", "world"],
+        "tidalId": "414343811"
+      },
+      {
+        "title": "Ada",
+        "artist": "KORHAN FUTACI QUARTET",
+        "albumDetails": "",
+        "key": "korhan_futaci_quartet___ada",
+        "genresRaw": ["jazz", "experimental"]
+      },
+      {
+        "title": "Aç Arslan",
+        "artist": "KORHAN FUTACI QUARTET",
+        "albumDetails": "",
+        "key": "korhan_futaci_quartet___ac_arslan",
+        "genresRaw": ["jazz", "psychedelic", "experimental"],
+        "tidalId": "480971359"
+      },
+      {
+        "title": "Ayi",
+        "artist": "KORHAN FUTACI QUARTET",
+        "albumDetails": "",
+        "key": "korhan_futaci_quartet___ayi",
+        "genresRaw": ["jazz", "psychedelic", "experimental"],
+        "tidalId": "163892935"
+      },
+      {
+        "title": "Nasil Geçti Habersiz",
+        "artist": "KORHAN FUTACI QUARTET",
+        "albumDetails": "",
+        "key": "korhan_futaci_quartet___nasil_gecti_habersiz",
+        "genresRaw": ["jazz", "instrumental"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "KHALAB & BABA SISSOKO - Live & Intervista",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-14062026-ca273478-21a1-4087-8224-f82877e744d6.html",
+    "date": "14 Giu 2026",
+    "tracks": [
+      {
+        "title": "Tata",
+        "artist": "KHALAB / BABA SISSOKO",
+        "albumDetails": ", da \"Khalab & Baba\" - Wonderwheel Recordings",
+        "key": "khalab_baba_sissoko___tata",
+        "genresRaw": ["electronic", "minimal", "afrobeat"],
+        "tidalId": "249029127"
+      },
+      {
+        "title": "Nimamasa",
+        "artist": "KHALAB & BABA SISSOKO",
+        "albumDetails": ", da \"Foli Bah\" - Hyperjazz Records",
+        "key": "khalab_baba_sissoko___nimamasa",
+        "genresRaw": ["world", "electronic"],
+        "tidalId": "520366804"
+      },
+      {
+        "title": "Denifurula (acoustic version)",
+        "artist": "KHALAB & BABA SISSOKO",
+        "albumDetails": "",
+        "key": "khalab_baba_sissoko___denifurula_acoustic_version",
+        "genresRaw": ["world", "acoustic"],
+        "tidalId": "520366803"
+      },
+      {
+        "title": "Denifurula",
+        "artist": "KHALAB & BABA SISSOKO",
+        "albumDetails": "",
+        "key": "khalab_baba_sissoko___denifurula",
+        "genresRaw": ["world", "instrumental"],
+        "tidalId": "520366803"
+      },
+      {
+        "title": "Hame",
+        "artist": "KHALAB & BABA SISSOKO",
+        "albumDetails": ", da \"Foli Bah\" - Hyperjazz Records",
+        "key": "khalab_baba_sissoko___hame",
+        "genresRaw": ["world", "electronic"],
+        "tidalId": "520366802"
+      },
+      {
+        "title": "No War",
+        "artist": "BABA SISSOKO & MEDITERRANEAN BLUES",
+        "albumDetails": ", da \"No War\" – Phonotype",
+        "key": "baba_sissoko_mediterranean_blues___no_war",
+        "genresRaw": ["blues", "world"],
+        "tidalId": "515627938"
+      },
+      {
+        "title": "Immigres",
+        "artist": "BABA SISSOKO & MEDITERRANEAN BLUES",
+        "albumDetails": ", da \"No War\" – Phonotype",
+        "key": "baba_sissoko_mediterranean_blues___immigres",
+        "genresRaw": ["blues", "world"],
+        "tidalId": "515627932"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Vibrisse #49",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-13062026-f77a5331-0760-45be-825d-c70514ffcc3d.html",
+    "date": "13 Giu 2026",
+    "tracks": [
+      {
+        "title": "Sun Gazers",
+        "artist": "THE VAMPIRES",
+        "albumDetails": ", da \"Nightjar\" - Earshift Music",
+        "key": "the_vampires___sun_gazers",
+        "genresRaw": ["jazz", "world"],
+        "tidalId": "257985021"
+      },
+      {
+        "title": "Plantasy",
+        "artist": "RESAVOIR",
+        "albumDetails": ", da \"Resavoir\" - International Anthem Recording Company",
+        "key": "resavoir___plantasy",
+        "genresRaw": ["jazz", "psychedelic"],
+        "tidalId": "184825682"
+      },
+      {
+        "title": "Gatas Extraordinárias",
+        "artist": "CÁSSIA ELLER",
+        "albumDetails": ", da \"Com Você... Meu Mundo Ficaria Completo\" - Universal Music",
+        "key": "cassia_eller___gatas_extraordinarias",
+        "genresRaw": ["mpb"],
+        "tidalId": "18419998"
+      },
+      {
+        "title": "Boca De Groselha",
+        "artist": "CURUMIN",
+        "albumDetails": ", da \"Boca\" - Autoproduzione",
+        "key": "curumin___boca_de_groselha",
+        "genresRaw": ["reggae", "mpb"],
+        "tidalId": "422371346"
+      },
+      {
+        "title": "Luta Por Mim",
+        "artist": "JUP DO BAIRRO",
+        "albumDetails": ", da \"Corpo Sem Juizo\" - Deck9 Records",
+        "key": "jup_do_bairro___luta_por_mim",
+        "genresRaw": ["hip-hop", "soul"],
+        "tidalId": "436499319"
+      },
+      {
+        "title": "When And While",
+        "artist": "ARCHIE MARSHALL & KING KRULE",
+        "albumDetails": ", da \"When And While\" - True Panther Sound",
+        "key": "archie_marshall_king_krule___when_and_while",
+        "genresRaw": ["post-punk", "experimental"]
+      },
+      {
+        "title": "Don't Mug Yourself, da \"Don't Mug Yourself\"",
+        "artist": "THE STREETS",
+        "albumDetails": "- Vice Records",
+        "key": "the_streets___don't_mug_yourself_da_\"don't_mug_yourself\"",
+        "genresRaw": ["hip-hop", "electronic"],
+        "tidalId": "204101"
+      },
+      {
+        "title": "Horse Dance",
+        "artist": "PADDY STEER",
+        "albumDetails": ", da \"Spoor\" - Madwaltz",
+        "key": "paddy_steer___horse_dance",
+        "genresRaw": ["experimental", "electronic", "instrumental"],
+        "tidalId": "391005736"
+      },
+      {
+        "title": "Malika",
+        "artist": "HIATUS KAIYOTE",
+        "albumDetails": ", da \"Tawk Tomahawk\" - Flying Buddha",
+        "key": "hiatus_kaiyote___malika",
+        "genresRaw": ["electronic", "soul"],
+        "tidalId": "300162167"
+      },
+      {
+        "title": "Nighttime In The Backyard",
+        "artist": "LUCAS SANTTANA/ARTO LINDSAY",
+        "albumDetails": ", da \"Sem Nostalgia\" - YB Music",
+        "key": "lucas_santtanaarto_lindsay___nighttime_in_the_backyard",
+        "genresRaw": ["mpb", "singer-songwriter"],
+        "tidalId": "283032087"
+      },
+      {
+        "title": "Estou Triste",
+        "artist": "CAETANO VELOSO",
+        "albumDetails": ", da \"Abraçaço\" - Universal Music",
+        "key": "caetano_veloso___estou_triste",
+        "genresRaw": ["mpb", "bossa nova"],
+        "tidalId": "18079542"
+      },
+      {
+        "title": "From The Earth/Soti Nan Tè A",
+        "artist": "CASSIE WATSON FRANCILLON/VAL JEANTY",
+        "albumDetails": ", da \"Kāfou\" - Autoproduzione",
+        "key": "cassie_watson_francillonval_jeanty___from_the_earthsoti_nan_te_a",
+        "genresRaw": ["world", "folk"],
+        "tidalId": "447145807"
+      },
+      {
+        "title": "Black Lexus",
+        "artist": "JOSEPH ARTHUR",
+        "albumDetails": ", da \"Nuclear Daydream\" - Lonely Astronaut",
+        "key": "joseph_arthur___black_lexus",
+        "genresRaw": ["rock", "singer-songwriter"],
+        "tidalId": "6160952"
+      },
+      {
+        "title": "In A Rut",
+        "artist": "LORAINE JAMES",
+        "albumDetails": ", da \"Detached From The Rest Of You\" - Hyperdub",
+        "key": "loraine_james___in_a_rut",
+        "genresRaw": ["electronic", "experimental", "ambient"],
+        "tidalId": "499491643"
+      },
+      {
+        "title": "Move Time",
+        "artist": "MJ COLE/JOHN GLACIER",
+        "albumDetails": ", da \"Move Time\" - 892 Recordings",
+        "key": "mj_colejohn_glacier___move_time",
+        "genresRaw": ["afrobeat", "house", "electronic"],
+        "tidalId": "506514817"
+      },
+      {
+        "title": "Ostentatious",
+        "artist": "MONTELL FISH/JOHN GLACIER",
+        "albumDetails": ", da \"Ostentatious\" - JCM",
+        "key": "montell_fishjohn_glacier___ostentatious",
+        "genresRaw": ["electronic", "dance"],
+        "tidalId": "511707195"
+      },
+      {
+        "title": "Kids In America",
+        "artist": "KIM WILDE",
+        "albumDetails": ", da \"Kids In America\" - RAK",
+        "key": "kim_wilde___kids_in_america",
+        "genresRaw": ["pop", "new wave"],
+        "tidalId": "375266009"
+      },
+      {
+        "title": "Supermatic",
+        "artist": "PADDY STEERS",
+        "albumDetails": ", da \"Spoor\" - Madwaltz",
+        "key": "paddy_steers___supermatic",
+        "genresRaw": ["experimental", "electronic"],
+        "tidalId": "391005739"
+      },
+      {
+        "title": "Azul Bebê",
+        "artist": "RUBEL",
+        "albumDetails": ", da \"Beleza. Mas Agora A Gente Faz O Que Com Isso?\" - Dorileo",
+        "key": "rubel___azul_bebe",
+        "genresRaw": ["bossa nova", "pop"],
+        "tidalId": "437304552"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Prismi",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-12062026-02256394-cf2c-40a2-9bae-946710b6c8f3.html",
+    "date": "12 Giu 2026",
+    "tracks": [
+      {
+        "title": "There's Love",
+        "artist": "LUCIE ANTUNES",
+        "albumDetails": ", da \"Silence\" - Bell",
+        "key": "lucie_antunes___there's_love",
+        "genresRaw": ["experimental", "electronic", "instrumental"],
+        "tidalId": "519871400"
+      },
+      {
+        "title": "Relaxation with Tanbur",
+        "artist": "DIONYSIOS TABAKIS",
+        "albumDetails": ", da \"Metal Paradise\" - Heat Crimes",
+        "key": "dionysios_tabakis___relaxation_with_tanbur",
+        "genresRaw": ["ambient", "drone", "instrumental"]
+      },
+      {
+        "title": "Chaos Pad",
+        "artist": "INGEBRIGT HÅKER FLATEN (EXIT) KNARR",
+        "albumDetails": ", da \"Fly\" - Sonic Transmmission Records",
+        "key": "ingebrigt_haker_flaten_exit_knarr___chaos_pad",
+        "genresRaw": ["jazz", "rock"],
+        "tidalId": "517561012"
+      },
+      {
+        "title": "Bara",
+        "artist": "ODD OKODDO/OGOYA NENGO",
+        "albumDetails": ", da \"Palagoma\" - From Cool Waters",
+        "key": "odd_okoddoogoya_nengo___bara",
+        "genresRaw": ["electroacoustic", "electronic", "world"],
+        "tidalId": "502714206"
+      },
+      {
+        "title": "Sarah",
+        "artist": "ODD OKODDO/OGOYA NENGO",
+        "albumDetails": ", da \"Palagoma\" - From Cool Waters",
+        "key": "odd_okoddoogoya_nengo___sarah",
+        "genresRaw": ["world", "minimal", "electronic"],
+        "tidalId": "518838204"
+      },
+      {
+        "title": "Chiusi (SI), 10",
+        "artist": "LARS ROCK FEST",
+        "albumDetails": "-12 luglio 2026",
+        "key": "lars_rock_fest___chiusi_si_10",
+        "genresRaw": ["rock", "experimental"]
+      },
+      {
+        "title": "Splatter",
+        "artist": "PLANTOID",
+        "albumDetails": ", da \"Flare\" - Bella Union",
+        "key": "plantoid___splatter",
+        "genresRaw": ["psychedelic", "post-rock", "prog-rock"],
+        "tidalId": "459457575"
+      },
+      {
+        "title": "Fraction Anthem",
+        "artist": "DEERHOOF",
+        "albumDetails": ", da \"Future Teenage Cave Artists\" - Joyful Noise Recordings",
+        "key": "deerhoof___fraction_anthem",
+        "genresRaw": ["experimental", "post-rock", "noise"],
+        "tidalId": "132037909"
+      },
+      {
+        "title": "Ultramarine, singolo",
+        "artist": "ALLAH LAS",
+        "albumDetails": "- Bandcamp",
+        "key": "allah_las___ultramarine_singolo",
+        "genresRaw": ["rock", "psychedelic"],
+        "tidalId": "518053732"
+      },
+      {
+        "title": "Dancing",
+        "artist": "HILARY JEFFERY",
+        "albumDetails": ", da \"Green Prism\" – Discus",
+        "key": "hilary_jeffery___dancing",
+        "genresRaw": ["experimental", "jazz", "classica"],
+        "tidalId": "514517322"
+      },
+      {
+        "title": "Thoughts",
+        "artist": "HILARY JEFFERY",
+        "albumDetails": ", da \"Green Prism\" – Discus",
+        "key": "hilary_jeffery___thoughts",
+        "genresRaw": ["jazz", "experimental", "modern classical"],
+        "tidalId": "514517325"
+      },
+      {
+        "title": "Members, Don't Git Weary, da \"Members... Don't!\"",
+        "artist": "TYSHAWN SOREY",
+        "albumDetails": "– Pi Recordings",
+        "key": "tyshawn_sorey___members_don't_git_weary_da_\"members_don't\"",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "519533585"
+      },
+      {
+        "title": "Turf",
+        "artist": "STEVEN BERNSTEIN RESONATION TRIO",
+        "albumDetails": ", da \"ResoNation Trio / Ultra Resonance\" – Royal Potato Family",
+        "key": "steven_bernstein_resonation_trio___turf",
+        "genresRaw": ["jazz", "funk"],
+        "tidalId": "507902964"
+      },
+      {
+        "title": "Argon",
+        "artist": "STEVEN BERNSTEIN AND SCOTTY HARD",
+        "albumDetails": ", da \"ResoNation Trio / Ultra Resonance\" – Royal Potato Family",
+        "key": "steven_bernstein_and_scotty_hard___argon",
+        "genresRaw": ["experimental", "electronic", "instrumental"],
+        "tidalId": "506901527"
+      },
+      {
+        "title": "The Doubt Rises In My Mind",
+        "artist": "PAUL DUNMALL",
+        "albumDetails": ", da \"Afraid To Speak\" – Discus",
+        "key": "paul_dunmall___the_doubt_rises_in_my_mind",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "493817350"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Paradessence",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-11062026-de84f231-8c9c-4705-8533-9bde993d291a.html",
+    "date": "11 Giu 2026",
+    "tracks": [
+      {
+        "title": "Arcimagheggio",
+        "artist": "OMAR CHEICK",
+        "albumDetails": ", da \"The Garden\" - Maple Death Records",
+        "key": "omar_cheick___arcimagheggio",
+        "genresRaw": ["r&b", "soul"]
+      },
+      {
+        "title": "Wombfire",
+        "artist": "NITE BJUTI",
+        "albumDetails": ", da \"Minwi\" - Intakt Records",
+        "key": "nite_bjuti___wombfire",
+        "genresRaw": ["jazz", "experimental", "electronic"],
+        "tidalId": "516810420"
+      },
+      {
+        "title": "Blanket Dance",
+        "artist": "MARIAM WALLENTIN & VESTNORSK JAZZENSEMBLE",
+        "albumDetails": ", da \"Spring Flood\" - Hubro",
+        "key": "mariam_wallentin_vestnorsk_jazzensemble___blanket_dance",
+        "genresRaw": ["jazz"],
+        "tidalId": "521817636"
+      },
+      {
+        "title": "Don't Trip (ft. Maassai)",
+        "artist": "NAPPY NINA/SWARVY",
+        "albumDetails": ", da \"Sow & So\" - SFTNR",
+        "key": "nappy_ninaswarvy___don't_trip_ft_maassai",
+        "genresRaw": ["hip-hop"]
+      },
+      {
+        "title": "Get Got (ft. Stas Thee Boss)",
+        "artist": "NAPPY NINA/SWARVY",
+        "albumDetails": ", da \"Sow & So\" - SFTNR",
+        "key": "nappy_ninaswarvy___get_got_ft_stas_thee_boss",
+        "genresRaw": ["hip-hop", "funk"],
+        "tidalId": "523831930"
+      },
+      {
+        "title": "III edizione, Verona, 12",
+        "artist": "AFRICAE FESTIVAL 2026",
+        "albumDetails": "- 14 giugno 2026",
+        "key": "africae_festival_2026___iii_edizione_verona_12",
+        "genresRaw": []
+      },
+      {
+        "title": "XVI edizione, Guastalla, 13",
+        "artist": "HANDMADE FESTIVAL",
+        "albumDetails": "- 14 giugno 2026",
+        "key": "handmade_festival___xvi_edizione_guastalla_13",
+        "genresRaw": []
+      },
+      {
+        "title": "Afrotrip",
+        "artist": "AFRODREAM",
+        "albumDetails": ", da \"Guiss Guiss\" – Rubik Media",
+        "key": "afrodream___afrotrip",
+        "genresRaw": ["afrobeat", "funk"],
+        "tidalId": "437188419"
+      },
+      {
+        "title": "Ma belle",
+        "artist": "AFRODREAM",
+        "albumDetails": ", da \"Guiss Guiss\" – Rubik Media",
+        "key": "afrodream___ma_belle",
+        "genresRaw": ["afrobeat", "funk", "jazz"],
+        "tidalId": "452445511"
+      },
+      {
+        "title": "For The Shore",
+        "artist": "EMMA GRACE",
+        "albumDetails": ", da \"Cravings Of Pegasus\" – Pipapop Records",
+        "key": "emma_grace___for_the_shore",
+        "genresRaw": ["experimental", "electronic", "singer-songwriter"],
+        "tidalId": "200866113"
+      },
+      {
+        "title": "The Word Becomes Flesh",
+        "artist": "BOARDS OF CANADA",
+        "albumDetails": ", da \"Inferno\" - Warp Records",
+        "key": "boards_of_canada___the_word_becomes_flesh",
+        "genresRaw": ["electronic", "ambient", "experimental"],
+        "tidalId": "528351302"
+      },
+      {
+        "title": "Blood In The Labyrinth",
+        "artist": "BOARDS OF CANADA",
+        "albumDetails": ", da \"Inferno\" - Warp Records",
+        "key": "boards_of_canada___blood_in_the_labyrinth",
+        "genresRaw": ["electronic", "ambient", "lo-fi"],
+        "tidalId": "528351305"
+      },
+      {
+        "title": "Slippage",
+        "artist": "VISIBLE CLOAKS",
+        "albumDetails": ", da \"Paradessence\" - Rvng Intl.",
+        "key": "visible_cloaks___slippage",
+        "genresRaw": ["ambient", "electronic", "experimental"],
+        "tidalId": "495661774"
+      },
+      {
+        "title": "Shapes ft. Yoshio Ojima & Satsuki Shibano",
+        "artist": "VISIBLE CLOAKS",
+        "albumDetails": ", da \"Paradessence\" - Rvng Intl.",
+        "key": "visible_cloaks___shapes_ft_yoshio_ojima_satsuki_shibano",
+        "genresRaw": ["ambient", "electronic"],
+        "tidalId": "495661776"
+      },
+      {
+        "title": "Ever No Way",
+        "artist": "SEEFEEL",
+        "albumDetails": ", da \"Sol.Hz\" - Warp Records",
+        "key": "seefeel___ever_no_way",
+        "genresRaw": ["ambient", "electroacoustic", "experimental"],
+        "tidalId": "495218328"
+      },
+      {
+        "title": "Falling First",
+        "artist": "SEEFEEL",
+        "albumDetails": ", da \"Sol.Hz\" - Warp Records",
+        "key": "seefeel___falling_first",
+        "genresRaw": ["ambient", "electronic", "experimental"],
+        "tidalId": "495218332"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Peace",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-10062026-5841bbb7-4c28-49ed-afd7-a1ec95e6fb52.html",
+    "date": "10 Giu 2026",
+    "tracks": [
+      {
+        "title": "Pay For Favor (ft. Blu)",
+        "artist": "NAPPY NINA/SWARVY",
+        "albumDetails": ", da \"Sow & So\" - SFTNR",
+        "key": "nappy_ninaswarvy___pay_for_favor_ft_blu",
+        "genresRaw": ["hip-hop", "soul"],
+        "tidalId": "523831925"
+      },
+      {
+        "title": "Breezy",
+        "artist": "INGEBRIGT HÅKER FLATEN (EXIT) KNARR",
+        "albumDetails": ", da \"Fly\" - Sonic Transmmission Records",
+        "key": "ingebrigt_haker_flaten_exit_knarr___breezy",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "517561010"
+      },
+      {
+        "title": "Umanyo",
+        "artist": "ODD OKODDO/OGOYA NENGO",
+        "albumDetails": ", da \"Palagoma\" - From Cool Waters",
+        "key": "odd_okoddoogoya_nengo___umanyo",
+        "genresRaw": ["electronic", "folk", "experimental"],
+        "tidalId": "518838199"
+      },
+      {
+        "title": "Basel",
+        "artist": "MARIAM WALLENTIN & VESTNORSK JAZZENSEMBLE",
+        "albumDetails": ", da \"Spring Flood\" - Hubro",
+        "key": "mariam_wallentin_vestnorsk_jazzensemble___basel",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "507709235"
+      },
+      {
+        "title": "Parco archeologico di Selinunte, Castelvetrano (TP), 5",
+        "artist": "MEDITERRANEO JAZZ",
+        "albumDetails": "-6 e 14-15 luglio 2026",
+        "key": "mediterraneo_jazz___parco_archeologico_di_selinunte_castelvetrano_tp_5",
+        "genresRaw": ["jazz", "world"]
+      },
+      {
+        "title": "Angostura",
+        "artist": "GIUSEPPE GUARRELLA NIWAS QUARTET",
+        "albumDetails": ", da \"New Call\" – IF Records",
+        "key": "giuseppe_guarrella_niwas_quartet___angostura",
+        "genresRaw": ["jazz", "avant-garde", "experimental"],
+        "tidalId": "489975074"
+      },
+      {
+        "title": "Overboard",
+        "artist": "JOSEPH MARTONE",
+        "albumDetails": ", da \"Endeavours\" - Rivertale Productions 2026",
+        "key": "joseph_martone___overboard",
+        "genresRaw": ["folk", "blues", "americana"],
+        "tidalId": "495260321"
+      },
+      {
+        "title": "Wounded Love",
+        "artist": "JOSEPH MARTONE",
+        "albumDetails": ", da \"Endeavours\" - Rivertale Productions 2026",
+        "key": "joseph_martone___wounded_love",
+        "genresRaw": ["singer-songwriter", "post-punk", "country"],
+        "tidalId": "54799060"
+      },
+      {
+        "title": "Only One Bill",
+        "artist": "FLYINMOSCOW",
+        "albumDetails": ", da \"Flyinmoscow Vol. II\" - Zaratan Musica 2026",
+        "key": "flyinmoscow___only_one_bill",
+        "genresRaw": []
+      },
+      {
+        "title": "No Tall Buildings Reprise",
+        "artist": "FLYINMOSCOW",
+        "albumDetails": ", da \"Flyinmoscow Vol. II\" - Zaratan Musica 2026",
+        "key": "flyinmoscow___no_tall_buildings_reprise",
+        "genresRaw": ["post-rock", "ambient", "noise"]
+      },
+      {
+        "title": "Checkmate",
+        "artist": "RON GALLO",
+        "albumDetails": ", da \"Checkmate\" – Kill Rock Stars",
+        "key": "ron_gallo___checkmate",
+        "genresRaw": ["rock", "alternative"],
+        "tidalId": "448303097"
+      },
+      {
+        "title": "Too Tired To Love You",
+        "artist": "RON GALLO",
+        "albumDetails": ", da \"Checkmate\" – Kill Rock Stars",
+        "key": "ron_gallo___too_tired_to_love_you",
+        "genresRaw": ["rock", "alternative"],
+        "tidalId": "444252163"
+      },
+      {
+        "title": "Gaza Blues",
+        "artist": "FLEURS DU MAL",
+        "albumDetails": ", da \"Spacetime Mystery\" – Autoproduzione 2025",
+        "key": "fleurs_du_mal___gaza_blues",
+        "genresRaw": ["blues", "rock"],
+        "tidalId": "475886266"
+      },
+      {
+        "title": "Peace",
+        "artist": "FLEURS DU MAL",
+        "albumDetails": ", da \"Spacetime Mystery\" – Autoproduzione 2025",
+        "key": "fleurs_du_mal___peace",
+        "genresRaw": [],
+        "tidalId": "436410639"
+      },
+      {
+        "title": "Mercurio",
+        "artist": "PAOLA TAGLIAFERRO / LA COMPAGNIA DELL'ES",
+        "albumDetails": ", da \"The Sound Of The Spheres / Il Il suono delle sfere\" - Owl Records",
+        "key": "paola_tagliaferro_la_compagnia_dell'es___mercurio",
+        "genresRaw": ["progressive rock", "rock", "instrumental"]
+      },
+      {
+        "title": "Ankh The Journey",
+        "artist": "PAOLA TAGLIAFERRO / LA COMPAGNIA DELL'ES",
+        "albumDetails": ", da \"The Sound Of The Spheres / Il suono delle sfere\" - Owl Records",
+        "key": "paola_tagliaferro_la_compagnia_dell'es___ankh_the_journey",
+        "genresRaw": ["progressive rock", "rock", "acoustic"],
+        "tidalId": "435959765"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Futuro Presente Passato",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-09062026-74394587-7189-4a86-999c-4e850f885f89.html",
+    "date": "09 Giu 2026",
+    "tracks": [
+      {
+        "title": "λεκτρικαὶ Ὑμνωδίαι – Α΄ Ἑωθινὸν μὲ ἠλεκτρικὴν κιθάραν ἄνευ τάστων (perdesiz)",
+        "artist": "DIONYSIOS TABAKIS",
+        "albumDetails": ", da \"Metal Paradise\" - Heat Crimes",
+        "key": "dionysios_tabakis___λεκτρικαι_υμνωδιαι_–_α΄_εωθινον_με_ηλεκτρικην_κιθαραν_ανευ_ταστων_perdesiz",
+        "genresRaw": ["rock", "experimental", "instrumental"]
+      },
+      {
+        "title": "Roots Legacy",
+        "artist": "NITE BJUTI",
+        "albumDetails": ", da \"minwi\" - Intakt Records",
+        "key": "nite_bjuti___roots_legacy",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "516810412"
+      },
+      {
+        "title": "Silence",
+        "artist": "LUCIE ANTUNES",
+        "albumDetails": ", da \"Silence\" - Bell",
+        "key": "lucie_antunes___silence",
+        "genresRaw": ["electronic", "experimental", "trance"],
+        "tidalId": "505598123"
+      },
+      {
+        "title": "I Don't Need",
+        "artist": "LUCIE ANTUNES",
+        "albumDetails": ", da \"Silence\" - Bell",
+        "key": "lucie_antunes___i_don't_need",
+        "genresRaw": ["electronic", "minimal", "experimental"],
+        "tidalId": "515798987"
+      },
+      {
+        "title": "Pirocorvetta",
+        "artist": "OMAR CHEICK",
+        "albumDetails": ", da \"The Garden\" - Maple Death Records",
+        "key": "omar_cheick___pirocorvetta",
+        "genresRaw": ["experimental", "electronic", "folk"]
+      },
+      {
+        "title": "Electronic Music & Performing Arts Festival, Genova, 5 giugno",
+        "artist": "ELECTROPARK 2026",
+        "albumDetails": "– 5 luglio 2026",
+        "key": "electropark_2026___electronic_music_performing_arts_festival_genova_5_giugno",
+        "genresRaw": ["electronic", "house", "experimental"]
+      },
+      {
+        "title": "Villa Medici, Roma, 11 giugno 2026",
+        "artist": "NKISI X FRANCESCA HEART",
+        "albumDetails": "",
+        "key": "nkisi_x_francesca_heart___villa_medici_roma_11_giugno_2026",
+        "genresRaw": ["electronic", "experimental", "industrial"]
+      },
+      {
+        "title": "Muchaka",
+        "artist": "MC YALLAH & DEBMASTER",
+        "albumDetails": ", da \"Gaudencia\" - Hakuna Kulala",
+        "key": "mc_yallah_debmaster___muchaka",
+        "genresRaw": ["hip-hop", "grime"],
+        "tidalId": "434233145"
+      },
+      {
+        "title": "Tartaqa (Rewrite Version)",
+        "artist": "MAKIMAKKUK",
+        "albumDetails": "– 7\" Autoproduzione 2023",
+        "key": "makimakkuk___tartaqa_rewrite_version",
+        "genresRaw": ["hip-hop"],
+        "tidalId": "143004225"
+      },
+      {
+        "title": "The Enchantment",
+        "artist": "NKISI",
+        "albumDetails": ", da \"BLK SPLLS 2\" – Autoproduzione 2024",
+        "key": "nkisi___the_enchantment",
+        "genresRaw": ["electronic", "industrial", "experimental"]
+      },
+      {
+        "title": "Cascade Sensation",
+        "artist": "FRANCESCA HEART",
+        "albumDetails": ", da \"Essence: Sensation\" - Autoproduzione 2025",
+        "key": "francesca_heart___cascade_sensation",
+        "genresRaw": ["ambient", "electronic", "experimental"],
+        "tidalId": "468492009"
+      },
+      {
+        "title": "Working Class Musicians",
+        "artist": "AJA MONET",
+        "albumDetails": ", da \"The Color Of Rain\" - Drink Sum Wtr",
+        "key": "aja_monet___working_class_musicians",
+        "genresRaw": ["hip-hop", "spoken word"],
+        "tidalId": "490308736"
+      },
+      {
+        "title": "Melting Clocks ft. Mick Jenkins & Vic Mensa",
+        "artist": "AJA MONET",
+        "albumDetails": ", da \"The Color Of Rain\" - Drink Sum Wtr",
+        "key": "aja_monet___melting_clocks_ft_mick_jenkins_vic_mensa",
+        "genresRaw": ["hip-hop"],
+        "tidalId": "490308739"
+      },
+      {
+        "title": "Witching Hour",
+        "artist": "ROSA BRUNELLO",
+        "albumDetails": ", da \"We Are Surging Waters\" - Domanda Music",
+        "key": "rosa_brunello___witching_hour",
+        "genresRaw": ["jazz", "spiritual"],
+        "tidalId": "522026931"
+      },
+      {
+        "title": "Living Upstream",
+        "artist": "ROSA BRUNELLO",
+        "albumDetails": ", da \"We Are Surging Waters\" - Domanda Music",
+        "key": "rosa_brunello___living_upstream",
+        "genresRaw": ["jazz", "dub", "experimental"],
+        "tidalId": "522026929"
+      },
+      {
+        "title": "The Spirit Moves",
+        "artist": "IRREVERSIBLE ENTANGLEMENTS",
+        "albumDetails": ", da \"Future Present Past\" - Impulse!",
+        "key": "irreversible_entanglements___the_spirit_moves",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "508666468"
+      },
+      {
+        "title": "The Messenger",
+        "artist": "IRREVERSIBLE ENTANGLEMENTS",
+        "albumDetails": ", da \"Future Present Past\" - Impulse!",
+        "key": "irreversible_entanglements___the_messenger",
+        "genresRaw": ["jazz", "experimental", "post-punk"],
+        "tidalId": "508669667"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Piedicavallo 2025: Emmanuelle Parrenin + Gaister",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-08062026-87dc7d33-8a0f-4336-9dce-462027b64667.html",
+    "date": "08 Giu 2026",
+    "tracks": [
+      {
+        "title": "La cara estúpida del ritmo",
+        "artist": "ADRIÁN DE ALFONSO",
+        "albumDetails": ", da \"Viator\" - Maple Death Records",
+        "key": "adrian_de_alfonso___la_cara_estupida_del_ritmo",
+        "genresRaw": ["rock", "experimental", "post-rock"],
+        "tidalId": "388465560"
+      },
+      {
+        "title": "Ce matin à Frémontel",
+        "artist": "EMMANUELLE PARRENIN",
+        "albumDetails": "",
+        "key": "emmanuelle_parrenin___ce_matin_a_fremontel",
+        "genresRaw": ["folk", "psychedelic", "ambient"]
+      },
+      {
+        "title": "Entre moi",
+        "artist": "EMMANUELLE PARRENIN",
+        "albumDetails": "",
+        "key": "emmanuelle_parrenin___entre_moi",
+        "genresRaw": ["electronic", "folk"],
+        "tidalId": "216807351"
+      },
+      {
+        "title": "Le Secret",
+        "artist": "EMMANUELLE PARRENIN",
+        "albumDetails": "",
+        "key": "emmanuelle_parrenin___le_secret",
+        "genresRaw": ["folk", "experimental"]
+      },
+      {
+        "title": "Delyade",
+        "artist": "EMMANUELLE PARRENIN",
+        "albumDetails": "",
+        "key": "emmanuelle_parrenin___delyade",
+        "genresRaw": ["electronic", "folk", "experimental"],
+        "tidalId": "216807354"
+      },
+      {
+        "title": "Dulcimer",
+        "artist": "EMMANUELLE PARRENIN",
+        "albumDetails": "",
+        "key": "emmanuelle_parrenin___dulcimer",
+        "genresRaw": ["instrumental", "new age", "ambient"],
+        "tidalId": "216807355"
+      },
+      {
+        "title": "Puise",
+        "artist": "EMMANUELLE PARRENIN",
+        "albumDetails": "",
+        "key": "emmanuelle_parrenin___puise",
+        "genresRaw": ["electronic", "folk", "experimental"],
+        "tidalId": "216807349"
+      },
+      {
+        "title": "La rêvelinière",
+        "artist": "EMMANUELLE PARRENIN",
+        "albumDetails": "",
+        "key": "emmanuelle_parrenin___la_reveliniere",
+        "genresRaw": ["psychedelic", "folk", "experimental"],
+        "tidalId": "216807347"
+      },
+      {
+        "title": "L'ombre",
+        "artist": "EMMANUELLE PARRENIN",
+        "albumDetails": "",
+        "key": "emmanuelle_parrenin___l'ombre",
+        "genresRaw": ["folk", "experimental", "acoustic"]
+      },
+      {
+        "title": "Duende",
+        "artist": "EMMANUELLE PARRENIN",
+        "albumDetails": "",
+        "key": "emmanuelle_parrenin___duende",
+        "genresRaw": ["folk", "ambient", "experimental"],
+        "tidalId": "216807353"
+      },
+      {
+        "title": "Maison Rose",
+        "artist": "EMMANUELLE PARRENIN",
+        "albumDetails": "",
+        "key": "emmanuelle_parrenin___maison_rose",
+        "genresRaw": ["folk", "experimental", "electroacoustic"],
+        "tidalId": "216807346"
+      },
+      {
+        "title": "Intro",
+        "artist": "GAISTER",
+        "albumDetails": "",
+        "key": "gaister___intro",
+        "genresRaw": ["experimental", "ambient", "electronic"]
+      },
+      {
+        "title": "Source",
+        "artist": "GAISTER",
+        "albumDetails": "",
+        "key": "gaister___source",
+        "genresRaw": ["experimental", "electronic"],
+        "tidalId": "439817451"
+      },
+      {
+        "title": "Solar",
+        "artist": "GAISTER",
+        "albumDetails": "",
+        "key": "gaister___solar",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "525842295"
+      },
+      {
+        "title": "Shi",
+        "artist": "GAISTER",
+        "albumDetails": "",
+        "key": "gaister___shi",
+        "genresRaw": ["experimental", "electronic"],
+        "tidalId": "525842297"
+      },
+      {
+        "title": "Three",
+        "artist": "GAISTER",
+        "albumDetails": "",
+        "key": "gaister___three",
+        "genresRaw": ["ambient", "experimental", "instrumental"]
+      },
+      {
+        "title": "Assonanze",
+        "artist": "GAISTER",
+        "albumDetails": "",
+        "key": "gaister___assonanze",
+        "genresRaw": ["experimental", "electronic", "avant-garde"],
+        "tidalId": "525842299"
+      },
+      {
+        "title": "ELENA COLOMBI, CHARLIE HOPE, What Remains",
+        "artist": "TUTTO QUESTO SENTIRE with COBY SEY",
+        "albumDetails": ", da \"Spazio per azioni luminescenti\" - Osàre! Editions",
+        "key": "tutto_questo_sentire_with_coby_sey___elena_colombi_charlie_hope_what_remains",
+        "genresRaw": ["experimental", "ambient", "industrial"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Sonny Rollins: Saxophone Colossus",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-07062026-75e0cbcb-564e-474e-8c7f-4b6ed38a4149.html",
+    "date": "07 Giu 2026",
+    "tracks": [
+      {
+        "title": "St Thomas",
+        "artist": "SONNY ROLLINS",
+        "albumDetails": ", da \"Saxophone Colossus\" – Prestige",
+        "key": "sonny_rollins___st_thomas",
+        "genresRaw": ["jazz", "bebop"],
+        "tidalId": "133431120"
+      },
+      {
+        "title": "Oleo",
+        "artist": "MILES DAVIS",
+        "albumDetails": ", da \"Bags Groove\" – Riverside Records",
+        "key": "miles_davis___oleo",
+        "genresRaw": ["jazz", "bebop"],
+        "tidalId": "1865707"
+      },
+      {
+        "title": "I Feel A Song Coming On",
+        "artist": "SONNY ROLLINS",
+        "albumDetails": ", da \"Plus 4\" – Original Jazz Classics",
+        "key": "sonny_rollins___i_feel_a_song_coming_on",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "1283691"
+      },
+      {
+        "title": "The Freedom Suite",
+        "artist": "SONNY ROLLINS",
+        "albumDetails": ", da \"Freedom Suite\" – Riverside Records",
+        "key": "sonny_rollins___the_freedom_suite",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "13476626"
+      },
+      {
+        "title": "God Bless The Child",
+        "artist": "SONNY ROLLINS",
+        "albumDetails": ", da \"The Bridge\" – RCA",
+        "key": "sonny_rollins___god_bless_the_child",
+        "genresRaw": ["jazz", "soul"],
+        "tidalId": "41696"
+      },
+      {
+        "title": "Misterioso",
+        "artist": "SONNY ROLLINS",
+        "albumDetails": ", da \"Vol. 2\" – Blue Note",
+        "key": "sonny_rollins___misterioso",
+        "genresRaw": ["jazz", "bebop"],
+        "tidalId": "10644044"
+      },
+      {
+        "title": "Old Devil Moon",
+        "artist": "SONNY ROLLINS",
+        "albumDetails": ", da \"A Night At The Village Vanguard: The Complete Masters\" – Blue Note",
+        "key": "sonny_rollins___old_devil_moon",
+        "genresRaw": ["jazz"],
+        "tidalId": "2179245"
+      },
+      {
+        "title": "Lover Man",
+        "artist": "SONNY ROLLINS AND COLEMAN HAWKINS",
+        "albumDetails": ", da \"Sonny Meets Hawk!\" – RCA",
+        "key": "sonny_rollins_and_coleman_hawkins___lover_man",
+        "genresRaw": ["jazz"],
+        "tidalId": "2987918"
+      },
+      {
+        "title": "East Broadway Run Down",
+        "artist": "SONNY ROLLINS",
+        "albumDetails": ", da \"East Broadway Run Down\" – Impulse!",
+        "key": "sonny_rollins___east_broadway_run_down",
+        "genresRaw": ["jazz", "post-bop", "instrumental"],
+        "tidalId": "106795414"
+      },
+      {
+        "title": "There Will Never Be Another You",
+        "artist": "SONNY ROLLINS",
+        "albumDetails": ", da \"Our Man In Jazz\" – RCA",
+        "key": "sonny_rollins___there_will_never_be_another_you",
+        "genresRaw": ["jazz"],
+        "tidalId": "110769059"
+      },
+      {
+        "title": "Body & Soul",
+        "artist": "SONNY ROLLINS",
+        "albumDetails": ", da \"Sonny Rollins And The Big Brass\" – Jazz Heritage Society",
+        "key": "sonny_rollins___body_soul",
+        "genresRaw": ["jazz", "instrumental"],
+        "tidalId": "3686967"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Kind Urgency",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-23062026-49cae5f1-22c3-4896-9e7a-e7ddccbbca9a.html",
+    "date": "23 Giu 2026",
+    "tracks": [
+      {
+        "title": "Pilu",
+        "artist": "PLUME GIRL",
+        "albumDetails": ", da \"Unnameable Glory\" – Mappa",
+        "key": "plume_girl___pilu",
+        "genresRaw": ["experimental", "ambient", "electroacoustic"],
+        "tidalId": "441739698"
+      },
+      {
+        "title": "5 Mille Ans, de \"Châteaux Faibles\"",
+        "artist": "ALICE",
+        "albumDetails": "– Les Disques Bongo Joe",
+        "key": "alice___5_mille_ans_de_\"chateaux_faibles\"",
+        "genresRaw": ["art pop", "indie pop", "experimental"],
+        "tidalId": "434201064"
+      },
+      {
+        "title": "L'eau sans Citron, de \"Châteaux Faibles\"",
+        "artist": "ALICE",
+        "albumDetails": "– Les Disques Bongo Joe",
+        "key": "alice___l'eau_sans_citron_de_\"chateaux_faibles\"",
+        "genresRaw": ["art-pop", "folk", "experimental"],
+        "tidalId": "434201074"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "MAI MAI MAI & RADIO ALHARA: live e intervista",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-21062026-8c58569d-b7d2-4b53-822c-4671a0e74cbb.html",
+    "date": "21 Giu 2026",
+    "tracks": [
+      {
+        "title": "Among The Shadows Of Karakoz",
+        "artist": "MAI MAI MAI LIVE",
+        "albumDetails": "",
+        "key": "mai_mai_mai_live___among_the_shadows_of_karakoz",
+        "genresRaw": ["experimental", "dark ambient", "world"]
+      },
+      {
+        "title": "Kan (How She Told Stories)",
+        "artist": "MAYA AL KHALDI",
+        "albumDetails": ", da \"Other World\" – Tawleef",
+        "key": "maya_al_khaldi___kan_how_she_told_stories",
+        "genresRaw": ["folk", "world", "experimental"],
+        "tidalId": "221221658"
+      },
+      {
+        "title": "HAYKAL, JULMUD, Ta'aali",
+        "artist": "ACAMOL",
+        "albumDetails": ", da \"Kam Min Janneh\" - Bilna'es",
+        "key": "acamol___haykal_julmud_ta'aali",
+        "genresRaw": ["hip-hop", "world"]
+      },
+      {
+        "title": "Trezzatura tagliente",
+        "artist": "ALFIO ANTICO & GO DUGONG",
+        "albumDetails": ", da \"La macchia\" - Baccano Dischi",
+        "key": "alfio_antico_go_dugong___trezzatura_tagliente",
+        "genresRaw": [],
+        "tidalId": "427040422"
+      },
+      {
+        "title": "Slippers",
+        "artist": "DAMOS ROOM",
+        "albumDetails": ", da \"Radio Alhara Presents Damos Room\" - Damos Room",
+        "key": "damos_room___slippers",
+        "genresRaw": ["post-punk", "dub", "experimental"]
+      },
+      {
+        "title": "Bethlehem, estratto da \"Christmas In Mourning\"",
+        "artist": "SARY MOUSSA / ABED KOBEISSY / LAURENCE SAMMOUR",
+        "albumDetails": "- Wonder Cabinet & Radio Alhara",
+        "key": "sary_moussa_abed_kobeissy_laurence_sammour___bethlehem_estratto_da_\"christmas_in_mourning\"",
+        "genresRaw": ["electroacoustic", "experimental", "instrumental"]
+      },
+      {
+        "title": "One's Own Third Harmonic On A Rusted Sewage Pipe",
+        "artist": "BINT MBAREH",
+        "albumDetails": ", da \"Flowers Not Bombs\" - Beacon Sound",
+        "key": "bint_mbareh___one's_own_third_harmonic_on_a_rusted_sewage_pipe",
+        "genresRaw": ["experimental", "electroacoustic", "sound art"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "BATTITI DAL VIVO Bao Music Festival 2025: Richard Dawson Bao Sound Experience 2025: Mitelli + García",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-20062026-63bd0a4c-54c3-4945-a07e-cde291bf5566.html",
+    "date": "20 Giu 2026",
+    "tracks": [
+      {
+        "title": "The Almsgiver",
+        "artist": "RICHARD DAWSON",
+        "albumDetails": "",
+        "key": "richard_dawson___the_almsgiver",
+        "genresRaw": ["folk", "experimental"],
+        "tidalId": "102472318"
+      },
+      {
+        "title": "Gondola",
+        "artist": "RICHARD DAWSON",
+        "albumDetails": "",
+        "key": "richard_dawson___gondola",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "396441852"
+      },
+      {
+        "title": "Bolt",
+        "artist": "RICHARD DAWSON",
+        "albumDetails": "",
+        "key": "richard_dawson___bolt",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "396441848"
+      },
+      {
+        "title": "Boxing Day Sales",
+        "artist": "RICHARD DAWSON",
+        "albumDetails": "",
+        "key": "richard_dawson___boxing_day_sales",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "396441861"
+      },
+      {
+        "title": "The Bamburgh Beast",
+        "artist": "RICHARD DAWSON",
+        "albumDetails": "",
+        "key": "richard_dawson___the_bamburgh_beast",
+        "genresRaw": ["folk", "experimental"],
+        "tidalId": "52830867"
+      },
+      {
+        "title": "Wildgeeses",
+        "artist": "RICHARD DAWSON",
+        "albumDetails": "",
+        "key": "richard_dawson___wildgeeses",
+        "genresRaw": ["folk", "singer-songwriter"]
+      },
+      {
+        "title": "The Question",
+        "artist": "RICHARD DAWSON",
+        "albumDetails": "",
+        "key": "richard_dawson___the_question",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "396441859"
+      },
+      {
+        "title": "Juniper Berries",
+        "artist": "RICHARD DAWSON",
+        "albumDetails": "",
+        "key": "richard_dawson___juniper_berries",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "529886131"
+      },
+      {
+        "title": "Black Dog In The Sky",
+        "artist": "RICHARD DAWSON",
+        "albumDetails": "",
+        "key": "richard_dawson___black_dog_in_the_sky",
+        "genresRaw": ["folk", "singer-songwriter", "experimental"],
+        "tidalId": "52830865"
+      },
+      {
+        "title": "Judas Iscariot",
+        "artist": "RICHARD DAWSON",
+        "albumDetails": "",
+        "key": "richard_dawson___judas_iscariot",
+        "genresRaw": ["folk", "singer-songwriter"],
+        "tidalId": "37336438"
+      },
+      {
+        "title": "Hybrid voices, sirens",
+        "artist": "GABRIELE MITELLI + VIOLETA GARCIA",
+        "albumDetails": "",
+        "key": "gabriele_mitelli_+_violeta_garcia___hybrid_voices_sirens",
+        "genresRaw": ["experimental", "electronic", "ambient"]
+      },
+      {
+        "title": "Pure Hands",
+        "artist": "GABRIELE MITELLI + VIOLETA GARCIA",
+        "albumDetails": "",
+        "key": "gabriele_mitelli_+_violeta_garcia___pure_hands",
+        "genresRaw": ["instrumental", "acoustic"]
+      },
+      {
+        "title": "Awakenings",
+        "artist": "GABRIELE MITELLI + VIOLETA GARCIA",
+        "albumDetails": "",
+        "key": "gabriele_mitelli_+_violeta_garcia___awakenings",
+        "genresRaw": ["electroacoustic", "ambient", "experimental"]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Home Recording Songs",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-19062026-baad082a-4fbb-4647-a216-d0a88f33c069.html",
+    "date": "19 Giu 2026",
+    "tracks": [
+      {
+        "title": "Rockcurry",
+        "artist": "LEE SCRATCH PERRY & MOUSE ON MARS",
+        "albumDetails": ", da \"Spatial, No Problem.\" – Domino",
+        "key": "lee_scratch_perry_mouse_on_mars___rockcurry",
+        "genresRaw": ["dub", "electronic", "experimental"],
+        "tidalId": "501882195"
+      },
+      {
+        "title": "To The Rescue",
+        "artist": "LEE SCRATCH PERRY & MOUSE ON MARS",
+        "albumDetails": ", da \"Spatial, No Problem.\" – Domino",
+        "key": "lee_scratch_perry_mouse_on_mars___to_the_rescue",
+        "genresRaw": ["dub", "electronic"],
+        "tidalId": "501882201"
+      },
+      {
+        "title": "Serenade to a Blobfish (Subaqueous Sound System)",
+        "artist": "LEVERTON FOX",
+        "albumDetails": ", da \"Eternal Gong Bath Of The Sunbed Mind\" – Not Applicable",
+        "key": "leverton_fox___serenade_to_a_blobfish_subaqueous_sound_system",
+        "genresRaw": ["experimental", "electronic", "ambient"]
+      },
+      {
+        "title": "Fade Thru",
+        "artist": "WU-LU & POiSON ANNA",
+        "albumDetails": ", da \"Bakerz Dozen\" – Warp Records",
+        "key": "wulu_poison_anna___fade_thru",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "516509045"
+      },
+      {
+        "title": "Piedicavallo (Biella), 21",
+        "artist": "Piedicavallo Festival - \"Lüria\"",
+        "albumDetails": "-23 agosto 2026",
+        "key": "piedicavallo_festival_\"luria\"___piedicavallo_biella_21",
+        "genresRaw": ["experimental", "electronic"]
+      },
+      {
+        "title": "Sticks and Stones (with Buster Woodruff-Bryant)",
+        "artist": "BIG HANDS",
+        "albumDetails": ", da \"Thauma\" - Marionette",
+        "key": "big_hands___sticks_and_stones_with_buster_woodruffbryant",
+        "genresRaw": ["jazz", "instrumental"]
+      },
+      {
+        "title": "Habitants des roseaux",
+        "artist": "ROXANE MÉTAYER",
+        "albumDetails": ", da \"Chênes\" - (K-RAA-K)³",
+        "key": "roxane_metayer___habitants_des_roseaux",
+        "genresRaw": ["singer-songwriter", "folk", "acoustic"],
+        "tidalId": "472797551"
+      },
+      {
+        "title": "Show You So",
+        "artist": "NAPPY NINA & SWARVY",
+        "albumDetails": ", da \"Sow & So\" - SFTNR",
+        "key": "nappy_nina_swarvy___show_you_so",
+        "genresRaw": ["hip-hop", "jazz"],
+        "tidalId": "523831928"
+      },
+      {
+        "title": "Avril",
+        "artist": "TATIANA PARIS",
+        "albumDetails": ", da \"Thalle\" – Carton Records CROIX",
+        "key": "tatiana_paris___avril",
+        "genresRaw": ["experimental", "instrumental", "electronic"],
+        "tidalId": "512535398"
+      },
+      {
+        "title": "Finestra aperta (intro)",
+        "artist": "ØKAPI & ALDO KAPI ORCH.",
+        "albumDetails": ", da \"Økarine\" - Le Vele",
+        "key": "økapi_aldo_kapi_orch___finestra_aperta_intro",
+        "genresRaw": ["electronic", "experimental", "instrumental"],
+        "tidalId": "524412471"
+      },
+      {
+        "title": "Tortelli volanti",
+        "artist": "ØKAPI & ALDO KAPI ORCH.",
+        "albumDetails": ", da \"Økarine\" - Le Vele",
+        "key": "økapi_aldo_kapi_orch___tortelli_volanti",
+        "genresRaw": ["electroacoustic", "experimental", "electronic"],
+        "tidalId": "524412473"
+      },
+      {
+        "title": "Pharmakon",
+        "artist": "SEPTEMBER 29TH (FEAT. KEN GORDON)",
+        "albumDetails": ", da \"1997 Reloaded Original Soundtrack VOL. 1\" – Autoproduzione",
+        "key": "september_29th_feat_ken_gordon___pharmakon",
+        "genresRaw": ["noise", "industrial", "experimental"]
+      },
+      {
+        "title": "Eating Sushi With Her The Night Before Leaving For College",
+        "artist": "MY JUDO GIRL",
+        "albumDetails": ", da \"1997 Reloaded Original Soundtrack VOL. 2\" – Autoproduzione",
+        "key": "my_judo_girl___eating_sushi_with_her_the_night_before_leaving_for_college",
+        "genresRaw": [],
+        "tidalId": "529344523"
+      },
+      {
+        "title": "A Little Called Pauline",
+        "artist": "MASSIMO GIUNTOLI",
+        "albumDetails": ", da \"HRS - Home Recording Songs\" – Autoproduzione",
+        "key": "massimo_giuntoli___a_little_called_pauline",
+        "genresRaw": ["singer-songwriter", "experimental"]
+      },
+      {
+        "title": "Such A Danger!",
+        "artist": "MASSIMO GIUNTOLI feat. Alfredo Altomare",
+        "albumDetails": ", da \"HRS - Home Recording Songs\" – Autoproduzione",
+        "key": "massimo_giuntoli_feat_alfredo_altomare___such_a_danger",
+        "genresRaw": ["instrumental"]
+      },
+      {
+        "title": "Brodo primordiale",
+        "artist": "ØKAPI & ALDO KAPI ORCH.",
+        "albumDetails": ", da \"Økarine\" - Le Vele",
+        "key": "økapi_aldo_kapi_orch___brodo_primordiale",
+        "genresRaw": ["experimental", "instrumental", "psychedelic"],
+        "tidalId": "524412478"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Easy",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-18062026-bc4a9e24-4313-4f03-802d-37544cb75b80.html",
+    "date": "18 Giu 2026",
+    "tracks": [
+      {
+        "title": "Ora Cu (Cantu ri Salinai)",
+        "artist": "NUHARA",
+        "albumDetails": ", da \"Rama\" – Trovarobato",
+        "key": "nuhara___ora_cu_cantu_ri_salinai",
+        "genresRaw": ["world", "electronic", "experimental"],
+        "tidalId": "519935820"
+      },
+      {
+        "title": "Sbògghia (Cantu ri Pisatura)",
+        "artist": "NUHARA",
+        "albumDetails": ", da \"Rama\" – Trovarobato",
+        "key": "nuhara___sbogghia_cantu_ri_pisatura",
+        "genresRaw": ["electronic", "experimental", "world"],
+        "tidalId": "519935825"
+      },
+      {
+        "title": "Economic Train",
+        "artist": "LEE SCRATCH PERRY & MOUSE ON MARS",
+        "albumDetails": ", da \"Spatial, No Problem.\" – Domino",
+        "key": "lee_scratch_perry_mouse_on_mars___economic_train",
+        "genresRaw": ["dub", "electronic", "experimental"],
+        "tidalId": "501882197"
+      },
+      {
+        "title": "Mutosy",
+        "artist": "CINNA PEYGHAMY",
+        "albumDetails": ", da \"Music For Tombak & Synth\" – Other People",
+        "key": "cinna_peyghamy___mutosy",
+        "genresRaw": ["experimental", "electronic", "techno"],
+        "tidalId": "506229020"
+      },
+      {
+        "title": "Open Sea, Boat's Land",
+        "artist": "ALEXANDER HAWKINS",
+        "albumDetails": ", da \"No Nation But Imagination\" – Intakt Records",
+        "key": "alexander_hawkins___open_sea_boat's_land",
+        "genresRaw": ["jazz", "experimental", "instrumental"],
+        "tidalId": "518867988"
+      },
+      {
+        "title": "Palestrina, 25",
+        "artist": "POLYSONICA",
+        "albumDetails": "-28 giugno 2026",
+        "key": "polysonica___palestrina_25",
+        "genresRaw": ["ambient", "experimental", "classical"]
+      },
+      {
+        "title": "Torino, 27",
+        "artist": "SPELLBOUND",
+        "albumDetails": "-28 giugno e 26-27 settembre 2026",
+        "key": "spellbound___torino_27",
+        "genresRaw": ["ambient", "experimental", "electroacoustic"]
+      },
+      {
+        "title": "Scopoli (PG), 31 luglio",
+        "artist": "HOLYDAYS FESTIVAL",
+        "albumDetails": "- 2 agosto 2026",
+        "key": "holydays_festival___scopoli_pg_31_luglio",
+        "genresRaw": ["experimental", "electronic", "world"]
+      },
+      {
+        "title": "Gush From The Pulp Of My Eyes\"",
+        "artist": "DANIA AND ROSSO POLARE",
+        "albumDetails": ", da \"Keep Smoking Swamp\" - Paralaxe Editions",
+        "key": "dania_and_rosso_polare___gush_from_the_pulp_of_my_eyes\"",
+        "genresRaw": ["ambient", "experimental"]
+      },
+      {
+        "title": "Anabasi",
+        "artist": "GABRIELE GASPAROTTI",
+        "albumDetails": ", da \"Tropismi\" - Dio Drone",
+        "key": "gabriele_gasparotti___anabasi",
+        "genresRaw": ["electroacoustic", "experimental", "instrumental"],
+        "tidalId": "361011051"
+      },
+      {
+        "title": "The Pangs of Ulster",
+        "artist": "MILKWEED",
+        "albumDetails": ", da \"Remscéla\" - Broadside Hacks",
+        "key": "milkweed___the_pangs_of_ulster",
+        "genresRaw": ["experimental", "folk", "ambient"],
+        "tidalId": "417723432"
+      },
+      {
+        "title": "Drinking in the House of Fedlimid",
+        "artist": "MILKWEED",
+        "albumDetails": ", da \"Remscéla\" - Broadside Hacks",
+        "key": "milkweed___drinking_in_the_house_of_fedlimid",
+        "genresRaw": ["experimental", "folk", "trip-hop"],
+        "tidalId": "417723433"
+      },
+      {
+        "title": "Meet Me",
+        "artist": "TRACY BRYANT",
+        "albumDetails": ", da \"The Well\" - Taxi Gauche Records",
+        "key": "tracy_bryant___meet_me",
+        "genresRaw": ["indie-pop", "post-punk", "electronic"],
+        "tidalId": "504960500"
+      },
+      {
+        "title": "Danny",
+        "artist": "TRACY BRYANT",
+        "albumDetails": ", da \"The Well\" - Taxi Gauche Records",
+        "key": "tracy_bryant___danny",
+        "genresRaw": ["rock", "singer-songwriter"],
+        "tidalId": "504960503"
+      },
+      {
+        "title": "Famished",
+        "artist": "TRACY BRYANT",
+        "albumDetails": ", da \"The Well\" - Taxi Gauche Records",
+        "key": "tracy_bryant___famished",
+        "genresRaw": ["post-punk", "singer-songwriter"],
+        "tidalId": "504960498"
+      },
+      {
+        "title": "Book Of Ships",
+        "artist": "HIRTA",
+        "albumDetails": ", da \"Soft Peaks\" - Half Painted Door Records",
+        "key": "hirta___book_of_ships",
+        "genresRaw": ["indie rock", "psych folk rock", "experimental"],
+        "tidalId": "518999214"
+      },
+      {
+        "title": "Out In The Open",
+        "artist": "HIRTA",
+        "albumDetails": ", da \"Soft Peaks\" - Half Painted Door Records",
+        "key": "hirta___out_in_the_open",
+        "genresRaw": ["folk", "acoustic", "singer-songwriter"],
+        "tidalId": "518999218"
+      },
+      {
+        "title": "Prossimità",
+        "artist": "TRISTITROPICI",
+        "albumDetails": ", da \"Traduzioni\" - Brutture Moderne",
+        "key": "tristitropici___prossimita",
+        "genresRaw": ["post-rock", "alt-folk", "experimental"],
+        "tidalId": "525822331"
+      },
+      {
+        "title": "Mare Molle",
+        "artist": "TRISTITROPICI",
+        "albumDetails": ", da \"Traduzioni\" - Brutture Moderne",
+        "key": "tristitropici___mare_molle",
+        "genresRaw": ["post-rock", "alt-folk", "experimental"],
+        "tidalId": "525017085"
+      },
+      {
+        "title": "The Mist Trial",
+        "artist": "MASNADERO",
+        "albumDetails": ", da \"Masnada Classica\" - Stand Alone Complex",
+        "key": "masnadero___the_mist_trial",
+        "genresRaw": ["singer-songwriter", "acoustic", "folk"],
+        "tidalId": "523858183"
+      },
+      {
+        "title": "Màs Nada",
+        "artist": "MASNADERO",
+        "albumDetails": ", da \"Masnada Classica\" - Stand Alone Complex",
+        "key": "masnadero___mas_nada",
+        "genresRaw": ["psychedelic", "shoegaze", "rock"],
+        "tidalId": "523858181"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Claro Que Si",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-17062026-19209c29-5044-43cf-9a78-e9b2500590ce.html",
+    "date": "17 Giu 2026",
+    "tracks": [
+      {
+        "title": "Resolution Each And Every",
+        "artist": "ALEXANDER HAWKINS",
+        "albumDetails": ", da \"No Nation But Imagination\" – Intakt Records",
+        "key": "alexander_hawkins___resolution_each_and_every",
+        "genresRaw": ["jazz", "experimental", "instrumental"],
+        "tidalId": "518867980"
+      },
+      {
+        "title": "Somoud",
+        "artist": "NATACHA ATLAS & SAMY BISHAI",
+        "albumDetails": ", da \"Parallel Universe Volume 1\" – Airfono",
+        "key": "natacha_atlas_samy_bishai___somoud",
+        "genresRaw": ["electronic", "world", "experimental"],
+        "tidalId": "504036027"
+      },
+      {
+        "title": "Tarantella",
+        "artist": "TELLKUJIRA",
+        "albumDetails": ", da \"La lucha es un poema colectivo\" – Superpang Records",
+        "key": "tellkujira___tarantella",
+        "genresRaw": ["post-rock", "experimental", "instrumental"]
+      },
+      {
+        "title": "Scuordu (Cantu ri Surfarara)",
+        "artist": "NUHARA",
+        "albumDetails": ", da \"Rama\" – Trovarobato",
+        "key": "nuhara___scuordu_cantu_ri_surfarara",
+        "genresRaw": ["experimental", "folk", "electronic"],
+        "tidalId": "519935818"
+      },
+      {
+        "title": "Quarta Edizione, Alta Murgia, Corato (BA), 6",
+        "artist": "SECOLARE FESTIVAL",
+        "albumDetails": "– 9 agosto 2026",
+        "key": "secolare_festival___quarta_edizione_alta_murgia_corato_ba_6",
+        "genresRaw": []
+      },
+      {
+        "title": "A Shadow With No Silhouette",
+        "artist": "RADWAN GHAZI MOUMNEH & FRÉDÉRIC D. OBERLAND",
+        "albumDetails": ", da \"Eternal Life No End\" - Constellation",
+        "key": "radwan_ghazi_moumneh_frederic_d_oberland___a_shadow_with_no_silhouette",
+        "genresRaw": ["experimental", "electroacoustic", "world"],
+        "tidalId": "490037129"
+      },
+      {
+        "title": "Columbia",
+        "artist": "CHARLIE CHIMI",
+        "albumDetails": ", da \"Disco Chimi\" - Club Coco",
+        "key": "charlie_chimi___columbia",
+        "genresRaw": ["funk", "afrobeat", "jazz"],
+        "tidalId": "509739752"
+      },
+      {
+        "title": "Espejo",
+        "artist": "CHARLIE CHIMI",
+        "albumDetails": ", da \"Disco Chimi\" - Club Coco",
+        "key": "charlie_chimi___espejo",
+        "genresRaw": ["funk", "afrobeat"],
+        "tidalId": "509739766"
+      },
+      {
+        "title": "Claro Que Sí (Cómo No)",
+        "artist": "CHARLIE CHIMI",
+        "albumDetails": ", da \"Disco Chimi\" - Club Coco",
+        "key": "charlie_chimi___claro_que_si_como_no",
+        "genresRaw": ["afrobeat", "funk", "latin"],
+        "tidalId": "509739765"
+      },
+      {
+        "title": "Perdi Mis Ojos",
+        "artist": "MEXICAN INSTITUTE OF SOUND/MERIDIAN BROTHERS",
+        "albumDetails": ", da \"Ruido Tovar\" - Ansonia Records, Inc.",
+        "key": "mexican_institute_of_soundmeridian_brothers___perdi_mis_ojos",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "506296207"
+      },
+      {
+        "title": "Ritmo Babilonia",
+        "artist": "MEXICAN INSTITUTE OF SOUND/MERIDIAN BROTHERS",
+        "albumDetails": ", da \"Ruido Tovar\" - Ansonia Records, Inc.",
+        "key": "mexican_institute_of_soundmeridian_brothers___ritmo_babilonia",
+        "genresRaw": ["electronic", "experimental", "world"],
+        "tidalId": "506296191"
+      },
+      {
+        "title": "Cumbia De Los Estudiantes",
+        "artist": "MEXICAN INSTITUTE OF SOUND/MERIDIAN BROTHERS",
+        "albumDetails": ", da \"Ruido Tovar\" - Ansonia Records, Inc.",
+        "key": "mexican_institute_of_soundmeridian_brothers___cumbia_de_los_estudiantes",
+        "genresRaw": ["cumbia", "electronic"],
+        "tidalId": "506296205"
+      },
+      {
+        "title": "Onire",
+        "artist": "ÀBÁSE",
+        "albumDetails": ", da \"Laroyê\" - Oshu Records",
+        "key": "abase___onire",
+        "genresRaw": ["jazz", "afrobeat", "electronic"],
+        "tidalId": "201213368"
+      },
+      {
+        "title": "Awo Ossanyi",
+        "artist": "ÀBÁSE",
+        "albumDetails": ", da \"Laroyê\" - Oshu Records",
+        "key": "abase___awo_ossanyi",
+        "genresRaw": ["afrobeat", "funk", "jazz"],
+        "tidalId": "201213364"
+      },
+      {
+        "title": "Agangatolú",
+        "artist": "ÀBÁSE",
+        "albumDetails": ", da \"Laroyê\" - Oshu Records",
+        "key": "abase___agangatolu",
+        "genresRaw": ["afrobeat", "funk", "electronic"],
+        "tidalId": "201213357"
+      },
+      {
+        "title": "Agnese",
+        "artist": "TRESCA Y TIGRE",
+        "albumDetails": ", da \"Casi Caustica Casi Nada\" - Funclab Records",
+        "key": "tresca_y_tigre___agnese",
+        "genresRaw": ["electronic", "hip-hop", "pop"],
+        "tidalId": "524820322"
+      },
+      {
+        "title": "Sara",
+        "artist": "TRESCA Y TIGRE",
+        "albumDetails": ", da \"Casi Caustica Casi Nada\" - Funclab Records",
+        "key": "tresca_y_tigre___sara",
+        "genresRaw": ["electronic", "hip-hop", "experimental"],
+        "tidalId": "524820327"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Molteplicità",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-16062026-03ba500a-b2ee-48a7-905f-e66f8ffcab25.html",
+    "date": "16 Giu 2026",
+    "tracks": [
+      {
+        "title": "Tendent",
+        "artist": "WU-LU & POiSON ANNA",
+        "albumDetails": ", da \"Bakerz Dozen\" – Warp Records",
+        "key": "wulu_poison_anna___tendent",
+        "genresRaw": ["trip-hop", "hip-hop"],
+        "tidalId": "516509039"
+      },
+      {
+        "title": "Silver Surfer / West Window",
+        "artist": "WU-LU & POiSON ANNA",
+        "albumDetails": ", da \"Bakerz Dozen\" – Warp Records",
+        "key": "wulu_poison_anna___silver_surfer_west_window",
+        "genresRaw": ["hip-hop", "trip-hop"],
+        "tidalId": "516509041"
+      },
+      {
+        "title": "Zur زور",
+        "artist": "CINNA PEYGHAMY",
+        "albumDetails": ", da \"Music For Tombak & Synth\" – Other People",
+        "key": "cinna_peyghamy___zur_زور",
+        "genresRaw": ["experimental", "electronic", "instrumental"],
+        "tidalId": "506229021"
+      },
+      {
+        "title": "Zar 12",
+        "artist": "NATACHA ATLAS & SAMY BISHAI",
+        "albumDetails": ", da \"Parallel Universe Volume 1\" – Airfono",
+        "key": "natacha_atlas_samy_bishai___zar_12",
+        "genresRaw": ["world", "experimental"],
+        "tidalId": "504036019"
+      },
+      {
+        "title": "Sounding Balloons at the Kármán Line",
+        "artist": "LEVERTON FOX",
+        "albumDetails": ", da \"Eternal Gong Bath Of The Sunbed Mind\" – Not Applicable",
+        "key": "leverton_fox___sounding_balloons_at_the_karman_line",
+        "genresRaw": ["jazz", "experimental", "electronic"]
+      },
+      {
+        "title": "Blood Red Rubies Set In Ebony",
+        "artist": "OLIVER MANN/STEFANO PILIA",
+        "albumDetails": ", da \"Precious Moments\" - Tsss Tapes",
+        "key": "oliver_mannstefano_pilia___blood_red_rubies_set_in_ebony",
+        "genresRaw": ["ambient", "folk", "singer-songwriter"]
+      },
+      {
+        "title": "Precious Stone",
+        "artist": "OLIVER MANN/STEFANO PILIA",
+        "albumDetails": ", da \"Precious Moments\" - Tsss Tapes",
+        "key": "oliver_mannstefano_pilia___precious_stone",
+        "genresRaw": ["electroacoustic", "experimental", "instrumental"],
+        "tidalId": "201725346"
+      },
+      {
+        "title": "Trinquette",
+        "artist": "LUCIANO CHESSA & SQUNCR",
+        "albumDetails": ", da \"Ç\" - Maple Death Records",
+        "key": "luciano_chessa_squncr___trinquette",
+        "genresRaw": ["electroacoustic", "experimental", "jazz"],
+        "tidalId": "526307888"
+      },
+      {
+        "title": "Il suono è stato portato",
+        "artist": "PUNK XEROX",
+        "albumDetails": ", da \"Porta il suono\" - MyOwnPrivateRecords",
+        "key": "punk_xerox___il_suono_e_stato_portato",
+        "genresRaw": ["noise", "experimental", "punk"]
+      },
+      {
+        "title": "Africa",
+        "artist": "AFRODOG",
+        "albumDetails": ", da \"Afrodog\" – Strato Dischi",
+        "key": "afrodog___africa",
+        "genresRaw": []
+      },
+      {
+        "title": "Njuli",
+        "artist": "AFRODOG",
+        "albumDetails": ", da \"Afrodog\" – Strato Dischi",
+        "key": "afrodog___njuli",
+        "genresRaw": ["electronic", "downtempo"]
+      },
+      {
+        "title": "Massa",
+        "artist": "FATOUMATA DIAWARA",
+        "albumDetails": ", da \"Massa\" – Nø Format",
+        "key": "fatoumata_diawara___massa",
+        "genresRaw": ["world", "folk"],
+        "tidalId": "512708622"
+      },
+      {
+        "title": "Farana",
+        "artist": "FATOUMATA DIAWARA",
+        "albumDetails": ", da \"Massa\" – Nø Format",
+        "key": "fatoumata_diawara___farana",
+        "genresRaw": ["world", "folk"],
+        "tidalId": "512708626"
+      },
+      {
+        "title": "Liga (ft. Cocanha)",
+        "artist": "LUCAS SANTTANA",
+        "albumDetails": ", da \"Brasiliano\" – No Format",
+        "key": "lucas_santtana___liga_ft_cocanha",
+        "genresRaw": ["mpb", "soul"],
+        "tidalId": "477597988"
+      },
+      {
+        "title": "Cuendo Mi Lengua (ft. María Lado)",
+        "artist": "LUCAS SANTTANA",
+        "albumDetails": ", da \"Brasiliano\" – No Format",
+        "key": "lucas_santtana___cuendo_mi_lengua_ft_maria_lado",
+        "genresRaw": ["mpb", "electronic", "world"],
+        "tidalId": "477597991"
+      },
+      {
+        "title": "Festa Iansã",
+        "artist": "DJ ANDERSON DO PARAÍSO",
+        "albumDetails": ", da \"AA.VV., Candomblé: Sacred Rhythms in Brazil\" – Flee",
+        "key": "dj_anderson_do_paraiso___festa_iansa",
+        "genresRaw": ["funk", "downtempo", "minimal"],
+        "tidalId": "523418650"
+      },
+      {
+        "title": "Pluralidades",
+        "artist": "XEXA",
+        "albumDetails": ", da \"AA.VV., Candomblé: Sacred Rhythms in Brazil\" – Flee",
+        "key": "xexa___pluralidades",
+        "genresRaw": ["afrobeat", "electronic", "psychedelic"],
+        "tidalId": "523418653"
+      },
+      {
+        "title": "Xangô (Festa das Iabás )",
+        "artist": "ILÊ AXÉ OPÔ AGANJÚ",
+        "albumDetails": ", da \"AA.VV., Candomblé: Sacred Rhythms in Brazil\" – Flee",
+        "key": "ile_axe_opo_aganju___xango_festa_das_iabas_",
+        "genresRaw": ["world", "instrumental"],
+        "tidalId": "523418667"
       }
     ]
   }
