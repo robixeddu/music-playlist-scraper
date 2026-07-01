@@ -117,19 +117,23 @@ const cleanTitle = (title: string): string =>
     .replace(/\s*[-–]\s*$/, "")                     // trailing " -" or " –"
     .trim();
 
-// Normalize artist for search: expand dots (DR.DRE → DR DRE), strip feat./ft. suffixes
+// Normalize artist for search: expand dots (DR.DRE → DR DRE), strip feat./ft. suffixes,
+// replace slash/ampersand with space (COCANHA / PIERRE DESPRATS → COCANHA PIERRE DESPRATS)
 const normalizeArtistForSearch = (artist: string): string =>
   artist
     .replace(/\./g, " ")                          // DR.DRE → DR DRE, M.I.A. → M I A
     .replace(/[''']/g, " ")                        // D'ANDREA → D ANDREA, BOCCO MA'IN → BOCCO MA IN
+    .replace(/\s*[\/&]\s*/g, " ")                 // COCANHA / PIERRE DESPRATS → COCANHA PIERRE DESPRATS
     .replace(/[!?*+#@]/g, "")                     // PRAED ORCHESTRA! → PRAED ORCHESTRA
     .replace(/\s*(?:feat\.?|ft\.?)\s+.*/i, "")   // strip "feat. ..." suffix
     .replace(/\s+/g, " ")
     .trim();
 
-// Normalize title for search: strip apostrophes that can confuse TIDAL search API
+// Normalize title for search: strip apostrophes and accents that can confuse TIDAL search API
 const normalizeTitleForSearch = (title: string): string =>
-  title.replace(/[''']/g, "").replace(/[!?*+#@]/g, "").replace(/\s+/g, " ").trim();
+  title
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Vipèra → Vipera
+    .replace(/[''']/g, "").replace(/[!?*+#@]/g, "").replace(/\s+/g, " ").trim();
 
 // Return unique artist variants to try: full, normalized, each slash/& part
 const artistSearchVariants = (artist: string): string[] => {

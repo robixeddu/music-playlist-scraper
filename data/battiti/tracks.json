@@ -59901,8 +59901,208 @@
         "artist": "ILÊ AXÉ OPÔ AGANJÚ",
         "albumDetails": ", da \"AA.VV., Candomblé: Sacred Rhythms in Brazil\" – Flee",
         "key": "ile_axe_opo_aganju___xango_festa_das_iabas_",
-        "genresRaw": ["world", "instrumental"],
+        "genresRaw": ["world"],
         "tidalId": "523418667"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Kd Japon",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-25062026-60ee1bef-0977-4462-9266-62991412ddcf.html",
+    "date": "25 Giu 2026",
+    "tracks": [
+      {
+        "title": "Déraciné",
+        "artist": "SHUNSUKE WATANABE",
+        "albumDetails": ", da \"MUSIC -Most Unusual Songs In my Collection-\" - Waikiki Record",
+        "key": "shunsuke_watanabe___deracine",
+        "genresRaw": ["pop", "singer-songwriter"],
+        "tidalId": "407997508"
+      },
+      {
+        "title": "Right?, da \"That's What You Get \"",
+        "artist": "BIG FOOT",
+        "albumDetails": "- LaoBan Records",
+        "key": "big_foot___right?_da_\"that's_what_you_get_\"",
+        "genresRaw": ["jazz", "experimental"]
+      },
+      {
+        "title": "Regular 2020 Remix",
+        "artist": "YASEI COLLECTIVE",
+        "albumDetails": "- \"Regular 2020 Remix\" - Thursday Club Recordings",
+        "key": "yasei_collective___regular_2020_remix",
+        "genresRaw": ["electronic", "experimental"],
+        "tidalId": "145902704"
+      },
+      {
+        "title": "Coco",
+        "artist": "MAKARA",
+        "albumDetails": ", da \"Ngong Ngong\" - Autoproduzione",
+        "key": "makara___coco",
+        "genresRaw": ["psychedelic", "rock", "experimental"],
+        "tidalId": "450420782"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "An Evolutionary Music: Ariel Kalma & Friends",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-30062026-9323f388-2e72-45f9-9cea-5b7c1cf0dc35.html",
+    "date": "30 Giu 2026",
+    "tracks": [
+      {
+        "title": "This \"I\" Was Not",
+        "artist": "CARLOS NIÑO & FRIENDS",
+        "albumDetails": ", da \"Placenta\" - International Anthem Recording Company",
+        "key": "carlos_nino_friends___this_\"i\"_was_not",
+        "genresRaw": ["jazz", "experimental"],
+        "tidalId": "352162026"
+      },
+      {
+        "title": "Seal, da \"Like The Sky I've Been Too Quiet\"",
+        "artist": "GANAVYA",
+        "albumDetails": "- Native Rebel Recordings",
+        "key": "ganavya___seal_da_\"like_the_sky_i've_been_too_quiet\"",
+        "genresRaw": ["jazz", "ambient", "folk"],
+        "tidalId": "349711007"
+      },
+      {
+        "title": "Rue De La Gaité",
+        "artist": "ARIEL KALMA",
+        "albumDetails": ", da \"French Archives Vol. II 1974-1985\" - Black Sweat Records",
+        "key": "ariel_kalma___rue_de_la_gaite",
+        "genresRaw": ["ambient", "world", "jazz"],
+        "tidalId": "80774890"
+      },
+      {
+        "title": "Meta-Ideations",
+        "artist": "CARLOS NIÑO / SURYA BOTOFASINA / ADAM RUDOLPH",
+        "albumDetails": ", da \"Live at Public Records 12​/​10​/​2022\" - International Anthem Recording Company",
+        "key": "carlos_nino_surya_botofasina_adam_rudolph___metaideations",
+        "genresRaw": ["experimental", "jazz", "world"],
+        "tidalId": "345635459"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "A Little More Free",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-29062026-ccf3289a-4fab-4cf0-8c76-08962456dca8.html",
+    "date": "29 Giu 2026",
+    "tracks": [
+      {
+        "title": "Vipèra",
+        "artist": "COCANHA / PIERRE DESPRATS",
+        "albumDetails": ", da \"Serpente\" – Les Disques Bongo Joe",
+        "key": "cocanha_pierre_desprats___vipera",
+        "genresRaw": ["downtempo", "electronic", "world"],
+        "tidalId": "474994403"
+      },
+      {
+        "title": "Se ieu sabiái volar",
+        "artist": "COCANHA / PIERRE DESPRATS",
+        "albumDetails": ", da \"Serpente\" – Les Disques Bongo Joe",
+        "key": "cocanha_pierre_desprats___se_ieu_sabiai_volar",
+        "genresRaw": ["soundtrack", "folk"],
+        "tidalId": "474994401"
+      },
+      {
+        "title": "Qèlèméwa",
+        "artist": "NALBANDIAN THE ETHIOPIAN & EITHER/ORCHESTRA",
+        "albumDetails": ", da \"Ethiopiques 32: Nalbandian The Ethiopian & Either/Orchestra\" – Heavenly Sweetness",
+        "key": "nalbandian_the_ethiopian_eitherorchestra___qelemewa",
+        "genresRaw": ["world", "instrumental"],
+        "tidalId": "469539241"
+      },
+      {
+        "title": "VIII",
+        "artist": "EARTH SOUNDS NOW",
+        "albumDetails": ", da \"Convergence\" - Other People",
+        "key": "earth_sounds_now___viii",
+        "genresRaw": ["experimental", "instrumental"],
+        "tidalId": "436450010"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "The Spell",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-27062026-59a29b24-9c18-4f90-9c8f-a69000c3b378.html",
+    "date": "27 Giu 2026",
+    "tracks": [
+      {
+        "title": "tour italiano, 21",
+        "artist": "SANAM",
+        "albumDetails": "-28 novembre",
+        "key": "sanam___tour_italiano_21",
+        "genresRaw": []
+      },
+      {
+        "title": "lato A",
+        "artist": "BÉGAYER",
+        "albumDetails": ", da \"La munglesa\" - Tsss Tapes",
+        "key": "begayer___lato_a",
+        "genresRaw": ["experimental", "noise", "electronic"]
+      },
+      {
+        "title": "Dov",
+        "artist": "MOJNA",
+        "albumDetails": ", da \"Mareld\" - Heilo",
+        "key": "mojna___dov",
+        "genresRaw": ["folk", "instrumental"],
+        "tidalId": "458166101"
+      },
+      {
+        "title": "Färger av gamla båtar",
+        "artist": "MOJNA",
+        "albumDetails": ", da \"Mareld\" - Heilo",
+        "key": "mojna___farger_av_gamla_batar",
+        "genresRaw": [],
+        "tidalId": "458166103"
+      },
+      {
+        "title": "Garçom da Ausência",
+        "artist": "BACO EXU DO BLUES",
+        "albumDetails": ", da \"Hasos\" - 999, Sony Music Entertainment Brasil",
+        "key": "baco_exu_do_blues___garcom_da_ausencia",
+        "genresRaw": ["hip-hop", "soul", "jazz"],
+        "tidalId": "472522072"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Alan Vega",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/06/Battiti-del-26062026-749a2c33-d021-4eb1-9bd2-0ce0846229f9.html",
+    "date": "26 Giu 2026",
+    "tracks": [
+      {
+        "title": "Void",
+        "artist": "MOHAMMAD REZA MORTAZAVI",
+        "albumDetails": ", da \"Nexus\" – Latency",
+        "key": "mohammad_reza_mortazavi___void",
+        "genresRaw": ["world", "experimental", "electronic"],
+        "tidalId": "452326604"
+      },
+      {
+        "title": "Sguabag/The Sweeper",
+        "artist": "BRÌGHDE CHAIMBEUL",
+        "albumDetails": ", da \"Sunwise\" – Glitterbeat",
+        "key": "brighde_chaimbeul___sguabagthe_sweeper",
+        "genresRaw": ["folk", "instrumental"],
+        "tidalId": "427714854"
+      },
+      {
+        "title": "Duan",
+        "artist": "BRÌGHDE CHAIMBEUL",
+        "albumDetails": ", da \"Sunwise\" – Glitterbeat",
+        "key": "brighde_chaimbeul___duan",
+        "genresRaw": ["folk", "instrumental", "experimental"],
+        "tidalId": "427714855"
+      },
+      {
+        "title": "Yek",
+        "artist": "OREN AMBARCHI / JOHAN BERTHLING / ANDREAS WERLIIN",
+        "albumDetails": ", da \"Ghosted III\" – Drag City",
+        "key": "oren_ambarchi_johan_berthling_andreas_werliin___yek",
+        "genresRaw": ["experimental", "ambient"],
+        "tidalId": "435536562"
       }
     ]
   }

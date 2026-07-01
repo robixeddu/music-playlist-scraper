@@ -15,14 +15,14 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const loadCheckpoint = async (): Promise<string | null> => {
   try {
     const raw = await fsPromises.readFile(LOVED_CHECKPOINT_FILE, "utf-8");
-    return (JSON.parse(raw) as { lastLikedAt: string }).lastLikedAt ?? null;
+    return (JSON.parse(raw) as { lastLovedAt: string }).lastLovedAt ?? null;
   } catch {
     return null;
   }
 };
 
-const saveCheckpoint = async (lastLikedAt: string): Promise<void> => {
-  await fsPromises.writeFile(LOVED_CHECKPOINT_FILE, JSON.stringify({ lastLikedAt }, null, 2));
+const saveCheckpoint = async (lastLovedAt: string): Promise<void> => {
+  await fsPromises.writeFile(LOVED_CHECKPOINT_FILE, JSON.stringify({ lastLovedAt }, null, 2));
 };
 
 export const loved = async () => {
@@ -41,19 +41,19 @@ export const loved = async () => {
   }
   console.log(`\n🎵 Battiti tracks with TIDAL ID: ${battitiIds.size}`);
 
-  // 2. Fetch liked tracks from TIDAL, stopping at last checkpoint
+  // 2. Fetch loved tracks from TIDAL, stopping at last checkpoint
   const sinceDate = await loadCheckpoint();
   if (sinceDate) {
-    console.log(`❤️  Fetching liked tracks since ${sinceDate}...`);
+    console.log(`❤️  Fetching loved tracks since ${sinceDate}...`);
   } else {
-    console.log("❤️  Fetching all liked tracks from TIDAL (first run)...");
+    console.log("❤️  Fetching all loved tracks from TIDAL (first run)...");
   }
 
-  const { ids: likedIds, latestDate } = await getUserFavoriteTrackIds(userId, token, sinceDate ?? undefined);
-  console.log(`   Found ${likedIds.size} liked track(s) to process`);
+  const { ids: lovedIds, latestDate } = await getUserFavoriteTrackIds(userId, token, sinceDate ?? undefined);
+  console.log(`   Found ${lovedIds.size} loved track(s) to process`);
 
-  // 3. Intersection: new liked tracks that come from Battiti
-  const lovedBattiti = [...likedIds].filter((id) => battitiIds.has(id));
+  // 3. Intersection: new loved tracks that come from Battiti
+  const lovedBattiti = [...lovedIds].filter((id) => battitiIds.has(id));
   console.log(`   ✨ ${lovedBattiti.length} of them come from Battiti\n`);
 
   if (lovedBattiti.length === 0) {

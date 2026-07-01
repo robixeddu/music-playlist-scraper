@@ -201,7 +201,7 @@ export async function removeItemsFromPlaylist(
   }
 }
 
-// ── Get user collection track IDs (liked tracks) ─────────────────────────────
+// ── Get user collection track IDs (loved tracks) ─────────────────────────────
 
 /**
  * Fetches user collection track IDs, optionally stopping once items older
