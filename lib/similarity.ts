@@ -36,6 +36,17 @@ const containment = (a: string, b: string): number => {
   return [...smaller].filter(t => larger.has(t)).length / smaller.size;
 };
 
+// Artist-safe containment: ignores tokens ≤ 2 chars (articles, prepositions like
+// "du", "de", "la", "di") that cause false positives when shared across unrelated
+// artist names (e.g. "LA DÉMESURE DU PAS" vs "Hüsker Dü" both contain "du").
+const artistContainment = (a: string, b: string): number => {
+  const ta = new Set(a.split(" ").filter(t => t.length > 2));
+  const tb = new Set(b.split(" ").filter(t => t.length > 2));
+  if (ta.size === 0 || tb.size === 0) return 0;
+  const [smaller, larger] = ta.size <= tb.size ? [ta, tb] : [tb, ta];
+  return [...smaller].filter(t => larger.has(t)).length / smaller.size;
+};
+
 export interface MatchScore {
   score: number;
   artistScore: number;
@@ -66,8 +77,8 @@ export const computeMatchScore = (
   const artistParts = splitArtistParts(ourArtist);
   const artistScore = Math.max(
     jaccard(na, ta),
-    containment(na, ta),
-    ...artistParts.map((p) => Math.max(jaccard(p, ta), containment(p, ta)))
+    artistContainment(na, ta),
+    ...artistParts.map((p) => Math.max(jaccard(p, ta), artistContainment(p, ta)))
   );
   // Containment on titles only if the smaller set has ≥ 3 tokens —
   // 2-token titles like "Blue Night" contained in "Beautiful Blue Night" must not give titleScore 1.0
