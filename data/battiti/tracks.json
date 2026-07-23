@@ -74865,7 +74865,6 @@
         "albumDetails": ", da \"Layers\" – Hyperjazz Records",
         "key": "khalab___acid_vaccine_feat_clap_clap",
         "genresRaw": [
-          "techno",
           "electronic",
           "dub"
         ],
@@ -80114,6 +80113,91 @@
           "instrumental",
           "mpb",
           "jazz"
+        ]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "The Gospel Of James Baldwin",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/07/Battiti-del-15072026-38ba3bed-80ae-4e3f-8c61-fa54e0ca1492.html",
+    "date": "15 Lug 2026",
+    "tracks": [
+      {
+        "title": "Inventory / On Being 52 – Part I",
+        "artist": "JAMES BALDWIN / DAVID LINX / PIERRE VAN DORMAEL",
+        "albumDetails": "da \"A Lover's Question\"",
+        "key": "james_baldwin_david_linx_pierre_van_dormael___inventory_on_being_52_–_part_i",
+        "genresRaw": [
+          "jazz",
+          "soul",
+          "instrumental"
+        ],
+        "tidalId": "20831586"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Big World",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/07/Battiti-del-16072026-d71ad89d-b56d-41f9-8852-0fc427a692cd.html",
+    "date": "16 Lug 2026",
+    "tracks": [
+      {
+        "title": "Zoja",
+        "artist": "MASSIMO SILVERIO",
+        "albumDetails": "da \"Sùrtum\" - Okum Produzioni",
+        "key": "massimo_silverio___zoja",
+        "genresRaw": [
+          "post-rock",
+          "folk",
+          "experimental"
+        ],
+        "tidalId": "456454294"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Full Serpent",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/07/Battiti-del-20072026-c65639d5-9b5c-421a-9d23-2db2a5334648.html",
+    "date": "20 Lug 2026",
+    "tracks": [
+      {
+        "title": "Float, dada \"Body\"",
+        "artist": "IKI",
+        "albumDetails": "– TILA",
+        "key": "iki___float_dada_\"body\"",
+        "genresRaw": [
+          "experimental",
+          "vocal"
+        ]
+      },
+      {
+        "title": "Ghost Town",
+        "artist": "LANKUM",
+        "albumDetails": "– 12\" Rough Trade",
+        "key": "lankum___ghost_town",
+        "genresRaw": [
+          "post-punk",
+          "experimental",
+          "folk"
+        ],
+        "tidalId": "465607787"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Radio Art. Con la voce di Pinotto Fava",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/07/Battiti-del-18072026-05d2ad3b-ddcb-4c1f-ac9f-0bb5efcde249.html",
+    "date": "18 Lug 2026",
+    "tracks": [
+      {
+        "title": "La lunga notte",
+        "artist": "ROBERTO PACI DALÒ",
+        "albumDetails": "",
+        "key": "roberto_paci_dalo___la_lunga_notte",
+        "genresRaw": [
+          "electroacoustic",
+          "experimental",
+          "ambient"
         ]
       }
     ]
