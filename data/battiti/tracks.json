@@ -80201,5 +80201,316 @@
         ]
       }
     ]
+  },
+  {
+    "episodeTitle": "Tra Le Onde: Intervista A Suzanne Ciani",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/08/Battiti-del-08082026-1da34fc6-ad00-4d91-87d3-206cd03d351c.html",
+    "date": "08 Ago 2026",
+    "tracks": [
+      {
+        "title": "Liberator, da \"Cache Cache CACHE013\" (7\")",
+        "artist": "SUZANNE CIANI",
+        "albumDetails": "- Finders Keepers Records",
+        "key": "suzanne_ciani___liberator_da_\"cache_cache_cache013\"_7\"",
+        "genresRaw": [
+          "electronic",
+          "ambient"
+        ],
+        "tidalId": "500417016"
+      },
+      {
+        "title": "Fish Music, da \"Fish Music\" (7\")",
+        "artist": "SUZANNE CIANI",
+        "albumDetails": "- Finders Keepers Records",
+        "key": "suzanne_ciani___fish_music_da_\"fish_music\"_7\"",
+        "genresRaw": [
+          "electronic",
+          "experimental",
+          "ambient"
+        ],
+        "tidalId": "499799633"
+      },
+      {
+        "title": "Xenon (vocal effects), da \"Xenon\" (7\")",
+        "artist": "SUZANNE CIANI",
+        "albumDetails": "- Finders Keepers Records",
+        "key": "suzanne_ciani___xenon_vocal_effects_da_\"xenon\"_7\"",
+        "genresRaw": [
+          "electronic",
+          "experimental",
+          "ambient"
+        ],
+        "tidalId": "500617113"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Vibrisse #29",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/08/Battiti-del-07082026-0c61eee1-eb9a-48be-a998-03573920c6fe.html",
+    "date": "07 Ago 2026",
+    "tracks": [
+      {
+        "title": "No Tears",
+        "artist": "TUXEDOMOON",
+        "albumDetails": "– 12\" Expanded Music",
+        "key": "tuxedomoon___no_tears",
+        "genresRaw": [
+          "post-punk",
+          "experimental",
+          "electronic"
+        ],
+        "tidalId": "2382669"
+      },
+      {
+        "title": "Walk",
+        "artist": "GUDRUN GUT + MABE FRATTI",
+        "albumDetails": "da \"Let's Talk About The Weather\" – Umor Rex",
+        "key": "gudrun_gut_+_mabe_fratti___walk",
+        "genresRaw": [
+          "electronic",
+          "experimental"
+        ],
+        "tidalId": "192496542"
+      },
+      {
+        "title": "Ali Baba",
+        "artist": "JOHN HOLT",
+        "albumDetails": "– 7\" Trojan Records",
+        "key": "john_holt___ali_baba",
+        "genresRaw": [
+          "reggae",
+          "soul"
+        ],
+        "tidalId": "5578250"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Citlalli",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/08/Battiti-del-06082026-f0902bd5-3720-48bb-acd1-7f816dbc38c9.html",
+    "date": "06 Ago 2026",
+    "tracks": [
+      {
+        "title": "6-9",
+        "artist": "ALPHA MAID",
+        "albumDetails": "da \"Is This A Queue\" – AD 93",
+        "key": "alpha_maid___69",
+        "genresRaw": [
+          "experimental",
+          "post-punk",
+          "noise"
+        ],
+        "tidalId": "533621253"
+      },
+      {
+        "title": "On Smoke",
+        "artist": "ALPHA MAID",
+        "albumDetails": "da \"Is This A Queue\" – AD 93",
+        "key": "alpha_maid___on_smoke",
+        "tidalId": "462441864",
+        "genresRaw": [
+          "experimental",
+          "post-punk"
+        ]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Home Is Where My Music Lives",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/08/Battiti-del-02082026-ddea7057-7734-4d62-81ef-b58ef70ab787.html",
+    "date": "02 Ago 2026",
+    "tracks": [
+      {
+        "title": "DNA",
+        "artist": "PLUME GIRL",
+        "albumDetails": "da \"Unnameable Glory\" - Mappa",
+        "key": "plume_girl___dna",
+        "genresRaw": [
+          "ambient",
+          "experimental",
+          "electronic"
+        ],
+        "tidalId": "441739697"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Condito",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/07/Battiti-del-31072026-1d13bc2a-6c53-49a8-985d-0b38236a8073.html",
+    "date": "31 Lug 2026",
+    "tracks": [
+      {
+        "title": "Yéba",
+        "artist": "LUC MOINDRANZÉ KARIOUDJA",
+        "albumDetails": "da \"Mon Balo\" – La Compagnie",
+        "key": "luc_moindranze_karioudja___yeba",
+        "genresRaw": [
+          "world"
+        ],
+        "tidalId": "456497259"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Speciale Jack DeJohnette con Fabrizio Spera",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/07/Battiti-del-30072026-67f983d9-e838-4e0b-82c6-93d9fef5602c.html",
+    "date": "30 Lug 2026",
+    "tracks": [
+      {
+        "title": "Climax, \"Jacknife\"",
+        "artist": "JACKIE MCLEAN",
+        "albumDetails": "– Blue Note",
+        "key": "jackie_mclean___climax_\"jacknife\"",
+        "genresRaw": [
+          "jazz",
+          "hard bop"
+        ],
+        "tidalId": "1371556"
+      },
+      {
+        "title": "Sandalwood And Sage",
+        "artist": "ìWADADA LEO SMITH & JACK DEJOHNETTE",
+        "albumDetails": "da \"Freedom Summer, The Legacy\" in \"The Emerald Duets\" – TUM Records",
+        "key": "iwadada_leo_smith_jack_dejohnette___sandalwood_and_sage",
+        "genresRaw": [
+          "jazz",
+          "experimental"
+        ]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Musica, memoria, identità e sopravvivenza: suoni e voci dalla Palestina",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/07/Battiti-del-27072026-4f9e9e13-6ffd-4b90-8df9-589be2542174.html",
+    "date": "27 Lug 2026",
+    "tracks": [
+      {
+        "title": "Palestine",
+        "artist": "MC ABDUL",
+        "albumDetails": "– Autoproduzione",
+        "key": "mc_abdul___palestine",
+        "genresRaw": [
+          "hip-hop"
+        ]
+      },
+      {
+        "title": "Rajeen",
+        "artist": "NAI BARGHOUTI",
+        "albumDetails": "- Maqam Productions",
+        "key": "nai_barghouti___rajeen",
+        "genresRaw": [
+          "world"
+        ],
+        "tidalId": "290136253"
+      },
+      {
+        "title": "Xena",
+        "artist": "SKRILLEX WITH NAI BARGHOUTI",
+        "albumDetails": "da \"Quest For Fire\" – Owsla",
+        "key": "skrillex_with_nai_barghouti___xena",
+        "genresRaw": [
+          "electronic",
+          "experimental"
+        ],
+        "tidalId": "276778743"
+      },
+      {
+        "title": "Bent Bladak",
+        "artist": "DANA SALAH",
+        "albumDetails": "- Beirut Records",
+        "key": "dana_salah___bent_bladak",
+        "genresRaw": [
+          "pop",
+          "folk",
+          "world"
+        ],
+        "tidalId": "441323439"
+      },
+      {
+        "title": "Shouting At The Wall",
+        "artist": "MC ABDUL",
+        "albumDetails": "– Autoproduzione",
+        "key": "mc_abdul___shouting_at_the_wall",
+        "genresRaw": [
+          "hip-hop"
+        ],
+        "tidalId": "189085906"
+      },
+      {
+        "title": "Simya'",
+        "artist": "MUQATA'A",
+        "albumDetails": "da \"Kamil Manqus\" – Hundebiss",
+        "key": "muqata'a___simya'",
+        "genresRaw": [
+          "hip-hop",
+          "experimental",
+          "noise"
+        ],
+        "tidalId": "172521671"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "10 anni di Artetetra: intervista ai fondatori, Luigi Monteanni e Matteo Pennesi",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/07/Battiti-del-24072026-6ee3e88f-5d79-42bf-86d6-7edabcb33062.html",
+    "date": "24 Lug 2026",
+    "tracks": [
+      {
+        "title": "III",
+        "artist": "NICOLA RATTI",
+        "albumDetails": "da \"Automatic Popular Music\" - LL Edizioni",
+        "key": "nicola_ratti___iii",
+        "genresRaw": [
+          "experimental"
+        ],
+        "tidalId": "275784356"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Bota Tudo",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/07/Battiti-del-22072026-8708dbcd-1cc8-4d10-8d62-bad8cb809960.html",
+    "date": "22 Lug 2026",
+    "tracks": [
+      {
+        "title": "Tributo A Martin Luther King",
+        "artist": "WILSON SIMONAL",
+        "albumDetails": "da \"Tributo A Martin Luther King\"",
+        "key": "wilson_simonal___tributo_a_martin_luther_king",
+        "genresRaw": [
+          "soul",
+          "mpb"
+        ],
+        "tidalId": "1575454"
+      },
+      {
+        "title": "Periferia É Periferia",
+        "artist": "RACIONAIS MC'S",
+        "albumDetails": "da \"Sobrevivendo No Inferno\"",
+        "key": "racionais_mc's___periferia_e_periferia",
+        "genresRaw": [
+          "hip-hop"
+        ],
+        "tidalId": "93315755"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Giungle",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/07/Battiti-del-21072026-6bfaf3cd-1422-448c-8e52-5842a591d320.html",
+    "date": "21 Lug 2026",
+    "tracks": [
+      {
+        "title": "With Love, TSORPM",
+        "artist": "THE SLEEP OF REASON PRODUCES MONSTERS",
+        "albumDetails": "da \"The Sleep Of Reason Produces Monsters\" - Corbett vs. Dempsey",
+        "key": "the_sleep_of_reason_produces_monsters___with_love_tsorpm",
+        "genresRaw": [
+          "experimental",
+          "jazz",
+          "noise"
+        ]
+      }
+    ]
   }
 ]
