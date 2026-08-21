@@ -37,9 +37,9 @@ const tidalFetch = async (
     try {
       return await doFetch();
     } catch (e: any) {
-      const isRetryable = /TIDAL API (429|5\d\d)/.test(e.message);
+      const isRetryable = /TIDAL API (400|429|5\d\d)/.test(e.message);
       if (!isRetryable || attempt === retries - 1) throw e;
-      const delay = e.message.includes("429") ? 5000 * (attempt + 1) : 2000 * (attempt + 1);
+      const delay = e.message.includes("429") ? 5000 * (attempt + 1) : e.message.includes("400") ? 3000 : 2000 * (attempt + 1);
       await sleep(delay);
     }
   }
