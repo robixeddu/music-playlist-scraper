@@ -31,7 +31,7 @@ const parseTrackString = (trackStr: string): BaseTrack | null => {
 
     const artist = cleaned.substring(0, firstComma).trim();
     const remainder = cleaned.substring(firstComma + 1).trim();
-    const albumPattern = /,\s*(da\s*"[^"]*"(?:\s+in\s+"[^"]*")?(?:\s*[-–—]\s*.+)?)(?:\s*[-–—])?\s*$/i;
+    const albumPattern = /,\s*(da\s*"[^"]*"(?:\s+in\s+"[^"]*")?(?:\s*[-–—−]\s*.+)?)(?:\s*[-–—−])?\s*$/i;
     const albumMatch = remainder.match(albumPattern);
 
     let title: string;
@@ -41,7 +41,7 @@ const parseTrackString = (trackStr: string): BaseTrack | null => {
       title = remainder.substring(0, albumMatch.index).trim();
       albumDetails = albumMatch[1].trim();
     } else {
-      const labelPattern = /[-–—]\s*(.+)$/;
+      const labelPattern = /[-–—−]\s*(.+)$/;
       const labelMatch = remainder.match(labelPattern);
 
       if (labelMatch && labelMatch.index && labelMatch.index > 5) {

@@ -54,7 +54,7 @@ export const searchTracks = async (
   try {
     const encoded = encodeURIComponent(query);
     const data = await tidalFetch(
-      `/searchResults/${encoded}?countryCode=${COUNTRY_CODE}&include=tracks%2Cartists%2Calbums`,
+      `/searchResults?filter%5Bquery%5D=${encoded}&countryCode=${COUNTRY_CODE}&include=tracks,artists,albums`,
       token
     );
 
@@ -109,7 +109,7 @@ const cleanTitle = (title: string): string =>
     .replace(/\s*,?\s*\bde\b\s+"[^"]*"/gi, "")      // French: de "Album" (with or without comma)
     .replace(/,\s*"[^"]*"/g, "")                    // RAI: , "Album Name" (quoted album after comma)
     .replace(/\s*[-–]\s*live\s*@.*/gi, "")          // "Title – live @ Venue 2025"
-    .replace(/\s*–\s*.+$/, "")                      // em-dash: label/format annotation (– 12" Rough Trade, – Les Disques Bongo Joe…)
+    .replace(/\s*[–−]\s*.+$/, "")                   // em-dash/minus: label/format annotation (– 12" Rough Trade, − Intuition Records…)
     .replace(/\s+-\s+\w+$/, "")                     // hyphen: single-word label suffix (- Tzadik, - ECM)
     .replace(/\s*[\(\[].*?[\)\]]/g, "")             // "(singolo)", "[remix]", "(1971)", etc.
     .replace(/\s*[-–]\s*(?:feat\.?|ft\.?)\s+.*/gi, "") // "Title - feat. Artist"

@@ -80530,5 +80530,148 @@
         "tidalId": "5578779"
       }
     ]
+  },
+  {
+    "episodeTitle": "Vibrisse #22",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/08/Battiti-del-23082026-d54fee78-b6a4-4665-87ac-669bae1ad091.html",
+    "date": "23 Ago 2026",
+    "tracks": [
+      {
+        "title": "Finger Pies, da \"Change\", Sacred Bones",
+        "artist": "ANIKA",
+        "albumDetails": "",
+        "key": "anika___finger_pies_da_\"change\"_sacred_bones",
+        "genresRaw": [
+          "post-punk",
+          "experimental"
+        ]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Vibrisse #21",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/09/Battiti-del-03092026-67c71574-1ff6-4f0e-92d0-61860479e7b5.html",
+    "date": "03 Set 2026",
+    "tracks": [
+      {
+        "title": "Mra",
+        "artist": "CHRIS MCGREGOR'S BROTHERHOOD OF BREATH",
+        "albumDetails": "da \"Chris McGregor's Brotherhood Of Breath\" - Fledg'ling Records",
+        "key": "chris_mcgregor's_brotherhood_of_breath___mra",
+        "genresRaw": [
+          "jazz",
+          "world",
+          "funk"
+        ],
+        "tidalId": "68962334"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Disquiet",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/09/Battiti-del-02092026-0bd96cda-f10d-4723-a657-704b7019f8da.html",
+    "date": "02 Set 2026",
+    "tracks": [
+      {
+        "title": "Joan",
+        "artist": "LYDIA THE BARD",
+        "albumDetails": "da \"The Woods\" – Autoproduzione",
+        "key": "lydia_the_bard___joan",
+        "genresRaw": [
+          "folk",
+          "singer-songwriter"
+        ],
+        "tidalId": "457951759"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Vibrisse #23",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/08/Battiti-del-31082026-8676e5f6-4d03-4044-951b-ff617382880f.html",
+    "date": "31 Ago 2026",
+    "tracks": [
+      {
+        "title": "JOTA.PE, A Mão Da Limpeza",
+        "artist": "GILBERTO GIL",
+        "albumDetails": "- Reloaded, \"Raça Humana\" - Xirê",
+        "key": "gilberto_gil___jotape_a_mao_da_limpeza",
+        "genresRaw": [
+          "mpb",
+          "pop",
+          "rock"
+        ],
+        "tidalId": "134474709"
+      },
+      {
+        "title": "Lobé",
+        "artist": "DOBET GNAHORE",
+        "albumDetails": "da \"Miziki\" - Café de la Danse",
+        "key": "dobet_gnahore___lobe",
+        "genresRaw": [
+          "world",
+          "folk"
+        ],
+        "tidalId": "495577337"
+      },
+      {
+        "title": "N95",
+        "artist": "KENDRICK LAMAR",
+        "albumDetails": "da \"Mr Morale & The Big Steppers\" - Aftermath Entertainment",
+        "key": "kendrick_lamar___n95",
+        "genresRaw": [
+          "hip-hop",
+          "rap"
+        ],
+        "tidalId": "230889856"
+      },
+      {
+        "title": "Heal da \"Demilitarize\"",
+        "artist": "NAZAR",
+        "albumDetails": "- Hyperdub",
+        "key": "nazar___heal_da_\"demilitarize\"",
+        "genresRaw": [
+          "electronic",
+          "experimental",
+          "ambient"
+        ],
+        "tidalId": "417262112"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Gurbaaz's Radio: An Indian Wave",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/08/Battiti-del-29082026-fa475f44-0a75-4af4-a39a-57d2aeaf1acd.html",
+    "date": "29 Ago 2026",
+    "tracks": [
+      {
+        "title": "Vaathi Coming, da \"Master (Original Motion Picture Soundtrack)",
+        "artist": "ANIRUDH RAVICHANDER",
+        "albumDetails": "- Sony Music South",
+        "key": "anirudh_ravichander___vaathi_coming_da_\"master_original_motion_picture_soundtrack",
+        "genresRaw": [
+          "hip-hop",
+          "electronic"
+        ]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Peace",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/08/Battiti-del-27082026-65dd6dfa-fd8c-426b-8ac4-788c3613484e.html",
+    "date": "27 Ago 2026",
+    "tracks": [
+      {
+        "title": "lia",
+        "artist": "EIKO ISHIBASHI & JIM O'ROURKE",
+        "albumDetails": "da \"Pareidolia\" – Drag City",
+        "key": "eiko_ishibashi_jim_o'rourke___lia",
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "instrumental"
+        ],
+        "tidalId": "435536549"
+      }
+    ]
   }
 ]
