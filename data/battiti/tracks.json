@@ -80673,5 +80673,82 @@
         "tidalId": "435536549"
       }
     ]
+  },
+  {
+    "episodeTitle": "Droni Romantici",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/09/Battiti-del-05092026-5d647c4d-f33d-4671-96da-12e3d21ceabc.html",
+    "date": "05 Set 2026",
+    "tracks": [
+      {
+        "title": "125",
+        "artist": "CARLOS GIFFONI & JOACHIM NORDWALL",
+        "albumDetails": "da \"New Music\" – Dead Mind Records",
+        "key": "carlos_giffoni_joachim_nordwall___125",
+        "genresRaw": [
+          "electronic",
+          "drone",
+          "industrial"
+        ]
+      },
+      {
+        "title": "In 2",
+        "artist": "ROSCOE MITCHELL / MICHELE RABBIA",
+        "albumDetails": "da \"In 2\" – Rogueart",
+        "key": "roscoe_mitchell_michele_rabbia___in_2",
+        "genresRaw": [
+          "experimental",
+          "jazz"
+        ]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Alessandra Novaga live & intervista",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/09/Battiti-del-04092026-125453db-c373-4dc6-824a-6b10116a11d1.html",
+    "date": "04 Set 2026",
+    "tracks": [
+      {
+        "title": "Erbarme dich",
+        "artist": "ALESSANDRA NOVAGA",
+        "albumDetails": "",
+        "key": "alessandra_novaga___erbarme_dich",
+        "genresRaw": [
+          "electroacoustic",
+          "experimental",
+          "instrumental"
+        ],
+        "tidalId": "431634422"
+      },
+      {
+        "title": "The Artistic Image Is Always A Miracle",
+        "artist": "ALESSANDRA NOVAGA",
+        "albumDetails": "",
+        "key": "alessandra_novaga___the_artistic_image_is_always_a_miracle",
+        "genresRaw": [
+          "ambient",
+          "experimental",
+          "instrumental"
+        ],
+        "tidalId": "431634428"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "MAI MAI MAI & RADIO ALHARA: live e intervista",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/09/Battiti-del-14092026-072ce1ee-3de5-4c59-bf00-da606ac92d05.html",
+    "date": "14 Set 2026",
+    "tracks": [
+      {
+        "title": "Bethlehem, estratto da \"Christmas In Mourning\"",
+        "artist": "SARY MOUSSA / ABED KOBEISSY / LAURENCE SAMMOUR",
+        "albumDetails": "- Wonder Cabinet & Radio Alhara",
+        "key": "sary_moussa_abed_kobeissy_laurence_sammour___bethlehem_estratto_da_\"christmas_in_mourning\"",
+        "genresRaw": [
+          "electroacoustic",
+          "experimental",
+          "electronic"
+        ]
+      }
+    ]
   }
 ]

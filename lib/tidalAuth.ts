@@ -81,7 +81,7 @@ const loginWithPKCE = async (): Promise<TokenData> => {
     client_id: CLIENT_ID,
     redirect_uri: REDIRECT_URI,
     response_type: "code",
-    scope: "playlists.write collection.read",
+    scope: "playlists.write collection.read r_usr",
     code_challenge: challenge,
     code_challenge_method: "S256",
   });

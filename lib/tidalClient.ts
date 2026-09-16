@@ -4,6 +4,7 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const SEARCH_DELAY_MS = 800;
 
 const BASE_URL = "https://openapi.tidal.com/v2";
+const V1_BASE_URL = "https://api.tidal.com/v1";
 const COUNTRY_CODE = process.env.TIDAL_COUNTRY_CODE ?? "IT";
 
 export interface TidalTrack {
@@ -411,28 +412,37 @@ export const getUserFavoriteTrackIds = async (
   let latestDate: string | null = null;
   const since = sinceDate ? new Date(sinceDate).getTime() : null;
 
-  // Items arrive newest-first; stop as soon as we hit the checkpoint date
-  let nextPath: string | null =
-    `/userCollections/${userId}/relationships/tracks?countryCode=${COUNTRY_CODE}`;
+  // v1 API — items arrive newest-first (order=DATE&orderDirection=DESC)
+  const LIMIT = 50;
+  let offset = 0;
+  let total: number | null = null;
 
   do {
-    const data = await tidalFetch(nextPath, token);
-    let hitCheckpoint = false;
+    const res = await fetch(
+      `${V1_BASE_URL}/users/${userId}/favorites/tracks?countryCode=${COUNTRY_CODE}&limit=${LIMIT}&offset=${offset}&order=DATE&orderDirection=DESC`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    );
+    if (!res.ok) throw new Error(`TIDAL API ${res.status} on /v1/users/${userId}/favorites/tracks`);
+    const data = await res.json();
 
-    for (const entry of (data?.data ?? []) as Array<{ id: string; meta: { addedAt: string } }>) {
-      const addedAt = entry.meta?.addedAt ?? null;
+    if (total === null) total = data.totalNumberOfItems ?? 0;
+
+    let hitCheckpoint = false;
+    for (const entry of data.items ?? []) {
+      const addedAt: string | null = entry.created ?? null;
       if (addedAt && (!latestDate || addedAt > latestDate)) latestDate = addedAt;
       if (since && addedAt && new Date(addedAt).getTime() <= since) {
         hitCheckpoint = true;
         break;
       }
-      ids.add(entry.id);
+      const trackId = entry.item?.id ? String(entry.item.id) : null;
+      if (trackId) ids.add(trackId);
     }
 
     if (hitCheckpoint) break;
-    nextPath = data?.links?.next ?? null;
-    if (nextPath) await sleep(600);
-  } while (nextPath);
+    offset += LIMIT;
+    if (offset < total) await sleep(600);
+  } while (offset < (total ?? 0));
 
   return { ids, latestDate };
 };
