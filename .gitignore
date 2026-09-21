@@ -14,3 +14,9 @@ data/battiti/loved_checkpoint.json
 .claude/
 CLAUDE.md
 AGENTS.md
+
+# PromptOps context snapshot
+.promptops/
+
+# PromptOps session assets
+.promptops-assets/

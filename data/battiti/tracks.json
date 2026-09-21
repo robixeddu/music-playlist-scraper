@@ -80750,5 +80750,747 @@
         ]
       }
     ]
+  },
+  {
+    "episodeTitle": "Like Dreaming",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/09/Battiti-del-18092026-13db12e4-4896-4a6a-a54a-99a29e5c3d05.html",
+    "date": "18 Set 2026",
+    "tracks": [
+      {
+        "title": "Transitional Imagery",
+        "artist": "RALPH ALESSI",
+        "albumDetails": "da \"A Sun That Never Sets\" – ECM Records",
+        "key": "ralph_alessi___transitional_imagery",
+        "genresRaw": [
+          "jazz",
+          "post-rock",
+          "experimental"
+        ],
+        "tidalId": "536931931"
+      },
+      {
+        "title": "Demand To Be Taken To Heaven Alive",
+        "artist": "HORSE LORDS",
+        "albumDetails": "da \"Demand To Be Taken To Heaven Alive!\" - Rvng Intl.",
+        "key": "horse_lords___demand_to_be_taken_to_heaven_alive",
+        "genresRaw": [
+          "post-rock",
+          "experimental",
+          "instrumental"
+        ],
+        "tidalId": "502905382"
+      },
+      {
+        "title": "Conejo Y Luna",
+        "artist": "ROSA PISTOLA",
+        "albumDetails": "da \"Incorregible\" - Eck Echo / La Chekera Records",
+        "key": "rosa_pistola___conejo_y_luna",
+        "genresRaw": [
+          "electronic",
+          "cumbia",
+          "world"
+        ],
+        "tidalId": "504033851"
+      },
+      {
+        "title": "Private Defence Contractor (Version)",
+        "artist": "MEKONS",
+        "albumDetails": "da \"Horrorble (Mekons vs Tony Maimone In Dub Conference)\" – Fire Records",
+        "key": "mekons___private_defence_contractor_version",
+        "genresRaw": [
+          "post-punk",
+          "experimental",
+          "rock"
+        ],
+        "tidalId": "404893043"
+      },
+      {
+        "title": "Mudcrawlers ft. Benji Webbe (Version)",
+        "artist": "MEKONS",
+        "albumDetails": "da \"Horrorble (Mekons vs Tony Maimone In Dub Conference)\" – Fire Records",
+        "key": "mekons___mudcrawlers_ft_benji_webbe_version",
+        "genresRaw": [
+          "post-punk",
+          "experimental"
+        ],
+        "tidalId": "404893041"
+      },
+      {
+        "title": "Celestial Body Of Light",
+        "artist": "BBCC",
+        "albumDetails": "da \"King Michael II And The Trial Of The Axe\"– October Tone",
+        "key": "bbcc___celestial_body_of_light",
+        "genresRaw": [
+          "electronic",
+          "funk",
+          "rock"
+        ],
+        "tidalId": "506523697"
+      },
+      {
+        "title": "Mr Blacksmith",
+        "artist": "BBCC",
+        "albumDetails": "da \"King Michael II And The Trial Of The Axe\"– October Tone",
+        "key": "bbcc___mr_blacksmith",
+        "genresRaw": [
+          "electronic",
+          "experimental",
+          "house"
+        ],
+        "tidalId": "506523700"
+      },
+      {
+        "title": "Bird",
+        "artist": "LEENALCHI",
+        "albumDetails": "da \"Here Comes That Crow\" – Luaka Bop",
+        "key": "leenalchi___bird",
+        "genresRaw": [
+          "world",
+          "folk"
+        ],
+        "tidalId": "392418522"
+      },
+      {
+        "title": "Hihi Haha",
+        "artist": "LEENALCHI",
+        "albumDetails": "da \"Here Comes That Crow\" – Luaka Bop",
+        "key": "leenalchi___hihi_haha",
+        "genresRaw": [
+          "pop",
+          "world"
+        ],
+        "tidalId": "511715528"
+      },
+      {
+        "title": "Something Like Dreaming",
+        "artist": "PANDA BEAR & SONIC BOOM",
+        "albumDetails": "da \"A ? of WHEN\" - Domino",
+        "key": "panda_bear_sonic_boom___something_like_dreaming",
+        "genresRaw": [
+          "psychedelic",
+          "experimental",
+          "electronic"
+        ]
+      },
+      {
+        "title": "A ? of WHEN",
+        "artist": "PANDA BEAR & SONIC BOOM",
+        "albumDetails": "da \"A ? of WHEN\" - Domino",
+        "key": "panda_bear_sonic_boom___a_?_of_when",
+        "genresRaw": [
+          "psychedelic",
+          "electronic",
+          "experimental"
+        ]
+      },
+      {
+        "title": "Tawson Acid",
+        "artist": "CROZ BOYCE",
+        "albumDetails": "da \"Croz Boyce\" - Domino",
+        "key": "croz_boyce___tawson_acid",
+        "genresRaw": [
+          "psychedelic",
+          "instrumental",
+          "experimental"
+        ]
+      },
+      {
+        "title": "Eternal Dream Drone",
+        "artist": "CROZ BOYCE",
+        "albumDetails": "da \"Croz Boyce\" - Domino",
+        "key": "croz_boyce___eternal_dream_drone",
+        "genresRaw": [
+          "drone",
+          "psychedelic",
+          "experimental"
+        ],
+        "tidalId": "497426554"
+      },
+      {
+        "title": "Kaleidosmoke",
+        "artist": "BCMC",
+        "albumDetails": "da \"Stash\" - Drag City",
+        "key": "bcmc___kaleidosmoke",
+        "genresRaw": [
+          "psychedelic",
+          "drone",
+          "ambient"
+        ],
+        "tidalId": "508648961"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Fire In Orbit",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/09/Battiti-del-17092026-24cd9f6e-b93b-481e-949c-52bb7d624b35.html",
+    "date": "17 Set 2026",
+    "tracks": [
+      {
+        "title": "Observation #4",
+        "artist": "ERIKM & PIERRE BASTIEN",
+        "albumDetails": "da \"Observations\" – Sub Rosa",
+        "key": "erikm_pierre_bastien___observation_4",
+        "genresRaw": [
+          "experimental",
+          "electroacoustic",
+          "instrumental"
+        ],
+        "tidalId": "512338519"
+      },
+      {
+        "title": "Draussen",
+        "artist": "HACKEDEPICCIOTTO",
+        "albumDetails": "da \"Lichtung\" – Mute",
+        "key": "hackedepicciotto___draussen",
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "tidalId": "540175051"
+      },
+      {
+        "title": "Rain Dance",
+        "artist": "AKUSMI",
+        "albumDetails": "da \"Terra Incognita\" – Tonal Union",
+        "key": "akusmi___rain_dance",
+        "genresRaw": [
+          "electronic",
+          "experimental",
+          "minimal"
+        ]
+      },
+      {
+        "title": "Leeda Mampanga",
+        "artist": "KING AYISOBA",
+        "albumDetails": "da \"Pure Confusion\" - Mais Um",
+        "key": "king_ayisoba___leeda_mampanga",
+        "genresRaw": [
+          "folk",
+          "post-punk",
+          "electronic"
+        ],
+        "tidalId": "532946088"
+      },
+      {
+        "title": "Lido di Savio (RA), 20 settembre 2026",
+        "artist": "AREA SISMICA: OSTERTAG-MINTON-CHEN + MOPCUT",
+        "albumDetails": "",
+        "key": "area_sismica_ostertagmintonchen_+_mopcut___lido_di_savio_ra_20_settembre_2026",
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "instrumental"
+        ]
+      },
+      {
+        "title": "Torino, 21 settembre",
+        "artist": "TO LISTEN TO",
+        "albumDetails": "- 4 ottobre 2026",
+        "key": "to_listen_to___torino_21_settembre",
+        "genresRaw": [
+          "experimental"
+        ]
+      },
+      {
+        "title": "Roma, 25",
+        "artist": "SU:GGESTIVA",
+        "albumDetails": "-27 settembre 2026",
+        "key": "suggestiva___roma_25",
+        "genresRaw": [
+          "ambient",
+          "electronic",
+          "instrumental"
+        ]
+      },
+      {
+        "title": "Sismica",
+        "artist": "MOPCUT",
+        "albumDetails": "da \"Ryok\" - Heat Crimes",
+        "key": "mopcut___sismica",
+        "genresRaw": [
+          "experimental",
+          "noise",
+          "post-punk"
+        ],
+        "tidalId": "422047514"
+      },
+      {
+        "title": "Cracking",
+        "artist": "DAL:UM",
+        "albumDetails": "da \"Coexistence\" - Glitterbeat",
+        "key": "dalum___cracking",
+        "genresRaw": [
+          "experimental",
+          "jazz",
+          "folk"
+        ],
+        "tidalId": "379099033"
+      },
+      {
+        "title": "First Light / Beyond The Dawn",
+        "artist": "LAKECIA BENJAMIN",
+        "albumDetails": "da \"We Dream\" – Artwork Records",
+        "key": "lakecia_benjamin___first_light_beyond_the_dawn",
+        "genresRaw": [
+          "jazz",
+          "instrumental"
+        ],
+        "tidalId": "523144454"
+      },
+      {
+        "title": "Spillage In The Village",
+        "artist": "LUKE BAINBRIDGE",
+        "albumDetails": "da \"Petstep\" – Crossing Styx Records",
+        "key": "luke_bainbridge___spillage_in_the_village",
+        "genresRaw": [
+          "jazz",
+          "hip-hop",
+          "experimental"
+        ],
+        "tidalId": "522432599"
+      },
+      {
+        "title": "Fire In Orbit",
+        "artist": "HILL COLLECTIVE",
+        "albumDetails": "da \"Fire In Orbit\" – Batov Records",
+        "key": "hill_collective___fire_in_orbit",
+        "genresRaw": [
+          "spiritual jazz",
+          "jazz",
+          "experimental"
+        ],
+        "tidalId": "517895930"
+      },
+      {
+        "title": "Ground Loop",
+        "artist": "YOUR BROTHER'S KEEPER & GARY BARTZ",
+        "albumDetails": "da \"Where Rivers Meet\" – Brownswood Recordings",
+        "key": "your_brother's_keeper_gary_bartz___ground_loop",
+        "genresRaw": [
+          "jazz",
+          "funk"
+        ],
+        "tidalId": "510377162"
+      },
+      {
+        "title": "Petrichor",
+        "artist": "YOUR BROTHER'S KEEPER & GARY BARTZ",
+        "albumDetails": "da \"Where Rivers Meet\" – Brownswood Recordings",
+        "key": "your_brother's_keeper_gary_bartz___petrichor",
+        "genresRaw": [
+          "jazz",
+          "experimental"
+        ],
+        "tidalId": "510377166"
+      },
+      {
+        "title": "Praying (Punch)",
+        "artist": "RUN LOGAN RUN",
+        "albumDetails": "da \"An Ear In Place Of A Mouth\" – Ankh Sanctuary",
+        "key": "run_logan_run___praying_punch",
+        "genresRaw": [
+          "jazz",
+          "experimental"
+        ],
+        "tidalId": "519396648"
+      },
+      {
+        "title": "Chartreuse",
+        "artist": "BLUE EARTH SOUND",
+        "albumDetails": "da \"The St. Louis Sessions\" – DeepMatter Records",
+        "key": "blue_earth_sound___chartreuse",
+        "genresRaw": [
+          "jazz",
+          "psychedelic",
+          "instrumental"
+        ],
+        "tidalId": "508569161"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Futuro ancestrale",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/09/Battiti-del-16092026-649c012d-3145-4f3e-932a-d9438088cb3f.html",
+    "date": "16 Set 2026",
+    "tracks": [
+      {
+        "title": "Before The Ice Age (Version)",
+        "artist": "MEKONS",
+        "albumDetails": "da \"Horrorble (Mekons vs Tony Maimone In Dub Conference)\" – Fire Records",
+        "key": "mekons___before_the_ice_age_version",
+        "genresRaw": [
+          "post-punk",
+          "experimental",
+          "rock"
+        ],
+        "tidalId": "404893047"
+      },
+      {
+        "title": "War Economy (Version)",
+        "artist": "MEKONS",
+        "albumDetails": "da \"Horrorble (Mekons vs Tony Maimone In Dub Conference)\" – Fire Records",
+        "key": "mekons___war_economy_version",
+        "genresRaw": [
+          "post-punk",
+          "experimental",
+          "rock"
+        ],
+        "tidalId": "404893040"
+      },
+      {
+        "title": "Lichtung",
+        "artist": "HACKEDEPICCIOTTO",
+        "albumDetails": "da \"Lichtung\" – Mute",
+        "key": "hackedepicciotto___lichtung",
+        "genresRaw": [
+          "electronic",
+          "experimental",
+          "ambient"
+        ],
+        "tidalId": "540175046"
+      },
+      {
+        "title": "Observation #1",
+        "artist": "ERIKM & PIERRE BASTIEN",
+        "albumDetails": "da \"Observations\" – Sub Rosa",
+        "key": "erikm_pierre_bastien___observation_1",
+        "genresRaw": [
+          "experimental",
+          "electronic"
+        ],
+        "tidalId": "512338513"
+      },
+      {
+        "title": "Relaxed Misery",
+        "artist": "RALPH ALESSI",
+        "albumDetails": "da \"A Sun That Never Sets\" – ECM Records",
+        "key": "ralph_alessi___relaxed_misery",
+        "genresRaw": [
+          "jazz",
+          "post-rock"
+        ],
+        "tidalId": "536931925"
+      },
+      {
+        "title": "Cagliari, 17",
+        "artist": "SIGNAL FESTIVAL",
+        "albumDetails": "-20 Settembre 2026",
+        "key": "signal_festival___cagliari_17",
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ]
+      },
+      {
+        "title": "Fondazione Merz, Torino, 18 Settembre 2026",
+        "artist": "RICCARDO BENASSI",
+        "albumDetails": "",
+        "key": "riccardo_benassi___fondazione_merz_torino_18_settembre_2026",
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "industrial"
+        ]
+      },
+      {
+        "title": "Spazio Cavea, Roma, 18 Settembre 2026",
+        "artist": "NICOLAS REMONDINO",
+        "albumDetails": "",
+        "key": "nicolas_remondino___spazio_cavea_roma_18_settembre_2026",
+        "genresRaw": [
+          "electronic",
+          "experimental"
+        ]
+      },
+      {
+        "title": "Subterraneux — Echoes Series #000",
+        "artist": "NATURA MORTA & SAVE YOUR ATOLL",
+        "albumDetails": "Da \"Subterraneux — Echoes Series #000\" - Autoproduzione 2026",
+        "key": "natura_morta_save_your_atoll___subterraneux_—_echoes_series_000",
+        "genresRaw": [
+          "electronic",
+          "ambient",
+          "experimental"
+        ]
+      },
+      {
+        "title": "Spingule",
+        "artist": "THE TURCOS AND THE LITTLE DEVILS MEET LOUP UBERTO",
+        "albumDetails": "da \"Baroque dégradé\" - Folderol Records",
+        "key": "the_turcos_and_the_little_devils_meet_loup_uberto___spingule",
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "hip-hop"
+        ],
+        "tidalId": "467811091"
+      },
+      {
+        "title": "Fimmine Fimmine",
+        "artist": "THE TURCOS AND THE LITTLE DEVILS MEET LOUP UBERTO",
+        "albumDetails": "da \"Baroque dégradé\" - Folderol Records",
+        "key": "the_turcos_and_the_little_devils_meet_loup_uberto___fimmine_fimmine",
+        "genresRaw": [
+          "experimental",
+          "world",
+          "electronic"
+        ]
+      },
+      {
+        "title": "Eye of the Hurricane",
+        "artist": "FUTURO ANCESTRALE",
+        "albumDetails": "da \"Elsewhen\" - Unsounds Records",
+        "key": "futuro_ancestrale___eye_of_the_hurricane",
+        "genresRaw": [
+          "experimental",
+          "electroacoustic",
+          "world"
+        ],
+        "tidalId": "515661718"
+      },
+      {
+        "title": "Χωρίς τίτλο 20",
+        "artist": "AESON ZERVAS",
+        "albumDetails": "da \"τρία\" - Heat Crimes",
+        "key": "aeson_zervas___χωρις_τιτλο_20",
+        "genresRaw": [
+          "ambient",
+          "experimental",
+          "electronic"
+        ]
+      },
+      {
+        "title": "Χωρίς τίτλο 21",
+        "artist": "AESON ZERVAS",
+        "albumDetails": "da \"τρία\" - Heat Crimes",
+        "key": "aeson_zervas___χωρις_τιτλο_21",
+        "genresRaw": [
+          "experimental",
+          "ambient",
+          "folk"
+        ]
+      },
+      {
+        "title": "New Old Medicine (Part 1)",
+        "artist": "THE HANDOVER",
+        "albumDetails": "da \"New Old Medicine\" - Sublime Frequencies",
+        "key": "the_handover___new_old_medicine_part_1",
+        "genresRaw": [
+          "psychedelic",
+          "experimental",
+          "jazz"
+        ],
+        "tidalId": "84630417"
+      },
+      {
+        "title": "Pro Dj",
+        "artist": "ŠIMANSKÝ VAĽKO PODRACKÝ",
+        "albumDetails": "da \"K-Drone\" - Mappa Editions",
+        "key": "simansky_valko_podracky___pro_dj",
+        "genresRaw": [
+          "drone",
+          "folk",
+          "psychedelic"
+        ],
+        "tidalId": "545432476"
+      },
+      {
+        "title": "Wild Geese Arrive",
+        "artist": "HANNAH PEEL & BEIBEI WANG",
+        "albumDetails": "da \"The Endless Dance\" - Real World Records",
+        "key": "hannah_peel_beibei_wang___wild_geese_arrive",
+        "genresRaw": [
+          "electronic",
+          "experimental",
+          "instrumental"
+        ],
+        "tidalId": "502107743"
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Memoria",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/09/Battiti-del-15092026-30c7b78f-5637-4f04-90bd-be35546f2b9d.html",
+    "date": "15 Set 2026",
+    "tracks": [
+      {
+        "title": "Property",
+        "artist": "KING AYISOBA",
+        "albumDetails": "da \"Pure Confusion\" - Mais Um",
+        "key": "king_ayisoba___property",
+        "genresRaw": [
+          "afrobeat",
+          "post-punk",
+          "electronic"
+        ],
+        "tidalId": "532946081"
+      },
+      {
+        "title": "Anima",
+        "artist": "AKUSMI",
+        "albumDetails": "da \"Terra Incognita\" – Tonal Union",
+        "key": "akusmi___anima",
+        "genresRaw": [
+          "spiritual jazz",
+          "minimal",
+          "afrobeat"
+        ],
+        "tidalId": "508562262"
+      },
+      {
+        "title": "A City Yet To Come",
+        "artist": "HORSE LORDS",
+        "albumDetails": "da \"Demand To Be Taken To Heaven Alive!\" - Rvng Intl.",
+        "key": "horse_lords___a_city_yet_to_come",
+        "genresRaw": [
+          "post-rock",
+          "experimental",
+          "instrumental"
+        ],
+        "tidalId": "502905380"
+      },
+      {
+        "title": "Niquitoa",
+        "artist": "ROSA PISTOLA",
+        "albumDetails": "da \"Incorregible\" - Eck Echo",
+        "key": "rosa_pistola___niquitoa",
+        "genresRaw": [
+          "electronic",
+          "experimental",
+          "world"
+        ],
+        "tidalId": "504033856"
+      },
+      {
+        "title": "Labour Of Imagination / Entre Nosotros",
+        "artist": "CARMEN VILLAIN",
+        "albumDetails": "da \"Memoria\" – Smalltown Supersound",
+        "key": "carmen_villain___labour_of_imagination_entre_nosotros",
+        "genresRaw": [
+          "ambient",
+          "experimental",
+          "dub"
+        ],
+        "tidalId": "536002352"
+      },
+      {
+        "title": "Blue",
+        "artist": "CARMEN VILLAIN",
+        "albumDetails": "da \"Memoria\" – Smalltown Supersound",
+        "key": "carmen_villain___blue",
+        "genresRaw": [
+          "dub",
+          "ambient",
+          "experimental"
+        ],
+        "tidalId": "549899944"
+      },
+      {
+        "title": "Spectral Spring",
+        "artist": "KALOJA",
+        "albumDetails": "da \"A Body of Water\" – Artetetra",
+        "key": "kaloja___spectral_spring",
+        "genresRaw": [
+          "experimental",
+          "ambient",
+          "electronic"
+        ],
+        "tidalId": "502956942"
+      },
+      {
+        "title": "Splice The Jenks Gene",
+        "artist": "KALOJA",
+        "albumDetails": "da \"A Body of Water\" – Artetetra",
+        "key": "kaloja___splice_the_jenks_gene",
+        "genresRaw": [
+          "experimental",
+          "electronic",
+          "ambient"
+        ],
+        "tidalId": "502956947"
+      },
+      {
+        "title": "Before (Nemesis)",
+        "artist": "ALAN & JAN",
+        "albumDetails": "da \"Take Me, I'm Yours\" – Faitiche",
+        "key": "alan_jan___before_nemesis",
+        "genresRaw": [
+          "electronic",
+          "ambient"
+        ]
+      },
+      {
+        "title": "87BPM",
+        "artist": "ALAN & JAN",
+        "albumDetails": "da \"Take Me, I'm Yours\" – Faitiche",
+        "key": "alan_jan___87bpm",
+        "genresRaw": [
+          "electronic",
+          "ambient",
+          "experimental"
+        ]
+      },
+      {
+        "title": "Hisen",
+        "artist": "TOKYO BEDROOM ORCHESTRA",
+        "albumDetails": "da \"Tsuioku\" – Kitchen. Label",
+        "key": "tokyo_bedroom_orchestra___hisen",
+        "genresRaw": [
+          "ambient",
+          "lo-fi",
+          "experimental"
+        ],
+        "tidalId": "531875313"
+      },
+      {
+        "title": "60 BPM Dub 2",
+        "artist": "PHIL COY",
+        "albumDetails": "da \"60bpm, 33rpm\" - Flaming Pines",
+        "key": "phil_coy___60_bpm_dub_2",
+        "genresRaw": [
+          "dub",
+          "experimental"
+        ],
+        "tidalId": "273127324"
+      },
+      {
+        "title": "60 BPM Dub 3",
+        "artist": "PHIL COY",
+        "albumDetails": "da \"60bpm, 33rpm\" - Flaming Pines",
+        "key": "phil_coy___60_bpm_dub_3",
+        "genresRaw": [
+          "dub",
+          "experimental",
+          "ambient"
+        ],
+        "tidalId": "273719097"
+      },
+      {
+        "title": "Monocromatico",
+        "artist": "MARCO UBIK BONINI",
+        "albumDetails": "Da \"Magheia\" - Antinational Noise",
+        "key": "marco_ubik_bonini___monocromatico",
+        "genresRaw": [
+          "drone",
+          "experimental",
+          "ambient"
+        ],
+        "tidalId": "548953769"
+      },
+      {
+        "title": "Scalar (Slowly On The Way - He Can Jog Remix)",
+        "artist": "DISTANT FIRES BURNING & AUTISTICI",
+        "albumDetails": "Da \"Scalar\" - Audiobulb",
+        "key": "distant_fires_burning_autistici___scalar_slowly_on_the_way_he_can_jog_remix",
+        "genresRaw": [
+          "ambient",
+          "dub",
+          "idm"
+        ],
+        "tidalId": "489312135"
+      }
+    ]
   }
 ]
