@@ -146,6 +146,50 @@ const artistSearchVariants = (artist: string): string[] => {
   return [...new Set([artist, norm, ...parts])].filter(Boolean);
 };
 
+// Fetches the tracks of an album by ID, resolving title and artist per track.
+// Used as a last-resort fallback when search doesn't surface niche catalog tracks.
+const fetchAlbumTracks = async (
+  albumId: string,
+  expectedArtist: string,
+  token: string,
+  artistById: Map<string, string>
+): Promise<TidalTrack[]> => {
+  const rel = await tidalFetch(
+    `/albums/${albumId}/relationships/items?countryCode=${COUNTRY_CODE}`,
+    token
+  );
+  const trackIds: string[] = (rel?.data ?? [])
+    .map((t: any) => t.id)
+    .filter(Boolean)
+    .slice(0, 25);
+
+  if (process.env.TIDAL_DEBUG) console.log(`  [album] ${albumId}: ${trackIds.length} tracks`);
+  if (trackIds.length === 0) return [];
+
+  const tracks: TidalTrack[] = [];
+  for (const id of trackIds) {
+    await sleep(300);
+    try {
+      const data = await tidalFetch(
+        `/tracks/${id}?countryCode=${COUNTRY_CODE}&include=artists`,
+        token
+      );
+      const title: string = data?.data?.attributes?.title ?? "";
+      if (!title) continue;
+      const artists = (data?.included ?? []).filter((x: any) => x.type === "artists");
+      for (const a of artists) {
+        if (a.id && a.attributes?.name) artistById.set(a.id, a.attributes.name);
+      }
+      const artistName =
+        artists.find((a: any) => a.attributes?.name)?.attributes?.name ?? expectedArtist;
+      tracks.push({ id, title, artistName });
+    } catch {
+      // skip geo-restricted or unavailable tracks
+    }
+  }
+  return tracks;
+};
+
 export const findTidalMatch = async (
   artist: string,
   title: string,
@@ -326,6 +370,44 @@ export const findTidalMatch = async (
 
       for (const candidate of altTopCandidates) {
         const result = await verify(candidate, altArtist, altTitle);
+        if (result !== null && result !== undefined) return result;
+      }
+    }
+  }
+
+  // ── 8. Album-track fallback: search album → enumerate its tracks ──────────
+  // Used when the track is too niche for TIDAL search to surface directly.
+  // Searches for the album by artist+name, then fetches each track in the album.
+  if (album) {
+    await sleep(SEARCH_DELAY_MS);
+    const albumSearchData = await tidalFetch(
+      `/searchResults?filter%5Bquery%5D=${encodeURIComponent(`${normArtist} ${album}`)}&countryCode=${COUNTRY_CODE}&include=albums&page%5Bsize%5D=10`,
+      token
+    ).catch(() => null);
+
+    const matchingAlbumIds: string[] = (albumSearchData?.included ?? [])
+      .filter((r: any) => r.type === "albums" && r.id && r.attributes?.title)
+      .filter((a: any) => computeMatchScore("", album, "", a.attributes.title as string).titleScore >= 0.65)
+      .map((a: any) => a.id as string)
+      .slice(0, 3);
+
+    if (process.env.TIDAL_DEBUG)
+      console.log(`  [album-fallback] matched album IDs: ${matchingAlbumIds.join(", ") || "none"}`);
+
+    for (const albumId of matchingAlbumIds) {
+      await sleep(SEARCH_DELAY_MS);
+      const albumTracks = await fetchAlbumTracks(albumId, artist, token, artistById);
+      const albumTopCandidates = albumTracks
+        .map((c) => ({ candidate: c, ...computeMatchScore(artist, scoreTitle, c.artistName, cleanTitle(c.title)) }))
+        .filter((s) => s.titleScore >= TITLE_THRESHOLD)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 5);
+
+      if (process.env.TIDAL_DEBUG)
+        console.log(`  [album-fallback] ${albumId}: ${albumTopCandidates.length} title-matching candidates`);
+
+      for (const candidate of albumTopCandidates) {
+        const result = await verify(candidate);
         if (result !== null && result !== undefined) return result;
       }
     }
