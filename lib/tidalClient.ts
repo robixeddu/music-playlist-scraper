@@ -375,6 +375,43 @@ export const findTidalMatch = async (
     }
   }
 
+  // ── 7b. RAI multi-artist-in-title pattern ("ARTIST1 & ARTIST2, Real Title") ─
+  // RAI sometimes embeds extra artist names in the title field in ALL CAPS,
+  // separated by a comma. Detected by: part before ", " is all-uppercase words.
+  const commaIdx = title.indexOf(", ");
+  if (commaIdx > 0) {
+    const beforeComma = title.slice(0, commaIdx).trim();
+    const afterComma = cleanTitle(title.slice(commaIdx + 2).trim());
+    const isAllCapsArtist =
+      beforeComma.length > 0 &&
+      beforeComma === beforeComma.toUpperCase() &&
+      /^[A-ZÁÀÉÈÍÌÓÒÚÙÑ\s&.'\-]+$/.test(beforeComma) &&
+      beforeComma.split(/\s+/).length >= 2;
+
+    if (isAllCapsArtist && afterComma.split(/\s+/).length >= 1) {
+      const altArtistNorm = normalizeArtistForSearch(beforeComma);
+      // Try: our main artist + extracted title, and extra artists + extracted title
+      await sleep(SEARCH_DELAY_MS);
+      const commaRes1 = await searchTracks(`${normArtist} ${afterComma}`, artist, token, artistById);
+      await sleep(SEARCH_DELAY_MS);
+      const commaRes2 = await searchTracks(`${altArtistNorm} ${afterComma}`, beforeComma, token, artistById);
+
+      const commaTopCandidates = [...new Map([...commaRes1, ...commaRes2].map((c) => [c.id, c])).values()]
+        .map((c) => ({ candidate: c, ...computeMatchScore(artist, afterComma, c.artistName, cleanTitle(c.title)) }))
+        .filter((s) => s.score >= CONFIDENT_THRESHOLD)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 10);
+
+      if (process.env.TIDAL_DEBUG)
+        console.log(`  [comma-artist] "${beforeComma}" + "${afterComma}" → ${commaTopCandidates.length} candidates`);
+
+      for (const candidate of commaTopCandidates) {
+        const result = await verify(candidate, artist, afterComma);
+        if (result !== null && result !== undefined) return result;
+      }
+    }
+  }
+
   // ── 8. Album-track fallback: search album → enumerate its tracks ──────────
   // Used when the track is too niche for TIDAL search to surface directly.
   // Searches for the album by artist+name, then fetches each track in the album.

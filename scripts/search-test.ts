@@ -25,6 +25,12 @@ const tests: { artist: string; title: string; album?: string; expectId?: string;
 
   // ── Album disambiguation ──
   { artist: "JOHN COLTRANE", title: "A Love Supreme", album: "A Love Supreme", label: "album hint" },
+
+  // ── Niche tracks / album-fallback ──
+  { artist: "FUTURO ANCESTRALE", title: "Eye of the Hurricane", album: "Elsewhen", expectId: "515661718", label: "niche/unsounds" },
+
+  // ── RAI multi-artist-in-title pattern ──
+  { artist: "LUCRECIA DALT", title: "CAMILLE MANDOKI & MATIAS AGUAYO, Sumamone (The Free Flyers)", album: "Fictions", expectId: "253112728", label: "RAI multi-artist-in-title" },
 ];
 
 const token = await getAccessToken();
