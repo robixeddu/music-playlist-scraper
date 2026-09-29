@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import type { ImportStatus } from "@/lib/types";
 import { importPlaylist, importDelta, dedupPlaylist, resolvePlaylistState, clearPlaylistState, persistPlaylistId, type PlaylistType } from "@/lib/tidal-import";
+import { TidalNotFoundError } from "@/lib/tidal-api";
 import { enqueueVerify } from "@/lib/tidalVerifyQueue";
 import { useTidalConnected } from "@/hooks/useTidalConnected";
 import { useImportLock } from "@/hooks/useImportLock";
@@ -119,8 +120,19 @@ export default function ImportButton({
         alreadyPresent: result.alreadyPresent,
       });
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Errore sconosciuto";
-      setStatus({ state: "error", message });
+      if (err instanceof TidalNotFoundError) {
+        // Playlist deleted on TIDAL — retry as a full import (creates new)
+        try {
+          const result = await importPlaylist({ type, slug, playlistName, tidalIds });
+          setStatus({ state: "success", added: result.added, alreadyPresent: result.alreadyPresent });
+        } catch (retryErr) {
+          const message = retryErr instanceof Error ? retryErr.message : "Errore sconosciuto";
+          setStatus({ state: "error", message });
+        }
+      } else {
+        const message = err instanceof Error ? err.message : "Errore sconosciuto";
+        setStatus({ state: "error", message });
+      }
     } finally {
       release();
     }
