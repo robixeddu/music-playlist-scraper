@@ -83102,7 +83102,8 @@
           "ambient",
           "electroacoustic",
           "experimental"
-        ], "tidalId": "253112728"
+        ],
+        "tidalId": "253112728"
       },
       {
         "title": "Plenty For All The Masses",
@@ -83184,6 +83185,208 @@
           "experimental",
           "psychedelic"
         ]
+      }
+    ]
+  },
+  {
+    "episodeTitle": "Zooids",
+    "episodeUrl": "https://www.raiplaysound.it/audio/2026/09/Battiti-del-29092026-028c3ebe-563a-400a-ac7b-fbe7a1d8d420.html",
+    "date": "29 Set 2026",
+    "tracks": [
+      {
+        "title": "From a Flood of Despair to Lightness (None is Indispensable)",
+        "artist": "OPEN TO THE SEA",
+        "albumDetails": "da \"Beyond The Emotional Flood\" - Secret Lovers",
+        "key": "open_to_the_sea___from_a_flood_of_despair_to_lightness_none_is_indispensable",
+        "genresRaw": [
+          "electroacoustic",
+          "experimental",
+          "ambient"
+        ],
+        "tidalId": "526692375"
+      },
+      {
+        "title": "The Secret Bathroom on the Moon (Her Big Dark Hands)",
+        "artist": "OPEN TO THE SEA",
+        "albumDetails": "da \"Beyond The Emotional Flood\" - Secret Lovers",
+        "key": "open_to_the_sea___the_secret_bathroom_on_the_moon_her_big_dark_hands",
+        "genresRaw": [
+          "ambient",
+          "instrumental",
+          "experimental"
+        ],
+        "tidalId": "526692377"
+      },
+      {
+        "title": "Elmyra",
+        "artist": "L'RAIN",
+        "albumDetails": "da \"Fata Morgana\" - Mexican Summer",
+        "key": "l'rain___elmyra",
+        "genresRaw": [
+          "experimental",
+          "noise",
+          "electronic"
+        ],
+        "tidalId": "524034722"
+      },
+      {
+        "title": "CHRISTOPHER ROUNTREE, JULIUS EASTMAN, N. 1 Silence",
+        "artist": "WILD UP",
+        "albumDetails": "da \"Vol. 5 Gay Guerrilla\" - New Amsterdam Records",
+        "key": "wild_up___christopher_rountree_julius_eastman_n_1_silence",
+        "genresRaw": [
+          "classical",
+          "experimental"
+        ],
+        "tidalId": "504859387"
+      },
+      {
+        "title": "Das Lebende Tonkino, da \"Lummernikt",
+        "artist": "FINN LOXBO",
+        "albumDetails": "- Fönstret",
+        "key": "finn_loxbo___das_lebende_tonkino_da_\"lummernikt",
+        "genresRaw": [
+          "instrumental",
+          "experimental",
+          "folk"
+        ]
+      },
+      {
+        "title": "Fanfulla 5/a e Polarville, Roma e L'Aquila, 1 e 2 ottobre 2026",
+        "artist": "TELLKUJIRA",
+        "albumDetails": "",
+        "key": "tellkujira___fanfulla_5a_e_polarville_roma_e_l'aquila_1_e_2_ottobre_2026",
+        "genresRaw": [
+          "rock"
+        ]
+      },
+      {
+        "title": "Acre + Ossatura, Il Cantiere, Roma, 1 ottobre 2026",
+        "artist": "ÀLTERA",
+        "albumDetails": "",
+        "key": "altera___acre_+_ossatura_il_cantiere_roma_1_ottobre_2026",
+        "genresRaw": [
+          "electroacoustic",
+          "jazz",
+          "experimental"
+        ]
+      },
+      {
+        "title": "XXXIII EDIZIONE, Firenze, 11 settembre",
+        "artist": "FABBRICA EUROPA 2026",
+        "albumDetails": "– 11 ottobre 2026",
+        "key": "fabbrica_europa_2026___xxxiii_edizione_firenze_11_settembre",
+        "genresRaw": [
+          "soundtrack"
+        ]
+      },
+      {
+        "title": "Ottavo centenario della morte, Musiche di Gavin Bryars e Yuri Bryars, Tempio del Redentore, Isola della Giudecca, Venezia, 4 ottobre 2026",
+        "artist": "CONCERTO PER SAN FRANCESCO",
+        "albumDetails": "",
+        "key": "concerto_per_san_francesco___ottavo_centenario_della_morte_musiche_di_gavin_bryars_e_yuri_bryars_tempio_del_redentore_isola_della_giudecca_venezia_4_ottobre_2026",
+        "genresRaw": [
+          "classical",
+          "instrumental",
+          "contemporary"
+        ]
+      },
+      {
+        "title": "¡Que viva México!",
+        "artist": "TELLKUJIRA",
+        "albumDetails": "da \"La lucha es un poema colectivo\" – Superpang Records",
+        "key": "tellkujira___¡que_viva_mexico",
+        "genresRaw": [
+          "experimental",
+          "field recording",
+          "ambient"
+        ]
+      },
+      {
+        "title": "Fluoroscope",
+        "artist": "HENRY THREADGILL ZOOID",
+        "albumDetails": "da \"Cut You Where You Was\" – Pi Recordings",
+        "key": "henry_threadgill_zooid___fluoroscope",
+        "genresRaw": [
+          "jazz",
+          "experimental",
+          "post-rock"
+        ],
+        "tidalId": "545253159"
+      },
+      {
+        "title": "Galaxies Twist Under Before It",
+        "artist": "JASON KAO HWANG / HUMAN RITES TRIO",
+        "albumDetails": "da \"Second Life\" – True Sound Recordings",
+        "key": "jason_kao_hwang_human_rites_trio___galaxies_twist_under_before_it",
+        "genresRaw": [
+          "experimental",
+          "jazz"
+        ]
+      },
+      {
+        "title": "Landscapes",
+        "artist": "ONILU",
+        "albumDetails": "da \"Jakuta's Dance\" – 577 Records",
+        "key": "onilu___landscapes",
+        "genresRaw": [
+          "jazz",
+          "world",
+          "instrumental"
+        ]
+      },
+      {
+        "title": "Pétalo",
+        "artist": "TRIO IMAGINATION",
+        "albumDetails": "da \"Creative Inspirations\" – Pi Recordings",
+        "key": "trio_imagination___petalo",
+        "genresRaw": [
+          "jazz",
+          "afrobeat"
+        ]
+      },
+      {
+        "title": "El Bronco",
+        "artist": "DEVIN GRAY / NATHANIEL MORGAN",
+        "albumDetails": "da \"El Bronco\" – Rataplan Records",
+        "key": "devin_gray_nathaniel_morgan___el_bronco",
+        "genresRaw": [
+          "jazz",
+          "instrumental"
+        ],
+        "tidalId": "544560527"
+      },
+      {
+        "title": "Pool Party",
+        "artist": "DEVIN GRAY / NATHANIEL MORGAN",
+        "albumDetails": "da \"El Bronco\" – Rataplan Records",
+        "key": "devin_gray_nathaniel_morgan___pool_party",
+        "genresRaw": [
+          "jazz",
+          "instrumental"
+        ],
+        "tidalId": "529183567"
+      },
+      {
+        "title": "Summer Madness",
+        "artist": "MYRA MELFORD'S FIRE AND WATER QUINTET",
+        "albumDetails": "da \"Sure Grand Out\" – RogueArt",
+        "key": "myra_melford's_fire_and_water_quintet___summer_madness",
+        "genresRaw": [
+          "jazz",
+          "instrumental"
+        ]
+      },
+      {
+        "title": "Hole In The Wall",
+        "artist": "MILES OKAZAKI",
+        "albumDetails": "da \"Boomtown\" – Pi Recordings",
+        "key": "miles_okazaki___hole_in_the_wall",
+        "genresRaw": [
+          "jazz",
+          "instrumental"
+        ],
+        "tidalId": "533116573"
       }
     ]
   }

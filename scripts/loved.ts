@@ -1,7 +1,8 @@
 import "dotenv/config";
 import { fileURLToPath } from "url";
 import fsPromises from "fs/promises";
-import { getAccessToken, getUserId } from "../lib/tidalAuth.js";
+import { getAccessToken } from "../lib/tidalAuth.js";
+import { getInternalAccessToken, getInternalUserId } from "../lib/tidalInternalAuth.js";
 import { createPlaylist, getPlaylistTrackIds, addTrackToPlaylist, getUserFavoriteTrackIds } from "../lib/tidalClient.js";
 import { TRACKS_FILE, PLAYLIST_PREFIX, LOVED_CHECKPOINT_FILE } from "../lib/config.js";
 import { EpisodeAggregated } from "../lib/types.js";
@@ -27,7 +28,9 @@ const saveCheckpoint = async (lastLovedAt: string): Promise<void> => {
 
 export const loved = async () => {
   let token = await getAccessToken();
-  const userId = await getUserId();
+  // Internal token (TIDAL TV app client) needed for v1 favorites — r_usr scope
+  const internalToken = await getInternalAccessToken();
+  const userId = await getInternalUserId();
 
   // 1. Collect battiti tidalIds into a lookup set
   const raw = await fsPromises.readFile(TRACKS_FILE, "utf-8");
@@ -49,7 +52,7 @@ export const loved = async () => {
     console.log("❤️  Fetching all loved tracks from TIDAL (first run)...");
   }
 
-  const { ids: lovedIds, latestDate } = await getUserFavoriteTrackIds(userId, token, sinceDate ?? undefined);
+  const { ids: lovedIds, latestDate } = await getUserFavoriteTrackIds(userId, internalToken, sinceDate ?? undefined);
   console.log(`   Found ${lovedIds.size} loved track(s) to process`);
 
   // 3. Intersection: new loved tracks that come from Battiti
