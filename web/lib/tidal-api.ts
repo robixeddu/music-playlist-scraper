@@ -1,7 +1,9 @@
 "use client";
 
 const TIDAL_BASE_URL = "https://openapi.tidal.com/v2";
+const TIDAL_USER_BASE_URL = "https://api.tidal.com/v2";
 const BASE = "/tidal-api";
+const BASE_USER = "/tidal-user-api";
 const COUNTRY_CODE = process.env.NEXT_PUBLIC_TIDAL_COUNTRY_CODE ?? "IT";
 
 function headers(token: string): HeadersInit {
@@ -218,7 +220,7 @@ export async function getUserCollectionTrackIds(
   const since = sinceDate ? new Date(sinceDate).getTime() : null;
 
   let url: string | null =
-    `/tidal-api/userCollections/${userId}/relationships/tracks?countryCode=${COUNTRY_CODE}&limit=100`;
+    `${BASE_USER}/userCollections/${userId}/relationships/tracks?countryCode=${COUNTRY_CODE}&limit=100`;
   let firstPage = true;
 
   while (url) {
@@ -251,8 +253,8 @@ export async function getUserCollectionTrackIds(
     if (!next) {
       url = null;
     } else {
-      const path = next.replace(TIDAL_BASE_URL, "");
-      url = path.startsWith("/tidal-api") ? path : `/tidal-api${path}`;
+      const path = next.replace(TIDAL_USER_BASE_URL, "");
+      url = path.startsWith(BASE_USER) ? path : `${BASE_USER}${path}`;
     }
   }
 
