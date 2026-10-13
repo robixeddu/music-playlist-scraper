@@ -6,6 +6,7 @@ const tests: { artist: string; title: string; album?: string; expectId?: string;
   // ── Precedentemente sbagliati → devono essere not found o trovare il corretto ──
   { artist: "PRINCE JAZZBO", title: "Meet Me In The 6th Street", album: "Black Heart Man - Bushay Collection 1974 – 1978", expectNull: true, label: "false positive fix" },
   { artist: "U ROY", title: "Dancehall Memories", album: "Tappa Records Showcase", expectNull: true, label: "false positive fix" },
+  { artist: "THE MIGHTY SPARROW", title: "The Slave", album: "The Slave", expectNull: true, label: "false positive fix – Germs mismatch" },
   { artist: "MASS OF MARY", title: "Gloria", album: "Mass Of Mary", expectNull: true, label: "false positive fix" },
   { artist: "DJ SPOOKY THAT SUBLIMINAL KID", title: "Not In Our Name Remix (featuring Saul Williams)", album: "Celestial Mechanix", label: "niche/electronic" },
 
@@ -28,6 +29,7 @@ const tests: { artist: string; title: string; album?: string; expectId?: string;
 
   // ── Niche tracks / album-fallback ──
   { artist: "FUTURO ANCESTRALE", title: "Eye of the Hurricane", album: "Elsewhen", expectId: "515661718", label: "niche/unsounds" },
+  { artist: "CALYPSO ROSE", title: "Far From Home", album: "Far From Home", expectId: "58681928", label: "niche/common-title" },
 
   // ── RAI multi-artist-in-title pattern ──
   { artist: "LUCRECIA DALT", title: "CAMILLE MANDOKI & MATIAS AGUAYO, Sumamone (The Free Flyers)", album: "Fictions", expectId: "253112728", label: "RAI multi-artist-in-title" },
